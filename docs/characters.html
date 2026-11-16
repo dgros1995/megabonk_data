@@ -27,8 +27,8 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid va
 nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
 main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="on">Characters</a><a href="max-runs.html" class="">Maxing a run</a></div></nav>
-<main><h1 id="character-guide">Character guide</h1>
-<p>Each character has a starting weapon and a passive that grows every time you level up, so a character's passive matters more the higher your level gets. A 1M-kill run reaches level 3,000 or more.</p>
+<main><h1 id="characters">Characters</h1>
+<p>Each character has a starting weapon and a passive that grows every time you level up, so a passive matters more the higher your level gets. A 1M-kill run reaches level 3,000 or more.</p>
 <h2 id="all-characters">All characters</h2>
 <div class="tw"><table>
 <thead>
@@ -191,9 +191,8 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </tbody>
 </table></div>
 <p>Where megabonk.org's per-level numbers differ, the game data wins: Spaceman gets +1% XP per level (not 1.5%), and Calcium's and Noelle's per-level bonuses are 0.7% (not 0.75%).</p>
-<p>megabonk.org's 300k-kill guide found Noelle and Fox most often among 1,223 runs that reached 300,000 kills; all four top runs in this guide's sample were Dicehead.</p>
-<h2 id="dicehead">Dicehead</h2>
-<p><strong>Gamba</strong>, from the code (<code>PassiveAbilityGamba.OnLevelup</code>): on every level-up it takes one random stat from the level-up stat pool (see <a href="economy.html#level-up-and-shrine-stat-values">Luck, chests &amp; shrines</a>) and applies it at a fraction of its value:</p>
+<h2 id="dicehead-and-gamba">Dicehead and Gamba</h2>
+<p><strong>Gamba</strong>, from the code (PassiveAbilityGamba.OnLevelup): on every level-up it takes one random stat from the level-up stat pool (values in Luck, chests &amp; shrines) and applies it at a fraction of its value:</p>
 <p><strong>Gamba multiplier = 0.75 / (1 + (level / 50)^1.5)</strong>, clamped between 0.06 and 1.0.</p>
 <div class="tw"><table>
 <thead>
@@ -224,42 +223,10 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </tbody>
 </table></div>
 <p>So Gamba is strong early and fades: by level 300 each roll is 6% of an offer, about +0.7% Damage when it rolls Damage. Its late-game value is the sheer number of levels, not the size of each roll. A pickup worth several levels triggers it once per level.</p>
-<p><strong>Dice</strong> rolls 1–6 damage, and every 6 permanently adds crit chance to the weapon. That crit growth is separate from Gamba.</p>
+<p><strong>Dice</strong> rolls 1–6 damage, and every 6 permanently adds crit chance to the weapon (capped at 100 roll-ups a minute). That crit growth is separate from Gamba.</p>
 <p>What that means in practice:</p>
 <ul>
-<li><strong>Weak start, unlimited ceiling.</strong> megabonk.org calls the first 10 minutes very weak. The recorded runs agree: 13 of 32 died between 3:24 and 4:24.</li>
-<li><strong>XP and Luck first.</strong> More levels mean more Gamba rolls (each one smaller as you level); more Luck means better offers.</li>
-<li><strong>Dice plus Katana</strong> was the pairing in three of the four top runs and in the recorded 62-minute run. Both lean on crit.</li>
-<li><strong>Giant Fork</strong> (+15% crit, Megacrits) is called essential by megabonk.org, which says Dicehead loses most of his power without it. Note that it isn't on the 1.1M run's toggle list, so that claim is disputed.</li>
-</ul>
-<p>megabonk.org's suggested builds:</p>
-<div class="tw"><table>
-<thead>
-<tr>
-<th>Build</th>
-<th>Weapons</th>
-<th>Key items</th>
-<th>Tomes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Megacrit scaling</td>
-<td>Dice, Katana, Lightning Staff, Bow</td>
-<td>Giant Fork, Forbidden Juice, Gym Sauce, Demonic Blade, Joe's Dagger, Overpowered Lamp</td>
-<td>XP, Luck, Precision, Damage, Cooldown</td>
-</tr>
-<tr>
-<td>RNG maximizer</td>
-<td>Dice, Revolver, Bone, Bow</td>
-<td>Big Bonk, Giant Fork, Forbidden Juice, Clover, Overpowered Lamp</td>
-<td>XP, Luck, Cursed, Precision</td>
-</tr>
-<tr>
-<td>Balanced survival</td>
-<td>Dice, Katana, Aura, Aegis</td>
-<td>Mirror, Chonkplate, Giant Fork, Forbidden Juice, Gym Sauce</td>
-<td>Bloody, XP, Shield, Precision, Damage</td>
-</tr>
-</tbody>
-</table></div><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>
+<li><strong>Weak start.</strong> In 32 recorded runs, 13 died between 3:24 and 4:24.</li>
+<li><strong>XP and Luck first.</strong> More levels mean more Gamba rolls; more Luck means better offers.</li>
+<li><strong>Lean into crit.</strong> Dice and Katana both carry crit lines, and crit past 100% overcrits (2 crits ×4, 3 crits ×6.25). Dice plus Katana was the pairing in three of four top runs we looked at.</li>
+</ul><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>

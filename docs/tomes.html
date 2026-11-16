@@ -27,55 +27,18 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid va
 nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
 main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="on">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="">Maxing a run</a></div></nav>
-<main><h1 id="tome-guide">Tome guide</h1>
-<p>Tomes are stat upgrades you level through level-up offers. You can hold four (some characters and items change that), and each one stops at a level cap.</p>
+<main><h1 id="tomes">Tomes</h1>
+<p>Tomes are stat upgrades you level through level-up offers. You can hold four, and each stops at a level cap.</p>
 <h2 id="how-tomes-scale">How tomes scale</h2>
 <ul>
-<li><strong>Each level adds a fixed amount</strong> of one stat, from the game's own tome data (table below).</li>
-<li><strong>Offer rarity multiplies that amount,</strong> using fixed multipliers read from the game's code, then rounds to two decimals:</li>
+<li><strong>Each level adds a fixed amount</strong> of one stat, from the game's tome data (table below).</li>
+<li><strong>Offer rarity multiplies that amount</strong> (Common ×1.0, Uncommon ×1.2, Rare ×1.4, Epic ×1.6, Legendary ×2.0), then the game rounds to two decimals (Rarity.GetMultiplier, StatUtility.GetRarityValue).</li>
+<li><strong>The rounding matters for small stats.</strong> Cursed Tome is +3.5% Difficulty, which rounds to 4% on Common and Uncommon, 5% on Rare, 6% on Epic and 7% on Legendary. Luck (+8%) becomes 10% Uncommon, 11% Rare, 13% Epic and 16% Legendary.</li>
+<li><strong>Luck decides which rarity you're offered</strong> (see the odds in Luck, chests &amp; shrines), so it multiplies every other tome's growth.</li>
+<li><strong>The level cap is 99</strong>, plus 10 for the first Wizard's Hat and 1 less for each extra copy (never below +2).</li>
 </ul>
-<div class="tw"><table>
-<thead>
-<tr>
-<th>Offer rarity</th>
-<th>Multiplier</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Common</td>
-<td>×1.0</td>
-</tr>
-<tr>
-<td>Uncommon</td>
-<td>×1.2</td>
-</tr>
-<tr>
-<td>Rare</td>
-<td>×1.4</td>
-</tr>
-<tr>
-<td>Epic</td>
-<td>×1.6</td>
-</tr>
-<tr>
-<td>Legendary</td>
-<td>×2.0</td>
-</tr>
-<tr>
-<td>- <strong>The rounding matters for small stats.</strong> Cursed Tome is +3.5% Difficulty, which rounds to 4% on Common and Uncommon, 5% on Rare, 6% on Epic and 7% on Legendary. That explains the community's "two Common levels gave 8%". Luck (+8%) becomes 10% Uncommon, 11% Rare, 13% Epic and 16% Legendary.</td>
-<td></td>
-</tr>
-<tr>
-<td>- <strong>Luck decides which rarity you're offered,</strong> so it multiplies every other tome's growth. That's why the top runs took it early.</td>
-<td></td>
-</tr>
-<tr>
-<td>- <strong>The level cap is 99</strong>, plus about 10 for each Wizard's Hat (less for each extra copy, never below +2). The recorded run stopped at 109 with one Hat; the top runs reached 151–197.</td>
-<td></td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="which-bracket-each-tome-uses">Which bracket each tome uses</h2>
+<p>From the game data (modifyType): <strong>Flat</strong> — Precision, Luck, Cursed, Armor, Evasion, Blood (Lifesteal), Shield, Health, Regen, Thorns, Quantity. <strong>% (Addition)</strong> — XP, Cooldown, Size, Duration, Projectile Speed, Knockback, Attraction, Agility, Golden, Silver. <strong>× (Multiplication)</strong> — Damage.</p>
 <h2 id="all-tomes">All tomes</h2>
 <div class="tw"><table>
 <thead>
@@ -84,7 +47,7 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <th>Stat</th>
 <th>Per level (Common)</th>
 <th>Unlock</th>
-<th>Notes for high-kill runs</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
@@ -93,21 +56,21 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <td>XP gain</td>
 <td>+7%</td>
 <td>Break 20 pots in one run</td>
-<td>Take first. Every top run had it.</td>
+<td>More levels, more offers, more Gamba rolls.</td>
 </tr>
 <tr>
 <td>Luck</td>
 <td>Luck</td>
 <td>+8%</td>
 <td>0.01% drop chance per kill</td>
-<td>Take early; better offers and drops. Level 74 by 14:00 in the 1.1M run.</td>
+<td>Better offer and chest rarity.</td>
 </tr>
 <tr>
 <td>Cursed</td>
 <td>Difficulty</td>
 <td>+3.5%, rounded to 4% (7% at Legendary)</td>
 <td>Beat a stage boss in under 5 minutes</td>
-<td>More enemies and XP. The main way to raise difficulty.</td>
+<td>More enemies and faster swarm refill.</td>
 </tr>
 <tr>
 <td>Chaos</td>
@@ -121,7 +84,7 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <td>Crit Chance</td>
 <td>+7%</td>
 <td>Default</td>
-<td>Core for crit builds like Dicehead's.</td>
+<td>Crit past 100% overcrits.</td>
 </tr>
 <tr>
 <td>Damage</td>
@@ -149,14 +112,14 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <td>Size</td>
 <td>+10%</td>
 <td>Default</td>
-<td></td>
+<td>Also grows item radii (Spicy Meatball, Tonic, Toxic Barrel, Holy Book…).</td>
 </tr>
 <tr>
 <td>Duration</td>
 <td>Duration</td>
 <td>+15%</td>
 <td>Upgrade the Axe to level 10</td>
-<td></td>
+<td>Also lengthens debuffs.</td>
 </tr>
 <tr>
 <td>Projectile Speed</td>
@@ -177,7 +140,7 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <td>Shield</td>
 <td>+25</td>
 <td>Default</td>
-<td>Top runs survived on shield.</td>
+<td>The main survival pool in late swarms.</td>
 </tr>
 <tr>
 <td>Health</td>
@@ -189,7 +152,7 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <tr>
 <td>Regen</td>
 <td>HP Regen</td>
-<td>+40 (unit not stated in game data)</td>
+<td>+40</td>
 <td>Default</td>
 <td></td>
 </tr>
@@ -198,14 +161,14 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <td>Armor</td>
 <td>+12%</td>
 <td>Kill 5,000 enemies as Sir Oofie</td>
-<td>Diminishing returns at high values.</td>
+<td>Real reduction A / (A + 0.75).</td>
 </tr>
 <tr>
 <td>Evasion</td>
 <td>Evasion</td>
 <td>+10%</td>
 <td>Default</td>
-<td></td>
+<td>Real chance E / (E + 1).</td>
 </tr>
 <tr>
 <td>Bloody</td>
@@ -226,7 +189,7 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <td>Pickup Range</td>
 <td>+75%</td>
 <td>Use the Shrine of Succ 8 times</td>
-<td>Pairs with Cursed for faster XP pickup.</td>
+<td></td>
 </tr>
 <tr>
 <td>Agility</td>
@@ -251,8 +214,6 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </tr>
 </tbody>
 </table></div>
-<p>The game data also holds three tomes that are switched off and can't be offered: Balance, Gambler and Hoarder. They may arrive in a later update.</p>
-<h2 id="which-bracket-each-tome-uses">Which bracket each tome uses</h2>
-<p>From the game data (<code>modifyType</code>): <strong>Flat</strong> — Precision, Luck, Cursed, Armor, Evasion, Blood (Lifesteal), Shield, Health, Regen, Thorns, Quantity. <strong>% (Addition)</strong> — XP, Cooldown, Size, Duration, Projectile Speed, Knockback, Attraction, Agility, Golden, Silver. <strong>× (Multiplication)</strong> — Damage.</p>
+<p>The game data also holds three tomes that are switched off and can't be offered: Balance, Gambler and Hoarder.</p>
 <h2 id="picking-four">Picking four</h2>
-<p>Data-first picks for a high-kill run: <strong>XP</strong> (levels and more Gamba rolls), <strong>Luck</strong> (offer and chest rarity, see <a href="economy.html">the odds</a>), <strong>Damage</strong> (the only × bracket tome), and <strong>Cursed</strong> or <strong>Precision</strong>: Cursed if you need more enemies, Precision for crit builds. Crit chance past 100% overcrits, which makes Precision scale harder than it looks.</p><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>
+<p>Data-first picks for a high-kill run: <strong>XP</strong> (levels), <strong>Luck</strong> (offer and chest rarity), <strong>Damage</strong> (the only × bracket tome), and <strong>Cursed</strong> or <strong>Precision</strong>: Cursed if you need more enemies, Precision for crit builds.</p><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>

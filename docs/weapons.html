@@ -27,214 +27,20 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid va
 nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
 main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="on">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="">Maxing a run</a></div></nav>
-<main><h1 id="weapon-guide">Weapon guide</h1>
+<main><h1 id="weapons">Weapons</h1>
 <p>Weapons attack on their own and grow through weapon upgrade offers. The exact numbers below come from the game's weapon database.</p>
 <h2 id="how-weapons-scale">How weapons scale</h2>
 <ul>
-<li><strong>Each weapon upgrade raises a few stat lines of that weapon,</strong> chosen by the offer. A level-41 Katana offer in the 1.1M run read: Size 868% → 888%, Crit Chance 288% → 296%, Projectile Count 31.6 → 32.6.</li>
-<li><strong>Anvil adds one more stat line</strong> to future weapon offers, so each pick gives more.</li>
-<li><strong>Your tomes and items apply on top.</strong> A weapon's own stats multiply with your Damage, Crit, Size, Attack Speed and so on, which is why the weapon's "scales with" column matters when you pick tomes.</li>
-<li><strong>The level cap is 40</strong>, plus about 10 for each Pot (less for each extra copy). Rizzotto's 4-weapon run ended with all four at 40; the recorded run with one Pot capped at 50; the 1.1M run reached 111 and 112.</li>
-<li><strong>Slots:</strong> 4 weapons. megabonk.org's Dicehead guide warns that more weapons spread upgrades thinner; the top Dicehead runs used 2.</li>
+<li><strong>Each weapon upgrade raises a few stat lines of that weapon,</strong> chosen by the offer, by the Common amount × the offer's rarity multiplier (×1.0 Common up to ×2.0 Legendary).</li>
+<li><strong>Anvil adds one more stat line</strong> to future weapon offers.</li>
+<li><strong>Your tomes and items apply on top.</strong> The weapon's damage is multiplied by your Damage stat (all three brackets), and its crit chance adds to yours.</li>
+<li><strong>The level cap is 40</strong>, plus 10 for the first Pot and 1 less for each extra copy (never below +2).</li>
+<li><strong>Slots:</strong> 4 weapons.</li>
 </ul>
-<h2 id="all-weapons">All weapons</h2>
-<div class="tw"><table>
-<thead>
-<tr>
-<th>Weapon</th>
-<th>What it does</th>
-<th>Scales best with</th>
-<th>Unlock</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Dice</td>
-<td>Rolls 1–6 damage; each 6 permanently adds Crit Chance</td>
-<td>Crit</td>
-<td>Luck Tome to level 12</td>
-</tr>
-<tr>
-<td>Katana</td>
-<td>Fast slashes at the nearest enemy</td>
-<td>Crit</td>
-<td>5% drop from Desert stage 1 tumbleweeds, then buy</td>
-</tr>
-<tr>
-<td>Sword</td>
-<td>Sweeping slash through several enemies</td>
-<td>Size, Quantity</td>
-<td>Default</td>
-</tr>
-<tr>
-<td>Hero Sword</td>
-<td>Front slash plus a ranged slash</td>
-<td>Size, Quantity</td>
-<td>Beat a stage boss with no items, powerups or shrines; 30 Silver</td>
-</tr>
-<tr>
-<td>Corrupted Sword</td>
-<td>Front and back slashes; more damage at low HP</td>
-<td>Low HP</td>
-<td>Cursed Tome to level 20 before 10:00, then buy</td>
-</tr>
-<tr>
-<td>Dexecutioner</td>
-<td>Piercing blade with an execute chance</td>
-<td>Execute</td>
-<td>Kill 12,500 enemies with the Sword</td>
-</tr>
-<tr>
-<td>Axe</td>
-<td>Spinning axes that linger</td>
-<td>Size, Duration</td>
-<td>Kill 2,000 enemies with the Sword</td>
-</tr>
-<tr>
-<td>Scythe</td>
-<td>360° sweep; elite kills charge a stronger attack</td>
-<td>Size, Cooldown</td>
-<td>Beat Big Bob in the Graveyard Crypt, then buy</td>
-</tr>
-<tr>
-<td>Aura</td>
-<td>Constant close-range damage</td>
-<td>—</td>
-<td>Take no damage for 2 minutes in a row</td>
-</tr>
-<tr>
-<td>Aegis</td>
-<td>Blocks attacks and releases counter shockwaves</td>
-<td>Thorns, defense</td>
-<td>Block 500 damage with Armor as Sir Oofie</td>
-</tr>
-<tr>
-<td>Revolver</td>
-<td>Ricocheting bullets</td>
-<td>Crit, bounces</td>
-<td>Kill 7,500 enemies</td>
-</tr>
-<tr>
-<td>Sniper Rifle</td>
-<td>Long-range piercing shot</td>
-<td>Crit, boss damage</td>
-<td>Precision Tome to level 10</td>
-</tr>
-<tr>
-<td>Shotgun</td>
-<td>Spread burst</td>
-<td>Crit Damage, Knockback</td>
-<td>5% drop from Desert stage 2 tumbleweeds, then buy</td>
-</tr>
-<tr>
-<td>Bow</td>
-<td>Piercing arrows</td>
-<td>Crit, lines of enemies</td>
-<td>Default</td>
-</tr>
-<tr>
-<td>Bone</td>
-<td>Bouncing projectile, starts with 1 bounce</td>
-<td>Quantity, bounces</td>
-<td>Default</td>
-</tr>
-<tr>
-<td>Bananarang</td>
-<td>Returning banana</td>
-<td>—</td>
-<td>Find the hidden banana in Forest</td>
-</tr>
-<tr>
-<td>Wireless Dagger</td>
-<td>Homing daggers that bounce</td>
-<td>Bounces</td>
-<td>Lightning Staff to level 15</td>
-</tr>
-<tr>
-<td>Slutty Rocket</td>
-<td>Homing missiles</td>
-<td>Quantity, Projectile Speed</td>
-<td>Kill 15,000 enemies as CL4NK</td>
-</tr>
-<tr>
-<td>Chunkers</td>
-<td>Orbiting rocks, starts with +1 projectile</td>
-<td>Projectile Speed</td>
-<td>Default</td>
-</tr>
-<tr>
-<td>Lightning Staff</td>
-<td>Lightning on nearby enemies; upgrades add chain bounces</td>
-<td>Bounces</td>
-<td>Default</td>
-</tr>
-<tr>
-<td>Firestaff</td>
-<td>Explosive fireballs</td>
-<td>Projectiles, area</td>
-<td>Default</td>
-</tr>
-<tr>
-<td>Dragon's Breath</td>
-<td>Rotating flame that targets enemies; damage 16, 1.5 s duration</td>
-<td>Rotation speed</td>
-<td>Kill 1,000 Wisps as Fox in Desert</td>
-</tr>
-<tr>
-<td>Flamewalker</td>
-<td>Damaging fire trail</td>
-<td>Duration, area</td>
-<td>Default</td>
-</tr>
-<tr>
-<td>Frostwalker</td>
-<td>Freezes and damages enemies nearby</td>
-<td>—</td>
-<td>Freeze 1,000 enemies with Ice Cube</td>
-</tr>
-<tr>
-<td>Poison Flask</td>
-<td>Lasting poison zones</td>
-<td>Duration, poison</td>
-<td>Beat Scorpionussy 3 times in Desert</td>
-</tr>
-<tr>
-<td>Blood Magic</td>
-<td>5% of kills permanently add Max HP</td>
-<td>Lifesteal, HP</td>
-<td>Bloody Tome to level 12</td>
-</tr>
-<tr>
-<td>Black Hole</td>
-<td>Gravity field that pulls in and damages enemies</td>
-<td>Duration, area</td>
-<td>Knockback Tome to level 10</td>
-</tr>
-<tr>
-<td>Tornado</td>
-<td>Tornadoes that knock enemies back</td>
-<td>Knockback</td>
-<td>Charge a Charge Shrine 5 times during Desert sandstorms</td>
-</tr>
-<tr>
-<td>Mines</td>
-<td>Proximity mines</td>
-<td>Area denial</td>
-<td>Kill 7,500 enemies with Slutty Rocket</td>
-</tr>
-<tr>
-<td>Space Noodle</td>
-<td>Links to an enemy and damages everything in between</td>
-<td>Positioning</td>
-<td>Clear Desert Tier 2 as Tony McZoom</td>
-</tr>
-</tbody>
-</table></div>
-<p>The "scales best with" column is megabonk.org's build advice rather than measured scaling. The exact numbers from the game follow below.</p>
 <h2 id="proc-coefficients">Proc coefficients</h2>
 <p>On-hit item chances are multiplied by the weapon's proc coefficient: <strong>Sniper Rifle 1.5</strong>; Dice, Revolver, Bow, Bone, Shotgun, Lightning Staff, Firestaff and most single shots <strong>1.0</strong>; <strong>Katana 0.95</strong>; <strong>Axe, Aura, Black Hole, Dragon's Breath 0.7</strong>.</p>
 <h2 id="exact-weapon-numbers-game-data">Exact weapon numbers (game data)</h2>
-<p>Each weapon upgrade raises some of that weapon's upgrade lines below, by the Common amount times the offer's rarity multiplier (×1.0 Common up to ×2.0 Legendary). Anvil adds one more line per pick. Cooldown is the pause after each attack, in seconds.</p>
+<p>Cooldown is the pause after each attack, in seconds.</p>
 <div class="tw"><table>
 <thead>
 <tr>
@@ -458,4 +264,166 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </tr>
 </tbody>
 </table></div>
-<p>Damage lines are flat additions to the weapon's base, so a weapon with low base damage (Dice, Black Hole, Poison Flask) gains the most from each Damage line relative to where it started. Dice and Katana both carry two crit lines, which is why they pair well with Precision and Giant Fork. Dice's own crit growth from rolling sixes is capped by the game at 100 roll-ups a minute.</p><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>
+<p>Damage lines are flat additions to the weapon's base, so a weapon with low base damage (Dice, Black Hole, Poison Flask) gains the most from each Damage line relative to where it started. Dice, Katana, Revolver, Shotgun, Bow and Bone carry crit lines, and since crit past 100% overcrits (2 crits ×4, 3 crits ×6.25), those lines scale harder than they look. Dice's own crit growth from rolling sixes is capped by the game at 100 roll-ups a minute.</p>
+<h2 id="what-each-weapon-does-and-how-it-unlocks">What each weapon does and how it unlocks</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Weapon</th>
+<th>What it does</th>
+<th>Unlock</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dice</td>
+<td>Rolls 1–6 damage; each 6 permanently adds Crit Chance</td>
+<td>Luck Tome to level 12</td>
+</tr>
+<tr>
+<td>Katana</td>
+<td>Fast slashes at the nearest enemy</td>
+<td>5% drop from Desert stage 1 tumbleweeds, then buy</td>
+</tr>
+<tr>
+<td>Sword</td>
+<td>Sweeping slash through several enemies</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Hero Sword</td>
+<td>Front slash plus a ranged slash</td>
+<td>Beat a stage boss with no items, powerups or shrines; 30 Silver</td>
+</tr>
+<tr>
+<td>Corrupted Sword</td>
+<td>Front and back slashes; more damage at low HP</td>
+<td>Cursed Tome to level 20 before 10:00, then buy</td>
+</tr>
+<tr>
+<td>Dexecutioner</td>
+<td>Piercing blade with an execute chance</td>
+<td>Kill 12,500 enemies with the Sword</td>
+</tr>
+<tr>
+<td>Axe</td>
+<td>Spinning axes that linger</td>
+<td>Kill 2,000 enemies with the Sword</td>
+</tr>
+<tr>
+<td>Scythe</td>
+<td>360° sweep; elite kills charge a stronger attack</td>
+<td>Beat Big Bob in the Graveyard Crypt, then buy</td>
+</tr>
+<tr>
+<td>Aura</td>
+<td>Constant close-range damage</td>
+<td>Take no damage for 2 minutes in a row</td>
+</tr>
+<tr>
+<td>Aegis</td>
+<td>Blocks attacks and releases counter shockwaves; adds Thorns to its damage</td>
+<td>Block 500 damage with Armor as Sir Oofie</td>
+</tr>
+<tr>
+<td>Revolver</td>
+<td>Ricocheting bullets</td>
+<td>Kill 7,500 enemies</td>
+</tr>
+<tr>
+<td>Sniper Rifle</td>
+<td>Long-range piercing shot</td>
+<td>Precision Tome to level 10</td>
+</tr>
+<tr>
+<td>Shotgun</td>
+<td>Spread burst</td>
+<td>5% drop from Desert stage 2 tumbleweeds, then buy</td>
+</tr>
+<tr>
+<td>Bow</td>
+<td>Piercing arrows</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Bone</td>
+<td>Bouncing projectile, starts with 1 bounce</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Bananarang</td>
+<td>Returning banana</td>
+<td>Find the hidden banana in Forest</td>
+</tr>
+<tr>
+<td>Wireless Dagger</td>
+<td>Homing daggers that bounce</td>
+<td>Lightning Staff to level 15</td>
+</tr>
+<tr>
+<td>Slutty Rocket</td>
+<td>Homing missiles</td>
+<td>Kill 15,000 enemies as CL4NK</td>
+</tr>
+<tr>
+<td>Chunkers</td>
+<td>Orbiting rocks</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Lightning Staff</td>
+<td>Lightning on nearby enemies; upgrades add chain bounces</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Firestaff</td>
+<td>Explosive fireballs</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Dragon's Breath</td>
+<td>Rotating flame that targets enemies</td>
+<td>Kill 1,000 Wisps as Fox in Desert</td>
+</tr>
+<tr>
+<td>Flamewalker</td>
+<td>Damaging fire trail</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Frostwalker</td>
+<td>Freezes and damages enemies nearby</td>
+<td>Freeze 1,000 enemies with Ice Cube</td>
+</tr>
+<tr>
+<td>Poison Flask</td>
+<td>Lasting poison zones</td>
+<td>Beat Scorpionussy 3 times in Desert</td>
+</tr>
+<tr>
+<td>Blood Magic</td>
+<td>5% of kills permanently add Max HP</td>
+<td>Bloody Tome to level 12</td>
+</tr>
+<tr>
+<td>Black Hole</td>
+<td>Gravity field that pulls in and damages enemies</td>
+<td>Knockback Tome to level 10</td>
+</tr>
+<tr>
+<td>Tornado</td>
+<td>Tornadoes that knock enemies back</td>
+<td>Charge a Charge Shrine 5 times during Desert sandstorms</td>
+</tr>
+<tr>
+<td>Mines</td>
+<td>Proximity mines</td>
+<td>Kill 7,500 enemies with Slutty Rocket</td>
+</tr>
+<tr>
+<td>Space Noodle</td>
+<td>Links to an enemy and damages everything in between</td>
+<td>Clear Desert Tier 2 as Tony McZoom</td>
+</tr>
+</tbody>
+</table></div><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>
