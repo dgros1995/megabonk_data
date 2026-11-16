@@ -1,0 +1,394 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maps &amp; stages · Megabonk Data</title><meta name="description" content="A data-driven Megabonk guide: exact item, tome, weapon and character numbers and the game's real formulas, read from the game's code.">
+<style>
+:root{--bg:#faf8f4;--panel:#ffffff;--ink:#1d1b18;--muted:#6b665e;--line:#e4dfd6;--accent:#c2410c;--accent-soft:#fdeee5;--code:#f3efe8}
+@media (prefers-color-scheme:dark){:root{--bg:#141311;--panel:#1c1a17;--ink:#ece8e1;--muted:#a39d93;--line:#2e2b27;--accent:#fb923c;--accent-soft:#2a1d14;--code:#26231f}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{display:flex;min-height:100vh}
+nav{width:240px;flex:none;border-right:1px solid var(--line);padding:28px 18px;position:sticky;top:0;height:100vh;overflow:auto;background:var(--panel)}
+nav .brand{font-weight:800;font-size:18px;letter-spacing:-.02em;margin:0 0 4px}
+nav .sub{color:var(--muted);font-size:13px;margin:0 0 22px}
+nav a{display:block;padding:7px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:15px}
+nav a:hover{background:var(--code)}nav a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+main{flex:1;min-width:0;padding:40px 48px 80px;max-width:1100px}
+h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;margin:0 0 18px}
+h2{font-size:23px;letter-spacing:-.015em;margin:44px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:28px 0 8px}
+a{color:var(--accent)}strong{font-weight:650}
+.tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--code);font-weight:650;white-space:nowrap}tr:last-child td{border-bottom:0}
+code{background:var(--code);padding:1px 5px;border-radius:5px;font-size:.92em}
+ul,ol{padding-left:22px}li{margin:4px 0}
+footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
+nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
+main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
+</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="on">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="">Maxing a run</a></div></nav>
+<main><h1 id="maps-stages">Maps &amp; stages</h1>
+<h2 id="maps-and-tiers">Maps and tiers</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Map</th>
+<th>Stages</th>
+<th>Stage timers</th>
+<th>Chests</th>
+<th>Shrines</th>
+<th>Pots &amp; other</th>
+<th>Final boss</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forest</td>
+<td>3</td>
+<td>10:00, 9:00, 8:00</td>
+<td>×1</td>
+<td>×1</td>
+<td>×1</td>
+<td>Ent (three phases: 9,000 / 8,000 / 10,000 base HP)</td>
+</tr>
+<tr>
+<td>Desert</td>
+<td>3</td>
+<td>10:00, 9:00, 8:00</td>
+<td>×1</td>
+<td>×1</td>
+<td>×1</td>
+<td>Pharaoh (three phases, 8,000 base HP each)</td>
+</tr>
+<tr>
+<td>Graveyard</td>
+<td>1</td>
+<td>16:00</td>
+<td>×1.5</td>
+<td>×2</td>
+<td>×1.5</td>
+<td>Ghost King (500,000 base HP)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Tiers set how many stages you play.</strong> The game ends the tier on stage index = tier index (<code>MapController.IsTierFinalStage</code>): Tier 1 is stage 1 only, Tier 2 is stages 1–2, Tier 3 is all three stages. After the tier's last stage comes the final-boss map.</p>
+<p><strong>Tiers also scale enemies</strong> (<code>RunConfig.GetEnemyHp</code> / <code>GetEnemyDamage</code>):</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Enemy HP</th>
+<th>Enemy damage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tier 1</td>
+<td>×0.80</td>
+<td>×0.75</td>
+</tr>
+<tr>
+<td>Tier 2</td>
+<td>×0.95</td>
+<td>×0.95</td>
+</tr>
+<tr>
+<td>Tier 3</td>
+<td>×1.05</td>
+<td>×1.10</td>
+</tr>
+<tr>
+<td>Graveyard (always)</td>
+<td>×1.05</td>
+<td>×1.10</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="stage-timelines">Stage timelines</h2>
+<p>Each stage runs a fixed script from the map data. Times count up from the start of the stage. A new enemy type joins the pool every 60 seconds.</p>
+<h3 id="forest">Forest</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Stage 1 (10:00)</th>
+<th>Stage 2 (9:00)</th>
+<th>Stage 3 (8:00)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start: Goblin</td>
+<td>Start: Goblin</td>
+<td>Start: Goblin</td>
+</tr>
+<tr>
+<td>3:00 Miniboss (Golem or Pig), 30 s</td>
+<td>2:00 Miniboss (Golem, Pig), 15 s</td>
+<td>1:30 Miniboss (Golem or Pig), 30 s</td>
+</tr>
+<tr>
+<td>4:00 Swarm: Goblins, 30 s</td>
+<td>3:00 Swarm: Goblins, 30 s</td>
+<td>2:30 Swarm: Goblins, 30 s</td>
+</tr>
+<tr>
+<td>7:00 Swarm: Strong Goblins, 30 s</td>
+<td>6:00 Swarm: Strong Goblins, 30 s</td>
+<td>4:00 Swarm: Strong Goblins, 30 s</td>
+</tr>
+<tr>
+<td>8:00 Miniboss, 30 s</td>
+<td>7:00 Miniboss, 45 s</td>
+<td>5:00 Miniboss, 45 s</td>
+</tr>
+<tr>
+<td>10:00 Final swarm</td>
+<td>9:00 Final swarm</td>
+<td>8:00 Final swarm</td>
+</tr>
+</tbody>
+</table></div>
+<p>Forest enemies: Goblin, Strong Goblin, Goblin Tank, Golem, Slime, Bee, Boomer Spider; minibosses Golem and Pig.</p>
+<h3 id="desert">Desert</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Stage 1 (10:00)</th>
+<th>Stage 2 (9:00)</th>
+<th>Stage 3 (8:00)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start: Mummy</td>
+<td>Start: Mummy</td>
+<td>Start: Mummy</td>
+</tr>
+<tr>
+<td>3:00 Miniboss (Scorpion, Sand Golem), 30 s</td>
+<td>2:00 Miniboss (Golem, Pig), 30 s</td>
+<td>1:30 Miniboss (Golem, Pig), 30 s</td>
+</tr>
+<tr>
+<td>4:00 Swarm: Mummies, 30 s</td>
+<td>3:00 Swarm: Mummies, 30 s</td>
+<td>2:30 Swarm: Mummies, 30 s</td>
+</tr>
+<tr>
+<td>7:00 Swarm: Scorpions, 30 s</td>
+<td>6:00 Swarm: Scorpions, 30 s</td>
+<td>4:00 Swarm: Scorpions, 30 s</td>
+</tr>
+<tr>
+<td>8:00 Miniboss (Golem, Pig), 60 s</td>
+<td>7:00 Miniboss, 30 s</td>
+<td>5:00 Miniboss, 30 s</td>
+</tr>
+<tr>
+<td>10:00 Final swarm</td>
+<td>9:00 Final swarm</td>
+<td>8:00 Final swarm</td>
+</tr>
+</tbody>
+</table></div>
+<p>Desert enemies: Mummy, Mummy Tank, Ancient Mummy, Scorpion, Medium Scorpion, Dusty Skeleton, Armored Dusty Skeleton, Tumblebone, Wisp, Cactus Shooter; minibosses Sand Golem and Scorpion. Desert has sandstorms and Desert Graves (summon fights).</p>
+<h3 id="graveyard">Graveyard</h3>
+<p>One 16-minute stage, and it always uses Tier 3 enemy scaling.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Event</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start</td>
+<td>Ghosts</td>
+</tr>
+<tr>
+<td>3:00</td>
+<td>Miniboss (Calcium Dad or Ghostham)</td>
+</tr>
+<tr>
+<td>4:00</td>
+<td>Swarm: Ghosts</td>
+</tr>
+<tr>
+<td>7:00</td>
+<td>Miniboss</td>
+</tr>
+<tr>
+<td>8:00</td>
+<td>Swarm: Greater Ghosts</td>
+</tr>
+<tr>
+<td>10:00</td>
+<td>Miniboss</td>
+</tr>
+<tr>
+<td>11:00</td>
+<td>Swarm: Purple Ghosts</td>
+</tr>
+<tr>
+<td>13:00</td>
+<td>Miniboss</td>
+</tr>
+<tr>
+<td>14:00</td>
+<td>Swarm: Red Ghosts</td>
+</tr>
+<tr>
+<td>16:00</td>
+<td>Final swarm</td>
+</tr>
+</tbody>
+</table></div>
+<p>Graveyard specials:</p>
+<ul>
+<li><strong>Bald Heads</strong> is the game's name for the <strong>Balance Shrine</strong> (<code>InteractableShrineBalance</code>). It offers stat trades built from a doubled stat (×2) and a halved one (×0.5).</li>
+<li><strong>Coffins</strong> start a boss-ghost fight with the Grave Ghosts (1,100 / 2,250 / 5,500 / 9,000 base HP, can't be executed).</li>
+<li><strong>Gravestones</strong> give stat effects when used.</li>
+<li>More of everything: 1.5× chests, 2× shrines, 1.5× pots.</li>
+</ul>
+<h2 id="timers">Timers</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Timer</th>
+<th>Resets</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stage timer</td>
+<td>Every stage</td>
+<td>The stage script and stage-1 swarm ramp</td>
+</tr>
+<tr>
+<td>Run (difficulty) timer</td>
+<td>Only on a new run; pauses on the final-boss map</td>
+<td>Enemy HP +10% and damage +2.8% per minute</td>
+</tr>
+<tr>
+<td>Final-swarm timer</td>
+<td>Every stage; only runs during the final swarm</td>
+<td>Final-swarm HP and damage, ghost tiers</td>
+</tr>
+</tbody>
+</table></div>
+<p>So time scaling carries across stages: an enemy on stage 2 at run minute 15 gets +150% HP from time alone.</p>
+<h2 id="spawning">Spawning</h2>
+<p><strong>Enemies wanted on the map during a stage</strong> (<code>StageSummoner.GetNumTargetEnemies</code>):</p>
+<p>(5 + 200 × stage progress) × (1 + 0.7 × Difficulty + 0.4 × stage index) × Enemy amount</p>
+<p>Stage progress runs from 0 to 1 over the stage timer, so the field fills from 5 to 205 × the multiplier. The hard cap is <strong>550 enemies</strong>.</p>
+<p><strong>During the final swarm</strong> (<code>SwarmSummoner.GetNumTargetEnemies</code>): min(2.5 per second of swarm, cap) × the same multiplier. The cap is <strong>400 for the first 2 minutes, then 300</strong>.</p>
+<p>During a mid-stage swarm event, normal spawns stop and the swarm enemy spawns instead; during a miniboss event normal spawns slow to 25%.</p>
+<h2 id="the-final-swarm">The final swarm</h2>
+<p>It starts when the stage boss dies or the stage timer runs out, whichever comes first (after a short grace period).</p>
+<ul>
+<li><strong>Enemy HP gains +(4^(swarm minutes) − 1)</strong> and damage <strong>+(2^(swarm minutes) − 1)</strong>, on top of everything else. Swarm spawns also get ×1.3 HP and ×1.2 speed.</li>
+</ul>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Minutes into the swarm</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>5</th>
+<th>6</th>
+<th>8</th>
+<th>10</th>
+<th>12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HP bonus</td>
+<td>+3</td>
+<td>+15</td>
+<td>+63</td>
+<td>+1,023</td>
+<td>+4,095</td>
+<td>+65,535</td>
+<td>+1.0M</td>
+<td>+16.8M</td>
+</tr>
+<tr>
+<td>Damage bonus</td>
+<td>+1</td>
+<td>+3</td>
+<td>+7</td>
+<td>+31</td>
+<td>+63</td>
+<td>+255</td>
+<td>+1,023</td>
+<td>+4,095</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>The swarm enemy changes on a fixed clock</strong> (<code>SwarmSummoner.TickExtra</code>):</li>
+</ul>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Swarm time</th>
+<th>Ghost</th>
+<th>Base HP</th>
+<th>Base damage</th>
+<th>Speed</th>
+<th>Can be executed</th>
+<th>Knockback resistance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0:00</td>
+<td>Ghost</td>
+<td>10</td>
+<td>10</td>
+<td>6</td>
+<td>Yes</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1:00</td>
+<td>Greater Ghost</td>
+<td>20</td>
+<td>13</td>
+<td>7</td>
+<td>Yes</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6:00</td>
+<td>Purple Ghost</td>
+<td>40</td>
+<td>20</td>
+<td>8</td>
+<td>No</td>
+<td>5</td>
+</tr>
+<tr>
+<td>12:00</td>
+<td>Red Ghost</td>
+<td>100</td>
+<td>30</td>
+<td>10</td>
+<td>No</td>
+<td>50</td>
+</tr>
+</tbody>
+</table></div>
+<p>The 12:00 switch is the "ghost wall" players hit around 12–13 minutes. See <a href="max-runs.html">Maxing a run</a>.</p>
+<h2 id="bosses-and-boss-curses">Bosses and Boss Curses</h2>
+<ul>
+<li>Using a <strong>Boss Curse shrine</strong> adds 1 to a counter on the stage's game manager (<code>GameManager.bossCurses</code>). Nothing in the code carries it over, and recorded runs matched a per-stage count (2 curses → 3 Pigs on stage 1; 5 curses → 6 Golems on stage 2).</li>
+<li><strong>Every miniboss event spawns 1 + curses minibosses</strong>, and <strong>the stage boss spawns as 1 + curses bosses</strong>.</li>
+<li><strong>Every boss has its HP multiplied by 1 + 0.16 × curses.</strong></li>
+<li>Boss HP also gets a stage multiplier: ×2.5 on stage 2 and ×5 on stage 3.</li>
+<li>Bosses can't be killed by Bob's Light or executes; Cursed Doll only does 0.7 × (8 + level) to them.</li>
+</ul><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>

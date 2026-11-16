@@ -11,7 +11,7 @@ nav .brand{font-weight:800;font-size:18px;letter-spacing:-.02em;margin:0 0 4px}
 nav .sub{color:var(--muted);font-size:13px;margin:0 0 22px}
 nav a{display:block;padding:7px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:15px}
 nav a:hover{background:var(--code)}nav a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
-main{flex:1;min-width:0;padding:40px 48px 80px;max-width:980px}
+main{flex:1;min-width:0;padding:40px 48px 80px;max-width:1100px}
 h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;margin:0 0 18px}
 h2{font-size:23px;letter-spacing:-.015em;margin:44px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
 h3{font-size:18px;margin:28px 0 8px}
@@ -26,577 +26,489 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid va
 @media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
 nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
 main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
-</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Guide</a><a href="mechanics.html" class="">How it really works</a><a href="best-choices.html" class="">Best choices</a><a href="items.html" class="on">Items</a><a href="tomes.html" class="">Tomes</a><a href="weapons.html" class="">Weapons</a><a href="characters.html" class="">Characters</a></div></nav>
-<main><h1>Item database</h1>
-<p>All 87 items in v1.0.69, with the exact numbers the game uses, read from its own item database. "Per copy" values add up with each extra copy unless a limit is shown. 85 can drop; Golden Ring is not in the drop pool, and Cage Key and Crypt Key are quest items, left out below.</p>
-<p><strong>Role</strong> marks what an item does for a high-kill run: <strong>Kill</strong> (damage that keeps up at high difficulty), <strong>Survive</strong>, <strong>Scale</strong> (levels, XP, luck), <strong>Economy</strong>, <strong>Difficulty</strong> (raises it, which means more enemies), or <strong>Situational</strong>. ★ = on the 1.1M run's toggle list.</p>
-<h2>Legendary</h2>
+</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="on">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="">Maxing a run</a></div></nav>
+<main><h1 id="items">Items</h1>
+<p>Every item in v1.0.69 and what its code does. Values are per copy unless stated; <strong>n</strong> = copies held. Where an item's chance is shown as a formula like 0.15n / (0.15n + 0.5), it has diminishing returns built in (see <a href="mechanics.html#proc-chances">Core math</a>). "× proc coefficient" means the weapon that hit scales the chance.</p>
+<p><strong>How item bonuses stack:</strong> almost every plain stat item (Gym Sauce, Beer, Battery, Clover, Forbidden Juice, Oats…) adds to the <strong>flat</strong> part of the stat. They add together, then get multiplied by your level-up % bonuses and by the Damage Tome. See <a href="mechanics.html">Core math</a>.</p>
+<p><strong>Use</strong> marks what an item does for a high-kill run: <strong>Kill</strong>, <strong>Kill (swarm)</strong> (still works deep into the final swarm), <strong>Survive</strong>, <strong>Scale</strong> (levels, XP, luck), <strong>Economy</strong>, <strong>Difficulty</strong> (raises it, meaning more enemies) or <strong>Situational</strong>.</p>
+<h2 id="legendary-22">Legendary (22)</h2>
 <div class="tw"><table>
 <thead>
 <tr>
 <th>Item</th>
-<th>Exact values (game data)</th>
-<th>Limits</th>
-<th>Role</th>
+<th>What the code does</th>
+<th>Use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>★ Wizard's Hat</td>
-<td>+10 tome level cap for the first copy, then 1 less per copy</td>
-<td>Never below +2 a copy</td>
+<td><strong>Anvil</strong></td>
+<td>Weapon upgrades roll one extra stat line. Max 1.</td>
 <td>Scale</td>
 </tr>
 <tr>
-<td>★ Pot (Stainless Steel)</td>
-<td>+10 weapon level cap for the first copy, then 1 less per copy</td>
-<td>Never below +2 a copy</td>
-<td>Scale</td>
+<td><strong>Big Bonk</strong></td>
+<td>Big Bonk: 2% chance (+1.5% per extra copy) × proc coefficient to deal 20× (+10× per extra copy) the hit's damage to up to 5 enemies within 6 + copies (max 10).</td>
+<td>Kill</td>
 </tr>
 <tr>
-<td>★ Anvil</td>
-<td>Weapon upgrades roll one extra stat line</td>
-<td>Max 1</td>
-<td>Scale</td>
+<td><strong>Bloody Cleaver</strong></td>
+<td>50% per copy × proc coefficient to add a Bloodmark stack; each lifesteal proc also adds a stack.</td>
+<td>Kill</td>
 </tr>
 <tr>
-<td>★ Holy Book</td>
-<td>+100 Max HP, +50 HP Regen, +25% overheal per copy; healing damages enemies nearby (1.5 s cooldown)</td>
-<td>—</td>
-<td>Survive, Kill</td>
-</tr>
-<tr>
-<td>★ Chonkplate</td>
-<td>+20% Lifesteal and +75% overheal per copy</td>
-<td>—</td>
+<td><strong>Chonkplate</strong></td>
+<td>+20% Lifesteal and +75% Overheal per copy (flat).</td>
 <td>Survive</td>
 </tr>
 <tr>
-<td>★ Joe's Dagger</td>
-<td>1% execute chance; each execute adds +1% Damage per copy</td>
-<td>Max 10</td>
+<td><strong>Dragonfire</strong></td>
+<td>Two rolls per hit, each 0.15n / (0.15n + 0.5): burn for 3 s, and a fire field (radius 6 × Size). 1 copy 23%, 3 copies 47%, 10 copies 75%.</td>
 <td>Kill</td>
 </tr>
 <tr>
-<td>★ Lightning Orb</td>
-<td>25% proc and 25% stun chance per copy; 40% damage ratio, +40% per copy; radius 40</td>
+<td><strong>Energy Core</strong></td>
+<td>Fires 4 + 2 per extra copy orbs every 4 s, range 70, each dealing 2 × (8 + level) + 8.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Giant Fork</strong></td>
+<td>+15% crit chance per copy (flat). Separate Megacrit roll: 14% per copy × proc coefficient, multiplying the hit by 4 + 0.15 × copies.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Golden Ring</strong></td>
+<td>No effect. Not in the drop pool; the ideal item to trade at a Legendary Microwave.</td>
 <td>—</td>
+</tr>
+<tr>
+<td><strong>Holy Book</strong></td>
+<td>+100 Max HP, +50 HP regen, +25% overheal per copy. Every 1.5 s, deals (8 + level) × 0.5 × the healing you did that tick to every enemy within (5 + copies) × Size.</td>
+<td>Survive / Kill</td>
+</tr>
+<tr>
+<td><strong>Ice Cube</strong></td>
+<td>Two rolls per hit: freeze 3 s at 0.4n / (0.4n + 0.6) (1 copy 40%, 3 copies 67%); ice burst at 0.2n / (0.2n + 0.5) (1 copy 29%) for 0.4n × hit damage, which can also freeze.</td>
 <td>Kill</td>
 </tr>
 <tr>
-<td>★ Dragonfire</td>
-<td>15% proc and 15% burn chance per copy</td>
-<td>—</td>
+<td><strong>Joe's Dagger</strong></td>
+<td>On damaging a non-boss (at most every 0.3 s): 1% execute roll. Each execute adds +1% Damage per copy, no cap. Max 10 copies.</td>
 <td>Kill</td>
 </tr>
 <tr>
-<td>Giant Fork</td>
-<td>+15% Crit Chance and 14% Megacrit chance per copy; Megacrits deal 4×; +15% extra damage per copy</td>
-<td>—</td>
+<td><strong>Lightning Orb</strong></td>
+<td>Two rolls per hit, each 0.9 × 0.25n / (0.25n + 0.6): stun for 3 s, and a lightning strike for 0.4n × hit damage on a random enemy within 40 (×Size 8 radius per strike). 1 copy 26%, 3 copies 50%, 10 copies 73%; caps at 90%.</td>
 <td>Kill</td>
 </tr>
 <tr>
-<td>Overpowered Lamp</td>
-<td>+1 roll on chance-based on-hit effects</td>
-<td>Max 2</td>
+<td><strong>Overpowered Lamp</strong></td>
+<td>Game text: one extra roll on chance-based on-hit effects. Max 2. (Not traced in code.)</td>
 <td>Kill</td>
 </tr>
 <tr>
-<td>Big Bonk</td>
-<td>2% chance to deal 20× damage; each extra copy +1.5% chance and +10×</td>
-<td>Hits up to 5 enemies at once</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Spicy Meatball</td>
-<td>25% chance to explode for 65% damage; radius 3, +1 per copy</td>
-<td>Radius max 8</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Ice Cube</td>
-<td>20% proc and 40% freeze chance per copy; 80% damage ratio, +40% per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Power Gloves</td>
-<td>8% chance per copy for a 1.25× damage blast; radius +5 per copy; 1 s cooldown</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Snek</td>
-<td>4 poison stacks per hit and 5% burst chance per copy; 40% damage ratio, +40% per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Bloody Cleaver</td>
-<td>50% Bloodmark chance per copy; lifesteal triggers Bloodmark</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Energy Core</td>
-<td>4 orbs, +2 per copy; range 70; 4 s cooldown</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Soul Harvester</td>
-<td>Kills summon 2 homing souls; range 50</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Speed Boi</td>
-<td>Below 50% HP, taking damage slows time for 2 s per copy and doubles your damage; 10 s cooldown</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Za Warudo</td>
-<td>Blocks one fatal hit by freezing time, then breaks</td>
-<td>Max 25 per run</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Sucky Magnet</td>
-<td>Pulls in XP within range 100</td>
-<td>—</td>
+<td><strong>Pot (Stainless Steel)</strong></td>
+<td>+10 max weapon level for the first copy, 1 less for each copy after, never below +2.</td>
 <td>Scale</td>
 </tr>
 <tr>
-<td>Golden Ring</td>
-<td>No effect; give it up at a Legendary Microwave</td>
-<td>Not in the drop pool</td>
-<td>Situational</td>
+<td><strong>Power Gloves</strong></td>
+<td>0.08n / (0.08n + 0.5) × proc coefficient (1 copy 14%): blast for 1.25× damage within 10 + 5n, knocking enemies away. Cooldown 3.2 − 0.2n s.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Snek</strong></td>
+<td>4 poison stacks per copy per hit (5 s). 5% per copy × proc coefficient: poison burst for (0.5 + 0.4n) × the hit's damage.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Soul Harvester</strong></td>
+<td>Each kill fires 2 homing souls (range 50) dealing roughly (8 + level) × copies × 1.75.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Speed Boi</strong></td>
+<td>When you are hit below 50% HP: time slows to 30% for 8 + 2n s (max 15), damage ×2 meanwhile. 10 s cooldown.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Spicy Meatball</strong></td>
+<td>25% × proc coefficient: explosion for 65% of the hit's damage within (3 + copies) × Size, max 8 × Size.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Sucky Magnet</strong></td>
+<td>Pulls in all XP within range 100.</td>
+<td>Scale</td>
+</tr>
+<tr>
+<td><strong>Wizard's Hat</strong></td>
+<td>+10 max tome level for the first copy, 1 less for each copy after, never below +2.</td>
+<td>Scale</td>
+</tr>
+<tr>
+<td><strong>Za Warudo</strong></td>
+<td>Stops one fatal hit by freezing time, then breaks. Max 25 per run.</td>
+<td>Survive</td>
 </tr>
 </tbody>
 </table></div>
-<h2>Epic</h2>
+<h2 id="epic-20">Epic (20)</h2>
 <div class="tw"><table>
 <thead>
 <tr>
 <th>Item</th>
-<th>Exact values (game data)</th>
-<th>Limits</th>
-<th>Role</th>
+<th>What the code does</th>
+<th>Use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>★ Kevin</td>
-<td>25% chance per copy, when you hit, that Kevin punches you; he can't kill you and his hits trigger on-damage effects</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>★ Bob's Light</td>
-<td>Light blast kills enemies nearby; 45 s cooldown, −3 s per copy; radius 50, +10 per copy</td>
-<td>Cooldown min 5 s, radius max 250</td>
+<td><strong>Beefy Ring</strong></td>
+<td>+10 Max HP per copy; +0.2% Damage per point of max HP (including shield) per copy.</td>
 <td>Kill</td>
 </tr>
 <tr>
-<td>Bob (Dead)</td>
-<td>Summons Bob every 14 units you move</td>
-<td>—</td>
+<td><strong>Bob (Dead)</strong></td>
+<td>Summons a ghost Bob every 14 units you move; each lasts 10 s × Duration and deals 1.5× damage.</td>
 <td>Kill</td>
 </tr>
 <tr>
-<td>Grandma's Secret Tonic</td>
-<td>50% of crits explode for 50% damage; radius 3, +1 per copy</td>
-<td>Radius max 8</td>
-<td>Kill</td>
+<td><strong>Bob's Light (Lantern)</strong></td>
+<td>Bob's Light: an explosion that instantly kills every non-boss enemy within 50 + 10n (max 250). Cooldown 45 − 3n s (min 5). Red ghosts only die to it 33% of the time.</td>
+<td>Kill (swarm)</td>
 </tr>
 <tr>
-<td>Demonic Soul</td>
-<td>+0.1% Damage per kill</td>
-<td>1,000 stacks per copy (+100%)</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Beefy Ring</td>
-<td>+0.2% Damage per Max HP point per copy, +10 Max HP</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Slutty Cannon</td>
-<td>20% chance per kill per copy to fire missiles; 100% damage ratio, +40% per copy</td>
-<td>4 a tick</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Shattered Knowledge</td>
-<td>XP shards damage enemies they pass through</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Turbo Skates</td>
-<td>Moving fast adds Attack Speed, up to +40% per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Eagle Claw</td>
-<td>8% chance per copy to launch enemies; +66% damage to airborne enemies per copy</td>
-<td>—</td>
-<td>Situational</td>
-</tr>
-<tr>
-<td>Gamer Goggles</td>
-<td>More damage the lower your HP, up to +100% per copy</td>
-<td>—</td>
-<td>Situational</td>
-</tr>
-<tr>
-<td>Quin's Mask</td>
-<td>+20 Thorns per copy; 50% chance Thorns damage explodes</td>
-<td>Radius max 10</td>
-<td>Situational</td>
-</tr>
-<tr>
-<td>Credit Card (Green)</td>
-<td>+2% Luck per chest opened per copy; chests cost 10% more per copy</td>
-<td>—</td>
+<td><strong>Credit Card (Green)</strong></td>
+<td>+2% Luck per chest opened, per copy. Chest prices +10% per copy.</td>
 <td>Scale</td>
 </tr>
 <tr>
-<td>Gas Mask</td>
-<td>+0.5% Armor and +0.5% overheal per poisoned enemy</td>
-<td>Max +40% Armor, +25% overheal per copy</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Mirror</td>
-<td>Reflects damage with brief invulnerability; 8 s cooldown; +25% damage per copy</td>
-<td>Cooldown min 4 s</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Spiky Shield</td>
-<td>+10% Armor per copy; Thorns from Armor</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Slurp Gloves</td>
-<td>Blood blast for 3.15× damage that heals 7.5%; 9 s cooldown</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Toxic Barrel</td>
-<td>Taking damage poisons nearby enemies: 5 stacks per copy for 5 s</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Scarf</td>
-<td>+50% damage while airborne per copy</td>
-<td>—</td>
-<td>Situational</td>
-</tr>
-<tr>
-<td>Cursed Grabbies</td>
-<td>+10% Difficulty and Max HP ×0.8 per copy; 5% chance on hit for cursed magic</td>
-<td>—</td>
-<td>Difficulty</td>
-</tr>
-</tbody>
-</table></div>
-<h2>Rare</h2>
-<div class="tw"><table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Exact values (game data)</th>
-<th>Limits</th>
-<th>Role</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>★ Echo Shard</td>
-<td>Kills can drop an extra XP shard (12%, community figure)</td>
-<td>—</td>
-<td>Scale</td>
-</tr>
-<tr>
-<td>★ Idle Juice</td>
-<td>Standing still adds +4% Damage a second</td>
-<td>Up to +100% per copy</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Backpack</td>
-<td>+1 projectile on all weapons per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Credit Card (Red)</td>
-<td>+2.5% Damage per chest opened per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Beer</td>
-<td>+20% Damage and −5% Max HP per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Brass Knuckles</td>
-<td>+25% damage to enemies within radius 8 per copy; radius +2 per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Thunder Mitts</td>
-<td>Lightning for 3× damage, radius 8; 10 s cooldown</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Unstable Transfusion</td>
-<td>35% Bloodmark chance on hit per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Moldy Gloves</td>
-<td>Poison cloud for 1.5× damage, 10 stacks per copy, radius 15; 8.5 s cooldown</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Phantom Shroud</td>
-<td>+5% Evasion per copy; after an evade, next attack does 2× (+0.5× per copy) plus a speed burst</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Demonic Blade</td>
-<td>+1% Crit; 25% of crits heal per copy</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Demonic Blood</td>
-<td>+0.5 Max HP per kill</td>
-<td>200 stacks per copy</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Leeching Crystal</td>
-<td>+50 Max HP and −50% HP Regen per copy</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Campfire</td>
-<td>Standing still regenerates 1,100 HP a minute per copy</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Electric Plug</td>
-<td>Taking damage shocks 6 enemies, +4 per copy; radius +4 per copy</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Coward's Cloak</td>
-<td>+5% Movement Speed per copy; +30% speed bursts when hit</td>
-<td>2 stacks per copy</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Feathers</td>
-<td>+1 jump and +15% jump height per copy</td>
-<td>—</td>
-<td>Situational</td>
-</tr>
-<tr>
-<td>Beacon</td>
-<td>+2 Charge Shrines on later stages per copy; charged shrines heal 2.5% each tick</td>
-<td>—</td>
-<td>Scale</td>
-</tr>
-<tr>
-<td>Pumpkin</td>
-<td>+8 pots on later stages and +18% pot rewards per copy</td>
-<td>—</td>
-<td>Economy</td>
-</tr>
-<tr>
-<td>Golden Sneakers</td>
-<td>0.1 Gold per meter moved</td>
-<td>—</td>
-<td>Economy</td>
-</tr>
-<tr>
-<td>Golden Shield</td>
-<td>6 Gold per copy each time you take damage</td>
-<td>—</td>
-<td>Economy</td>
-</tr>
-</tbody>
-</table></div>
-<h2>Common</h2>
-<div class="tw"><table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Exact values (game data)</th>
-<th>Limits</th>
-<th>Role</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>★ Cursed Doll</td>
-<td>Each copy curses 2 enemies to take 30% of their Max HP a second</td>
-<td>Up to 5 new curses per check</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>★ Key</td>
-<td>10% chance per copy to open a chest for free</td>
-<td>—</td>
-<td>Economy</td>
-</tr>
-<tr>
-<td>★ Old Mask</td>
-<td>+15% elite spawn chance per copy</td>
-<td>—</td>
+<td><strong>Cursed Gloves</strong></td>
+<td>+10% Difficulty and Max HP ×0.8 per copy. 0.5 × 0.05n / (0.05n + 0.8) on hit (1 copy 3%): cursed blast for 0.85 × (8 + level) within 4.</td>
 <td>Difficulty</td>
 </tr>
 <tr>
-<td>Gym Sauce</td>
-<td>+10% Damage per copy</td>
-<td>—</td>
+<td><strong>Demonic Soul</strong></td>
+<td>+0.1% Damage per kill, up to 1,000 stacks per copy (+100%).</td>
 <td>Kill</td>
 </tr>
 <tr>
-<td>Forbidden Juice</td>
-<td>+10% Crit Chance per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Battery</td>
-<td>+8% Attack Speed per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Boss Buster</td>
-<td>+15% damage to Elites and Bosses per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Tactical Glasses</td>
-<td>+20% damage to enemies above 90% HP per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Moldy Cheese</td>
-<td>40% poison chance on hit per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Ice Crystal</td>
-<td>7.5% freeze chance on hit per copy</td>
-<td>—</td>
-<td>Kill</td>
-</tr>
-<tr>
-<td>Clover</td>
-<td>+10% Luck per copy</td>
-<td>—</td>
-<td>Scale</td>
-</tr>
-<tr>
-<td>Time Bracelet</td>
-<td>+8% XP gain per copy</td>
-<td>—</td>
-<td>Scale</td>
-</tr>
-<tr>
-<td>Wrench</td>
-<td>Charge Shrines charge 4% faster and give 7.5% more per copy</td>
-<td>—</td>
-<td>Scale</td>
-</tr>
-<tr>
-<td>Oats</td>
-<td>+25 Max HP per copy</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Medkit</td>
-<td>+45 HP Regen per copy</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Slippery Ring</td>
-<td>+15% Evasion per copy</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Cactus</td>
-<td>Taking damage fires 2 spikes per copy, +5 damage per copy, scaled by Thorns</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Borgar</td>
-<td>2% chance per kill (+1% per copy) to drop a Borgar that heals 8% + 10 HP</td>
-<td>—</td>
-<td>Survive</td>
-</tr>
-<tr>
-<td>Turbo Socks</td>
-<td>+15% Movement Speed per copy</td>
-<td>—</td>
+<td><strong>Eagle Claw</strong></td>
+<td>0.08n / (0.08n + 0.5) × proc coefficient (1 copy 14%): knock enemies up; +66% damage per copy to airborne enemies.</td>
 <td>Situational</td>
 </tr>
 <tr>
-<td>Golden Glove</td>
-<td>15% chance per copy for extra Gold from kills</td>
-<td>—</td>
-<td>Economy</td>
-</tr>
-<tr>
-<td>Ghost</td>
-<td>Using an interactable summons 6 ghosts per copy</td>
-<td>—</td>
+<td><strong>Gamer Goggles</strong></td>
+<td>Below 50% HP: up to +100% Damage per copy, more the lower your HP.</td>
 <td>Situational</td>
 </tr>
 <tr>
-<td>Skuleg</td>
-<td>+7% Difficulty per copy</td>
-<td>—</td>
-<td>Difficulty</td>
+<td><strong>Gas Mask</strong></td>
+<td>+0.5% Armor and +0.5% Overheal per poisoned enemy, up to +40% Armor and +25% Overheal per copy.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Grandma's Secret Tonic</strong></td>
+<td>+2% crit. 50% × proc coefficient on crits: explosion for 50% of the hit within (3 + copies) × Size, max 8.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Kevin</strong></td>
+<td>25% per copy: when you hit, Kevin hits you. Can't kill you; his hits trigger your on-damage items.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Mirror</strong></td>
+<td>Reflects a hit with brief invulnerability, dealing (1 + 0.25n) × your Damage in a cone. Cooldown max(8 − n, 4) s.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Quin's Mask</strong></td>
+<td>+20 Thorns per copy. Thorns damage has a 50% chance to explode for 50% within (5 + copies) × Size, max 10.</td>
+<td>Situational</td>
+</tr>
+<tr>
+<td><strong>Scarf</strong></td>
+<td>+50% Damage per copy while airborne.</td>
+<td>Situational</td>
+</tr>
+<tr>
+<td><strong>Shattered Knowledge</strong></td>
+<td>XP shards damage enemies they pass through.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Slurp Gloves (Blood)</strong></td>
+<td>Every 9 s on hit: blood blast for 3.15× damage within 10, adds Bloodmark, heals 7.5% of Max HP.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Slutty Cannon</strong></td>
+<td>0.2n / (0.2n + 0.5) × proc coefficient (1 copy 29%): fires a rocket for (1 + 0.4n) × the hit's damage. Max 4 per tick.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Spiky Shield</strong></td>
+<td>+10% Armor per copy (flat); Thorns = 200 × raw Armor per copy.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Toxic Barrel</strong></td>
+<td>When you take damage: 5 poison stacks per copy (5 s) to enemies within (7 + n) × Size. 0.25 s cooldown.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Turbo Skates</strong></td>
+<td>Moving fast adds attack speed, up to +40% per copy.</td>
+<td>Kill</td>
 </tr>
 </tbody>
 </table></div>
-<h2>Notes</h2>
+<h2 id="rare-21">Rare (21)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What the code does</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Backpack</strong></td>
+<td>+1 projectile per copy.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Beacon</strong></td>
+<td>+2 Charge Shrines on later stages per copy; charged shrines heal 2.5% per tick within 8 + 2n.</td>
+<td>Scale</td>
+</tr>
+<tr>
+<td><strong>Beer</strong></td>
+<td>+20% Damage and −5% Max HP per copy.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Brass Knuckles</strong></td>
+<td>+25% damage per copy to enemies within 8 + 2n.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Campfire</strong></td>
+<td>Standing still 0.6 s lights a camp: +1,100 HP regen per minute per copy.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Coward's Cloak</strong></td>
+<td>+5% move speed per copy; +30% speed bursts when hit (2 stacks per copy).</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Credit Card (Red)</strong></td>
+<td>+2.5% Damage per chest opened, per copy.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Demon Blade</strong></td>
+<td>+1% crit. 25% per copy on damaging: heal (needs lifesteal to be allowed).</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Demonic Blood</strong></td>
+<td>+0.5 Max HP per kill, up to 200 stacks per copy.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Echo Shard</strong></td>
+<td>Kills can drop an extra XP shard (logic outside the item class).</td>
+<td>Scale</td>
+</tr>
+<tr>
+<td><strong>Electric Plug</strong></td>
+<td>When hit: shocks 6 + 4n enemies within 12 + 4 × Size (per copy) for 0.8× damage.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Feathers</strong></td>
+<td>+1 jump and +15% jump height per copy; jumping boosts speed by 2.2 per copy.</td>
+<td>Situational</td>
+</tr>
+<tr>
+<td><strong>Golden Shield</strong></td>
+<td>Taking damage drops 6 gold per copy.</td>
+<td>Economy</td>
+</tr>
+<tr>
+<td><strong>Golden Sneakers</strong></td>
+<td>Gold per metre moved: 0.1 + 0.05 per extra copy.</td>
+<td>Economy</td>
+</tr>
+<tr>
+<td><strong>Idle Juice</strong></td>
+<td>Standing still adds +4% Damage each second, up to +100% per copy.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Leeching Crystal</strong></td>
+<td>+50 Max HP and −50% HP regen per copy.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Moldy Gloves (Poison)</strong></td>
+<td>Every 8.5 s on hit: poison cloud for 1.5 × (8 + level) within 15, 10 stacks per copy.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Phantom Shroud</strong></td>
+<td>+5% Evasion per copy. After an evade, the next attack deals ×(2 + 0.5n) plus a speed burst; lasts 3 + 0.5n s.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Pumpkin</strong></td>
+<td>+8 pots on later stages and +18% pot rewards per copy.</td>
+<td>Economy</td>
+</tr>
+<tr>
+<td><strong>Thunder Mitts</strong></td>
+<td>Every 10 s on hit: lightning for 3× damage within 8, stunning 3 s.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Unstable Transfusion</strong></td>
+<td>35% per copy × proc coefficient to add a Bloodmark stack (each full 100% is a guaranteed stack).</td>
+<td>Kill</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="common-22">Common (22)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What the code does</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Battery</strong></td>
+<td>+8% attack speed per copy (flat).</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Borgar</strong></td>
+<td>2% (+1% per copy) per kill to drop a Borgar healing 8% + 10 HP.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Boss Buster</strong></td>
+<td>+15% damage per copy to elites and bosses.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Cactus</strong></td>
+<td>When hit: fires 2 spikes per copy, each 5 per copy + Thorns.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Clover</strong></td>
+<td>+10% Luck per copy.</td>
+<td>Scale</td>
+</tr>
+<tr>
+<td><strong>Cursed Doll</strong></td>
+<td>Every second, each copy curses up to 2 enemies (5 new per check). Cursed non-bosses lose 30% of their MAX HP per second, so they die in 4 s whatever their HP. Against bosses it deals only 0.7 × (8 + level).</td>
+<td>Kill (swarm)</td>
+</tr>
+<tr>
+<td><strong>Forbidden Juice</strong></td>
+<td>+10% crit chance per copy (flat).</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Ghost</strong></td>
+<td>Using an interactable summons 6 ghosts per copy for 30 s × Duration.</td>
+<td>Situational</td>
+</tr>
+<tr>
+<td><strong>Golden Glove</strong></td>
+<td>15% per copy for extra gold from kills; each full 100% is guaranteed.</td>
+<td>Economy</td>
+</tr>
+<tr>
+<td><strong>Gym Sauce</strong></td>
+<td>+10% Damage per copy (flat bracket).</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Ice Crystal</strong></td>
+<td>0.075n / (0.075n + 0.75) × proc coefficient (1 copy 9%, 10 copies 50%): freeze for 2.5 + 0.1n s (max 6).</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Key</strong></td>
+<td>Free-chest chance 0.1n / (0.1n + 1): 1 key 9%, 3 keys 23%, 10 keys 50%.</td>
+<td>Economy</td>
+</tr>
+<tr>
+<td><strong>Medkit</strong></td>
+<td>+45 HP regen per copy.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Moldy Cheese</strong></td>
+<td>40% per copy to add a poison stack (5 s); each full 100% is a guaranteed stack, only the leftover is scaled by proc coefficient.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Oats</strong></td>
+<td>+25 Max HP per copy.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Old Mask</strong></td>
+<td>+15% elite spawn chance per copy.</td>
+<td>Difficulty</td>
+</tr>
+<tr>
+<td><strong>Skuleg</strong></td>
+<td>+7% Difficulty per copy (flat).</td>
+<td>Difficulty</td>
+</tr>
+<tr>
+<td><strong>Slippery Ring</strong></td>
+<td>+15% raw Evasion per copy. Real evasion = E / (E + 1): 1 ring 13%, 3 rings 31%, 7 rings 51%.</td>
+<td>Survive</td>
+</tr>
+<tr>
+<td><strong>Tactical Glasses</strong></td>
+<td>+20% damage per copy to enemies above 90% HP.</td>
+<td>Kill</td>
+</tr>
+<tr>
+<td><strong>Time Bracelet</strong></td>
+<td>+8% XP gain per copy.</td>
+<td>Scale</td>
+</tr>
+<tr>
+<td><strong>Turbo Socks</strong></td>
+<td>+15% move speed per copy.</td>
+<td>Situational</td>
+</tr>
+<tr>
+<td><strong>Wrench</strong></td>
+<td>Charge Shrines charge 4% faster and give 7.5% more per copy.</td>
+<td>Scale</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="what-the-code-changes-about-common-advice">What the code changes about common advice</h2>
 <ul>
-<li><strong>Rarities above are the game's own.</strong> Bob (Dead), Beefy Ring and Credit Card (Green) are Epic; megabonk.org lists them as Common.</li>
-<li><strong>Damage that scales with enemy health</strong> (Cursed Doll, Joe's Dagger, Bob's Light) keeps working at high difficulty, where flat damage falls behind.</li>
-<li><strong>Old Mask on the toggle list</strong> is likely there because more elites means more kills and drops, the same logic as difficulty.</li>
-<li>A few community figures differ from the game data: Gas Mask's caps, Holy Book's overheal and Big Bonk's per-copy growth weren't published anywhere.</li>
-</ul>
-<p>Sources: <a href="https://bloxodes.com/wiki/megabonk/items">Bloxodes item database</a>, <a href="https://megabonk.org/database/items/">megabonk.org item database</a>, <a href="https://www.youtube.com/watch?v=0PI3G3N5DVs">rockmanzexo 1.1M run</a>.</p><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>
+<li><strong>Cursed Doll is the late-swarm engine.</strong> It ignores enemy HP entirely (30% of max HP per second on non-bosses), so it keeps killing when the final swarm's HP bonus reaches thousands. Against bosses it's weak.</li>
+<li><strong>Bob's Light is the other one.</strong> It instantly kills every non-boss in its radius; stack copies to reach the 5 s cooldown (14 copies) and 250 radius (20 copies).</li>
+<li><strong>Proc items fall off.</strong> Dragonfire, Ice Cube, Lightning Orb and Power Gloves give much less per copy after the first few. Lightning Orb caps at 90%.</li>
+<li><strong>Moldy Cheese and Snek don't fall off.</strong> Their chances pass 100% into guaranteed extra stacks.</li>
+<li><strong>Execute items stop working at 6:00 of the final swarm,</strong> when Purple and then Red Ghosts (not executable) take over.</li>
+</ul><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>
