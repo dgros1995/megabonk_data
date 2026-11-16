@@ -1,0 +1,456 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guide · Megabonk Data</title><meta name="description" content="A data-driven Megabonk guide: exact item, tome, weapon and character numbers and the game's real formulas, read from the game's code.">
+<style>
+:root{--bg:#faf8f4;--panel:#ffffff;--ink:#1d1b18;--muted:#6b665e;--line:#e4dfd6;--accent:#c2410c;--accent-soft:#fdeee5;--code:#f3efe8}
+@media (prefers-color-scheme:dark){:root{--bg:#141311;--panel:#1c1a17;--ink:#ece8e1;--muted:#a39d93;--line:#2e2b27;--accent:#fb923c;--accent-soft:#2a1d14;--code:#26231f}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{display:flex;min-height:100vh}
+nav{width:240px;flex:none;border-right:1px solid var(--line);padding:28px 18px;position:sticky;top:0;height:100vh;overflow:auto;background:var(--panel)}
+nav .brand{font-weight:800;font-size:18px;letter-spacing:-.02em;margin:0 0 4px}
+nav .sub{color:var(--muted);font-size:13px;margin:0 0 22px}
+nav a{display:block;padding:7px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:15px}
+nav a:hover{background:var(--code)}nav a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+main{flex:1;min-width:0;padding:40px 48px 80px;max-width:980px}
+h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;margin:0 0 18px}
+h2{font-size:23px;letter-spacing:-.015em;margin:44px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:28px 0 8px}
+a{color:var(--accent)}strong{font-weight:650}
+.tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--code);font-weight:650;white-space:nowrap}tr:last-child td{border-bottom:0}
+code{background:var(--code);padding:1px 5px;border-radius:5px;font-size:.92em}
+ul,ol{padding-left:22px}li{margin:4px 0}
+footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
+nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
+main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
+</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="on">Guide</a><a href="mechanics.html" class="">How it really works</a><a href="best-choices.html" class="">Best choices</a><a href="items.html" class="">Items</a><a href="tomes.html" class="">Tomes</a><a href="weapons.html" class="">Weapons</a><a href="characters.html" class="">Characters</a></div></nav>
+<main><h1>How Megabonk Works: A Data-Driven Guide to High-Kill Runs</h1>
+<p>Updated Nov 16, 2026</p>
+<p>Big kill counts in Megabonk come from surviving long in the late swarms at high difficulty, not from a lucky seed. The first ten minutes of a strong run look much like an average one; the difference opens up after the stage timer runs out.</p>
+<p>This guide combines four kinds of evidence:</p>
+<ul>
+<li><strong>The game's own memory</strong>, read live while playing: the enemy spawner's timeline, timers, HP and every shrine, pot and chest used. These are measured, not guessed.</li>
+<li><strong>32 recorded Dicehead runs</strong> on Forest Tier 3, with a snapshot every 10 seconds, and about 1,800 rolled maps.</li>
+<li><strong>Four 680k–1.1M kill runs on YouTube</strong>, read from screenshots at several points in each run.</li>
+<li><strong>Community sites</strong> (megabonk.org, megabonk.wiki and others) for item and tome numbers. Those are marked as community figures where they appear.</li>
+</ul>
+<p>Game version: Megabonk v1.0.69, Forest map. Measured numbers come from one player's sessions, so treat them as strong leads rather than law.</p>
+<h2>How a run is structured</h2>
+<p>A Forest Tier 3 run is four maps: three timed stages, then the final-boss map. Tier 1 is one stage and Tier 2 is two.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Map</th>
+<th>Stage timer</th>
+<th>Ends with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stage 1</td>
+<td>10:00</td>
+<td>Stage boss, then a next-stage portal</td>
+</tr>
+<tr>
+<td>Stage 2</td>
+<td>9:00</td>
+<td>Stage boss, then a next-stage portal</td>
+</tr>
+<tr>
+<td>Stage 3</td>
+<td>8:00</td>
+<td>Stage boss, then a next-stage portal</td>
+</tr>
+<tr>
+<td>Final-boss map</td>
+<td>none seen</td>
+<td>Bark Vader, then an endless final swarm</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Boss Portal:</strong> a skull arch at a random spot on each map. Activating it summons the stage boss. You can do this any time before the timer runs out.</li>
+<li><strong>Next-stage portal:</strong> appears only after the boss dies. Entering it is your choice, so you can stay on a stage as long as you survive.</li>
+<li><strong>Final swarm:</strong> starts when the stage boss dies or the timer runs out, whichever comes first. It happens on every stage, not only the last.</li>
+</ul>
+<p>The timers were read from the game and match the recorded runs: one 62-minute run left stage 1 at 11:34, stage 2 at 22:41 and stage 3 at 46:32, then died on the final-boss map at 62:30.</p>
+<h2>The stage script</h2>
+<p>Every stage follows the same fixed timeline, read directly from the game's enemy spawner. Nothing about it is random, so you can prepare for each event.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Time (stage 1)</th>
+<th>Event</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1:00, 2:00</td>
+<td>Wave</td>
+</tr>
+<tr>
+<td>3:00</td>
+<td>Miniboss #1 (normal spawns drop to 25% while it lives)</td>
+</tr>
+<tr>
+<td>4:00–4:30</td>
+<td>Swarm (normal spawns stop)</td>
+</tr>
+<tr>
+<td>5:00, 6:00</td>
+<td>Wave</td>
+</tr>
+<tr>
+<td>7:00</td>
+<td>Swarm</td>
+</tr>
+<tr>
+<td>8:00</td>
+<td>Miniboss #2</td>
+</tr>
+<tr>
+<td>9:00</td>
+<td>Wave</td>
+</tr>
+<tr>
+<td>10:00 or boss kill</td>
+<td>Final swarm</td>
+</tr>
+</tbody>
+</table></div>
+<p>Stage 2 runs the same events a minute earlier (final swarm at 9:00); stage 3's timer is 8:00.</p>
+<p>On stage 1: waves at 1:00 and 2:00, the first miniboss at 3:00 (normal spawning drops to 25% while it lives), a swarm from 4:00 to 4:30, waves at 5:00 and 6:00, a swarm at 7:00, the second miniboss at 8:00, a wave at 9:00 and the final swarm at 10:00. Stage 2 runs the same events a minute earlier and starts its final swarm at 9:00.</p>
+<h2>The final swarm is the kill farm</h2>
+<p>Top runs make most of their kills in final swarms, not in the timed part of each stage. They kill the boss, then stay and farm instead of taking the portal.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Kills at \~9:00</th>
+<th>Kills later</th>
+<th>Final</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rockmanzexo 1.1M</td>
+<td>2,950 (8:33)</td>
+<td>27,109 at 13:57, still on stage 1</td>
+<td>1.10M at 148:32</td>
+</tr>
+<tr>
+<td>MrSwagon</td>
+<td>—</td>
+<td>62,890 at 18:30, still on stage 1</td>
+<td>788k at 101:44</td>
+</tr>
+<tr>
+<td>Rizzotto</td>
+<td>3,082 (9:00)</td>
+<td>25,006 at 22:56</td>
+<td>684k at 102:03</td>
+</tr>
+<tr>
+<td>Mazel 999k</td>
+<td>3,043 (8:47)</td>
+<td>—</td>
+<td>998k at 127:57</td>
+</tr>
+<tr>
+<td>Recorded best (this player)</td>
+<td>2,173 (8:02)</td>
+<td>4,678 at 15:00, already on stage 2</td>
+<td>177k at 62:30</td>
+</tr>
+</tbody>
+</table></div>
+<p>The first nine minutes are close. The gap opens after 10:00: the recorded run left stage 1 at 11:34, while MrSwagon was still farming it at 18:30 with both weapons at level 50 and all four tomes at 99.</p>
+<p>What the game does in the final swarm, as read from memory:</p>
+<ul>
+<li><strong>Normal spawning stops</strong> and a separate final-swarm spawner takes over.</li>
+<li><strong>It starts at the boss kill or the timer, whichever is first.</strong> Killing the boss early starts the farm early. On stage 1 the boss died at 9:42 and the swarm began 16 s later, matching a 10-second grace period in the game.</li>
+<li><strong>Ghosts.</strong> Ghosts were in every stage-1 final swarm recorded. Community sources say live ghosts are capped at 400, then 300 after two minutes.</li>
+<li><strong>The 20-minute mark</strong> (community source): about 20 minutes into a final swarm, ghosts start speeding up and stun and freeze effects fade toward nothing. Three of the four video runs ended about 25 minutes into the last map's swarm.</li>
+</ul>
+<p>Surviving the swarm is about position as much as power. The 1.1M run calls its method "ledge dollfire tech": stand on a ledge the swarm reaches slowly while Cursed Doll and Dragonfire do the killing. Idle Juice (+damage while standing still) fits the same idea.</p>
+<h2>Difficulty sets how many enemies there are to kill</h2>
+<p>Difficulty is a player stat. Higher difficulty means more enemies, with more health, speed and damage, and more XP and drops in return. For kill counts it is the main dial.</p>
+<p>Community figures say final-swarm spawning reaches its maximum at these difficulty levels; above them, enemies only get tougher:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Map</th>
+<th>Difficulty for max swarm spawns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stage 1</td>
+<td>495–571%</td>
+</tr>
+<tr>
+<td>Stage 2</td>
+<td>438–514%</td>
+</tr>
+<tr>
+<td>Stage 3 and the final-boss map</td>
+<td>381–457%</td>
+</tr>
+</tbody>
+</table></div>
+<p>The recorded 62-minute run had a Difficulty stat of 2.27 when it died. If that means 227%, it was well under half of those targets.</p>
+<p>What raises it (community figures):</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cursed Tome</td>
+<td>+4% per level (Common) up to +7% (Legendary), max level 99</td>
+</tr>
+<tr>
+<td>Cursed Grabbies (item)</td>
+<td>+10%</td>
+</tr>
+<tr>
+<td>Skuleg (item)</td>
+<td>+7%</td>
+</tr>
+<tr>
+<td>Greed Shrine</td>
+<td>+5% each</td>
+</tr>
+</tbody>
+</table></div>
+<p>The Cursed Tome is the main source, and none of the recorded runs had it. It unlocks by beating a stage boss in under 5 minutes. megabonk.org suggests adding it after about 10 minutes, once the build can clear what it already faces.</p>
+<p>The "Cooked ×8" banner in the videos is probably the silver multiplier, which is capped at 8×, not difficulty.</p>
+<h2>Scaling: level caps, Wizard's Hat, Pot and Microwaves</h2>
+<p>Tome and weapon levels are capped, and the caps are raised by items. Wizard's Hat raises the tome cap and Pot raises the weapon cap, by about 10 for the first copy and less for each copy after (community figures).</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Tome levels at the end</th>
+<th>Weapon levels at the end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recorded 62-minute run</td>
+<td>109 (all four)</td>
+<td>50 and 50</td>
+</tr>
+<tr>
+<td>MrSwagon</td>
+<td>151</td>
+<td>105 and 104</td>
+</tr>
+<tr>
+<td>Mazel 999k</td>
+<td>153</td>
+<td>110 and 110</td>
+</tr>
+<tr>
+<td>rockmanzexo 1.1M</td>
+<td>169</td>
+<td>111 and 112</td>
+</tr>
+<tr>
+<td>Rizzotto (4 weapons)</td>
+<td>197</td>
+<td>40 each</td>
+</tr>
+</tbody>
+</table></div>
+<p>The recorded run stopped growing at about 40 minutes when it hit its caps. The top runs kept growing because they stacked Hats and Pots.</p>
+<p><strong>Microwaves duplicate items.</strong> A Microwave copies an item of its own colour (rarity), and takes an item you already own of that colour in exchange. Wizard's Hat and Pot are both Legendary, so only a Legendary Microwave can copy them. Golden Ring is a Legendary with no effect, which makes it ideal to give up.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Microwave colour</th>
+<th>Share of 888 rolled maps that had one</th>
+<th>Uses seen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Legendary</td>
+<td>3% (29 maps, about 1 in 31)</td>
+<td>not yet recorded</td>
+</tr>
+<tr>
+<td>Epic</td>
+<td>11%</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Rare</td>
+<td>22%</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Common</td>
+<td>most maps</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></div>
+<p>At BonkSeed's reroll speed of about one map a second, a Legendary Microwave seed takes around half a minute to find.</p>
+<p><strong>Luck</strong> makes level-up offers and drops rarer. Higher-rarity offers give bigger jumps per pick: in the 1.1M run a Rare XP Tome offer was worth more than a Common one, and Luck was at level 74 by 14 minutes. All four top runs leaned on Luck and XP tomes early.</p>
+<h2>Items, toggles and banishes</h2>
+<p>Top runs shrink the item pool so chests, shops and level-ups keep rolling the few items that matter. The 1.1M run lists its item toggles, with everything else switched off:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Rarity</th>
+<th>Items left on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Common (green)</td>
+<td>Cursed Doll, Key, Mask</td>
+</tr>
+<tr>
+<td>Rare (blue)</td>
+<td>Echo Shard, Idle Juice</td>
+</tr>
+<tr>
+<td>Epic (purple)</td>
+<td>Kevin, Bob's Light</td>
+</tr>
+<tr>
+<td>Legendary (gold)</td>
+<td>Lightning Orb, Anvil, Holy Book, Chonkplate, Joe's Dagger, Wizard's Hat, Pot, Dragonfire</td>
+</tr>
+</tbody>
+</table></div>
+<p>Why these, from community item descriptions:</p>
+<ul>
+<li><strong>Kill what high difficulty makes tough.</strong> Cursed Doll deals damage based on an enemy's max HP, Joe's Dagger executes, and Bob's Light kills nearby enemies. These don't fall behind as enemy health climbs.</li>
+<li><strong>Survive on healing and shield, not HP.</strong> Chonkplate adds lifesteal and overheal. Holy Book turns healing into damage. Kevin hits you but can't kill you. The top runs ended with only about 200 HP but 40,000–150,000 shield.</li>
+<li><strong>Stand still and farm.</strong> Idle Juice adds damage while you stand still, which suits the ledge.</li>
+<li><strong>Keep scaling.</strong> Wizard's Hat and Pot raise level caps; Anvil, Lightning Orb and Dragonfire add damage.</li>
+</ul>
+<p>Their banish order, from the same video:</p>
+<ol>
+<li>Spiky Shield and Scarf straight away.</li>
+<li>Slurp Gloves and Mirror after stage 1.</li>
+<li>Kevin later, once Bob can no longer be obtained.</li>
+<li>Power Glove once you have one before the first swarm (4:00).</li>
+<li>Spicy Meatball once your size is maxed.</li>
+</ol>
+<p>In the recorded runs, items mostly came from chests and drops, not shops. Long runs picked up about 2.5 items a minute on stage 1, short runs about 1.2, and shops added only 0–5 items per run. With toggles on, every one of those finds is from the short list.</p>
+<h2>The map: shrines, shops and what a seed can tell you</h2>
+<p>A seed only changes a few things on a Forest map, and most of what decides a run isn't one of them.</p>
+<p><strong>What every stage-1 Forest map has</strong> (from about 900 rolled maps):</p>
+<ul>
+<li>15 Charge Shrines, 8 Greed Shrines, 55 pots and 46 chests on every map.</li>
+<li>Shady Guys, Moais, Boss Curses, Magnet Shrines and Challenges always add up to 14. More of one means fewer of the others.</li>
+<li>1 or 2 Microwaves.</li>
+<li>The same enemy pool. Enemy types join every 60 seconds, in an order that changed from run to run.</li>
+</ul>
+<p><strong>What top runs used on their last map</strong> (from the video screenshots): every Charge Shrine, every pot, every Moai and every Challenge. Greed Shrines split: one run took none of 8, another took all 8. Boss Curses: 2 of 2 and 5 of 5.</p>
+<p><strong>Each Boss Curse adds one extra miniboss to every miniboss spawn on that stage.</strong> In four recorded runs the most minibosses alive at once was always one plus the curses used: 2 curses brought 3 Pigs at 3:00, 3 curses brought 4, and 5 curses on stage 2 brought 6 Golems. That's more elite kills and XP, but the 3:00 and 8:00 spawns become the most dangerous moments on the map. Take curses only when you can kill minibosses fast.</p>
+<p><strong>Shady Guy shops.</strong> A shop's stock is set when the map loads, so a seed scanner can read it.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>What the map sells</th>
+<th>How often</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>At least one Legendary for 160 gold or less</td>
+<td>1 in 8 maps</td>
+</tr>
+<tr>
+<td>At least two</td>
+<td>1 in 29 maps</td>
+</tr>
+<tr>
+<td>Three</td>
+<td>1 in 528 maps</td>
+</tr>
+</tbody>
+</table></div>
+<p>Most Legendaries cost 200–350 gold, while runs had 30–290 gold at 2:00. A shop only helps if you can afford it early.</p>
+<p><strong>What's worth scanning for:</strong> a Legendary Microwave (1 in 31 maps) or an affordable key item. Both turn up within a minute of rerolling. Rarer targets cost more time than they are likely to return, since most recorded runs ended within four minutes anyway.</p>
+<h2>What 34 recorded runs show</h2>
+<p>Most runs die at one of two scripted moments on stage 1, not at random.</p>
+<ul>
+<li><strong>The 3:00–4:30 wall.</strong> 13 runs died between 3:24 and 4:24. In every run with enemy data, the first miniboss spawned at 3:04–3:09 and the first swarm followed at 4:00. A run that is hurt, or still fighting the miniboss, when the swarm arrives usually ends there.</li>
+<li><strong>The 10:00 wall.</strong> Every run still on stage 1 at the timer died within about 1.5 minutes of the final swarm starting, at 10.2, 10.3, 11.2 and 11.6 minutes. None was positioned to farm it.</li>
+<li><strong>The early waves hurt.</strong> HP dropped to 2–6 during the 1:00 and 2:00 waves in two of the three runs with HP data.</li>
+</ul>
+<p><strong>Pace.</strong> Long runs (8 minutes or more) were usually at level 10–11 with about 320 kills at 4:00; short runs were at level 3–9 with 50–290 kills. It isn't a hard rule: one run was level 3 with 54 kills at 4:00 and still lasted 10 minutes.</p>
+<p><strong>Items found beat items bought.</strong> The two best runs had 6–7 items by 2:00 and no other run had more than 5. Nearly all came from chests and drops.</p>
+<p><strong>Bob (Dead)</strong> was in 3 of the 6 long runs and none of the 10 short runs, and was the top damage source at 4:00 when present. That's a small sample.</p>
+<p><strong>Exploding spiders (BoomerSpiders)</strong> arrived anywhere from 1:04 to 9:03. They seemed to end one 4-minute run, but another run met them at 1:04 and lasted 11 minutes. Low pace killed more runs than they did.</p>
+<p><strong>The latest run shows the next bottleneck.</strong> On Nov 16 a run had the best start recorded: level 12 with 385 kills at 4:00, and 2,397 kills by 10:00. It survived about 80 seconds of the stage-1 final swarm, left at 11:21, and died 6:58 into stage 2 with six Golem minibosses alive at once. It was the first run to take the Cursed Tome, but only to level 6, so Difficulty was 54% at death, about a ninth of the stage-1 spawn-cap target. The build was mostly economy and volume items (Time Bracelet ×7, Moldy Cheese ×6, Golden Glove ×4) with only three Cursed Dolls for percent-health damage. Getting through the first 10 minutes is no longer the problem; difficulty and late survival are.</p>
+<p>The next run, also with the Cursed Tome, took two Boss Curses before 2:00 and met three Pigs at 3:00. It recovered, then dropped to 1 HP at 7:49 and died at 9:38, just before the final swarm, again at 54% Difficulty.</p>
+<h2>A plan for a high-kill run</h2>
+<p>Build for ten minutes, kill the boss, farm the swarm at high difficulty, and leave before it turns lethal. Repeat on each map.</p>
+<p><strong>Before the run</strong></p>
+<ol>
+<li>Set item toggles to a short list (see Items, toggles and banishes).</li>
+<li>Reroll for a light target: a Legendary Microwave, or a cheap key item in a shop. Don't spend more than a minute or two on it.</li>
+</ol>
+<p><strong>Stage 1, 0:00–10:00: build the engine</strong></p>
+<ol>
+<li>Take XP and Luck tomes first; open the map and route chests.</li>
+<li>Stay in the open with full HP for the 1:00 and 2:00 waves.</li>
+<li>Be at full HP by 2:55, kill the miniboss fast, and be in open ground for the 4:00 swarm.</li>
+<li>Use every Charge Shrine, pot, Moai and Challenge you can reach.</li>
+<li>Find the Boss Portal early, and save a Legendary Microwave for a Wizard's Hat or Pot.</li>
+</ol>
+<p><strong>Stage 1, around 9:00 onward: farm</strong></p>
+<ol>
+<li>Kill the stage boss before 10:00, which starts the final swarm early.</li>
+<li>Take position on a ledge and let Cursed Doll, Dragonfire and similar items do the work.</li>
+<li>Add the Cursed Tome once stable, pushing difficulty toward 495–571%.</li>
+<li>Stay while kills climb; take the portal before the 20-minute mark. The top runs left stage 1 around 18–20 minutes.</li>
+</ol>
+<p><strong>Stages 2 and 3:</strong> the same script in less time (9:00 and 8:00). Their swarms reach full spawn rate at lower difficulty, so the farm comes easier.</p>
+<p><strong>The final-boss map</strong> is where most kills happen: the 1.1M run went from 424k kills at 68 minutes to 1.1M at 148. Shield, healing and percent-health damage carry this part.</p>
+<h2>Open questions</h2>
+<ul>
+<li>How do spawn rate and XP per minute change with difficulty during a swarm? This would check the community spawn-cap figures.</li>
+<li>How many uses does an Epic or Legendary Microwave have?</li>
+<li>Does the seed fix where the Boss Portal, ledges and Microwaves are?</li>
+<li>Does the seed fix the order enemy types join?</li>
+<li>Which four tomes did the top runs use? Only Luck and XP could be confirmed from the screenshots.</li>
+<li>What carries over between stages?</li>
+</ul>
+<h2>Sources</h2>
+<p><strong>Videos</strong> (read from screenshots)</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=0PI3G3N5DVs">Megabonk V1.0.69 Dicehead 1.1m run (extended T1) — rockmanzexo</a></li>
+<li><a href="https://www.youtube.com/watch?v=I2LPiMFoKC4">Megabonk Dicehead 999k - 1.0.65 — Greenfreak "Mazel"</a></li>
+<li><a href="https://www.youtube.com/watch?v=d2AIeYe2B2A">I got my BEST RUN EVER with Dicehead — Rizzotto</a></li>
+<li><a href="https://www.youtube.com/watch?v=xL6kDIcX3S8">This Strat BREAKS Stage 1 in Megabonk — MrSwagon</a></li>
+</ul>
+<p><strong>Community references</strong></p>
+<ul>
+<li><a href="https://megabonk.org/guides/mechanics/timer/">megabonk.org: Timer</a></li>
+<li><a href="https://megabonk.org/guides/mechanics/boss-portal/">megabonk.org: Boss Portal</a></li>
+<li><a href="https://megabonk.org/guides/progression/">megabonk.org: Progression and Final Swarm</a></li>
+<li><a href="https://megabonk.org/guides/builds/dicehead-best-build">megabonk.org: Dicehead best build</a></li>
+<li><a href="https://megabonk.org/guides/achievements/300k-kills/">megabonk.org: 300K kills</a></li>
+<li><a href="https://megabonkexplainer.pages.dev/player-stats/difficulty">Megabonk Explainer: Difficulty</a></li>
+<li><a href="https://megabonk.wiki/wiki/Cursed_Tome">megabonk.wiki: Cursed Tome</a></li>
+<li><a href="https://megabonk.wiki/wiki/Shield_Tome">megabonk.wiki: Shield Tome</a></li>
+<li><a href="https://bloxodes.com/wiki/megabonk/items">Bloxodes: Megabonk items</a></li>
+<li><a href="https://bloxodes.com/wiki/megabonk/tomes">Bloxodes: Megabonk tomes</a></li>
+<li><a href="https://deltiasgaming.com/?p=359335">Deltia's Gaming: difficulty</a></li>
+<li><a href="https://www.destructoid.com/how-to-go-to-the-next-stage-in-megabonk/">Destructoid: how to go to the next stage</a></li>
+</ul>
+<p><strong>Measured data:</strong> recorded with BonkSeed's session recorder and memory probe, Megabonk v1.0.69, Forest Tier 3, November 2026.</p><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>

@@ -1,0 +1,337 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Best choices · Megabonk Data</title><meta name="description" content="A data-driven Megabonk guide: exact item, tome, weapon and character numbers and the game's real formulas, read from the game's code.">
+<style>
+:root{--bg:#faf8f4;--panel:#ffffff;--ink:#1d1b18;--muted:#6b665e;--line:#e4dfd6;--accent:#c2410c;--accent-soft:#fdeee5;--code:#f3efe8}
+@media (prefers-color-scheme:dark){:root{--bg:#141311;--panel:#1c1a17;--ink:#ece8e1;--muted:#a39d93;--line:#2e2b27;--accent:#fb923c;--accent-soft:#2a1d14;--code:#26231f}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{display:flex;min-height:100vh}
+nav{width:240px;flex:none;border-right:1px solid var(--line);padding:28px 18px;position:sticky;top:0;height:100vh;overflow:auto;background:var(--panel)}
+nav .brand{font-weight:800;font-size:18px;letter-spacing:-.02em;margin:0 0 4px}
+nav .sub{color:var(--muted);font-size:13px;margin:0 0 22px}
+nav a{display:block;padding:7px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:15px}
+nav a:hover{background:var(--code)}nav a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+main{flex:1;min-width:0;padding:40px 48px 80px;max-width:980px}
+h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;margin:0 0 18px}
+h2{font-size:23px;letter-spacing:-.015em;margin:44px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:28px 0 8px}
+a{color:var(--accent)}strong{font-weight:650}
+.tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--code);font-weight:650;white-space:nowrap}tr:last-child td{border-bottom:0}
+code{background:var(--code);padding:1px 5px;border-radius:5px;font-size:.92em}
+ul,ol{padding-left:22px}li{margin:4px 0}
+footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
+nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
+main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
+</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Guide</a><a href="mechanics.html" class="">How it really works</a><a href="best-choices.html" class="on">Best choices</a><a href="items.html" class="">Items</a><a href="tomes.html" class="">Tomes</a><a href="weapons.html" class="">Weapons</a><a href="characters.html" class="">Characters</a></div></nav>
+<main><h1>Best choices</h1>
+<p>What to pick, and why, worked out from the game's own numbers.</p>
+<h2>How stats combine</h2>
+<p>The single most useful rule: <strong>damage bonuses in the same bracket add, different brackets multiply.</strong> So spreading bonuses across brackets beats stacking one.</p>
+<ul>
+<li><strong>Damage brackets</strong> (community-documented): Damage Tome; flat damage items (Gym Sauce, Brass Knuckles, Idle Juice); the main % bracket (Boss Buster, Tactical Glasses, Beefy Ring, Gamer Goggles and others); elite damage; and a few solo brackets (Speed Boi, Corrupted Sword, Noelle). Example: +50% in two brackets is 1.5 × 1.5 = 2.25×; +100% in one bracket is only 2.0×.</li>
+<li><strong>The Damage Tome is its own bracket,</strong> worth ×(1 + 0.08 per level) at Common. Fifty levels is ×5 on every weapon.</li>
+<li><strong>Crits apply after the brackets.</strong> Giant Fork Megacrits are 4× on top (game data).</li>
+<li><strong>Proc chance can pass 100%.</strong> 120% poison chance means one guaranteed stack plus a 20% chance of a second, so on-hit items keep scaling with copies.</li>
+<li><strong>Each weapon has a proc coefficient</strong> that multiplies item trigger chances (game data): Sniper Rifle 1.5; Dice, Revolver, Bow, Bone, Shotgun, Lightning Staff, Firestaff and most single shots 1.0; Katana 0.95; Axe, Aura, Black Hole and Dragon's Breath 0.7. Overpowered Lamp adds an extra independent roll: 40% becomes 64%.</li>
+<li><strong>Evasion has diminishing returns</strong> and tops out around 60% (community figure); the screen shows the raw total. More than about three Slippery Rings is wasted.</li>
+<li><strong>Offer rarity multiplies every tome and weapon pick</strong> by 1.0–2.0× (game data), and Luck decides the rarity. That makes Luck a multiplier on all your other growth.</li>
+</ul>
+<h2>Tomes: which four</h2>
+<p>For a high-kill run the four slots should cover leveling, offer quality, enemy count and damage. Your recorded runs used Luck, XP, Cursed and Chaos; Chaos is the weakest of those for this goal.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Pick</th>
+<th>Tome</th>
+<th>Per level (Common)</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>XP</td>
+<td>+7% XP</td>
+<td>More levels means more weapon and tome picks, and for Dicehead one extra Gamba roll per level.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Luck</td>
+<td>+8% Luck</td>
+<td>Raises the rarity of every offer (×1.2–2.0 per pick) and of items, so it multiplies all your other growth.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cursed</td>
+<td>+3.5% Difficulty (4–7% after rounding)</td>
+<td>More enemies, so more kills and XP. Difficulty starts near 0%, and the stage-1 swarm needs about 500% for full spawns.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quantity or Damage</td>
+<td>+1 projectile, or ×1.08 in its own bracket</td>
+<td>Dice and Katana start with 1 projectile, so the first Quantity levels double and triple their output. Damage is the steadier late-game pick.</td>
+</tr>
+<tr>
+<td>Swap in</td>
+<td>Precision</td>
+<td>+7% Crit</td>
+<td>For crit builds. Dice and Katana already get crit from their own upgrade lines.</td>
+</tr>
+<tr>
+<td>Swap in</td>
+<td>Shield</td>
+<td>+25 Shield</td>
+<td>If you die to chip damage in swarms.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>How to reach 500% Difficulty:</strong> your two Cursed Tome runs reached 54%. That came from about 6 Cursed levels plus 4 Greed Shrines (+5% each). For 500% you'd need roughly 100 Common Cursed levels, or fewer at higher rarity, plus all 8 Greed Shrines on each map (+40%), Skuleg (+7% a copy) and Cursed Grabbies (+10% a copy). Sir Chadwell gets +1% Difficulty per character level for free (see Characters below).</p>
+<h2>Weapons: what makes one scale</h2>
+<p>Three numbers decide how far a weapon grows: how fast it attacks, how much each Damage line adds compared with its base, and whether its upgrades include crit lines (crits multiply after every damage bracket). The proc coefficient decides how well it triggers on-hit items.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Weapon</th>
+<th>Cooldown</th>
+<th>Damage line vs base</th>
+<th>Crit lines</th>
+<th>Proc coefficient</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dice</td>
+<td>0.5 s</td>
+<td>+2 on a 1–6 roll (huge)</td>
+<td>Crit +10%, Crit Damage +20%</td>
+<td>1.0</td>
+<td>Best for Dicehead: biggest relative gains and two crit lines</td>
+</tr>
+<tr>
+<td>Katana</td>
+<td>0.4 s</td>
+<td>+2.2 on 11 (+20%)</td>
+<td>Crit +8%, Crit Damage +20%</td>
+<td>0.95</td>
+<td>Fastest attack, two crit lines; the top runs' partner for Dice</td>
+</tr>
+<tr>
+<td>Revolver</td>
+<td>1.4 s</td>
+<td>+2.5 on 5 (+50%)</td>
+<td>Crit +10%, Crit Damage +20%</td>
+<td>1.0</td>
+<td>6 projectiles plus bounce lines; strong crit and proc carrier</td>
+</tr>
+<tr>
+<td>Bone</td>
+<td>0.4 s</td>
+<td>+2.5 on 11 (+23%)</td>
+<td>Crit +12%, Crit Damage +25%</td>
+<td>1.0</td>
+<td>Best crit lines in the game, fast</td>
+</tr>
+<tr>
+<td>Bow</td>
+<td>0.92 s</td>
+<td>+1.75 on 9 (+19%)</td>
+<td>Crit +8%, Crit Damage +18%</td>
+<td>1.0</td>
+<td>Pierces 99 enemies; good in dense swarms</td>
+</tr>
+<tr>
+<td>Shotgun</td>
+<td>1.0 s</td>
+<td>+3 on 9 (+33%)</td>
+<td>Crit +10%, Crit Damage +20%</td>
+<td>1.0</td>
+<td>Strong lines, short range</td>
+</tr>
+<tr>
+<td>Sniper Rifle</td>
+<td>1.0 s</td>
+<td>+4 on 22 (+18%)</td>
+<td>none</td>
+<td>1.5</td>
+<td>Best proc trigger in the game; pair with on-hit items</td>
+</tr>
+<tr>
+<td>Lightning Staff</td>
+<td>1.1 s</td>
+<td>+2 on 7 (+29%)</td>
+<td>none</td>
+<td>1.0</td>
+<td>Bounce lines chain through crowds</td>
+</tr>
+<tr>
+<td>Black Hole</td>
+<td>1.0 s</td>
+<td>+1.25 on 4.5 (+28%)</td>
+<td>none</td>
+<td>0.7</td>
+<td>Groups enemies; weak proc trigger</td>
+</tr>
+<tr>
+<td>Aura</td>
+<td>0.3 s</td>
+<td>+1.4 on 6 (+23%)</td>
+<td>none</td>
+<td>0.7</td>
+<td>Only two upgrade lines; falls off</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>For Dicehead: Dice plus Katana,</strong> the pairing in three of the four top runs. Revolver or Bone are the best third weapons if you want more crit carriers; Sniper Rifle if you're stacking on-hit items. megabonk.org warns that more weapons spread your upgrades thinner, and the top Dicehead runs mostly used two.</p>
+<h2>Items: what to take and what to banish</h2>
+<p>Ranked for high-kill runs, using the game's numbers.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Items</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Always take</td>
+<td>Wizard's Hat, Pot, Anvil</td>
+<td>Raise tome and weapon level caps, or add a stat line to every weapon pick. Anvil is max 1, so take it whenever it appears.</td>
+</tr>
+<tr>
+<td>Always take</td>
+<td>Cursed Doll</td>
+<td>Each copy makes 2 enemies lose 30% of their Max HP a second. It ignores how tough enemies get at high difficulty, and it's Common and cheap (about 28 gold in shops).</td>
+</tr>
+<tr>
+<td>Always take</td>
+<td>Clover, Time Bracelet, Echo Shard</td>
+<td>Luck +10% and XP +8% a copy, plus extra XP shards. Cheap engine items.</td>
+</tr>
+<tr>
+<td>Strong</td>
+<td>Giant Fork</td>
+<td>+15% crit and 14% Megacrits at 4×, a copy. The biggest crit multiplier.</td>
+</tr>
+<tr>
+<td>Strong</td>
+<td>Joe's Dagger</td>
+<td>1% execute; each execute adds +1% Damage, with no cap on stacks. Max 10 copies.</td>
+</tr>
+<tr>
+<td>Strong</td>
+<td>Chonkplate, Holy Book</td>
+<td>Lifesteal and overheal (+75% and +25% a copy); Holy Book turns healing into damage. This is how the top runs ended with 40,000–150,000 shield on about 200 HP.</td>
+</tr>
+<tr>
+<td>Strong</td>
+<td>Idle Juice + Campfire</td>
+<td>Standing still adds +4% damage a second (to +100% a copy) and heals 1,100 HP a minute. Both reward the ledge.</td>
+</tr>
+<tr>
+<td>Strong</td>
+<td>Dragonfire, Lightning Orb, Ice Cube, Overpowered Lamp</td>
+<td>Chance-based procs that keep scaling past 100%; Lamp adds an extra roll (max 2). Best on 1.0+ proc weapons.</td>
+</tr>
+<tr>
+<td>Strong</td>
+<td>Gym Sauce, Beefy Ring, Boss Buster</td>
+<td>Sit in different damage brackets, so they multiply each other.</td>
+</tr>
+<tr>
+<td>Situational</td>
+<td>Kevin</td>
+<td>Keeps on-damage effects firing and can't kill you. Banish once Bob's Light can't drop anymore (the 1.1M run's rule).</td>
+</tr>
+<tr>
+<td>Situational</td>
+<td>Skuleg, Cursed Grabbies, Old Mask</td>
+<td>More difficulty or elites, so more kills, if your build can take it.</td>
+</tr>
+<tr>
+<td>Banish</td>
+<td>Spiky Shield, Scarf, Eagle Claw, Feathers</td>
+<td>Airborne or armor items that don't help a ledge farm.</td>
+</tr>
+<tr>
+<td>Banish</td>
+<td>Golden Glove, Golden Sneakers, Golden Shield</td>
+<td>Gold stops mattering once chests and shops are done.</td>
+</tr>
+<tr>
+<td>Banish</td>
+<td>Slurp Gloves, Mirror (after stage 1)</td>
+<td>Small heals and cooldown effects that fall off.</td>
+</tr>
+<tr>
+<td>Banish late</td>
+<td>Slippery Ring after about 3</td>
+<td>Evasion has diminishing returns, topping out around 60%.</td>
+</tr>
+</tbody>
+</table></div>
+<p>With the Toggler, turning off the banish rows means every chest and shop roll lands on the tiers above.</p>
+<h2>Characters: whose passive solves what</h2>
+<p>Passives grow every level, and long runs reach very high levels: your 62-minute run hit 1,043, and the 1.1M run reached 3,118. So a small per-level number becomes the biggest stat in the run.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Passive per level</th>
+<th>At level 500</th>
+<th>What it solves</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dicehead</td>
+<td>A free random stat upgrade</td>
+<td>500 extra upgrades</td>
+<td>Everything a little; all four top runs used him</td>
+</tr>
+<tr>
+<td>Sir Chadwell</td>
+<td>+1% Difficulty (starts +10%)</td>
+<td>+510% Difficulty</td>
+<td>Reaches the stage-1 spawn cap with no Cursed Tome, freeing a tome slot</td>
+</tr>
+<tr>
+<td>Fox</td>
+<td>+1.5% Luck (starts +15%)</td>
+<td>+765% Luck</td>
+<td>Offer and item rarity</td>
+</tr>
+<tr>
+<td>Ogre</td>
+<td>+1.5% Damage (starts +10%)</td>
+<td>+760% Damage</td>
+<td>Raw damage</td>
+</tr>
+<tr>
+<td>Spaceman</td>
+<td>+1% XP (starts +5%)</td>
+<td>+505% XP</td>
+<td>Leveling speed</td>
+</tr>
+<tr>
+<td>Noelle</td>
+<td>+0.7% Size; +1.5% damage per frozen enemy</td>
+<td>Size capped at 4×; frozen bonus capped at +300%</td>
+<td>Swarm clearing with freeze items</td>
+</tr>
+<tr>
+<td>Robinette</td>
+<td>+1% Gold; damage per 1,000 gold carried</td>
+<td>Depends on gold held</td>
+<td>Damage from hoarding gold</td>
+</tr>
+</tbody>
+</table></div>
+<p>megabonk.org found Noelle and Fox most often among 1,223 runs over 300,000 kills. The four top Dicehead runs show he can go further, to 700k–1.1M.</p>
+<p><strong>If difficulty is your bottleneck,</strong> which it was in your last two runs, Sir Chadwell is worth a try. His passive does the Cursed Tome's job automatically, and you unlock him by clearing Forest Tier 3.</p><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>

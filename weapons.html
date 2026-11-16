@@ -1,0 +1,460 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weapons · Megabonk Data</title><meta name="description" content="A data-driven Megabonk guide: exact item, tome, weapon and character numbers and the game's real formulas, read from the game's code.">
+<style>
+:root{--bg:#faf8f4;--panel:#ffffff;--ink:#1d1b18;--muted:#6b665e;--line:#e4dfd6;--accent:#c2410c;--accent-soft:#fdeee5;--code:#f3efe8}
+@media (prefers-color-scheme:dark){:root{--bg:#141311;--panel:#1c1a17;--ink:#ece8e1;--muted:#a39d93;--line:#2e2b27;--accent:#fb923c;--accent-soft:#2a1d14;--code:#26231f}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{display:flex;min-height:100vh}
+nav{width:240px;flex:none;border-right:1px solid var(--line);padding:28px 18px;position:sticky;top:0;height:100vh;overflow:auto;background:var(--panel)}
+nav .brand{font-weight:800;font-size:18px;letter-spacing:-.02em;margin:0 0 4px}
+nav .sub{color:var(--muted);font-size:13px;margin:0 0 22px}
+nav a{display:block;padding:7px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:15px}
+nav a:hover{background:var(--code)}nav a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+main{flex:1;min-width:0;padding:40px 48px 80px;max-width:980px}
+h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;margin:0 0 18px}
+h2{font-size:23px;letter-spacing:-.015em;margin:44px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:28px 0 8px}
+a{color:var(--accent)}strong{font-weight:650}
+.tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--code);font-weight:650;white-space:nowrap}tr:last-child td{border-bottom:0}
+code{background:var(--code);padding:1px 5px;border-radius:5px;font-size:.92em}
+ul,ol{padding-left:22px}li{margin:4px 0}
+footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
+nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
+main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
+</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Guide</a><a href="mechanics.html" class="">How it really works</a><a href="best-choices.html" class="">Best choices</a><a href="items.html" class="">Items</a><a href="tomes.html" class="">Tomes</a><a href="weapons.html" class="on">Weapons</a><a href="characters.html" class="">Characters</a></div></nav>
+<main><h1>Weapon guide</h1>
+<p>Weapons attack on their own and grow through weapon upgrade offers. Published per-weapon numbers are sparse, so this tab pairs the community list with what was measured in game.</p>
+<h2>How weapons scale</h2>
+<ul>
+<li><strong>Each weapon upgrade raises a few stat lines of that weapon,</strong> chosen by the offer. A level-41 Katana offer in the 1.1M run read: Size 868% → 888%, Crit Chance 288% → 296%, Projectile Count 31.6 → 32.6.</li>
+<li><strong>Anvil adds one more stat line</strong> to future weapon offers, so each pick gives more.</li>
+<li><strong>Your tomes and items apply on top.</strong> A weapon's own stats multiply with your Damage, Crit, Size, Attack Speed and so on, which is why the weapon's "scales with" column matters when you pick tomes.</li>
+<li><strong>The level cap is 40</strong>, plus about 10 for each Pot (less for each extra copy). Rizzotto's 4-weapon run ended with all four at 40; the recorded run with one Pot capped at 50; the 1.1M run reached 111 and 112.</li>
+<li><strong>Slots:</strong> 4 weapons. megabonk.org's Dicehead guide warns that more weapons spread upgrades thinner; the top Dicehead runs used 2.</li>
+</ul>
+<h2>All weapons</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Weapon</th>
+<th>What it does</th>
+<th>Scales best with</th>
+<th>Unlock</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dice</td>
+<td>Rolls 1–6 damage; each 6 permanently adds Crit Chance</td>
+<td>Crit</td>
+<td>Luck Tome to level 12</td>
+</tr>
+<tr>
+<td>Katana</td>
+<td>Fast slashes at the nearest enemy</td>
+<td>Crit</td>
+<td>5% drop from Desert stage 1 tumbleweeds, then buy</td>
+</tr>
+<tr>
+<td>Sword</td>
+<td>Sweeping slash through several enemies</td>
+<td>Size, Quantity</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Hero Sword</td>
+<td>Front slash plus a ranged slash</td>
+<td>Size, Quantity</td>
+<td>Beat a stage boss with no items, powerups or shrines; 30 Silver</td>
+</tr>
+<tr>
+<td>Corrupted Sword</td>
+<td>Front and back slashes; more damage at low HP</td>
+<td>Low HP</td>
+<td>Cursed Tome to level 20 before 10:00, then buy</td>
+</tr>
+<tr>
+<td>Dexecutioner</td>
+<td>Piercing blade with an execute chance</td>
+<td>Execute</td>
+<td>Kill 12,500 enemies with the Sword</td>
+</tr>
+<tr>
+<td>Axe</td>
+<td>Spinning axes that linger</td>
+<td>Size, Duration</td>
+<td>Kill 2,000 enemies with the Sword</td>
+</tr>
+<tr>
+<td>Scythe</td>
+<td>360° sweep; elite kills charge a stronger attack</td>
+<td>Size, Cooldown</td>
+<td>Beat Big Bob in the Graveyard Crypt, then buy</td>
+</tr>
+<tr>
+<td>Aura</td>
+<td>Constant close-range damage</td>
+<td>—</td>
+<td>Take no damage for 2 minutes in a row</td>
+</tr>
+<tr>
+<td>Aegis</td>
+<td>Blocks attacks and releases counter shockwaves</td>
+<td>Thorns, defense</td>
+<td>Block 500 damage with Armor as Sir Oofie</td>
+</tr>
+<tr>
+<td>Revolver</td>
+<td>Ricocheting bullets</td>
+<td>Crit, bounces</td>
+<td>Kill 7,500 enemies</td>
+</tr>
+<tr>
+<td>Sniper Rifle</td>
+<td>Long-range piercing shot</td>
+<td>Crit, boss damage</td>
+<td>Precision Tome to level 10</td>
+</tr>
+<tr>
+<td>Shotgun</td>
+<td>Spread burst</td>
+<td>Crit Damage, Knockback</td>
+<td>5% drop from Desert stage 2 tumbleweeds, then buy</td>
+</tr>
+<tr>
+<td>Bow</td>
+<td>Piercing arrows</td>
+<td>Crit, lines of enemies</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Bone</td>
+<td>Bouncing projectile, starts with 1 bounce</td>
+<td>Quantity, bounces</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Bananarang</td>
+<td>Returning banana</td>
+<td>—</td>
+<td>Find the hidden banana in Forest</td>
+</tr>
+<tr>
+<td>Wireless Dagger</td>
+<td>Homing daggers that bounce</td>
+<td>Bounces</td>
+<td>Lightning Staff to level 15</td>
+</tr>
+<tr>
+<td>Slutty Rocket</td>
+<td>Homing missiles</td>
+<td>Quantity, Projectile Speed</td>
+<td>Kill 15,000 enemies as CL4NK</td>
+</tr>
+<tr>
+<td>Chunkers</td>
+<td>Orbiting rocks, starts with +1 projectile</td>
+<td>Projectile Speed</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Lightning Staff</td>
+<td>Lightning on nearby enemies; upgrades add chain bounces</td>
+<td>Bounces</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Firestaff</td>
+<td>Explosive fireballs</td>
+<td>Projectiles, area</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Dragon's Breath</td>
+<td>Rotating flame that targets enemies; damage 16, 1.5 s duration</td>
+<td>Rotation speed</td>
+<td>Kill 1,000 Wisps as Fox in Desert</td>
+</tr>
+<tr>
+<td>Flamewalker</td>
+<td>Damaging fire trail</td>
+<td>Duration, area</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>Frostwalker</td>
+<td>Freezes and damages enemies nearby</td>
+<td>—</td>
+<td>Freeze 1,000 enemies with Ice Cube</td>
+</tr>
+<tr>
+<td>Poison Flask</td>
+<td>Lasting poison zones</td>
+<td>Duration, poison</td>
+<td>Beat Scorpionussy 3 times in Desert</td>
+</tr>
+<tr>
+<td>Blood Magic</td>
+<td>5% of kills permanently add Max HP</td>
+<td>Lifesteal, HP</td>
+<td>Bloody Tome to level 12</td>
+</tr>
+<tr>
+<td>Black Hole</td>
+<td>Gravity field that pulls in and damages enemies</td>
+<td>Duration, area</td>
+<td>Knockback Tome to level 10</td>
+</tr>
+<tr>
+<td>Tornado</td>
+<td>Tornadoes that knock enemies back</td>
+<td>Knockback</td>
+<td>Charge a Charge Shrine 5 times during Desert sandstorms</td>
+</tr>
+<tr>
+<td>Mines</td>
+<td>Proximity mines</td>
+<td>Area denial</td>
+<td>Kill 7,500 enemies with Slutty Rocket</td>
+</tr>
+<tr>
+<td>Space Noodle</td>
+<td>Links to an enemy and damages everything in between</td>
+<td>Positioning</td>
+<td>Clear Desert Tier 2 as Tony McZoom</td>
+</tr>
+</tbody>
+</table></div>
+<p>The "scales best with" column is megabonk.org's build advice rather than measured scaling. The exact numbers from the game follow below.</p>
+<h2>Exact weapon numbers (game data)</h2>
+<p>Each weapon upgrade raises some of that weapon's upgrade lines below, by the Common amount times the offer's rarity multiplier (×1.0 Common up to ×2.0 Legendary). Anvil adds one more line per pick. Cooldown is the pause after each attack, in seconds.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Weapon</th>
+<th>Base damage</th>
+<th>Cooldown</th>
+<th>Starts with</th>
+<th>Upgrade lines (Common amount)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dice</td>
+<td>0 + roll of 1–6</td>
+<td>0.5 s</td>
+<td>10% crit</td>
+<td>Damage +2, Size +15%, Projectiles +1, Crit +10%, Crit Damage +20%, Projectile Speed +0.2</td>
+</tr>
+<tr>
+<td>Katana</td>
+<td>11</td>
+<td>0.4 s</td>
+<td>—</td>
+<td>Damage +2.2, Size +20%, Projectiles +1, Crit +8%, Crit Damage +20%</td>
+</tr>
+<tr>
+<td>Sword</td>
+<td>11</td>
+<td>0.75 s</td>
+<td>—</td>
+<td>Damage +2, Size +20%, Projectiles +1, Knockback +25%</td>
+</tr>
+<tr>
+<td>Hero Sword</td>
+<td>11</td>
+<td>0.75 s</td>
+<td>—</td>
+<td>None listed</td>
+</tr>
+<tr>
+<td>Corrupted Sword</td>
+<td>12</td>
+<td>0.8 s</td>
+<td>—</td>
+<td>Damage +2, Size +15%, Projectiles +1, Projectile Speed +4</td>
+</tr>
+<tr>
+<td>Dexecutioner</td>
+<td>9</td>
+<td>0.8 s</td>
+<td>—</td>
+<td>Damage +2, Size +20%, Projectiles +1, Crit +5%</td>
+</tr>
+<tr>
+<td>Axe</td>
+<td>6</td>
+<td>1.4 s</td>
+<td>2 projectiles</td>
+<td>Damage +1.5, Size +10%, Projectiles +1, Duration +10%</td>
+</tr>
+<tr>
+<td>Scythe</td>
+<td>11</td>
+<td>0.85 s</td>
+<td>—</td>
+<td>Damage +1.5, Size +12%, Projectiles +1, Knockback +15%</td>
+</tr>
+<tr>
+<td>Aura</td>
+<td>6</td>
+<td>0.3 s</td>
+<td>—</td>
+<td>Damage +1.4, Size +14%</td>
+</tr>
+<tr>
+<td>Aegis</td>
+<td>10</td>
+<td>1.5 s</td>
+<td>2 projectiles, 1 bounce</td>
+<td>Damage +2, Size +15%, Projectiles +1, Knockback +25%</td>
+</tr>
+<tr>
+<td>Revolver</td>
+<td>5</td>
+<td>1.4 s</td>
+<td>6 projectiles, 5% crit</td>
+<td>Damage +2.5, Projectiles +1, Crit +10%, Crit Damage +20%, Bounces +1, Projectile Speed +20%</td>
+</tr>
+<tr>
+<td>Sniper Rifle</td>
+<td>22</td>
+<td>1.0 s</td>
+<td>5% crit</td>
+<td>Damage +4, Projectiles +1, Size +13%</td>
+</tr>
+<tr>
+<td>Shotgun</td>
+<td>9</td>
+<td>1.0 s</td>
+<td>5% crit</td>
+<td>Damage +3, Projectiles +1, Size +15%, Crit +10%, Crit Damage +20%</td>
+</tr>
+<tr>
+<td>Bow</td>
+<td>9</td>
+<td>0.92 s</td>
+<td>pierces 99</td>
+<td>Damage +1.75, Projectiles +1, Size +15%, Crit +8%, Crit Damage +18%, Projectile Speed +20%</td>
+</tr>
+<tr>
+<td>Bone</td>
+<td>11</td>
+<td>0.4 s</td>
+<td>1 bounce, 10% crit</td>
+<td>Damage +2.5, Projectiles +1, Bounces +1, Crit +12%, Crit Damage +25%, Projectile Speed +0.2</td>
+</tr>
+<tr>
+<td>Bananarang</td>
+<td>9</td>
+<td>0.8 s</td>
+<td>pierces all</td>
+<td>Damage +2, Size +14%, Projectiles +1, Projectile Speed +10%</td>
+</tr>
+<tr>
+<td>Wireless Dagger</td>
+<td>9</td>
+<td>0.5 s</td>
+<td>1 bounce</td>
+<td>Damage +2, Projectiles +1, Bounces +1, Projectile Speed +15%</td>
+</tr>
+<tr>
+<td>Slutty Rocket</td>
+<td>11</td>
+<td>0.3 s</td>
+<td>5% crit</td>
+<td>Damage +2, Projectiles +1, Crit +8%, Projectile Speed +20%</td>
+</tr>
+<tr>
+<td>Chunkers</td>
+<td>12</td>
+<td>1.5 s</td>
+<td>3 projectiles</td>
+<td>Damage +3, Size +20%, Projectiles +1, Knockback +25%, Projectile Speed +0.35</td>
+</tr>
+<tr>
+<td>Lightning Staff</td>
+<td>7</td>
+<td>1.1 s</td>
+<td>—</td>
+<td>Damage +2, Size +20%, Projectiles +1, Bounces +1</td>
+</tr>
+<tr>
+<td>Firestaff</td>
+<td>10</td>
+<td>0.5 s</td>
+<td>—</td>
+<td>Damage +2.5, Size +16%, Projectiles +1, Projectile Speed +20%</td>
+</tr>
+<tr>
+<td>Dragon's Breath</td>
+<td>16</td>
+<td>2.0 s</td>
+<td>1.5 s duration</td>
+<td>Damage +4, Size +15%, Duration +0.2</td>
+</tr>
+<tr>
+<td>Flamewalker</td>
+<td>5</td>
+<td>none</td>
+<td>—</td>
+<td>Damage +2, Size +15%, Projectiles +1, Duration +12%</td>
+</tr>
+<tr>
+<td>Frostwalker</td>
+<td>9</td>
+<td>1.25 s</td>
+<td>—</td>
+<td>Damage +2, Size +10%, Duration +0.12</td>
+</tr>
+<tr>
+<td>Poison Flask</td>
+<td>1</td>
+<td>0.8 s</td>
+<td>—</td>
+<td>Damage +0.5, Size +15%, Projectiles +1, Duration +1, Projectile Speed +2</td>
+</tr>
+<tr>
+<td>Blood Magic</td>
+<td>9</td>
+<td>1.5 s</td>
+<td>pierces all</td>
+<td>Damage +1.5, Size +15%, Projectiles +1</td>
+</tr>
+<tr>
+<td>Black Hole</td>
+<td>4.5</td>
+<td>1.0 s</td>
+<td>—</td>
+<td>Damage +1.25, Size +13%, Projectiles +1, Duration +0.12</td>
+</tr>
+<tr>
+<td>Tornado</td>
+<td>8</td>
+<td>0.8 s</td>
+<td>pierces all</td>
+<td>Damage +2, Size +14%, Projectiles +1, Knockback +20%, Projectile Speed +20%</td>
+</tr>
+<tr>
+<td>Mines</td>
+<td>10</td>
+<td>1.0 s</td>
+<td>—</td>
+<td>Damage +3, Size +15%, Projectiles +1, Duration +0.4</td>
+</tr>
+<tr>
+<td>Space Noodle</td>
+<td>10</td>
+<td>1.0 s</td>
+<td>—</td>
+<td>Damage +2, Size +20%, Duration +0.2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Damage lines are flat additions to the weapon's base, so a weapon with low base damage (Dice, Black Hole, Poison Flask) gains the most from each Damage line relative to where it started. Dice and Katana both carry two crit lines, which is why they pair well with Precision and Giant Fork. Dice's own crit growth from rolling sixes is capped by the game at 100 roll-ups a minute.</p>
+<p>Sources: <a href="https://megabonk.org/database/weapons/">megabonk.org weapon database</a>, <a href="https://www.youtube.com/watch?v=0PI3G3N5DVs">rockmanzexo 1.1M run</a>, <a href="https://www.youtube.com/watch?v=d2AIeYe2B2A">Rizzotto run</a>.</p><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>

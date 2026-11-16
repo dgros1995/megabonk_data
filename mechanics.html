@@ -1,0 +1,242 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How it really works · Megabonk Data</title><meta name="description" content="A data-driven Megabonk guide: exact item, tome, weapon and character numbers and the game's real formulas, read from the game's code.">
+<style>
+:root{--bg:#faf8f4;--panel:#ffffff;--ink:#1d1b18;--muted:#6b665e;--line:#e4dfd6;--accent:#c2410c;--accent-soft:#fdeee5;--code:#f3efe8}
+@media (prefers-color-scheme:dark){:root{--bg:#141311;--panel:#1c1a17;--ink:#ece8e1;--muted:#a39d93;--line:#2e2b27;--accent:#fb923c;--accent-soft:#2a1d14;--code:#26231f}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{display:flex;min-height:100vh}
+nav{width:240px;flex:none;border-right:1px solid var(--line);padding:28px 18px;position:sticky;top:0;height:100vh;overflow:auto;background:var(--panel)}
+nav .brand{font-weight:800;font-size:18px;letter-spacing:-.02em;margin:0 0 4px}
+nav .sub{color:var(--muted);font-size:13px;margin:0 0 22px}
+nav a{display:block;padding:7px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:15px}
+nav a:hover{background:var(--code)}nav a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+main{flex:1;min-width:0;padding:40px 48px 80px;max-width:980px}
+h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;margin:0 0 18px}
+h2{font-size:23px;letter-spacing:-.015em;margin:44px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:28px 0 8px}
+a{color:var(--accent)}strong{font-weight:650}
+.tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--code);font-weight:650;white-space:nowrap}tr:last-child td{border-bottom:0}
+code{background:var(--code);padding:1px 5px;border-radius:5px;font-size:.92em}
+ul,ol{padding-left:22px}li{margin:4px 0}
+footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
+nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
+main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
+</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Guide</a><a href="mechanics.html" class="on">How it really works</a><a href="best-choices.html" class="">Best choices</a><a href="items.html" class="">Items</a><a href="tomes.html" class="">Tomes</a><a href="weapons.html" class="">Weapons</a><a href="characters.html" class="">Characters</a></div></nav>
+<main><h1>How it really works (from the game's code)</h1>
+<p>Everything on this page was read straight out of Megabonk's compiled code (v1.0.69, GameAssembly.dll decompiled with Il2CppDumper and a disassembler), not from testing or wikis. Where a step was only partly traced it says so.</p>
+<h2>1. How every stat is calculated</h2>
+<p><strong>Final stat = (base + flat bonuses) × (1 + sum of all % bonuses) × (product of all multipliers)</strong></p>
+<ul>
+<li>"+X%" bonuses (most tomes, most items) <strong>add together</strong> inside one bracket. Ten +10% damage bonuses = ×2.0, not ×2.59.</li>
+<li>"×X" multipliers <strong>multiply</strong> with each other and with the % bracket. That is why a single ×1.5 source is worth more the more % you already have.</li>
+<li>Flat bonuses add to the base before anything is scaled.</li>
+</ul>
+<p>Base values every character starts from (before character bonuses):</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Base</th>
+<th></th>
+<th>Stat</th>
+<th>Base</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max HP</td>
+<td>100</td>
+<td></td>
+<td>Crit chance</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>HP regen</td>
+<td>10</td>
+<td></td>
+<td>Crit damage</td>
+<td>×1.0</td>
+</tr>
+<tr>
+<td>Evasion</td>
+<td>1%</td>
+<td></td>
+<td>Jump height</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Pickup range</td>
+<td>5</td>
+<td></td>
+<td>Damage, attack speed, size, duration, projectile speed, knockback, move speed</td>
+<td>×1.0</td>
+</tr>
+<tr>
+<td>Gold, XP, chest, silver gain</td>
+<td>×1.0</td>
+<td></td>
+<td>Fire, ice, lightning, poison, elite damage</td>
+<td>×1.0</td>
+</tr>
+<tr>
+<td>Luck, Difficulty, Armor, Shield, Lifesteal</td>
+<td>0</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Three stats have <strong>diminishing returns built in</strong>:</p>
+<ul>
+<li><strong>Armor:</strong> real reduction = A / (A + 0.75), capped at 99.9%. Armor 0.25 = 25%, 0.75 = 50%, 1.5 = 67%, 3 = 80%.</li>
+<li><strong>Evasion:</strong> real chance = E / (E + 1), capped at 99.9%. Evasion 0.5 = 33%, 1.0 = 50%, 3.0 = 75%.</li>
+<li><strong>Max HP</strong> can't go below 1.</li>
+</ul>
+<h2>2. Weapon damage and crits</h2>
+<p><strong>Hit damage = weapon damage × your Damage stat × crit multiplier × Crit damage</strong></p>
+<ul>
+<li><strong>Crit chance = your Crit chance + the weapon's Crit chance.</strong></li>
+<li>Crit chance over 100% <strong>overcrits</strong>. The game rolls the number of crits: one guaranteed crit per full 100%, plus one more with the leftover chance. 230% = 2 crits, with a 30% chance of 3.</li>
+<li>The multiplier grows faster than the crit count (it is (1 + crits/2)², except a single crit is ×2):</li>
+</ul>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Crits on the hit</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multiplier</td>
+<td>×1</td>
+<td>×2</td>
+<td>×4</td>
+<td>×6.25</td>
+<td>×9</td>
+<td>×12.25</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>That multiplier is then <strong>multiplied again by Crit damage</strong> (base ×1.0).</li>
+<li>Average multiplier examples: 100% crit = ×2, 150% = ×3, 200% = ×4, 300% = ×6.25, 400% = ×9.</li>
+<li><strong>Takeaway:</strong> past 100%, every extra 100% crit chance is worth more than the last. Crit chance is the strongest scaling stat in the game for direct weapon hits.</li>
+<li>Aegis adds your Thorns to its damage.</li>
+<li>Execute: normal enemies that can be executed die outright; bosses and enemies that can't be executed take 2% of their max HP instead.</li>
+</ul>
+<h2>3. Item procs and the proc coefficient</h2>
+<ul>
+<li>Every on-hit item roll is <strong>chance × the weapon's proc coefficient</strong> (Sniper 1.5; Dice and most weapons 1.0; Katana 0.95; Axe, Aura, Black Hole, Dragon's Breath 0.7).</li>
+<li>Damage from poison, burn ticks and similar effects has <strong>proc coefficient 0</strong>, so it never triggers on-hit items. There are no chain reactions off damage-over-time.</li>
+<li><strong>Elite damage</strong> multiplies all damage against elites, damage-over-time included.</li>
+</ul>
+<h2>4. Poison</h2>
+<ul>
+<li><strong>Damage per tick = stacks × Damage × Poison damage</strong>, never less than 1 per stack.</li>
+<li><strong>2 ticks per second</strong> for the duration × Duration multiplier.</li>
+<li><strong>No stack cap.</strong> Every application adds stacks. Re-applying only lengthens the timer if the new duration is longer than what's left.</li>
+<li>Not affected by crits, weapon damage or boss damage. Reduced by enemy armor.</li>
+</ul>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Moldy Cheese</td>
+<td>40% per copy to add a stack on hit, 5 s. Each full 100% is a guaranteed stack (3 copies = 1 stack every hit + 20% for a second). Only the leftover chance is scaled by proc coefficient.</td>
+</tr>
+<tr>
+<td>Snek</td>
+<td>"Poison chance" 4.0 per copy, 5 s. Appears to follow the Cheese rule (about 4 stacks per hit per copy); not fully traced. 5% per copy chance of a poison burst.</td>
+</tr>
+<tr>
+<td>Toxic Barrel</td>
+<td>5 stacks per copy to enemies near you when you take damage; radius 7 + 1 per copy; 5 s.</td>
+</tr>
+<tr>
+<td>Poison Gloves</td>
+<td>10 stacks per copy in radius 15, at 1.5× base damage, about every 8.5 s.</td>
+</tr>
+<tr>
+<td>Plague (passive)</td>
+<td>+1% poison damage per level; poisons around enemies that die (radius 4, growing to 12; 4 s).</td>
+</tr>
+</tbody>
+</table></div>
+<h2>5. Burn, freeze, stun</h2>
+<ul>
+<li>Your <strong>base damage = 8 + your level</strong>. Burn and some items scale off this, not your weapon.</li>
+<li><strong>Burn:</strong> one hit per second of (8 + level) × Damage × 0.85, for 3 s × Duration. It doesn't stack; re-applying only refreshes it.</li>
+<li><strong>Freeze:</strong> 3 s; the game's freeze slow value is 0.3.</li>
+<li><strong>Stun (Lightning Orb):</strong> 3 s.</li>
+<li>Dragonfire, Ice Cube and Lightning Orb each roll twice per hit: once for the status (burn/freeze/stun) and once for their extra effect (fire field, ice burst, lightning strike). Both rolls are scaled by proc coefficient.</li>
+</ul>
+<h2>6. Damage you take</h2>
+<p><strong>Damage taken = enemy damage × (1 − armor reduction) × (1 − damage reduction)</strong>, minimum 1.</p>
+<ul>
+<li>Against boss attacks your armor counts <strong>half</strong>; against the final boss it counts <strong>75%</strong>. Some attacks ignore armor.</li>
+<li><strong>Evasion</strong> is a chance to dodge a hit entirely.</li>
+<li><strong>Overheal</strong> cap = Max HP × Overheal.</li>
+<li><strong>Lifesteal</strong> works like crits: one guaranteed heal per full 100%, plus a chance for one more.</li>
+</ul>
+<h2>7. How enemies scale</h2>
+<p><strong>Enemy HP = base HP × (1 + time + final swarm + stage + 1.1 × Difficulty) × type × your Enemy HP multiplier</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time</td>
+<td>+10% per minute of the run × Enemy scaling multiplier</td>
+</tr>
+<tr>
+<td>Final swarm</td>
+<td>4^(minutes into the final swarm) − 1</td>
+</tr>
+<tr>
+<td>Stage</td>
+<td>Stage 1: +0. Stage 2: +27 × (1 + 0.45 × Difficulty). Stage 3: +145 × (1 + 0.45 × Difficulty)</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Elite ×10, challenge ×7, elite challenge ×15; bosses ×2.5 on stage 2 and ×5 on stage 3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Enemy damage = base × (1 + 2.8% per minute + (2^(final swarm minutes) − 1) + stage bonus + Difficulty) × 1.5 for elites × your Enemy damage multiplier.</strong> The stage bonus looks like +2 on stage 2 and +4 on stage 3 (partly traced).</p>
+<p>What this means:</p>
+<ul>
+<li><strong>Stage 2 enemies start at roughly 30× base HP, and stage 3 at roughly 150×</strong>, while stage 1 ends near 2×. Your damage has to grow about 15× from the end of stage 1 to the start of stage 2.</li>
+<li><strong>Final swarm HP multiplies by 4 every minute:</strong> +3 after one minute, +15 after two, +63 after three. Damage doubles every minute. Farming the swarm runs into a wall fast, so the kills come from killing huge numbers early in the swarm, not from surviving longer.</li>
+<li>Difficulty adds directly to HP and damage, and stage HP scales with it too. Difficulty is a risk dial, not a free bonus.</li>
+<li>Some special enemies have HP tied to <strong>your level</strong>: (level + 25) × 20, or level + 30.</li>
+</ul>
+<h2>8. Luck</h2>
+<ul>
+<li>Luck changes rarity weights for level-up offers, chests, Moai and Shady Guys.</li>
+<li>Each rarity's weight is scaled by (1 + Luck)^(−0.61 × steps below the top rarity), then the weights are normalised.</li>
+<li>So each step down in rarity loses about ×1.5 relative weight at Luck 100%, ×1.9 at 200% and ×2.3 at 300%: steady but diminishing returns. (This assumes the curve function is a logarithm, which its input checks suggest. The base weights themselves weren't recovered.)</li>
+<li>Level-up offers then multiply the rolled value by the rarity multiplier (Common 1.0, Uncommon 1.2, Rare 1.4, Epic 1.6, Legendary 2.0).</li>
+</ul>
+<h2>Not covered yet</h2>
+<p>Gamba rolls, the exact base rarity weights, Snek's stack rule and the stage damage bonus need one more pass.</p><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>
