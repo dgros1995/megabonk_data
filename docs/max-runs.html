@@ -109,7 +109,8 @@ td code,li code,p code{overflow-wrap:anywhere}
 <li><strong>Weapons:</strong> Katana is in 91%, then Shotgun 53%, Dexecutioner 48%, Dice 37% and Firestaff 31%.</li>
 <li><strong>Tomes:</strong> Chaos 99%, XP 96%, Cursed 95%, then Luck and Damage (about half each).</li>
 <li><strong>Items every top run has:</strong> Overpowered Lamp, Spicy Meatball, Anvil, Beefy Ring, Giant Fork, Big Bonk, Wizard's Hat, Key, Time Bracelet, Lightning Orb and Credit Card (Green). These are each in 95–100% of them.</li>
-<li><strong>Items they leave out:</strong> Za Warudo is in 1% of them, Snek 2%, Forbidden Juice 4%, Battery 10%, Dragonfire 16% and Bob's Light 26%. Energy Core, Gas Mask and Gamer Goggles are in almost none. Top players toggle these out of the pool, so chests land on the core items instead.</li>
+<li><strong>Za Warudo is the exception.</strong> It shows up in only 1% of these runs, but that is because the leaderboard records the inventory at the end of the run, and each Za Warudo breaks when it saves you. Top runs stack many copies; by the end they've all been spent. In the video runs, the 1.1M and 999k end screens show no Za Warudo left.</li>
+<li><strong>Items they leave out:</strong> Snek 2%, Forbidden Juice 4%, Battery 10%, Dragonfire 16% and Bob's Light 26%. Energy Core, Gas Mask and Gamer Goggles are in almost none. Top players toggle these out of the pool, so chests land on the core items instead.</li>
 <li><strong>The kill counter caps at 16,777,216.</strong> The top three runs all stop at exactly that number. That's 2²⁴, the largest whole number a 32-bit float can count to exactly, so the kill count is almost certainly stored as a float and can't go higher.</li>
 </ul>
 <p><strong>About versions:</strong> the leaderboard is on patch 1.0.65, and this wiki's code reading is 1.0.69. Sections 4–5b below describe how the 1.0.69 final swarm works. Top runs clearly survive far past the 12-minute wall described there, so treat those sections as how the swarm escalates, not as a hard limit.</p>
@@ -172,7 +173,7 @@ td code,li code,p code{overflow-wrap:anywhere}
 </tbody>
 </table></div>
 <p>At 300% Luck a Legendary comes about every 8 chests; at 0% it's one in 63.</p>
-<p><strong>Then narrow the pool.</strong> This is what top runs do: Za Warudo, Bob's Light, Dragonfire, Battery and others are almost never in a 500k+ run. A Legendary chest picks one of the Legendaries still in your pool. With all 22 enabled, 10 copies of Big Bonk takes about 220 Legendary rolls. Toggled down to 3, it takes about 30. Shady Guys add more rolls, and a Microwave clones an item you already have.</p>
+<p><strong>Then narrow the pool.</strong> This is what top runs do: Bob's Light, Dragonfire, Battery, Snek and others are almost never in a 500k+ run. Keep Za Warudo on: it is a Legendary worth stacking. A Legendary chest picks one of the Legendaries still in your pool. With all 22 enabled, 10 copies of Big Bonk takes about 220 Legendary rolls. Toggled down to 3, it takes about 30. Shady Guys add more rolls, and a Microwave clones an item you already have.</p>
 <h2 id="3-boss-curses-how-many"><img class="ic" src="img/Curse.png" alt="">3. Boss Curses: how many</h2>
 <p>Each curse, for the rest of that stage:</p>
 <ul>
@@ -288,8 +289,13 @@ td code,li code,p code{overflow-wrap:anywhere}
 <li><strong>Lock the swarm down with freeze and stun</strong> (Ice Cube, Frostwalker, freeze chance, stun items). Until 20:00 every enemy can be locked 15 times; after that each one gets fewer locks.</li>
 <li><strong>Knockback and space.</strong> Red Ghosts have knockback resistance 50, so plain knockback barely moves them; keep moving and keep the map thin instead.</li>
 <li><strong>Kill what HP doesn't matter for.</strong> Cursed Doll (30% max HP per second) and Bob's Light (1 in 3 on Red Ghosts) keep fewer ghosts in contact range.</li>
-<li><strong>Za Warudo copies</strong> block one fatal hit each (up to 25 a run), but 99% of 500k+ runs leave it out, so don't count on it.</li>
-<li><strong>Shield and HP still help early in the Red phase</strong> (a 135k hit at 12:00 is survivable with a big shield), but they stop mattering a couple of minutes later.</li>
+<li>
+<p><strong>Stack Za Warudo.</strong> Each copy blocks one fatal hit by freezing time, then breaks (up to 25 a run). Top runs pick up many and burn through them in the late swarms, which is why almost none still have one when the run ends.</p>
+<blockquote>
+<p><strong>Example:</strong> with 12 copies you can take 12 hits that would have killed you. Each one also freezes the swarm for a moment, so you get time to move out. The 13th fatal hit ends the run unless you have picked up more.
+6. <strong>Shield and HP still help early in the Red phase</strong> (a 135k hit at 12:00 is survivable with a big shield), but they stop mattering a couple of minutes later.</p>
+</blockquote>
+</li>
 </ol>
 <p>Not traced yet: the exact way a hit's damage is reduced after Evasion and Armor, so check this against your own runs.</p>
 <h2 id="6-moving-between-stages"><img class="ic" src="img/Challenges1.png" alt="">6. Moving between stages</h2>

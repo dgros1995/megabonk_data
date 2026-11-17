@@ -102,7 +102,7 @@ td code,li code,p code{overflow-wrap:anywhere}
 <p>Ranked for one goal: <strong>topping the kill leaderboard</strong>, with runs of 500,000+ kills. The rankings come from what the best runs actually use, from the 497 verified runs with 500k+ kills on <a href="https://megabonk.leaderboard.gg/">Leaderboard.gg</a> (synced by <a href="https://megabonk.org/leaderboard/">megabonk.org</a>), patch 1.0.65, snapshot of Nov 16, 2026. The game code on the other pages explains <em>why</em>.</p>
 <ul>
 <li>The leaderboard keeps <strong>one run per player per character</strong>, so characters fewer people play have fewer runs. Character tiers weigh the best results and 1M+ runs, not just counts.</li>
-<li>The leaderboard lists <strong>which items a run had, not how many copies</strong>. Item tiers show how often top runs keep each item in their pool. An item almost no top run has was usually toggled out on purpose.</li>
+<li>The leaderboard lists <strong>which items a run had, not how many copies</strong>. Item tiers show how often top runs keep each item in their pool. An item almost no top run has was usually toggled out on purpose. <strong>Except Za Warudo:</strong> each copy breaks when it saves you, so top runs stack many and have spent them all by the end. Its 1% is an undercount, and it is ranked by use, not by that number.</li>
 <li>The median 500k+ run lasts about 96 minutes and reaches level 2,256. 96% are on Forest.</li>
 </ul>
 <h2 id="characters"><img class="ic" src="img/Dicehead.png" alt="">Characters</h2>
@@ -288,6 +288,10 @@ td code,li code,p code{overflow-wrap:anywhere}
 <tr>
 <td class="nm" data-label="Item"><img class="ic" src="img/ItemAnvil.png" alt="">Anvil</td>
 <td data-label="In 500k+ runs">100%</td>
+</tr>
+<tr>
+<td class="nm" data-label="Item"><img class="ic" src="img/ItemZaWarudo.png" alt="">Za Warudo</td>
+<td data-label="In 500k+ runs">1% at the end (all used up; see above)</td>
 </tr>
 <tr>
 <td class="nm" data-label="Item"><img class="ic" src="img/ItemBeefyRing.png" alt="">Beefy Ring</td>
@@ -586,10 +590,6 @@ td code,li code,p code{overflow-wrap:anywhere}
 <td data-label="In 500k+ runs">2%</td>
 </tr>
 <tr>
-<td class="nm" data-label="Item"><img class="ic" src="img/ItemZaWarudo.png" alt="">Za Warudo</td>
-<td data-label="In 500k+ runs">1%</td>
-</tr>
-<tr>
 <td class="nm" data-label="Item"><img class="ic" src="img/ItemTacticalGoggles.png" alt="">Tactical Glasses</td>
 <td data-label="In 500k+ runs">1%</td>
 </tr>
@@ -664,6 +664,7 @@ td code,li code,p code{overflow-wrap:anywhere}
 <li><strong>Overpowered Lamp</strong> makes every hit run all your on-hit items one extra time per Lamp (max 2), so everything rolls 3 times per hit.</li>
 <li><strong>Big Bonk, Spicy Meatball, Lightning Orb and Giant Fork</strong> all multiply off the hit, so they scale with everything else.</li>
 <li><strong>Wizard's Hat and Anvil</strong> raise tome levels and weapon upgrades. That matters more the longer the run goes, and these runs go for hours.</li>
+<li><strong>Za Warudo</strong> blocks one fatal hit per copy (max 25 a run). Each copy is a second chance in the late swarms, and they are spent as you go.</li>
 <li><strong>Key, Credit Card (Green) and Time Bracelet</strong> mean more chests, more Luck and more levels, so more rolls at the core.</li>
 </ul>
 <h2 id="weapons-and-tomes-in-top-runs"><img class="ic" src="img/Katana.png" alt="">Weapons and tomes in top runs</h2>
