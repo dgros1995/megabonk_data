@@ -16,7 +16,7 @@ nav.side{width:252px;flex:none;border-right:1px solid var(--line);position:stick
 .wm{display:block;font-size:27px;font-weight:850;letter-spacing:-.03em;line-height:1}.wm i{font-style:normal;color:#fb923c}
 .brand span{display:block;margin-top:8px;font-size:12.5px;opacity:.72;letter-spacing:.02em}
 .links{padding:10px 12px 24px}.grp{margin-top:10px}.grp>b{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:6px 10px 4px;font-weight:700}.mbtn{display:none}
-.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:56px}.pager a{display:block;border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:12px 16px;text-decoration:none;color:var(--ink);font-weight:650}.pager a:hover{border-color:var(--accent)}.pager span{display:block;font-size:12.5px;color:var(--muted);font-weight:500}.pager .nx{text-align:right}
+.suggest{margin-top:48px;padding:14px 16px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:14.5px}.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:56px}.pager a{display:block;border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:12px 16px;text-decoration:none;color:var(--ink);font-weight:650}.pager a:hover{border-color:var(--accent)}.pager span{display:block;font-size:12.5px;color:var(--muted);font-weight:500}.pager .nx{text-align:right}
 .links a{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:9px;color:var(--ink);text-decoration:none;font-size:15px;line-height:1.3}
 .links a img{width:22px;height:22px;flex:none}
 .links a:hover{background:var(--code)}.links a.on{background:var(--accent-soft);color:var(--accent-ink);font-weight:650}
@@ -111,7 +111,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </style></head><body><div class="wrap"><nav class="side" id="nav" aria-label="Site"><div class="bar"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <button class="mbtn" type="button" aria-expanded="false" aria-controls="links"><span class="cur">Maxing a run</span><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span><span class="mb-t">Menu</span></button></div>
 <div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html" class="on" aria-current="page"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
-<main id="top"><div class="pg-head"><img class="pg-ic" src="img/kill100k.png" alt="" width="52" height="52"><h1>Maxing a run</h1></div><p class="meta">Game v1.0.69 · updated Nov 17, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#0-what-500k-leaderboard-runs-do">0. What 500k+ leaderboard runs do</a></li><li><a href="#1-before-the-run">1. Before the run</a></li><li><a href="#2-stage-1-0001000-build-the-engine">2. Stage 1, 0:00–10:00: build the engine</a></li><li><a href="#2b-chest-volume-and-luck-how-big-runs-get-10-copies">2b. Chest volume and Luck: how big runs get 10+ copies</a></li><li><a href="#3-boss-curses-how-many">3. Boss Curses: how many</a></li><li><a href="#4-the-final-swarm-where-the-kills-are">4. The final swarm: where the kills are</a></li><li><a href="#5-the-ghost-wall-at-1213-minutes">5. The ghost wall at 12–13 minutes</a></li><li><a href="#5b-staying-alive-past-14-minutes">5b. Staying alive past 14 minutes</a></li><li><a href="#6-moving-between-stages">6. Moving between stages</a></li><li><a href="#7-what-a-361000-kill-run-showed">7. What a 361,000-kill run showed</a></li></ul></div>
+<main id="top"><div class="pg-head"><img class="pg-ic" src="img/kill100k.png" alt="" width="52" height="52"><h1>Maxing a run</h1></div><p class="meta">Game v1.0.69 · updated Nov 17, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Maxing%20a%20run&page=Maxing%20a%20run%20%28https%3A//bonk.wiki/max-runs.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><div class="toc"><b>On this page</b><ul><li><a href="#0-what-500k-leaderboard-runs-do">0. What 500k+ leaderboard runs do</a></li><li><a href="#1-before-the-run">1. Before the run</a></li><li><a href="#2-stage-1-0001000-build-the-engine">2. Stage 1, 0:00–10:00: build the engine</a></li><li><a href="#2b-chest-volume-and-luck-how-big-runs-get-10-copies">2b. Chest volume and Luck: how big runs get 10+ copies</a></li><li><a href="#2c-five-ways-to-bend-the-system">2c. Five ways to bend the system</a></li><li><a href="#3-boss-curses-how-many">3. Boss Curses: how many</a></li><li><a href="#4-the-final-swarm-where-the-kills-are">4. The final swarm: where the kills are</a></li><li><a href="#5-the-ghost-wall-at-1213-minutes">5. The ghost wall at 12–13 minutes</a></li><li><a href="#5b-staying-alive-past-14-minutes">5b. Staying alive past 14 minutes</a></li><li><a href="#6-moving-between-stages">6. Moving between stages</a></li><li><a href="#7-what-a-361000-kill-run-showed">7. What a 361,000-kill run showed</a></li></ul></div>
 <p>A plan built on the numbers in this wiki and on what the leaderboard's top runs actually do. The goal is the most kills, which in Megabonk means surviving long in final swarms at high difficulty.</p>
 <h2 id="0-what-500k-leaderboard-runs-do">0. What 500k+ leaderboard runs do</h2>
 <p>From the 477 verified <strong>Forest</strong> runs with 500,000+ kills on <a href="https://megabonk.leaderboard.gg/">Leaderboard.gg</a> (synced by <a href="https://megabonk.org/leaderboard/">megabonk.org</a>, patch 1.0.65, Nov 16, 2026). Graveyard runs are covered separately at the end of this section, because its Bald Heads push stats far past what Forest allows. See the <a href="tiers.html">Tier lists</a> for the full breakdown.</p>
@@ -194,6 +194,72 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </table></div>
 <p>At 300% Luck a Legendary comes about every 8 chests; at 0% it's one in 63.</p>
 <p><strong>Then narrow the pool.</strong> This is what top runs do: Bob's Light, Dragonfire, Battery, Snek and others are almost never in a 500k+ run. Keep Za Warudo on: it is a Legendary worth stacking. A Legendary chest picks one of the Legendaries still in your pool. With all 21 droppable Legendaries enabled, 10 copies of Big Bonk takes about 210 Legendary rolls. Toggled down to 3, it takes about 30. Shady Guys add more rolls, and a Microwave clones an item you already have.</p>
+<h2 id="2c-five-ways-to-bend-the-system">2c. Five ways to bend the system</h2>
+<p><strong>1. Powerup Drop Chance = more free chests.</strong> It multiplies every kill's chance to drop a free chest (<a href="economy.html#chests-from-kills">Chests from kills</a>). Take it from Charge Shrines, and double it at Bald Heads on Graveyard. Note that powerups themselves stop dropping once a final swarm starts; chests from kills don't.</p>
+<blockquote>
+<p><strong>Example:</strong> at 300 kills a second, a free chest drops about every 53 s at ×1 Powerup Drop Chance, every 17 s at ×10 and every 5 s at ×100.</p>
+</blockquote>
+<p><strong>2. Max Luck until nearly every chest is Legendary.</strong> Luck has diminishing returns, but it never stops helping:</p>
+<div class="tw"><table data-m="grid">
+<thead>
+<tr>
+<th>Luck</th>
+<th>100%</th>
+<th>300%</th>
+<th>1,000%</th>
+<th>3,000%</th>
+<th>10,000%</th>
+<th>40,000%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Luck">Legendary chests</td>
+<td data-label="100%">4.7%</td>
+<td data-label="300%">12%</td>
+<td data-label="1,000%">33%</td>
+<td data-label="3,000%">58%</td>
+<td data-label="10,000%">78%</td>
+<td data-label="40,000%">90%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Combined with a narrow Legendary pool (toggles and Banish), late chests land on the few Legendaries you want.</p>
+<p><strong>3. Fight from a ledge at the edge of the map.</strong> <em>(Player technique.)</em> The map's edge is an invisible wall: nothing spawns or walks in from beyond it. Stand on a high ledge right at the boundary and the swarm can only come at you from the map side, in a cone, instead of from all 360°. Your attacks hit the whole pack at once, and dodging means watching one front instead of every direction. Extra jumps and jump height get you up onto those ledges. Flying ghosts still reach you, but from that same side.</p>
+<p><strong>4. Bank a powerup for the exit.</strong> Powerups have no despawn timer: one lying on the ground stays until you touch it (up to 50 on the map), and Magnet only pulls XP, not powerups. Since none drop during the final swarm, leave a <strong>Time</strong> powerup near your ledge or the portal during the stage. When the swarm gets too hot, grab it to freeze every enemy for <strong>12 s × Powerup boost</strong> (48 s at ×4) and walk to the portal.</p>
+<p><strong>5. Stack Boss Curses for boss chests.</strong> Every boss and miniboss drops a free chest when it dies (everywhere except the final-boss map). Each curse adds one miniboss to every miniboss event and one more stage boss:</p>
+<div class="tw"><table data-m="grid">
+<thead>
+<tr>
+<th>Curses</th>
+<th>Forest/Desert stage 1 (2 miniboss events + boss)</th>
+<th>Graveyard (4 miniboss events + boss)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Curses">0</td>
+<td data-label="Forest/Desert stage 1 (2 miniboss events + boss)">3 boss chests</td>
+<td data-label="Graveyard (4 miniboss events + boss)">5 boss chests</td>
+</tr>
+<tr>
+<td data-label="Curses">1</td>
+<td data-label="Forest/Desert stage 1 (2 miniboss events + boss)">6</td>
+<td data-label="Graveyard (4 miniboss events + boss)">10</td>
+</tr>
+<tr>
+<td data-label="Curses">3</td>
+<td data-label="Forest/Desert stage 1 (2 miniboss events + boss)">12</td>
+<td data-label="Graveyard (4 miniboss events + boss)">20</td>
+</tr>
+<tr>
+<td data-label="Curses">5</td>
+<td data-label="Forest/Desert stage 1 (2 miniboss events + boss)">18</td>
+<td data-label="Graveyard (4 miniboss events + boss)">30</td>
+</tr>
+</tbody>
+</table></div>
+<p>The cost: every boss also gets +16% HP per curse, and all of them have to die, so only stack curses when your build kills a miniboss in seconds (section 3).</p>
 <h2 id="3-boss-curses-how-many"><img class="ic" src="img/Curse.png" alt="">3. Boss Curses: how many</h2>
 <p>Each curse, for the rest of that stage:</p>
 <ul>
@@ -368,5 +434,5 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <li><strong>No Bob's Light.</strong> That's the item that keeps killing Red Ghosts (1 in 3) and everything around them.</li>
 </ul>
 <p><strong>A safe plan for a build like this one:</strong> farm each stage's final swarm until about 11:30 of swarm time, then take the portal before the Red switch. On Tier 3 that's up to four 12-minute farms (three stages plus the final map), about 48 minutes of swarm. At ~11,500 a minute that's roughly 550,000 kills before any Red Ghost phase.</p>
-<p><strong>To go further,</strong> build toward the leaderboard core in section 0: Overpowered Lamp, Big Bonk, Spicy Meatball, Giant Fork, Lightning Orb, Beefy Ring, Wizard's Hat and Anvil. Use Katana, Shotgun or Dexecutioner, and Chaos, XP and Cursed tomes. The top runs built this way last hours, not minutes.</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="tiers.html"><span>← Previous</span>Tier lists</a><a class="nx" href="quests.html"><span>Next →</span>Quests &amp; unlocks</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 17, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
+<p><strong>To go further,</strong> build toward the leaderboard core in section 0: Overpowered Lamp, Big Bonk, Spicy Meatball, Giant Fork, Lightning Orb, Beefy Ring, Wizard's Hat and Anvil. Use Katana, Shotgun or Dexecutioner, and Chaos, XP and Cursed tomes. The top runs built this way last hours, not minutes.</p><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Maxing%20a%20run&page=Maxing%20a%20run%20%28https%3A//bonk.wiki/max-runs.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="tiers.html"><span>← Previous</span>Tier lists</a><a class="nx" href="quests.html"><span>Next →</span>Quests &amp; unlocks</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 17, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){var n=document.getElementById('nav'),b=n.querySelector('.mbtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.documentElement.classList.toggle('navlock',o)}b.addEventListener('click',function(){set(!n.classList.contains('open'))});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});var t=document.querySelector('.top');function sc(){t.classList.toggle('show',scrollY>600)}addEventListener('scroll',sc,{passive:true});sc()})()</script></body></html>

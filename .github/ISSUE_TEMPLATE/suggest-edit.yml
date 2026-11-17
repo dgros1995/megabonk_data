@@ -1,0 +1,29 @@
+name: Suggest an edit
+description: Something on bonk.wiki is wrong, unclear or missing.
+title: "[Edit] "
+labels: ["edit suggestion"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Which page (and section, if you know it)?
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What should change?
+      description: What's wrong, unclear or missing, and what it should say instead.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: How do you know?
+      description: A screenshot, a video timestamp, a run, a patch note or the game's code. Anything that lets us check it.
+  - type: input
+    id: version
+    attributes:
+      label: Game version
+      placeholder: "1.0.69"
