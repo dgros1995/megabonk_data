@@ -41,6 +41,7 @@ td.nm{white-space:nowrap}table.dense{font-size:13.5px}table.dense th,table.dense
 .ic{width:24px;height:24px;vertical-align:-6px;margin-right:7px}.mthumb{width:40px;height:30px;border-radius:4px;vertical-align:-9px;margin-right:9px;image-rendering:pixelated;object-fit:cover}
 code{background:var(--code);padding:1px 5px;border-radius:5px;font-size:.9em;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 ul,ol{padding-left:22px}li{margin:4px 0}
+blockquote{margin:14px 0 18px;padding:12px 18px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;max-width:76ch}blockquote p{margin:0 0 6px}blockquote ol,blockquote ul{margin:4px 0 0}
 .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin:0 0 8px;font-size:14.5px}
 .toc b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .toc ul{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:4px 16px}.toc li{margin:0}
@@ -248,6 +249,9 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <h2 id="dicehead-and-gamba">Dicehead and Gamba</h2>
 <p><strong>Gamba</strong>, from the code (PassiveAbilityGamba.OnLevelup): on every level-up it takes one random stat from the level-up stat pool (values in Luck, chests &amp; shrines) and applies it at a fraction of its value:</p>
 <p><strong>Gamba multiplier = 0.75 / (1 + (level / 50)^1.5)</strong>, clamped between 0.06 and 1.0.</p>
+<blockquote>
+<p><strong>Example:</strong> at level 100, (100 ÷ 50)^1.5 = 2^1.5 = 2.83. So the multiplier is 0.75 ÷ (1 + 2.83) = 0.75 ÷ 3.83 = <strong>0.196</strong>: each level-up's free stat is worth about a fifth of a Common offer. At level 50 it's 0.375; from level 300 on it's stuck at the 0.06 floor.</p>
+</blockquote>
 <div class="tw"><table class="dense">
 <thead>
 <tr>

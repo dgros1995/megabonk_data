@@ -41,6 +41,7 @@ td.nm{white-space:nowrap}table.dense{font-size:13.5px}table.dense th,table.dense
 .ic{width:24px;height:24px;vertical-align:-6px;margin-right:7px}.mthumb{width:40px;height:30px;border-radius:4px;vertical-align:-9px;margin-right:9px;image-rendering:pixelated;object-fit:cover}
 code{background:var(--code);padding:1px 5px;border-radius:5px;font-size:.9em;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 ul,ol{padding-left:22px}li{margin:4px 0}
+blockquote{margin:14px 0 18px;padding:12px 18px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;max-width:76ch}blockquote p{margin:0 0 6px}blockquote ol,blockquote ul{margin:4px 0 0}
 .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin:0 0 8px;font-size:14.5px}
 .toc b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .toc ul{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:4px 16px}.toc li{margin:0}
@@ -121,6 +122,16 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </table></div>
 <p><strong>Enemy damage</strong> (<code>EnemyStats.GetDamage</code>):</p>
 <p>base damage × tier multiplier × (1 + 0.028 per minute × Enemy scaling + (2^(swarm minutes) − 1) + stage + Difficulty) × 1.5 for elites × your Enemy damage multiplier</p>
+<blockquote>
+<p><strong>Example:</strong> a Red Ghost (30 base damage) on a Tier 3 run (×1.1), 50 minutes into the run, 12 minutes into a stage 3 final swarm, at 1,040% Difficulty (10.4):</p>
+<ol>
+<li>Time: 0.028 × 50 = 1.4</li>
+<li>Final swarm: 2¹² − 1 = 4,095</li>
+<li>Stage 3: +4. Difficulty: +10.4</li>
+<li>30 × 1.1 × (1 + 1.4 + 4,095 + 4 + 10.4) = 33 × 4,111.8 = <strong>about 135,700 damage per hit</strong></li>
+</ol>
+<p>Almost all of it comes from the final-swarm term, which doubles every minute.</p>
+</blockquote>
 <p>The stage part for damage is +2 on stage 2 and +4 on stage 3.</p>
 <p>Worked example, Tier 3, Difficulty 0.5, an ordinary enemy:</p>
 <div class="tw"><table>

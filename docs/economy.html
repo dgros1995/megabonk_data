@@ -41,6 +41,7 @@ td.nm{white-space:nowrap}table.dense{font-size:13.5px}table.dense th,table.dense
 .ic{width:24px;height:24px;vertical-align:-6px;margin-right:7px}.mthumb{width:40px;height:30px;border-radius:4px;vertical-align:-9px;margin-right:9px;image-rendering:pixelated;object-fit:cover}
 code{background:var(--code);padding:1px 5px;border-radius:5px;font-size:.9em;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 ul,ol{padding-left:22px}li{margin:4px 0}
+blockquote{margin:14px 0 18px;padding:12px 18px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;max-width:76ch}blockquote p{margin:0 0 6px}blockquote ol,blockquote ul{margin:4px 0 0}
 .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin:0 0 8px;font-size:14.5px}
 .toc b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .toc ul{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:4px 16px}.toc li{margin:0}
@@ -86,6 +87,9 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <p>Every rarity roll that uses Luck goes through the same function (<code>Rarity.CalculateRarityWeights</code>):</p>
 <p><strong>weight of a rarity × 1.5^(−steps below the top rarity × 1.5 × ln(1 + Luck))</strong>, then normalised.</p>
 <p>In plain terms each step down in rarity is scaled by (1 + Luck)^−0.61. That's about ×1.5 at Luck 100%, ×1.9 at 200% and ×2.3 at 300%. Luck keeps helping but with diminishing returns.</p>
+<blockquote>
+<p><strong>Example:</strong> at 0% Luck a chest comes up Legendary 1.6% of the time. At 100% Luck it's 4.7%, about three times as often. Going to 200% only gets you to 8.4%: each extra 100% helps, but a little less than the one before.</p>
+</blockquote>
 <p>Luck is used for <strong>chest items, level-up offers, Moai offers and stat-shrine offers.</strong> It is <strong>not</strong> used for Shady Guy or Microwave rarity: those are rolled at map load with Luck 0.</p>
 <h3 id="chest-item-rarity">Chest item rarity</h3>
 <p>Base weights: Common 70, Rare 15, Epic 6, Legendary 1.5 (<code>Rarity.GetItemRarity</code>). A rarity with every item toggled off is skipped completely.</p>
@@ -258,6 +262,15 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <h2 id="chests"><img class="ic" src="img/ItemKey.png" alt="">Chests</h2>
 <p><strong>Price of the next chest</strong> (<code>MoneyUtility.GetChestPrice</code>), where n = chests opened so far this run:</p>
 <p>(30 × 1.22^n + 35n + 300 × (n − 10) past 10 + 550 × (n − 20) past 20 + 1,200 × (n − 30) past 30 + 2,400 × (n − 30) past 40 + 4,500 × (n − 30) past 50) × Chest price multiplier</p>
+<blockquote>
+<p><strong>Example:</strong> the price of your 12th chest (you've opened n = 11).</p>
+<ol>
+<li>30 × 1.22¹¹ = 30 × 8.91 = 267</li>
+<li>35 × 11 = 385</li>
+<li>You're past 10 chests, so add 300 × (11 − 10) = 300</li>
+<li>Total: 267 + 385 + 300 = <strong>952 gold</strong>, up from 569 for the chest before. That jump at chest 11 is the first big price step.</li>
+</ol>
+</blockquote>
 <p>The count only resets on a new run. It never goes up with time or stage, so a chest left closed costs the same later.</p>
 <div class="tw"><table class="dense">
 <thead>
@@ -309,6 +322,11 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <ul>
 <li>Vendor rarity rolled at map load with Luck 0: <strong>Common 53.3%, Rare 26.7%, Epic 13.3%, Legendary 6.7%</strong>.</li>
 <li><strong>Item price ≈ 30 × 1.22^(0.65 × chests opened) × stage number × rarity multiplier</strong> (Common ×1, Rare ×2, Epic ×4, Legendary ×8), times the chest price multiplier, with a random spread per slot.</li>
+</ul>
+<blockquote>
+<p><strong>Example:</strong> a Rare item on stage 2 after you've opened 10 chests: 30 × 1.22^(0.65 × 10) = 30 × 3.64 = 109, × 2 for stage 2, × 2 for Rare = about <strong>437 gold</strong> (before the random spread).</p>
+</blockquote>
+<ul>
 <li>Shady Guy prices rise with the chests you've opened and with each stage, so shops are cheapest on stage 1 before you open chests.</li>
 </ul>
 <h2 id="shrines"><img class="ic" src="img/Challenges1.png" alt="">Shrines</h2>
