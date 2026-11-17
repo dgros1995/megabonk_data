@@ -1,8 +1,8 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Luck, chests &amp; shrines · bonk.wiki (Megabonk)</title><meta name="description" content="Megabonk Luck odds, chest prices, pots, Microwaves, Shady Guys and shrines, from the game&#x27;s code."><link rel="canonical" href="https://bonk.wiki/economy.html">
+<title>Luck, chests &amp; shrines · bonk.wiki (Megabonk)</title><meta name="description" content="Megabonk Luck odds, chest prices, free chests, powerups, shrines, Banish/Refresh/Skip and the Silver shop, from the game&#x27;s code."><link rel="canonical" href="https://bonk.wiki/economy.html">
 <meta name="theme-color" content="#17130f"><link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="bonk.wiki"><meta property="og:title" content="Luck, chests &amp; shrines · bonk.wiki (Megabonk)">
-<meta property="og:description" content="Megabonk Luck odds, chest prices, pots, Microwaves, Shady Guys and shrines, from the game&#x27;s code."><meta property="og:url" content="https://bonk.wiki/economy.html"><meta property="og:image" content="https://bonk.wiki/og.png">
+<meta property="og:description" content="Megabonk Luck odds, chest prices, free chests, powerups, shrines, Banish/Refresh/Skip and the Silver shop, from the game&#x27;s code."><meta property="og:url" content="https://bonk.wiki/economy.html"><meta property="og:image" content="https://bonk.wiki/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <style>
 :root{--bg:#f7f4ee;--panel:#fffdf9;--ink:#1c1915;--muted:#6b645a;--line:#e5ddd0;--accent:#c2410c;--accent-ink:#9a3412;--accent-soft:#fdeee4;--code:#f1ebe1;--zebra:#fbf8f2;--brand:#17130f;--brand-ink:#f5efe6}
@@ -111,7 +111,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </style></head><body><div class="wrap"><nav class="side" id="nav" aria-label="Site"><div class="bar"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <button class="mbtn" type="button" aria-expanded="false" aria-controls="links"><span class="cur">Luck, chests &amp; shrines</span><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span><span class="mb-t">Menu</span></button></div>
 <div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html" class="on" aria-current="page"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
-<main id="top"><div class="pg-head"><img class="pg-ic" src="img/Gold.png" alt="" width="52" height="52"><h1>Luck, chests &amp; shrines</h1></div><p class="meta">Game v1.0.69 · updated Nov 16, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#how-luck-works">How Luck works</a></li><li><a href="#chests">Chests</a></li><li><a href="#pots">Pots</a></li><li><a href="#microwave">Microwave</a></li><li><a href="#shady-guy">Shady Guy</a></li><li><a href="#shrines">Shrines</a></li><li><a href="#stat-offer-values">Stat offer values</a></li></ul></div>
+<main id="top"><div class="pg-head"><img class="pg-ic" src="img/Gold.png" alt="" width="52" height="52"><h1>Luck, chests &amp; shrines</h1></div><p class="meta">Game v1.0.69 · updated Nov 17, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#how-luck-works">How Luck works</a></li><li><a href="#chests">Chests</a></li><li><a href="#powerups">Powerups</a></li><li><a href="#pots">Pots</a></li><li><a href="#microwave">Microwave</a></li><li><a href="#shady-guy">Shady Guy</a></li><li><a href="#shrines">Shrines</a></li><li><a href="#banish-refresh-and-skip">Banish, Refresh and Skip</a></li><li><a href="#silver-shop">Silver shop</a></li><li><a href="#stat-offer-values">Stat offer values</a></li></ul></div>
 <h2 id="how-luck-works"><img class="ic" src="img/LuckTome.png" alt="">How Luck works</h2>
 <p>Every rarity roll that uses Luck goes through the same function (<code>Rarity.CalculateRarityWeights</code>):</p>
 <p><strong>weight of a rarity × 1.5^(−steps below the top rarity × 1.5 × ln(1 + Luck))</strong>, then normalised.</p>
@@ -257,7 +257,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tbody>
 </table></div>
 <h3 id="where-luck-comes-from">Where Luck comes from</h3>
-<div class="tw"><table data-m="grid">
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Source</th>
@@ -283,11 +283,11 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 <tr>
 <td data-label="Source"><strong>Pots</strong></td>
-<td data-label="Luck"><strong>+0.5% each on stage 1, +0.75% on stage 2, +1% on stage 3; big pots ×1.5</strong></td>
+<td data-label="Luck"><strong>+0.5% each on stage 1, +0.75% on stage 2, +1% on stage 3; big pots ×1.5</strong> (Forest and Desert only; Graveyard has pumpkins instead)</td>
 </tr>
 </tbody>
 </table></div>
-<p>Pots are an easy permanent source: breaking all ~55 on a stage-1 map gives roughly +27% Luck.</p>
+<p>Pots are an easy permanent source: a stage-1 map has 40 small and 15 big pots, so breaking all of them gives 40 × 0.5% + 15 × 0.75% = <strong>+31% Luck</strong>.</p>
 <h2 id="chests"><img class="ic" src="img/ItemKey.png" alt="">Chests</h2>
 <p><strong>Price of the next chest</strong> (<code>MoneyUtility.GetChestPrice</code>), where n = chests opened so far this run:</p>
 <p>(30 × 1.22^n + 35n + 300 × (n − 10) past 10 + 550 × (n − 20) past 20 + 1,200 × (n − 30) past 30 + 2,400 × (n − 30) past 40 + 4,500 × (n − 30) past 50) × Chest price multiplier</p>
@@ -357,20 +357,64 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <ol>
 <li><strong>Powerup Drop Chance</strong> multiplies every roll. Raise it with Charge Shrine offers (+5% per Common offer) and, on Graveyard, Bald Head doublings.</li>
 <li><strong>Kill rate.</strong> The wait shrinks with the square root of kills per second, so 4× the kills halves it.</li>
-<li><strong>Elites</strong> roll at double chance. More elites (Charge Shrine "Elite spawns" offers, Old Mask) help a little: if 10% of your kills are elites, the wait is about 5% shorter.</li>
+<li><strong>Elites</strong> roll at double chance, but they're rare: each enemy that can be elite has a <strong>0.6% × Elite spawns</strong> chance to spawn as one (<code>EnemyStats.GetEliteChance</code>). Old Mask and Charge Shrine "Elite spawns" offers add +15% each to that stat, so even 10 Old Masks only make 1.5% of enemies elite. That shortens the wait by well under 1%.</li>
 <li><strong>Other free chests:</strong> bosses, the first elite on stage 1, frog eggs, Challenge Shrines, and Roberto's Hoarder passive.</li>
 </ol>
 <p>Keys don't add chests. They give a chance for a chest you'd pay for to open free, and chests from kills are already free.</p>
+<h2 id="powerups">Powerups</h2>
+<p>Kills can also drop powerups (<code>PickupManager</code>). Each kill rolls: <strong>the enemy's base chance × Powerup Drop Chance × a 2-minute ramp</strong> that starts at 0 after each powerup and reaches full after 120 s. <strong>Powerups never drop during a final swarm</strong>, and only a limited number can be on the map at once.</p>
+<p>Every powerup's strength and length scale with <strong>Powerup boost</strong> (base ×1.0; Bald Heads can double it):</p>
+<div class="tw"><table data-m="grid">
+<thead>
+<tr>
+<th>Powerup</th>
+<th>What it does (at Powerup boost ×1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="nm" data-label="Powerup"><img class="ic" src="img/nuke.png" alt="">Nuke</td>
+<td data-label="What it does (at Powerup boost ×1)">Explosion with radius 150</td>
+</tr>
+<tr>
+<td data-label="Powerup">Time</td>
+<td data-label="What it does (at Powerup boost ×1)">Freezes enemies for 12 s</td>
+</tr>
+<tr>
+<td class="nm" data-label="Powerup"><img class="ic" src="img/Haste.png" alt="">Haste</td>
+<td data-label="What it does (at Powerup boost ×1)">×1.75 movement speed for 20 s</td>
+</tr>
+<tr>
+<td class="nm" data-label="Powerup"><img class="ic" src="img/rage.png" alt="">Rage</td>
+<td data-label="What it does (at Powerup boost ×1)">×1.5 damage for 15 s</td>
+</tr>
+<tr>
+<td data-label="Powerup">Shield</td>
+<td data-label="What it does (at Powerup boost ×1)">Shield for 15 s</td>
+</tr>
+<tr>
+<td class="nm" data-label="Powerup"><img class="ic" src="img/Stonks.png" alt="">Stonks</td>
+<td data-label="What it does (at Powerup boost ×1)">×2 gold for 15 s</td>
+</tr>
+<tr>
+<td data-label="Powerup">Magnet</td>
+<td data-label="What it does (at Powerup boost ×1)">Pulls in all XP</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Example:</strong> at Powerup boost ×4, a Time pickup freezes enemies for 48 s and a Nuke's radius is 600.</p>
+</blockquote>
 <h2 id="pots"><img class="ic" src="img/Gold.png" alt="">Pots</h2>
 <p>Pots drop gold, XP, HP or silver, plus the Luck above. Pumpkin adds 8 pots on later stages and +18% pot rewards per copy.</p>
 <h2 id="microwave"><img class="ic" src="img/ItemEnergyCore.png" alt="">Microwave</h2>
 <ul>
-<li>Rarity rolled at map load with Luck 0: <strong>Common 75%, Rare 15%, Epic 7.5%, Legendary 2.5%</strong> per Microwave. How many Microwaves a map has depends on the map: <strong>1–2 per stage on Forest and Desert, 4–8 on Graveyard</strong> (<a href="faq.html">map limits</a>). So a Legendary one shows up on about 1 Forest stage in 30, but about 1 Graveyard map in 7.</li>
+<li>Rarity rolled at map load with Luck 0: <strong>Common 75%, Rare 15%, Epic 7.5%, Legendary 2.5%</strong> per Microwave. How many Microwaves a map has depends on the map: <strong>1 or 2 per stage on Forest and Desert; 4, 6 or 8 on Graveyard</strong> (<a href="faq.html">map limits</a>). So a Legendary one shows up on about 1 Forest stage in 27, but about 1 Graveyard map in 7.</li>
 </ul>
 <blockquote>
 <p><strong>Example:</strong> each Microwave has a 97.5% chance of <em>not</em> being Legendary. With 2 Microwaves: 1 − 0.975² = 4.9%, about 1 in 20. With 6 on Graveyard: 1 − 0.975⁶ = 14%, about 1 in 7.
 - <strong>Costs the current chest price</strong> each use.
-- Copies one item of its rarity and takes an item of that rarity you own in exchange. Observed uses: Common 3, Rare 2, Epic 2.</p>
+- Copies one item of its rarity and takes an item of that rarity you own in exchange. <strong>Uses: Common 3, Rare 2, Epic 2, Legendary 1</strong> (<code>InteractableMicrowave.GetUses</code>).</p>
 </blockquote>
 <h2 id="shady-guy"><img class="ic" src="img/ItemCreditCardRed.png" alt="">Shady Guy</h2>
 <ul>
@@ -402,11 +446,11 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 <tr>
 <td class="nm" data-label="Shrine"><img class="ic" src="img/Gold.png" alt="">Greed Shrine</td>
-<td data-label="What it does">Applies a permanent stat effect (Difficulty; +5% each by community count) and drops gold worth 10% of your next chest's price.</td>
+<td data-label="What it does"><strong>+5% Difficulty</strong>, permanently, and drops gold worth 10% of your next chest's price.</td>
 </tr>
 <tr>
 <td class="nm" data-label="Shrine"><img class="ic" src="img/Curse.png" alt="">Boss Curse (Cursed Shrine)</td>
-<td data-label="What it does">+1 Boss Curse: one more miniboss per miniboss event, one more stage boss, bosses +16% HP each.</td>
+<td data-label="What it does">+1 Boss Curse: one more miniboss per miniboss event, one more stage boss, bosses +16% HP each. Only spawns once you've played more than 2 runs.</td>
 </tr>
 <tr>
 <td class="nm" data-label="Shrine"><img class="ic" src="img/Clock.png" alt="">Magnet Shrine</td>
@@ -422,7 +466,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 <tr>
 <td data-label="Shrine">Gravestone (Graveyard)</td>
-<td data-label="What it does">+XP gain and +Difficulty, permanently. Can also spawn an enemy.</td>
+<td data-label="What it does"><strong>+10% XP gain and +5% Difficulty</strong>, permanently. Can also spawn an enemy.</td>
 </tr>
 <tr>
 <td class="nm" data-label="Shrine"><img class="ic" src="img/Coffin.png" alt="">Coffin (Graveyard)</td>
@@ -479,7 +523,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="Chaos Tome, Dicehead&#x27;s Gamba">—</td>
 </tr>
 <tr>
-<td data-label="Stat"><strong>Powerup Drop Chance</strong>, Powerup Multiplier</td>
+<td data-label="Stat"><strong>Powerup Drop Chance</strong>, Powerup boost</td>
 <td data-label="Charge Shrines">✓</td>
 <td data-label="Bald Heads (×2 / ×0.5)">✓</td>
 <td data-label="Chaos Tome, Dicehead&#x27;s Gamba">—</td>
@@ -509,6 +553,86 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <p><strong>Example:</strong> a run that doubles Powerup Drop Chance 3 times and never halves it has ×8. At 300 kills a second that cuts the wait for a free chest from about 53 seconds to about 19 (see <a href="#chests-from-kills">Chests from kills</a>).</p>
 </blockquote>
 <p>Things Bald Heads <strong>can't</strong> roll in the 1.0.69 code: Elite spawns, Projectiles, Difficulty and Extra jumps. Elite spawns come from Charge Shrines (+15% per Common offer) and Old Mask (+15% per copy).</p>
+<h2 id="banish-refresh-and-skip">Banish, Refresh and Skip</h2>
+<p>These are bought in the Silver shop and used on level-up and chest screens:</p>
+<ul>
+<li><strong>Refresh</strong> rerolls a level-up's offers. <strong>Skip</strong> passes on a level-up. <strong>Banish</strong> removes an offered item, weapon or tome from the pool for the rest of the run.</li>
+<li><strong>Charges per run</strong> = the shop level you bought (up to 6), plus one free extra each once you've played enough runs: Skip at 3 runs, Refresh at 6, Banish at 9 (<code>PlayerInventory.InitSkipRefreshBanish</code>).</li>
+<li><strong>Each use also costs gold</strong>, rising with uses this run: the 1st is free, then 5, 25, 50, 85, 140, 235… (5 × 2^(n−1) + 15 × (n−1) for the n-th paid use). Late in a run that's pocket change.</li>
+</ul>
+<p>Banishing is how long runs keep the Legendary pool narrow: every banished Legendary means more chest rolls land on the ones you kept.</p>
+<h2 id="silver-shop">Silver shop</h2>
+<p>Permanent upgrades bought with Silver (<code>ShopItemData</code>). Price of level L = round(base × growth^L) + L × step.</p>
+<div class="tw"><table data-m="cards">
+<thead>
+<tr>
+<th>Upgrade</th>
+<th>Levels</th>
+<th>Prices per level</th>
+<th>Total</th>
+<th>Unlocked by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Upgrade">Weapon slots</td>
+<td data-label="Levels">2 (2 → 4 slots)</td>
+<td data-label="Prices per level">25, 125</td>
+<td data-label="Total">150</td>
+<td data-label="Unlocked by">25 quests</td>
+</tr>
+<tr>
+<td data-label="Upgrade">Tome slots</td>
+<td data-label="Levels">2 (2 → 4 slots)</td>
+<td data-label="Prices per level">35, 135</td>
+<td data-label="Total">170</td>
+<td data-label="Unlocked by">35 quests</td>
+</tr>
+<tr>
+<td data-label="Upgrade">Refresh</td>
+<td data-label="Levels">6</td>
+<td data-label="Prices per level">8, 15, 24, 33, 43, 55</td>
+<td data-label="Total">178</td>
+<td data-label="Unlocked by">20 quests</td>
+</tr>
+<tr>
+<td data-label="Upgrade">Skip</td>
+<td data-label="Levels">6</td>
+<td data-label="Prices per level">8, 15, 24, 33, 43, 55</td>
+<td data-label="Total">178</td>
+<td data-label="Unlocked by">30 quests</td>
+</tr>
+<tr>
+<td data-label="Upgrade">Banish</td>
+<td data-label="Levels">6</td>
+<td data-label="Prices per level">8, 15, 24, 33, 43, 55</td>
+<td data-label="Total">178</td>
+<td data-label="Unlocked by">40 quests</td>
+</tr>
+<tr>
+<td data-label="Upgrade">Silver gain</td>
+<td data-label="Levels">20 (+2.5% each)</td>
+<td data-label="Prices per level">5, 11, 18, 25 … 368, 442</td>
+<td data-label="Total">2,666</td>
+<td data-label="Unlocked by">Default</td>
+</tr>
+<tr>
+<td class="nm" data-label="Upgrade"><img class="ic" src="img/toggler.png" alt="">Toggler</td>
+<td data-label="Levels">1</td>
+<td data-label="Prices per level">50</td>
+<td data-label="Total">50</td>
+<td data-label="Unlocked by">40 unlocks purchased</td>
+</tr>
+<tr>
+<td class="nm" data-label="Upgrade"><img class="ic" src="img/boombox.png" alt="">Boombox</td>
+<td data-label="Levels">1</td>
+<td data-label="Prices per level">5</td>
+<td data-label="Total">5</td>
+<td data-label="Unlocked by">Activate the Forest boomboxes</td>
+</tr>
+</tbody>
+</table></div>
+<p>Slots, Refresh, Skip and Banish can be refunded; Silver gain, Toggler and Boombox can't. <strong>Toggler</strong> is what lets you switch items off in the item pool before a run.</p>
 <h2 id="stat-offer-values">Stat offer values</h2>
 <p>When a shrine or other stat offer gives you a stat, this is the Common amount. Higher rarities multiply it (the offer's rarity multiplier).</p>
 <ul>
@@ -670,5 +794,5 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="How it adds">added directly</td>
 </tr>
 </tbody>
-</table></div><nav class="pager" aria-label="Previous and next page"><a class="pv" href="status.html"><span>← Previous</span>Status effects</a><a class="nx" href="maps.html"><span>Next →</span>Maps &amp; stages</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 16, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
+</table></div><nav class="pager" aria-label="Previous and next page"><a class="pv" href="status.html"><span>← Previous</span>Status effects</a><a class="nx" href="maps.html"><span>Next →</span>Maps &amp; stages</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 17, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){var n=document.getElementById('nav'),b=n.querySelector('.mbtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.documentElement.classList.toggle('navlock',o)}b.addEventListener('click',function(){set(!n.classList.contains('open'))});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});var t=document.querySelector('.top');function sc(){t.classList.toggle('show',scrollY>600)}addEventListener('scroll',sc,{passive:true});sc()})()</script></body></html>

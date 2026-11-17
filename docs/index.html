@@ -132,7 +132,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 <tr>
 <td data-label="Page"><a href="mechanics.html">Core math</a></td>
-<td data-label="What it covers">How every stat is calculated, the three damage brackets, crits and overcrits, proc chances, armor, evasion, everything that touches a number</td>
+<td data-label="What it covers">How every stat is calculated, the three damage brackets, crits and overcrits, proc chances, armor, evasion, XP per level</td>
 </tr>
 <tr>
 <td data-label="Page"><a href="status.html">Status effects</a></td>
@@ -152,7 +152,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 <tr>
 <td data-label="Page"><a href="economy.html">Luck, chests &amp; shrines</a></td>
-<td data-label="What it covers">Luck odds, chest prices, pots, Microwaves, Shady Guys, Moai, Charge, Greed, Cursed and Balance shrines</td>
+<td data-label="What it covers">Luck odds, chest prices, free chests from kills, powerups, pots, Microwaves, Shady Guys, every shrine, Banish/Refresh/Skip and the Silver shop</td>
 </tr>
 <tr>
 <td data-label="Page"><a href="items.html">Items</a></td>
@@ -164,7 +164,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 <tr>
 <td data-label="Page"><a href="tomes.html">Tomes</a></td>
-<td data-label="What it covers">Every tome, rarity multipliers, the level-up stat values, and which weapons each tome affects</td>
+<td data-label="What it covers">Every tome, rarity multipliers, the per-level values, and which weapons each tome affects</td>
 </tr>
 <tr>
 <td data-label="Page"><a href="characters.html">Characters</a></td>
@@ -198,10 +198,10 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </table></div>
 <h2 id="the-ten-facts-that-matter-most">The ten facts that matter most</h2>
 <ol>
-<li><strong>Damage comes in three brackets that multiply:</strong> items add to a flat bracket, level-up and shrine stat offers add to a % bracket, and the Damage Tome is its own multiplier. (<a href="mechanics.html">Core math</a>)</li>
+<li><strong>Damage comes in three brackets that multiply:</strong> items add to a flat bracket, shrine stat offers add to a % bracket, and the Damage Tome is its own multiplier. (<a href="mechanics.html">Core math</a>)</li>
 <li><strong>Crit chance past 100% overcrits,</strong> and the multiplier grows quadratically: 1 crit ×2, 2 ×4, 3 ×6.25, 4 ×9.</li>
 <li><strong>Most proc items have diminishing returns built in.</strong> Dragonfire, Ice Cube, Lightning Orb, Power Gloves and Key use x / (x + k), so the 10th copy adds far less than the first.</li>
-<li><strong>Enemy HP in the final swarm multiplies by 4 every minute,</strong> and their damage doubles every minute. Strong builds keep up until 12:00; after that, percent-HP damage (Cursed Doll) and instant kills (Bob's Light) are what still work.</li>
+<li><strong>Enemy HP in the final swarm multiplies by 4 every minute,</strong> and their damage doubles every minute. Damage alone stops keeping up around 12:00; long runs get past it with stacked on-hit items (Overpowered Lamp, Big Bonk), percent-HP damage (Cursed Doll), Za Warudo and Evasion.</li>
 <li><strong>The ghost wall is a code switch.</strong> The final swarm swaps in tougher ghosts at 1, 6 and 12 minutes. At 12:00 come Red Ghosts: 100 base HP, speed 10, can't be executed, and Bob's Light only kills them a third of the time.</li>
 <li><strong>Stage 2 enemies start at about 30× base HP and stage 3 at about 150×.</strong> Time adds +10% HP per minute of the whole run.</li>
 <li><strong>Each Boss Curse adds one more miniboss to every miniboss event and one more stage boss,</strong> and makes every boss 16% tougher.</li>
@@ -216,5 +216,5 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <li><strong>Base damage</strong> is a separate player number, 8 + your level, used by many items and status effects instead of your weapon's damage.</li>
 <li><strong>Luck 1.0 = 100%.</strong> The game stores percentages as fractions.</li>
 <li>Where something was only partly traced in the code, the page says so.</li>
-</ul><nav class="pager" aria-label="Previous and next page"><span></span><a class="nx" href="game.html"><span>Next →</span>How the game works</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 16, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
+</ul><nav class="pager" aria-label="Previous and next page"><span></span><a class="nx" href="game.html"><span>Next →</span>How the game works</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 17, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){var n=document.getElementById('nav'),b=n.querySelector('.mbtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.documentElement.classList.toggle('navlock',o)}b.addEventListener('click',function(){set(!n.classList.contains('open'))});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});var t=document.querySelector('.top');function sc(){t.classList.toggle('show',scrollY>600)}addEventListener('scroll',sc,{passive:true});sc()})()</script></body></html>

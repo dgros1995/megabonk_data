@@ -111,10 +111,10 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </style></head><body><div class="wrap"><nav class="side" id="nav" aria-label="Site"><div class="bar"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <button class="mbtn" type="button" aria-expanded="false" aria-controls="links"><span class="cur">FAQ &amp; map limits</span><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span><span class="mb-t">Menu</span></button></div>
 <div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="faq.html" class="on" aria-current="page"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
-<main id="top"><div class="pg-head"><img class="pg-ic" src="img/Bullseye.png" alt="" width="52" height="52"><h1>FAQ &amp; map limits</h1></div><p class="meta">Game v1.0.69 · updated Nov 16, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#how-many-of-each-thing-can-a-map-have">How many of each thing can a map have?</a></li><li><a href="#what-does-luck-affect">What does Luck affect?</a></li><li><a href="#is-it-better-to-run-2-3-or-4-weapon-slots">Is it better to run 2, 3 or 4 weapon slots?</a></li><li><a href="#other-common-questions">Other common questions</a></li></ul></div>
-<p>Quick answers, each traced to the game's code or to 1,000+ scanned maps.</p>
+<main id="top"><div class="pg-head"><img class="pg-ic" src="img/Bullseye.png" alt="" width="52" height="52"><h1>FAQ &amp; map limits</h1></div><p class="meta">Game v1.0.69 · updated Nov 17, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#how-many-of-each-thing-can-a-map-have">How many of each thing can a map have?</a></li><li><a href="#what-does-luck-affect">What does Luck affect?</a></li><li><a href="#is-it-better-to-run-2-3-or-4-weapon-slots">Is it better to run 2, 3 or 4 weapon slots?</a></li><li><a href="#other-common-questions">Other common questions</a></li></ul></div>
+<p>Quick answers, each traced to the game's code and data.</p>
 <h2 id="how-many-of-each-thing-can-a-map-have"><img class="ic" src="img/Challenges1.png" alt="">How many of each thing can a map have?</h2>
-<p>The map generator (<code>SpawnInteractables</code>, <code>RandomObjectPlacer</code>) places a fixed number of most things per stage and fills a fixed number of <strong>shrine slots</strong> from the map's shrine list.</p>
+<p>All of these come from the game files: the map generator's spawn lists (<code>RandomObjectPlacer</code>, <code>SpawnInteractables</code>) and each map's settings. Graveyard multiplies shrines by 2, chests by 1.5 and everything else by 1.5 (rounded).</p>
 <div class="tw"><table data-m="cards">
 <thead>
 <tr>
@@ -126,22 +126,22 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr>
-<td data-label="Thing"><strong>Shrine slots</strong> (Shady Guy, Moai, Boss Curse, Magnet, Challenge; + Bald Heads on Graveyard)</td>
-<td data-label="Forest / Desert, per stage"><strong>14</strong> total (<code>numShrines = 14</code>)</td>
-<td data-label="Graveyard"><strong>28</strong> (×2)</td>
-<td data-label="Notes">Each slot picks a type at random, so one type can take anywhere from 0 to all of them. Seen on Forest: 0–8 of each, averaging 2.8 (14 ÷ 5).</td>
+<td data-label="Thing"><strong>Shrine slots</strong></td>
+<td data-label="Forest / Desert, per stage"><strong>14</strong></td>
+<td data-label="Graveyard"><strong>28</strong></td>
+<td data-label="Notes">Each slot picks one type at random, every type equally likely (below).</td>
 </tr>
 <tr>
 <td class="nm" data-label="Thing"><img class="ic" src="img/psd_ChestOpen.png" alt="">Chests</td>
-<td data-label="Forest / Desert, per stage"><strong>46</strong> (<code>numChestsPerStage = 46</code>) × Chest amount stat</td>
-<td data-label="Graveyard">69 (×1.5)</td>
-<td data-label="Notes">Some can spawn as free chests.</td>
+<td data-label="Forest / Desert, per stage"><strong>46</strong> × Chest amount stat</td>
+<td data-label="Graveyard">69</td>
+<td data-label="Notes"></td>
 </tr>
 <tr>
 <td class="nm" data-label="Thing"><img class="ic" src="img/Zap.png" alt="">Charge Shrines</td>
 <td data-label="Forest / Desert, per stage">15 (+2 per Beacon on later stages)</td>
 <td data-label="Graveyard">22</td>
-<td data-label="Notes">Seen 15–19 on Forest.</td>
+<td data-label="Notes"></td>
 </tr>
 <tr>
 <td class="nm" data-label="Thing"><img class="ic" src="img/Gold.png" alt="">Greed Shrines</td>
@@ -151,15 +151,27 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 <tr>
 <td data-label="Thing">Pots</td>
-<td data-label="Forest / Desert, per stage">55 (+8 per Pumpkin on later stages)</td>
-<td data-label="Graveyard">~105</td>
+<td data-label="Forest / Desert, per stage">40 small + 15 big = 55 (+8 small and +2 big per Pumpkin on later stages)</td>
+<td data-label="Graveyard">none</td>
 <td data-label="Notes"></td>
 </tr>
 <tr>
-<td data-label="Thing">Microwaves</td>
-<td data-label="Forest / Desert, per stage">1–2</td>
-<td data-label="Graveyard">4–8</td>
+<td data-label="Thing">Silver pots</td>
+<td data-label="Forest / Desert, per stage">6 small + 1 big</td>
+<td data-label="Graveyard">12 small + 2 big</td>
 <td data-label="Notes"></td>
+</tr>
+<tr>
+<td data-label="Thing">Pumpkins</td>
+<td data-label="Forest / Desert, per stage">—</td>
+<td data-label="Graveyard">75 small + 30 big = 105</td>
+<td data-label="Notes">Breakable like pots.</td>
+</tr>
+<tr>
+<td data-label="Thing">Microwaves</td>
+<td data-label="Forest / Desert, per stage">1 or 2</td>
+<td data-label="Graveyard">4, 6 or 8</td>
+<td data-label="Notes">Graveyard rolls 3–5, then × 1.5 rounded.</td>
 </tr>
 <tr>
 <td data-label="Thing">Gravestones</td>
@@ -171,12 +183,37 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="Thing">Crypt (inside the Graveyard)</td>
 <td data-label="Forest / Desert, per stage">—</td>
 <td data-label="Graveyard">6 chests, 16–20 pots</td>
-<td data-label="Notes"></td>
+<td data-label="Notes">Counted on scanned maps; the crypt's contents aren't in the map data.</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>How many Bald Heads?</strong> They share the Graveyard's 28 shrine slots with Shady Guys, Moais, Boss Curses, Magnet Shrines and Challenges. In the Graveyard maps recorded so far there were 10 and 11, more than the other types (2–7 each), so they seem to be weighted more heavily in the Graveyard's list. That's from only two maps.</p>
-<p><strong>Since the shrine slots are shared,</strong> a map with many Shady Guys has fewer Moais, Boss Curses, Challenges and Magnet Shrines, and vice versa. On Forest the five always add up to 14.</p>
+<p><strong>Which shrine types can fill a slot:</strong></p>
+<div class="tw"><table data-m="grid">
+<thead>
+<tr>
+<th>Map</th>
+<th>Shrine types (each equally likely)</th>
+<th>Average per type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Map">Forest, Desert</td>
+<td data-label="Shrine types (each equally likely)">Shady Guy, Moai, Boss Curse, Magnet, Challenge</td>
+<td data-label="Average per type">2.8 of 14</td>
+</tr>
+<tr>
+<td data-label="Map">Graveyard</td>
+<td data-label="Shrine types (each equally likely)">the same five + Bald Heads (Balance Shrine)</td>
+<td data-label="Average per type">4.7 of 28</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Boss Curse shrines only appear once you've played more than 2 runs</strong> (the code skips them while your run count is 2 or lower). Until then, the other types share the slots.</li>
+<li><strong>Bald Heads are not weighted.</strong> They're one of six equally likely types, so an average Graveyard map has about 4–5. Maps with 10+ (like the record runs' 11 and 13) are the lucky end, which is what seed scanning looks for.</li>
+<li><strong>Since the slots are shared,</strong> a map with many Shady Guys has fewer of everything else.</li>
+</ul>
 <h2 id="what-does-luck-affect"><img class="ic" src="img/LuckTome.png" alt="">What does Luck affect?</h2>
 <div class="tw"><table data-m="grid">
 <thead>
@@ -240,10 +277,10 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tbody>
 </table></div>
 <h2 id="is-it-better-to-run-2-3-or-4-weapon-slots">Is it better to run 2, 3 or 4 weapon slots?</h2>
-<p>You start with <strong>2 weapon slots</strong> and <strong>2 tome slots</strong>. Each kind gets up to 2 more from the Weapon Slots and Tome Slots shop upgrades (unlocked at 25 and 45 quests for weapons, 35 and 55 for tomes). Both can be refunded, so you can switch between 2, 3 and 4 before a run.</p>
+<p>You start with <strong>2 weapon slots</strong> and <strong>2 tome slots</strong>. Each kind gets up to 2 more from the Weapon Slots and Tome Slots shop upgrades (unlocked at 25 and 45 quests for weapons, 35 and 55 for tomes). Bought slots stay until you refund them, so you can switch between 2, 3 and 4 between runs.</p>
 <p><strong>What the code does with slots</strong> (<code>InventoryUtility.GetRandomUpgrades</code>, <code>CanUnlockItem</code>): every level-up offer is drawn from one pool, made of the weapons and tomes you own plus new weapons and tomes. New ones are only offered while you have an empty slot of that kind. So:</p>
 <ul>
-<li><strong>Fewer weapon slots:</strong> once they're full, no new weapons are offered. Your pool is smaller, so each weapon and tome you own comes up more often and maxes sooner. That's stronger early.</li>
+<li><strong>Fewer weapon slots:</strong> once they're full, no new weapons are offered. Your pool is smaller, so each weapon and tome you own comes up more often.</li>
 <li><strong>More weapon slots:</strong> the pool is bigger, and early levels are spread across more weapons.</li>
 </ul>
 <p><strong>For the very top runs, 2.</strong> This is what the leaderboard shows (patch 1.0.65):</p>
@@ -314,5 +351,5 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <p><strong>Does Difficulty make enemies tougher, or just more of them?</strong> Both. It adds 1.1 × Difficulty to enemy HP, 1 × Difficulty to their damage, and 0.7 × Difficulty to the spawn multiplier.</p>
 <p><strong>How many stages does each tier have?</strong> Tier 1: one, Tier 2: two, Tier 3: three, then the final-boss map. Graveyard is a single 16-minute stage.</p>
 <p><strong>Can Bob's Light or executes kill bosses?</strong> No. Bob's Light skips bosses; executes deal 2% of a boss's max HP.</p>
-<p><strong>Does proc coefficient affect Moldy Cheese and Snek?</strong> Only the leftover chance above each full 100%; the guaranteed stacks aren't scaled.</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="game.html"><span>← Previous</span>How the game works</a><a class="nx" href="mechanics.html"><span>Next →</span>Core math</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 16, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
+<p><strong>Does proc coefficient affect Moldy Cheese and Snek?</strong> Only the leftover chance above each full 100%; the guaranteed stacks aren't scaled.</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="game.html"><span>← Previous</span>How the game works</a><a class="nx" href="mechanics.html"><span>Next →</span>Core math</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 17, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){var n=document.getElementById('nav'),b=n.querySelector('.mbtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.documentElement.classList.toggle('navlock',o)}b.addEventListener('click',function(){set(!n.classList.contains('open'))});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});var t=document.querySelector('.top');function sc(){t.classList.toggle('show',scrollY>600)}addEventListener('scroll',sc,{passive:true});sc()})()</script></body></html>

@@ -1,8 +1,8 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Core math · bonk.wiki (Megabonk)</title><meta name="description" content="How every Megabonk stat is calculated: damage brackets, crits and overcrits, proc chances, armor and evasion."><link rel="canonical" href="https://bonk.wiki/mechanics.html">
+<title>Core math · bonk.wiki (Megabonk)</title><meta name="description" content="How every Megabonk stat is calculated: damage brackets, crits and overcrits, proc chances, armor, evasion and XP per level."><link rel="canonical" href="https://bonk.wiki/mechanics.html">
 <meta name="theme-color" content="#17130f"><link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="bonk.wiki"><meta property="og:title" content="Core math · bonk.wiki (Megabonk)">
-<meta property="og:description" content="How every Megabonk stat is calculated: damage brackets, crits and overcrits, proc chances, armor and evasion."><meta property="og:url" content="https://bonk.wiki/mechanics.html"><meta property="og:image" content="https://bonk.wiki/og.png">
+<meta property="og:description" content="How every Megabonk stat is calculated: damage brackets, crits and overcrits, proc chances, armor, evasion and XP per level."><meta property="og:url" content="https://bonk.wiki/mechanics.html"><meta property="og:image" content="https://bonk.wiki/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <style>
 :root{--bg:#f7f4ee;--panel:#fffdf9;--ink:#1c1915;--muted:#6b645a;--line:#e5ddd0;--accent:#c2410c;--accent-ink:#9a3412;--accent-soft:#fdeee4;--code:#f1ebe1;--zebra:#fbf8f2;--brand:#17130f;--brand-ink:#f5efe6}
@@ -111,7 +111,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </style></head><body><div class="wrap"><nav class="side" id="nav" aria-label="Site"><div class="bar"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <button class="mbtn" type="button" aria-expanded="false" aria-controls="links"><span class="cur">Core math</span><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span><span class="mb-t">Menu</span></button></div>
 <div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="grp"><b>How it works</b><a href="mechanics.html" class="on" aria-current="page"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
-<main id="top"><div class="pg-head"><img class="pg-ic" src="img/Stonks.png" alt="" width="52" height="52"><h1>Core math</h1></div><p class="meta">Game v1.0.69 · updated Nov 16, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#how-every-stat-is-calculated">How every stat is calculated</a></li><li><a href="#weapon-damage">Weapon damage</a></li><li><a href="#proc-chances">Proc chances</a></li><li><a href="#damage-you-take">Damage you take</a></li><li><a href="#your-base-damage">Your base damage</a></li></ul></div>
+<main id="top"><div class="pg-head"><img class="pg-ic" src="img/Stonks.png" alt="" width="52" height="52"><h1>Core math</h1></div><p class="meta">Game v1.0.69 · updated Nov 17, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#how-every-stat-is-calculated">How every stat is calculated</a></li><li><a href="#weapon-damage">Weapon damage</a></li><li><a href="#proc-chances">Proc chances</a></li><li><a href="#damage-you-take">Damage you take</a></li><li><a href="#your-base-damage">Your base damage</a></li><li><a href="#levels-and-xp">Levels and XP</a></li></ul></div>
 <h2 id="how-every-stat-is-calculated"><img class="ic" src="img/Stonks.png" alt="">How every stat is calculated</h2>
 <p>Every stat is held as three parts and combined the same way (<code>StatComponents.GetFinalValue</code>):</p>
 <p><strong>Final = (base + flat bonuses) × (1 + sum of % bonuses) × (product of × multipliers)</strong></p>
@@ -133,7 +133,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <tr>
 <td data-label="Bracket">% (additive)</td>
 <td data-label="Modify type"><code>Addition</code></td>
-<td data-label="Where it comes from">Level-up and shrine stat offers (Damage +12%, Size +8%…), Gamba rolls, some tomes (Cooldown, Size, Duration, XP…)</td>
+<td data-label="Where it comes from">Shrine stat offers (Damage +12%, Size +8%…), Gamba rolls, some tomes (Cooldown, Size, Duration, XP…)</td>
 </tr>
 <tr>
 <td data-label="Bracket">× (multiplicative)</td>
@@ -142,7 +142,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </tbody>
 </table></div>
-<p>So for Damage, the base is 1.0 and items stack inside the flat part: 5 Gym Sauces make it 1.5. Level-up Damage offers then add to the % bracket, and the Damage Tome multiplies everything. <strong>Spreading Damage across all three brackets beats piling it into one.</strong></p>
+<p>So for Damage, the base is 1.0 and items stack inside the flat part: 5 Gym Sauces make it 1.5. Shrine Damage offers then add to the % bracket, and the Damage Tome multiplies everything. <strong>Spreading Damage across all three brackets beats piling it into one.</strong></p>
 <h3 id="base-values-before-character-bonuses">Base values (before character bonuses)</h3>
 <div class="tw"><table data-m="grid">
 <thead>
@@ -480,5 +480,48 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <li><strong>Lifesteal</strong> works like crits: one guaranteed heal per full 100%, plus a chance for one more.</li>
 </ul>
 <h2 id="your-base-damage"><img class="ic" src="img/Warrior.png" alt="">Your base damage</h2>
-<p>Many items and effects don't use your weapon's damage. They use a player number called base damage: <strong>8 + your character level</strong>, recalculated every level-up. Burn, Cursed Doll (against bosses), Holy Book, Energy Core, Soul Harvester, the elemental gloves and Bloodmark all scale with it, together with your Damage stat.</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="faq.html"><span>← Previous</span>FAQ &amp; map limits</a><a class="nx" href="status.html"><span>Next →</span>Status effects</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 16, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
+<p>Many items and effects don't use your weapon's damage. They use a player number called base damage: <strong>8 + your character level</strong>, recalculated every level-up. Burn, Cursed Doll (against bosses), Holy Book, Energy Core, Soul Harvester, the elemental gloves and Bloodmark all scale with it, together with your Damage stat.</p>
+<h2 id="levels-and-xp">Levels and XP</h2>
+<p>XP needed to go from level L to L + 1 (<code>XpUtility</code>): <strong>5 + 5.325 × L^1.065</strong> (level 1 → 2 is 7). The level cap is <strong>9,999</strong>.</p>
+<div class="tw"><table data-m="grid">
+<thead>
+<tr>
+<th>Level</th>
+<th>10</th>
+<th>100</th>
+<th>500</th>
+<th>1,000</th>
+<th>2,000</th>
+<th>5,000</th>
+<th>9,999</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Level">XP for the next level</td>
+<td data-label="10">67</td>
+<td data-label="100">723</td>
+<td data-label="500">3,993</td>
+<td data-label="1,000">8,348</td>
+<td data-label="2,000">17,460</td>
+<td data-label="5,000">46,320</td>
+<td data-label="9,999">96,894</td>
+</tr>
+<tr>
+<td data-label="Level">Total XP to get here</td>
+<td data-label="10">377</td>
+<td data-label="100">35,642</td>
+<td data-label="500">970,036</td>
+<td data-label="1,000">4.0M</td>
+<td data-label="2,000">16.9M</td>
+<td data-label="5,000">112M</td>
+<td data-label="9,999">469M</td>
+</tr>
+</tbody>
+</table></div>
+<p>In words: each level costs a little more than the one before, growing slightly faster than straight-line. Going from level 1,000 to 2,000 takes about 3× the XP it took to reach 1,000 in the first place.</p>
+<blockquote>
+<p><strong>Example:</strong> a run at level 2,000 has collected about 16.9 million XP. Reaching 4,000 needs about 70 million in total, roughly 4× as much again.</p>
+</blockquote>
+<p><strong>XP per kill:</strong> each enemy has its own XP value in the enemy data, multiplied by your XP gain. <strong>Elites give 10× XP.</strong> Every kill also drops 1 gold (× your gold gain).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="faq.html"><span>← Previous</span>FAQ &amp; map limits</a><a class="nx" href="status.html"><span>Next →</span>Status effects</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 17, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){var n=document.getElementById('nav'),b=n.querySelector('.mbtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.documentElement.classList.toggle('navlock',o)}b.addEventListener('click',function(){set(!n.classList.contains('open'))});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});var t=document.querySelector('.top');function sc(){t.classList.toggle('show',scrollY>600)}addEventListener('scroll',sc,{passive:true});sc()})()</script></body></html>

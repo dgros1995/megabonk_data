@@ -111,7 +111,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </style></head><body><div class="wrap"><nav class="side" id="nav" aria-label="Site"><div class="bar"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <button class="mbtn" type="button" aria-expanded="false" aria-controls="links"><span class="cur">Maps &amp; stages</span><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span><span class="mb-t">Menu</span></button></div>
 <div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html" class="on" aria-current="page"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
-<main id="top"><div class="pg-head"><img class="pg-ic" src="img/Challenges1.png" alt="" width="52" height="52"><h1>Maps &amp; stages</h1></div><p class="meta">Game v1.0.69 · updated Nov 16, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#maps-and-tiers">Maps and tiers</a></li><li><a href="#stage-timelines">Stage timelines</a></li><li><a href="#timers">Timers</a></li><li><a href="#spawning">Spawning</a></li><li><a href="#the-final-swarm">The final swarm</a></li><li><a href="#bosses-and-boss-curses">Bosses and Boss Curses</a></li></ul></div>
+<main id="top"><div class="pg-head"><img class="pg-ic" src="img/Challenges1.png" alt="" width="52" height="52"><h1>Maps &amp; stages</h1></div><p class="meta">Game v1.0.69 · updated Nov 17, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#maps-and-tiers">Maps and tiers</a></li><li><a href="#stage-timelines">Stage timelines</a></li><li><a href="#timers">Timers</a></li><li><a href="#spawning">Spawning</a></li><li><a href="#the-final-swarm">The final swarm</a></li><li><a href="#bosses-and-boss-curses">Bosses and Boss Curses</a></li></ul></div>
 <h2 id="maps-and-tiers">Maps and tiers</h2>
 <div class="tw"><table data-m="cards">
 <thead>
@@ -150,7 +150,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="Stage timers">16:00</td>
 <td data-label="Chests">×1.5</td>
 <td data-label="Shrines">×2</td>
-<td data-label="Pots &amp;amp; other">×1.5</td>
+<td data-label="Pots &amp;amp; other">×1.5 (pumpkins instead of pots)</td>
 <td data-label="Final boss">Ghost King (500,000 base HP)</td>
 </tr>
 </tbody>
@@ -190,6 +190,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </table></div>
 <h2 id="stage-timelines">Stage timelines</h2>
 <p>Each stage runs a fixed script from the map data. Times count up from the start of the stage. A new enemy type joins the pool every 60 seconds.</p>
+<p><strong>Which miniboss you get:</strong> every miniboss event draws from the map's miniboss list without repeats until the list is used up, then starts over (<code>SummonerController.EventMiniboss</code>). Forest: Golem and Pig. Desert: Sand Golem and Scorpion. Graveyard: Calcium's Dad and Ghostham. So on stage 1 the 3:00 and 8:00 minibosses are always the two different ones, in random order.</p>
 <h3 id="forest">Forest</h3><div class="map-banner"><img src="img/ForestIconBig.png" alt="Forest map" width="176" height="132"></div>
 <div class="tw"><table data-m="grid">
 <thead>
@@ -206,9 +207,9 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="Stage 3 (8:00)">Start: Goblin</td>
 </tr>
 <tr>
-<td data-label="Stage 1 (10:00)">3:00 Miniboss (Golem or Pig), 30 s</td>
-<td data-label="Stage 2 (9:00)">2:00 Miniboss (Golem, Pig), 15 s</td>
-<td data-label="Stage 3 (8:00)">1:30 Miniboss (Golem or Pig), 30 s</td>
+<td data-label="Stage 1 (10:00)">3:00 Miniboss, 30 s</td>
+<td data-label="Stage 2 (9:00)">2:00 Miniboss, 15 s</td>
+<td data-label="Stage 3 (8:00)">1:30 Miniboss, 30 s</td>
 </tr>
 <tr>
 <td data-label="Stage 1 (10:00)">4:00 Swarm: Goblins, 30 s</td>
@@ -249,9 +250,9 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="Stage 3 (8:00)">Start: Mummy</td>
 </tr>
 <tr>
-<td data-label="Stage 1 (10:00)">3:00 Miniboss (Scorpion, Sand Golem), 30 s</td>
-<td data-label="Stage 2 (9:00)">2:00 Miniboss (Golem, Pig), 30 s</td>
-<td data-label="Stage 3 (8:00)">1:30 Miniboss (Golem, Pig), 30 s</td>
+<td data-label="Stage 1 (10:00)">3:00 Miniboss, 30 s</td>
+<td data-label="Stage 2 (9:00)">2:00 Miniboss, 30 s</td>
+<td data-label="Stage 3 (8:00)">1:30 Miniboss, 30 s</td>
 </tr>
 <tr>
 <td data-label="Stage 1 (10:00)">4:00 Swarm: Mummies, 30 s</td>
@@ -264,7 +265,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="Stage 3 (8:00)">4:00 Swarm: Scorpions, 30 s</td>
 </tr>
 <tr>
-<td data-label="Stage 1 (10:00)">8:00 Miniboss (Golem, Pig), 60 s</td>
+<td data-label="Stage 1 (10:00)">8:00 Miniboss, 60 s</td>
 <td data-label="Stage 2 (9:00)">7:00 Miniboss, 30 s</td>
 <td data-label="Stage 3 (8:00)">5:00 Miniboss, 30 s</td>
 </tr>
@@ -292,7 +293,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 <tr>
 <td data-label="Time">3:00</td>
-<td data-label="Event">Miniboss (Calcium Dad or Ghostham)</td>
+<td data-label="Event">Miniboss</td>
 </tr>
 <tr>
 <td data-label="Time">4:00</td>
@@ -332,8 +333,8 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <ul>
 <li><strong>Bald Heads</strong> is the game's name for the <strong>Balance Shrine</strong> (<code>InteractableShrineBalance</code>). It offers stat trades built from a doubled stat (×2) and a halved one (×0.5).</li>
 <li><strong>Coffins</strong> start a boss-ghost fight with the Grave Ghosts (1,100 / 2,250 / 5,500 / 9,000 base HP, can't be executed).</li>
-<li><strong>Gravestones</strong> give +XP gain and +Difficulty when used (22 per map).</li>
-<li>More of everything: 1.5× chests, 2× shrines, 1.5× pots.</li>
+<li><strong>Gravestones</strong> give +10% XP gain and +5% Difficulty when used (22 per map).</li>
+<li>More of everything: 1.5× chests, 2× shrine slots, 1.5× Charge and Greed Shrines. Instead of pots it has 105 pumpkins, plus 4, 6 or 8 Microwaves (<a href="faq.html">map limits</a>).</li>
 </ul>
 <h2 id="timers"><img class="ic" src="img/ItemTimeBracelet.png" alt="">Timers</h2>
 <div class="tw"><table data-m="cards">
@@ -475,5 +476,5 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <li><strong>Every boss has its HP multiplied by 1 + 0.16 × curses.</strong></li>
 <li>Boss HP also gets a stage multiplier: ×2.5 on stage 2 and ×5 on stage 3.</li>
 <li>Bosses can't be killed by Bob's Light or executes; Cursed Doll only does 0.7 × (8 + level) to them.</li>
-</ul><nav class="pager" aria-label="Previous and next page"><a class="pv" href="economy.html"><span>← Previous</span>Luck, chests &amp; shrines</a><a class="nx" href="enemies.html"><span>Next →</span>Enemies</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 16, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
+</ul><nav class="pager" aria-label="Previous and next page"><a class="pv" href="economy.html"><span>← Previous</span>Luck, chests &amp; shrines</a><a class="nx" href="enemies.html"><span>Next →</span>Enemies</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 17, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){var n=document.getElementById('nav'),b=n.querySelector('.mbtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.documentElement.classList.toggle('navlock',o)}b.addEventListener('click',function(){set(!n.classList.contains('open'))});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});var t=document.querySelector('.top');function sc(){t.classList.toggle('show',scrollY>600)}addEventListener('scroll',sc,{passive:true});sc()})()</script></body></html>

@@ -111,7 +111,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </style></head><body><div class="wrap"><nav class="side" id="nav" aria-label="Site"><div class="bar"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <button class="mbtn" type="button" aria-expanded="false" aria-controls="links"><span class="cur">How the game works</span><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span><span class="mb-t">Menu</span></button></div>
 <div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html" class="on" aria-current="page"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
-<main id="top"><div class="pg-head"><img class="pg-ic" src="img/Tomes2.png" alt="" width="52" height="52"><h1>How Megabonk works</h1></div><p class="meta">Game v1.0.69 · updated Nov 16, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#the-goal-of-a-run">The goal of a run</a></li><li><a href="#the-core-loop">The core loop</a></li><li><a href="#what-makes-it-different">What makes it different</a></li><li><a href="#characters">Characters</a></li><li><a href="#how-maps-are-generated">How maps are generated</a></li><li><a href="#how-enemies-get-stronger">How enemies get stronger</a></li><li><a href="#between-runs">Between runs</a></li></ul></div>
+<main id="top"><div class="pg-head"><img class="pg-ic" src="img/Tomes2.png" alt="" width="52" height="52"><h1>How Megabonk works</h1></div><p class="meta">Game v1.0.69 · updated Nov 17, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#the-goal-of-a-run">The goal of a run</a></li><li><a href="#the-core-loop">The core loop</a></li><li><a href="#what-makes-it-different">What makes it different</a></li><li><a href="#characters">Characters</a></li><li><a href="#how-maps-are-generated">How maps are generated</a></li><li><a href="#how-enemies-get-stronger">How enemies get stronger</a></li><li><a href="#between-runs">Between runs</a></li></ul></div>
 
 
 <p>Megabonk is a 3D roguelike survival game in the "bullet heaven" style. You pick a character and run around a generated map while your weapons attack on their own. Enemies pour in, killing them gives XP and gold, and every level-up lets you pick an upgrade. A run lasts until you die or beat the final boss, and your score is mostly how many enemies you killed.</p>
@@ -139,7 +139,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 <tr>
 <td class="nm" data-label="You do"><img class="ic" src="img/Stonks.png" alt="">Level up</td>
-<td data-label="You get">A choice of upgrades: a new weapon, a weapon upgrade, a new tome, a tome level, or a stat</td>
+<td data-label="You get">A choice of upgrades: a new weapon, a weapon upgrade, a new tome or a tome level. A weapon upgrade raises a few of that weapon's own stat lines, such as damage, crit chance or projectiles</td>
 </tr>
 <tr>
 <td class="nm" data-label="You do"><img class="ic" src="img/psd_ChestOpen.png" alt="">Spend gold on chests</td>
@@ -157,16 +157,16 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </table></div>
 <p><strong>Four kinds of power stack together:</strong></p>
 <ul>
-<li><strong>Weapons</strong> (4 slots) attack automatically and level up through offers. See <a href="weapons.html">Weapons</a>.</li>
-<li><strong>Tomes</strong> (4 slots) each raise one stat per level: damage, attack speed, size, Luck, XP and so on. See <a href="tomes.html">Tomes</a>.</li>
-<li><strong>Items</strong> come from chests, shrines and vendors, and there's no slot limit. Most stack: 10 copies do 10 times as much, or less where the code adds diminishing returns. See <a href="items.html">Items</a>.</li>
-<li><strong>Stat offers</strong> from level-ups and Charge Shrines add straight to your stats.</li>
+<li><strong>Weapons</strong> attack automatically and level up through offers. You start with 2 slots and can buy up to 4 with Silver; bought slots stay until you refund them. See <a href="weapons.html">Weapons</a>.</li>
+<li><strong>Tomes</strong> (2 slots, up to 4 the same way) each raise one stat per level: damage, attack speed, size, Luck, XP and so on. See <a href="tomes.html">Tomes</a>.</li>
+<li><strong>Items</strong> come from chests, shrines and vendors, and there's no slot limit. Most stack: 10 copies do 10 times as much, or less where the code adds diminishing returns. A few are capped: Anvil 1, Overpowered Lamp 2, Joe's Dagger 10, Za Warudo 25 per run. See <a href="items.html">Items</a>.</li>
+<li><strong>Stat offers</strong> from Charge Shrines (and Bald Heads on Graveyard) add straight to your stats.</li>
 </ul>
 <p>All four feed the same stat sheet, and the <a href="mechanics.html">Core math</a> page shows exactly how they combine.</p>
 <h2 id="what-makes-it-different"><img class="ic" src="img/Speed Demon.png" alt="">What makes it different</h2>
 <ul>
 <li><strong>It's fully 3D.</strong> You move, jump and fall across hilly terrain, and your stats include jump height, extra jumps, slam and fall-damage reduction. Terrain matters for dodging and for reaching shrines and chests.</li>
-<li><strong>Items stack without limit.</strong> Most survivor games cap items; here 30 copies of one item is normal in a long run, and crit chance past 100% "overcrits" for ×4, ×6.25 and more.</li>
+<li><strong>Most items stack without limit.</strong> Most survivor games cap items; here 30 copies of one item is normal in a long run (only Anvil, Overpowered Lamp, Joe's Dagger and Za Warudo have caps), and crit chance past 100% "overcrits" for ×4, ×6.25 and more.</li>
 <li><strong>Difficulty is a stat you choose to raise.</strong> The Cursed Tome, Boss Curses and some items raise it. More Difficulty means tougher enemies, but also more of them and faster swarm refills, so more kills.</li>
 <li><strong>Luck runs the economy.</strong> It decides the rarity of every level-up offer and chest. A run's first stage is largely about getting Luck high before spending gold.</li>
 <li><strong>The final swarm is an open-ended score chase.</strong> It has no time limit, and leaving early is a choice.</li>
@@ -206,13 +206,13 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 <tr>
 <td data-label="Per stage">Pots</td>
-<td data-label="Forest / Desert">55</td>
-<td data-label="Graveyard">~105</td>
+<td data-label="Forest / Desert">55 (+ 7 silver pots)</td>
+<td data-label="Graveyard">none; 105 pumpkins instead (+ 14 silver pots)</td>
 </tr>
 <tr>
 <td data-label="Per stage">Microwaves</td>
 <td data-label="Forest / Desert">1–2</td>
-<td data-label="Graveyard">4–8</td>
+<td data-label="Graveyard">4, 6 or 8</td>
 </tr>
 </tbody>
 </table></div>
@@ -233,5 +233,5 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </ol>
 <p>Difficulty and your tier multiply all of it. That's why a build that was overkill on stage 1 can stall on stage 3, and why the final swarm always ends a run sooner or later.</p>
 <h2 id="between-runs"><img class="ic" src="img/Silver.png" alt="">Between runs</h2>
-<p>Silver earned in runs and quests (achievements) unlock new characters, weapons, items and tomes. You can also toggle items out of the pool, so chests only roll what you want. This wiki skips unlock details and focuses on how things work once you have them.</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="./"><span>← Previous</span>Overview</a><a class="nx" href="faq.html"><span>Next →</span>FAQ &amp; map limits</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 16, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
+<p>Silver earned in runs and quests (achievements) unlocks new characters, weapons, items and tomes, and buys permanent upgrades such as extra weapon and tome slots. You can also toggle items out of the pool, so chests only roll what you want. Every unlock is listed on <a href="quests.html">Quests &amp; unlocks</a> and <a href="challenges.html">Challenges</a>.</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="./"><span>← Previous</span>Overview</a><a class="nx" href="faq.html"><span>Next →</span>FAQ &amp; map limits</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 17, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){var n=document.getElementById('nav'),b=n.querySelector('.mbtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.documentElement.classList.toggle('navlock',o)}b.addEventListener('click',function(){set(!n.classList.contains('open'))});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});var t=document.querySelector('.top');function sc(){t.classList.toggle('show',scrollY>600)}addEventListener('scroll',sc,{passive:true});sc()})()</script></body></html>
