@@ -1,6 +1,9 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FAQ &amp; map limits · Megabonk Data</title><meta name="description" content="A data-driven Megabonk guide: exact item, tome, weapon and character numbers and the game's real formulas, read from the game's code.">
 <style>
+.ic{width:24px;height:24px;image-rendering:pixelated;vertical-align:-6px;margin-right:6px}h4 .ic{width:32px;height:32px;vertical-align:-9px}
+.hero{display:flex;gap:10px;flex-wrap:wrap}.hero img{width:192px;max-width:31%;height:auto;image-rendering:pixelated;border-radius:8px}
+.title-ic{width:48px;height:48px;image-rendering:pixelated}
 :root{--bg:#faf8f4;--panel:#ffffff;--ink:#1d1b18;--muted:#6b665e;--line:#e4dfd6;--accent:#c2410c;--accent-soft:#fdeee5;--code:#f3efe8}
 @media (prefers-color-scheme:dark){:root{--bg:#141311;--panel:#1c1a17;--ink:#ece8e1;--muted:#a39d93;--line:#2e2b27;--accent:#fb923c;--accent-soft:#2a1d14;--code:#26231f}}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
@@ -26,7 +29,7 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid va
 @media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
 nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
 main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
-</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="">Maxing a run</a><a href="faq.html" class="on">FAQ &amp; map limits</a></div></nav>
+</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="game.html" class="">How the game works</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="">Maxing a run</a><a href="faq.html" class="on">FAQ &amp; map limits</a></div></nav>
 <main><h1 id="faq-map-limits">FAQ &amp; map limits</h1>
 <p>Quick answers, each traced to the game's code or to 1,000+ scanned maps.</p>
 <h2 id="how-many-of-each-thing-can-a-map-have">How many of each thing can a map have?</h2>

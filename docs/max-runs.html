@@ -1,6 +1,9 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Maxing a run · Megabonk Data</title><meta name="description" content="A data-driven Megabonk guide: exact item, tome, weapon and character numbers and the game's real formulas, read from the game's code.">
 <style>
+.ic{width:24px;height:24px;image-rendering:pixelated;vertical-align:-6px;margin-right:6px}h4 .ic{width:32px;height:32px;vertical-align:-9px}
+.hero{display:flex;gap:10px;flex-wrap:wrap}.hero img{width:192px;max-width:31%;height:auto;image-rendering:pixelated;border-radius:8px}
+.title-ic{width:48px;height:48px;image-rendering:pixelated}
 :root{--bg:#faf8f4;--panel:#ffffff;--ink:#1d1b18;--muted:#6b665e;--line:#e4dfd6;--accent:#c2410c;--accent-soft:#fdeee5;--code:#f3efe8}
 @media (prefers-color-scheme:dark){:root{--bg:#141311;--panel:#1c1a17;--ink:#ece8e1;--muted:#a39d93;--line:#2e2b27;--accent:#fb923c;--accent-soft:#2a1d14;--code:#26231f}}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
@@ -26,7 +29,7 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid va
 @media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
 nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
 main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
-</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="on">Maxing a run</a><a href="faq.html" class="">FAQ &amp; map limits</a></div></nav>
+</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="game.html" class="">How the game works</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="on">Maxing a run</a><a href="faq.html" class="">FAQ &amp; map limits</a></div></nav>
 <main><h1 id="maxing-a-run">Maxing a run</h1>
 <p>A short plan built on the numbers in this wiki. The goal is the most kills, which in Megabonk means surviving long in final swarms at high difficulty.</p>
 <h2 id="1-before-the-run">1. Before the run</h2>
@@ -118,9 +121,48 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <ol>
 <li><strong>Cursed Doll count.</strong> Dolls don't care about HP or the Red Ghost exception. Each Doll is about 0.5 kills a second; 30 Dolls ≈ 15 kills a second. Pick up Dolls throughout the run; they're Common and cheap.</li>
 <li><strong>Bob's Light at the cap</strong> (14 copies for 5 s). One blast in three still clears Red Ghosts, and it clears everything else around them.</li>
-<li><strong>Survive 100k+ hits.</strong> Shield is the main pool (top runs had 40,000–150,000). Armor helps fully against ghosts (it's halved only against bosses): 3 Armor blocks 80%. Evasion's real value is E / (E + 1), so it caps out slowly. Za Warudo blocks one fatal hit per copy (max 25 per run). Speed Boi slows time when you're hit below 50%.</li>
+<li><strong>Don't get hit.</strong> Shield (top runs had 40,000–150,000) and Armor (3 Armor blocks 80%) carry you through the first minute or two of Red Ghosts, but their damage doubles every minute. Past that, Evasion, freeze/stun lock and Za Warudo are what keep a run alive. See 5b below.</li>
 <li><strong>Or leave before 12:00.</strong> Every stage resets the final-swarm clock to 0, so a new stage's swarm starts back at plain Ghosts. On stages 1–3, taking the portal before 12:00 of the swarm and farming the next stage's early swarm avoids the wall entirely, at the cost of the stage HP jump (≈30× on stage 2).</li>
 </ol>
+<h2 id="5b-staying-alive-past-14-minutes-the-4550-minute-runs">5b. Staying alive past 14 minutes (the 45–50 minute runs)</h2>
+<p>Swarm enemy damage doubles every minute: a Red Ghost hits for about 135,000 at swarm minute 12, 1 million at 15 and 35 million at 20. No HP or shield pool keeps up, so long swarm runs survive by <strong>not getting hit</strong>. The code expects this: three rules in <code>EnemyStats</code> only switch on far into a swarm.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Swarm time</th>
+<th>Rule (from the code)</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12:00 →</td>
+<td><code>GetMaxSpeed</code>: enemy speed cap rises from 90 by +6 per minute (max 250)</td>
+<td>Enemies can be sped up further by speed effects late on</td>
+</tr>
+<tr>
+<td>20:00 → 50:00</td>
+<td><code>GetCapCC</code>: each enemy can be frozen or stunned at most <strong>15 times</strong>; from 20:00 that limit falls steadily to <strong>0 at 50:00</strong></td>
+<td>Freeze and stun lock work fully until 20:00, fade out between 20 and 50 minutes, and stop working at 50:00. That's the 45–50 minute ceiling top runs hit.</td>
+</tr>
+<tr>
+<td>60:00 →</td>
+<td><code>GetEvasionAndArmorPenetration</code>: enemies start to ignore a small slice of your Armor and Evasion</td>
+<td>Before 60:00, Evasion and Armor work at full strength</td>
+</tr>
+</tbody>
+</table></div>
+<p>Also, after any hit you get <strong>0.15 seconds of invulnerability</strong> (<code>MyPlayer.OnDamage</code>).</p>
+<p>What that means for a build:</p>
+<ol>
+<li><strong>Evasion is the defence that scales.</strong> It ignores how big the hit is. Real dodge chance is E / (E + 1) × 0.999: Evasion 1 = 50%, 4 = 80%, 10 = 91%, 20 = 95%, 50 = 98%. The 361k run had 0.62 (38%). Stack Evasion Tome levels, Evasion offers and Evasion items.</li>
+<li><strong>Lock the swarm down with freeze and stun</strong> (Ice Cube, Frostwalker, freeze chance, stun items). Until 20:00 every enemy can be locked 15 times; after that each one gets fewer locks.</li>
+<li><strong>Knockback and space.</strong> Red Ghosts have knockback resistance 50, so plain knockback barely moves them; keep moving and keep the map thin instead.</li>
+<li><strong>Kill what HP doesn't matter for.</strong> Cursed Doll (30% max HP per second) and Bob's Light (1 in 3 on Red Ghosts) keep fewer ghosts in contact range.</li>
+<li><strong>Za Warudo copies</strong> block one fatal hit each (up to 25 a run).</li>
+<li><strong>Shield and HP still help early in the Red phase</strong> (a 135k hit at 12:00 is survivable with a big shield), but they stop mattering a couple of minutes later.</li>
+</ol>
+<p>Not traced yet: the exact way a hit's damage is reduced after Evasion and Armor, so check this against your own runs.</p>
 <h2 id="6-moving-between-stages">6. Moving between stages</h2>
 <p>Enemy HP jumps about 15× between the end of stage 1 and the start of stage 2, and about 5× again into stage 3, on top of +10% per run minute. Leave a stage when your damage can take that jump: more Damage Tome levels, Pot and Wizard's Hat level caps, and crit chance past 100% (2 crits = ×4, 3 = ×6.25) are the multipliers that keep up.</p>
 <h2 id="7-what-a-361000-kill-run-showed">7. What a 361,000-kill run showed</h2>

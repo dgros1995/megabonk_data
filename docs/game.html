@@ -1,0 +1,155 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How the game works · Megabonk Data</title><meta name="description" content="A data-driven Megabonk guide: exact item, tome, weapon and character numbers and the game's real formulas, read from the game's code.">
+<style>
+.ic{width:24px;height:24px;image-rendering:pixelated;vertical-align:-6px;margin-right:6px}h4 .ic{width:32px;height:32px;vertical-align:-9px}
+.hero{display:flex;gap:10px;flex-wrap:wrap}.hero img{width:192px;max-width:31%;height:auto;image-rendering:pixelated;border-radius:8px}
+.title-ic{width:48px;height:48px;image-rendering:pixelated}
+:root{--bg:#faf8f4;--panel:#ffffff;--ink:#1d1b18;--muted:#6b665e;--line:#e4dfd6;--accent:#c2410c;--accent-soft:#fdeee5;--code:#f3efe8}
+@media (prefers-color-scheme:dark){:root{--bg:#141311;--panel:#1c1a17;--ink:#ece8e1;--muted:#a39d93;--line:#2e2b27;--accent:#fb923c;--accent-soft:#2a1d14;--code:#26231f}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{display:flex;min-height:100vh}
+nav{width:240px;flex:none;border-right:1px solid var(--line);padding:28px 18px;position:sticky;top:0;height:100vh;overflow:auto;background:var(--panel)}
+nav .brand{font-weight:800;font-size:18px;letter-spacing:-.02em;margin:0 0 4px}
+nav .sub{color:var(--muted);font-size:13px;margin:0 0 22px}
+nav a{display:block;padding:7px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:15px}
+nav a:hover{background:var(--code)}nav a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+main{flex:1;min-width:0;padding:40px 48px 80px;max-width:1100px}
+h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;margin:0 0 18px}
+h2{font-size:23px;letter-spacing:-.015em;margin:44px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:28px 0 8px}
+a{color:var(--accent)}strong{font-weight:650}
+.tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--code);font-weight:650;white-space:nowrap}tr:last-child td{border-bottom:0}
+code{background:var(--code);padding:1px 5px;border-radius:5px;font-size:.92em}
+ul,ol{padding-left:22px}li{margin:4px 0}
+footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
+nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
+main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
+</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="game.html" class="on">How the game works</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="">Maxing a run</a><a href="faq.html" class="">FAQ &amp; map limits</a></div></nav>
+<main><h1 id="how-megabonk-works">How Megabonk works</h1>
+<p class="hero"><img src="img/ForestIconBig.png" alt="Forest" width="192"> <img src="img/DesertIconBig.png" alt="Desert" width="192"> <img src="img/GraveyardIconBig.png" alt="Graveyard" width="192"></p>
+
+<p>Megabonk is a 3D roguelike survival game in the "bullet heaven" style. You pick a character and run around a generated map while your weapons attack on their own. Enemies pour in, killing them gives XP and gold, and every level-up lets you pick an upgrade. A run lasts until you die or beat the final boss, and your score is mostly how many enemies you killed.</p>
+<p>This page is the big picture. The other pages have the exact numbers.</p>
+<h2 id="the-goal-of-a-run">The goal of a run</h2>
+<ol>
+<li><strong>Survive each stage's timer</strong> while getting stronger. Each stage is a fixed-length script of waves, swarms and minibosses (10:00, 9:00 and 8:00 on Forest and Desert; one 16:00 stage on Graveyard).</li>
+<li><strong>Kill the stage boss.</strong> Killing it, or letting the timer run out, starts the <strong>final swarm</strong>: an endless flood of ghosts that gets tougher every minute.</li>
+<li><strong>Take the portal to the next stage.</strong> Your tier decides how many stages you play: Tier 1 is one stage, Tier 2 two, Tier 3 three.</li>
+<li><strong>Beat the final boss.</strong> After the tier's last stage comes the final-boss map: Ent on Forest, Pharaoh on Desert, Ghost King on Graveyard.</li>
+</ol>
+<p>You choose when to leave each stage. Staying in a final swarm longer means more kills and more XP, but the swarm's enemies get 4× more HP and 2× more damage every minute. That trade-off is what most high-score play is about (<a href="max-runs.html">Maxing a run</a>).</p>
+<h2 id="the-core-loop">The core loop</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>You do</th>
+<th>You get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kill enemies</td>
+<td>XP, gold, sometimes powerups</td>
+</tr>
+<tr>
+<td>Level up</td>
+<td>A choice of upgrades: a new weapon, a weapon upgrade, a new tome, a tome level, or a stat</td>
+</tr>
+<tr>
+<td>Spend gold on chests</td>
+<td>A random item (Common, Rare, Epic or Legendary)</td>
+</tr>
+<tr>
+<td>Use shrines</td>
+<td>Stat offers, items, curses, challenges</td>
+</tr>
+<tr>
+<td>Break pots</td>
+<td>Gold and, on stage 1, permanent Luck</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Four kinds of power stack together:</strong></p>
+<ul>
+<li><strong>Weapons</strong> (4 slots) attack automatically and level up through offers. See <a href="weapons.html">Weapons</a>.</li>
+<li><strong>Tomes</strong> (4 slots) each raise one stat per level: damage, attack speed, size, Luck, XP and so on. See <a href="tomes.html">Tomes</a>.</li>
+<li><strong>Items</strong> come from chests, shrines and vendors, and there's no slot limit. Most stack: 10 copies do 10 times as much, or less where the code adds diminishing returns. See <a href="items.html">Items</a>.</li>
+<li><strong>Stat offers</strong> from level-ups and Charge Shrines add straight to your stats.</li>
+</ul>
+<p>All four feed the same stat sheet, and the <a href="mechanics.html">Core math</a> page shows exactly how they combine.</p>
+<h2 id="what-makes-it-different">What makes it different</h2>
+<ul>
+<li><strong>It's fully 3D.</strong> You move, jump and fall across hilly terrain, and your stats include jump height, extra jumps, slam and fall-damage reduction. Terrain matters for dodging and for reaching shrines and chests.</li>
+<li><strong>Items stack without limit.</strong> Most survivor games cap items; here 30 copies of one item is normal in a long run, and crit chance past 100% "overcrits" for ×4, ×6.25 and more.</li>
+<li><strong>Difficulty is a stat you choose to raise.</strong> The Cursed Tome, Boss Curses and some items raise it. More Difficulty means tougher enemies, but also more of them and faster swarm refills, so more kills.</li>
+<li><strong>Luck runs the economy.</strong> It decides the rarity of every level-up offer and chest. A run's first stage is largely about getting Luck high before spending gold.</li>
+<li><strong>The final swarm is an open-ended score chase.</strong> It has no time limit, and leaving early is a choice.</li>
+</ul>
+<h2 id="characters">Characters</h2>
+<p>Each character starts with one weapon and has a passive that grows with level. Dicehead, for example, gets a free random stat (Gamba) every level-up. Characters also have different base stats. See <a href="characters.html">Characters</a>.</p>
+<h2 id="how-maps-are-generated">How maps are generated</h2>
+<p>Every run builds a new map from a random seed. The terrain and the placement of everything on it change each time, but the <strong>amounts</strong> are fixed by the code (<code>SpawnInteractables</code>, <code>RandomObjectPlacer</code>):</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Per stage</th>
+<th>Forest / Desert</th>
+<th>Graveyard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chests</td>
+<td>46</td>
+<td>69</td>
+</tr>
+<tr>
+<td>Shrine slots, each a random type (Shady Guy, Moai, Boss Curse, Magnet, Challenge; Bald Heads on Graveyard)</td>
+<td>14</td>
+<td>28</td>
+</tr>
+<tr>
+<td>Charge Shrines</td>
+<td>15</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Greed Shrines</td>
+<td>8</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Pots</td>
+<td>55</td>
+<td>~105</td>
+</tr>
+<tr>
+<td>Microwaves</td>
+<td>1–2</td>
+<td>4–8</td>
+</tr>
+</tbody>
+</table></div>
+<p>So two maps always have the same number of chests and shrine slots, but one might have six Shady Guys and no Moai while the next has the reverse. Some things are rolled when the map loads and never change: each Shady Guy's and Microwave's rarity, for example. That's why seed scanning (rerolling maps until a good one shows up) works. The full limits are on <a href="faq.html">FAQ &amp; map limits</a>.</p>
+<p><strong>The three maps:</strong></p>
+<ul>
+<li><strong>Forest:</strong> the starting map. Goblins, slimes, bees and golems; three stages; the Ent as final boss.</li>
+<li><strong>Desert:</strong> mummies, scorpions and skeletons, plus sandstorms and Desert Graves (summon fights); three stages; the Pharaoh as final boss.</li>
+<li><strong>Graveyard:</strong> one long 16-minute stage that always uses Tier 3 enemy strength. It has twice the shrines, Bald Heads (Balance Shrines), coffins with ghost bosses, gravestones, and a crypt with extra chests. Its final boss is the Ghost King.</li>
+</ul>
+<p>Stage scripts, spawn rates and enemy stats are on <a href="maps.html">Maps &amp; stages</a> and <a href="enemies.html">Enemies</a>.</p>
+<h2 id="how-enemies-get-stronger">How enemies get stronger</h2>
+<p>Enemies scale on three clocks:</p>
+<ol>
+<li><strong>The whole run:</strong> +10% HP and +2.8% damage per minute. This never resets.</li>
+<li><strong>The stage:</strong> stage 2 enemies start at about 30× base HP, stage 3 at about 150×.</li>
+<li><strong>The final swarm:</strong> HP ×4 and damage ×2 every minute. This resets each stage.</li>
+</ol>
+<p>Difficulty and your tier multiply all of it. That's why a build that was overkill on stage 1 can stall on stage 3, and why the final swarm always ends a run sooner or later.</p>
+<h2 id="between-runs">Between runs</h2>
+<p>Silver earned in runs and quests (achievements) unlock new characters, weapons, items and tomes. You can also toggle items out of the pool, so chests only roll what you want. This wiki skips unlock details and focuses on how things work once you have them.</p><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>

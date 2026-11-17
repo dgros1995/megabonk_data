@@ -1,6 +1,9 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tomes · Megabonk Data</title><meta name="description" content="A data-driven Megabonk guide: exact item, tome, weapon and character numbers and the game's real formulas, read from the game's code.">
 <style>
+.ic{width:24px;height:24px;image-rendering:pixelated;vertical-align:-6px;margin-right:6px}h4 .ic{width:32px;height:32px;vertical-align:-9px}
+.hero{display:flex;gap:10px;flex-wrap:wrap}.hero img{width:192px;max-width:31%;height:auto;image-rendering:pixelated;border-radius:8px}
+.title-ic{width:48px;height:48px;image-rendering:pixelated}
 :root{--bg:#faf8f4;--panel:#ffffff;--ink:#1d1b18;--muted:#6b665e;--line:#e4dfd6;--accent:#c2410c;--accent-soft:#fdeee5;--code:#f3efe8}
 @media (prefers-color-scheme:dark){:root{--bg:#141311;--panel:#1c1a17;--ink:#ece8e1;--muted:#a39d93;--line:#2e2b27;--accent:#fb923c;--accent-soft:#2a1d14;--code:#26231f}}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
@@ -26,7 +29,7 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid va
 @media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
 nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
 main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
-</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="on">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="">Maxing a run</a><a href="faq.html" class="">FAQ &amp; map limits</a></div></nav>
+</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="game.html" class="">How the game works</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="on">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="">Maxing a run</a><a href="faq.html" class="">FAQ &amp; map limits</a></div></nav>
 <main><h1 id="tomes">Tomes</h1>
 <p>Tomes are stat upgrades you level through level-up offers. You can hold four, and each stops at a level cap.</p>
 <h2 id="how-tomes-scale">How tomes scale</h2>
@@ -52,126 +55,126 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </thead>
 <tbody>
 <tr>
-<td>XP</td>
+<td><img class="ic" src="img/XpTome.png" alt="">XP</td>
 <td>XP gain</td>
 <td>+7%</td>
 <td>Break 20 pots in one run</td>
 <td>More levels, more offers, more Gamba rolls.</td>
 </tr>
 <tr>
-<td>Luck</td>
+<td><img class="ic" src="img/LuckTome.png" alt="">Luck</td>
 <td>Luck</td>
 <td>+8%</td>
 <td>0.01% drop chance per kill</td>
 <td>Better offer and chest rarity.</td>
 </tr>
 <tr>
-<td>Cursed</td>
+<td><img class="ic" src="img/CursedTome.png" alt="">Cursed</td>
 <td>Difficulty</td>
 <td>+3.5%, rounded to 4% (7% at Legendary)</td>
 <td>Beat a stage boss in under 5 minutes</td>
 <td>More enemies and faster swarm refill.</td>
 </tr>
 <tr>
-<td>Chaos</td>
+<td><img class="ic" src="img/ChaosTome.png" alt="">Chaos</td>
 <td>One random stat per level</td>
 <td>—</td>
 <td>Charge every Charge Shrine in all 3 stages of one Tier 3 run</td>
 <td>Silver and Jump Height excluded.</td>
 </tr>
 <tr>
-<td>Precision</td>
+<td><img class="ic" src="img/PrecisionTome.png" alt="">Precision</td>
 <td>Crit Chance</td>
 <td>+7%</td>
 <td>Default</td>
 <td>Crit past 100% overcrits.</td>
 </tr>
 <tr>
-<td>Damage</td>
+<td><img class="ic" src="img/DamageTome.png" alt="">Damage</td>
 <td>Damage multiplier</td>
 <td>×(1 + 0.08 per level), its own × bracket</td>
 <td>Default</td>
 <td>Multiplies everything else; the strongest late pick.</td>
 </tr>
 <tr>
-<td>Cooldown</td>
+<td><img class="ic" src="img/CooldownTome.png" alt="">Cooldown</td>
 <td>Attack Speed</td>
 <td>+7.5%</td>
 <td>Default</td>
 <td></td>
 </tr>
 <tr>
-<td>Quantity</td>
+<td><img class="ic" src="img/QuantityTome.png" alt="">Quantity</td>
 <td>Projectiles</td>
 <td>+1</td>
 <td>Fire 5,000 projectiles</td>
 <td>Only for weapons that fire projectiles.</td>
 </tr>
 <tr>
-<td>Size</td>
+<td><img class="ic" src="img/SizeTome.png" alt="">Size</td>
 <td>Size</td>
 <td>+10%</td>
 <td>Default</td>
 <td>Also grows item radii (Spicy Meatball, Tonic, Toxic Barrel, Holy Book…).</td>
 </tr>
 <tr>
-<td>Duration</td>
+<td><img class="ic" src="img/DurationTome.png" alt="">Duration</td>
 <td>Duration</td>
 <td>+15%</td>
 <td>Upgrade the Axe to level 10</td>
 <td>Also lengthens debuffs.</td>
 </tr>
 <tr>
-<td>Projectile Speed</td>
+<td><img class="ic" src="img/ProjectileSpeedTOme.png" alt="">Projectile Speed</td>
 <td>Projectile Speed</td>
 <td>+15%</td>
 <td>Default</td>
 <td></td>
 </tr>
 <tr>
-<td>Knockback</td>
+<td><img class="ic" src="img/KnockbackTome.png" alt="">Knockback</td>
 <td>Knockback</td>
 <td>+20%</td>
 <td>Default</td>
 <td></td>
 </tr>
 <tr>
-<td>Shield</td>
+<td><img class="ic" src="img/ShieldTome.png" alt="">Shield</td>
 <td>Shield</td>
 <td>+25</td>
 <td>Default</td>
 <td>The main survival pool in late swarms.</td>
 </tr>
 <tr>
-<td>Health</td>
+<td><img class="ic" src="img/HealthTome.png" alt="">Health</td>
 <td>Max HP</td>
 <td>+25</td>
 <td>Default</td>
 <td></td>
 </tr>
 <tr>
-<td>Regen</td>
+<td><img class="ic" src="img/RegenerationTome.png" alt="">Regen</td>
 <td>HP Regen</td>
 <td>+40</td>
 <td>Default</td>
 <td></td>
 </tr>
 <tr>
-<td>Armor</td>
+<td><img class="ic" src="img/ArmorTome.png" alt="">Armor</td>
 <td>Armor</td>
 <td>+12%</td>
 <td>Kill 5,000 enemies as Sir Oofie</td>
 <td>Real reduction A / (A + 0.75).</td>
 </tr>
 <tr>
-<td>Evasion</td>
+<td><img class="ic" src="img/EvasionTome.png" alt="">Evasion</td>
 <td>Evasion</td>
 <td>+10%</td>
 <td>Default</td>
 <td>Real chance E / (E + 1).</td>
 </tr>
 <tr>
-<td>Bloody</td>
+<td><img class="ic" src="img/BloodTOme.png" alt="">Bloody</td>
 <td>Lifesteal</td>
 <td>+10%</td>
 <td>Kill 12,500 enemies</td>
@@ -185,28 +188,28 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <td></td>
 </tr>
 <tr>
-<td>Attraction</td>
+<td><img class="ic" src="img/AttractionTome.png" alt="">Attraction</td>
 <td>Pickup Range</td>
 <td>+75%</td>
 <td>Use the Shrine of Succ 8 times</td>
 <td></td>
 </tr>
 <tr>
-<td>Agility</td>
+<td><img class="ic" src="img/SpeedTome.png" alt="">Agility</td>
 <td>Movement Speed</td>
 <td>+15%</td>
 <td>Default</td>
 <td></td>
 </tr>
 <tr>
-<td>Golden</td>
+<td><img class="ic" src="img/GoldenTome.png" alt="">Golden</td>
 <td>Gold gain</td>
 <td>+12%</td>
 <td>Default</td>
 <td></td>
 </tr>
 <tr>
-<td>Silver</td>
+<td><img class="ic" src="img/SilverTome.png" alt="">Silver</td>
 <td>Silver gain</td>
 <td>+12%</td>
 <td>Default</td>
@@ -215,5 +218,59 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </tbody>
 </table></div>
 <p>The game data also holds three tomes that are switched off and can't be offered: Balance, Gambler and Hoarder.</p>
+<h2 id="which-weapons-each-tome-affects">Which weapons each tome affects</h2>
+<p>Every weapon reads its stats through the same functions (<code>WeaponUtility</code>), each one weapon value × your stat. Whether a tome does anything depends on whether the weapon has that value and uses it. Tomes not listed here (XP, Luck, Cursed, Health, Shield, Armor, Evasion, Regen, Bloody, Thorns, Attraction, Agility, Golden, Silver) don't change weapons directly; Thorns is the exception for Aegis, whose blocks add your Thorns to their damage.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tome</th>
+<th>Affects</th>
+<th>Doesn't affect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><img class="ic" src="img/DamageTome.png" alt="">Damage</strong></td>
+<td>All weapons</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong><img class="ic" src="img/PrecisionTome.png" alt="">Precision</strong></td>
+<td>All weapons</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong><img class="ic" src="img/CooldownTome.png" alt="">Cooldown</strong></td>
+<td>All weapons</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong><img class="ic" src="img/QuantityTome.png" alt="">Quantity</strong></td>
+<td>Aegis, Axe, Bananarang, Black Hole, Blood Magic, Bone, Bow, Chunkers, Corrupted Sword, Dexecutioner, Dice, Firestaff, Flamewalker, Hero Sword, Katana, Lightning Staff, Mines, Poison Flask, Revolver, Scythe, Shotgun, Slutty Rocket, Sniper Rifle, Sword, Tornado, Wireless Dagger</td>
+<td>Aura (has no projectile count); Dragon's Breath (has no projectile count); Frostwalker (has no projectile count); Space Noodle (has no projectile count)</td>
+</tr>
+<tr>
+<td><strong><img class="ic" src="img/SizeTome.png" alt="">Size</strong></td>
+<td>All weapons</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong><img class="ic" src="img/DurationTome.png" alt="">Duration</strong></td>
+<td>Axe, Bananarang, Black Hole, Bone, Bow, Chunkers, Corrupted Sword, Dice, Dragon's Breath, Firestaff, Flamewalker, Frostwalker, Hero Sword, Mines, Poison Flask, Revolver, Space Noodle, Tornado, Wireless Dagger</td>
+<td>Aegis (nothing timed to lengthen); Aura (nothing timed to lengthen); Blood Magic (its 0.75 s already sits at its 0.75 s cap); Dexecutioner (its 0.5 s already sits at its 0.5 s cap); Katana (its 0.5 s already sits at its 0.5 s cap); Lightning Staff (its 1 s already sits at its 1 s cap); Scythe (its 0.5 s already sits at its 0.5 s cap); Shotgun (its 0.8 s already sits at its 0.8 s cap); Slutty Rocket (its 5 s already sits at its 5 s cap); Sniper Rifle (its 1 s already sits at its 1 s cap); Sword (its 0.5 s already sits at its 0.5 s cap)</td>
+</tr>
+<tr>
+<td><strong><img class="ic" src="img/ProjectileSpeedTOme.png" alt="">Projectile Speed</strong></td>
+<td>Axe, Bananarang, Black Hole, Blood Magic, Bone, Bow, Chunkers, Corrupted Sword, Dice, Firestaff, Hero Sword, Poison Flask, Revolver, Slutty Rocket, Tornado, Wireless Dagger</td>
+<td>Aegis (a shield around you); Aura (an aura); Dexecutioner (a swing); Dragon's Breath (a flame cone); Flamewalker (fire is left on the ground); Frostwalker (an aura); Katana (a swing, nothing travels); Lightning Staff (strikes from above); Mines (mines sit still); Scythe (a sweep); Shotgun (hits instantly); Sniper Rifle (hits instantly); Space Noodle (a beam); Sword (a swing)</td>
+</tr>
+<tr>
+<td><strong><img class="ic" src="img/KnockbackTome.png" alt="">Knockback</strong></td>
+<td>Aegis, Aura, Axe, Bananarang, Black Hole, Blood Magic, Bone, Bow, Chunkers, Corrupted Sword, Dexecutioner, Dice, Dragon's Breath, Firestaff, Frostwalker, Hero Sword, Katana, Lightning Staff, Mines, Poison Flask, Revolver, Scythe, Shotgun, Slutty Rocket, Sniper Rifle, Space Noodle, Sword, Tornado, Wireless Dagger</td>
+<td>Flamewalker (base knockback 0)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Duration is capped per weapon: a weapon whose attack already lasts its maximum gains nothing (see <a href="weapons.html">Weapons</a> for each cap). Size is capped only on Revolver (×4) and Wireless Dagger (×3.5).</p>
 <h2 id="picking-four">Picking four</h2>
 <p>Data-first picks for a high-kill run: <strong>XP</strong> (levels), <strong>Luck</strong> (offer and chest rarity), <strong>Damage</strong> (the only × bracket tome), and <strong>Cursed</strong> or <strong>Precision</strong>: Cursed if you need more enemies, Precision for crit builds.</p><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>

@@ -1,6 +1,9 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Weapons · Megabonk Data</title><meta name="description" content="A data-driven Megabonk guide: exact item, tome, weapon and character numbers and the game's real formulas, read from the game's code.">
 <style>
+.ic{width:24px;height:24px;image-rendering:pixelated;vertical-align:-6px;margin-right:6px}h4 .ic{width:32px;height:32px;vertical-align:-9px}
+.hero{display:flex;gap:10px;flex-wrap:wrap}.hero img{width:192px;max-width:31%;height:auto;image-rendering:pixelated;border-radius:8px}
+.title-ic{width:48px;height:48px;image-rendering:pixelated}
 :root{--bg:#faf8f4;--panel:#ffffff;--ink:#1d1b18;--muted:#6b665e;--line:#e4dfd6;--accent:#c2410c;--accent-soft:#fdeee5;--code:#f3efe8}
 @media (prefers-color-scheme:dark){:root{--bg:#141311;--panel:#1c1a17;--ink:#ece8e1;--muted:#a39d93;--line:#2e2b27;--accent:#fb923c;--accent-soft:#2a1d14;--code:#26231f}}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
@@ -26,7 +29,7 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid va
 @media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
 nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
 main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
-</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="on">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="">Maxing a run</a><a href="faq.html" class="">FAQ &amp; map limits</a></div></nav>
+</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="game.html" class="">How the game works</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="on">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="">Maxing a run</a><a href="faq.html" class="">FAQ &amp; map limits</a></div></nav>
 <main><h1 id="weapons">Weapons</h1>
 <p>Weapons attack on their own and grow through weapon upgrade offers. The exact numbers below come from the game's weapon database.</p>
 <h2 id="how-weapons-scale">How weapons scale</h2>
@@ -53,210 +56,210 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </thead>
 <tbody>
 <tr>
-<td>Dice</td>
+<td><img class="ic" src="img/Dice.png" alt="">Dice</td>
 <td>0 + roll of 1–6</td>
 <td>0.5 s</td>
 <td>10% crit</td>
 <td>Damage +2, Size +15%, Projectiles +1, Crit +10%, Crit Damage +20%, Projectile Speed +0.2</td>
 </tr>
 <tr>
-<td>Katana</td>
+<td><img class="ic" src="img/Katana.png" alt="">Katana</td>
 <td>11</td>
 <td>0.4 s</td>
 <td>—</td>
 <td>Damage +2.2, Size +20%, Projectiles +1, Crit +8%, Crit Damage +20%</td>
 </tr>
 <tr>
-<td>Sword</td>
+<td><img class="ic" src="img/Sword.png" alt="">Sword</td>
 <td>11</td>
 <td>0.75 s</td>
 <td>—</td>
 <td>Damage +2, Size +20%, Projectiles +1, Knockback +25%</td>
 </tr>
 <tr>
-<td>Hero Sword</td>
+<td><img class="ic" src="img/HeroSword.png" alt="">Hero Sword</td>
 <td>11</td>
 <td>0.75 s</td>
 <td>—</td>
 <td>None listed</td>
 </tr>
 <tr>
-<td>Corrupted Sword</td>
+<td><img class="ic" src="img/CorruptedSword.png" alt="">Corrupted Sword</td>
 <td>12</td>
 <td>0.8 s</td>
 <td>—</td>
 <td>Damage +2, Size +15%, Projectiles +1, Projectile Speed +4</td>
 </tr>
 <tr>
-<td>Dexecutioner</td>
+<td><img class="ic" src="img/Dexecutioner.png" alt="">Dexecutioner</td>
 <td>9</td>
 <td>0.8 s</td>
 <td>—</td>
 <td>Damage +2, Size +20%, Projectiles +1, Crit +5%</td>
 </tr>
 <tr>
-<td>Axe</td>
+<td><img class="ic" src="img/Axe.png" alt="">Axe</td>
 <td>6</td>
 <td>1.4 s</td>
 <td>2 projectiles</td>
 <td>Damage +1.5, Size +10%, Projectiles +1, Duration +10%</td>
 </tr>
 <tr>
-<td>Scythe</td>
+<td><img class="ic" src="img/Scythe.png" alt="">Scythe</td>
 <td>11</td>
 <td>0.85 s</td>
 <td>—</td>
 <td>Damage +1.5, Size +12%, Projectiles +1, Knockback +15%</td>
 </tr>
 <tr>
-<td>Aura</td>
+<td><img class="ic" src="img/Aura.png" alt="">Aura</td>
 <td>6</td>
 <td>0.3 s</td>
 <td>—</td>
 <td>Damage +1.4, Size +14%</td>
 </tr>
 <tr>
-<td>Aegis</td>
+<td><img class="ic" src="img/Aegis.png" alt="">Aegis</td>
 <td>10</td>
 <td>1.5 s</td>
 <td>2 projectiles, 1 bounce</td>
 <td>Damage +2, Size +15%, Projectiles +1, Knockback +25%</td>
 </tr>
 <tr>
-<td>Revolver</td>
+<td><img class="ic" src="img/Revolver.png" alt="">Revolver</td>
 <td>5</td>
 <td>1.4 s</td>
 <td>6 projectiles, 5% crit</td>
 <td>Damage +2.5, Projectiles +1, Crit +10%, Crit Damage +20%, Bounces +1, Projectile Speed +20%</td>
 </tr>
 <tr>
-<td>Sniper Rifle</td>
+<td><img class="ic" src="img/Sniper.png" alt="">Sniper Rifle</td>
 <td>22</td>
 <td>1.0 s</td>
 <td>5% crit</td>
 <td>Damage +4, Projectiles +1, Size +13%</td>
 </tr>
 <tr>
-<td>Shotgun</td>
+<td><img class="ic" src="img/Shotgun.png" alt="">Shotgun</td>
 <td>9</td>
 <td>1.0 s</td>
 <td>5% crit</td>
 <td>Damage +3, Projectiles +1, Size +15%, Crit +10%, Crit Damage +20%</td>
 </tr>
 <tr>
-<td>Bow</td>
+<td><img class="ic" src="img/Bow.png" alt="">Bow</td>
 <td>9</td>
 <td>0.92 s</td>
 <td>pierces 99</td>
 <td>Damage +1.75, Projectiles +1, Size +15%, Crit +8%, Crit Damage +18%, Projectile Speed +20%</td>
 </tr>
 <tr>
-<td>Bone</td>
+<td><img class="ic" src="img/Bone.png" alt="">Bone</td>
 <td>11</td>
 <td>0.4 s</td>
 <td>1 bounce, 10% crit</td>
 <td>Damage +2.5, Projectiles +1, Bounces +1, Crit +12%, Crit Damage +25%, Projectile Speed +0.2</td>
 </tr>
 <tr>
-<td>Bananarang</td>
+<td><img class="ic" src="img/Bananarang.png" alt="">Bananarang</td>
 <td>9</td>
 <td>0.8 s</td>
 <td>pierces all</td>
 <td>Damage +2, Size +14%, Projectiles +1, Projectile Speed +10%</td>
 </tr>
 <tr>
-<td>Wireless Dagger</td>
+<td><img class="ic" src="img/Bluetooth Knife.png" alt="">Wireless Dagger</td>
 <td>9</td>
 <td>0.5 s</td>
 <td>1 bounce</td>
 <td>Damage +2, Projectiles +1, Bounces +1, Projectile Speed +15%</td>
 </tr>
 <tr>
-<td>Slutty Rocket</td>
+<td><img class="ic" src="img/SluttyRocket.png" alt="">Slutty Rocket</td>
 <td>11</td>
 <td>0.3 s</td>
 <td>5% crit</td>
 <td>Damage +2, Projectiles +1, Crit +8%, Projectile Speed +20%</td>
 </tr>
 <tr>
-<td>Chunkers</td>
+<td><img class="ic" src="img/Chunkers.png" alt="">Chunkers</td>
 <td>12</td>
 <td>1.5 s</td>
 <td>3 projectiles</td>
 <td>Damage +3, Size +20%, Projectiles +1, Knockback +25%, Projectile Speed +0.35</td>
 </tr>
 <tr>
-<td>Lightning Staff</td>
+<td><img class="ic" src="img/LightningStaff.png" alt="">Lightning Staff</td>
 <td>7</td>
 <td>1.1 s</td>
 <td>—</td>
 <td>Damage +2, Size +20%, Projectiles +1, Bounces +1</td>
 </tr>
 <tr>
-<td>Firestaff</td>
+<td><img class="ic" src="img/Firestaff.png" alt="">Firestaff</td>
 <td>10</td>
 <td>0.5 s</td>
 <td>—</td>
 <td>Damage +2.5, Size +16%, Projectiles +1, Projectile Speed +20%</td>
 </tr>
 <tr>
-<td>Dragon's Breath</td>
+<td><img class="ic" src="img/DragonsBreath.png" alt="">Dragon's Breath</td>
 <td>16</td>
 <td>2.0 s</td>
 <td>1.5 s duration</td>
 <td>Damage +4, Size +15%, Duration +0.2</td>
 </tr>
 <tr>
-<td>Flamewalker</td>
+<td><img class="ic" src="img/Firewalker.png" alt="">Flamewalker</td>
 <td>5</td>
 <td>none</td>
 <td>—</td>
 <td>Damage +2, Size +15%, Projectiles +1, Duration +12%</td>
 </tr>
 <tr>
-<td>Frostwalker</td>
+<td><img class="ic" src="img/Frostwalker.png" alt="">Frostwalker</td>
 <td>9</td>
 <td>1.25 s</td>
 <td>—</td>
 <td>Damage +2, Size +10%, Duration +0.12</td>
 </tr>
 <tr>
-<td>Poison Flask</td>
+<td><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</td>
 <td>1</td>
 <td>0.8 s</td>
 <td>—</td>
 <td>Damage +0.5, Size +15%, Projectiles +1, Duration +1, Projectile Speed +2</td>
 </tr>
 <tr>
-<td>Blood Magic</td>
+<td><img class="ic" src="img/BloodMagic.png" alt="">Blood Magic</td>
 <td>9</td>
 <td>1.5 s</td>
 <td>pierces all</td>
 <td>Damage +1.5, Size +15%, Projectiles +1</td>
 </tr>
 <tr>
-<td>Black Hole</td>
+<td><img class="ic" src="img/BlackHole.png" alt="">Black Hole</td>
 <td>4.5</td>
 <td>1.0 s</td>
 <td>—</td>
 <td>Damage +1.25, Size +13%, Projectiles +1, Duration +0.12</td>
 </tr>
 <tr>
-<td>Tornado</td>
+<td><img class="ic" src="img/Tornado.png" alt="">Tornado</td>
 <td>8</td>
 <td>0.8 s</td>
 <td>pierces all</td>
 <td>Damage +2, Size +14%, Projectiles +1, Knockback +20%, Projectile Speed +20%</td>
 </tr>
 <tr>
-<td>Mines</td>
+<td><img class="ic" src="img/Mine.png" alt="">Mines</td>
 <td>10</td>
 <td>1.0 s</td>
 <td>—</td>
 <td>Damage +3, Size +15%, Projectiles +1, Duration +0.4</td>
 </tr>
 <tr>
-<td>Space Noodle</td>
+<td><img class="ic" src="img/Space Noodle.png" alt="">Space Noodle</td>
 <td>10</td>
 <td>1.0 s</td>
 <td>—</td>
@@ -265,6 +268,697 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </tbody>
 </table></div>
 <p>Damage lines are flat additions to the weapon's base, so a weapon with low base damage (Dice, Black Hole, Poison Flask) gains the most from each Damage line relative to where it started. Dice, Katana, Revolver, Shotgun, Bow and Bone carry crit lines, and since crit past 100% overcrits (2 crits ×4, 3 crits ×6.25), those lines scale harder than they look. Dice's own crit growth from rolling sixes is capped by the game at 100 roll-ups a minute.</p>
+<h2 id="how-each-tome-changes-each-weapon">How each tome changes each weapon</h2>
+<p>All values are from the weapon data and the code that reads them (<code>WeaponUtility.GetDuration</code>, <code>GetAttackSizeMultiplier</code>, <code>GetProjectileSpeed</code>, <code>GetAttackQuantity</code>, <code>GetWeaponCooldown</code>, <code>GetDamageContainer</code>). The formulas:</p>
+<ul>
+<li><strong>Damage:</strong> every hit × your Damage stat.</li>
+<li><strong>Precision:</strong> your crit chance + the weapon's own.</li>
+<li><strong>Cooldown</strong> (Attack Speed): pause = weapon cooldown ÷ Attack Speed; shots inside a burst are spaced burst time ÷ projectiles ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> weapon projectiles + yours.</li>
+<li><strong>Size:</strong> weapon size × yours, capped where the weapon has a cap.</li>
+<li><strong>Duration:</strong> weapon duration × yours, capped at the weapon's max duration.</li>
+<li><strong>Projectile Speed:</strong> weapon speed × yours; only matters if something travels.</li>
+<li><strong>Knockback:</strong> weapon knockback × yours, applied on every hit.</li>
+</ul>
+<h3 id="at-a-glance">At a glance</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Weapon</th>
+<th>Damage</th>
+<th>Precision</th>
+<th>Cooldown</th>
+<th>Quantity</th>
+<th>Size</th>
+<th>Duration</th>
+<th>Projectile Speed</th>
+<th>Knockback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img class="ic" src="img/Aegis.png" alt="">Aegis</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Aura.png" alt="">Aura</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Axe.png" alt="">Axe</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Bananarang.png" alt="">Bananarang</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/BlackHole.png" alt="">Black Hole</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/BloodMagic.png" alt="">Blood Magic</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Bone.png" alt="">Bone</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Bow.png" alt="">Bow</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Chunkers.png" alt="">Chunkers</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/CorruptedSword.png" alt="">Corrupted Sword</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Dexecutioner.png" alt="">Dexecutioner</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Dice.png" alt="">Dice</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/DragonsBreath.png" alt="">Dragon's Breath</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Firestaff.png" alt="">Firestaff</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Firewalker.png" alt="">Flamewalker</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Frostwalker.png" alt="">Frostwalker</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/HeroSword.png" alt="">Hero Sword</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Katana.png" alt="">Katana</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/LightningStaff.png" alt="">Lightning Staff</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Mine.png" alt="">Mines</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Revolver.png" alt="">Revolver</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Scythe.png" alt="">Scythe</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Shotgun.png" alt="">Shotgun</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/SluttyRocket.png" alt="">Slutty Rocket</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Sniper.png" alt="">Sniper Rifle</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Space Noodle.png" alt="">Space Noodle</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Sword.png" alt="">Sword</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Tornado.png" alt="">Tornado</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><img class="ic" src="img/Bluetooth Knife.png" alt="">Wireless Dagger</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (cap)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="weapon-by-weapon">Weapon by weapon</h3>
+<h4 id="aegis"><img class="ic" src="img/Aegis.png" alt="">Aegis</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> shields come back faster (1.5 s base).</li>
+<li><strong>Quantity:</strong> +1 shield per Quantity (starts with 2).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> no effect: nothing timed to lengthen.</li>
+<li><strong>Projectile Speed:</strong> no effect: a shield around you.</li>
+<li><strong>Knockback:</strong> base 3 × Knockback.</li>
+</ul>
+<h4 id="aura"><img class="ic" src="img/Aura.png" alt="">Aura</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> damage ticks come faster (0.3 s base).</li>
+<li><strong>Quantity:</strong> no effect: has no projectile count.</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> no effect: nothing timed to lengthen.</li>
+<li><strong>Projectile Speed:</strong> no effect: an aura.</li>
+<li><strong>Knockback:</strong> base 0.5 × Knockback.</li>
+</ul>
+<h4 id="axe"><img class="ic" src="img/Axe.png" alt="">Axe</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 1.4 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 axe per Quantity (starts with 2).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> axes linger longer: 0.82 s → cap 8 s (cap reached at +876% Duration).</li>
+<li><strong>Projectile Speed:</strong> faster projectiles (base 0.5).</li>
+<li><strong>Knockback:</strong> base 1 × Knockback.</li>
+</ul>
+<h4 id="bananarang"><img class="ic" src="img/Bananarang.png" alt="">Bananarang</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 0.8 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 banana per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> bananas fly further before returning: 3 s → cap 10 s (cap reached at +233% Duration).</li>
+<li><strong>Projectile Speed:</strong> flies out and back faster (base 1).</li>
+<li><strong>Knockback:</strong> base 1 × Knockback.</li>
+</ul>
+<h4 id="black-hole"><img class="ic" src="img/BlackHole.png" alt="">Black Hole</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 1 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 black hole per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> black holes last longer: 2 s → cap 7 s (cap reached at +250% Duration).</li>
+<li><strong>Projectile Speed:</strong> black holes drift faster (base 20).</li>
+<li><strong>Knockback:</strong> base 6 × Knockback.</li>
+</ul>
+<h4 id="blood-magic"><img class="ic" src="img/BloodMagic.png" alt="">Blood Magic</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 1.5 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 blood bolt per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> no effect: its 0.75 s already sits at its 0.75 s cap.</li>
+<li><strong>Projectile Speed:</strong> faster projectiles (base 1).</li>
+<li><strong>Knockback:</strong> base 1 × Knockback.</li>
+</ul>
+<h4 id="bone"><img class="ic" src="img/Bone.png" alt="">Bone</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance (starts at 10%).</li>
+<li><strong>Cooldown:</strong> 0.4 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 bone per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> projectiles live longer, so they travel further: 3 s → cap 10 s (cap reached at +233% Duration).</li>
+<li><strong>Projectile Speed:</strong> faster projectiles (base 0.35).</li>
+<li><strong>Knockback:</strong> base 1.5 × Knockback.</li>
+</ul>
+<h4 id="bow"><img class="ic" src="img/Bow.png" alt="">Bow</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 0.92 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 arrow per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> projectiles live longer, so they travel further: 0.5 s → cap 1 s (cap reached at +100% Duration).</li>
+<li><strong>Projectile Speed:</strong> arrows fly faster (and Size/Duration slow them down less) (base 1.5).</li>
+<li><strong>Knockback:</strong> base 0.5 × Knockback.</li>
+</ul>
+<h4 id="chunkers"><img class="ic" src="img/Chunkers.png" alt="">Chunkers</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 1.5 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 orbiting rock per Quantity (starts with 3).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> rocks orbit longer before resetting: 3 s × Duration, no cap.</li>
+<li><strong>Projectile Speed:</strong> rocks orbit faster (base 1.5).</li>
+<li><strong>Knockback:</strong> base 2.5 × Knockback.</li>
+</ul>
+<h4 id="corrupted-sword"><img class="ic" src="img/CorruptedSword.png" alt="">Corrupted Sword</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 0.8 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 slash per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> projectiles live longer, so they travel further: 0.5 s → cap 5 s (cap reached at +900% Duration).</li>
+<li><strong>Projectile Speed:</strong> faster projectiles (base 30).</li>
+<li><strong>Knockback:</strong> base 2 × Knockback.</li>
+</ul>
+<h4 id="dexecutioner"><img class="ic" src="img/Dexecutioner.png" alt="">Dexecutioner</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 0.8 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 blade per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> no effect: its 0.5 s already sits at its 0.5 s cap.</li>
+<li><strong>Projectile Speed:</strong> no effect: a swing.</li>
+<li><strong>Knockback:</strong> base 1 × Knockback.</li>
+</ul>
+<h4 id="dice"><img class="ic" src="img/Dice.png" alt="">Dice</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage (base is the 1–6 roll).</li>
+<li><strong>Precision:</strong> adds to its crit chance (starts at 10%).</li>
+<li><strong>Cooldown:</strong> 0.5 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 die per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> projectiles live longer, so they travel further: 2 s → cap 5 s (cap reached at +150% Duration).</li>
+<li><strong>Projectile Speed:</strong> faster projectiles (base 0.6).</li>
+<li><strong>Knockback:</strong> base 2.5 × Knockback.</li>
+</ul>
+<h4 id="dragons-breath"><img class="ic" src="img/DragonsBreath.png" alt="">Dragon's Breath</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> breathes more often (2 s base).</li>
+<li><strong>Quantity:</strong> no effect: has no projectile count.</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> each breath lasts longer: 1.5 s × Duration, no cap.</li>
+<li><strong>Projectile Speed:</strong> no effect: a flame cone.</li>
+<li><strong>Knockback:</strong> base 0.5 × Knockback.</li>
+</ul>
+<h4 id="firestaff"><img class="ic" src="img/Firestaff.png" alt="">Firestaff</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 0.5 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 fireball per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> projectiles live longer, so they travel further: 2 s → cap 5 s (cap reached at +150% Duration).</li>
+<li><strong>Projectile Speed:</strong> faster projectiles (base 0.5).</li>
+<li><strong>Knockback:</strong> base 1 × Knockback.</li>
+</ul>
+<h4 id="flamewalker"><img class="ic" src="img/Firewalker.png" alt="">Flamewalker</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> fires its bursts faster (no pause between attacks).</li>
+<li><strong>Quantity:</strong> +1 fire patch per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> fire patches burn longer: 1.5 s → cap 8 s (cap reached at +433% Duration).</li>
+<li><strong>Projectile Speed:</strong> no effect: fire is left on the ground.</li>
+<li><strong>Knockback:</strong> no effect: base knockback 0.</li>
+</ul>
+<h4 id="frostwalker"><img class="ic" src="img/Frostwalker.png" alt="">Frostwalker</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> pulses come faster (1.25 s base).</li>
+<li><strong>Quantity:</strong> no effect: has no projectile count.</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> freezes last longer: 1.6 s × Duration, no cap.</li>
+<li><strong>Projectile Speed:</strong> no effect: an aura.</li>
+<li><strong>Knockback:</strong> base 0.5 × Knockback.</li>
+</ul>
+<h4 id="hero-sword"><img class="ic" src="img/HeroSword.png" alt="">Hero Sword</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 0.75 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 slash per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> projectiles live longer, so they travel further: 0.5 s → cap 5 s (cap reached at +900% Duration).</li>
+<li><strong>Projectile Speed:</strong> faster projectiles (base 30).</li>
+<li><strong>Knockback:</strong> base 2 × Knockback.</li>
+</ul>
+<h4 id="katana"><img class="ic" src="img/Katana.png" alt="">Katana</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 0.4 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 slash per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> no effect: its 0.5 s already sits at its 0.5 s cap.</li>
+<li><strong>Projectile Speed:</strong> no effect: a swing, nothing travels.</li>
+<li><strong>Knockback:</strong> base 1 × Knockback.</li>
+</ul>
+<h4 id="lightning-staff"><img class="ic" src="img/LightningStaff.png" alt="">Lightning Staff</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 1.1 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 lightning strike per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> no effect: its 1 s already sits at its 1 s cap.</li>
+<li><strong>Projectile Speed:</strong> no effect: strikes from above.</li>
+<li><strong>Knockback:</strong> base 1 × Knockback.</li>
+</ul>
+<h4 id="mines"><img class="ic" src="img/Mine.png" alt="">Mines</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 1 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 mine per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> mines stay armed longer: 4 s × Duration, no cap.</li>
+<li><strong>Projectile Speed:</strong> no effect: mines sit still.</li>
+<li><strong>Knockback:</strong> base 4 × Knockback.</li>
+</ul>
+<h4 id="poison-flask"><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 0.8 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 flask per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> poison pools last longer and poison stacks last longer: 3 s → cap 5 s (cap reached at +67% Duration).</li>
+<li><strong>Projectile Speed:</strong> flasks land sooner (base 16).</li>
+<li><strong>Knockback:</strong> base 1 × Knockback.</li>
+</ul>
+<h4 id="revolver"><img class="ic" src="img/Revolver.png" alt="">Revolver</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance (starts at 5%).</li>
+<li><strong>Cooldown:</strong> 1.4 s pause ÷ Attack Speed, and shots inside a burst come faster.</li>
+<li><strong>Quantity:</strong> +1 bullet per Quantity (starts with 6).</li>
+<li><strong>Size:</strong> bigger hit area, capped at ×4.</li>
+<li><strong>Duration:</strong> projectiles live longer, so they travel further: 1 s → cap 5 s (cap reached at +400% Duration).</li>
+<li><strong>Projectile Speed:</strong> faster projectiles (base 2).</li>
+<li><strong>Knockback:</strong> base 0.4 × Knockback.</li>
+</ul>
+<h4 id="scythe"><img class="ic" src="img/Scythe.png" alt="">Scythe</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 0.85 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 sweep per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> no effect: its 0.5 s already sits at its 0.5 s cap.</li>
+<li><strong>Projectile Speed:</strong> no effect: a sweep.</li>
+<li><strong>Knockback:</strong> base 1 × Knockback.</li>
+</ul>
+<h4 id="shotgun"><img class="ic" src="img/Shotgun.png" alt="">Shotgun</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance (starts at 5%).</li>
+<li><strong>Cooldown:</strong> 1 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 pellet per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> no effect: its 0.8 s already sits at its 0.8 s cap.</li>
+<li><strong>Projectile Speed:</strong> no effect: hits instantly.</li>
+<li><strong>Knockback:</strong> base 3 × Knockback.</li>
+</ul>
+<h4 id="slutty-rocket"><img class="ic" src="img/SluttyRocket.png" alt="">Slutty Rocket</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance (starts at 5%).</li>
+<li><strong>Cooldown:</strong> 0.3 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 rocket per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> no effect: its 5 s already sits at its 5 s cap.</li>
+<li><strong>Projectile Speed:</strong> rockets fly faster (base 1).</li>
+<li><strong>Knockback:</strong> base 2 × Knockback.</li>
+</ul>
+<h4 id="sniper-rifle"><img class="ic" src="img/Sniper.png" alt="">Sniper Rifle</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance (starts at 5%).</li>
+<li><strong>Cooldown:</strong> 1 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 shot per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> no effect: its 1 s already sits at its 1 s cap.</li>
+<li><strong>Projectile Speed:</strong> no effect: hits instantly.</li>
+<li><strong>Knockback:</strong> base 4 × Knockback.</li>
+</ul>
+<h4 id="space-noodle"><img class="ic" src="img/Space Noodle.png" alt="">Space Noodle</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> relinks sooner (1 s base).</li>
+<li><strong>Quantity:</strong> no effect: has no projectile count.</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> the beam stays linked longer: 4 s × Duration, no cap.</li>
+<li><strong>Projectile Speed:</strong> no effect: a beam.</li>
+<li><strong>Knockback:</strong> base 0.5 × Knockback.</li>
+</ul>
+<h4 id="sword"><img class="ic" src="img/Sword.png" alt="">Sword</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 0.75 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 slash per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> no effect: its 0.5 s already sits at its 0.5 s cap.</li>
+<li><strong>Projectile Speed:</strong> no effect: a swing.</li>
+<li><strong>Knockback:</strong> base 2 × Knockback.</li>
+</ul>
+<h4 id="tornado"><img class="ic" src="img/Tornado.png" alt="">Tornado</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 0.8 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 tornado per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area.</li>
+<li><strong>Duration:</strong> tornadoes last longer: 1.2 s → cap 5 s (cap reached at +317% Duration).</li>
+<li><strong>Projectile Speed:</strong> faster projectiles (base 20).</li>
+<li><strong>Knockback:</strong> base 3 × Knockback.</li>
+</ul>
+<h4 id="wireless-dagger"><img class="ic" src="img/Bluetooth Knife.png" alt="">Wireless Dagger</h4>
+<ul>
+<li><strong>Damage:</strong> multiplies all its damage.</li>
+<li><strong>Precision:</strong> adds to its crit chance.</li>
+<li><strong>Cooldown:</strong> 0.5 s pause ÷ Attack Speed.</li>
+<li><strong>Quantity:</strong> +1 dagger per Quantity (starts with 1).</li>
+<li><strong>Size:</strong> bigger hit area, capped at ×3.5.</li>
+<li><strong>Duration:</strong> projectiles live longer, so they travel further: 2.5 s → cap 8 s (cap reached at +220% Duration).</li>
+<li><strong>Projectile Speed:</strong> faster projectiles (base 0.75).</li>
+<li><strong>Knockback:</strong> base 0.4 × Knockback.</li>
+</ul>
 <h2 id="what-each-weapon-does-and-how-it-unlocks">What each weapon does and how it unlocks</h2>
 <div class="tw"><table>
 <thead>
@@ -276,152 +970,152 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </thead>
 <tbody>
 <tr>
-<td>Dice</td>
+<td><img class="ic" src="img/Dice.png" alt="">Dice</td>
 <td>Rolls 1–6 damage; each 6 permanently adds Crit Chance</td>
 <td>Luck Tome to level 12</td>
 </tr>
 <tr>
-<td>Katana</td>
+<td><img class="ic" src="img/Katana.png" alt="">Katana</td>
 <td>Fast slashes at the nearest enemy</td>
 <td>5% drop from Desert stage 1 tumbleweeds, then buy</td>
 </tr>
 <tr>
-<td>Sword</td>
+<td><img class="ic" src="img/Sword.png" alt="">Sword</td>
 <td>Sweeping slash through several enemies</td>
 <td>Default</td>
 </tr>
 <tr>
-<td>Hero Sword</td>
+<td><img class="ic" src="img/HeroSword.png" alt="">Hero Sword</td>
 <td>Front slash plus a ranged slash</td>
 <td>Beat a stage boss with no items, powerups or shrines; 30 Silver</td>
 </tr>
 <tr>
-<td>Corrupted Sword</td>
+<td><img class="ic" src="img/CorruptedSword.png" alt="">Corrupted Sword</td>
 <td>Front and back slashes; more damage at low HP</td>
 <td>Cursed Tome to level 20 before 10:00, then buy</td>
 </tr>
 <tr>
-<td>Dexecutioner</td>
+<td><img class="ic" src="img/Dexecutioner.png" alt="">Dexecutioner</td>
 <td>Piercing blade with an execute chance</td>
 <td>Kill 12,500 enemies with the Sword</td>
 </tr>
 <tr>
-<td>Axe</td>
+<td><img class="ic" src="img/Axe.png" alt="">Axe</td>
 <td>Spinning axes that linger</td>
 <td>Kill 2,000 enemies with the Sword</td>
 </tr>
 <tr>
-<td>Scythe</td>
+<td><img class="ic" src="img/Scythe.png" alt="">Scythe</td>
 <td>360° sweep; elite kills charge a stronger attack</td>
 <td>Beat Big Bob in the Graveyard Crypt, then buy</td>
 </tr>
 <tr>
-<td>Aura</td>
+<td><img class="ic" src="img/Aura.png" alt="">Aura</td>
 <td>Constant close-range damage</td>
 <td>Take no damage for 2 minutes in a row</td>
 </tr>
 <tr>
-<td>Aegis</td>
+<td><img class="ic" src="img/Aegis.png" alt="">Aegis</td>
 <td>Blocks attacks and releases counter shockwaves; adds Thorns to its damage</td>
 <td>Block 500 damage with Armor as Sir Oofie</td>
 </tr>
 <tr>
-<td>Revolver</td>
+<td><img class="ic" src="img/Revolver.png" alt="">Revolver</td>
 <td>Ricocheting bullets</td>
 <td>Kill 7,500 enemies</td>
 </tr>
 <tr>
-<td>Sniper Rifle</td>
+<td><img class="ic" src="img/Sniper.png" alt="">Sniper Rifle</td>
 <td>Long-range piercing shot</td>
 <td>Precision Tome to level 10</td>
 </tr>
 <tr>
-<td>Shotgun</td>
+<td><img class="ic" src="img/Shotgun.png" alt="">Shotgun</td>
 <td>Spread burst</td>
 <td>5% drop from Desert stage 2 tumbleweeds, then buy</td>
 </tr>
 <tr>
-<td>Bow</td>
+<td><img class="ic" src="img/Bow.png" alt="">Bow</td>
 <td>Piercing arrows</td>
 <td>Default</td>
 </tr>
 <tr>
-<td>Bone</td>
+<td><img class="ic" src="img/Bone.png" alt="">Bone</td>
 <td>Bouncing projectile, starts with 1 bounce</td>
 <td>Default</td>
 </tr>
 <tr>
-<td>Bananarang</td>
+<td><img class="ic" src="img/Bananarang.png" alt="">Bananarang</td>
 <td>Returning banana</td>
 <td>Find the hidden banana in Forest</td>
 </tr>
 <tr>
-<td>Wireless Dagger</td>
+<td><img class="ic" src="img/Bluetooth Knife.png" alt="">Wireless Dagger</td>
 <td>Homing daggers that bounce</td>
 <td>Lightning Staff to level 15</td>
 </tr>
 <tr>
-<td>Slutty Rocket</td>
+<td><img class="ic" src="img/SluttyRocket.png" alt="">Slutty Rocket</td>
 <td>Homing missiles</td>
 <td>Kill 15,000 enemies as CL4NK</td>
 </tr>
 <tr>
-<td>Chunkers</td>
+<td><img class="ic" src="img/Chunkers.png" alt="">Chunkers</td>
 <td>Orbiting rocks</td>
 <td>Default</td>
 </tr>
 <tr>
-<td>Lightning Staff</td>
+<td><img class="ic" src="img/LightningStaff.png" alt="">Lightning Staff</td>
 <td>Lightning on nearby enemies; upgrades add chain bounces</td>
 <td>Default</td>
 </tr>
 <tr>
-<td>Firestaff</td>
+<td><img class="ic" src="img/Firestaff.png" alt="">Firestaff</td>
 <td>Explosive fireballs</td>
 <td>Default</td>
 </tr>
 <tr>
-<td>Dragon's Breath</td>
+<td><img class="ic" src="img/DragonsBreath.png" alt="">Dragon's Breath</td>
 <td>Rotating flame that targets enemies</td>
 <td>Kill 1,000 Wisps as Fox in Desert</td>
 </tr>
 <tr>
-<td>Flamewalker</td>
+<td><img class="ic" src="img/Firewalker.png" alt="">Flamewalker</td>
 <td>Damaging fire trail</td>
 <td>Default</td>
 </tr>
 <tr>
-<td>Frostwalker</td>
+<td><img class="ic" src="img/Frostwalker.png" alt="">Frostwalker</td>
 <td>Freezes and damages enemies nearby</td>
 <td>Freeze 1,000 enemies with Ice Cube</td>
 </tr>
 <tr>
-<td>Poison Flask</td>
+<td><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</td>
 <td>Lasting poison zones</td>
 <td>Beat Scorpionussy 3 times in Desert</td>
 </tr>
 <tr>
-<td>Blood Magic</td>
+<td><img class="ic" src="img/BloodMagic.png" alt="">Blood Magic</td>
 <td>5% of kills permanently add Max HP</td>
 <td>Bloody Tome to level 12</td>
 </tr>
 <tr>
-<td>Black Hole</td>
+<td><img class="ic" src="img/BlackHole.png" alt="">Black Hole</td>
 <td>Gravity field that pulls in and damages enemies</td>
 <td>Knockback Tome to level 10</td>
 </tr>
 <tr>
-<td>Tornado</td>
+<td><img class="ic" src="img/Tornado.png" alt="">Tornado</td>
 <td>Tornadoes that knock enemies back</td>
 <td>Charge a Charge Shrine 5 times during Desert sandstorms</td>
 </tr>
 <tr>
-<td>Mines</td>
+<td><img class="ic" src="img/Mine.png" alt="">Mines</td>
 <td>Proximity mines</td>
 <td>Kill 7,500 enemies with Slutty Rocket</td>
 </tr>
 <tr>
-<td>Space Noodle</td>
+<td><img class="ic" src="img/Space Noodle.png" alt="">Space Noodle</td>
 <td>Links to an enemy and damages everything in between</td>
 <td>Clear Desert Tier 2 as Tony McZoom</td>
 </tr>
