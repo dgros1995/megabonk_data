@@ -111,7 +111,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </style></head><body><div class="wrap"><nav class="side" id="nav" aria-label="Site"><div class="bar"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <button class="mbtn" type="button" aria-expanded="false" aria-controls="links"><span class="cur">Luck, chests &amp; shrines</span><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span><span class="mb-t">Menu</span></button></div>
 <div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html" class="on" aria-current="page"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
-<main id="top"><div class="pg-head"><img class="pg-ic" src="img/Gold.png" alt="" width="52" height="52"><h1>Luck, chests &amp; shrines</h1></div><p class="meta">Game v1.0.69 · updated Nov 16, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#how-luck-works">How Luck works</a></li><li><a href="#chests">Chests</a></li><li><a href="#pots">Pots</a></li><li><a href="#microwave">Microwave</a></li><li><a href="#shady-guy">Shady Guy</a></li><li><a href="#shrines">Shrines</a></li><li><a href="#level-up-and-shrine-stat-values">Level-up and shrine stat values</a></li></ul></div>
+<main id="top"><div class="pg-head"><img class="pg-ic" src="img/Gold.png" alt="" width="52" height="52"><h1>Luck, chests &amp; shrines</h1></div><p class="meta">Game v1.0.69 · updated Nov 16, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#how-luck-works">How Luck works</a></li><li><a href="#chests">Chests</a></li><li><a href="#pots">Pots</a></li><li><a href="#microwave">Microwave</a></li><li><a href="#shady-guy">Shady Guy</a></li><li><a href="#shrines">Shrines</a></li><li><a href="#stat-offer-values">Stat offer values</a></li></ul></div>
 <h2 id="how-luck-works"><img class="ic" src="img/LuckTome.png" alt="">How Luck works</h2>
 <p>Every rarity roll that uses Luck goes through the same function (<code>Rarity.CalculateRarityWeights</code>):</p>
 <p><strong>weight of a rarity × 1.5^(−steps below the top rarity × 1.5 × ln(1 + Luck))</strong>, then normalised.</p>
@@ -509,139 +509,165 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <p><strong>Example:</strong> a run that doubles Powerup Drop Chance 3 times and never halves it has ×8. At 300 kills a second that cuts the wait for a free chest from about 53 seconds to about 19 (see <a href="#chests-from-kills">Chests from kills</a>).</p>
 </blockquote>
 <p>Things Bald Heads <strong>can't</strong> roll in the 1.0.69 code: Elite spawns, Projectiles, Difficulty and Extra jumps. Elite spawns come from Charge Shrines (+15% per Common offer) and Old Mask (+15% per copy).</p>
-<h2 id="level-up-and-shrine-stat-values"><img class="ic" src="img/Stonks.png" alt="">Level-up and shrine stat values</h2>
-<p>When a level-up or shrine offers a stat, the Common value is (× the offer's rarity multiplier):</p>
-<div class="tw"><table data-m="cards">
+<h2 id="stat-offer-values">Stat offer values</h2>
+<p>When a shrine or other stat offer gives you a stat, this is the Common amount. Higher rarities multiply it (the offer's rarity multiplier).</p>
+<ul>
+<li><strong>% bonus</strong> stats raise that stat by a percentage, like +12% Damage. These add up with your other % bonuses (<a href="mechanics.html">Core math</a>).</li>
+<li><strong>Added directly</strong> stats add a fixed amount to the total, like +15 Max HP, or +5 points of Crit chance.</li>
+</ul>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Stat</th>
-<th>Value</th>
-<th>Bracket</th>
-<th>Stat</th>
-<th>Value</th>
-<th>Bracket</th>
+<th>Common offer</th>
+<th>How it adds</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/DamageTome.png" alt="">Damage</td>
-<td data-label="Value">+12%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Max HP</td>
-<td data-label="Value">+15</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+12%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/CooldownTome.png" alt="">Attack speed</td>
-<td data-label="Value">+6%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">HP regen</td>
-<td data-label="Value">+20</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+6%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/SizeTome.png" alt="">Size</td>
-<td data-label="Value">+8%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Shield</td>
-<td data-label="Value">+5</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+8%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/DurationTome.png" alt="">Duration</td>
-<td data-label="Value">+8%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Thorns</td>
-<td data-label="Value">+5</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+8%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/ProjectileSpeedTOme.png" alt="">Projectile speed</td>
-<td data-label="Value">+10%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Projectiles</td>
-<td data-label="Value">+1</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+10%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/Crit Happens.png" alt="">Crit damage</td>
-<td data-label="Value">+10%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Projectile bounces</td>
-<td data-label="Value">+1</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+10%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/Bullseye.png" alt="">Elite damage</td>
-<td data-label="Value">+10%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Extra jumps</td>
-<td data-label="Value">+1</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+10%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/KnockbackTome.png" alt="">Knockback</td>
-<td data-label="Value">+10%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Crit chance</td>
-<td data-label="Value">+5%</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+10%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/SpeedTome.png" alt="">Move speed</td>
-<td data-label="Value">+8%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Luck</td>
-<td data-label="Value">+5%</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+8%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/Float.png" alt="">Jump height</td>
-<td data-label="Value">+10%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Armor</td>
-<td data-label="Value">+5%</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+10%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/AttractionTome.png" alt="">Pickup range</td>
-<td data-label="Value">+20%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Evasion</td>
-<td data-label="Value">+5%</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+20%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/GoldenTome.png" alt="">Gold, XP, silver gain</td>
-<td data-label="Value">+7.5%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Lifesteal</td>
-<td data-label="Value">+6%</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+7.5%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/Elite.png" alt="">Elite spawns</td>
-<td data-label="Value">+15%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Difficulty</td>
-<td data-label="Value">+8%</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+15%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/Stonks.png" alt="">Powerup boost</td>
-<td data-label="Value">+10%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat">Fall damage reduction</td>
-<td data-label="Value">+10%</td>
-<td data-label="Bracket">flat</td>
+<td data-label="Common offer">+10%</td>
+<td data-label="How it adds">% bonus</td>
 </tr>
 <tr>
 <td class="nm" data-label="Stat"><img class="ic" src="img/Stonks.png" alt="">Powerup chance</td>
-<td data-label="Value">+5%</td>
-<td data-label="Bracket">%</td>
-<td data-label="Stat"></td>
-<td data-label="Value"></td>
-<td data-label="Bracket"></td>
+<td data-label="Common offer">+5%</td>
+<td data-label="How it adds">% bonus</td>
+</tr>
+<tr>
+<td class="nm" data-label="Stat"><img class="ic" src="img/HealthTome.png" alt="">Max HP</td>
+<td data-label="Common offer">+15</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td class="nm" data-label="Stat"><img class="ic" src="img/RegenerationTome.png" alt="">HP regen</td>
+<td data-label="Common offer">+20</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td data-label="Stat">Shield</td>
+<td data-label="Common offer">+5</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td data-label="Stat">Thorns</td>
+<td data-label="Common offer">+5</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td data-label="Stat">Projectiles</td>
+<td data-label="Common offer">+1</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td data-label="Stat">Projectile bounces</td>
+<td data-label="Common offer">+1</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td data-label="Stat">Extra jumps</td>
+<td data-label="Common offer">+1</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td class="nm" data-label="Stat"><img class="ic" src="img/PrecisionTome.png" alt="">Crit chance</td>
+<td data-label="Common offer">+5%</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td data-label="Stat">Luck</td>
+<td data-label="Common offer">+5%</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td data-label="Stat">Armor</td>
+<td data-label="Common offer">+5%</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td class="nm" data-label="Stat"><img class="ic" src="img/EvasionTome.png" alt="">Evasion</td>
+<td data-label="Common offer">+5%</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td data-label="Stat">Lifesteal</td>
+<td data-label="Common offer">+6%</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td data-label="Stat">Difficulty</td>
+<td data-label="Common offer">+8%</td>
+<td data-label="How it adds">added directly</td>
+</tr>
+<tr>
+<td data-label="Stat">Fall damage reduction</td>
+<td data-label="Common offer">+10%</td>
+<td data-label="How it adds">added directly</td>
 </tr>
 </tbody>
 </table></div><nav class="pager" aria-label="Previous and next page"><a class="pv" href="status.html"><span>← Previous</span>Status effects</a><a class="nx" href="maps.html"><span>Next →</span>Maps &amp; stages</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 16, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
