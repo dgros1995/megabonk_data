@@ -1,38 +1,89 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Status effects · Megabonk Data</title><link rel="canonical" href="https://bonk.wiki/status.html"><meta name="description" content="A data-driven Megabonk guide: exact item, tome, weapon and character numbers and the game's real formulas, read from the game's code.">
+<title>Status effects · bonk.wiki (Megabonk)</title><meta name="description" content="Megabonk status effects from the code: poison, burn, freeze, stun, Bloodmark, charm and execute."><link rel="canonical" href="https://bonk.wiki/status.html">
+<meta name="theme-color" content="#17130f"><link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="bonk.wiki"><meta property="og:title" content="Status effects · bonk.wiki (Megabonk)">
+<meta property="og:description" content="Megabonk status effects from the code: poison, burn, freeze, stun, Bloodmark, charm and execute."><meta property="og:url" content="https://bonk.wiki/status.html"><meta property="og:image" content="https://bonk.wiki/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <style>
-.ic{width:24px;height:24px;image-rendering:pixelated;vertical-align:-6px;margin-right:6px}h4 .ic{width:32px;height:32px;vertical-align:-9px}
-.hero{display:flex;gap:10px;flex-wrap:wrap}.hero img{width:192px;max-width:31%;height:auto;image-rendering:pixelated;border-radius:8px}
-.title-ic{width:48px;height:48px;image-rendering:pixelated}
-:root{--bg:#faf8f4;--panel:#ffffff;--ink:#1d1b18;--muted:#6b665e;--line:#e4dfd6;--accent:#c2410c;--accent-soft:#fdeee5;--code:#f3efe8}
-@media (prefers-color-scheme:dark){:root{--bg:#141311;--panel:#1c1a17;--ink:#ece8e1;--muted:#a39d93;--line:#2e2b27;--accent:#fb923c;--accent-soft:#2a1d14;--code:#26231f}}
-*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+:root{--bg:#f7f4ee;--panel:#fffdf9;--ink:#1c1915;--muted:#6b645a;--line:#e5ddd0;--accent:#c2410c;--accent-ink:#9a3412;--accent-soft:#fdeee4;--code:#f1ebe1;--zebra:#fbf8f2;--brand:#17130f;--brand-ink:#f5efe6}
+@media (prefers-color-scheme:dark){:root{--bg:#12100e;--panel:#1a1714;--ink:#ede7de;--muted:#a59d91;--line:#2d2823;--accent:#fb923c;--accent-ink:#fdba74;--accent-soft:#2b1c12;--code:#25211c;--zebra:#1d1a16;--brand:#0b0907;--brand-ink:#f5efe6}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.62 "Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-feature-settings:"tnum" 1,"cv11" 1}
+img.px,.ic,.hero-bg,.map-banner img,.brand img,.pg-ic,.card img{image-rendering:pixelated}
 .wrap{display:flex;min-height:100vh}
-nav{width:240px;flex:none;border-right:1px solid var(--line);padding:28px 18px;position:sticky;top:0;height:100vh;overflow:auto;background:var(--panel)}
-nav .brand{font-weight:800;font-size:18px;letter-spacing:-.02em;margin:0 0 4px}
-nav .sub{color:var(--muted);font-size:13px;margin:0 0 22px}
-nav a{display:block;padding:7px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:15px}
-nav a:hover{background:var(--code)}nav a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
-main{flex:1;min-width:0;padding:40px 48px 80px;max-width:1100px}
-h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;margin:0 0 18px}
-h2{font-size:23px;letter-spacing:-.015em;margin:44px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
-h3{font-size:18px;margin:28px 0 8px}
-a{color:var(--accent)}strong{font-weight:650}
-.tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+nav.side{width:252px;flex:none;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;background:var(--panel);display:flex;flex-direction:column}
+.brand{display:block;background:var(--brand);color:var(--brand-ink);padding:22px 20px 16px;text-decoration:none}
+.wm{display:block;font-size:27px;font-weight:850;letter-spacing:-.03em;line-height:1}.wm i{font-style:normal;color:#fb923c}
+.brand span{display:block;margin-top:8px;font-size:12.5px;opacity:.72;letter-spacing:.02em}
+.links{padding:14px 12px 24px}
+.links a{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:9px;color:var(--ink);text-decoration:none;font-size:15px;line-height:1.3}
+.links a img{width:22px;height:22px;flex:none}
+.links a:hover{background:var(--code)}.links a.on{background:var(--accent-soft);color:var(--accent-ink);font-weight:650}
+.side-foot{margin-top:auto;padding:14px 22px 20px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+.side-foot a{color:var(--muted)}
+main{flex:1;min-width:0;padding:40px 52px 72px;max-width:1120px}
+.pg-head{display:flex;align-items:center;gap:16px;margin:0 0 6px}
+.pg-ic{width:52px;height:52px;flex:none;border-radius:10px;background:var(--brand);padding:6px}
+h1{font-size:34px;line-height:1.12;letter-spacing:-.025em;margin:0}
+.meta{color:var(--muted);font-size:13.5px;margin:4px 0 22px}
+h2{font-size:23px;letter-spacing:-.015em;margin:48px 0 12px;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px}
+h3{font-size:18.5px;margin:30px 0 8px;display:flex;align-items:center;gap:9px}
+h4{font-size:17px;margin:26px 0 6px;display:flex;align-items:center;gap:8px}
+h2 .ic,h3 .ic{width:28px;height:28px;margin:0;vertical-align:0}h4 .ic{width:32px;height:32px;margin:0}
+a{color:var(--accent);text-underline-offset:2px}strong{font-weight:650}
+p,li{max-width:76ch}
+.tw{overflow-x:auto;margin:16px 0 20px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
 table{border-collapse:collapse;width:100%;font-size:14.5px}
-th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
-th{background:var(--code);font-weight:650;white-space:nowrap}tr:last-child td{border-bottom:0}
-code{background:var(--code);padding:1px 5px;border-radius:5px;font-size:.92em}
+th,td{padding:9px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--code);font-weight:650;white-space:nowrap;font-size:13.5px;letter-spacing:.01em}
+tbody tr:nth-child(even) td{background:var(--zebra)}tr:last-child td{border-bottom:0}
+td.nm{white-space:nowrap}
+.ic{width:24px;height:24px;vertical-align:-6px;margin-right:7px}.mthumb{width:40px;height:30px;border-radius:4px;vertical-align:-9px;margin-right:9px;image-rendering:pixelated;object-fit:cover}
+code{background:var(--code);padding:1px 5px;border-radius:5px;font-size:.9em;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 ul,ol{padding-left:22px}li{margin:4px 0}
-footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
-@media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
-nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
-main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
-</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="game.html" class="">How the game works</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="on">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="">Maxing a run</a><a href="faq.html" class="">FAQ &amp; map limits</a></div></nav>
-<main><h1 id="status-effects">Status effects</h1>
+.toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin:0 0 8px;font-size:14.5px}
+.toc b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.toc ul{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:4px 16px}.toc li{margin:0}
+.toc a{text-decoration:none}.toc a:hover{text-decoration:underline}
+.map-banner{display:flex;gap:16px;align-items:flex-start;margin:6px 0 4px}
+.map-banner img{width:176px;height:132px;border-radius:10px;flex:none;object-fit:cover;border:1px solid var(--line)}
+.map-banner p{margin:0}
+.hero{position:relative;border-radius:16px;overflow:hidden;background:var(--brand);color:var(--brand-ink);margin:0 0 28px;min-height:280px;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,9,7,.15) 0%,rgba(11,9,7,.85) 78%)}
+.hero-in{position:relative;z-index:1;padding:28px 30px 26px;max-width:720px}
+.hero-in img{width:min(340px,80%);height:auto;display:block;margin-bottom:14px}
+.hero h1{font-size:30px;color:#fff;margin:0 0 8px}
+.hero p{margin:0 0 16px;color:#e9e1d6;font-size:16.5px}
+.badge{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:3px 10px;margin-bottom:12px;color:#fff}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:9px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:650;font-size:14.5px}
+.btn.alt{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px}
+.chip{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13.5px;color:var(--muted)}.chip b{color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin:14px 0 8px}
+.card{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.card img{width:40px;height:40px;flex:none;border-radius:8px;background:var(--brand);padding:4px}
+.card b{display:block;color:var(--ink);font-size:15.5px;margin-bottom:2px}.card span{color:var(--muted);font-size:13.5px;line-height:1.45;display:block}
+footer{margin-top:64px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:6px 18px}
+footer a{color:var(--muted)}
+.top{position:fixed;right:18px;bottom:18px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted);text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+@media (max-width:860px){.wrap{display:block}
+nav.side{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line)}
+.brand{padding:14px 16px 12px;display:flex;align-items:center;justify-content:space-between;gap:12px}.wm{font-size:23px}.brand span{margin:0;text-align:right}
+.links{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:4px;padding:8px 10px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent)}.links::-webkit-scrollbar{display:none}.links a{white-space:nowrap;flex:none}.links a{padding:5px 9px;font-size:13.5px;gap:6px}.links a img{width:18px;height:18px}
+.side-foot{display:none}
+main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42px;height:42px}
+.hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
+.map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
+.top{display:none}}
+@media print{nav.side,.top{display:none}main{padding:0}}
+</style></head><body><div class="wrap"><nav class="side"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
+<div class="links"><a href="./" class=""><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html" class=""><img src="img/allQuests.png" alt="" width="22" height="22">How the game works</a><a href="mechanics.html" class=""><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html" class="on"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="maps.html" class=""><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html" class=""><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="economy.html" class=""><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="items.html" class=""><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html" class=""><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html" class=""><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html" class=""><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a><a href="max-runs.html" class=""><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="faq.html" class=""><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
+<main id="top"><div class="pg-head"><img class="pg-ic" src="img/poison.png" alt="" width="52" height="52"><h1>Status effects</h1></div><p class="meta">Game v1.0.69 · updated Nov 16, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#poison">Poison</a></li><li><a href="#burn">Burn</a></li><li><a href="#freeze">Freeze</a></li><li><a href="#stun">Stun</a></li><li><a href="#bloodmark">Bloodmark</a></li><li><a href="#charm">Charm</a></li><li><a href="#execute">Execute</a></li></ul></div>
 <p>All debuffs tick <strong>2 times per second</strong> (<code>DebuffUtility.debuffTicksPerSecond = 2</code>). Their length in ticks is round(2 × duration × Duration multiplier). Re-applying a debuff lengthens it only if the new duration is longer than what's left; the two never add up.</p>
-<h2 id="poison">Poison</h2>
+<h2 id="poison"><img class="ic" src="img/poison.png" alt="">Poison</h2>
 <ul>
 <li><strong>Damage per tick = stacks × Damage × Poison damage</strong>, never less than 1 per stack. Two ticks a second.</li>
 <li><strong>No stack cap.</strong> Every application adds stacks.</li>
@@ -48,15 +99,15 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 </thead>
 <tbody>
 <tr>
-<td>Moldy Cheese</td>
+<td class="nm"><img class="ic" src="img/ItemMoldyCheese.png" alt="">Moldy Cheese</td>
 <td>40% per copy per hit (each full 100% guaranteed), 5 s</td>
 </tr>
 <tr>
-<td>Snek</td>
+<td class="nm"><img class="ic" src="img/ItemSnek.png" alt="">Snek</td>
 <td>4 per copy per hit, 5 s</td>
 </tr>
 <tr>
-<td>Toxic Barrel</td>
+<td class="nm"><img class="ic" src="img/ToxicBarrel.png" alt="">Toxic Barrel</td>
 <td>5 per copy to enemies near you when you're hit, 5 s</td>
 </tr>
 <tr>
@@ -68,36 +119,37 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <td>Spreads poison from dying enemies; +1% poison damage per level</td>
 </tr>
 <tr>
-<td>Poison Flask</td>
+<td class="nm"><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</td>
 <td>Weapon; poison zones</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="burn">Burn</h2>
+<h2 id="burn"><img class="ic" src="img/burn.png" alt="">Burn</h2>
 <ul>
 <li>One hit <strong>every second</strong> (every other tick) for (8 + level) × Damage × 0.85.</li>
 <li>Lasts 3 s × Duration from Dragonfire. Doesn't stack: one burn per enemy.</li>
 </ul>
-<h2 id="freeze">Freeze</h2>
+<h2 id="freeze"><img class="ic" src="img/ItemIceCube.png" alt="">Freeze</h2>
 <ul>
 <li>3 s from Ice Cube; 2.5 + 0.1 per copy (max 6) from Ice Crystal.</li>
 <li>The freeze slow value is 0.3. Noelle gets +1.5% damage per frozen enemy.</li>
 </ul>
-<h2 id="stun">Stun</h2>
+<h2 id="stun"><img class="ic" src="img/ItemBonker.png" alt="">Stun</h2>
 <ul>
 <li>3 s from Lightning Orb and Thunder Mitts.</li>
 </ul>
-<h2 id="bloodmark">Bloodmark</h2>
+<h2 id="bloodmark"><img class="ic" src="img/Bloodmark.png" alt="">Bloodmark</h2>
 <ul>
 <li>Stacks on an enemy. Each stack is worth <strong>0.75 × (8 + level) × Damage</strong>.</li>
 <li>When the stored damage is at least the enemy's current HP, the mark pops and deals all of it at once: effectively an execute that scales with stacks.</li>
 <li>Sources: Bloody Cleaver (50% per copy, plus every lifesteal proc), Unstable Transfusion (35% per copy), Slurp Gloves.</li>
 </ul>
-<h2 id="charm">Charm</h2>
+<h2 id="charm"><img class="ic" src="img/ItemPhantomShroud.png" alt="">Charm</h2>
 <ul>
 <li>Weeb Headset: 0.1 × 0.02n / (0.02n + 4) chance (tiny), lasts 5 + 1.5n s.</li>
 </ul>
-<h2 id="execute">Execute</h2>
+<h2 id="execute"><img class="ic" src="img/JoesDagger.png" alt="">Execute</h2>
 <ul>
 <li>Executable non-boss enemies die outright. Bosses and non-executable enemies (Purple and Red Ghosts, Graveyard boss ghosts, some others) take 2% of max HP instead.</li>
-</ul><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>
+</ul><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 16, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
+<a class="top" href="#top">↑ Top</a></body></html>

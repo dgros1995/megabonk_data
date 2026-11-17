@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bonk.wiki/sitemap.xml
