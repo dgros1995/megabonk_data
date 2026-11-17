@@ -326,6 +326,20 @@ td code,li code,p code{overflow-wrap:anywhere}
 </table></div>
 <p>(The 40+ and 50+ terms count from 30 instead of 40 and 50, probably a bug, which is why prices explode past 40.)</p>
 <p><strong>Free chests:</strong> Key gives 0.1n / (0.1n + 1) chance per chest (1 key 9%, 10 keys 50%). Roberto's Hoarder passive spawns one every 60 s.</p>
+<h3 id="chests-from-kills"><img class="ic" src="img/ItemKey.png" alt="">Chests from kills</h3>
+<p>Enemies also drop chests, and these are <strong>free</strong>: the chest opens when you walk over it, with no gold cost (<code>EffectManager.CheckChestSpawn</code>, <code>OpenChest</code>). Each kill rolls:</p>
+<p><strong>chance = 0.05% × Powerup Drop Chance × 2 × min(1, seconds since the last kill-chest ÷ 420)</strong>, doubled for elites.</p>
+<p>In words: right after a chest drops, the chance is 0. It climbs back over the next 7 minutes to a maximum of 0.1% per kill (× your Powerup Drop Chance). The more you kill, the sooner one of those rolls hits, so the wait gets shorter as your kill rate grows. On stage 1 the first elite you kill always drops a chest.</p>
+<blockquote>
+<p><strong>Example:</strong> you kill 300 enemies a second.</p>
+<ul>
+<li>With Powerup Drop Chance at 1×, the expected wait is about <strong>53 seconds</strong> per chest.</li>
+<li>At 10× (reachable on Graveyard with Bald Heads), it's about <strong>17 seconds</strong>, roughly 3–4 free chests a minute.</li>
+<li>At 1,000 kills a second and 10×, about 9 seconds: around 400 chests an hour.</li>
+</ul>
+<p>(Expected wait ≈ √(420 ÷ (kills per second × 0.0005 × Powerup Drop Chance)) seconds.)</p>
+</blockquote>
+<p>That's how multi-hour runs open thousands of chests, and why their Wizard's Hat counts reach the thousands.</p>
 <h2 id="pots"><img class="ic" src="img/Gold.png" alt="">Pots</h2>
 <p>Pots drop gold, XP, HP or silver, plus the Luck above. Pumpkin adds 8 pots on later stages and +18% pot rewards per copy.</p>
 <h2 id="microwave"><img class="ic" src="img/ItemEnergyCore.png" alt="">Microwave</h2>
