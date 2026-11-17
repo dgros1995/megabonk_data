@@ -37,7 +37,7 @@ table{border-collapse:collapse;width:100%;font-size:14.5px}
 th,td{padding:9px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
 th{background:var(--code);font-weight:650;white-space:nowrap;font-size:13.5px;letter-spacing:.01em}
 tbody tr:nth-child(even) td{background:var(--zebra)}tr:last-child td{border-bottom:0}
-td.nm{white-space:nowrap}
+td.nm{white-space:nowrap}table.dense{font-size:13.5px}table.dense th,table.dense td{padding:8px 8px}table.dense th{white-space:normal}
 .ic{width:24px;height:24px;vertical-align:-6px;margin-right:7px}.mthumb{width:40px;height:30px;border-radius:4px;vertical-align:-9px;margin-right:9px;image-rendering:pixelated;object-fit:cover}
 code{background:var(--code);padding:1px 5px;border-radius:5px;font-size:.9em;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 ul,ol{padding-left:22px}li{margin:4px 0}
@@ -259,7 +259,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <p><strong>Price of the next chest</strong> (<code>MoneyUtility.GetChestPrice</code>), where n = chests opened so far this run:</p>
 <p>(30 × 1.22^n + 35n + 300 × (n − 10) past 10 + 550 × (n − 20) past 20 + 1,200 × (n − 30) past 30 + 2,400 × (n − 30) past 40 + 4,500 × (n − 30) past 50) × Chest price multiplier</p>
 <p>The count only resets on a new run. It never goes up with time or stage, so a chest left closed costs the same later.</p>
-<div class="tw"><table>
+<div class="tw"><table class="dense">
 <thead>
 <tr>
 <th>Chests opened</th>
@@ -321,7 +321,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Charge Shrine</td>
+<td class="nm"><img class="ic" src="img/Zap.png" alt="">Charge Shrine</td>
 <td>Stand in the zone to charge it; rewards a random stat offer (Luck-weighted). Wrench speeds charging 4% and adds 7.5% per copy; Beacon adds 2 per copy on later stages.</td>
 </tr>
 <tr>
@@ -329,19 +329,19 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <td>Offers items (Luck-weighted).</td>
 </tr>
 <tr>
-<td>Greed Shrine</td>
+<td class="nm"><img class="ic" src="img/Gold.png" alt="">Greed Shrine</td>
 <td>Adds a permanent stat effect (Difficulty, +5% each by community count).</td>
 </tr>
 <tr>
-<td>Boss Curse (Cursed Shrine)</td>
+<td class="nm"><img class="ic" src="img/Curse.png" alt="">Boss Curse (Cursed Shrine)</td>
 <td>+1 Boss Curse: one more miniboss per miniboss event, one more stage boss, bosses +16% HP each.</td>
 </tr>
 <tr>
-<td>Magnet Shrine</td>
+<td class="nm"><img class="ic" src="img/Clock.png" alt="">Magnet Shrine</td>
 <td>Pulls in all XP on the map.</td>
 </tr>
 <tr>
-<td>Challenge Shrine</td>
+<td class="nm"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge Shrine</td>
 <td>Spawns a challenge fight; rewards on completion. Challenge enemies have ×7 HP (×15 if also elite).</td>
 </tr>
 <tr>
@@ -353,7 +353,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <td>Grants stat effects.</td>
 </tr>
 <tr>
-<td>Coffin (Graveyard)</td>
+<td class="nm"><img class="ic" src="img/Coffin.png" alt="">Coffin (Graveyard)</td>
 <td>Starts the Grave Ghost boss fight.</td>
 </tr>
 </tbody>
@@ -469,7 +469,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <td>flat</td>
 </tr>
 <tr>
-<td>Elite spawns</td>
+<td class="nm"><img class="ic" src="img/Elite.png" alt="">Elite spawns</td>
 <td>+15%</td>
 <td>%</td>
 <td>Difficulty</td>
