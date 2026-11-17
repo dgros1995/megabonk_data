@@ -233,14 +233,64 @@ td code,li code,p code{overflow-wrap:anywhere}
 <li><strong>Fewer weapon slots:</strong> once they're full, no new weapons are offered. Your pool is smaller, so each weapon and tome you own comes up more often and maxes sooner. That's stronger early.</li>
 <li><strong>More weapon slots:</strong> the pool is bigger, and early levels are spread across more weapons.</li>
 </ul>
-<p><strong>For high-kill runs, 4 is the better choice.</strong></p>
+<p><strong>For the very top runs, 2.</strong> This is what the leaderboard shows (patch 1.0.65):</p>
+<div class="tw"><table data-m="cards">
+<thead>
+<tr>
+<th>Kills</th>
+<th>Runs</th>
+<th>2 weapons</th>
+<th>3 weapons</th>
+<th>4 weapons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Kills">Under 500k</td>
+<td data-label="Runs">239</td>
+<td data-label="2 weapons">9%</td>
+<td data-label="3 weapons">5%</td>
+<td data-label="4 weapons">85%</td>
+</tr>
+<tr>
+<td data-label="Kills">500k–1M</td>
+<td data-label="Runs">456</td>
+<td data-label="2 weapons">19%</td>
+<td data-label="3 weapons">19%</td>
+<td data-label="4 weapons">62%</td>
+</tr>
+<tr>
+<td data-label="Kills">1M+</td>
+<td data-label="Runs">44</td>
+<td data-label="2 weapons">86%</td>
+<td data-label="3 weapons">7%</td>
+<td data-label="4 weapons">7%</td>
+</tr>
+<tr>
+<td data-label="Kills">2M+</td>
+<td data-label="Runs">10</td>
+<td data-label="2 weapons">100%</td>
+<td data-label="3 weapons">—</td>
+<td data-label="4 weapons">—</td>
+</tr>
+</tbody>
+</table></div>
+<p>Four weapons wins the 500k range. Past 1M almost everyone runs two, and Shotgun is the second weapon in 8 of the top 10 runs.</p>
+<p><strong>Why 2 wins the longest runs:</strong></p>
 <ul>
-<li><strong>Weapons cap quickly.</strong> Weapons cap at level 40, or a little more with a Pot (Stainless Steel). Four weapons is only about 160 weapon levels. A 300,000+ kill run reaches level 1,000 or more (the recorded 361k run hit 1,497), so every weapon is maxed long before the final swarms. The early-game cost of extra slots disappears.</li>
-<li><strong>More weapons means more hits.</strong> Every hit rolls your on-hit items. Big Bonk did 73% of the 361k run's damage, and each extra weapon is more Big Bonk, Lightning Orb and Dragonfire rolls (× its proc coefficient).</li>
+<li>
+<p><strong>Weapons don't really max out.</strong> The base cap is level 40, but each Pot (Stainless Steel) raises it (+10, +9, +8 … down to +2 per copy). Top runs stack Pots, so the cap keeps rising and every weapon offer is still worth taking.</p>
+<blockquote>
+<p><strong>Example:</strong> the 1.1M Dicehead run had 18 Pots. That's +10 +9 +8 +7 +6 +5 +4 +3 +2 for the first nine, then +2 for each of the other nine: +72, for a cap of 112. Its two weapons ended at levels 111 and 112.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Two weapons get every upgrade.</strong> Weapon offers are split between the weapons you own. With 4 weapons, each one gets about half the levels it would get with 2, so the two that do the work fall behind.</p>
+</li>
+<li><strong>A smaller offer pool.</strong> Each level-up draws from the weapons and tomes you own. Fewer weapons means the offers land on your main weapon and your key tomes more often.</li>
 </ul>
-<p><strong>Pick weapons for hits as well as damage.</strong> Fast, many-hit weapons give the most rolls. The <a href="weapons.html">Weapons</a> page ranks every weapon by proc rolls per second.</p>
-<p><strong>When 2 or 3 can be better:</strong> short runs, speedruns, and challenges, where you never reach the level where everything is maxed. Fewer slots also help when you want one weapon maxed fast.</p>
-<p>The same logic applies to tome slots: more tomes dilute early offers, but over a long run all four get maxed.</p>
+<p><strong>When 4 is better:</strong> runs up to about 1M kills. There, 4 weapons give more hits and more on-hit rolls, and the run ends before 2 fully-fed weapons pull ahead. The <a href="weapons.html">Weapons</a> page ranks every weapon by proc rolls per second.</p>
+<p><strong>Tome slots:</strong> half of the 2M+ runs use only 3 tomes, for the same reason. Below 1M, almost every run uses 4.</p>
 <h2 id="other-common-questions"><img class="ic" src="img/Bullseye.png" alt="">Other common questions</h2>
 <p><strong>What's the highest kill count possible?</strong> 16,777,216. The top three leaderboard runs all stop at exactly that number. That's 2²⁴, the largest whole number a 32-bit float can count to exactly. Past it, adding 1 no longer changes the number, so the kill count is almost certainly kept as a float somewhere and stops there.</p>
 <p><strong>Does a chest get more expensive if I wait?</strong> No. The price depends only on how many chests you've opened this run.</p>
