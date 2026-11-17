@@ -1,0 +1,246 @@
+{
+ "rows": {
+  "Dice": [
+   "Dice",
+   "0 + roll of 1–6",
+   "0.5 s",
+   "10% crit",
+   "Damage +2, Size +15%, Projectiles +1, Crit +10%, Crit Damage +20%, Projectile Speed +0.2"
+  ],
+  "Katana": [
+   "Katana",
+   "11",
+   "0.4 s",
+   "—",
+   "Damage +2.2, Size +20%, Projectiles +1, Crit +8%, Crit Damage +20%"
+  ],
+  "Sword": [
+   "Sword",
+   "11",
+   "0.75 s",
+   "—",
+   "Damage +2, Size +20%, Projectiles +1, Knockback +25%"
+  ],
+  "Hero Sword": [
+   "Hero Sword",
+   "11",
+   "0.75 s",
+   "—",
+   "None listed"
+  ],
+  "Corrupted Sword": [
+   "Corrupted Sword",
+   "12",
+   "0.8 s",
+   "—",
+   "Damage +2, Size +15%, Projectiles +1, Projectile Speed +4"
+  ],
+  "Dexecutioner": [
+   "Dexecutioner",
+   "9",
+   "0.8 s",
+   "—",
+   "Damage +2, Size +20%, Projectiles +1, Crit +5%"
+  ],
+  "Axe": [
+   "Axe",
+   "6",
+   "1.4 s",
+   "2 projectiles",
+   "Damage +1.5, Size +10%, Projectiles +1, Duration +10%"
+  ],
+  "Scythe": [
+   "Scythe",
+   "11",
+   "0.85 s",
+   "—",
+   "Damage +1.5, Size +12%, Projectiles +1, Knockback +15%"
+  ],
+  "Aura": [
+   "Aura",
+   "6",
+   "0.3 s",
+   "—",
+   "Damage +1.4, Size +14%"
+  ],
+  "Aegis": [
+   "Aegis",
+   "10",
+   "1.5 s",
+   "2 projectiles, 1 bounce",
+   "Damage +2, Size +15%, Projectiles +1, Knockback +25%"
+  ],
+  "Revolver": [
+   "Revolver",
+   "5",
+   "1.4 s",
+   "6 projectiles, 5% crit",
+   "Damage +2.5, Projectiles +1, Crit +10%, Crit Damage +20%, Bounces +1, Projectile Speed +20%"
+  ],
+  "Sniper Rifle": [
+   "Sniper Rifle",
+   "22",
+   "1.0 s",
+   "5% crit",
+   "Damage +4, Projectiles +1, Size +13%"
+  ],
+  "Shotgun": [
+   "Shotgun",
+   "9",
+   "1.0 s",
+   "5% crit",
+   "Damage +3, Projectiles +1, Size +15%, Crit +10%, Crit Damage +20%"
+  ],
+  "Bow": [
+   "Bow",
+   "9",
+   "0.92 s",
+   "pierces 99",
+   "Damage +1.75, Projectiles +1, Size +15%, Crit +8%, Crit Damage +18%, Projectile Speed +20%"
+  ],
+  "Bone": [
+   "Bone",
+   "11",
+   "0.4 s",
+   "1 bounce, 10% crit",
+   "Damage +2.5, Projectiles +1, Bounces +1, Crit +12%, Crit Damage +25%, Projectile Speed +0.2"
+  ],
+  "Bananarang": [
+   "Bananarang",
+   "9",
+   "0.8 s",
+   "pierces all",
+   "Damage +2, Size +14%, Projectiles +1, Projectile Speed +10%"
+  ],
+  "Wireless Dagger": [
+   "Wireless Dagger",
+   "9",
+   "0.5 s",
+   "1 bounce",
+   "Damage +2, Projectiles +1, Bounces +1, Projectile Speed +15%"
+  ],
+  "Slutty Rocket": [
+   "Slutty Rocket",
+   "11",
+   "0.3 s",
+   "5% crit",
+   "Damage +2, Projectiles +1, Crit +8%, Projectile Speed +20%"
+  ],
+  "Chunkers": [
+   "Chunkers",
+   "12",
+   "1.5 s",
+   "3 projectiles",
+   "Damage +3, Size +20%, Projectiles +1, Knockback +25%, Projectile Speed +0.35"
+  ],
+  "Lightning Staff": [
+   "Lightning Staff",
+   "7",
+   "1.1 s",
+   "—",
+   "Damage +2, Size +20%, Projectiles +1, Bounces +1"
+  ],
+  "Firestaff": [
+   "Firestaff",
+   "10",
+   "0.5 s",
+   "—",
+   "Damage +2.5, Size +16%, Projectiles +1, Projectile Speed +20%"
+  ],
+  "Dragon's Breath": [
+   "Dragon's Breath",
+   "16",
+   "2.0 s",
+   "1.5 s duration",
+   "Damage +4, Size +15%, Duration +0.2"
+  ],
+  "Flamewalker": [
+   "Flamewalker",
+   "5",
+   "none",
+   "—",
+   "Damage +2, Size +15%, Projectiles +1, Duration +12%"
+  ],
+  "Frostwalker": [
+   "Frostwalker",
+   "9",
+   "1.25 s",
+   "—",
+   "Damage +2, Size +10%, Duration +0.12"
+  ],
+  "Poison Flask": [
+   "Poison Flask",
+   "1",
+   "0.8 s",
+   "—",
+   "Damage +0.5, Size +15%, Projectiles +1, Duration +1, Projectile Speed +2"
+  ],
+  "Blood Magic": [
+   "Blood Magic",
+   "9",
+   "1.5 s",
+   "pierces all",
+   "Damage +1.5, Size +15%, Projectiles +1"
+  ],
+  "Black Hole": [
+   "Black Hole",
+   "4.5",
+   "1.0 s",
+   "—",
+   "Damage +1.25, Size +13%, Projectiles +1, Duration +0.12"
+  ],
+  "Tornado": [
+   "Tornado",
+   "8",
+   "0.8 s",
+   "pierces all",
+   "Damage +2, Size +14%, Projectiles +1, Knockback +20%, Projectile Speed +20%"
+  ],
+  "Mines": [
+   "Mines",
+   "10",
+   "1.0 s",
+   "—",
+   "Damage +3, Size +15%, Projectiles +1, Duration +0.4"
+  ],
+  "Space Noodle": [
+   "Space Noodle",
+   "10",
+   "1.0 s",
+   "—",
+   "Damage +2, Size +20%, Duration +0.2"
+  ]
+ },
+ "desc": {
+  "Dice": "Rolls 1–6 damage; each 6 permanently adds Crit Chance",
+  "Katana": "Fast slashes at the nearest enemy",
+  "Sword": "Sweeping slash through several enemies",
+  "Hero Sword": "Front slash plus a ranged slash",
+  "Corrupted Sword": "Front and back slashes; more damage at low HP",
+  "Dexecutioner": "Piercing blade with an execute chance",
+  "Axe": "Spinning axes that linger",
+  "Scythe": "360° sweep; elite kills charge a stronger attack",
+  "Aura": "Constant close-range damage",
+  "Aegis": "Blocks attacks and releases counter shockwaves; adds Thorns to its damage",
+  "Revolver": "Ricocheting bullets",
+  "Sniper Rifle": "Long-range piercing shot",
+  "Shotgun": "Spread burst",
+  "Bow": "Piercing arrows",
+  "Bone": "Bouncing projectile, starts with 1 bounce",
+  "Bananarang": "Returning banana",
+  "Wireless Dagger": "Homing daggers that bounce",
+  "Slutty Rocket": "Homing missiles",
+  "Chunkers": "Orbiting rocks",
+  "Lightning Staff": "Lightning on nearby enemies; upgrades add chain bounces",
+  "Firestaff": "Explosive fireballs",
+  "Dragon's Breath": "Rotating flame that targets enemies",
+  "Flamewalker": "Damaging fire trail",
+  "Frostwalker": "Freezes and damages enemies nearby",
+  "Poison Flask": "Lasting poison zones",
+  "Blood Magic": "5% of kills permanently add Max HP",
+  "Black Hole": "Gravity field that pulls in and damages enemies",
+  "Tornado": "Tornadoes that knock enemies back",
+  "Mines": "Proximity mines",
+  "Space Noodle": "Links to an enemy and damages everything in between"
+ }
+}

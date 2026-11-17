@@ -1,0 +1,434 @@
+{
+ "a_battery": [
+  "Item",
+  "Battery"
+ ],
+ "a_bossBuster": [
+  "Item",
+  "BossBuster"
+ ],
+ "a_cactus": [
+  "Item",
+  "Cactus"
+ ],
+ "a_cursedDoll": [
+  "Item",
+  "CursedDoll"
+ ],
+ "a_forbiddenJuice": [
+  "Item",
+  "ForbiddenJuice"
+ ],
+ "a_ghost": [
+  "Item",
+  "Ghost"
+ ],
+ "a_iceCrystal": [
+  "Item",
+  "IceCrystal"
+ ],
+ "a_key": [
+  "Item",
+  "Key"
+ ],
+ "a_oldMask": [
+  "Item",
+  "OldMask"
+ ],
+ "a_skuleg": [
+  "Item",
+  "Skuleg"
+ ],
+ "a_tacticalGlasses": [
+  "Item",
+  "TacticalGlasses"
+ ],
+ "a_turboSocks": [
+  "Item",
+  "TurboSocks"
+ ],
+ "a_brassKnuckles": [
+  "Item",
+  "BrassKnuckles"
+ ],
+ "a_demonicBlade": [
+  "Item",
+  "DemonBlade"
+ ],
+ "a_demonicBlood": [
+  "Item",
+  "DemonicBlood"
+ ],
+ "a_echoShard": [
+  "Item",
+  "EchoShard"
+ ],
+ "a_poisonGloves": [
+  "Item",
+  "GlovePoison"
+ ],
+ "a_goldenSneakers": [
+  "Item",
+  "GoldenSneakers"
+ ],
+ "a_idleJuice": [
+  "Item",
+  "IdleJuice"
+ ],
+ "a_kevin": [
+  "Item",
+  "Kevin"
+ ],
+ "a_leechingCrystal": [
+  "Item",
+  "LeechingCrystal"
+ ],
+ "a_pumpkin": [
+  "Item",
+  "Pumpkin"
+ ],
+ "a_bob": [
+  "Item",
+  "BobDead"
+ ],
+ "a_bobsLantern": [
+  "Item",
+  "BobsLantern"
+ ],
+ "a_demonicSoul": [
+  "Item",
+  "DemonicSoul"
+ ],
+ "a_eagleClaw": [
+  "Item",
+  "EagleClaw"
+ ],
+ "a_gamerGoggles": [
+  "Item",
+  "GamerGoggles"
+ ],
+ "a_gasMask": [
+  "Item",
+  "Gasmask"
+ ],
+ "a_cursedGloves": [
+  "Item",
+  "GloveCurse"
+ ],
+ "a_grandmasTonic": [
+  "Item",
+  "GrandmasSecretTonic"
+ ],
+ "a_quinsMask": [
+  "Item",
+  "QuinsMask"
+ ],
+ "a_shatteredKnowledge": [
+  "Item",
+  "ShatteredWisdom"
+ ],
+ "a_sluttyCannon": [
+  "Item",
+  "SluttyCannon"
+ ],
+ "a_toxicBarrel": [
+  "Item",
+  "ToxicBarrel"
+ ],
+ "a_turboSkates": [
+  "Item",
+  "Rollerblades"
+ ],
+ "a_anvil": [
+  "Item",
+  "Anvil"
+ ],
+ "a_bloodyCleaver": [
+  "Item",
+  "BloodyCleaver"
+ ],
+ "a_chonkplate": [
+  "Item",
+  "Chonkplate"
+ ],
+ "a_dragonfire": [
+  "Item",
+  "Dragonfire"
+ ],
+ "a_energyCore": [
+  "Item",
+  "EnergyCore"
+ ],
+ "a_holyBook": [
+  "Item",
+  "HolyBook"
+ ],
+ "a_joesDagger": [
+  "Item",
+  "JoesDagger"
+ ],
+ "a_lightningOrb": [
+  "Item",
+  "LightningOrb"
+ ],
+ "a_potSteel": [
+  "Item",
+  "Pot"
+ ],
+ "a_snek": [
+  "Item",
+  "Snek"
+ ],
+ "a_soulHarvester": [
+  "Item",
+  "SoulHarvester"
+ ],
+ "a_speedBoi": [
+  "Item",
+  "SpeedBoi"
+ ],
+ "a_suckyMagnet": [
+  "Item",
+  "SuckyMagnet"
+ ],
+ "a_wizardsHat": [
+  "Item",
+  "WizardsHat"
+ ],
+ "a_aegis": [
+  "Weapon",
+  "Aegis"
+ ],
+ "a_aura": [
+  "Weapon",
+  "Aura"
+ ],
+ "a_axe": [
+  "Weapon",
+  "Axe"
+ ],
+ "a_bananarang": [
+  "Weapon",
+  "Bananarang"
+ ],
+ "a_blackHole": [
+  "Weapon",
+  "BlackHole"
+ ],
+ "a_bloodMagic": [
+  "Weapon",
+  "BloodMagic"
+ ],
+ "a_corruptedSword": [
+  "Weapon",
+  "CorruptSword"
+ ],
+ "a_dexecutioner": [
+  "Weapon",
+  "Dexecutioner"
+ ],
+ "a_dice": [
+  "Weapon",
+  "Dice"
+ ],
+ "a_dragonsBreath": [
+  "Weapon",
+  "DragonsBreath"
+ ],
+ "a_frostwalker": [
+  "Weapon",
+  "Frostwalker"
+ ],
+ "a_heroSword": [
+  "Weapon",
+  "HeroSword"
+ ],
+ "a_katana": [
+  "Weapon",
+  "Katana"
+ ],
+ "a_mines": [
+  "Weapon",
+  "Mine"
+ ],
+ "a_poisonFlask": [
+  "Weapon",
+  "PoisonFlask"
+ ],
+ "a_revolver": [
+  "Weapon",
+  "Revolver"
+ ],
+ "a_scythe": [
+  "Weapon",
+  "Scythe"
+ ],
+ "a_shotgun": [
+  "Weapon",
+  "Shotgun"
+ ],
+ "a_sluttyRocket": [
+  "Weapon",
+  "Rockets"
+ ],
+ "a_sniperRifle": [
+  "Weapon",
+  "Sniper"
+ ],
+ "a_spaceNoodle": [
+  "Weapon",
+  "SpaceNoodle"
+ ],
+ "a_tornado": [
+  "Weapon",
+  "Tornado"
+ ],
+ "a_wirelessDaggers": [
+  "Weapon",
+  "BluetoothDagger"
+ ],
+ "a_armorTome": [
+  "Tome",
+  "Armor"
+ ],
+ "a_attractionTome": [
+  "Tome",
+  "Attraction"
+ ],
+ "a_bloodTome": [
+  "Tome",
+  "Blood"
+ ],
+ "a_chaosTome": [
+  "Tome",
+  "Chaos"
+ ],
+ "a_cursedTome": [
+  "Tome",
+  "Cursed"
+ ],
+ "a_durationTome": [
+  "Tome",
+  "Duration"
+ ],
+ "a_luckTome": [
+  "Tome",
+  "Luck"
+ ],
+ "a_quantityTome": [
+  "Tome",
+  "Quantity"
+ ],
+ "a_thornsTome": [
+  "Tome",
+  "Thorns"
+ ],
+ "a_xpTome": [
+  "Tome",
+  "Xp"
+ ],
+ "a_banish": [
+  "Shop upgrade",
+  "Banish"
+ ],
+ "a_boombox": [
+  "Shop upgrade",
+  "Boombox"
+ ],
+ "a_refresh": [
+  "Shop upgrade",
+  "Refresh"
+ ],
+ "a_skip": [
+  "Shop upgrade",
+  "Skip"
+ ],
+ "a_toggler": [
+  "Shop upgrade",
+  "Toggler"
+ ],
+ "a_tomeSlots": [
+  "Shop upgrade",
+  "Tomes"
+ ],
+ "a_weaponSlots": [
+  "Shop upgrade",
+  "Weapons"
+ ],
+ "a_amog": [
+  "Character",
+  "Amog"
+ ],
+ "a_athena": [
+  "Character",
+  "Athena"
+ ],
+ "a_bandit": [
+  "Character",
+  "Bandit"
+ ],
+ "a_birdo": [
+  "Character",
+  "Birdo"
+ ],
+ "a_bush": [
+  "Character",
+  "Bush"
+ ],
+ "a_calcium": [
+  "Character",
+  "Calcium"
+ ],
+ "a_chadwell": [
+  "Character",
+  "SirChadwell"
+ ],
+ "a_clank": [
+  "Character",
+  "Cl4nk"
+ ],
+ "a_dicehead": [
+  "Character",
+  "Dicehead"
+ ],
+ "a_megachad": [
+  "Character",
+  "Megachad"
+ ],
+ "a_monke": [
+  "Character",
+  "Monke"
+ ],
+ "a_ninja": [
+  "Character",
+  "Ninja"
+ ],
+ "a_noelle": [
+  "Character",
+  "Noelle"
+ ],
+ "a_ogre": [
+  "Character",
+  "Ogre"
+ ],
+ "a_roberto": [
+  "Character",
+  "Roberto"
+ ],
+ "a_robinette": [
+  "Character",
+  "Robinette"
+ ],
+ "a_spaceman": [
+  "Character",
+  "Spaceman"
+ ],
+ "a_tony": [
+  "Character",
+  "TonyMcZoom"
+ ],
+ "a_vlad": [
+  "Character",
+  "Vlad"
+ ]
+}

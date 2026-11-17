@@ -1,0 +1,1549 @@
+[
+ {
+  "asset": "a_desert1_0_hyper",
+  "name": "Hyper",
+  "desc": "Gotta go fast",
+  "map": "Desert",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "DelltheHyena",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hyper",
+    "stats": [
+     [
+      "XpIncreaseMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "GoldIncreaseMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemyScalingMultiplier",
+      1,
+      4.0
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert1_1_chonk_mode",
+  "name": "Chonk Mode",
+  "desc": "Enemies are biiiiig",
+  "map": "Desert",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "DelltheHyena",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Chonk Mode",
+    "stats": [
+     [
+      "EnemySizeMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemyHpMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      0.85
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.5
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert1_2_lava",
+  "name": "The Floor is Lava",
+  "desc": "Lava will periodically cover most of the map.",
+  "map": "Desert",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "DelltheHyena",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierLava",
+    "name": "Lava",
+    "stats": []
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert1_3_swarm",
+  "name": "Swarm",
+  "desc": "Lots of enemies!",
+  "map": "Desert",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Swarm",
+    "stats": [
+     [
+      "EnemyAmountMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "XpIncreaseMultiplier",
+      1,
+      0.75
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.5
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert1_4_hard",
+  "name": "oh no",
+  "desc": null,
+  "map": "Desert",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 1,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hard",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.25
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert1_5_harder",
+  "name": "oh shit",
+  "desc": null,
+  "map": "Desert",
+  "tier": 0,
+  "silver": 1.75,
+  "author": "",
+  "req": 1,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Harder",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.5
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert1_6_hardest",
+  "name": "what the fuck",
+  "desc": null,
+  "map": "Desert",
+  "tier": 0,
+  "silver": 2.0,
+  "author": "",
+  "req": 1,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hardest",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      2.0
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert1_speedrunner",
+  "name": "Speedrunner",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Desert",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_6min",
+    "stats": [],
+    "minutes": 6.0
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert1_speedrunner_plus",
+  "name": "Speedrunner+",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Desert",
+  "tier": 0,
+  "silver": 2.0,
+  "author": "",
+  "req": 1,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_4min",
+    "stats": [],
+    "minutes": 4.25
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert2_0_hard",
+  "name": "oh no",
+  "desc": null,
+  "map": "Desert",
+  "tier": 1,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hard",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.25
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert2_1_harder",
+  "name": "oh shit",
+  "desc": null,
+  "map": "Desert",
+  "tier": 1,
+  "silver": 1.75,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Harder",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.5
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert2_2_hardest",
+  "name": "what the fuck",
+  "desc": null,
+  "map": "Desert",
+  "tier": 1,
+  "silver": 2.0,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hardest",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      2.0
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert2_speedrunner",
+  "name": "Speedrunner",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Desert",
+  "tier": 1,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_14min",
+    "stats": [],
+    "minutes": 14.0
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert2_speedrunner_plus",
+  "name": "Speedrunner+",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Desert",
+  "tier": 1,
+  "silver": 2.0,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_12min",
+    "stats": [],
+    "minutes": 12.0
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert3_0_hard",
+  "name": "oh no",
+  "desc": null,
+  "map": "Desert",
+  "tier": 2,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hard",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.25
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert3_1_harder",
+  "name": "oh shit",
+  "desc": null,
+  "map": "Desert",
+  "tier": 2,
+  "silver": 1.75,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Harder",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.5
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert3_2_hardest",
+  "name": "what the fuck",
+  "desc": null,
+  "map": "Desert",
+  "tier": 2,
+  "silver": 2.0,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hardest",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      2.0
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert3_speedrunner",
+  "name": "Speedrunner",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Desert",
+  "tier": 2,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_30min",
+    "stats": [],
+    "minutes": 30.0
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_desert3_speedrunner_plus",
+  "name": "Speedrunner+",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Desert",
+  "tier": 2,
+  "silver": 2.0,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_26min",
+    "stats": [],
+    "minutes": 26.0
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_afk_gaming",
+  "name": "AFK Gaming",
+  "desc": "No moving or jumping allowed! Sit back relax and... probably die a lot",
+  "map": "Forest",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "Dex",
+  "req": 1,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierNoMovement",
+    "name": "No Movement",
+    "stats": []
+   }
+  ],
+  "win": "Reach the final swarm",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_blind",
+  "name": "Blind",
+  "desc": "The fog becomes so thick you can't see shit",
+  "map": "Forest",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "papayafuriosa",
+  "req": 1,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierBlind",
+    "name": "Blind",
+    "stats": []
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_fragile",
+  "name": "Fragile",
+  "desc": "Die upon taking any damage or touching an enemy.",
+  "map": "Forest",
+  "tier": 0,
+  "silver": 1.6,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierNoDamage",
+    "name": "No Damage",
+    "stats": []
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_hard",
+  "name": "oh no",
+  "desc": null,
+  "map": "Forest",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 1,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hard",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.25
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_harder",
+  "name": "oh shit",
+  "desc": null,
+  "map": "Forest",
+  "tier": 0,
+  "silver": 1.75,
+  "author": "",
+  "req": 2,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Harder",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.5
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_hardest",
+  "name": "what the fuck",
+  "desc": null,
+  "map": "Forest",
+  "tier": 0,
+  "silver": 2.0,
+  "author": "",
+  "req": 3,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hardest",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      2.0
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_inverted_controls",
+  "name": "Weird Controls",
+  "desc": "Is my keyboard plugged in the wrong hole?",
+  "map": "Forest",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierInvertedControls",
+    "name": "Inverted Controls",
+    "stats": []
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_no_items",
+  "name": "Sticks and stones",
+  "desc": "No items allowed, rely only on your weapons and tomes!",
+  "map": "Forest",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 1,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierNoItems",
+    "name": "No Items",
+    "stats": [
+     [
+      "ChestIncreaseMultiplier",
+      1,
+      0.0
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_pacifist",
+  "name": "Pacifist",
+  "desc": "No weapons allowed. this one is pretty fucking hard, good luck chat",
+  "map": "Forest",
+  "tier": 0,
+  "silver": 2.0,
+  "author": "",
+  "req": 2,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierNoWeapons",
+    "name": "No Weapons",
+    "stats": []
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_smol_boi",
+  "name": "Smol Boi",
+  "desc": "You're a smol boi with big dreams",
+  "map": "Forest",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSmolBoi",
+    "name": "Smol boi",
+    "stats": [
+     [
+      "DamageMultiplier",
+      1,
+      0.8
+     ],
+     [
+      "MoveSpeedMultiplier",
+      1,
+      0.8
+     ],
+     [
+      "SizeMultiplier",
+      1,
+      0.8
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_speedrunner",
+  "name": "Speedrunner",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Forest",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_6min",
+    "stats": [],
+    "minutes": 6.0
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_speedrunner_plus",
+  "name": "Speedrunner+",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Forest",
+  "tier": 0,
+  "silver": 2.0,
+  "author": "",
+  "req": 1,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_4min",
+    "stats": [],
+    "minutes": 4.25
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_turbo",
+  "name": "Turbo Mode",
+  "desc": "Grab tons of items before enemies grow too strong!",
+  "map": "Forest",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Turbo",
+    "stats": [
+     [
+      "ChestPriceMultiplier",
+      0,
+      -0.96
+     ],
+     [
+      "EnemyScalingMultiplier",
+      1,
+      5.0
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest2_fragile",
+  "name": "Fragile",
+  "desc": "Die upon taking any damage or touching an enemy.",
+  "map": "Forest",
+  "tier": 1,
+  "silver": 1.6,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierNoDamage",
+    "name": "No Damage",
+    "stats": []
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest2_hard",
+  "name": "oh no",
+  "desc": null,
+  "map": "Forest",
+  "tier": 1,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hard",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.25
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest2_harder",
+  "name": "oh shit",
+  "desc": null,
+  "map": "Forest",
+  "tier": 1,
+  "silver": 1.75,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Harder",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.5
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest2_hardest",
+  "name": "what the fuck",
+  "desc": null,
+  "map": "Forest",
+  "tier": 1,
+  "silver": 2.0,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hardest",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      2.0
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest2_speedrunner",
+  "name": "Speedrunner",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Forest",
+  "tier": 1,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_14min",
+    "stats": [],
+    "minutes": 14.0
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest2_speedrunner_plus",
+  "name": "Speedrunner+",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Forest",
+  "tier": 1,
+  "silver": 2.0,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_12min",
+    "stats": [],
+    "minutes": 12.0
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest3_fragile",
+  "name": "Fragile",
+  "desc": "Die upon taking any damage or touching an enemy.",
+  "map": "Forest",
+  "tier": 2,
+  "silver": 1.6,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierNoDamage",
+    "name": "No Damage",
+    "stats": []
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest3_hard",
+  "name": "oh no",
+  "desc": null,
+  "map": "Forest",
+  "tier": 2,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hard",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.25
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest3_harder",
+  "name": "oh shit",
+  "desc": null,
+  "map": "Forest",
+  "tier": 2,
+  "silver": 1.75,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Harder",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.5
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest3_hardest",
+  "name": "what the fuck",
+  "desc": null,
+  "map": "Forest",
+  "tier": 2,
+  "silver": 2.0,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hardest",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      2.0
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest3_speedrunner",
+  "name": "Speedrunner",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Forest",
+  "tier": 2,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_30min",
+    "stats": [],
+    "minutes": 30.0
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest3_speedrunner_plus",
+  "name": "Speedrunner+",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Forest",
+  "tier": 2,
+  "silver": 2.0,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_26min",
+    "stats": [],
+    "minutes": 26.0
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_hard 1",
+  "name": "oh no",
+  "desc": null,
+  "map": "Graveyard",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 1,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hard",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.25
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.25
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_harder 1",
+  "name": "oh shit",
+  "desc": null,
+  "map": "Graveyard",
+  "tier": 0,
+  "silver": 1.75,
+  "author": "",
+  "req": 2,
+  "pre": "oh no",
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Harder",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      1.5
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      1.5
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_forest1_hardest 1",
+  "name": "what the fuck",
+  "desc": null,
+  "map": "Graveyard",
+  "tier": 0,
+  "silver": 2.0,
+  "author": "",
+  "req": 3,
+  "pre": "oh shit",
+  "mods": [
+   {
+    "cls": "ChallengeModifierStats",
+    "name": "Hardest",
+    "stats": [
+     [
+      "EnemyHpMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemyDamageMultiplier",
+      1,
+      2.0
+     ],
+     [
+      "EnemySpeedMultiplier",
+      1,
+      2.0
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_graveyard1_crypt 1",
+  "name": "Crypt Escape",
+  "desc": "You only have {value} seconds to escape!",
+  "map": "Graveyard",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierCryptEscape",
+    "name": "Crypt",
+    "stats": []
+   }
+  ],
+  "win": "Escape the first crypt",
+  "enabled": true
+ },
+ {
+  "asset": "a_graveyard1_crypt 2",
+  "name": "Crypt Escape+",
+  "desc": "You only have {value} seconds to escape!",
+  "map": "Graveyard",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 1,
+  "pre": "Crypt Escape",
+  "mods": [
+   {
+    "cls": "ChallengeModifierCryptEscape",
+    "name": "Crypt",
+    "stats": []
+   }
+  ],
+  "win": "Escape the first crypt",
+  "enabled": true
+ },
+ {
+  "asset": "a_graveyard1_crypt 3",
+  "name": "Crypt Escape++",
+  "desc": "You only have {value} seconds to escape!",
+  "map": "Graveyard",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 2,
+  "pre": "Crypt Escape+",
+  "mods": [
+   {
+    "cls": "ChallengeModifierCryptEscape",
+    "name": "Crypt",
+    "stats": []
+   }
+  ],
+  "win": "Escape the first crypt",
+  "enabled": true
+ },
+ {
+  "asset": "a_graveyard1_crypt 4",
+  "name": "Crypt Escape+++",
+  "desc": "You only have {value} seconds to escape!",
+  "map": "Graveyard",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 3,
+  "pre": "Crypt Escape++",
+  "mods": [
+   {
+    "cls": "ChallengeModifierCryptEscape",
+    "name": "Crypt",
+    "stats": []
+   }
+  ],
+  "win": "Escape the first crypt",
+  "enabled": true
+ },
+ {
+  "asset": "a_graveyard1_lootGoblin",
+  "name": "Loot Goblin",
+  "desc": "You cannot gain XP or level up",
+  "map": "Graveyard",
+  "tier": 0,
+  "silver": 2.0,
+  "author": "",
+  "req": 1,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierNoXp",
+    "name": "No XP",
+    "stats": []
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_graveyard1_minimalist",
+  "name": "Minimalist",
+  "desc": "Only 1 Weapon and Tome slot. No Items allowed.",
+  "map": "Graveyard",
+  "tier": 0,
+  "silver": 2.0,
+  "author": "",
+  "req": 1,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierMinimalist",
+    "name": "Minimalist",
+    "stats": []
+   },
+   {
+    "cls": "ChallengeModifierNoItems",
+    "name": "No Items",
+    "stats": [
+     [
+      "ChestIncreaseMultiplier",
+      1,
+      0.0
+     ]
+    ]
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_graveyard1_speedrunner",
+  "name": "Speedrunner",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Graveyard",
+  "tier": 0,
+  "silver": 1.5,
+  "author": "",
+  "req": 0,
+  "pre": null,
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_14min",
+    "stats": [],
+    "minutes": 14.0
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ },
+ {
+  "asset": "a_graveyard1_speedrunner_plus",
+  "name": "Speedrunner+",
+  "desc": "You only have {value} minutes to win.",
+  "map": "Graveyard",
+  "tier": 0,
+  "silver": 2.0,
+  "author": "",
+  "req": 1,
+  "pre": "Speedrunner",
+  "mods": [
+   {
+    "cls": "ChallengeModifierSpeedrun",
+    "name": "Speedrun_9min",
+    "stats": [],
+    "minutes": 9.0
+   }
+  ],
+  "win": "Kill all the bosses",
+  "enabled": true
+ }
+]

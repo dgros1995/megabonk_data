@@ -171,7 +171,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="Thing">Microwaves</td>
 <td data-label="Forest / Desert, per stage">1 or 2</td>
 <td data-label="Graveyard">4, 6 or 8</td>
-<td data-label="Notes">Graveyard rolls 3–5, then × 1.5 rounded.</td>
+<td data-label="Notes">Graveyard rolls 3, 4 or 5, then × 1.5 and rounds to the nearest even number on a tie (4.5 → 4, 7.5 → 8), the same rounding that turns 22.5 Gravestones into 22.</td>
 </tr>
 <tr>
 <td data-label="Thing">Gravestones</td>
@@ -342,7 +342,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <p><strong>When 4 is better:</strong> runs up to about 1M kills. There, 4 weapons give more hits and more on-hit rolls, and the run ends before 2 fully-fed weapons pull ahead. The <a href="weapons.html">Weapons</a> page ranks every weapon by proc rolls per second.</p>
 <p><strong>Tome slots:</strong> half of the 2M+ runs use only 3 tomes, for the same reason. Below 1M, almost every run uses 4.</p>
 <h2 id="other-common-questions"><img class="ic" src="img/Bullseye.png" alt="">Other common questions</h2>
-<p><strong>What's the highest kill count possible?</strong> 16,777,216. The top three leaderboard runs all stop at exactly that number. That's 2²⁴, the largest whole number a 32-bit float can count to exactly. Past it, adding 1 no longer changes the number, so the kill count is almost certainly kept as a float somewhere and stops there.</p>
+<p><strong>What's the highest kill count possible?</strong> 16,777,216. The top three leaderboard runs all stop at exactly that number. The game keeps run stats, kills included, as 32-bit floats (<code>RunStats</code> stores a <code>Dictionary&lt;string, float&gt;</code>), and 16,777,216 = 2²⁴ is the largest whole number a float counts exactly. Past it, adding 1 kill doesn't change the number, so the counter stops there.</p>
 <p><strong>Does a chest get more expensive if I wait?</strong> No. The price depends only on how many chests you've opened this run.</p>
 <p><strong>Do Boss Curses carry over to the next stage?</strong> No. The counter lives on each stage's game manager.</p>
 <p><strong>Is the final swarm different on each map?</strong> No. Every map's final swarm uses the same ghosts on the same clock: Ghost, Greater Ghost at 1:00, Purple at 6:00, Red at 12:00.</p>

@@ -1,0 +1,7131 @@
+[
+ {
+  "asset": "a_calcium",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_calcium",
+  "stat": "skeletonKills",
+  "target": 1000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 1,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} skeletons",
+  "rest": 8,
+  "pid": 8279
+ },
+ {
+  "asset": "a_megachad",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_megachad",
+  "stat": "",
+  "target": 7,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 1,
+  "keys": [
+   [
+    "damage_tome",
+    "Damage Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get the {damage_tome} to level {value}",
+  "rest": 8,
+  "pid": 8280
+ },
+ {
+  "asset": "a_amog",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_amog",
+  "stat": "moldyCheeseProcs",
+  "target": 50000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "moldy_cheese",
+    "Moldy Cheese"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Poison {value} enemies with {moldy_cheese}",
+  "rest": 8,
+  "pid": 8281
+ },
+ {
+  "asset": "a_athena",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_athena",
+  "stat": "",
+  "target": 9,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "thorns_tome",
+    "Thorns Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get the {thorns_tome} to level {value}",
+  "rest": 8,
+  "pid": 8282
+ },
+ {
+  "asset": "a_bandit",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_bandit",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "bandit",
+    "Bandit"
+   ],
+   [
+    "desert",
+    "Desert"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Find and defeat {bandit} in the {desert}",
+  "rest": 8,
+  "pid": 8283
+ },
+ {
+  "asset": "a_birdo",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_birdo",
+  "stat": "killsInTornadoWithTornado",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "desert",
+    "Desert"
+   ],
+   [
+    "tornado",
+    "Tornado"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies using {tornado} weapon while carried by a tornado on {desert}",
+  "rest": 8,
+  "pid": 8284
+ },
+ {
+  "asset": "a_bush",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_bush",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "bush",
+    "Bush"
+   ],
+   [
+    "forest",
+    "Forest"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Find and defeat {bush} in the {forest}",
+  "rest": 8,
+  "pid": 8285
+ },
+ {
+  "asset": "a_chadwell",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_chadwell",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 1,
+  "keys": [
+   [
+    "forest",
+    "Forest"
+   ],
+   [
+    "tier",
+    "Tier"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {forest} {tier} 3",
+  "rest": 8,
+  "pid": 8286
+ },
+ {
+  "asset": "a_clank",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_clank",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "forest",
+    "Forest"
+   ],
+   [
+    "tier",
+    "Tier"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {forest} {tier} 1",
+  "rest": 8,
+  "pid": 8287
+ },
+ {
+  "asset": "a_dicehead",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_dicehead",
+  "stat": "questsCompleted",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 1,
+  "keys": [
+   [
+    "quests",
+    "Quests"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8288
+ },
+ {
+  "asset": "a_monke",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_monke",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "monke",
+    "Monke"
+   ],
+   [
+    "forest",
+    "Forest"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Find and release {monke} in the {forest}",
+  "rest": 8,
+  "pid": 8289
+ },
+ {
+  "asset": "a_ninja",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_ninja",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "desert",
+    "Desert"
+   ],
+   [
+    "tier",
+    "Tier"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {desert} {tier} 1",
+  "rest": 8,
+  "pid": 8290
+ },
+ {
+  "asset": "a_noelle",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_noelle",
+  "stat": "",
+  "target": 3,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "microwave",
+    "Microwave"
+   ],
+   [
+    "ice_crystal",
+    "Ice Crystal"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Use a {microwave} to duplicate {ice_crystal} {value} times in a row",
+  "rest": 8,
+  "pid": 8291
+ },
+ {
+  "asset": "a_ogre",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_ogre",
+  "stat": "goblinKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 1,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} Goblins",
+  "rest": 8,
+  "pid": 8292
+ },
+ {
+  "asset": "a_roberto",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_roberto",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 1,
+  "keys": [
+   [
+    "enemy1",
+    "Spooky Steve"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {enemy1}",
+  "rest": 8,
+  "pid": 8293
+ },
+ {
+  "asset": "a_robinette",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_robinette",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "forest",
+    "Forest"
+   ],
+   [
+    "tier",
+    "Tier"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {forest} {tier} 2",
+  "rest": 8,
+  "pid": 8294
+ },
+ {
+  "asset": "a_spaceman",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_spaceman",
+  "stat": "challengesCompleted",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "quests",
+    "Challenges"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8295
+ },
+ {
+  "asset": "a_tony",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_tony",
+  "stat": "challengesCompleted",
+  "target": 2,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "quests",
+    "Challenges"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8296
+ },
+ {
+  "asset": "a_vlad",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_vlad",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 1,
+  "keys": [
+   [
+    "desert",
+    "Desert"
+   ],
+   [
+    "tier",
+    "Tier"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {desert} {tier} 2",
+  "rest": 8,
+  "pid": 8297
+ },
+ {
+  "asset": "a_allQuests",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_allQuests",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8298
+ },
+ {
+  "asset": "a_bossCalcium",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_bossCalcium",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8299
+ },
+ {
+  "asset": "a_bossCowboy",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_bossCowboy",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8300
+ },
+ {
+  "asset": "a_bossFox",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_bossFox",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8301
+ },
+ {
+  "asset": "a_bossKnight",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_bossKnight",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8302
+ },
+ {
+  "asset": "a_bossMegachad",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_bossMegachad",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8303
+ },
+ {
+  "asset": "a_bossSlayer",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_bossSlayer",
+  "stat": "bossKills",
+  "target": 10,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8304
+ },
+ {
+  "asset": "a_giantFork",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_giantFork",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8305
+ },
+ {
+  "asset": "a_kills100k",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_kills100k",
+  "stat": "kills",
+  "target": 100000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8306
+ },
+ {
+  "asset": "a_kills5000",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_kills5000",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8307
+ },
+ {
+  "asset": "a_survive2",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_survive2",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8308
+ },
+ {
+  "asset": "a_survive4",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_survive4",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8309
+ },
+ {
+  "asset": "a_unlockEverything",
+  "enabled": false,
+  "hidden": false,
+  "internal": "a_unlockEverything",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": null,
+  "rest": 8,
+  "pid": 8310
+ },
+ {
+  "asset": "a_wallHugger",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_wallHugger",
+  "stat": "wallhugs",
+  "target": 10,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 3,
+  "type": 0,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": "Wallhugger",
+  "desc": "Avoid taking Fall Damage {value} times by hugging walls",
+  "rest": 8,
+  "pid": 8311
+ },
+ {
+  "asset": "a_banish",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_banish",
+  "stat": "questsCompleted",
+  "target": 40,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [
+   [
+    "quests",
+    "Quests"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8312
+ },
+ {
+  "asset": "a_boombox",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_boombox",
+  "stat": "",
+  "target": 3,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 0,
+  "keys": [
+   [
+    "forest",
+    "Forest"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Find and activate all the boomboxes on {forest}",
+  "rest": 8,
+  "pid": 8313
+ },
+ {
+  "asset": "a_challenges1",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_challenges1",
+  "stat": "challengesCompleted",
+  "target": 5,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [
+   [
+    "quests",
+    "Challenges"
+   ]
+  ],
+  "iter": 0,
+  "useIter": true,
+  "name": "Challenges",
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8314
+ },
+ {
+  "asset": "a_challenges2",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_challenges2",
+  "stat": "challengesCompleted",
+  "target": 10,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 1,
+  "type": 0,
+  "keys": [
+   [
+    "quests",
+    "Challenges"
+   ]
+  ],
+  "iter": 1,
+  "useIter": true,
+  "name": "Challenges",
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8315
+ },
+ {
+  "asset": "a_challenges3",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_challenges3",
+  "stat": "challengesCompleted",
+  "target": 20,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 0,
+  "keys": [
+   [
+    "quests",
+    "Challenges"
+   ]
+  ],
+  "iter": 2,
+  "useIter": true,
+  "name": "Challenges",
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8316
+ },
+ {
+  "asset": "a_challenges4",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_challenges4",
+  "stat": "challengesCompleted",
+  "target": 30,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 3,
+  "type": 0,
+  "keys": [
+   [
+    "quests",
+    "Challenges"
+   ]
+  ],
+  "iter": 3,
+  "useIter": true,
+  "name": "Challenges",
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8317
+ },
+ {
+  "asset": "a_desert",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_desert",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": -2,
+  "difficulty": 1,
+  "type": 0,
+  "keys": [
+   [
+    "forest",
+    "Forest"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "clank",
+    "CL4NK"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Teleport to the 2nd stage on {forest} {tier} 2 as {clank}",
+  "rest": 8,
+  "pid": 8318
+ },
+ {
+  "asset": "a_graveyard",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_graveyard",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": -2,
+  "difficulty": 2,
+  "type": 0,
+  "keys": [
+   [
+    "calcium",
+    "Calcium"
+   ],
+   [
+    "stage",
+    "Stage"
+   ],
+   [
+    "desertMap",
+    "Desert"
+   ],
+   [
+    "tierName",
+    "Tier"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {calcium} on {desertMap} {tierName} 2, summon and defeat the undead boss.",
+  "rest": 8,
+  "pid": 8319
+ },
+ {
+  "asset": "a_refresh",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_refresh",
+  "stat": "questsCompleted",
+  "target": 20,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [
+   [
+    "quests",
+    "Quests"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8320
+ },
+ {
+  "asset": "a_skip",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skip",
+  "stat": "questsCompleted",
+  "target": 30,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [
+   [
+    "quests",
+    "Quests"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8321
+ },
+ {
+  "asset": "a_toggler",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_toggler",
+  "stat": "unlocksPurchased",
+  "target": 40,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 0,
+  "keys": [
+   [
+    "forest",
+    "Forest"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Purchase {value} unlocks",
+  "rest": 8,
+  "pid": 8322
+ },
+ {
+  "asset": "a_tomeSlots",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_tomeSlots",
+  "stat": "questsCompleted",
+  "target": 35,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": -1,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [
+   [
+    "quests",
+    "Quests"
+   ]
+  ],
+  "iter": 0,
+  "useIter": true,
+  "name": "Tome Slot",
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8323
+ },
+ {
+  "asset": "a_tomeSlots2",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_tomeSlots2",
+  "stat": "questsCompleted",
+  "target": 55,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": -1,
+  "difficulty": 1,
+  "type": 0,
+  "keys": [
+   [
+    "quests",
+    "Quests"
+   ]
+  ],
+  "iter": 1,
+  "useIter": true,
+  "name": "Tome Slot",
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8324
+ },
+ {
+  "asset": "a_weaponSlots",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_weaponSlots",
+  "stat": "questsCompleted",
+  "target": 25,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": -1,
+  "difficulty": 0,
+  "type": 0,
+  "keys": [
+   [
+    "quests",
+    "Quests"
+   ]
+  ],
+  "iter": 0,
+  "useIter": true,
+  "name": "Weapon Slot",
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8325
+ },
+ {
+  "asset": "a_weaponSlots2",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_weaponSlots2",
+  "stat": "questsCompleted",
+  "target": 45,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": -1,
+  "difficulty": 1,
+  "type": 0,
+  "keys": [
+   [
+    "quests",
+    "Quests"
+   ]
+  ],
+  "iter": 1,
+  "useIter": true,
+  "name": "Weapon Slot",
+  "desc": "Complete {value} {quests}",
+  "rest": 8,
+  "pid": 8326
+ },
+ {
+  "asset": "a_hatCheese",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatCheese",
+  "stat": "",
+  "target": 8,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 7,
+  "keys": [
+   [
+    "character",
+    "Amog"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "item1",
+    "Moldy Cheese"
+   ],
+   [
+    "item2",
+    "Snek"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {character}, defeat a {tier} 3 final boss with {value} {item1} and 1 {item2} in your inventory",
+  "rest": 8,
+  "pid": 8327
+ },
+ {
+  "asset": "a_hatClown",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatClown",
+  "stat": "quinsMaskKillsAsAthena",
+  "target": 500,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 7,
+  "keys": [
+   [
+    "character",
+    "Athena"
+   ],
+   [
+    "item1",
+    "Quin's Mask"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {character}, kill {value} enemies using {item1}",
+  "rest": 8,
+  "pid": 8328
+ },
+ {
+  "asset": "a_hatCrown",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatCrown",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 7,
+  "keys": [
+   [
+    "rank_level",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get a gold star on every character ({rank_level} 100)",
+  "rest": 8,
+  "pid": 8329
+ },
+ {
+  "asset": "a_hatFrog1",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatFrog1",
+  "stat": "",
+  "target": 1,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 7,
+  "keys": [
+   [
+    "map",
+    "Forest"
+   ],
+   [
+    "stage",
+    "Stage"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Find the frogs on {map} {stage} {value}",
+  "rest": 8,
+  "pid": 8330
+ },
+ {
+  "asset": "a_hatFrog2",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatFrog2",
+  "stat": "",
+  "target": 2,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 7,
+  "keys": [
+   [
+    "map",
+    "Forest"
+   ],
+   [
+    "stage",
+    "Stage"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Find the frogs on {map} {stage} {value}",
+  "rest": 8,
+  "pid": 8331
+ },
+ {
+  "asset": "a_hatFrog3",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatFrog3",
+  "stat": "",
+  "target": 3,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 7,
+  "keys": [
+   [
+    "map",
+    "Forest"
+   ],
+   [
+    "stage",
+    "Stage"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Find the frogs on {map} {stage} {value}",
+  "rest": 8,
+  "pid": 8332
+ },
+ {
+  "asset": "a_hatHeadset",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatHeadset",
+  "stat": "",
+  "target": 2,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 7,
+  "keys": [
+   [
+    "character",
+    "Ninja"
+   ],
+   [
+    "map",
+    "Desert"
+   ],
+   [
+    "stage",
+    "Stage"
+   ],
+   [
+    "shrine_name",
+    "Boss Curse"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {character}, complete {map} {stage} 1 with at least {value} {shrine_name} shrines activated",
+  "rest": 8,
+  "pid": 8333
+ },
+ {
+  "asset": "a_hatKevin",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatKevin",
+  "stat": "kevinPunches",
+  "target": 100000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 7,
+  "keys": [
+   [
+    "item1",
+    "Kevin"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get punched by {item1} {value} times",
+  "rest": 8,
+  "pid": 8334
+ },
+ {
+  "asset": "a_hatMagic",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatMagic",
+  "stat": "",
+  "target": 40,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 7,
+  "keys": [
+   [
+    "character",
+    "Fox"
+   ],
+   [
+    "weapon1",
+    "Firestaff"
+   ],
+   [
+    "weapon2",
+    "Lightning Staff"
+   ],
+   [
+    "weapon3",
+    "Blood Magic"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {character}, get {weapon1}, {weapon2} and {weapon3} to Level {value}",
+  "rest": 8,
+  "pid": 8335
+ },
+ {
+  "asset": "a_hatMedieval",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatMedieval",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 7,
+  "keys": [
+   [
+    "character",
+    "Sir Oofie"
+   ],
+   [
+    "map",
+    "Forest"
+   ],
+   [
+    "weapon1",
+    "Sword"
+   ],
+   [
+    "weapon2",
+    "Hero Sword"
+   ],
+   [
+    "weapon3",
+    "Corrupted Sword"
+   ],
+   [
+    "weapon4",
+    "Scythe"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {character}, defeat the {map} 3 final boss using {weapon1}, {weapon2}, {weapon3} and {weapon4}",
+  "rest": 8,
+  "pid": 8336
+ },
+ {
+  "asset": "a_hatMicrowave",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatMicrowave",
+  "stat": "microwavesExploded",
+  "target": 50,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 7,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Blow up {value} Microwaves",
+  "rest": 8,
+  "pid": 8337
+ },
+ {
+  "asset": "a_hatPilot",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatPilot",
+  "stat": "birdoFlyingMinesKills",
+  "target": 1000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 7,
+  "keys": [
+   [
+    "character",
+    "Birdo"
+   ],
+   [
+    "weapon1",
+    "Mines"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {character}, kill {value} enemies using {weapon1} while flying in the air",
+  "rest": 8,
+  "pid": 8338
+ },
+ {
+  "asset": "a_hatPot",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatPot",
+  "stat": "",
+  "target": 4,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 7,
+  "keys": [
+   [
+    "character",
+    "Roberto"
+   ],
+   [
+    "item_name",
+    "Pot (stainless steel)"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {character}, obtain {value}x {item_name} in a single run",
+  "rest": 8,
+  "pid": 8339
+ },
+ {
+  "asset": "a_hatShadyBlack",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatShadyBlack",
+  "stat": "shadyGuysBlack",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 7,
+  "keys": [
+   [
+    "rarity",
+    "Common"
+   ],
+   [
+    "shady_guy",
+    "Shady Guy"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Buy {value} items from a {rarity} {shady_guy}",
+  "rest": 8,
+  "pid": 8340
+ },
+ {
+  "asset": "a_hatShadyBlue",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatShadyBlue",
+  "stat": "shadyGuysBlue",
+  "target": 80,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 7,
+  "keys": [
+   [
+    "rarity",
+    "Rare"
+   ],
+   [
+    "shady_guy",
+    "Shady Guy"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Buy {value} items from a {rarity} {shady_guy}",
+  "rest": 8,
+  "pid": 8341
+ },
+ {
+  "asset": "a_hatShadyGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatShadyGold",
+  "stat": "shadyGuysGold",
+  "target": 50,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 7,
+  "keys": [
+   [
+    "rarity",
+    "Legendary"
+   ],
+   [
+    "shady_guy",
+    "Shady Guy"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Buy {value} items from a {rarity} {shady_guy}",
+  "rest": 8,
+  "pid": 8342
+ },
+ {
+  "asset": "a_hatShadyPink",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatShadyPink",
+  "stat": "shadyGuysPink",
+  "target": 60,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 7,
+  "keys": [
+   [
+    "rarity",
+    "Epic"
+   ],
+   [
+    "shady_guy",
+    "Shady Guy"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Buy {value} items from a {rarity} {shady_guy}",
+  "rest": 8,
+  "pid": 8343
+ },
+ {
+  "asset": "a_hatSheriff",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatSheriff",
+  "stat": "",
+  "target": 1,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 7,
+  "keys": [
+   [
+    "character",
+    "CL4NK"
+   ],
+   [
+    "weapon1",
+    "Mines"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {character}, kill any boss or miniboss in under {value} second",
+  "rest": 8,
+  "pid": 8344
+ },
+ {
+  "asset": "a_hatSunglasses",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatSunglasses",
+  "stat": "",
+  "target": 60,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 7,
+  "keys": [
+   [
+    "character",
+    "Calcium"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {character} finish the final boss fight on {map} in under {value} seconds",
+  "rest": 8,
+  "pid": 8345
+ },
+ {
+  "asset": "a_hatTophat",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatTophat",
+  "stat": "",
+  "target": 100000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 7,
+  "keys": [
+   [
+    "map",
+    "Forest"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {value} kills on {map} in a single run",
+  "rest": 8,
+  "pid": 8346
+ },
+ {
+  "asset": "a_hatTophatLong",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_hatTophatLong",
+  "stat": "",
+  "target": 300000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 7,
+  "keys": [
+   [
+    "map",
+    "Forest"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {value} kills on {map} in a single run",
+  "rest": 8,
+  "pid": 8347
+ },
+ {
+  "asset": "a_santaHat",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_santaHat",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 7,
+  "keys": [
+   [
+    "map",
+    "Forest"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Open the present hidden on {map}",
+  "rest": 8,
+  "pid": 8348
+ },
+ {
+  "asset": "a_battery",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_battery",
+  "stat": "",
+  "target": 5,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 4,
+  "keys": [
+   [
+    "cooldown_tome",
+    "Cooldown Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Upgrade {cooldown_tome} to Level {value}",
+  "rest": 8,
+  "pid": 8349
+ },
+ {
+  "asset": "a_bossBuster",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_bossBuster",
+  "stat": "",
+  "target": 30,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 4,
+  "keys": [
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat a {stage_boss} in under {value} seconds",
+  "rest": 8,
+  "pid": 8350
+ },
+ {
+  "asset": "a_cactus",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_cactus",
+  "stat": "cactusKillsWithThorns",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 4,
+  "keys": [
+   [
+    "thorns_stat",
+    "Thorns"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} cactus enemies with {thorns_stat} damage",
+  "rest": 8,
+  "pid": 8351
+ },
+ {
+  "asset": "a_cursedDoll",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_cursedDoll",
+  "stat": "runs",
+  "target": 10,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 4,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Die {value} times",
+  "rest": 8,
+  "pid": 8352
+ },
+ {
+  "asset": "a_forbiddenJuice",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_forbiddenJuice",
+  "stat": "crits",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 4,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Crit {value} times",
+  "rest": 8,
+  "pid": 8353
+ },
+ {
+  "asset": "a_ghost",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_ghost",
+  "stat": "",
+  "target": 60,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 4,
+  "keys": [
+   [
+    "final_swarm",
+    "Final Swarm"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Survive the {final_swarm} for {value} seconds",
+  "rest": 8,
+  "pid": 8354
+ },
+ {
+  "asset": "a_iceCrystal",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_iceCrystal",
+  "stat": "frostwalkerKills",
+  "target": 50,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 4,
+  "keys": [
+   [
+    "frostwalker",
+    "Frostwalker"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {value} kills with {frostwalker}",
+  "rest": 8,
+  "pid": 8355
+ },
+ {
+  "asset": "a_key",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_key",
+  "stat": "chestsBought",
+  "target": 25,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 4,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Purchase {value} chests",
+  "rest": 8,
+  "pid": 8356
+ },
+ {
+  "asset": "a_oldMask",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_oldMask",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 4,
+  "keys": [
+   [
+    "graveyard_map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Find on {graveyard_map}",
+  "rest": 8,
+  "pid": 8357
+ },
+ {
+  "asset": "a_skuleg",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skuleg",
+  "stat": "",
+  "target": 40,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 4,
+  "keys": [
+   [
+    "difficulty_stat",
+    "Difficulty"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Obtain {value}% {difficulty_stat}",
+  "rest": 8,
+  "pid": 8358
+ },
+ {
+  "asset": "a_tacticalGlasses",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_tacticalGlasses",
+  "stat": "",
+  "target": 25,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 4,
+  "keys": [
+   [
+    "miniboss",
+    "Miniboss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat a {miniboss} in {value} seconds",
+  "rest": 8,
+  "pid": 8359
+ },
+ {
+  "asset": "a_turboSocks",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_turboSocks",
+  "stat": "",
+  "target": 5,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 4,
+  "keys": [
+   [
+    "agility_tome",
+    "Agility Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Upgrade {agility_tome} to Level {value}",
+  "rest": 8,
+  "pid": 8360
+ },
+ {
+  "asset": "a_brassKnuckles",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_brassKnuckles",
+  "stat": "swordKills",
+  "target": 5000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 4,
+  "keys": [
+   [
+    "sword",
+    "Sword"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies with the {sword}",
+  "rest": 8,
+  "pid": 8361
+ },
+ {
+  "asset": "a_demonicBlade",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_demonicBlade",
+  "stat": "lifestealHealing",
+  "target": 350,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 4,
+  "keys": [
+   [
+    "lifesteal_stat",
+    "Lifesteal"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Heal for {value} HP using {lifesteal_stat}",
+  "rest": 8,
+  "pid": 8362
+ },
+ {
+  "asset": "a_demonicBlood",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_demonicBlood",
+  "stat": "bloodMagicProcs",
+  "target": 400,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 4,
+  "keys": [
+   [
+    "max_hp",
+    "Max HP"
+   ],
+   [
+    "blood_magic",
+    "Blood Magic"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Increase {max_hp} with {blood_magic} {value} times",
+  "rest": 8,
+  "pid": 8363
+ },
+ {
+  "asset": "a_echoShard",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_echoShard",
+  "stat": "",
+  "target": 8,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 4,
+  "keys": [
+   [
+    "xp_tome",
+    "XP Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Upgrade {xp_tome} to Level {value}",
+  "rest": 8,
+  "pid": 8364
+ },
+ {
+  "asset": "a_goldenSneakers",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_goldenSneakers",
+  "stat": "potsBroken",
+  "target": 150,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 4,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Break {value} pots",
+  "rest": 8,
+  "pid": 8365
+ },
+ {
+  "asset": "a_idleJuice",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_idleJuice",
+  "stat": "standingStillKills",
+  "target": 500,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 4,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies while standing still",
+  "rest": 8,
+  "pid": 8366
+ },
+ {
+  "asset": "a_kevin",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_kevin",
+  "stat": "",
+  "target": 3,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "leeching_crystal",
+    "Leeching Crystal"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Obtain {value} {leeching_crystal} in a run",
+  "rest": 8,
+  "pid": 8367
+ },
+ {
+  "asset": "a_leechingCrystal",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_leechingCrystal",
+  "stat": "",
+  "target": 8,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 4,
+  "keys": [
+   [
+    "regen_tome",
+    "Regen Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Upgrade {regen_tome} to lvl {value}",
+  "rest": 8,
+  "pid": 8368
+ },
+ {
+  "asset": "a_poisonGloves",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_poisonGloves",
+  "stat": "",
+  "target": 3,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 4,
+  "keys": [
+   [
+    "microwave",
+    "Microwave"
+   ],
+   [
+    "ice_crystal",
+    "Moldy Cheese"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Use a {microwave} to duplicate {ice_crystal} {value} times in a row",
+  "rest": 8,
+  "pid": 8369
+ },
+ {
+  "asset": "a_pumpkin",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_pumpkin",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 4,
+  "keys": [
+   [
+    "map",
+    "Graveyard"
+   ],
+   [
+    "character",
+    "Roberto"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {character}, break every pumpkin on {map}",
+  "rest": 8,
+  "pid": 8370
+ },
+ {
+  "asset": "a_bob",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_bob",
+  "stat": "",
+  "target": 2,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "final_swarm",
+    "Final Swarm"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Survive the {final_swarm} for {value} minutes",
+  "rest": 8,
+  "pid": 8371
+ },
+ {
+  "asset": "a_bobsLantern",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_bobsLantern",
+  "stat": "",
+  "target": 5,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "enemy",
+    "Big Bob"
+   ],
+   [
+    "graveyard",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {enemy} on {graveyard} using the damage from a lamp as the killing blow.",
+  "rest": 8,
+  "pid": 8372
+ },
+ {
+  "asset": "a_cursedGloves",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_cursedGloves",
+  "stat": "",
+  "target": 10,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "thorns_tome",
+    "Cursed Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get the {thorns_tome} to level {value}",
+  "rest": 8,
+  "pid": 8373
+ },
+ {
+  "asset": "a_demonicSoul",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_demonicSoul",
+  "stat": "",
+  "target": 30,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "Calcium",
+    "Calcium"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Reach level {value} as {Calcium}",
+  "rest": 8,
+  "pid": 8374
+ },
+ {
+  "asset": "a_eagleClaw",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_eagleClaw",
+  "stat": "birdoKills",
+  "target": 10000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "Birdo",
+    "Birdo"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {Birdo}",
+  "rest": 8,
+  "pid": 8375
+ },
+ {
+  "asset": "a_gamerGoggles",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_gamerGoggles",
+  "stat": "",
+  "target": 10,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat a {stage_boss} with less than {value}% HP left",
+  "rest": 8,
+  "pid": 8376
+ },
+ {
+  "asset": "a_gasMask",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_gasMask",
+  "stat": "amogKills",
+  "target": 5000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "Amog",
+    "Amog"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kll {value} enemies using {Amog}",
+  "rest": 8,
+  "pid": 8377
+ },
+ {
+  "asset": "a_grandmasTonic",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_grandmasTonic",
+  "stat": "sniperKills",
+  "target": 3000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "sniper_rifle",
+    "Sniper Rifle"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies with {sniper_rifle}",
+  "rest": 8,
+  "pid": 8378
+ },
+ {
+  "asset": "a_quinsMask",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_quinsMask",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "stage_boss",
+    "Stage Boss"
+   ],
+   [
+    "athena",
+    "Athena"
+   ],
+   [
+    "aegis",
+    "Aegis"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat a {stage_boss} as {athena}, landing the killing blow with {aegis}",
+  "rest": 8,
+  "pid": 8379
+ },
+ {
+  "asset": "a_shatteredKnowledge",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_shatteredKnowledge",
+  "stat": "",
+  "target": 8,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "attraction_tome",
+    "Attraction Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Upgrade {attraction_tome} to Level {value}",
+  "rest": 8,
+  "pid": 8380
+ },
+ {
+  "asset": "a_sluttyCannon",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_sluttyCannon",
+  "stat": "rocketsKills",
+  "target": 5000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "slutty_rockets",
+    "Slutty Rocket"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies with {slutty_rockets}",
+  "rest": 8,
+  "pid": 8381
+ },
+ {
+  "asset": "a_toxicBarrel",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_toxicBarrel",
+  "stat": "poisonKills",
+  "target": 2000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "poison",
+    "Poison"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies using {poison} damage",
+  "rest": 8,
+  "pid": 8382
+ },
+ {
+  "asset": "a_turboSkates",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_turboSkates",
+  "stat": "",
+  "target": 5,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 4,
+  "keys": [
+   [
+    "cooldown_tome",
+    "Cooldown Tome"
+   ],
+   [
+    "agility_tome",
+    "Agility Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Upgrade both {cooldown_tome} and {agility_tome} to Level {value} in a run",
+  "rest": 8,
+  "pid": 8383
+ },
+ {
+  "asset": "a_anvil",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_anvil",
+  "stat": "challengesCompleted",
+  "target": 3,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [
+   [
+    "challenges",
+    "Challenges"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {value} {challenges}",
+  "rest": 8,
+  "pid": 8384
+ },
+ {
+  "asset": "a_bloodyCleaver",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_bloodyCleaver",
+  "stat": "",
+  "target": 50,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [
+   [
+    "vlad",
+    "Vlad"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Reach Level {value} as {vlad}",
+  "rest": 8,
+  "pid": 8385
+ },
+ {
+  "asset": "a_chonkplate",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_chonkplate",
+  "stat": "",
+  "target": 500,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [
+   [
+    "maxhp_stat",
+    "Max HP"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {maxhp_stat} to {value}",
+  "rest": 8,
+  "pid": 8386
+ },
+ {
+  "asset": "a_dragonfire",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_dragonfire",
+  "stat": "fireKills",
+  "target": 4000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies using fire damage",
+  "rest": 8,
+  "pid": 8387
+ },
+ {
+  "asset": "a_energyCore",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_energyCore",
+  "stat": "finalBossKills",
+  "target": 2,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat a {final_boss} {value} times",
+  "rest": 8,
+  "pid": 8388
+ },
+ {
+  "asset": "a_holyBook",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_holyBook",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a first {stage_boss} without taking any damage that run",
+  "rest": 8,
+  "pid": 8389
+ },
+ {
+  "asset": "a_joesDagger",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_joesDagger",
+  "stat": "dexecutionerKills",
+  "target": 10000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [
+   [
+    "dexecutioner",
+    "Dexecutioner"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies using the {dexecutioner}",
+  "rest": 8,
+  "pid": 8390
+ },
+ {
+  "asset": "a_lightningOrb",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_lightningOrb",
+  "stat": "lightningKills",
+  "target": 3000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies using lightning damage",
+  "rest": 8,
+  "pid": 8391
+ },
+ {
+  "asset": "a_potSteel",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_potSteel",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [
+   [
+    "mapName",
+    "Graveyard"
+   ],
+   [
+    "character",
+    "Bandit"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Open every chest and pot in the first crypt on {mapName}. ",
+  "rest": 8,
+  "pid": 8392
+ },
+ {
+  "asset": "a_snek",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_snek",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [
+   [
+    "graveyard_map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Find in the crypt on {graveyard_map}",
+  "rest": 8,
+  "pid": 8393
+ },
+ {
+  "asset": "a_soulHarvester",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_soulHarvester",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [
+   [
+    "final_swarm",
+    "Final Swarm"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Survive the {final_swarm} for {value} minutes",
+  "rest": 8,
+  "pid": 8394
+ },
+ {
+  "asset": "a_speedBoi",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_speedBoi",
+  "stat": "",
+  "target": 2,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [
+   [
+    "cursed_shrine",
+    "Boss Curse"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete a stage with at least {value} {cursed_shrine} activated",
+  "rest": 8,
+  "pid": 8395
+ },
+ {
+  "asset": "a_suckyMagnet",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_suckyMagnet",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [
+   [
+    "charge_shrine",
+    "Charge Shrine"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete every single {charge_shrine} on the map",
+  "rest": 8,
+  "pid": 8396
+ },
+ {
+  "asset": "a_wizardsHat",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_wizardsHat",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 4,
+  "keys": [
+   [
+    "item",
+    "Pot (stainless steel)"
+   ],
+   [
+    "character",
+    "Vlad"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {character}, use {item} to upgrade any weapon above the max level of 40",
+  "rest": 8,
+  "pid": 8397
+ },
+ {
+  "asset": "a_skin_amogCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_amogCrypt",
+  "stat": "",
+  "target": 21,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Amog"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8398
+ },
+ {
+  "asset": "a_skin_amogExtra1",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_amogExtra1",
+  "stat": "amogKills",
+  "target": 50000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 5,
+  "difficulty": 1,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Amog"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8399
+ },
+ {
+  "asset": "a_skin_amogExtra2",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_amogExtra2",
+  "stat": "amogKills",
+  "target": 100000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 6,
+  "difficulty": 1,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Amog"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8400
+ },
+ {
+  "asset": "a_skin_amogFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_amogFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Amog"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8401
+ },
+ {
+  "asset": "a_skin_amogGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_amogGold",
+  "stat": "amogRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Amog"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8402
+ },
+ {
+  "asset": "a_skin_amogKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_amogKills",
+  "stat": "amogKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Amog"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8403
+ },
+ {
+  "asset": "a_skin_amogSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_amogSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Amog"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8404
+ },
+ {
+  "asset": "a_skin_athenaCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_athenaCrypt",
+  "stat": "",
+  "target": 23,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Athena"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8405
+ },
+ {
+  "asset": "a_skin_athenaFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_athenaFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Athena"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8406
+ },
+ {
+  "asset": "a_skin_athenaGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_athenaGold",
+  "stat": "athenaRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Athena"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8407
+ },
+ {
+  "asset": "a_skin_athenaKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_athenaKills",
+  "stat": "athenaKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Athena"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8408
+ },
+ {
+  "asset": "a_skin_athenaSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_athenaSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Athena"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8409
+ },
+ {
+  "asset": "a_skin_banditCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_banditCrypt",
+  "stat": "",
+  "target": 21,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Bandit"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8410
+ },
+ {
+  "asset": "a_skin_banditFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_banditFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Bandit"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8411
+ },
+ {
+  "asset": "a_skin_banditGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_banditGold",
+  "stat": "banditRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Bandit"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8412
+ },
+ {
+  "asset": "a_skin_banditKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_banditKills",
+  "stat": "banditKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Bandit"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8413
+ },
+ {
+  "asset": "a_skin_banditSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_banditSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Bandit"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8414
+ },
+ {
+  "asset": "a_skin_birdoCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_birdoCrypt",
+  "stat": "",
+  "target": 20,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Birdo"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8415
+ },
+ {
+  "asset": "a_skin_birdoFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_birdoFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Birdo"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8416
+ },
+ {
+  "asset": "a_skin_birdoGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_birdoGold",
+  "stat": "birdoRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Birdo"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8417
+ },
+ {
+  "asset": "a_skin_birdoKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_birdoKills",
+  "stat": "birdoKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Birdo"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8418
+ },
+ {
+  "asset": "a_skin_birdoSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_birdoSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Birdo"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8419
+ },
+ {
+  "asset": "a_skin_bushCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_bushCrypt",
+  "stat": "",
+  "target": 22,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Bush"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8420
+ },
+ {
+  "asset": "a_skin_bushFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_bushFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Bush"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8421
+ },
+ {
+  "asset": "a_skin_bushGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_bushGold",
+  "stat": "bushRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Bush"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8422
+ },
+ {
+  "asset": "a_skin_bushKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_bushKills",
+  "stat": "bushKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Bush"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8423
+ },
+ {
+  "asset": "a_skin_bushSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_bushSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Bush"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8424
+ },
+ {
+  "asset": "a_skin_calciumCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_calciumCrypt",
+  "stat": "",
+  "target": 18,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Calcium"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8425
+ },
+ {
+  "asset": "a_skin_calciumFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_calciumFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Calcium"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8426
+ },
+ {
+  "asset": "a_skin_calciumGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_calciumGold",
+  "stat": "calciumRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Calcium"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8427
+ },
+ {
+  "asset": "a_skin_calciumKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_calciumKills",
+  "stat": "calciumKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Calcium"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8428
+ },
+ {
+  "asset": "a_skin_calciumSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_calciumSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Calcium"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8429
+ },
+ {
+  "asset": "a_skin_cl4nkCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_cl4nkCrypt",
+  "stat": "",
+  "target": 21,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "CL4NK"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8430
+ },
+ {
+  "asset": "a_skin_cl4nkFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_cl4nkFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "CL4NK"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8431
+ },
+ {
+  "asset": "a_skin_cl4nkGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_cl4nkGold",
+  "stat": "cl4nkRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "CL4NK"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8432
+ },
+ {
+  "asset": "a_skin_cl4nkKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_cl4nkKills",
+  "stat": "cl4nkKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "CL4NK"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8433
+ },
+ {
+  "asset": "a_skin_cl4nkSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_cl4nkSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "CL4NK"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8434
+ },
+ {
+  "asset": "a_skin_diceheadCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_diceheadCrypt",
+  "stat": "",
+  "target": 21,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Dicehead"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8435
+ },
+ {
+  "asset": "a_skin_diceheadExtra1",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_diceheadExtra1",
+  "stat": "diceheadKills",
+  "target": 50000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 5,
+  "difficulty": 1,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Dicehead"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8436
+ },
+ {
+  "asset": "a_skin_diceheadFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_diceheadFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Dicehead"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8437
+ },
+ {
+  "asset": "a_skin_diceheadGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_diceheadGold",
+  "stat": "diceheadRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Dicehead"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8438
+ },
+ {
+  "asset": "a_skin_diceheadKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_diceheadKills",
+  "stat": "diceheadKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Dicehead"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8439
+ },
+ {
+  "asset": "a_skin_diceheadSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_diceheadSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Dicehead"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8440
+ },
+ {
+  "asset": "a_skin_foxCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_foxCrypt",
+  "stat": "",
+  "target": 22,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Fox"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8441
+ },
+ {
+  "asset": "a_skin_foxFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_foxFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Fox"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8442
+ },
+ {
+  "asset": "a_skin_foxGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_foxGold",
+  "stat": "foxRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Fox"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8443
+ },
+ {
+  "asset": "a_skin_foxKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_foxKills",
+  "stat": "foxKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Fox"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8444
+ },
+ {
+  "asset": "a_skin_foxSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_foxSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Fox"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8445
+ },
+ {
+  "asset": "a_skin_megachadCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_megachadCrypt",
+  "stat": "",
+  "target": 22,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Megachad"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8446
+ },
+ {
+  "asset": "a_skin_megachadFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_megachadFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Megachad"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8447
+ },
+ {
+  "asset": "a_skin_megachadGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_megachadGold",
+  "stat": "megachadRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Megachad"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8448
+ },
+ {
+  "asset": "a_skin_megachadKevin",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_megachadKevin",
+  "stat": "",
+  "target": 60,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 3,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Megachad"
+   ],
+   [
+    "map",
+    "Forest"
+   ],
+   [
+    "hat_name",
+    "Kevin hat"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "As {character}, defeat the final boss of {map} 3 in under {value} seconds while wearing {hat_name}",
+  "rest": 8,
+  "pid": 8449
+ },
+ {
+  "asset": "a_skin_megachadKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_megachadKills",
+  "stat": "megachadKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Megachad"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8450
+ },
+ {
+  "asset": "a_skin_megachadSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_megachadSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Megachad"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8451
+ },
+ {
+  "asset": "a_skin_monkeCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_monkeCrypt",
+  "stat": "",
+  "target": 18,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Monke"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8452
+ },
+ {
+  "asset": "a_skin_monkeFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_monkeFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Monke"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8453
+ },
+ {
+  "asset": "a_skin_monkeGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_monkeGold",
+  "stat": "monkeRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Monke"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8454
+ },
+ {
+  "asset": "a_skin_monkeKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_monkeKills",
+  "stat": "monkeKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Monke"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8455
+ },
+ {
+  "asset": "a_skin_monkeSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_monkeSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Monke"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8456
+ },
+ {
+  "asset": "a_skin_ninjaCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_ninjaCrypt",
+  "stat": "",
+  "target": 20,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Ninja"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8457
+ },
+ {
+  "asset": "a_skin_ninjaFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_ninjaFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Ninja"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8458
+ },
+ {
+  "asset": "a_skin_ninjaGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_ninjaGold",
+  "stat": "ninjaRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Ninja"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8459
+ },
+ {
+  "asset": "a_skin_ninjaKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_ninjaKills",
+  "stat": "ninjaKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Ninja"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8460
+ },
+ {
+  "asset": "a_skin_ninjaSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_ninjaSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Ninja"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8461
+ },
+ {
+  "asset": "a_skin_noelleCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_noelleCrypt",
+  "stat": "",
+  "target": 19,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Noelle"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8462
+ },
+ {
+  "asset": "a_skin_noelleFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_noelleFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Noelle"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8463
+ },
+ {
+  "asset": "a_skin_noelleGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_noelleGold",
+  "stat": "noelleRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Noelle"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8464
+ },
+ {
+  "asset": "a_skin_noelleKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_noelleKills",
+  "stat": "noelleKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Noelle"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8465
+ },
+ {
+  "asset": "a_skin_noelleSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_noelleSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Noelle"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8466
+ },
+ {
+  "asset": "a_skin_ogreCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_ogreCrypt",
+  "stat": "",
+  "target": 23,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Ogre"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8467
+ },
+ {
+  "asset": "a_skin_ogreFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_ogreFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Ogre"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8468
+ },
+ {
+  "asset": "a_skin_ogreGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_ogreGold",
+  "stat": "ogreRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Ogre"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8469
+ },
+ {
+  "asset": "a_skin_ogreKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_ogreKills",
+  "stat": "ogreKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Ogre"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8470
+ },
+ {
+  "asset": "a_skin_ogreSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_ogreSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Ogre"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8471
+ },
+ {
+  "asset": "a_skin_robertoCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_robertoCrypt",
+  "stat": "",
+  "target": 19,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Roberto"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8472
+ },
+ {
+  "asset": "a_skin_robertoExtra4",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_robertoExtra4",
+  "stat": "robertoKills",
+  "target": 500000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 5,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Roberto"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8473
+ },
+ {
+  "asset": "a_skin_robertoFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_robertoFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Roberto"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8474
+ },
+ {
+  "asset": "a_skin_robertoGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_robertoGold",
+  "stat": "robertoRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Roberto"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8475
+ },
+ {
+  "asset": "a_skin_robertoKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_robertoKills",
+  "stat": "robertoKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Roberto"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8476
+ },
+ {
+  "asset": "a_skin_robertoSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_robertoSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Roberto"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8477
+ },
+ {
+  "asset": "a_skin_robinetteCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_robinetteCrypt",
+  "stat": "",
+  "target": 21,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Robinette"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8478
+ },
+ {
+  "asset": "a_skin_robinetteFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_robinetteFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Robinette"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8479
+ },
+ {
+  "asset": "a_skin_robinetteGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_robinetteGold",
+  "stat": "robinetteRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Robinette"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8480
+ },
+ {
+  "asset": "a_skin_robinetteKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_robinetteKills",
+  "stat": "robinetteKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Robinette"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8481
+ },
+ {
+  "asset": "a_skin_robinetteSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_robinetteSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Robinette"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8482
+ },
+ {
+  "asset": "a_skin_sirChadwellCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_sirChadwellCrypt",
+  "stat": "",
+  "target": 24,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Sir Chadwell"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8483
+ },
+ {
+  "asset": "a_skin_sirOofieCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_sirOofieCrypt",
+  "stat": "",
+  "target": 24,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Sir Oofie"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8484
+ },
+ {
+  "asset": "a_skin_sirChadwellFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_sirChadwellFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Sir Chadwell"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8485
+ },
+ {
+  "asset": "a_skin_sirChadwellGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_sirChadwellGold",
+  "stat": "sirchadwellRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Sir Chadwell"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8486
+ },
+ {
+  "asset": "a_skin_sirChadwellKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_sirChadwellKills",
+  "stat": "sirChadwellKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Sir Chadwell"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8487
+ },
+ {
+  "asset": "a_skin_sirChadwellSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_sirChadwellSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Sir Chadwell"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8488
+ },
+ {
+  "asset": "a_skin_sirOofieFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_sirOofieFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Sir Oofie"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8489
+ },
+ {
+  "asset": "a_skin_sirOofieGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_sirOofieGold",
+  "stat": "siroofieRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Sir Oofie"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8490
+ },
+ {
+  "asset": "a_skin_sirOofieKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_sirOofieKills",
+  "stat": "sirOofieKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Sir Oofie"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8491
+ },
+ {
+  "asset": "a_skin_sirOofieSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_sirOofieSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Sir Oofie"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8492
+ },
+ {
+  "asset": "a_skin_spacemanCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_spacemanCrypt",
+  "stat": "",
+  "target": 24,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Spaceman"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8493
+ },
+ {
+  "asset": "a_skin_spacemanFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_spacemanFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Spaceman"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8494
+ },
+ {
+  "asset": "a_skin_spacemanGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_spacemanGold",
+  "stat": "spacemanRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Spaceman"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8495
+ },
+ {
+  "asset": "a_skin_spacemanKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_spacemanKills",
+  "stat": "spacemanKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Spaceman"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8496
+ },
+ {
+  "asset": "a_skin_spacemanSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_spacemanSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Spaceman"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8497
+ },
+ {
+  "asset": "a_skin_tonyMcZoomCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_tonyMcZoomCrypt",
+  "stat": "",
+  "target": 16,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Tony McZoom"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8498
+ },
+ {
+  "asset": "a_skin_tonyMcZoomExtra1",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_tonyMcZoomExtra1",
+  "stat": "tonyMcZoomKills",
+  "target": 50000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 5,
+  "difficulty": 1,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Tony McZoom"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8499
+ },
+ {
+  "asset": "a_skin_tonyMcZoomExtra2",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_tonyMcZoomExtra2",
+  "stat": "tonyMcZoomKills",
+  "target": 100000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 6,
+  "difficulty": 1,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Tony McZoom"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8500
+ },
+ {
+  "asset": "a_skin_tonyMcZoomFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_tonyMcZoomFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Tony McZoom"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8501
+ },
+ {
+  "asset": "a_skin_tonyMcZoomGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_tonyMcZoomGold",
+  "stat": "tonymczoomRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Tony McZoom"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8502
+ },
+ {
+  "asset": "a_skin_tonyMcZoomKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_tonyMcZoomKills",
+  "stat": "tonyMcZoomKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Tony McZoom"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8503
+ },
+ {
+  "asset": "a_skin_tonyMcZoomSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_tonyMcZoomSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Tony McZoom"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8504
+ },
+ {
+  "asset": "a_skin_vladCrypt",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_vladCrypt",
+  "stat": "",
+  "target": 22,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Vlad"
+   ],
+   [
+    "map",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Finish the first crypt on {map} in under {value} seconds as {character}",
+  "rest": 8,
+  "pid": 8505
+ },
+ {
+  "asset": "a_skin_vladFinalBoss",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_vladFinalBoss",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 3,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Vlad"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "final_boss",
+    "Final Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill a {final_boss} on {tier} 3 as {character}",
+  "rest": 8,
+  "pid": 8506
+ },
+ {
+  "asset": "a_skin_vladGold",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_vladGold",
+  "stat": "vladRank",
+  "target": 100,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 4,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Vlad"
+   ],
+   [
+    "rank",
+    "Rank"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {character} to {rank} {value}",
+  "rest": 8,
+  "pid": 8507
+ },
+ {
+  "asset": "a_skin_vladKills",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_vladKills",
+  "stat": "vladKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 1,
+  "difficulty": 0,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Vlad"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {character}",
+  "rest": 8,
+  "pid": 8508
+ },
+ {
+  "asset": "a_skin_vladSpeedrun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_skin_vladSpeedrun",
+  "stat": "",
+  "target": 6,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 2,
+  "difficulty": 2,
+  "type": 6,
+  "keys": [
+   [
+    "character",
+    "Vlad"
+   ],
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat the first {stage_boss} in under {value} minutes as {character}",
+  "rest": 8,
+  "pid": 8509
+ },
+ {
+  "asset": "a_armorTome",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_armorTome",
+  "stat": "sirOofieKills",
+  "target": 5000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 5,
+  "keys": [
+   [
+    "sir_oofie",
+    "Sir Oofie"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {sir_oofie}",
+  "rest": 8,
+  "pid": 8510
+ },
+ {
+  "asset": "a_attractionTome",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_attractionTome",
+  "stat": "shrineSucc",
+  "target": 8,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 5,
+  "keys": [
+   [
+    "shrine_succ",
+    "Shrine of Succ"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Use {shrine_succ} {value} times.",
+  "rest": 8,
+  "pid": 8511
+ },
+ {
+  "asset": "a_bloodTome",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_bloodTome",
+  "stat": "kills",
+  "target": 12500,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 5,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies",
+  "rest": 8,
+  "pid": 8512
+ },
+ {
+  "asset": "a_chaosTome",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_chaosTome",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 5,
+  "keys": [
+   [
+    "charge_shrine",
+    "Charge Shrine"
+   ],
+   [
+    "tier",
+    "Tier"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Charge all {charge_shrine} on a {tier} 3 run across all 3 stages without leaving the charge zone",
+  "rest": 8,
+  "pid": 8513
+ },
+ {
+  "asset": "a_cursedTome",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_cursedTome",
+  "stat": "",
+  "target": 5,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 5,
+  "keys": [
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Beat the {stage_boss} in under {value} minutes",
+  "rest": 8,
+  "pid": 8514
+ },
+ {
+  "asset": "a_durationTome",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_durationTome",
+  "stat": "",
+  "target": 10,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 5,
+  "keys": [
+   [
+    "axe",
+    "Axe"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Upgrade {axe} to level {value}",
+  "rest": 8,
+  "pid": 8515
+ },
+ {
+  "asset": "a_luckTome",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_luckTome",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.009999999776482582,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 5,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "{value}% chance to drop when killing an enemy",
+  "rest": 8,
+  "pid": 8516
+ },
+ {
+  "asset": "a_quantityTome",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_quantityTome",
+  "stat": "projectilesFired",
+  "target": 5000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 5,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Fire {value} projectiles",
+  "rest": 8,
+  "pid": 8517
+ },
+ {
+  "asset": "a_thornsTome",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_thornsTome",
+  "stat": "aegisBlocks",
+  "target": 250,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 5,
+  "keys": [
+   [
+    "aegis",
+    "Aegis"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Block {value} attacks with {aegis}",
+  "rest": 8,
+  "pid": 8518
+ },
+ {
+  "asset": "a_xpTome",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_xpTome",
+  "stat": "",
+  "target": 20,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 5,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Break {value} pots in a single run",
+  "rest": 8,
+  "pid": 8519
+ },
+ {
+  "asset": "a_aegis",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_aegis",
+  "stat": "damageReductionArmorAsKnight",
+  "target": 500,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 2,
+  "keys": [
+   [
+    "armor_stat",
+    "Armor"
+   ],
+   [
+    "sir_oofie",
+    "Sir Oofie"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Block {value} damage with {armor_stat} as {sir_oofie}",
+  "rest": 8,
+  "pid": 8520
+ },
+ {
+  "asset": "a_aura",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_aura",
+  "stat": "",
+  "target": 2,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 2,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Don't take any damage for {value} minutes",
+  "rest": 8,
+  "pid": 8521
+ },
+ {
+  "asset": "a_axe",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_axe",
+  "stat": "swordKills",
+  "target": 2000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 2,
+  "keys": [
+   [
+    "sword",
+    "Sword"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies using the {sword}",
+  "rest": 8,
+  "pid": 8522
+ },
+ {
+  "asset": "a_bananarang",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_bananarang",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 2,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Find the hidden Banana",
+  "rest": 8,
+  "pid": 8523
+ },
+ {
+  "asset": "a_blackHole",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_blackHole",
+  "stat": "",
+  "target": 10,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "knockback_tome",
+    "Knockback Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {knockback_tome} to level {value}",
+  "rest": 8,
+  "pid": 8524
+ },
+ {
+  "asset": "a_bloodMagic",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_bloodMagic",
+  "stat": "",
+  "target": 12,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "bloody_tome",
+    "Bloody Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get the {bloody_tome} to level {value}",
+  "rest": 8,
+  "pid": 8525
+ },
+ {
+  "asset": "a_corruptedSword",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_corruptedSword",
+  "stat": "",
+  "target": 20,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 2,
+  "keys": [
+   [
+    "difficulty_tome",
+    "Cursed Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {difficulty_tome} to level {value} in under 10 minutes",
+  "rest": 8,
+  "pid": 8526
+ },
+ {
+  "asset": "a_dexecutioner",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_dexecutioner",
+  "stat": "swordKills",
+  "target": 12500,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "sword",
+    "Sword"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies using the {sword}",
+  "rest": 8,
+  "pid": 8527
+ },
+ {
+  "asset": "a_dice",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_dice",
+  "stat": "",
+  "target": 12,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "luck_tome",
+    "Luck Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get {luck_tome} to level {value}",
+  "rest": 8,
+  "pid": 8528
+ },
+ {
+  "asset": "a_dragonsBreath",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_dragonsBreath",
+  "stat": "foxWispsKills",
+  "target": 1000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "wisp",
+    "Wisp"
+   ],
+   [
+    "fox",
+    "Fox"
+   ],
+   [
+    "desert",
+    "Desert"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} {wisp} as {fox} on {desert}",
+  "rest": 8,
+  "pid": 8529
+ },
+ {
+  "asset": "a_frostwalker",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_frostwalker",
+  "stat": "icecubeFreezes",
+  "target": 1000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "ice_cube",
+    "Ice Cube"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Freeze {value} enemies with the {ice_cube}",
+  "rest": 8,
+  "pid": 8530
+ },
+ {
+  "asset": "a_heroSword",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_heroSword",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 2,
+  "type": 2,
+  "keys": [
+   [
+    "stage_boss",
+    "Stage Boss"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Defeat a {stage_boss} without picking up any items, powerups or using shrines.",
+  "rest": 8,
+  "pid": 8531
+ },
+ {
+  "asset": "a_katana",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_katana",
+  "stat": "",
+  "target": 5,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "tumbleweed",
+    "Tumbleweed"
+   ],
+   [
+    "desert",
+    "Desert"
+   ],
+   [
+    "tier",
+    "Stage"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "{value}% chance to find upon breaking a {tumbleweed} on {desert} {tier} 1",
+  "rest": 8,
+  "pid": 8532
+ },
+ {
+  "asset": "a_mines",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_mines",
+  "stat": "rocketsKills",
+  "target": 7500,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "slutty_rockets",
+    "Slutty Rocket"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies with {slutty_rockets}",
+  "rest": 8,
+  "pid": 8533
+ },
+ {
+  "asset": "a_poisonFlask",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_poisonFlask",
+  "stat": "minibossScorpionKills",
+  "target": 3,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "scorpionussy",
+    "Scorpionussy"
+   ],
+   [
+    "miniboss",
+    "Miniboss"
+   ],
+   [
+    "desert",
+    "Desert"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {scorpionussy} {miniboss} on {desert} {value} times",
+  "rest": 8,
+  "pid": 8534
+ },
+ {
+  "asset": "a_revolver",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_revolver",
+  "stat": "kills",
+  "target": 7500,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 0,
+  "type": 2,
+  "keys": [],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies",
+  "rest": 8,
+  "pid": 8535
+ },
+ {
+  "asset": "a_scythe",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_scythe",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 3,
+  "type": 2,
+  "keys": [
+   [
+    "enemy1",
+    "Big Bob"
+   ],
+   [
+    "graveyard",
+    "Graveyard"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {enemy1} on {graveyard}",
+  "rest": 8,
+  "pid": 8536
+ },
+ {
+  "asset": "a_shotgun",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_shotgun",
+  "stat": "",
+  "target": 5,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "tumbleweed",
+    "Tumbleweed"
+   ],
+   [
+    "desert",
+    "Desert"
+   ],
+   [
+    "tier",
+    "Stage"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "{value}% chance to find upon breaking a {tumbleweed} on {desert} {tier} 2",
+  "rest": 8,
+  "pid": 8537
+ },
+ {
+  "asset": "a_sluttyRocket",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_sluttyRocket",
+  "stat": "cl4nkKills",
+  "target": 15000,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "clank",
+    "CL4NK"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Kill {value} enemies as {clank}",
+  "rest": 8,
+  "pid": 8538
+ },
+ {
+  "asset": "a_sniperRifle",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_sniperRifle",
+  "stat": "",
+  "target": 10,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "precision_tome",
+    "Precision Tome"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get the {precision_tome} to level {value}",
+  "rest": 8,
+  "pid": 8539
+ },
+ {
+  "asset": "a_spaceNoodle",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_spaceNoodle",
+  "stat": "",
+  "target": 0,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "desert",
+    "Desert"
+   ],
+   [
+    "tier",
+    "Tier"
+   ],
+   [
+    "tony",
+    "Tony McZoom"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Complete {desert} {tier} 2 as {tony}",
+  "rest": 8,
+  "pid": 8540
+ },
+ {
+  "asset": "a_tornado",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_tornado",
+  "stat": "shrineChargeSandstorm",
+  "target": 5,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "charge_shrine",
+    "Charge Shrine"
+   ],
+   [
+    "desert",
+    "Desert"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Charge a {charge_shrine} during a Sandstorm on {desert}",
+  "rest": 8,
+  "pid": 8541
+ },
+ {
+  "asset": "a_wirelessDaggers",
+  "enabled": true,
+  "hidden": false,
+  "internal": "a_wirelessDaggers",
+  "stat": "",
+  "target": 15,
+  "targetF": 0.0,
+  "targetS": "",
+  "sort": 0,
+  "difficulty": 1,
+  "type": 2,
+  "keys": [
+   [
+    "lightning_staff",
+    "Lightning Staff"
+   ]
+  ],
+  "iter": 0,
+  "useIter": false,
+  "name": null,
+  "desc": "Get the {lightning_staff} to level {value}",
+  "rest": 8,
+  "pid": 8542
+ }
+]

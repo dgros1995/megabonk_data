@@ -337,10 +337,10 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </tbody>
 </table></div>
-<p>(The 40+ and 50+ terms count from 30 instead of 40 and 50, probably a bug, which is why prices explode past 40.)</p>
+<p>(The 40+ and 50+ terms count from 30, not from 40 and 50, which is why prices explode past 40.)</p>
 <p><strong>Free chests:</strong> Key gives 0.1n / (0.1n + 1) chance per chest (1 key 9%, 10 keys 50%). Roberto's Hoarder passive spawns one every 60 s.</p>
 <h3 id="chests-from-kills"><img class="ic" src="img/ItemKey.png" alt="">Chests from kills</h3>
-<p>Enemies also drop chests, and these are <strong>free</strong>: the chest opens when you walk over it, with no gold cost (<code>EffectManager.CheckChestSpawn</code>, <code>OpenChest</code>). Each kill rolls:</p>
+<p>Enemies also drop chests, and these are <strong>free</strong>: the chest opens when you walk over it, with no gold cost (<code>EffectManager.CheckChestSpawn</code>, <code>OpenChest</code>; confirmed in-game). Each kill rolls:</p>
 <p><strong>chance = 0.05% × Powerup Drop Chance × 2 × min(1, seconds since the last kill-chest ÷ 420)</strong>, doubled for elites.</p>
 <p>In words: right after a chest drops, the chance is 0. It climbs back over the next 7 minutes to a maximum of 0.1% per kill (× your Powerup Drop Chance). The more you kill, the sooner one of those rolls hits, so the wait gets shorter as your kill rate grows. On stage 1 the first elite you kill always drops a chest.</p>
 <blockquote>
@@ -438,7 +438,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <tbody>
 <tr>
 <td class="nm" data-label="Shrine"><img class="ic" src="img/Zap.png" alt="">Charge Shrine</td>
-<td data-label="What it does">Stand in the zone to charge it; rewards a random stat offer (Luck-weighted). Wrench speeds charging 4% and adds 7.5% per copy; Beacon adds 2 per copy on later stages.</td>
+<td data-label="What it does">Stand in the zone to charge it; rewards a choice of <strong>3 stat offers</strong> (Luck-weighted rarity) from the Charge Shrine list below (<code>EncounterData.GetOffers</code>). Wrench speeds charging 4% and adds 7.5% per copy; Beacon adds 2 per copy on later stages.</td>
 </tr>
 <tr>
 <td data-label="Shrine">Moai</td>
@@ -632,7 +632,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </tbody>
 </table></div>
-<p>Slots, Refresh, Skip and Banish can be refunded; Silver gain, Toggler and Boombox can't. <strong>Toggler</strong> is what lets you switch items off in the item pool before a run.</p>
+<p>Slots, Refresh, Skip and Banish can be refunded; Silver gain, Toggler and Boombox can't. <strong>Toggler</strong> is what lets you switch items off in the item pool before a run: the toggle buttons only work once you own it (<code>MyAchievements.CanToggleActivation</code>).</p>
 <h2 id="stat-offer-values">Stat offer values</h2>
 <p>When a shrine or other stat offer gives you a stat, this is the Common amount. Higher rarities multiply it (the offer's rarity multiplier).</p>
 <ul>

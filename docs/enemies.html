@@ -731,7 +731,53 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </tbody>
 </table></div>
-<p>Elite enemies are ×10 HP and ×1.5 damage. "Executable" ✗ means executes deal 2% of max HP instead of killing.</p>
+<p>Elite enemies are ×10 HP and ×1.5 damage. "Executable" ✗ means executes deal 2% of max HP instead of killing. Skeleton, Armored Skeleton and Ghoul are listed for both Forest and Graveyard in the enemy data's map flags.</p>
+<p><strong>XP per kill:</strong> every enemy in the data is worth <strong>1 XP</strong>, and elites 10 (× your XP gain). Tougher enemies don't give more XP, so kill count is what levels you.</p>
+<h3 id="when-each-enemy-can-join">When each enemy can join</h3>
+<p>A stage starts with one enemy type (Goblin on Forest, Mummy on Desert, Ghost on Graveyard). Every 60 seconds another one from the map's list joins the spawn pool, picked at random from those whose earliest time has passed (<code>SummonerController.TryAddNewEnemyCard</code>):</p>
+<div class="tw"><table data-m="cards">
+<thead>
+<tr>
+<th>Map</th>
+<th>From the start</th>
+<th>After 1:30</th>
+<th>After 3:00</th>
+<th>After 6:00</th>
+<th>After 7:00</th>
+<th>After 12:00</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Map">Forest</td>
+<td data-label="From the start">Strong Goblin, Slime, Bee, Boomer Spider, Skeleton, Ghoul</td>
+<td data-label="After 1:30">Golem, Armored Skeleton</td>
+<td data-label="After 3:00">Goblin Tank</td>
+<td data-label="After 6:00">—</td>
+<td data-label="After 7:00">—</td>
+<td data-label="After 12:00">—</td>
+</tr>
+<tr>
+<td data-label="Map">Desert</td>
+<td data-label="From the start">Scorpion, Dusty Skeleton, Tumblebone, Wisp, Cactus Shooter</td>
+<td data-label="After 1:30">Armored Dusty Skeleton</td>
+<td data-label="After 3:00">Mummy Tank, Medium Scorpion</td>
+<td data-label="After 6:00">Ancient Mummy</td>
+<td data-label="After 7:00">—</td>
+<td data-label="After 12:00">—</td>
+</tr>
+<tr>
+<td data-label="Map">Graveyard</td>
+<td data-label="From the start">Head, Zombie, Skeleton, Ghoul</td>
+<td data-label="After 1:30">Armored Skeleton</td>
+<td data-label="After 3:00">Greater Ghost</td>
+<td data-label="After 6:00">—</td>
+<td data-label="After 7:00">Purple Ghost</td>
+<td data-label="After 12:00">Red Ghost</td>
+</tr>
+</tbody>
+</table></div>
+<p>So the Graveyard's normal spawns, not just its swarm events, start sending Purple Ghosts at 7:00 and Red Ghosts at 12:00 of the 16-minute stage.</p>
 <h2 id="boss-attacks">Boss attacks</h2>
 <p>From each boss's attack list in the enemy data. <strong>Damage</strong> is a multiple of the boss's normal hit (which scales like any enemy's damage). <strong>Cooldown</strong> is how long before that attack can repeat; <strong>gap</strong> is the minimum pause before the boss starts its next special attack.</p>
 <h3 id="ent-forest-final-boss">Ent (Forest final boss)</h3>
