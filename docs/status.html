@@ -129,36 +129,47 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <thead>
 <tr>
 <th>Source</th>
-<th>Stacks</th>
+<th>Stacks added</th>
+<th>How long the poison lasts</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="nm" data-label="Source"><img class="ic" src="img/ItemMoldyCheese.png" alt="">Moldy Cheese</td>
-<td data-label="Stacks">40% per copy per hit (each full 100% guaranteed), 5 s</td>
+<td data-label="Stacks added">40% chance per copy per hit (each full 100% is a guaranteed stack)</td>
+<td data-label="How long the poison lasts">5 s</td>
 </tr>
 <tr>
 <td class="nm" data-label="Source"><img class="ic" src="img/ItemSnek.png" alt="">Snek</td>
-<td data-label="Stacks">4 per copy per hit, 5 s</td>
+<td data-label="Stacks added">4 per copy per hit</td>
+<td data-label="How long the poison lasts">5 s</td>
 </tr>
 <tr>
 <td class="nm" data-label="Source"><img class="ic" src="img/ToxicBarrel.png" alt="">Toxic Barrel</td>
-<td data-label="Stacks">5 per copy to enemies near you when you're hit, 5 s</td>
+<td data-label="Stacks added">5 per copy to enemies near you, when you get hit</td>
+<td data-label="How long the poison lasts">5 s</td>
 </tr>
 <tr>
 <td class="nm" data-label="Source"><img class="ic" src="img/ItemGlovesPoison.png" alt="">Moldy Gloves</td>
-<td data-label="Stacks">10 per copy in radius 15, every 8.5 s</td>
+<td data-label="Stacks added">10 per copy to enemies within 15, once every 8.5 s</td>
+<td data-label="How long the poison lasts">—</td>
 </tr>
 <tr>
 <td class="nm" data-label="Source"><img class="ic" src="img/Plague.png" alt="">Plague (Amog)</td>
-<td data-label="Stacks">Spreads poison from dying enemies; +1% poison damage per level</td>
+<td data-label="Stacks added">Spreads poison from dying enemies; +1% poison damage per level</td>
+<td data-label="How long the poison lasts">—</td>
 </tr>
 <tr>
 <td class="nm" data-label="Source"><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</td>
-<td data-label="Stacks">Weapon; poison zones</td>
+<td data-label="Stacks added">Weapon: leaves poison zones</td>
+<td data-label="How long the poison lasts">—</td>
 </tr>
 </tbody>
 </table></div>
+<p><strong>The duration is how long the poison keeps ticking</strong> (× your Duration stat). Each new application adds its stacks and restarts the clock if its duration is longer than what's left, so an enemy you keep hitting stays poisoned and its stacks keep growing. Stop hitting it and all its stacks wear off together when the timer runs out.</p>
+<blockquote>
+<p><strong>Example:</strong> Snek ×2 adds 8 stacks per hit. Hit an enemy 3 times in a second and it has 24 stacks, and the 5 s clock restarts on each hit. If you stop, the 24 stacks keep ticking for 5 more seconds, then vanish.</p>
+</blockquote>
 <h2 id="burn"><img class="ic" src="img/burn.png" alt="">Burn</h2>
 <ul>
 <li>One hit <strong>every second</strong> (every other tick) for (8 + level) × Damage × 0.85.</li>
