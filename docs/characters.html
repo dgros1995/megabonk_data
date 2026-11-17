@@ -79,13 +79,29 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
 .top{display:none}}
+@media (max-width:640px){
+.tw{border:0;background:none;overflow:visible}
+table[data-m="cards"],table[data-m="cards"] tbody{display:block}
+table[data-m="cards"] thead{display:none}
+table[data-m="cards"] tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:6px 0}
+table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;border:0;padding:5px 14px;background:none!important;white-space:normal}
+table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
+table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
+table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+.tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+table[data-m="grid"] th:first-child{background:var(--code)}
+td.nm{white-space:normal}
+td code,li code,p code{overflow-wrap:anywhere}
+}
 @media print{nav.side,.top{display:none}main{padding:0}}
 </style></head><body><div class="wrap"><nav class="side"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <div class="links"><a href="./" class=""><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html" class=""><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="mechanics.html" class=""><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html" class=""><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="maps.html" class=""><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html" class=""><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html" class=""><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a><a href="economy.html" class=""><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="items.html" class=""><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html" class=""><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html" class=""><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html" class="on"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a><a href="quests.html" class=""><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html" class=""><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html" class=""><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a><a href="max-runs.html" class=""><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="faq.html" class=""><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
 <main id="top"><div class="pg-head"><img class="pg-ic" src="img/Dicehead.png" alt="" width="52" height="52"><h1>Characters</h1></div><p class="meta">Game v1.0.69 · updated Nov 16, 2026</p>
 <p>Each character has a starting weapon and a passive that grows every time you level up, so a passive matters more the higher your level gets. A 1M-kill run reaches level 3,000 or more.</p>
 <h2 id="all-characters">All characters</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Character</th>
@@ -97,151 +113,151 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
-<td>Dice</td>
-<td>+5% Evasion, +5% Crit, +5 Pickup Range, +5% Gold</td>
-<td><strong><img class="ic" src="img/Gamba.png" alt="">Gamba:</strong> a free random stat each level, worth 0.75 / (1 + (level/50)^1.5) of a Common offer (min 0.06)</td>
-<td>Complete 100 quests, then buy</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
+<td data-label="Starting weapon">Dice</td>
+<td data-label="Starting stats (game data)">+5% Evasion, +5% Crit, +5 Pickup Range, +5% Gold</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Gamba.png" alt="">Gamba:</strong> a free random stat each level, worth 0.75 / (1 + (level/50)^1.5) of a Common offer (min 0.06)</td>
+<td data-label="Unlock">Complete 100 quests, then buy</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Fox.png" alt="">Fox</td>
-<td>Firestaff</td>
-<td>+15% Luck, +5% Evasion, +4% Speed, +4 Pickup Range, +1 Jump Height</td>
-<td><strong><img class="ic" src="img/RNG Blessing.png" alt="">RNG Blessing:</strong> +1.5% Luck</td>
-<td>Default</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Fox.png" alt="">Fox</td>
+<td data-label="Starting weapon">Firestaff</td>
+<td data-label="Starting stats (game data)">+15% Luck, +5% Evasion, +4% Speed, +4 Pickup Range, +1 Jump Height</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/RNG Blessing.png" alt="">RNG Blessing:</strong> +1.5% Luck</td>
+<td data-label="Unlock">Default</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
-<td>Sword</td>
-<td>+50 HP, +15% Armor, −2% Speed</td>
-<td><strong><img class="ic" src="img/Reinforced.png" alt="">Fortified:</strong> +1% Armor</td>
-<td>Default</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
+<td data-label="Starting weapon">Sword</td>
+<td data-label="Starting stats (game data)">+50 HP, +15% Armor, −2% Speed</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Reinforced.png" alt="">Fortified:</strong> +1% Armor</td>
+<td data-label="Unlock">Default</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
-<td>Revolver</td>
-<td>+50 Shield, −60 HP, +7% Speed, +2 Jump Height, half fall damage</td>
-<td><strong><img class="ic" src="img/Crit Happens.png" alt="">Crit Happens:</strong> +1% Crit</td>
-<td>Clear Forest Tier 1, then buy</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
+<td data-label="Starting weapon">Revolver</td>
+<td data-label="Starting stats (game data)">+50 Shield, −60 HP, +7% Speed, +2 Jump Height, half fall damage</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Crit Happens.png" alt="">Crit Happens:</strong> +1% Crit</td>
+<td data-label="Unlock">Clear Forest Tier 1, then buy</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
-<td>Bow</td>
-<td>+5% Gold, +7.5% Speed, +3 Jump Height</td>
-<td><strong><img class="ic" src="img/Stonks.png" alt="">Stonks:</strong> +1% Gold; damage per 1,000 gold carried: +20% (first 10k), +8.5% (to 200k), +6% (to 1M), +3.5% after</td>
-<td>Clear Forest Tier 2, then buy</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
+<td data-label="Starting weapon">Bow</td>
+<td data-label="Starting stats (game data)">+5% Gold, +7.5% Speed, +3 Jump Height</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Stonks.png" alt="">Stonks:</strong> +1% Gold; damage per 1,000 gold carried: +20% (first 10k), +8.5% (to 200k), +6% (to 1M), +3.5% after</td>
+<td data-label="Unlock">Clear Forest Tier 2, then buy</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
-<td>Corrupted Sword</td>
-<td>+10% Difficulty, +50 HP, +20% Armor, −3% Speed</td>
-<td><strong><img class="ic" src="img/Curse.png" alt="">Cursed:</strong> +1% Difficulty</td>
-<td>Clear Forest Tier 3, then buy</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
+<td data-label="Starting weapon">Corrupted Sword</td>
+<td data-label="Starting stats (game data)">+10% Difficulty, +50 HP, +20% Armor, −3% Speed</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Curse.png" alt="">Cursed:</strong> +1% Difficulty</td>
+<td data-label="Unlock">Clear Forest Tier 3, then buy</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
-<td>Katana</td>
-<td>+15% Speed, +5% Evasion, +2 Jump Height, half fall damage</td>
-<td><strong><img class="ic" src="img/Shadowstep.png" alt="">Shadow Step:</strong> +0.5% Evasion; dodges can execute</td>
-<td>Clear Desert Tier 1 and own a Katana</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
+<td data-label="Starting weapon">Katana</td>
+<td data-label="Starting stats (game data)">+15% Speed, +5% Evasion, +2 Jump Height, half fall damage</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Shadowstep.png" alt="">Shadow Step:</strong> +0.5% Evasion; dodges can execute</td>
+<td data-label="Unlock">Clear Desert Tier 1 and own a Katana</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
-<td>Blood Magic</td>
-<td>+5% Lifesteal, +5% Evasion, +4% Speed</td>
-<td><strong><img class="ic" src="img/Vampire.png" alt="">Vampirism:</strong> +1% Lifesteal</td>
-<td>Clear Desert Tier 2, then buy</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
+<td data-label="Starting weapon">Blood Magic</td>
+<td data-label="Starting stats (game data)">+5% Lifesteal, +5% Evasion, +4% Speed</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Vampire.png" alt="">Vampirism:</strong> +1% Lifesteal</td>
+<td data-label="Unlock">Clear Desert Tier 2, then buy</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
-<td>Axe</td>
-<td>+10% Damage, +40 HP, +5% Armor, −6% Speed, −1% Luck</td>
-<td><strong><img class="ic" src="img/Warrior.png" alt="">Warrior:</strong> +1.5% Damage</td>
-<td>Unlock the Axe, kill 15,000 Goblins, then buy</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
+<td data-label="Starting weapon">Axe</td>
+<td data-label="Starting stats (game data)">+10% Damage, +40 HP, +5% Armor, −6% Speed, −1% Luck</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Warrior.png" alt="">Warrior:</strong> +1.5% Damage</td>
+<td data-label="Unlock">Unlock the Axe, kill 15,000 Goblins, then buy</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
-<td>Aura</td>
-<td>+20 HP, −5% Speed</td>
-<td><strong><img class="ic" src="img/Flex.png" alt="">Flexing:</strong> +2.5% Damage per flex; flex cooldown −0.2 s per level</td>
-<td>Damage Tome to level 7, then buy</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
+<td data-label="Starting weapon">Aura</td>
+<td data-label="Starting stats (game data)">+20 HP, −5% Speed</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Flex.png" alt="">Flexing:</strong> +2.5% Damage per flex; flex cooldown −0.2 s per level</td>
+<td data-label="Unlock">Damage Tome to level 7, then buy</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
-<td>Bone</td>
-<td>+15% Speed, +1.5 Jump Height</td>
-<td><strong><img class="ic" src="img/Speed Demon.png" alt="">Speed Demon:</strong> +0.7% Damage; +0.5% Damage per 1% speed bonus</td>
-<td>Kill 1,000 skeletons, then buy</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
+<td data-label="Starting weapon">Bone</td>
+<td data-label="Starting stats (game data)">+15% Speed, +1.5 Jump Height</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Speed Demon.png" alt="">Speed Demon:</strong> +0.7% Damage; +0.5% Damage per 1% speed bonus</td>
+<td data-label="Unlock">Kill 1,000 skeletons, then buy</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
-<td>Black Hole</td>
-<td>+5% XP, +10 HP, +5 Pickup Range</td>
-<td><strong><img class="ic" src="img/QuantumXp.png" alt="">Quantum XP Theory:</strong> +1% XP</td>
-<td>Complete 6 challenges and unlock the Black Hole</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
+<td data-label="Starting weapon">Black Hole</td>
+<td data-label="Starting stats (game data)">+5% XP, +10 HP, +5 Pickup Range</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/QuantumXp.png" alt="">Quantum XP Theory:</strong> +1% XP</td>
+<td data-label="Unlock">Complete 6 challenges and unlock the Black Hole</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
-<td>Frostwalker</td>
-<td>+7.5% Speed, +5% Evasion, +3 Jump Height</td>
-<td><strong><img class="ic" src="img/Enduring.png" alt="">Enduring:</strong> +0.7% Size (max 4×); +1.5% damage per frozen enemy (max +300%)</td>
-<td>Microwave Ice Crystal 3 times in a row</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
+<td data-label="Starting weapon">Frostwalker</td>
+<td data-label="Starting stats (game data)">+7.5% Speed, +5% Evasion, +3 Jump Height</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Enduring.png" alt="">Enduring:</strong> +0.7% Size (max 4×); +1.5% damage per frozen enemy (max +300%)</td>
+<td data-label="Unlock">Microwave Ice Crystal 3 times in a row</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Amog.png" alt="">Amog</td>
-<td>Poison Flask</td>
-<td>+30 HP, +10% Armor, +20% Size, +20% Duration</td>
-<td><strong><img class="ic" src="img/Plague.png" alt="">Plague:</strong> +1% Poison damage; poison radius 4, +0.05 per level (max 12)</td>
-<td>Poison 50,000 enemies with Moldy Cheese</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Amog.png" alt="">Amog</td>
+<td data-label="Starting weapon">Poison Flask</td>
+<td data-label="Starting stats (game data)">+30 HP, +10% Armor, +20% Size, +20% Duration</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Plague.png" alt="">Plague:</strong> +1% Poison damage; poison radius 4, +0.05 per level (max 12)</td>
+<td data-label="Unlock">Poison 50,000 enemies with Moldy Cheese</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Athena.png" alt="">Athena</td>
-<td>Aegis</td>
-<td>+25 HP, +15% Armor, +5 Thorns</td>
-<td><strong><img class="ic" src="img/LockIn.png" alt="">Lockdown:</strong> +2 Thorns; up to +1% damage per level at low HP</td>
-<td>Unlock the Aegis and Thorns Tome, then buy</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Athena.png" alt="">Athena</td>
+<td data-label="Starting weapon">Aegis</td>
+<td data-label="Starting stats (game data)">+25 HP, +15% Armor, +5 Thorns</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/LockIn.png" alt="">Lockdown:</strong> +2 Thorns; up to +1% damage per level at low HP</td>
+<td data-label="Unlock">Unlock the Aegis and Thorns Tome, then buy</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
-<td>Dexecutioner</td>
-<td>+10% Evasion, +5% Speed</td>
-<td><strong><img class="ic" src="img/Flowstate.png" alt="">Flow State:</strong> +1% Attack Speed</td>
-<td>Beat the Bandit miniboss in Desert</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
+<td data-label="Starting weapon">Dexecutioner</td>
+<td data-label="Starting stats (game data)">+10% Evasion, +5% Speed</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Flowstate.png" alt="">Flow State:</strong> +1% Attack Speed</td>
+<td data-label="Unlock">Beat the Bandit miniboss in Desert</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
-<td>Tornado</td>
-<td>+1 extra jump, +2 Jump Height, +5% Speed</td>
-<td><strong><img class="ic" src="img/Float.png" alt="">Float:</strong> +1% airborne damage</td>
-<td>Kill 100 enemies with Tornado while airborne</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
+<td data-label="Starting weapon">Tornado</td>
+<td data-label="Starting stats (game data)">+1 extra jump, +2 Jump Height, +5% Speed</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Float.png" alt="">Float:</strong> +1% airborne damage</td>
+<td data-label="Unlock">Kill 100 enemies with Tornado while airborne</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bush.png" alt="">Bush</td>
-<td>Sniper Rifle</td>
-<td>+10% Evasion, +6 Pickup Range</td>
-<td><strong><img class="ic" src="img/Bullseye.png" alt="">Bullseye:</strong> +1% Crit Damage; mark-explosion cooldown −4% per level</td>
-<td>Own a Sniper Rifle, beat Sus Bush in Forest</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Bush.png" alt="">Bush</td>
+<td data-label="Starting weapon">Sniper Rifle</td>
+<td data-label="Starting stats (game data)">+10% Evasion, +6 Pickup Range</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Bullseye.png" alt="">Bullseye:</strong> +1% Crit Damage; mark-explosion cooldown −4% per level</td>
+<td data-label="Unlock">Own a Sniper Rifle, beat Sus Bush in Forest</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Monke.png" alt="">Monke</td>
-<td>Bananarang</td>
-<td>+15% Damage, +35 HP, +2 Jump Height</td>
-<td><strong>Monkey Grip:</strong> +2 HP; wall climbing</td>
-<td>Free Monke from the Forest cage</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Monke.png" alt="">Monke</td>
+<td data-label="Starting weapon">Bananarang</td>
+<td data-label="Starting stats (game data)">+15% Damage, +35 HP, +2 Jump Height</td>
+<td data-label="Passive, per level (game data)"><strong>Monkey Grip:</strong> +2 HP; wall climbing</td>
+<td data-label="Unlock">Free Monke from the Forest cage</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
-<td>Scythe</td>
-<td>+15% Evasion, +4% Speed</td>
-<td><strong><img class="ic" src="img/Hoarder.png" alt="">Hoarder:</strong> a free chest every 60 s, +2.5 s per chest (max 120 s)</td>
-<td>Beat Spooky Steve, buy the Scythe, then Roberto</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
+<td data-label="Starting weapon">Scythe</td>
+<td data-label="Starting stats (game data)">+15% Evasion, +4% Speed</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/Hoarder.png" alt="">Hoarder:</strong> a free chest every 60 s, +2.5 s per chest (max 120 s)</td>
+<td data-label="Unlock">Beat Spooky Steve, buy the Scythe, then Roberto</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
-<td>Wireless Dagger</td>
-<td>+30% Speed, +10 Shield, −30 HP, no fall damage</td>
-<td><strong><img class="ic" src="img/ZapIcon.png" alt="">Shocking:</strong> charges while moving; +2% Pickup Range</td>
-<td>Complete 2 challenges and unlock the Wireless Dagger</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
+<td data-label="Starting weapon">Wireless Dagger</td>
+<td data-label="Starting stats (game data)">+30% Speed, +10 Shield, −30 HP, no fall damage</td>
+<td data-label="Passive, per level (game data)"><strong><img class="ic" src="img/ZapIcon.png" alt="">Shocking:</strong> charges while moving; +2% Pickup Range</td>
+<td data-label="Unlock">Complete 2 challenges and unlock the Wireless Dagger</td>
 </tr>
 </tbody>
 </table></div>
@@ -252,7 +268,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <blockquote>
 <p><strong>Example:</strong> at level 100, (100 ÷ 50)^1.5 = 2^1.5 = 2.83. So the multiplier is 0.75 ÷ (1 + 2.83) = 0.75 ÷ 3.83 = <strong>0.196</strong>: each level-up's free stat is worth about a fifth of a Common offer. At level 50 it's 0.375; from level 300 on it's stuck at the 0.06 floor.</p>
 </blockquote>
-<div class="tw"><table class="dense">
+<div class="tw"><table data-m="grid" class="dense">
 <thead>
 <tr>
 <th>Level</th>
@@ -268,15 +284,15 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Share of the offer</td>
-<td>75%</td>
-<td>69%</td>
-<td>55%</td>
-<td>37.5%</td>
-<td>20%</td>
-<td>12%</td>
-<td>8%</td>
-<td>6%</td>
+<td data-label="Level">Share of the offer</td>
+<td data-label="1">75%</td>
+<td data-label="10">69%</td>
+<td data-label="25">55%</td>
+<td data-label="50">37.5%</td>
+<td data-label="100">20%</td>
+<td data-label="150">12%</td>
+<td data-label="200">8%</td>
+<td data-label="300+">6%</td>
 </tr>
 </tbody>
 </table></div>

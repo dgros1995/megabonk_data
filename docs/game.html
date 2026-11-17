@@ -79,6 +79,22 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
 .top{display:none}}
+@media (max-width:640px){
+.tw{border:0;background:none;overflow:visible}
+table[data-m="cards"],table[data-m="cards"] tbody{display:block}
+table[data-m="cards"] thead{display:none}
+table[data-m="cards"] tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:6px 0}
+table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;border:0;padding:5px 14px;background:none!important;white-space:normal}
+table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
+table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
+table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+.tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+table[data-m="grid"] th:first-child{background:var(--code)}
+td.nm{white-space:normal}
+td code,li code,p code{overflow-wrap:anywhere}
+}
 @media print{nav.side,.top{display:none}main{padding:0}}
 </style></head><body><div class="wrap"><nav class="side"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <div class="links"><a href="./" class=""><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html" class="on"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="mechanics.html" class=""><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html" class=""><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="maps.html" class=""><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html" class=""><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html" class=""><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a><a href="economy.html" class=""><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="items.html" class=""><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html" class=""><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html" class=""><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html" class=""><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a><a href="quests.html" class=""><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html" class=""><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html" class=""><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a><a href="max-runs.html" class=""><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="faq.html" class=""><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
@@ -96,7 +112,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </ol>
 <p>You choose when to leave each stage. Staying in a final swarm longer means more kills and more XP, but the swarm's enemies get 4× more HP and 2× more damage every minute. That trade-off is what most high-score play is about (<a href="max-runs.html">Maxing a run</a>).</p>
 <h2 id="the-core-loop"><img class="ic" src="img/Gamba.png" alt="">The core loop</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>You do</th>
@@ -105,24 +121,24 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/skull.png" alt="">Kill enemies</td>
-<td>XP, gold, sometimes powerups</td>
+<td class="nm" data-label="You do"><img class="ic" src="img/skull.png" alt="">Kill enemies</td>
+<td data-label="You get">XP, gold, sometimes powerups</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Stonks.png" alt="">Level up</td>
-<td>A choice of upgrades: a new weapon, a weapon upgrade, a new tome, a tome level, or a stat</td>
+<td class="nm" data-label="You do"><img class="ic" src="img/Stonks.png" alt="">Level up</td>
+<td data-label="You get">A choice of upgrades: a new weapon, a weapon upgrade, a new tome, a tome level, or a stat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/psd_ChestOpen.png" alt="">Spend gold on chests</td>
-<td>A random item (Common, Rare, Epic or Legendary)</td>
+<td class="nm" data-label="You do"><img class="ic" src="img/psd_ChestOpen.png" alt="">Spend gold on chests</td>
+<td data-label="You get">A random item (Common, Rare, Epic or Legendary)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ChallengeIcon.png" alt="">Use shrines</td>
-<td>Stat offers, items, curses, challenges</td>
+<td class="nm" data-label="You do"><img class="ic" src="img/ChallengeIcon.png" alt="">Use shrines</td>
+<td data-label="You get">Stat offers, items, curses, challenges</td>
 </tr>
 <tr>
-<td>Break pots</td>
-<td>Gold and, on stage 1, permanent Luck</td>
+<td data-label="You do">Break pots</td>
+<td data-label="You get">Gold and, on stage 1, permanent Luck</td>
 </tr>
 </tbody>
 </table></div>
@@ -146,7 +162,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <p>Each character starts with one weapon and has a passive that grows with level. Dicehead, for example, gets a free random stat (Gamba) every level-up. Characters also have different base stats. See <a href="characters.html">Characters</a>.</p>
 <div class="map-banner" style="margin-top:28px"><img src="img/ForestIconBig.png" alt="Forest" width="176" height="132"><img src="img/DesertIconBig.png" alt="Desert" width="176" height="132"><img src="img/GraveyardIconBig.png" alt="Graveyard" width="176" height="132"></div><h2 id="how-maps-are-generated"><img class="ic" src="img/Challenges1.png" alt="">How maps are generated</h2>
 <p>Every run builds a new map from a random seed. The terrain and the placement of everything on it change each time, but the <strong>amounts</strong> are fixed by the code (<code>SpawnInteractables</code>, <code>RandomObjectPlacer</code>):</p>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Per stage</th>
@@ -156,34 +172,34 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/psd_ChestOpen.png" alt="">Chests</td>
-<td>46</td>
-<td>69</td>
+<td class="nm" data-label="Per stage"><img class="ic" src="img/psd_ChestOpen.png" alt="">Chests</td>
+<td data-label="Forest / Desert">46</td>
+<td data-label="Graveyard">69</td>
 </tr>
 <tr>
-<td>Shrine slots, each a random type (Shady Guy, Moai, Boss Curse, Magnet, Challenge; Bald Heads on Graveyard)</td>
-<td>14</td>
-<td>28</td>
+<td data-label="Per stage">Shrine slots, each a random type (Shady Guy, Moai, Boss Curse, Magnet, Challenge; Bald Heads on Graveyard)</td>
+<td data-label="Forest / Desert">14</td>
+<td data-label="Graveyard">28</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Zap.png" alt="">Charge Shrines</td>
-<td>15</td>
-<td>22</td>
+<td class="nm" data-label="Per stage"><img class="ic" src="img/Zap.png" alt="">Charge Shrines</td>
+<td data-label="Forest / Desert">15</td>
+<td data-label="Graveyard">22</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Gold.png" alt="">Greed Shrines</td>
-<td>8</td>
-<td>12</td>
+<td class="nm" data-label="Per stage"><img class="ic" src="img/Gold.png" alt="">Greed Shrines</td>
+<td data-label="Forest / Desert">8</td>
+<td data-label="Graveyard">12</td>
 </tr>
 <tr>
-<td>Pots</td>
-<td>55</td>
-<td>~105</td>
+<td data-label="Per stage">Pots</td>
+<td data-label="Forest / Desert">55</td>
+<td data-label="Graveyard">~105</td>
 </tr>
 <tr>
-<td>Microwaves</td>
-<td>1–2</td>
-<td>4–8</td>
+<td data-label="Per stage">Microwaves</td>
+<td data-label="Forest / Desert">1–2</td>
+<td data-label="Graveyard">4–8</td>
 </tr>
 </tbody>
 </table></div>

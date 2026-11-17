@@ -79,6 +79,22 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
 .top{display:none}}
+@media (max-width:640px){
+.tw{border:0;background:none;overflow:visible}
+table[data-m="cards"],table[data-m="cards"] tbody{display:block}
+table[data-m="cards"] thead{display:none}
+table[data-m="cards"] tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:6px 0}
+table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;border:0;padding:5px 14px;background:none!important;white-space:normal}
+table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
+table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
+table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+.tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+table[data-m="grid"] th:first-child{background:var(--code)}
+td.nm{white-space:normal}
+td code,li code,p code{overflow-wrap:anywhere}
+}
 @media print{nav.side,.top{display:none}main{padding:0}}
 </style></head><body><div class="wrap"><nav class="side"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <div class="links"><a href="./" class=""><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html" class=""><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="mechanics.html" class=""><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html" class=""><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="maps.html" class=""><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html" class="on"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html" class=""><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a><a href="economy.html" class=""><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="items.html" class=""><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html" class=""><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html" class=""><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html" class=""><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a><a href="quests.html" class=""><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html" class=""><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html" class=""><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a><a href="max-runs.html" class=""><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="faq.html" class=""><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
@@ -86,7 +102,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <h2 id="how-enemy-stats-scale"><img class="ic" src="img/Stonks.png" alt="">How enemy stats scale</h2>
 <p><strong>Enemy HP</strong> (<code>EnemyStats.GetHp</code>):</p>
 <p>base HP × tier multiplier × (1 + time + final swarm + stage + 1.1 × Difficulty) × type × your Enemy HP multiplier</p>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Part</th>
@@ -95,28 +111,28 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Tier</td>
-<td>×0.80 (T1), ×0.95 (T2), ×1.05 (T3 and Graveyard)</td>
+<td data-label="Part">Tier</td>
+<td data-label="Value">×0.80 (T1), ×0.95 (T2), ×1.05 (T3 and Graveyard)</td>
 </tr>
 <tr>
-<td>Time</td>
-<td>+0.10 per minute of the run × Enemy scaling multiplier</td>
+<td data-label="Part">Time</td>
+<td data-label="Value">+0.10 per minute of the run × Enemy scaling multiplier</td>
 </tr>
 <tr>
-<td>Final swarm</td>
-<td>+(4^(swarm minutes) − 1)</td>
+<td data-label="Part">Final swarm</td>
+<td data-label="Value">+(4^(swarm minutes) − 1)</td>
 </tr>
 <tr>
-<td>Stage</td>
-<td>Stage 1: +0. Stage 2: +27 × (1 + 0.45 × Difficulty). Stage 3: +145 × (1 + 0.45 × Difficulty)</td>
+<td data-label="Part">Stage</td>
+<td data-label="Value">Stage 1: +0. Stage 2: +27 × (1 + 0.45 × Difficulty). Stage 3: +145 × (1 + 0.45 × Difficulty)</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>Elite ×10, challenge ×7, elite challenge ×15; bosses ×2.5 on stage 2, ×5 on stage 3, and ×(1 + 0.16 × Boss Curses)</td>
+<td data-label="Part">Type</td>
+<td data-label="Value">Elite ×10, challenge ×7, elite challenge ×15; bosses ×2.5 on stage 2, ×5 on stage 3, and ×(1 + 0.16 × Boss Curses)</td>
 </tr>
 <tr>
-<td>Swarm spawns</td>
-<td>×1.3 more</td>
+<td data-label="Part">Swarm spawns</td>
+<td data-label="Value">×1.3 more</td>
 </tr>
 </tbody>
 </table></div>
@@ -134,7 +150,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </blockquote>
 <p>The stage part for damage is +2 on stage 2 and +4 on stage 3.</p>
 <p>Worked example, Tier 3, Difficulty 0.5, an ordinary enemy:</p>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Moment</th>
@@ -143,27 +159,27 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Stage 1 at 5:00</td>
-<td>1.05 × (1 + 0.5 + 0.55) = 2.2×</td>
+<td data-label="Moment">Stage 1 at 5:00</td>
+<td data-label="HP multiplier">1.05 × (1 + 0.5 + 0.55) = 2.2×</td>
 </tr>
 <tr>
-<td>Stage 1 at 10:00 (swarm start)</td>
-<td>1.05 × (1 + 1.0 + 0.55) = 2.7×</td>
+<td data-label="Moment">Stage 1 at 10:00 (swarm start)</td>
+<td data-label="HP multiplier">1.05 × (1 + 1.0 + 0.55) = 2.7×</td>
 </tr>
 <tr>
-<td>Stage 2 start, run minute 12</td>
-<td>1.05 × (1 + 1.2 + 33.1 + 0.55) = 37.6×</td>
+<td data-label="Moment">Stage 2 start, run minute 12</td>
+<td data-label="HP multiplier">1.05 × (1 + 1.2 + 33.1 + 0.55) = 37.6×</td>
 </tr>
 <tr>
-<td>Stage 3 start, run minute 22</td>
-<td>1.05 × (1 + 2.2 + 177.6 + 0.55) = 190×</td>
+<td data-label="Moment">Stage 3 start, run minute 22</td>
+<td data-label="HP multiplier">1.05 × (1 + 2.2 + 177.6 + 0.55) = 190×</td>
 </tr>
 </tbody>
 </table></div>
 <p>Some special enemies have HP tied to your level instead: (level + 25) × 20, or level + 30.</p>
 <h2 id="every-enemy"><img class="ic" src="img/Curse.png" alt="">Every enemy</h2>
 <p>Base values from the game's enemy database, before scaling. Credits are what the spawner pays for one; cheaper enemies come in larger numbers.</p>
-<div class="tw"><table class="dense">
+<div class="tw"><table data-m="cards" class="dense">
 <thead>
 <tr>
 <th>Enemy</th>
@@ -181,524 +197,524 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Goblin</td>
-<td>Forest</td>
-<td>7</td>
-<td>15</td>
-<td>5.0</td>
-<td>1</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Goblin</td>
+<td data-label="Map">Forest</td>
+<td data-label="HP">7</td>
+<td data-label="Damage">15</td>
+<td data-label="Speed">5.0</td>
+<td data-label="Credits">1</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Strong Goblin</td>
-<td>Forest</td>
-<td>15</td>
-<td>25</td>
-<td>5.5</td>
-<td>1.25</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Strong Goblin</td>
+<td data-label="Map">Forest</td>
+<td data-label="HP">15</td>
+<td data-label="Damage">25</td>
+<td data-label="Speed">5.5</td>
+<td data-label="Credits">1.25</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Goblin Tank</td>
-<td>Forest</td>
-<td>40</td>
-<td>30</td>
-<td>5.0</td>
-<td>2</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>1</td>
-<td></td>
+<td data-label="Enemy">Goblin Tank</td>
+<td data-label="Map">Forest</td>
+<td data-label="HP">40</td>
+<td data-label="Damage">30</td>
+<td data-label="Speed">5.0</td>
+<td data-label="Credits">2</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">1</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Golem</td>
-<td>Forest</td>
-<td>20</td>
-<td>20</td>
-<td>5.0</td>
-<td>1.5</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>1</td>
-<td></td>
+<td data-label="Enemy">Golem</td>
+<td data-label="Map">Forest</td>
+<td data-label="HP">20</td>
+<td data-label="Damage">20</td>
+<td data-label="Speed">5.0</td>
+<td data-label="Credits">1.5</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">1</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Slime</td>
-<td>Forest</td>
-<td>6</td>
-<td>8</td>
-<td>6.5</td>
-<td>0.75</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Slime</td>
+<td data-label="Map">Forest</td>
+<td data-label="HP">6</td>
+<td data-label="Damage">8</td>
+<td data-label="Speed">6.5</td>
+<td data-label="Credits">0.75</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Bee</td>
-<td>Forest</td>
-<td>10</td>
-<td>15</td>
-<td>6.5</td>
-<td>1</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Bee</td>
+<td data-label="Map">Forest</td>
+<td data-label="HP">10</td>
+<td data-label="Damage">15</td>
+<td data-label="Speed">6.5</td>
+<td data-label="Credits">1</td>
+<td data-label="Flying">✓</td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Boomer Spider</td>
-<td>Forest</td>
-<td>18</td>
-<td>30</td>
-<td>6.0</td>
-<td>1.5</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td>Explodes</td>
+<td data-label="Enemy">Boomer Spider</td>
+<td data-label="Map">Forest</td>
+<td data-label="HP">18</td>
+<td data-label="Damage">30</td>
+<td data-label="Speed">6.0</td>
+<td data-label="Credits">1.5</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks">Explodes</td>
 </tr>
 <tr>
-<td>Golem (miniboss)</td>
-<td>Forest</td>
-<td>250</td>
-<td>40</td>
-<td>6.0</td>
-<td>40</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>4</td>
-<td>Stone attacks</td>
+<td data-label="Enemy">Golem (miniboss)</td>
+<td data-label="Map">Forest</td>
+<td data-label="HP">250</td>
+<td data-label="Damage">40</td>
+<td data-label="Speed">6.0</td>
+<td data-label="Credits">40</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">4</td>
+<td data-label="Special attacks">Stone attacks</td>
 </tr>
 <tr>
-<td>Pig (miniboss)</td>
-<td>Forest</td>
-<td>250</td>
-<td>40</td>
-<td>6.0</td>
-<td>40</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>3</td>
-<td>Slam, mud splash</td>
+<td data-label="Enemy">Pig (miniboss)</td>
+<td data-label="Map">Forest</td>
+<td data-label="HP">250</td>
+<td data-label="Damage">40</td>
+<td data-label="Speed">6.0</td>
+<td data-label="Credits">40</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">3</td>
+<td data-label="Special attacks">Slam, mud splash</td>
 </tr>
 <tr>
-<td>Mummy</td>
-<td>Desert</td>
-<td>8</td>
-<td>13</td>
-<td>5.5</td>
-<td>1</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Mummy</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">8</td>
+<td data-label="Damage">13</td>
+<td data-label="Speed">5.5</td>
+<td data-label="Credits">1</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Mummy Tank</td>
-<td>Desert</td>
-<td>45</td>
-<td>30</td>
-<td>5.0</td>
-<td>2</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>1</td>
-<td></td>
+<td data-label="Enemy">Mummy Tank</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">45</td>
+<td data-label="Damage">30</td>
+<td data-label="Speed">5.0</td>
+<td data-label="Credits">2</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">1</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Ancient Mummy</td>
-<td>Desert</td>
-<td>70</td>
-<td>40</td>
-<td>5.0</td>
-<td>2.5</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>1</td>
-<td></td>
+<td data-label="Enemy">Ancient Mummy</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">70</td>
+<td data-label="Damage">40</td>
+<td data-label="Speed">5.0</td>
+<td data-label="Credits">2.5</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">1</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Scorpion</td>
-<td>Desert</td>
-<td>16</td>
-<td>20</td>
-<td>7.0</td>
-<td>1.2</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Scorpion</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">16</td>
+<td data-label="Damage">20</td>
+<td data-label="Speed">7.0</td>
+<td data-label="Credits">1.2</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Medium Scorpion</td>
-<td>Desert</td>
-<td>30</td>
-<td>30</td>
-<td>6.5</td>
-<td>1.1</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Medium Scorpion</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">30</td>
+<td data-label="Damage">30</td>
+<td data-label="Speed">6.5</td>
+<td data-label="Credits">1.1</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Dusty Skeleton</td>
-<td>Desert</td>
-<td>16</td>
-<td>22</td>
-<td>6.5</td>
-<td>2</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Dusty Skeleton</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">16</td>
+<td data-label="Damage">22</td>
+<td data-label="Speed">6.5</td>
+<td data-label="Credits">2</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Armored Dusty Skeleton</td>
-<td>Desert</td>
-<td>25</td>
-<td>16</td>
-<td>4.5</td>
-<td>3</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Armored Dusty Skeleton</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">25</td>
+<td data-label="Damage">16</td>
+<td data-label="Speed">4.5</td>
+<td data-label="Credits">3</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Tumblebone</td>
-<td>Desert</td>
-<td>7</td>
-<td>9</td>
-<td>11.0</td>
-<td>1</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Tumblebone</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">7</td>
+<td data-label="Damage">9</td>
+<td data-label="Speed">11.0</td>
+<td data-label="Credits">1</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Wisp</td>
-<td>Desert</td>
-<td>8</td>
-<td>13</td>
-<td>7.5</td>
-<td>1</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Wisp</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">8</td>
+<td data-label="Damage">13</td>
+<td data-label="Speed">7.5</td>
+<td data-label="Credits">1</td>
+<td data-label="Flying">✓</td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Cactus Shooter</td>
-<td>Desert</td>
-<td>15</td>
-<td>30</td>
-<td>5.0</td>
-<td>1</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td>Projectile</td>
+<td data-label="Enemy">Cactus Shooter</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">15</td>
+<td data-label="Damage">30</td>
+<td data-label="Speed">5.0</td>
+<td data-label="Credits">1</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks">Projectile</td>
 </tr>
 <tr>
-<td>Sand Golem (miniboss)</td>
-<td>Desert</td>
-<td>250</td>
-<td>40</td>
-<td>6.0</td>
-<td>40</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>4</td>
-<td>Stone attacks</td>
+<td data-label="Enemy">Sand Golem (miniboss)</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">250</td>
+<td data-label="Damage">40</td>
+<td data-label="Speed">6.0</td>
+<td data-label="Credits">40</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">4</td>
+<td data-label="Special attacks">Stone attacks</td>
 </tr>
 <tr>
-<td>Scorpion (miniboss)</td>
-<td>Desert</td>
-<td>250</td>
-<td>35</td>
-<td>7.0</td>
-<td>40</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>3.5</td>
-<td>Spikes</td>
+<td data-label="Enemy">Scorpion (miniboss)</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">250</td>
+<td data-label="Damage">35</td>
+<td data-label="Speed">7.0</td>
+<td data-label="Credits">40</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">3.5</td>
+<td data-label="Special attacks">Spikes</td>
 </tr>
 <tr>
-<td>Ghost</td>
-<td>Graveyard</td>
-<td>10</td>
-<td>10</td>
-<td>6.0</td>
-<td>1</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Ghost</td>
+<td data-label="Map">Graveyard</td>
+<td data-label="HP">10</td>
+<td data-label="Damage">10</td>
+<td data-label="Speed">6.0</td>
+<td data-label="Credits">1</td>
+<td data-label="Flying">✓</td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Greater Ghost</td>
-<td>Graveyard</td>
-<td>20</td>
-<td>13</td>
-<td>7.0</td>
-<td>1.5</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>1</td>
-<td></td>
+<td data-label="Enemy">Greater Ghost</td>
+<td data-label="Map">Graveyard</td>
+<td data-label="HP">20</td>
+<td data-label="Damage">13</td>
+<td data-label="Speed">7.0</td>
+<td data-label="Credits">1.5</td>
+<td data-label="Flying">✓</td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">1</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Purple Ghost</td>
-<td>Graveyard</td>
-<td>40</td>
-<td>20</td>
-<td>8.0</td>
-<td>1.5</td>
-<td>✓</td>
-<td>✓</td>
-<td>✗</td>
-<td>5</td>
-<td></td>
+<td data-label="Enemy">Purple Ghost</td>
+<td data-label="Map">Graveyard</td>
+<td data-label="HP">40</td>
+<td data-label="Damage">20</td>
+<td data-label="Speed">8.0</td>
+<td data-label="Credits">1.5</td>
+<td data-label="Flying">✓</td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✗</td>
+<td data-label="Knockback res.">5</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Red Ghost</td>
-<td>Graveyard</td>
-<td>100</td>
-<td>30</td>
-<td>10.0</td>
-<td>1.5</td>
-<td>✓</td>
-<td>✓</td>
-<td>✗</td>
-<td>50</td>
-<td></td>
+<td data-label="Enemy">Red Ghost</td>
+<td data-label="Map">Graveyard</td>
+<td data-label="HP">100</td>
+<td data-label="Damage">30</td>
+<td data-label="Speed">10.0</td>
+<td data-label="Credits">1.5</td>
+<td data-label="Flying">✓</td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✗</td>
+<td data-label="Knockback res.">50</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Head</td>
-<td>Graveyard</td>
-<td>12</td>
-<td>8</td>
-<td>7.0</td>
-<td>1</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Head</td>
+<td data-label="Map">Graveyard</td>
+<td data-label="HP">12</td>
+<td data-label="Damage">8</td>
+<td data-label="Speed">7.0</td>
+<td data-label="Credits">1</td>
+<td data-label="Flying">✓</td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Zombie</td>
-<td>Graveyard</td>
-<td>12</td>
-<td>20</td>
-<td>6.5</td>
-<td>1</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Zombie</td>
+<td data-label="Map">Graveyard</td>
+<td data-label="HP">12</td>
+<td data-label="Damage">20</td>
+<td data-label="Speed">6.5</td>
+<td data-label="Credits">1</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Ghostham (miniboss)</td>
-<td>Graveyard</td>
-<td>320</td>
-<td>45</td>
-<td>6.5</td>
-<td>40</td>
-<td>✓</td>
-<td>✗</td>
-<td>✓</td>
-<td>3</td>
-<td>Slam, mud splash</td>
+<td data-label="Enemy">Ghostham (miniboss)</td>
+<td data-label="Map">Graveyard</td>
+<td data-label="HP">320</td>
+<td data-label="Damage">45</td>
+<td data-label="Speed">6.5</td>
+<td data-label="Credits">40</td>
+<td data-label="Flying">✓</td>
+<td data-label="Elite?">✗</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">3</td>
+<td data-label="Special attacks">Slam, mud splash</td>
 </tr>
 <tr>
-<td>Calcium Dad (miniboss)</td>
-<td>Graveyard</td>
-<td>320</td>
-<td>40</td>
-<td>8.0</td>
-<td>40</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>4</td>
-<td>Bone pillars, laser</td>
+<td data-label="Enemy">Calcium Dad (miniboss)</td>
+<td data-label="Map">Graveyard</td>
+<td data-label="HP">320</td>
+<td data-label="Damage">40</td>
+<td data-label="Speed">8.0</td>
+<td data-label="Credits">40</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">4</td>
+<td data-label="Special attacks">Bone pillars, laser</td>
 </tr>
 <tr>
-<td>Grave Ghosts 1–4 (coffin fight)</td>
-<td>Graveyard</td>
-<td>1,100 / 2,250 / 5,500 / 9,000</td>
-<td>20–35</td>
-<td>7.0</td>
-<td>1</td>
-<td>✓</td>
-<td>✗</td>
-<td>✗</td>
-<td>1–4</td>
-<td></td>
+<td data-label="Enemy">Grave Ghosts 1–4 (coffin fight)</td>
+<td data-label="Map">Graveyard</td>
+<td data-label="HP">1,100 / 2,250 / 5,500 / 9,000</td>
+<td data-label="Damage">20–35</td>
+<td data-label="Speed">7.0</td>
+<td data-label="Credits">1</td>
+<td data-label="Flying">✓</td>
+<td data-label="Elite?">✗</td>
+<td data-label="Executable">✗</td>
+<td data-label="Knockback res.">1–4</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Skeleton</td>
-<td>Forest, Graveyard</td>
-<td>20</td>
-<td>20</td>
-<td>5.5</td>
-<td>1</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Skeleton</td>
+<td data-label="Map">Forest, Graveyard</td>
+<td data-label="HP">20</td>
+<td data-label="Damage">20</td>
+<td data-label="Speed">5.5</td>
+<td data-label="Credits">1</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Armored Skeleton</td>
-<td>Forest, Graveyard</td>
-<td>30</td>
-<td>25</td>
-<td>4.0</td>
-<td>1.5</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Armored Skeleton</td>
+<td data-label="Map">Forest, Graveyard</td>
+<td data-label="HP">30</td>
+<td data-label="Damage">25</td>
+<td data-label="Speed">4.0</td>
+<td data-label="Credits">1.5</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Ghoul</td>
-<td>Forest, Graveyard</td>
-<td>9</td>
-<td>12</td>
-<td>9.0</td>
-<td>1</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Ghoul</td>
+<td data-label="Map">Forest, Graveyard</td>
+<td data-label="HP">9</td>
+<td data-label="Damage">12</td>
+<td data-label="Speed">9.0</td>
+<td data-label="Credits">1</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✓</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Golden / XP Skeleton</td>
-<td>Special</td>
-<td>50</td>
-<td>25</td>
-<td>6.0</td>
-<td>10</td>
-<td></td>
-<td>✗</td>
-<td>✓</td>
-<td>0</td>
-<td></td>
+<td data-label="Enemy">Golden / XP Skeleton</td>
+<td data-label="Map">Special</td>
+<td data-label="HP">50</td>
+<td data-label="Damage">25</td>
+<td data-label="Speed">6.0</td>
+<td data-label="Credits">10</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✗</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">0</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Ent (final boss, 3 phases)</td>
-<td>Forest</td>
-<td>9,000 / 8,000 / 10,000</td>
-<td>40 / 40 / 22</td>
-<td>7 / 7 / 3</td>
-<td>40</td>
-<td></td>
-<td>✗</td>
-<td>✓</td>
-<td>2 / 2 / 999</td>
-<td>Root attacks</td>
+<td data-label="Enemy">Ent (final boss, 3 phases)</td>
+<td data-label="Map">Forest</td>
+<td data-label="HP">9,000 / 8,000 / 10,000</td>
+<td data-label="Damage">40 / 40 / 22</td>
+<td data-label="Speed">7 / 7 / 3</td>
+<td data-label="Credits">40</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✗</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">2 / 2 / 999</td>
+<td data-label="Special attacks">Root attacks</td>
 </tr>
 <tr>
-<td>Pharaoh (final boss, 3 phases)</td>
-<td>Desert</td>
-<td>8,000 each</td>
-<td>40</td>
-<td>7 / 7 / 3</td>
-<td>40</td>
-<td></td>
-<td>✗</td>
-<td>✓</td>
-<td>2 / 2 / 999</td>
-<td>Lasers, pillars</td>
+<td data-label="Enemy">Pharaoh (final boss, 3 phases)</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">8,000 each</td>
+<td data-label="Damage">40</td>
+<td data-label="Speed">7 / 7 / 3</td>
+<td data-label="Credits">40</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✗</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">2 / 2 / 999</td>
+<td data-label="Special attacks">Lasers, pillars</td>
 </tr>
 <tr>
-<td>Ghost King (final boss)</td>
-<td>Graveyard</td>
-<td>500,000</td>
-<td>40</td>
-<td>10.0</td>
-<td>40</td>
-<td>✓</td>
-<td>✗</td>
-<td>✗</td>
-<td>999</td>
-<td>Darkness, roots, spikes</td>
+<td data-label="Enemy">Ghost King (final boss)</td>
+<td data-label="Map">Graveyard</td>
+<td data-label="HP">500,000</td>
+<td data-label="Damage">40</td>
+<td data-label="Speed">10.0</td>
+<td data-label="Credits">40</td>
+<td data-label="Flying">✓</td>
+<td data-label="Elite?">✗</td>
+<td data-label="Executable">✗</td>
+<td data-label="Knockback res.">999</td>
+<td data-label="Special attacks">Darkness, roots, spikes</td>
 </tr>
 <tr>
-<td>Bandit (character fight)</td>
-<td>Desert</td>
-<td>11,000</td>
-<td>50</td>
-<td>10.0</td>
-<td>40</td>
-<td></td>
-<td>✗</td>
-<td>✓</td>
-<td>4</td>
-<td></td>
+<td data-label="Enemy">Bandit (character fight)</td>
+<td data-label="Map">Desert</td>
+<td data-label="HP">11,000</td>
+<td data-label="Damage">50</td>
+<td data-label="Speed">10.0</td>
+<td data-label="Credits">40</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✗</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">4</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Bush (character fight)</td>
-<td>Forest</td>
-<td>10,000</td>
-<td>45</td>
-<td>8.5</td>
-<td>40</td>
-<td></td>
-<td>✗</td>
-<td>✓</td>
-<td>2</td>
-<td></td>
+<td data-label="Enemy">Bush (character fight)</td>
+<td data-label="Map">Forest</td>
+<td data-label="HP">10,000</td>
+<td data-label="Damage">45</td>
+<td data-label="Speed">8.5</td>
+<td data-label="Credits">40</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✗</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">2</td>
+<td data-label="Special attacks"></td>
 </tr>
 <tr>
-<td>Frogs (egg event)</td>
-<td>Any</td>
-<td>1,000</td>
-<td>1</td>
-<td>9–10</td>
-<td>99</td>
-<td></td>
-<td>✗</td>
-<td>✓</td>
-<td>1</td>
-<td></td>
+<td data-label="Enemy">Frogs (egg event)</td>
+<td data-label="Map">Any</td>
+<td data-label="HP">1,000</td>
+<td data-label="Damage">1</td>
+<td data-label="Speed">9–10</td>
+<td data-label="Credits">99</td>
+<td data-label="Flying"></td>
+<td data-label="Elite?">✗</td>
+<td data-label="Executable">✓</td>
+<td data-label="Knockback res.">1</td>
+<td data-label="Special attacks"></td>
 </tr>
 </tbody>
 </table></div>

@@ -79,12 +79,28 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
 .top{display:none}}
+@media (max-width:640px){
+.tw{border:0;background:none;overflow:visible}
+table[data-m="cards"],table[data-m="cards"] tbody{display:block}
+table[data-m="cards"] thead{display:none}
+table[data-m="cards"] tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:6px 0}
+table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;border:0;padding:5px 14px;background:none!important;white-space:normal}
+table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
+table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
+table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+.tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+table[data-m="grid"] th:first-child{background:var(--code)}
+td.nm{white-space:normal}
+td code,li code,p code{overflow-wrap:anywhere}
+}
 @media print{nav.side,.top{display:none}main{padding:0}}
 </style></head><body><div class="wrap"><nav class="side"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <div class="links"><a href="./" class=""><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html" class=""><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="mechanics.html" class=""><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html" class=""><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="maps.html" class="on"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html" class=""><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html" class=""><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a><a href="economy.html" class=""><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="items.html" class=""><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html" class=""><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html" class=""><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html" class=""><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a><a href="quests.html" class=""><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html" class=""><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html" class=""><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a><a href="max-runs.html" class=""><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="faq.html" class=""><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
 <main id="top"><div class="pg-head"><img class="pg-ic" src="img/Challenges1.png" alt="" width="52" height="52"><h1>Maps &amp; stages</h1></div><p class="meta">Game v1.0.69 · updated Nov 16, 2026</p><div class="toc"><b>On this page</b><ul><li><a href="#maps-and-tiers">Maps and tiers</a></li><li><a href="#stage-timelines">Stage timelines</a></li><li><a href="#timers">Timers</a></li><li><a href="#spawning">Spawning</a></li><li><a href="#the-final-swarm">The final swarm</a></li><li><a href="#bosses-and-boss-curses">Bosses and Boss Curses</a></li></ul></div>
 <h2 id="maps-and-tiers">Maps and tiers</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Map</th>
@@ -98,37 +114,37 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="mthumb" src="img/ForestIconBig.png" alt="" width="40" height="30">Forest</td>
-<td>3</td>
-<td>10:00, 9:00, 8:00</td>
-<td>×1</td>
-<td>×1</td>
-<td>×1</td>
-<td>Ent (three phases: 9,000 / 8,000 / 10,000 base HP)</td>
+<td class="nm" data-label="Map"><img class="mthumb" src="img/ForestIconBig.png" alt="" width="40" height="30">Forest</td>
+<td data-label="Stages">3</td>
+<td data-label="Stage timers">10:00, 9:00, 8:00</td>
+<td data-label="Chests">×1</td>
+<td data-label="Shrines">×1</td>
+<td data-label="Pots &amp;amp; other">×1</td>
+<td data-label="Final boss">Ent (three phases: 9,000 / 8,000 / 10,000 base HP)</td>
 </tr>
 <tr>
-<td class="nm"><img class="mthumb" src="img/DesertIconBig.png" alt="" width="40" height="30">Desert</td>
-<td>3</td>
-<td>10:00, 9:00, 8:00</td>
-<td>×1</td>
-<td>×1</td>
-<td>×1</td>
-<td>Pharaoh (three phases, 8,000 base HP each)</td>
+<td class="nm" data-label="Map"><img class="mthumb" src="img/DesertIconBig.png" alt="" width="40" height="30">Desert</td>
+<td data-label="Stages">3</td>
+<td data-label="Stage timers">10:00, 9:00, 8:00</td>
+<td data-label="Chests">×1</td>
+<td data-label="Shrines">×1</td>
+<td data-label="Pots &amp;amp; other">×1</td>
+<td data-label="Final boss">Pharaoh (three phases, 8,000 base HP each)</td>
 </tr>
 <tr>
-<td class="nm"><img class="mthumb" src="img/GraveyardIconBig.png" alt="" width="40" height="30">Graveyard</td>
-<td>1</td>
-<td>16:00</td>
-<td>×1.5</td>
-<td>×2</td>
-<td>×1.5</td>
-<td>Ghost King (500,000 base HP)</td>
+<td class="nm" data-label="Map"><img class="mthumb" src="img/GraveyardIconBig.png" alt="" width="40" height="30">Graveyard</td>
+<td data-label="Stages">1</td>
+<td data-label="Stage timers">16:00</td>
+<td data-label="Chests">×1.5</td>
+<td data-label="Shrines">×2</td>
+<td data-label="Pots &amp;amp; other">×1.5</td>
+<td data-label="Final boss">Ghost King (500,000 base HP)</td>
 </tr>
 </tbody>
 </table></div>
 <p><strong>Tiers set how many stages you play.</strong> The game ends the tier on stage index = tier index (<code>MapController.IsTierFinalStage</code>): Tier 1 is stage 1 only, Tier 2 is stages 1–2, Tier 3 is all three stages. After the tier's last stage comes the final-boss map.</p>
 <p><strong>Tiers also scale enemies</strong> (<code>RunConfig.GetEnemyHp</code> / <code>GetEnemyDamage</code>):</p>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Tier</th>
@@ -138,31 +154,31 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Tier 1</td>
-<td>×0.80</td>
-<td>×0.75</td>
+<td data-label="Tier">Tier 1</td>
+<td data-label="Enemy HP">×0.80</td>
+<td data-label="Enemy damage">×0.75</td>
 </tr>
 <tr>
-<td>Tier 2</td>
-<td>×0.95</td>
-<td>×0.95</td>
+<td data-label="Tier">Tier 2</td>
+<td data-label="Enemy HP">×0.95</td>
+<td data-label="Enemy damage">×0.95</td>
 </tr>
 <tr>
-<td>Tier 3</td>
-<td>×1.05</td>
-<td>×1.10</td>
+<td data-label="Tier">Tier 3</td>
+<td data-label="Enemy HP">×1.05</td>
+<td data-label="Enemy damage">×1.10</td>
 </tr>
 <tr>
-<td>Graveyard (always)</td>
-<td>×1.05</td>
-<td>×1.10</td>
+<td data-label="Tier">Graveyard (always)</td>
+<td data-label="Enemy HP">×1.05</td>
+<td data-label="Enemy damage">×1.10</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="stage-timelines">Stage timelines</h2>
 <p>Each stage runs a fixed script from the map data. Times count up from the start of the stage. A new enemy type joins the pool every 60 seconds.</p>
 <h3 id="forest">Forest</h3><div class="map-banner"><img src="img/ForestIconBig.png" alt="Forest map" width="176" height="132"></div>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Stage 1 (10:00)</th>
@@ -172,40 +188,40 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Start: Goblin</td>
-<td>Start: Goblin</td>
-<td>Start: Goblin</td>
+<td data-label="Stage 1 (10:00)">Start: Goblin</td>
+<td data-label="Stage 2 (9:00)">Start: Goblin</td>
+<td data-label="Stage 3 (8:00)">Start: Goblin</td>
 </tr>
 <tr>
-<td>3:00 Miniboss (Golem or Pig), 30 s</td>
-<td>2:00 Miniboss (Golem, Pig), 15 s</td>
-<td>1:30 Miniboss (Golem or Pig), 30 s</td>
+<td data-label="Stage 1 (10:00)">3:00 Miniboss (Golem or Pig), 30 s</td>
+<td data-label="Stage 2 (9:00)">2:00 Miniboss (Golem, Pig), 15 s</td>
+<td data-label="Stage 3 (8:00)">1:30 Miniboss (Golem or Pig), 30 s</td>
 </tr>
 <tr>
-<td>4:00 Swarm: Goblins, 30 s</td>
-<td>3:00 Swarm: Goblins, 30 s</td>
-<td>2:30 Swarm: Goblins, 30 s</td>
+<td data-label="Stage 1 (10:00)">4:00 Swarm: Goblins, 30 s</td>
+<td data-label="Stage 2 (9:00)">3:00 Swarm: Goblins, 30 s</td>
+<td data-label="Stage 3 (8:00)">2:30 Swarm: Goblins, 30 s</td>
 </tr>
 <tr>
-<td>7:00 Swarm: Strong Goblins, 30 s</td>
-<td>6:00 Swarm: Strong Goblins, 30 s</td>
-<td>4:00 Swarm: Strong Goblins, 30 s</td>
+<td data-label="Stage 1 (10:00)">7:00 Swarm: Strong Goblins, 30 s</td>
+<td data-label="Stage 2 (9:00)">6:00 Swarm: Strong Goblins, 30 s</td>
+<td data-label="Stage 3 (8:00)">4:00 Swarm: Strong Goblins, 30 s</td>
 </tr>
 <tr>
-<td>8:00 Miniboss, 30 s</td>
-<td>7:00 Miniboss, 45 s</td>
-<td>5:00 Miniboss, 45 s</td>
+<td data-label="Stage 1 (10:00)">8:00 Miniboss, 30 s</td>
+<td data-label="Stage 2 (9:00)">7:00 Miniboss, 45 s</td>
+<td data-label="Stage 3 (8:00)">5:00 Miniboss, 45 s</td>
 </tr>
 <tr>
-<td>10:00 Final swarm</td>
-<td>9:00 Final swarm</td>
-<td>8:00 Final swarm</td>
+<td data-label="Stage 1 (10:00)">10:00 Final swarm</td>
+<td data-label="Stage 2 (9:00)">9:00 Final swarm</td>
+<td data-label="Stage 3 (8:00)">8:00 Final swarm</td>
 </tr>
 </tbody>
 </table></div>
 <p>Forest enemies: Goblin, Strong Goblin, Goblin Tank, Golem, Slime, Bee, Boomer Spider; minibosses Golem and Pig.</p>
 <h3 id="desert">Desert</h3><div class="map-banner"><img src="img/DesertIconBig.png" alt="Desert map" width="176" height="132"></div>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Stage 1 (10:00)</th>
@@ -215,41 +231,41 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Start: Mummy</td>
-<td>Start: Mummy</td>
-<td>Start: Mummy</td>
+<td data-label="Stage 1 (10:00)">Start: Mummy</td>
+<td data-label="Stage 2 (9:00)">Start: Mummy</td>
+<td data-label="Stage 3 (8:00)">Start: Mummy</td>
 </tr>
 <tr>
-<td>3:00 Miniboss (Scorpion, Sand Golem), 30 s</td>
-<td>2:00 Miniboss (Golem, Pig), 30 s</td>
-<td>1:30 Miniboss (Golem, Pig), 30 s</td>
+<td data-label="Stage 1 (10:00)">3:00 Miniboss (Scorpion, Sand Golem), 30 s</td>
+<td data-label="Stage 2 (9:00)">2:00 Miniboss (Golem, Pig), 30 s</td>
+<td data-label="Stage 3 (8:00)">1:30 Miniboss (Golem, Pig), 30 s</td>
 </tr>
 <tr>
-<td>4:00 Swarm: Mummies, 30 s</td>
-<td>3:00 Swarm: Mummies, 30 s</td>
-<td>2:30 Swarm: Mummies, 30 s</td>
+<td data-label="Stage 1 (10:00)">4:00 Swarm: Mummies, 30 s</td>
+<td data-label="Stage 2 (9:00)">3:00 Swarm: Mummies, 30 s</td>
+<td data-label="Stage 3 (8:00)">2:30 Swarm: Mummies, 30 s</td>
 </tr>
 <tr>
-<td>7:00 Swarm: Scorpions, 30 s</td>
-<td>6:00 Swarm: Scorpions, 30 s</td>
-<td>4:00 Swarm: Scorpions, 30 s</td>
+<td data-label="Stage 1 (10:00)">7:00 Swarm: Scorpions, 30 s</td>
+<td data-label="Stage 2 (9:00)">6:00 Swarm: Scorpions, 30 s</td>
+<td data-label="Stage 3 (8:00)">4:00 Swarm: Scorpions, 30 s</td>
 </tr>
 <tr>
-<td>8:00 Miniboss (Golem, Pig), 60 s</td>
-<td>7:00 Miniboss, 30 s</td>
-<td>5:00 Miniboss, 30 s</td>
+<td data-label="Stage 1 (10:00)">8:00 Miniboss (Golem, Pig), 60 s</td>
+<td data-label="Stage 2 (9:00)">7:00 Miniboss, 30 s</td>
+<td data-label="Stage 3 (8:00)">5:00 Miniboss, 30 s</td>
 </tr>
 <tr>
-<td>10:00 Final swarm</td>
-<td>9:00 Final swarm</td>
-<td>8:00 Final swarm</td>
+<td data-label="Stage 1 (10:00)">10:00 Final swarm</td>
+<td data-label="Stage 2 (9:00)">9:00 Final swarm</td>
+<td data-label="Stage 3 (8:00)">8:00 Final swarm</td>
 </tr>
 </tbody>
 </table></div>
 <p>Desert enemies: Mummy, Mummy Tank, Ancient Mummy, Scorpion, Medium Scorpion, Dusty Skeleton, Armored Dusty Skeleton, Tumblebone, Wisp, Cactus Shooter; minibosses Sand Golem and Scorpion. Desert has sandstorms and Desert Graves (summon fights).</p>
 <h3 id="graveyard">Graveyard</h3>
 <div class="map-banner"><img src="img/GraveyardIconBig.png" alt="Graveyard map" width="176" height="132"><p>One 16-minute stage, and it always uses Tier 3 enemy scaling.</p></div>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Time</th>
@@ -258,44 +274,44 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Start</td>
-<td>Ghosts</td>
+<td data-label="Time">Start</td>
+<td data-label="Event">Ghosts</td>
 </tr>
 <tr>
-<td>3:00</td>
-<td>Miniboss (Calcium Dad or Ghostham)</td>
+<td data-label="Time">3:00</td>
+<td data-label="Event">Miniboss (Calcium Dad or Ghostham)</td>
 </tr>
 <tr>
-<td>4:00</td>
-<td>Swarm: Ghosts</td>
+<td data-label="Time">4:00</td>
+<td data-label="Event">Swarm: Ghosts</td>
 </tr>
 <tr>
-<td>7:00</td>
-<td>Miniboss</td>
+<td data-label="Time">7:00</td>
+<td data-label="Event">Miniboss</td>
 </tr>
 <tr>
-<td>8:00</td>
-<td>Swarm: Greater Ghosts</td>
+<td data-label="Time">8:00</td>
+<td data-label="Event">Swarm: Greater Ghosts</td>
 </tr>
 <tr>
-<td>10:00</td>
-<td>Miniboss</td>
+<td data-label="Time">10:00</td>
+<td data-label="Event">Miniboss</td>
 </tr>
 <tr>
-<td>11:00</td>
-<td>Swarm: Purple Ghosts</td>
+<td data-label="Time">11:00</td>
+<td data-label="Event">Swarm: Purple Ghosts</td>
 </tr>
 <tr>
-<td>13:00</td>
-<td>Miniboss</td>
+<td data-label="Time">13:00</td>
+<td data-label="Event">Miniboss</td>
 </tr>
 <tr>
-<td>14:00</td>
-<td>Swarm: Red Ghosts</td>
+<td data-label="Time">14:00</td>
+<td data-label="Event">Swarm: Red Ghosts</td>
 </tr>
 <tr>
-<td>16:00</td>
-<td>Final swarm</td>
+<td data-label="Time">16:00</td>
+<td data-label="Event">Final swarm</td>
 </tr>
 </tbody>
 </table></div>
@@ -307,7 +323,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <li>More of everything: 1.5× chests, 2× shrines, 1.5× pots.</li>
 </ul>
 <h2 id="timers"><img class="ic" src="img/ItemTimeBracelet.png" alt="">Timers</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Timer</th>
@@ -317,19 +333,19 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Stage timer</td>
-<td>Every stage</td>
-<td>The stage script and the spawn ramp</td>
+<td data-label="Timer">Stage timer</td>
+<td data-label="Resets">Every stage</td>
+<td data-label="Used for">The stage script and the spawn ramp</td>
 </tr>
 <tr>
-<td>Run (difficulty) timer</td>
-<td>Only on a new run; pauses on the final-boss map</td>
-<td>Enemy HP +10% and damage +2.8% per minute</td>
+<td data-label="Timer">Run (difficulty) timer</td>
+<td data-label="Resets">Only on a new run; pauses on the final-boss map</td>
+<td data-label="Used for">Enemy HP +10% and damage +2.8% per minute</td>
 </tr>
 <tr>
-<td>Final-swarm timer</td>
-<td>Every stage; only runs during the final swarm</td>
-<td>Final-swarm HP and damage, ghost tiers</td>
+<td data-label="Timer">Final-swarm timer</td>
+<td data-label="Resets">Every stage; only runs during the final swarm</td>
+<td data-label="Used for">Final-swarm HP and damage, ghost tiers</td>
 </tr>
 </tbody>
 </table></div>
@@ -345,7 +361,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <ul>
 <li><strong>Enemy HP gains +(4^(swarm minutes) − 1)</strong> and damage <strong>+(2^(swarm minutes) − 1)</strong>, on top of everything else. Swarm spawns also get ×1.3 HP and ×1.2 speed.</li>
 </ul>
-<div class="tw"><table class="dense">
+<div class="tw"><table data-m="grid" class="dense">
 <thead>
 <tr>
 <th>Minutes into the swarm</th>
@@ -361,33 +377,33 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>HP bonus</td>
-<td>+3</td>
-<td>+15</td>
-<td>+63</td>
-<td>+1,023</td>
-<td>+4,095</td>
-<td>+65,535</td>
-<td>+1.0M</td>
-<td>+16.8M</td>
+<td data-label="Minutes into the swarm">HP bonus</td>
+<td data-label="1">+3</td>
+<td data-label="2">+15</td>
+<td data-label="3">+63</td>
+<td data-label="5">+1,023</td>
+<td data-label="6">+4,095</td>
+<td data-label="8">+65,535</td>
+<td data-label="10">+1.0M</td>
+<td data-label="12">+16.8M</td>
 </tr>
 <tr>
-<td>Damage bonus</td>
-<td>+1</td>
-<td>+3</td>
-<td>+7</td>
-<td>+31</td>
-<td>+63</td>
-<td>+255</td>
-<td>+1,023</td>
-<td>+4,095</td>
+<td data-label="Minutes into the swarm">Damage bonus</td>
+<td data-label="1">+1</td>
+<td data-label="2">+3</td>
+<td data-label="3">+7</td>
+<td data-label="5">+31</td>
+<td data-label="6">+63</td>
+<td data-label="8">+255</td>
+<td data-label="10">+1,023</td>
+<td data-label="12">+4,095</td>
 </tr>
 </tbody>
 </table></div>
 <ul>
 <li><strong>The swarm enemy changes on a fixed clock</strong> (<code>SwarmSummoner.TickExtra</code>):</li>
 </ul>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Swarm time</th>
@@ -401,40 +417,40 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>0:00</td>
-<td>Ghost</td>
-<td>10</td>
-<td>10</td>
-<td>6</td>
-<td>Yes</td>
-<td>0</td>
+<td data-label="Swarm time">0:00</td>
+<td data-label="Ghost">Ghost</td>
+<td data-label="Base HP">10</td>
+<td data-label="Base damage">10</td>
+<td data-label="Speed">6</td>
+<td data-label="Can be executed">Yes</td>
+<td data-label="Knockback resistance">0</td>
 </tr>
 <tr>
-<td>1:00</td>
-<td>Greater Ghost</td>
-<td>20</td>
-<td>13</td>
-<td>7</td>
-<td>Yes</td>
-<td>1</td>
+<td data-label="Swarm time">1:00</td>
+<td data-label="Ghost">Greater Ghost</td>
+<td data-label="Base HP">20</td>
+<td data-label="Base damage">13</td>
+<td data-label="Speed">7</td>
+<td data-label="Can be executed">Yes</td>
+<td data-label="Knockback resistance">1</td>
 </tr>
 <tr>
-<td>6:00</td>
-<td>Purple Ghost</td>
-<td>40</td>
-<td>20</td>
-<td>8</td>
-<td>No</td>
-<td>5</td>
+<td data-label="Swarm time">6:00</td>
+<td data-label="Ghost">Purple Ghost</td>
+<td data-label="Base HP">40</td>
+<td data-label="Base damage">20</td>
+<td data-label="Speed">8</td>
+<td data-label="Can be executed">No</td>
+<td data-label="Knockback resistance">5</td>
 </tr>
 <tr>
-<td>12:00</td>
-<td>Red Ghost</td>
-<td>100</td>
-<td>30</td>
-<td>10</td>
-<td>No</td>
-<td>50</td>
+<td data-label="Swarm time">12:00</td>
+<td data-label="Ghost">Red Ghost</td>
+<td data-label="Base HP">100</td>
+<td data-label="Base damage">30</td>
+<td data-label="Speed">10</td>
+<td data-label="Can be executed">No</td>
+<td data-label="Knockback resistance">50</td>
 </tr>
 </tbody>
 </table></div>

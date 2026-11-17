@@ -79,13 +79,29 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
 .top{display:none}}
+@media (max-width:640px){
+.tw{border:0;background:none;overflow:visible}
+table[data-m="cards"],table[data-m="cards"] tbody{display:block}
+table[data-m="cards"] thead{display:none}
+table[data-m="cards"] tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:6px 0}
+table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;border:0;padding:5px 14px;background:none!important;white-space:normal}
+table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
+table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
+table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+.tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+table[data-m="grid"] th:first-child{background:var(--code)}
+td.nm{white-space:normal}
+td code,li code,p code{overflow-wrap:anywhere}
+}
 @media print{nav.side,.top{display:none}main{padding:0}}
 </style></head><body><div class="wrap"><nav class="side"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <div class="links"><a href="./" class=""><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html" class=""><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="mechanics.html" class=""><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html" class=""><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="maps.html" class=""><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html" class=""><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html" class=""><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a><a href="economy.html" class=""><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="items.html" class=""><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html" class=""><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html" class=""><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html" class=""><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a><a href="quests.html" class=""><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html" class=""><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html" class="on"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a><a href="max-runs.html" class=""><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="faq.html" class=""><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
 <main id="top"><div class="pg-head"><img class="pg-ic" src="img/HatTopHat.png" alt="" width="52" height="52"><h1>Hats &amp; skins</h1></div><p class="meta">Game v1.0.69 · updated Nov 16, 2026</p>
 <p>Every hat and skin and how to unlock it, read from the game's hat and skin data. Hats and skins are cosmetic only: none of them change stats.</p>
 <h2 id="hats"><img class="ic" src="img/HatTopHat.png" alt="">Hats</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Hat</th>
@@ -96,136 +112,136 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/HatFrogBlue.png" alt="">Blue frog</td>
-<td>Find the frogs on Forest Stage 2</td>
-<td>Easy</td>
-<td>You earned his trust and friendship (he's fucking dead)</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatFrogBlue.png" alt="">Blue frog</td>
+<td data-label="How to unlock">Find the frogs on Forest Stage 2</td>
+<td data-label="Difficulty">Easy</td>
+<td data-label="In-game text">You earned his trust and friendship (he's fucking dead)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatFrogGreen.png" alt="">Green frog</td>
-<td>Find the frogs on Forest Stage 1</td>
-<td>Easy</td>
-<td>You earned his trust and friendship (he's fucking dead)</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatFrogGreen.png" alt="">Green frog</td>
+<td data-label="How to unlock">Find the frogs on Forest Stage 1</td>
+<td data-label="Difficulty">Easy</td>
+<td data-label="In-game text">You earned his trust and friendship (he's fucking dead)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatFrogRed.png" alt="">Red frog</td>
-<td>Find the frogs on Forest Stage 3</td>
-<td>Easy</td>
-<td>You earned his trust and friendship (he's fucking dead)</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatFrogRed.png" alt="">Red frog</td>
+<td data-label="How to unlock">Find the frogs on Forest Stage 3</td>
+<td data-label="Difficulty">Easy</td>
+<td data-label="In-game text">You earned his trust and friendship (he's fucking dead)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatSanta.png" alt="">Santa hat</td>
-<td>Open the present hidden on Forest</td>
-<td>Easy</td>
-<td>Ho ho ho! It does nothing but it looks pretty cool</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatSanta.png" alt="">Santa hat</td>
+<td data-label="How to unlock">Open the present hidden on Forest</td>
+<td data-label="Difficulty">Easy</td>
+<td data-label="In-game text">Ho ho ho! It does nothing but it looks pretty cool</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatShadyBlack.png" alt="">Shady hat (black)</td>
-<td>Buy 100 items from a Common Shady Guy</td>
-<td>Easy</td>
-<td>Proof that you’re a regular</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatShadyBlack.png" alt="">Shady hat (black)</td>
+<td data-label="How to unlock">Buy 100 items from a Common Shady Guy</td>
+<td data-label="Difficulty">Easy</td>
+<td data-label="In-game text">Proof that you’re a regular</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatClown.png" alt="">Clown</td>
-<td>As Athena, kill 500 enemies using Quin's Mask</td>
-<td>Medium</td>
-<td>Suits you perfectly</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatClown.png" alt="">Clown</td>
+<td data-label="How to unlock">As Athena, kill 500 enemies using Quin's Mask</td>
+<td data-label="Difficulty">Medium</td>
+<td data-label="In-game text">Suits you perfectly</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatPilot.png" alt="">Pilot helm</td>
-<td>As Birdo, kill 1,000 enemies using Mines while flying in the air</td>
-<td>Medium</td>
-<td>This helm makes you extremely aerodynamic probably</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatPilot.png" alt="">Pilot helm</td>
+<td data-label="How to unlock">As Birdo, kill 1,000 enemies using Mines while flying in the air</td>
+<td data-label="Difficulty">Medium</td>
+<td data-label="In-game text">This helm makes you extremely aerodynamic probably</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatShadyBlue.png" alt="">Shady hat (blue)</td>
-<td>Buy 80 items from a Rare Shady Guy</td>
-<td>Medium</td>
-<td>Proof that you’re a regular</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatShadyBlue.png" alt="">Shady hat (blue)</td>
+<td data-label="How to unlock">Buy 80 items from a Rare Shady Guy</td>
+<td data-label="Difficulty">Medium</td>
+<td data-label="In-game text">Proof that you’re a regular</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatCheese.png" alt="">Cheesy hat</td>
-<td>As Amog, defeat a Tier 3 final boss with 8 Moldy Cheese and 1 Snek in your inventory</td>
-<td>Hard</td>
-<td>Moldy Cheese my beloved</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatCheese.png" alt="">Cheesy hat</td>
+<td data-label="How to unlock">As Amog, defeat a Tier 3 final boss with 8 Moldy Cheese and 1 Snek in your inventory</td>
+<td data-label="Difficulty">Hard</td>
+<td data-label="In-game text">Moldy Cheese my beloved</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatPot.png" alt="">Head pot (Stainless steel)</td>
-<td>As Roberto, obtain 4x Pot (stainless steel) in a single run</td>
-<td>Hard</td>
-<td>This will keep your head safe (it's stainless steel)</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatPot.png" alt="">Head pot (Stainless steel)</td>
+<td data-label="How to unlock">As Roberto, obtain 4x Pot (stainless steel) in a single run</td>
+<td data-label="Difficulty">Hard</td>
+<td data-label="In-game text">This will keep your head safe (it's stainless steel)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatHeadset.png" alt="">Headset</td>
-<td>As Ninja, complete Desert Stage 1 with at least 2 Boss Curse shrines activated</td>
-<td>Hard</td>
-<td>meow</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatHeadset.png" alt="">Headset</td>
+<td data-label="How to unlock">As Ninja, complete Desert Stage 1 with at least 2 Boss Curse shrines activated</td>
+<td data-label="Difficulty">Hard</td>
+<td data-label="In-game text">meow</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatMedieval.png" alt="">Iron helm</td>
-<td>As Sir Oofie, defeat the Forest 3 final boss using Sword, Hero Sword, Corrupted Sword and Scythe</td>
-<td>Hard</td>
-<td>Very uncomfortable and rusty (it's not stainless steel)</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatMedieval.png" alt="">Iron helm</td>
+<td data-label="How to unlock">As Sir Oofie, defeat the Forest 3 final boss using Sword, Hero Sword, Corrupted Sword and Scythe</td>
+<td data-label="Difficulty">Hard</td>
+<td data-label="In-game text">Very uncomfortable and rusty (it's not stainless steel)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatKevin.png" alt="">Kevin hat</td>
-<td>Get punched by Kevin 100,000 times</td>
-<td>Hard</td>
-<td>Kevin still hates you</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatKevin.png" alt="">Kevin hat</td>
+<td data-label="How to unlock">Get punched by Kevin 100,000 times</td>
+<td data-label="Difficulty">Hard</td>
+<td data-label="In-game text">Kevin still hates you</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatWizard.png" alt="">Magic Hat</td>
-<td>As Fox, get Firestaff, Lightning Staff and Blood Magic to Level 40</td>
-<td>Hard</td>
-<td>This makes you feel smarter (you're not)</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatWizard.png" alt="">Magic Hat</td>
+<td data-label="How to unlock">As Fox, get Firestaff, Lightning Staff and Blood Magic to Level 40</td>
+<td data-label="Difficulty">Hard</td>
+<td data-label="In-game text">This makes you feel smarter (you're not)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatMicrowave.png" alt="">Microwave</td>
-<td>Blow up 50 Microwaves</td>
-<td>Hard</td>
-<td>Do not put your head inside</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatMicrowave.png" alt="">Microwave</td>
+<td data-label="How to unlock">Blow up 50 Microwaves</td>
+<td data-label="Difficulty">Hard</td>
+<td data-label="In-game text">Do not put your head inside</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatShadyPink.png" alt="">Shady hat (pink)</td>
-<td>Buy 60 items from an Epic Shady Guy</td>
-<td>Hard</td>
-<td>Proof that you’re a regular</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatShadyPink.png" alt="">Shady hat (pink)</td>
+<td data-label="How to unlock">Buy 60 items from an Epic Shady Guy</td>
+<td data-label="Difficulty">Hard</td>
+<td data-label="In-game text">Proof that you’re a regular</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatSheriff.png" alt="">Sheriff's hat</td>
-<td>As CL4NK, kill any boss or miniboss in under 1 second</td>
-<td>Hard</td>
-<td>Best worn at high noon</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatSheriff.png" alt="">Sheriff's hat</td>
+<td data-label="How to unlock">As CL4NK, kill any boss or miniboss in under 1 second</td>
+<td data-label="Difficulty">Hard</td>
+<td data-label="In-game text">Best worn at high noon</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatGlasses.png" alt="">Sunglasses</td>
-<td>As Calcium finish the final boss fight on Graveyard in under 60 seconds</td>
-<td>Hard</td>
-<td>Very stylish. Great for avoiding eye contact.</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatGlasses.png" alt="">Sunglasses</td>
+<td data-label="How to unlock">As Calcium finish the final boss fight on Graveyard in under 60 seconds</td>
+<td data-label="Difficulty">Hard</td>
+<td data-label="In-game text">Very stylish. Great for avoiding eye contact.</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatTopHat.png" alt="">Top hat</td>
-<td>Get 100,000 kills on Forest in a single run</td>
-<td>Hard</td>
-<td>A tall black hat</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatTopHat.png" alt="">Top hat</td>
+<td data-label="How to unlock">Get 100,000 kills on Forest in a single run</td>
+<td data-label="Difficulty">Hard</td>
+<td data-label="In-game text">A tall black hat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatCrown.png" alt="">Crown</td>
-<td>Get a gold star on every character (Rank 100)</td>
-<td>Cooked</td>
-<td>The inside is engraved: "touch grass please"</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatCrown.png" alt="">Crown</td>
+<td data-label="How to unlock">Get a gold star on every character (Rank 100)</td>
+<td data-label="Difficulty">Cooked</td>
+<td data-label="In-game text">The inside is engraved: "touch grass please"</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatTophatLong.png" alt="">Looong top hat</td>
-<td>Get 300,000 kills on Forest in a single run</td>
-<td>Cooked</td>
-<td>Isn't this hat way too long..?</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatTophatLong.png" alt="">Looong top hat</td>
+<td data-label="How to unlock">Get 300,000 kills on Forest in a single run</td>
+<td data-label="Difficulty">Cooked</td>
+<td data-label="In-game text">Isn't this hat way too long..?</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HatShadyGold.png" alt="">Shady hat (gold)</td>
-<td>Buy 50 items from a Legendary Shady Guy</td>
-<td>Cooked</td>
-<td>Proof that you’re a regular</td>
+<td class="nm" data-label="Hat"><img class="ic" src="img/HatShadyGold.png" alt="">Shady hat (gold)</td>
+<td data-label="How to unlock">Buy 50 items from a Legendary Shady Guy</td>
+<td data-label="Difficulty">Cooked</td>
+<td data-label="In-game text">Proof that you’re a regular</td>
 </tr>
 </tbody>
 </table></div>
@@ -238,7 +254,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <li><strong>Crypt (Spooky skin):</strong> finish the Graveyard's first crypt under a time limit that depends on the character (16–24 s).</li>
 <li><strong>Gold:</strong> get the character to Rank 100.</li>
 </ul>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Character</th>
@@ -248,564 +264,564 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/Amog.png" alt="">Amog</td>
-<td>Sus</td>
-<td>Kill 15,000 enemies as Amog</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Amog.png" alt="">Amog</td>
+<td data-label="Skin">Sus</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Amog</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Amog.png" alt="">Amog</td>
-<td>Blue</td>
-<td>Kill 50,000 enemies as Amog</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Amog.png" alt="">Amog</td>
+<td data-label="Skin">Blue</td>
+<td data-label="How to unlock">Kill 50,000 enemies as Amog</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Amog.png" alt="">Amog</td>
-<td>White</td>
-<td>Kill 100,000 enemies as Amog</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Amog.png" alt="">Amog</td>
+<td data-label="Skin">White</td>
+<td data-label="How to unlock">Kill 100,000 enemies as Amog</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Amog.png" alt="">Amog</td>
-<td>Bubble Gum</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Amog</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Amog.png" alt="">Amog</td>
+<td data-label="Skin">Bubble Gum</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Amog</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Amog.png" alt="">Amog</td>
-<td>Toxic</td>
-<td>Kill a Final Boss on Tier 3 as Amog</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Amog.png" alt="">Amog</td>
+<td data-label="Skin">Toxic</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Amog</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Amog.png" alt="">Amog</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 21 seconds as Amog</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Amog.png" alt="">Amog</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 21 seconds as Amog</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Amog.png" alt="">Amog</td>
-<td>Gold</td>
-<td>Get Amog to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Amog.png" alt="">Amog</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Amog to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Athena.png" alt="">Athena</td>
-<td>Crimson</td>
-<td>Kill 15,000 enemies as Athena</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Athena.png" alt="">Athena</td>
+<td data-label="Skin">Crimson</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Athena</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Athena.png" alt="">Athena</td>
-<td>Bubble Gum</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Athena</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Athena.png" alt="">Athena</td>
+<td data-label="Skin">Bubble Gum</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Athena</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Athena.png" alt="">Athena</td>
-<td>Obsidian</td>
-<td>Kill a Final Boss on Tier 3 as Athena</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Athena.png" alt="">Athena</td>
+<td data-label="Skin">Obsidian</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Athena</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Athena.png" alt="">Athena</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 23 seconds as Athena</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Athena.png" alt="">Athena</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 23 seconds as Athena</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Athena.png" alt="">Athena</td>
-<td>Gold</td>
-<td>Get Athena to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Athena.png" alt="">Athena</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Athena to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
-<td>Forest</td>
-<td>Kill 15,000 enemies as Bandit</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
+<td data-label="Skin">Forest</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Bandit</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
-<td>White</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Bandit</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
+<td data-label="Skin">White</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Bandit</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
-<td>Crimson</td>
-<td>Kill a Final Boss on Tier 3 as Bandit</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
+<td data-label="Skin">Crimson</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Bandit</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 21 seconds as Bandit</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 21 seconds as Bandit</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
-<td>Gold</td>
-<td>Get Bandit to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Bandit to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
-<td>Blue</td>
-<td>Kill 15,000 enemies as Birdo</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
+<td data-label="Skin">Blue</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Birdo</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
-<td>Acid</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Birdo</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
+<td data-label="Skin">Acid</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Birdo</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
-<td>Obsidian</td>
-<td>Kill a Final Boss on Tier 3 as Birdo</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
+<td data-label="Skin">Obsidian</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Birdo</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 20 seconds as Birdo</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 20 seconds as Birdo</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
-<td>Gold</td>
-<td>Get Birdo to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Birdo to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bush.png" alt="">Bush</td>
-<td>Blue</td>
-<td>Kill 15,000 enemies as Bush</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Bush.png" alt="">Bush</td>
+<td data-label="Skin">Blue</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Bush</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bush.png" alt="">Bush</td>
-<td>Obsidian</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Bush</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Bush.png" alt="">Bush</td>
+<td data-label="Skin">Obsidian</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Bush</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bush.png" alt="">Bush</td>
-<td>Sakura</td>
-<td>Kill a Final Boss on Tier 3 as Bush</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Bush.png" alt="">Bush</td>
+<td data-label="Skin">Sakura</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Bush</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bush.png" alt="">Bush</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 22 seconds as Bush</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Bush.png" alt="">Bush</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 22 seconds as Bush</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bush.png" alt="">Bush</td>
-<td>Gold</td>
-<td>Get Bush to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Bush.png" alt="">Bush</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Bush to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
-<td>Dark</td>
-<td>Kill 15,000 enemies as CL4NK</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
+<td data-label="Skin">Dark</td>
+<td data-label="How to unlock">Kill 15,000 enemies as CL4NK</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
-<td>Future</td>
-<td>Defeat the first Stage Boss in under 6 minutes as CL4NK</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
+<td data-label="Skin">Future</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as CL4NK</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
-<td>Blaze</td>
-<td>Kill a Final Boss on Tier 3 as CL4NK</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
+<td data-label="Skin">Blaze</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as CL4NK</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 21 seconds as CL4NK</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 21 seconds as CL4NK</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
-<td>Gold</td>
-<td>Get CL4NK to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get CL4NK to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
-<td>Dark</td>
-<td>Kill 15,000 enemies as Calcium</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
+<td data-label="Skin">Dark</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Calcium</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
-<td>Acid</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Calcium</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
+<td data-label="Skin">Acid</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Calcium</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
-<td>Fire</td>
-<td>Kill a Final Boss on Tier 3 as Calcium</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
+<td data-label="Skin">Fire</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Calcium</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 18 seconds as Calcium</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 18 seconds as Calcium</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
-<td>Gold</td>
-<td>Get Calcium to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Calcium to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
-<td>Attorney</td>
-<td>Kill 15,000 enemies as Dicehead</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
+<td data-label="Skin">Attorney</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Dicehead</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
-<td>Red</td>
-<td>Kill 50,000 enemies as Dicehead</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
+<td data-label="Skin">Red</td>
+<td data-label="How to unlock">Kill 50,000 enemies as Dicehead</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
-<td>Yakuza</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Dicehead</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
+<td data-label="Skin">Yakuza</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Dicehead</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
-<td>Jester</td>
-<td>Kill a Final Boss on Tier 3 as Dicehead</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
+<td data-label="Skin">Jester</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Dicehead</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 21 seconds as Dicehead</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 21 seconds as Dicehead</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
-<td>Gold</td>
-<td>Get Dicehead to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Dicehead to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Fox.png" alt="">Fox</td>
-<td>Ice</td>
-<td>Kill 15,000 enemies as Fox</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Fox.png" alt="">Fox</td>
+<td data-label="Skin">Ice</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Fox</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Fox.png" alt="">Fox</td>
-<td>Light</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Fox</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Fox.png" alt="">Fox</td>
+<td data-label="Skin">Light</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Fox</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Fox.png" alt="">Fox</td>
-<td>Dark</td>
-<td>Kill a Final Boss on Tier 3 as Fox</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Fox.png" alt="">Fox</td>
+<td data-label="Skin">Dark</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Fox</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Fox.png" alt="">Fox</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 22 seconds as Fox</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Fox.png" alt="">Fox</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 22 seconds as Fox</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Fox.png" alt="">Fox</td>
-<td>Gold</td>
-<td>Get Fox to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Fox.png" alt="">Fox</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Fox to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
-<td>Giga</td>
-<td>Kill 15,000 enemies as Megachad</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
+<td data-label="Skin">Giga</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Megachad</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
-<td>Zesty</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Megachad</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
+<td data-label="Skin">Zesty</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Megachad</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
-<td>Grandpa</td>
-<td>Kill a Final Boss on Tier 3 as Megachad</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
+<td data-label="Skin">Grandpa</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Megachad</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 22 seconds as Megachad</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 22 seconds as Megachad</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
-<td>Gold</td>
-<td>Get Megachad to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Megachad to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
-<td>Kevin</td>
-<td>As Megachad, defeat the final boss of Forest 3 in under 60 seconds while wearing Kevin hat</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
+<td data-label="Skin">Kevin</td>
+<td data-label="How to unlock">As Megachad, defeat the final boss of Forest 3 in under 60 seconds while wearing Kevin hat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Monke.png" alt="">Monke</td>
-<td>Ice</td>
-<td>Kill 15,000 enemies as Monke</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Monke.png" alt="">Monke</td>
+<td data-label="Skin">Ice</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Monke</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Monke.png" alt="">Monke</td>
-<td>Street</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Monke</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Monke.png" alt="">Monke</td>
+<td data-label="Skin">Street</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Monke</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Monke.png" alt="">Monke</td>
-<td>Fire</td>
-<td>Kill a Final Boss on Tier 3 as Monke</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Monke.png" alt="">Monke</td>
+<td data-label="Skin">Fire</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Monke</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Monke.png" alt="">Monke</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 18 seconds as Monke</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Monke.png" alt="">Monke</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 18 seconds as Monke</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Monke.png" alt="">Monke</td>
-<td>Gold</td>
-<td>Get Monke to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Monke.png" alt="">Monke</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Monke to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
-<td>Crimson</td>
-<td>Kill 15,000 enemies as Ninja</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
+<td data-label="Skin">Crimson</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Ninja</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
-<td>Shinobi</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Ninja</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
+<td data-label="Skin">Shinobi</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Ninja</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
-<td>White</td>
-<td>Kill a Final Boss on Tier 3 as Ninja</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
+<td data-label="Skin">White</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Ninja</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 20 seconds as Ninja</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 20 seconds as Ninja</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
-<td>Gold</td>
-<td>Get Ninja to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Ninja to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
-<td>Winter</td>
-<td>Kill 15,000 enemies as Noelle</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
+<td data-label="Skin">Winter</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Noelle</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
-<td>Bubble Gum</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Noelle</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
+<td data-label="Skin">Bubble Gum</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Noelle</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
-<td>Juice</td>
-<td>Kill a Final Boss on Tier 3 as Noelle</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
+<td data-label="Skin">Juice</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Noelle</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 19 seconds as Noelle</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 19 seconds as Noelle</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
-<td>Gold</td>
-<td>Get Noelle to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Noelle to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
-<td>Earth</td>
-<td>Kill 15,000 enemies as Ogre</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
+<td data-label="Skin">Earth</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Ogre</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
-<td>Winter</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Ogre</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
+<td data-label="Skin">Winter</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Ogre</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
-<td>Red</td>
-<td>Kill a Final Boss on Tier 3 as Ogre</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
+<td data-label="Skin">Red</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Ogre</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 23 seconds as Ogre</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 23 seconds as Ogre</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
-<td>Gold</td>
-<td>Get Ogre to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Ogre to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
-<td>Black</td>
-<td>Kill 15,000 enemies as Roberto</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
+<td data-label="Skin">Black</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Roberto</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
-<td>Acid</td>
-<td>Kill 500,000 enemies as Roberto</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
+<td data-label="Skin">Acid</td>
+<td data-label="How to unlock">Kill 500,000 enemies as Roberto</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
-<td>Purple</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Roberto</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
+<td data-label="Skin">Purple</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Roberto</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
-<td>Red</td>
-<td>Kill a Final Boss on Tier 3 as Roberto</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
+<td data-label="Skin">Red</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Roberto</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 19 seconds as Roberto</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 19 seconds as Roberto</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
-<td>Gold</td>
-<td>Get Roberto to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Roberto to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
-<td>Blue</td>
-<td>Kill 15,000 enemies as Robinette</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
+<td data-label="Skin">Blue</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Robinette</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
-<td>Bubble Gum</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Robinette</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
+<td data-label="Skin">Bubble Gum</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Robinette</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
-<td>Black</td>
-<td>Kill a Final Boss on Tier 3 as Robinette</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
+<td data-label="Skin">Black</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Robinette</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 21 seconds as Robinette</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 21 seconds as Robinette</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
-<td>Gold</td>
-<td>Get Robinette to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Robinette to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
-<td>Blue</td>
-<td>Kill 15,000 enemies as Sir Chadwell</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
+<td data-label="Skin">Blue</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Sir Chadwell</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
-<td>Galaxy</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Sir Chadwell</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
+<td data-label="Skin">Galaxy</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Sir Chadwell</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
-<td>Toxic</td>
-<td>Kill a Final Boss on Tier 3 as Sir Chadwell</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
+<td data-label="Skin">Toxic</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Sir Chadwell</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 24 seconds as Sir Chadwell</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 24 seconds as Sir Chadwell</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
-<td>Gold</td>
-<td>Get Sir Chadwell to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Sir Chadwell to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
-<td>Black</td>
-<td>Kill 15,000 enemies as Sir Oofie</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
+<td data-label="Skin">Black</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Sir Oofie</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
-<td>White</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Sir Oofie</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
+<td data-label="Skin">White</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Sir Oofie</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
-<td>Fire</td>
-<td>Kill a Final Boss on Tier 3 as Sir Oofie</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
+<td data-label="Skin">Fire</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Sir Oofie</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 24 seconds as Sir Oofie</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 24 seconds as Sir Oofie</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
-<td>Gold</td>
-<td>Get Sir Oofie to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Sir Oofie to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
-<td>Green</td>
-<td>Kill 15,000 enemies as Spaceman</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
+<td data-label="Skin">Green</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Spaceman</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
-<td>Dark</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Spaceman</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
+<td data-label="Skin">Dark</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Spaceman</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
-<td>Red</td>
-<td>Kill a Final Boss on Tier 3 as Spaceman</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
+<td data-label="Skin">Red</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Spaceman</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 24 seconds as Spaceman</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 24 seconds as Spaceman</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
-<td>Gold</td>
-<td>Get Spaceman to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Spaceman to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
-<td>Edgy</td>
-<td>Kill 15,000 enemies as Tony McZoom</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
+<td data-label="Skin">Edgy</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Tony McZoom</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
-<td>Red</td>
-<td>Kill 50,000 enemies as Tony McZoom</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
+<td data-label="Skin">Red</td>
+<td data-label="How to unlock">Kill 50,000 enemies as Tony McZoom</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
-<td>Sakura</td>
-<td>Kill 100,000 enemies as Tony McZoom</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
+<td data-label="Skin">Sakura</td>
+<td data-label="How to unlock">Kill 100,000 enemies as Tony McZoom</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
-<td>Galaxy</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Tony McZoom</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
+<td data-label="Skin">Galaxy</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Tony McZoom</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
-<td>Future</td>
-<td>Kill a Final Boss on Tier 3 as Tony McZoom</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
+<td data-label="Skin">Future</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Tony McZoom</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 16 seconds as Tony McZoom</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 16 seconds as Tony McZoom</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
-<td>Gold</td>
-<td>Get Tony McZoom to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Tony McZoom to Rank 100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
-<td>Dark</td>
-<td>Kill 15,000 enemies as Vlad</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
+<td data-label="Skin">Dark</td>
+<td data-label="How to unlock">Kill 15,000 enemies as Vlad</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
-<td>Scarecrow</td>
-<td>Defeat the first Stage Boss in under 6 minutes as Vlad</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
+<td data-label="Skin">Scarecrow</td>
+<td data-label="How to unlock">Defeat the first Stage Boss in under 6 minutes as Vlad</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
-<td>Burnt</td>
-<td>Kill a Final Boss on Tier 3 as Vlad</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
+<td data-label="Skin">Burnt</td>
+<td data-label="How to unlock">Kill a Final Boss on Tier 3 as Vlad</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
-<td>Spooky</td>
-<td>Finish the first crypt on Graveyard in under 22 seconds as Vlad</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
+<td data-label="Skin">Spooky</td>
+<td data-label="How to unlock">Finish the first crypt on Graveyard in under 22 seconds as Vlad</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
-<td>Gold</td>
-<td>Get Vlad to Rank 100</td>
+<td class="nm" data-label="Character"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
+<td data-label="Skin">Gold</td>
+<td data-label="How to unlock">Get Vlad to Rank 100</td>
 </tr>
 </tbody>
 </table></div><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 16, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>

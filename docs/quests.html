@@ -79,6 +79,22 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
 .top{display:none}}
+@media (max-width:640px){
+.tw{border:0;background:none;overflow:visible}
+table[data-m="cards"],table[data-m="cards"] tbody{display:block}
+table[data-m="cards"] thead{display:none}
+table[data-m="cards"] tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:6px 0}
+table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;border:0;padding:5px 14px;background:none!important;white-space:normal}
+table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
+table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
+table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+.tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+table[data-m="grid"] th:first-child{background:var(--code)}
+td.nm{white-space:normal}
+td code,li code,p code{overflow-wrap:anywhere}
+}
 @media print{nav.side,.top{display:none}main{padding:0}}
 </style></head><body><div class="wrap"><nav class="side"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <div class="links"><a href="./" class=""><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html" class=""><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="mechanics.html" class=""><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html" class=""><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="maps.html" class=""><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html" class=""><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html" class=""><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a><a href="economy.html" class=""><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="items.html" class=""><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html" class=""><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html" class=""><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html" class=""><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a><a href="quests.html" class="on"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html" class=""><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html" class=""><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a><a href="max-runs.html" class=""><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="faq.html" class=""><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
@@ -88,7 +104,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <p><strong>Quest rewards:</strong> finishing a quest also pays Silver by its difficulty (<code>MyAchievement.GetSilverReward</code>): <strong>Easy 1, Medium 2, Hard 4, Cooked 8</strong>.</p>
 <p><strong>Quest count unlocks:</strong> several shop upgrades unlock from the total number of quests you've finished: Refresh at 20, Weapon slot at 25 and 45, Skip at 30, Tome slot at 35 and 55, Banish at 40, and Dicehead at 100.</p>
 <h2 id="characters"><img class="ic" src="img/Dicehead.png" alt="">Characters</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Unlocks</th>
@@ -98,104 +114,104 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
-<td>Kill 1,000 skeletons</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
+<td data-label="Quest">Kill 1,000 skeletons</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
-<td>Get the Damage Tome to level 7</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
+<td data-label="Quest">Get the Damage Tome to level 7</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
-<td>Kill 15,000 Goblins</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
+<td data-label="Quest">Kill 15,000 Goblins</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Amog.png" alt="">Amog</td>
-<td>Poison 50,000 enemies with Moldy Cheese</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Amog.png" alt="">Amog</td>
+<td data-label="Quest">Poison 50,000 enemies with Moldy Cheese</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Athena.png" alt="">Athena</td>
-<td>Get the Thorns Tome to level 9</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Athena.png" alt="">Athena</td>
+<td data-label="Quest">Get the Thorns Tome to level 9</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
-<td>Find and defeat Bandit in the Desert</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
+<td data-label="Quest">Find and defeat Bandit in the Desert</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
-<td>Kill 100 enemies using Tornado weapon while carried by a tornado on Desert</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
+<td data-label="Quest">Kill 100 enemies using Tornado weapon while carried by a tornado on Desert</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bush.png" alt="">Bush</td>
-<td>Find and defeat Bush in the Forest</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Bush.png" alt="">Bush</td>
+<td data-label="Quest">Find and defeat Bush in the Forest</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
-<td>Complete Forest Tier 1</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
+<td data-label="Quest">Complete Forest Tier 1</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Monke.png" alt="">Monke</td>
-<td>Find and release Monke in the Forest</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Monke.png" alt="">Monke</td>
+<td data-label="Quest">Find and release Monke in the Forest</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
-<td>Complete Desert Tier 1</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
+<td data-label="Quest">Complete Desert Tier 1</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
-<td>Use a Microwave to duplicate Ice Crystal 3 times in a row</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
+<td data-label="Quest">Use a Microwave to duplicate Ice Crystal 3 times in a row</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
-<td>Complete Forest Tier 2</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
+<td data-label="Quest">Complete Forest Tier 2</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
-<td>Complete 6 Challenges</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
+<td data-label="Quest">Complete 6 Challenges</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
-<td>Complete 2 Challenges</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
+<td data-label="Quest">Complete 2 Challenges</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
-<td>Complete Desert Tier 2</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
+<td data-label="Quest">Complete Desert Tier 2</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
-<td>Complete 100 Quests</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
+<td data-label="Quest">Complete 100 Quests</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
-<td>Complete Forest Tier 3</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
+<td data-label="Quest">Complete Forest Tier 3</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
-<td>Kill Spooky Steve</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
+<td data-label="Quest">Kill Spooky Steve</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="maps"><img class="ic" src="img/Challenges1.png" alt="">Maps</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Unlocks</th>
@@ -205,19 +221,19 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/DesertIconBig.png" alt="">Desert</td>
-<td>Teleport to the 2nd stage on Forest Tier 2 as CL4NK</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/DesertIconBig.png" alt="">Desert</td>
+<td data-label="Quest">Teleport to the 2nd stage on Forest Tier 2 as CL4NK</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/GraveyardIconBig.png" alt="">Graveyard</td>
-<td>As Calcium on Desert Tier 2, summon and defeat the undead boss.</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/GraveyardIconBig.png" alt="">Graveyard</td>
+<td data-label="Quest">As Calcium on Desert Tier 2, summon and defeat the undead boss.</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="weapons"><img class="ic" src="img/Weapons.png" alt="">Weapons</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Unlocks</th>
@@ -227,124 +243,124 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/Aegis.png" alt="">Aegis</td>
-<td>Block 500 damage with Armor as Sir Oofie</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Aegis.png" alt="">Aegis</td>
+<td data-label="Quest">Block 500 damage with Armor as Sir Oofie</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Aura.png" alt="">Aura</td>
-<td>Don't take any damage for 2 minutes</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Aura.png" alt="">Aura</td>
+<td data-label="Quest">Don't take any damage for 2 minutes</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Axe.png" alt="">Axe</td>
-<td>Kill 2,000 enemies using the Sword</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Axe.png" alt="">Axe</td>
+<td data-label="Quest">Kill 2,000 enemies using the Sword</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bananarang.png" alt="">Bananarang</td>
-<td>Find the hidden Banana</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Bananarang.png" alt="">Bananarang</td>
+<td data-label="Quest">Find the hidden Banana</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Revolver.png" alt="">Revolver</td>
-<td>Kill 7,500 enemies</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Revolver.png" alt="">Revolver</td>
+<td data-label="Quest">Kill 7,500 enemies</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/BlackHole.png" alt="">Black Hole</td>
-<td>Get Knockback Tome to level 10</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/BlackHole.png" alt="">Black Hole</td>
+<td data-label="Quest">Get Knockback Tome to level 10</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/BloodMagic.png" alt="">Blood Magic</td>
-<td>Get the Bloody Tome to level 12</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/BloodMagic.png" alt="">Blood Magic</td>
+<td data-label="Quest">Get the Bloody Tome to level 12</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Dexecutioner.png" alt="">Dexecutioner</td>
-<td>Kill 12,500 enemies using the Sword</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Dexecutioner.png" alt="">Dexecutioner</td>
+<td data-label="Quest">Kill 12,500 enemies using the Sword</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Dice.png" alt="">Dice</td>
-<td>Get Luck Tome to level 12</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Dice.png" alt="">Dice</td>
+<td data-label="Quest">Get Luck Tome to level 12</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/DragonsBreath.png" alt="">Dragon's Breath</td>
-<td>Kill 1,000 Wisp as Fox on Desert</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/DragonsBreath.png" alt="">Dragon's Breath</td>
+<td data-label="Quest">Kill 1,000 Wisp as Fox on Desert</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Frostwalker.png" alt="">Frostwalker</td>
-<td>Freeze 1,000 enemies with the Ice Cube</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Frostwalker.png" alt="">Frostwalker</td>
+<td data-label="Quest">Freeze 1,000 enemies with the Ice Cube</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Katana.png" alt="">Katana</td>
-<td>5% chance to find upon breaking a Tumbleweed on Desert Stage 1</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Katana.png" alt="">Katana</td>
+<td data-label="Quest">5% chance to find upon breaking a Tumbleweed on Desert Stage 1</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Mine.png" alt="">Mines</td>
-<td>Kill 7,500 enemies with Slutty Rocket</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Mine.png" alt="">Mines</td>
+<td data-label="Quest">Kill 7,500 enemies with Slutty Rocket</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</td>
-<td>Kill Scorpionussy Miniboss on Desert 3 times</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</td>
+<td data-label="Quest">Kill Scorpionussy Miniboss on Desert 3 times</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Shotgun.png" alt="">Shotgun</td>
-<td>5% chance to find upon breaking a Tumbleweed on Desert Stage 2</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Shotgun.png" alt="">Shotgun</td>
+<td data-label="Quest">5% chance to find upon breaking a Tumbleweed on Desert Stage 2</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/SluttyRocket.png" alt="">Slutty Rocket</td>
-<td>Kill 15,000 enemies as CL4NK</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/SluttyRocket.png" alt="">Slutty Rocket</td>
+<td data-label="Quest">Kill 15,000 enemies as CL4NK</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Sniper.png" alt="">Sniper Rifle</td>
-<td>Get the Precision Tome to level 10</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Sniper.png" alt="">Sniper Rifle</td>
+<td data-label="Quest">Get the Precision Tome to level 10</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Space Noodle.png" alt="">Space Noodle</td>
-<td>Complete Desert Tier 2 as Tony McZoom</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Space Noodle.png" alt="">Space Noodle</td>
+<td data-label="Quest">Complete Desert Tier 2 as Tony McZoom</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Tornado.png" alt="">Tornado</td>
-<td>Charge a Charge Shrine during a Sandstorm on Desert</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Tornado.png" alt="">Tornado</td>
+<td data-label="Quest">Charge a Charge Shrine during a Sandstorm on Desert</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bluetooth Knife.png" alt="">Wireless Dagger</td>
-<td>Get the Lightning Staff to level 15</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Bluetooth Knife.png" alt="">Wireless Dagger</td>
+<td data-label="Quest">Get the Lightning Staff to level 15</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/HeroSword.png" alt="">Hero Sword</td>
-<td>Defeat a Stage Boss without picking up any items, powerups or using shrines.</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/HeroSword.png" alt="">Hero Sword</td>
+<td data-label="Quest">Defeat a Stage Boss without picking up any items, powerups or using shrines.</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/CorruptedSword.png" alt="">Corrupted Sword</td>
-<td>Get Cursed Tome to level 20 in under 10 minutes</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/CorruptedSword.png" alt="">Corrupted Sword</td>
+<td data-label="Quest">Get Cursed Tome to level 20 in under 10 minutes</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Scythe.png" alt="">Scythe</td>
-<td>Kill Big Bob on Graveyard</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Scythe.png" alt="">Scythe</td>
+<td data-label="Quest">Kill Big Bob on Graveyard</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="tomes"><img class="ic" src="img/tomes.png" alt="">Tomes</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Unlocks</th>
@@ -354,59 +370,59 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/ArmorTome.png" alt="">Armor Tome</td>
-<td>Kill 5,000 enemies as Sir Oofie</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ArmorTome.png" alt="">Armor Tome</td>
+<td data-label="Quest">Kill 5,000 enemies as Sir Oofie</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/AttractionTome.png" alt="">Attraction Tome</td>
-<td>Use Shrine of Succ 8 times.</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/AttractionTome.png" alt="">Attraction Tome</td>
+<td data-label="Quest">Use Shrine of Succ 8 times.</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/BloodTOme.png" alt="">Bloody Tome</td>
-<td>Kill 12,500 enemies</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/BloodTOme.png" alt="">Bloody Tome</td>
+<td data-label="Quest">Kill 12,500 enemies</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/DurationTome.png" alt="">Duration Tome</td>
-<td>Upgrade Axe to level 10</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/DurationTome.png" alt="">Duration Tome</td>
+<td data-label="Quest">Upgrade Axe to level 10</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/QuantityTome.png" alt="">Quantity Tome</td>
-<td>Fire 5,000 projectiles</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/QuantityTome.png" alt="">Quantity Tome</td>
+<td data-label="Quest">Fire 5,000 projectiles</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td>Thorns Tome</td>
-<td>Block 250 attacks with Aegis</td>
-<td>Easy (1 silver)</td>
+<td data-label="Unlocks">Thorns Tome</td>
+<td data-label="Quest">Block 250 attacks with Aegis</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/LuckTome.png" alt="">Luck Tome</td>
-<td>0.01% chance to drop when killing an enemy</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/LuckTome.png" alt="">Luck Tome</td>
+<td data-label="Quest">0.01% chance to drop when killing an enemy</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/CursedTome.png" alt="">Cursed Tome</td>
-<td>Beat the Stage Boss in under 5 minutes</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/CursedTome.png" alt="">Cursed Tome</td>
+<td data-label="Quest">Beat the Stage Boss in under 5 minutes</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/XpTome.png" alt="">XP Tome</td>
-<td>Break 20 pots in a single run</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/XpTome.png" alt="">XP Tome</td>
+<td data-label="Quest">Break 20 pots in a single run</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ChaosTome.png" alt="">Chaos Tome</td>
-<td>Charge all Charge Shrine on a Tier 3 run across all 3 stages without leaving the charge zone</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ChaosTome.png" alt="">Chaos Tome</td>
+<td data-label="Quest">Charge all Charge Shrine on a Tier 3 run across all 3 stages without leaving the charge zone</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="items"><img class="ic" src="img/ItemBobsLantern.png" alt="">Items</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Unlocks</th>
@@ -416,254 +432,254 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemBattery.png" alt="">Battery</td>
-<td>Upgrade Cooldown Tome to Level 5</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemBattery.png" alt="">Battery</td>
+<td data-label="Quest">Upgrade Cooldown Tome to Level 5</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemBossBuster.png" alt="">Boss Buster</td>
-<td>Defeat a Stage Boss in under 30 seconds</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemBossBuster.png" alt="">Boss Buster</td>
+<td data-label="Quest">Defeat a Stage Boss in under 30 seconds</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemCactus.png" alt="">Cactus</td>
-<td>Kill 100 cactus enemies with Thorns damage</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemCactus.png" alt="">Cactus</td>
+<td data-label="Quest">Kill 100 cactus enemies with Thorns damage</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemCursedDoll.png" alt="">Cursed Doll</td>
-<td>Die 10 times</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemCursedDoll.png" alt="">Cursed Doll</td>
+<td data-label="Quest">Die 10 times</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemShadowJuice.png" alt="">Forbidden Juice</td>
-<td>Crit 100 times</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemShadowJuice.png" alt="">Forbidden Juice</td>
+<td data-label="Quest">Crit 100 times</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemGhost.png" alt="">Ghost</td>
-<td>Survive the Final Swarm for 60 seconds</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemGhost.png" alt="">Ghost</td>
+<td data-label="Quest">Survive the Final Swarm for 60 seconds</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemIceCrystal.png" alt="">Ice Crystal</td>
-<td>Get 50 kills with Frostwalker</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemIceCrystal.png" alt="">Ice Crystal</td>
+<td data-label="Quest">Get 50 kills with Frostwalker</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemKey.png" alt="">Key</td>
-<td>Purchase 25 chests</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemKey.png" alt="">Key</td>
+<td data-label="Quest">Purchase 25 chests</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemOldMask.png" alt="">Old Mask</td>
-<td>Find on Graveyard</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemOldMask.png" alt="">Old Mask</td>
+<td data-label="Quest">Find on Graveyard</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemSkuleg.png" alt="">Skuleg</td>
-<td>Obtain 40% Difficulty</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemSkuleg.png" alt="">Skuleg</td>
+<td data-label="Quest">Obtain 40% Difficulty</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemTacticalGoggles.png" alt="">Tactical Glasses</td>
-<td>Defeat a Miniboss in 25 seconds</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemTacticalGoggles.png" alt="">Tactical Glasses</td>
+<td data-label="Quest">Defeat a Miniboss in 25 seconds</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemTurboSocks.png" alt="">Turbo Socks</td>
-<td>Upgrade Agility Tome to Level 5</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemTurboSocks.png" alt="">Turbo Socks</td>
+<td data-label="Quest">Upgrade Agility Tome to Level 5</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemBrassKnuckle.png" alt="">Brass Knuckles</td>
-<td>Kill 5,000 enemies with the Sword</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemBrassKnuckle.png" alt="">Brass Knuckles</td>
+<td data-label="Quest">Kill 5,000 enemies with the Sword</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemDemonBlade.png" alt="">Demon Blade</td>
-<td>Heal for 350 HP using Lifesteal</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemDemonBlade.png" alt="">Demon Blade</td>
+<td data-label="Quest">Heal for 350 HP using Lifesteal</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemDemonBlood.png" alt="">Demonic Blood</td>
-<td>Increase Max HP with Blood Magic 400 times</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemDemonBlood.png" alt="">Demonic Blood</td>
+<td data-label="Quest">Increase Max HP with Blood Magic 400 times</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemEchoShard.png" alt="">Echo Shard</td>
-<td>Upgrade XP Tome to Level 8</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemEchoShard.png" alt="">Echo Shard</td>
+<td data-label="Quest">Upgrade XP Tome to Level 8</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemGoldenSneakers.png" alt="">Golden Sneakers</td>
-<td>Break 150 pots</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemGoldenSneakers.png" alt="">Golden Sneakers</td>
+<td data-label="Quest">Break 150 pots</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/IdleJuice.png" alt="">Idle Juice</td>
-<td>Kill 500 enemies while standing still</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/IdleJuice.png" alt="">Idle Juice</td>
+<td data-label="Quest">Kill 500 enemies while standing still</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemLeechingCrystal.png" alt="">Leeching Crystal</td>
-<td>Upgrade Regen Tome to lvl 8</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemLeechingCrystal.png" alt="">Leeching Crystal</td>
+<td data-label="Quest">Upgrade Regen Tome to lvl 8</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemGlovesPoison.png" alt="">Moldy Gloves (Poison)</td>
-<td>Use a Microwave to duplicate Moldy Cheese 3 times in a row</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemGlovesPoison.png" alt="">Moldy Gloves (Poison)</td>
+<td data-label="Quest">Use a Microwave to duplicate Moldy Cheese 3 times in a row</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemPumpkin.png" alt="">Pumpkin</td>
-<td>As Roberto, break every pumpkin on Graveyard</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemPumpkin.png" alt="">Pumpkin</td>
+<td data-label="Quest">As Roberto, break every pumpkin on Graveyard</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemBobDead.png" alt="">Bob (Dead)</td>
-<td>Survive the Final Swarm for 2 minutes</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemBobDead.png" alt="">Bob (Dead)</td>
+<td data-label="Quest">Survive the Final Swarm for 2 minutes</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemBobsLantern.png" alt="">Bob's Light (Lantern)</td>
-<td>Kill Big Bob on Graveyard using the damage from a lamp as the killing blow.</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemBobsLantern.png" alt="">Bob's Light (Lantern)</td>
+<td data-label="Quest">Kill Big Bob on Graveyard using the damage from a lamp as the killing blow.</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemGlovesCursed.png" alt="">Cursed Gloves</td>
-<td>Get the Cursed Tome to level 10</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemGlovesCursed.png" alt="">Cursed Gloves</td>
+<td data-label="Quest">Get the Cursed Tome to level 10</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemDemonSoul.png" alt="">Demonic Soul</td>
-<td>Reach level 30 as Calcium</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemDemonSoul.png" alt="">Demonic Soul</td>
+<td data-label="Quest">Reach level 30 as Calcium</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemEagleClaw.png" alt="">Eagle Claw</td>
-<td>Kill 10,000 enemies as Birdo</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemEagleClaw.png" alt="">Eagle Claw</td>
+<td data-label="Quest">Kill 10,000 enemies as Birdo</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/GamerLens.png" alt="">Gamer Goggles</td>
-<td>Defeat a Stage Boss with less than 10% HP left</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/GamerLens.png" alt="">Gamer Goggles</td>
+<td data-label="Quest">Defeat a Stage Boss with less than 10% HP left</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Gasmask.png" alt="">Gas Mask</td>
-<td>Kill 5,000 enemies as Amog</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Gasmask.png" alt="">Gas Mask</td>
+<td data-label="Quest">Kill 5,000 enemies as Amog</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/GrandmasSecretTonic.png" alt="">Grandma's Secret Tonic</td>
-<td>Kill 3,000 enemies with Sniper Rifle</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/GrandmasSecretTonic.png" alt="">Grandma's Secret Tonic</td>
+<td data-label="Quest">Kill 3,000 enemies with Sniper Rifle</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Kevin.png" alt="">Kevin</td>
-<td>Obtain 3 Leeching Crystal in a run</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Kevin.png" alt="">Kevin</td>
+<td data-label="Quest">Obtain 3 Leeching Crystal in a run</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemQuinsMask.png" alt="">Quin's Mask</td>
-<td>Defeat a Stage Boss as Athena, landing the killing blow with Aegis</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemQuinsMask.png" alt="">Quin's Mask</td>
+<td data-label="Quest">Defeat a Stage Boss as Athena, landing the killing blow with Aegis</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemShatteredWisdom.png" alt="">Shattered Knowledge</td>
-<td>Upgrade Attraction Tome to Level 8</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemShatteredWisdom.png" alt="">Shattered Knowledge</td>
+<td data-label="Quest">Upgrade Attraction Tome to Level 8</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemSluttyCannon.png" alt="">Slutty Cannon</td>
-<td>Kill 5,000 enemies with Slutty Rocket</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemSluttyCannon.png" alt="">Slutty Cannon</td>
+<td data-label="Quest">Kill 5,000 enemies with Slutty Rocket</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ToxicBarrel.png" alt="">Toxic Barrel</td>
-<td>Kill 2,000 enemies using Poison damage</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ToxicBarrel.png" alt="">Toxic Barrel</td>
+<td data-label="Quest">Kill 2,000 enemies using Poison damage</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemRollerblades.png" alt="">Turbo Skates</td>
-<td>Upgrade both Cooldown Tome and Agility Tome to Level 5 in a run</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemRollerblades.png" alt="">Turbo Skates</td>
+<td data-label="Quest">Upgrade both Cooldown Tome and Agility Tome to Level 5 in a run</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemAnvil.png" alt="">Anvil</td>
-<td>Complete 3 Challenges</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemAnvil.png" alt="">Anvil</td>
+<td data-label="Quest">Complete 3 Challenges</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bloody Cleaver.png" alt="">Bloody Cleaver</td>
-<td>Reach Level 50 as Vlad</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Bloody Cleaver.png" alt="">Bloody Cleaver</td>
+<td data-label="Quest">Reach Level 50 as Vlad</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Chonkplate.png" alt="">Chonkplate</td>
-<td>Get Max HP to 500</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Chonkplate.png" alt="">Chonkplate</td>
+<td data-label="Quest">Get Max HP to 500</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemDragonfire.png" alt="">Dragonfire</td>
-<td>Kill 4,000 enemies using fire damage</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemDragonfire.png" alt="">Dragonfire</td>
+<td data-label="Quest">Kill 4,000 enemies using fire damage</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemEnergyCore.png" alt="">Energy Core</td>
-<td>Defeat a Final Boss 2 times</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemEnergyCore.png" alt="">Energy Core</td>
+<td data-label="Quest">Defeat a Final Boss 2 times</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemHolyBook.png" alt="">Holy Book</td>
-<td>Kill a first Stage Boss without taking any damage that run</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemHolyBook.png" alt="">Holy Book</td>
+<td data-label="Quest">Kill a first Stage Boss without taking any damage that run</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/JoesDagger.png" alt="">Joe's Dagger</td>
-<td>Kill 10,000 enemies using the Dexecutioner</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/JoesDagger.png" alt="">Joe's Dagger</td>
+<td data-label="Quest">Kill 10,000 enemies using the Dexecutioner</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemLightningOrb.png" alt="">Lightning Orb</td>
-<td>Kill 3,000 enemies using lightning damage</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemLightningOrb.png" alt="">Lightning Orb</td>
+<td data-label="Quest">Kill 3,000 enemies using lightning damage</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemPot.png" alt="">Pot (Stainless Steel)</td>
-<td>Open every chest and pot in the first crypt on Graveyard.</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemPot.png" alt="">Pot (Stainless Steel)</td>
+<td data-label="Quest">Open every chest and pot in the first crypt on Graveyard.</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemSnek.png" alt="">Snek</td>
-<td>Find in the crypt on Graveyard</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemSnek.png" alt="">Snek</td>
+<td data-label="Quest">Find in the crypt on Graveyard</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemSoulHarvester.png" alt="">Soul Harvester</td>
-<td>Survive the Final Swarm for 6 minutes</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemSoulHarvester.png" alt="">Soul Harvester</td>
+<td data-label="Quest">Survive the Final Swarm for 6 minutes</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Speed boi.png" alt="">Speed Boi</td>
-<td>Complete a stage with at least 2 Boss Curse activated</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Speed boi.png" alt="">Speed Boi</td>
+<td data-label="Quest">Complete a stage with at least 2 Boss Curse activated</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemSuckyHoof.png" alt="">Sucky Magnet</td>
-<td>Complete every single Charge Shrine on the map</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemSuckyHoof.png" alt="">Sucky Magnet</td>
+<td data-label="Quest">Complete every single Charge Shrine on the map</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemWizardsHat.png" alt="">Wizard's Hat</td>
-<td>As Vlad, use Pot (stainless steel) to upgrade any weapon above the max level of 40</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemWizardsHat.png" alt="">Wizard's Hat</td>
+<td data-label="Quest">As Vlad, use Pot (stainless steel) to upgrade any weapon above the max level of 40</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="shop-upgrades"><img class="ic" src="img/Gold.png" alt="">Shop upgrades</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Unlocks</th>
@@ -673,54 +689,54 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/Banish2.png" alt="">Banish</td>
-<td>Complete 40 Quests</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Banish2.png" alt="">Banish</td>
+<td data-label="Quest">Complete 40 Quests</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Refresh2.png" alt="">Refresh</td>
-<td>Complete 20 Quests</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Refresh2.png" alt="">Refresh</td>
+<td data-label="Quest">Complete 20 Quests</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Skip2.png" alt="">Skip</td>
-<td>Complete 30 Quests</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Skip2.png" alt="">Skip</td>
+<td data-label="Quest">Complete 30 Quests</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/tomes.png" alt="">Tome slot</td>
-<td>Complete 35 Quests</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/tomes.png" alt="">Tome slot</td>
+<td data-label="Quest">Complete 35 Quests</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Weapons.png" alt="">Weapon slot</td>
-<td>Complete 25 Quests</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Weapons.png" alt="">Weapon slot</td>
+<td data-label="Quest">Complete 25 Quests</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/boombox.png" alt="">Boombox (pick your music)</td>
-<td>Find and activate all the boomboxes on Forest</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/boombox.png" alt="">Boombox (pick your music)</td>
+<td data-label="Quest">Find and activate all the boomboxes on Forest</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/tomes.png" alt="">Tome slot</td>
-<td>Complete 55 Quests</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/tomes.png" alt="">Tome slot</td>
+<td data-label="Quest">Complete 55 Quests</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Weapons.png" alt="">Weapon slot</td>
-<td>Complete 45 Quests</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/Weapons.png" alt="">Weapon slot</td>
+<td data-label="Quest">Complete 45 Quests</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/toggler.png" alt="">Toggler</td>
-<td>Purchase 40 unlocks</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/toggler.png" alt="">Toggler</td>
+<td data-label="Quest">Purchase 40 unlocks</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="other-quests"><img class="ic" src="img/allQuests.png" alt="">Other quests</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Unlocks</th>
@@ -730,29 +746,29 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge milestone</td>
-<td>Complete 5 Challenges</td>
-<td>Easy (1 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge milestone</td>
+<td data-label="Quest">Complete 5 Challenges</td>
+<td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge milestone</td>
-<td>Complete 10 Challenges</td>
-<td>Medium (2 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge milestone</td>
+<td data-label="Quest">Complete 10 Challenges</td>
+<td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge milestone</td>
-<td>Complete 20 Challenges</td>
-<td>Hard (4 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge milestone</td>
+<td data-label="Quest">Complete 20 Challenges</td>
+<td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/allQuests.png" alt="">Achievement only</td>
-<td>Avoid taking Fall Damage 10 times by hugging walls</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/allQuests.png" alt="">Achievement only</td>
+<td data-label="Quest">Avoid taking Fall Damage 10 times by hugging walls</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge milestone</td>
-<td>Complete 30 Challenges</td>
-<td>Cooked (8 silver)</td>
+<td class="nm" data-label="Unlocks"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge milestone</td>
+<td data-label="Quest">Complete 30 Challenges</td>
+<td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
 </tbody>
 </table></div>

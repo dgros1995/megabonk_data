@@ -79,6 +79,22 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
 .top{display:none}}
+@media (max-width:640px){
+.tw{border:0;background:none;overflow:visible}
+table[data-m="cards"],table[data-m="cards"] tbody{display:block}
+table[data-m="cards"] thead{display:none}
+table[data-m="cards"] tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:6px 0}
+table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;border:0;padding:5px 14px;background:none!important;white-space:normal}
+table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
+table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
+table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+.tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+table[data-m="grid"] th:first-child{background:var(--code)}
+td.nm{white-space:normal}
+td code,li code,p code{overflow-wrap:anywhere}
+}
 @media print{nav.side,.top{display:none}main{padding:0}}
 </style></head><body><div class="wrap"><nav class="side"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <div class="links"><a href="./" class=""><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html" class=""><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="mechanics.html" class=""><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html" class=""><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="maps.html" class=""><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html" class=""><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html" class=""><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a><a href="economy.html" class=""><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="items.html" class=""><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html" class=""><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html" class=""><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html" class=""><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a><a href="quests.html" class=""><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html" class=""><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html" class=""><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a><a href="max-runs.html" class=""><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="faq.html" class="on"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
@@ -86,7 +102,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <p>Quick answers, each traced to the game's code or to 1,000+ scanned maps.</p>
 <h2 id="how-many-of-each-thing-can-a-map-have"><img class="ic" src="img/Challenges1.png" alt="">How many of each thing can a map have?</h2>
 <p>The map generator (<code>SpawnInteractables</code>, <code>RandomObjectPlacer</code>) places a fixed number of most things per stage and fills a fixed number of <strong>shrine slots</strong> from the map's shrine list.</p>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Thing</th>
@@ -97,59 +113,59 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td><strong>Shrine slots</strong> (Shady Guy, Moai, Boss Curse, Magnet, Challenge; + Bald Heads on Graveyard)</td>
-<td><strong>14</strong> total (<code>numShrines = 14</code>)</td>
-<td><strong>28</strong> (×2)</td>
-<td>Each slot picks a type at random, so one type can take anywhere from 0 to all of them. Seen on Forest: 0–8 of each, averaging 2.8 (14 ÷ 5).</td>
+<td data-label="Thing"><strong>Shrine slots</strong> (Shady Guy, Moai, Boss Curse, Magnet, Challenge; + Bald Heads on Graveyard)</td>
+<td data-label="Forest / Desert, per stage"><strong>14</strong> total (<code>numShrines = 14</code>)</td>
+<td data-label="Graveyard"><strong>28</strong> (×2)</td>
+<td data-label="Notes">Each slot picks a type at random, so one type can take anywhere from 0 to all of them. Seen on Forest: 0–8 of each, averaging 2.8 (14 ÷ 5).</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/psd_ChestOpen.png" alt="">Chests</td>
-<td><strong>46</strong> (<code>numChestsPerStage = 46</code>) × Chest amount stat</td>
-<td>69 (×1.5)</td>
-<td>Some can spawn as free chests.</td>
+<td class="nm" data-label="Thing"><img class="ic" src="img/psd_ChestOpen.png" alt="">Chests</td>
+<td data-label="Forest / Desert, per stage"><strong>46</strong> (<code>numChestsPerStage = 46</code>) × Chest amount stat</td>
+<td data-label="Graveyard">69 (×1.5)</td>
+<td data-label="Notes">Some can spawn as free chests.</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Zap.png" alt="">Charge Shrines</td>
-<td>15 (+2 per Beacon on later stages)</td>
-<td>22</td>
-<td>Seen 15–19 on Forest.</td>
+<td class="nm" data-label="Thing"><img class="ic" src="img/Zap.png" alt="">Charge Shrines</td>
+<td data-label="Forest / Desert, per stage">15 (+2 per Beacon on later stages)</td>
+<td data-label="Graveyard">22</td>
+<td data-label="Notes">Seen 15–19 on Forest.</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Gold.png" alt="">Greed Shrines</td>
-<td>8</td>
-<td>12</td>
-<td></td>
+<td class="nm" data-label="Thing"><img class="ic" src="img/Gold.png" alt="">Greed Shrines</td>
+<td data-label="Forest / Desert, per stage">8</td>
+<td data-label="Graveyard">12</td>
+<td data-label="Notes"></td>
 </tr>
 <tr>
-<td>Pots</td>
-<td>55 (+8 per Pumpkin on later stages)</td>
-<td>~105</td>
-<td></td>
+<td data-label="Thing">Pots</td>
+<td data-label="Forest / Desert, per stage">55 (+8 per Pumpkin on later stages)</td>
+<td data-label="Graveyard">~105</td>
+<td data-label="Notes"></td>
 </tr>
 <tr>
-<td>Microwaves</td>
-<td>1–2</td>
-<td>4–8</td>
-<td></td>
+<td data-label="Thing">Microwaves</td>
+<td data-label="Forest / Desert, per stage">1–2</td>
+<td data-label="Graveyard">4–8</td>
+<td data-label="Notes"></td>
 </tr>
 <tr>
-<td>Gravestones</td>
-<td>—</td>
-<td>22</td>
-<td></td>
+<td data-label="Thing">Gravestones</td>
+<td data-label="Forest / Desert, per stage">—</td>
+<td data-label="Graveyard">22</td>
+<td data-label="Notes"></td>
 </tr>
 <tr>
-<td>Crypt (inside the Graveyard)</td>
-<td>—</td>
-<td>6 chests, 16–20 pots</td>
-<td></td>
+<td data-label="Thing">Crypt (inside the Graveyard)</td>
+<td data-label="Forest / Desert, per stage">—</td>
+<td data-label="Graveyard">6 chests, 16–20 pots</td>
+<td data-label="Notes"></td>
 </tr>
 </tbody>
 </table></div>
 <p><strong>How many Bald Heads?</strong> They share the Graveyard's 28 shrine slots with Shady Guys, Moais, Boss Curses, Magnet Shrines and Challenges. In the Graveyard maps recorded so far there were 10 and 11, more than the other types (2–7 each), so they seem to be weighted more heavily in the Graveyard's list. That's from only two maps.</p>
 <p><strong>Since the shrine slots are shared,</strong> a map with many Shady Guys has fewer Moais, Boss Curses, Challenges and Magnet Shrines, and vice versa. On Forest the five always add up to 14.</p>
 <h2 id="what-does-luck-affect"><img class="ic" src="img/LuckTome.png" alt="">What does Luck affect?</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Thing</th>
@@ -159,54 +175,54 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/psd_ChestOpen.png" alt="">Chest items</td>
-<td><strong>Yes, full</strong></td>
-<td>Chest rarity table in <a href="economy.html">Luck, chests &amp; shrines</a></td>
+<td class="nm" data-label="Thing"><img class="ic" src="img/psd_ChestOpen.png" alt="">Chest items</td>
+<td data-label="Uses Luck?"><strong>Yes, full</strong></td>
+<td data-label="How">Chest rarity table in <a href="economy.html">Luck, chests &amp; shrines</a></td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Stonks.png" alt="">Level-up offers</td>
-<td><strong>Yes, full</strong></td>
-<td>Offer rarity table</td>
+<td class="nm" data-label="Thing"><img class="ic" src="img/Stonks.png" alt="">Level-up offers</td>
+<td data-label="Uses Luck?"><strong>Yes, full</strong></td>
+<td data-label="How">Offer rarity table</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Zap.png" alt="">Charge Shrine stat offers</td>
-<td><strong>Yes, full</strong></td>
-<td>Same function as level-up offers</td>
+<td class="nm" data-label="Thing"><img class="ic" src="img/Zap.png" alt="">Charge Shrine stat offers</td>
+<td data-label="Uses Luck?"><strong>Yes, full</strong></td>
+<td data-label="How">Same function as level-up offers</td>
 </tr>
 <tr>
-<td>Moai items</td>
-<td><strong>Yes, full</strong></td>
-<td></td>
+<td data-label="Thing">Moai items</td>
+<td data-label="Uses Luck?"><strong>Yes, full</strong></td>
+<td data-label="How"></td>
 </tr>
 <tr>
-<td>Shady Guy vendor rarity</td>
-<td><strong>No</strong></td>
-<td>Rolled at map load with Luck 0: Common 53%, Rare 27%, Epic 13%, Legendary 7%</td>
+<td data-label="Thing">Shady Guy vendor rarity</td>
+<td data-label="Uses Luck?"><strong>No</strong></td>
+<td data-label="How">Rolled at map load with Luck 0: Common 53%, Rare 27%, Epic 13%, Legendary 7%</td>
 </tr>
 <tr>
-<td>Shady Guy item rarity</td>
-<td><strong>Yes, at half strength</strong></td>
-<td>Each item slot rolls a chest rarity with <strong>Luck × 0.5</strong>, and keeps whichever is higher: that roll or the vendor's rarity. So a Common vendor can still show Rare, Epic or Legendary items when your Luck is high.</td>
+<td data-label="Thing">Shady Guy item rarity</td>
+<td data-label="Uses Luck?"><strong>Yes, at half strength</strong></td>
+<td data-label="How">Each item slot rolls a chest rarity with <strong>Luck × 0.5</strong>, and keeps whichever is higher: that roll or the vendor's rarity. So a Common vendor can still show Rare, Epic or Legendary items when your Luck is high.</td>
 </tr>
 <tr>
-<td>Microwave rarity</td>
-<td><strong>No</strong></td>
-<td>Rolled at map load: Common 75%, Rare 15%, Epic 7.5%, Legendary 2.5%</td>
+<td data-label="Thing">Microwave rarity</td>
+<td data-label="Uses Luck?"><strong>No</strong></td>
+<td data-label="How">Rolled at map load: Common 75%, Rare 15%, Epic 7.5%, Legendary 2.5%</td>
 </tr>
 <tr>
-<td>Balance Shrine (Bald Heads)</td>
-<td><strong>No</strong></td>
-<td>Its trades (one stat ×2, another ×0.5) don't read Luck</td>
+<td data-label="Thing">Balance Shrine (Bald Heads)</td>
+<td data-label="Uses Luck?"><strong>No</strong></td>
+<td data-label="How">Its trades (one stat ×2, another ×0.5) don't read Luck</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ChallengeIcon.png" alt="">Greed Shrine, Boss Curse, Magnet, Challenge</td>
-<td><strong>No</strong></td>
-<td></td>
+<td class="nm" data-label="Thing"><img class="ic" src="img/ChallengeIcon.png" alt="">Greed Shrine, Boss Curse, Magnet, Challenge</td>
+<td data-label="Uses Luck?"><strong>No</strong></td>
+<td data-label="How"></td>
 </tr>
 <tr>
-<td>Pot drops</td>
-<td>Not by Luck. Pots <em>give</em> Luck (+0.5% each on stage 1)</td>
-<td></td>
+<td data-label="Thing">Pot drops</td>
+<td data-label="Uses Luck?">Not by Luck. Pots <em>give</em> Luck (+0.5% each on stage 1)</td>
+<td data-label="How"></td>
 </tr>
 </tbody>
 </table></div>

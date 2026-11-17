@@ -79,6 +79,22 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
 .top{display:none}}
+@media (max-width:640px){
+.tw{border:0;background:none;overflow:visible}
+table[data-m="cards"],table[data-m="cards"] tbody{display:block}
+table[data-m="cards"] thead{display:none}
+table[data-m="cards"] tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:6px 0}
+table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;border:0;padding:5px 14px;background:none!important;white-space:normal}
+table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
+table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
+table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+.tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+table[data-m="grid"] th:first-child{background:var(--code)}
+td.nm{white-space:normal}
+td code,li code,p code{overflow-wrap:anywhere}
+}
 @media print{nav.side,.top{display:none}main{padding:0}}
 </style></head><body><div class="wrap"><nav class="side"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <div class="links"><a href="./" class=""><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html" class=""><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="mechanics.html" class=""><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html" class=""><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="maps.html" class=""><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html" class=""><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html" class=""><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a><a href="economy.html" class=""><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="items.html" class="on"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html" class=""><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html" class=""><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html" class=""><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a><a href="quests.html" class=""><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html" class=""><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html" class=""><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a><a href="max-runs.html" class=""><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="faq.html" class=""><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
@@ -87,7 +103,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <p><strong>How item bonuses stack:</strong> almost every plain stat item (Gym Sauce, Beer, Battery, Clover, Forbidden Juice, Oats…) adds to the <strong>flat</strong> part of the stat. They add together, then get multiplied by your level-up % bonuses and by the Damage Tome. See <a href="mechanics.html">Core math</a>.</p>
 <p><strong>Use</strong> marks what an item does for a high-kill run: <strong>Kill</strong>, <strong>Kill (swarm)</strong> (still works deep into the final swarm), <strong>Survive</strong>, <strong>Scale</strong> (levels, XP, luck), <strong>Economy</strong>, <strong>Difficulty</strong> (raises it, meaning more enemies) or <strong>Situational</strong>.</p>
 <h2 id="legendary-22">Legendary (22)</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Item</th>
@@ -97,119 +113,119 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemAnvil.png" alt="">Anvil</strong></td>
-<td>Weapon upgrades roll one extra stat line. Max 1.</td>
-<td>Scale</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemAnvil.png" alt="">Anvil</strong></td>
+<td data-label="What the code does">Weapon upgrades roll one extra stat line. Max 1.</td>
+<td data-label="Use">Scale</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemBonker.png" alt="">Big Bonk</strong></td>
-<td>Big Bonk: 2% chance (+1.5% per extra copy) × proc coefficient to deal 20× (+10× per extra copy) the hit's damage to up to 5 enemies within 6 + copies (max 10).</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemBonker.png" alt="">Big Bonk</strong></td>
+<td data-label="What the code does">Big Bonk: 2% chance (+1.5% per extra copy) × proc coefficient to deal 20× (+10× per extra copy) the hit's damage to up to 5 enemies within 6 + copies (max 10).</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/Bloody Cleaver.png" alt="">Bloody Cleaver</strong></td>
-<td>50% per copy × proc coefficient to add a Bloodmark stack; each lifesteal proc also adds a stack.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/Bloody Cleaver.png" alt="">Bloody Cleaver</strong></td>
+<td data-label="What the code does">50% per copy × proc coefficient to add a Bloodmark stack; each lifesteal proc also adds a stack.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/Chonkplate.png" alt="">Chonkplate</strong></td>
-<td>+20% Lifesteal and +75% Overheal per copy (flat).</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/Chonkplate.png" alt="">Chonkplate</strong></td>
+<td data-label="What the code does">+20% Lifesteal and +75% Overheal per copy (flat).</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemDragonfire.png" alt="">Dragonfire</strong></td>
-<td>Two rolls per hit, each 0.15n / (0.15n + 0.5): burn for 3 s, and a fire field (radius 6 × Size). 1 copy 23%, 3 copies 47%, 10 copies 75%.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemDragonfire.png" alt="">Dragonfire</strong></td>
+<td data-label="What the code does">Two rolls per hit, each 0.15n / (0.15n + 0.5): burn for 3 s, and a fire field (radius 6 × Size). 1 copy 23%, 3 copies 47%, 10 copies 75%.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemEnergyCore.png" alt="">Energy Core</strong></td>
-<td>Fires 4 + 2 per extra copy orbs every 4 s, range 70, each dealing 2 × (8 + level) + 8.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemEnergyCore.png" alt="">Energy Core</strong></td>
+<td data-label="What the code does">Fires 4 + 2 per extra copy orbs every 4 s, range 70, each dealing 2 × (8 + level) + 8.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemFork.png" alt="">Giant Fork</strong></td>
-<td>+15% crit chance per copy (flat). Separate Megacrit roll: 14% per copy × proc coefficient, multiplying the hit by 4 + 0.15 × copies.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemFork.png" alt="">Giant Fork</strong></td>
+<td data-label="What the code does">+15% crit chance per copy (flat). Separate Megacrit roll: 14% per copy × proc coefficient, multiplying the hit by 4 + 0.15 × copies.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemGoldenRing.png" alt="">Golden Ring</strong></td>
-<td>No effect. Not in the drop pool; the ideal item to trade at a Legendary Microwave.</td>
-<td>—</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemGoldenRing.png" alt="">Golden Ring</strong></td>
+<td data-label="What the code does">No effect. Not in the drop pool; the ideal item to trade at a Legendary Microwave.</td>
+<td data-label="Use">—</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemHolyBook.png" alt="">Holy Book</strong></td>
-<td>+100 Max HP, +50 HP regen, +25% overheal per copy. Every 1.5 s, deals (8 + level) × 0.5 × the healing you did that tick to every enemy within (5 + copies) × Size.</td>
-<td>Survive / Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemHolyBook.png" alt="">Holy Book</strong></td>
+<td data-label="What the code does">+100 Max HP, +50 HP regen, +25% overheal per copy. Every 1.5 s, deals (8 + level) × 0.5 × the healing you did that tick to every enemy within (5 + copies) × Size.</td>
+<td data-label="Use">Survive / Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemIceCube.png" alt="">Ice Cube</strong></td>
-<td>Two rolls per hit: freeze 3 s at 0.4n / (0.4n + 0.6) (1 copy 40%, 3 copies 67%); ice burst at 0.2n / (0.2n + 0.5) (1 copy 29%) for 0.4n × hit damage, which can also freeze.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemIceCube.png" alt="">Ice Cube</strong></td>
+<td data-label="What the code does">Two rolls per hit: freeze 3 s at 0.4n / (0.4n + 0.6) (1 copy 40%, 3 copies 67%); ice burst at 0.2n / (0.2n + 0.5) (1 copy 29%) for 0.4n × hit damage, which can also freeze.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/JoesDagger.png" alt="">Joe's Dagger</strong></td>
-<td>On damaging a non-boss (at most every 0.3 s): 1% execute roll. Each execute adds +1% Damage per copy, no cap. Max 10 copies.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/JoesDagger.png" alt="">Joe's Dagger</strong></td>
+<td data-label="What the code does">On damaging a non-boss (at most every 0.3 s): 1% execute roll. Each execute adds +1% Damage per copy, no cap. Max 10 copies.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemLightningOrb.png" alt="">Lightning Orb</strong></td>
-<td>Two rolls per hit, each 0.9 × 0.25n / (0.25n + 0.6): stun for 3 s, and a lightning strike for 0.4n × hit damage on a random enemy within 40 (×Size 8 radius per strike). 1 copy 26%, 3 copies 50%, 10 copies 73%; caps at 90%.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemLightningOrb.png" alt="">Lightning Orb</strong></td>
+<td data-label="What the code does">Two rolls per hit, each 0.9 × 0.25n / (0.25n + 0.6): stun for 3 s, and a lightning strike for 0.4n × hit damage on a random enemy within 40 (×Size 8 radius per strike). 1 copy 26%, 3 copies 50%, 10 copies 73%; caps at 90%.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemOverpoweredLamp.png" alt="">Overpowered Lamp</strong></td>
-<td>Game text: one extra roll on chance-based on-hit effects. Max 2. (Not traced in code.)</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemOverpoweredLamp.png" alt="">Overpowered Lamp</strong></td>
+<td data-label="What the code does">Game text: one extra roll on chance-based on-hit effects. Max 2. (Not traced in code.)</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemPot.png" alt="">Pot (Stainless Steel)</strong></td>
-<td>+10 max weapon level for the first copy, 1 less for each copy after, never below +2.</td>
-<td>Scale</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemPot.png" alt="">Pot (Stainless Steel)</strong></td>
+<td data-label="What the code does">+10 max weapon level for the first copy, 1 less for each copy after, never below +2.</td>
+<td data-label="Use">Scale</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemGlovesPower.png" alt="">Power Gloves</strong></td>
-<td>0.08n / (0.08n + 0.5) × proc coefficient (1 copy 14%): blast for 1.25× damage within 10 + 5n, knocking enemies away. Cooldown 3.2 − 0.2n s.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemGlovesPower.png" alt="">Power Gloves</strong></td>
+<td data-label="What the code does">0.08n / (0.08n + 0.5) × proc coefficient (1 copy 14%): blast for 1.25× damage within 10 + 5n, knocking enemies away. Cooldown 3.2 − 0.2n s.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemSnek.png" alt="">Snek</strong></td>
-<td>4 poison stacks per copy per hit (5 s). 5% per copy × proc coefficient: poison burst for (0.5 + 0.4n) × the hit's damage.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemSnek.png" alt="">Snek</strong></td>
+<td data-label="What the code does">4 poison stacks per copy per hit (5 s). 5% per copy × proc coefficient: poison burst for (0.5 + 0.4n) × the hit's damage.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemSoulHarvester.png" alt="">Soul Harvester</strong></td>
-<td>Each kill fires 2 homing souls (range 50) dealing roughly (8 + level) × copies × 1.75.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemSoulHarvester.png" alt="">Soul Harvester</strong></td>
+<td data-label="What the code does">Each kill fires 2 homing souls (range 50) dealing roughly (8 + level) × copies × 1.75.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/Speed boi.png" alt="">Speed Boi</strong></td>
-<td>When you are hit below 50% HP: time slows to 30% for 8 + 2n s (max 15), damage ×2 meanwhile. 10 s cooldown.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/Speed boi.png" alt="">Speed Boi</strong></td>
+<td data-label="What the code does">When you are hit below 50% HP: time slows to 30% for 8 + 2n s (max 15), damage ×2 meanwhile. 10 s cooldown.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemSpicyMeatball.png" alt="">Spicy Meatball</strong></td>
-<td>25% × proc coefficient: explosion for 65% of the hit's damage within (3 + copies) × Size, max 8 × Size.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemSpicyMeatball.png" alt="">Spicy Meatball</strong></td>
+<td data-label="What the code does">25% × proc coefficient: explosion for 65% of the hit's damage within (3 + copies) × Size, max 8 × Size.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemSuckyHoof.png" alt="">Sucky Magnet</strong></td>
-<td>Pulls in all XP within range 100.</td>
-<td>Scale</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemSuckyHoof.png" alt="">Sucky Magnet</strong></td>
+<td data-label="What the code does">Pulls in all XP within range 100.</td>
+<td data-label="Use">Scale</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemWizardsHat.png" alt="">Wizard's Hat</strong></td>
-<td>+10 max tome level for the first copy, 1 less for each copy after, never below +2.</td>
-<td>Scale</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemWizardsHat.png" alt="">Wizard's Hat</strong></td>
+<td data-label="What the code does">+10 max tome level for the first copy, 1 less for each copy after, never below +2.</td>
+<td data-label="Use">Scale</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemZaWarudo.png" alt="">Za Warudo</strong></td>
-<td>Stops one fatal hit by freezing time, then breaks. Max 25 per run.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemZaWarudo.png" alt="">Za Warudo</strong></td>
+<td data-label="What the code does">Stops one fatal hit by freezing time, then breaks. Max 25 per run.</td>
+<td data-label="Use">Survive</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="epic-20">Epic (20)</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Item</th>
@@ -219,109 +235,109 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemBeefyRing.png" alt="">Beefy Ring</strong></td>
-<td>+10 Max HP per copy; +0.2% Damage per point of max HP (including shield) per copy.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemBeefyRing.png" alt="">Beefy Ring</strong></td>
+<td data-label="What the code does">+10 Max HP per copy; +0.2% Damage per point of max HP (including shield) per copy.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemBobDead.png" alt="">Bob (Dead)</strong></td>
-<td>Summons a ghost Bob every 14 units you move; each lasts 10 s × Duration and deals 1.5× damage.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemBobDead.png" alt="">Bob (Dead)</strong></td>
+<td data-label="What the code does">Summons a ghost Bob every 14 units you move; each lasts 10 s × Duration and deals 1.5× damage.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemBobsLantern.png" alt="">Bob's Light (Lantern)</strong></td>
-<td>Bob's Light: an explosion that instantly kills every non-boss enemy within 50 + 10n (max 250). Cooldown 45 − 3n s (min 5). Red ghosts only die to it 33% of the time.</td>
-<td>Kill (swarm)</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemBobsLantern.png" alt="">Bob's Light (Lantern)</strong></td>
+<td data-label="What the code does">Bob's Light: an explosion that instantly kills every non-boss enemy within 50 + 10n (max 250). Cooldown 45 − 3n s (min 5). Red ghosts only die to it 33% of the time.</td>
+<td data-label="Use">Kill (swarm)</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemCreditCardGreen.png" alt="">Credit Card (Green)</strong></td>
-<td>+2% Luck per chest opened, per copy. Chest prices +10% per copy.</td>
-<td>Scale</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemCreditCardGreen.png" alt="">Credit Card (Green)</strong></td>
+<td data-label="What the code does">+2% Luck per chest opened, per copy. Chest prices +10% per copy.</td>
+<td data-label="Use">Scale</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemGlovesCursed.png" alt="">Cursed Gloves</strong></td>
-<td>+10% Difficulty and Max HP ×0.8 per copy. 0.5 × 0.05n / (0.05n + 0.8) on hit (1 copy 3%): cursed blast for 0.85 × (8 + level) within 4.</td>
-<td>Difficulty</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemGlovesCursed.png" alt="">Cursed Gloves</strong></td>
+<td data-label="What the code does">+10% Difficulty and Max HP ×0.8 per copy. 0.5 × 0.05n / (0.05n + 0.8) on hit (1 copy 3%): cursed blast for 0.85 × (8 + level) within 4.</td>
+<td data-label="Use">Difficulty</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemDemonSoul.png" alt="">Demonic Soul</strong></td>
-<td>+0.1% Damage per kill, up to 1,000 stacks per copy (+100%).</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemDemonSoul.png" alt="">Demonic Soul</strong></td>
+<td data-label="What the code does">+0.1% Damage per kill, up to 1,000 stacks per copy (+100%).</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemEagleClaw.png" alt="">Eagle Claw</strong></td>
-<td>0.08n / (0.08n + 0.5) × proc coefficient (1 copy 14%): knock enemies up; +66% damage per copy to airborne enemies.</td>
-<td>Situational</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemEagleClaw.png" alt="">Eagle Claw</strong></td>
+<td data-label="What the code does">0.08n / (0.08n + 0.5) × proc coefficient (1 copy 14%): knock enemies up; +66% damage per copy to airborne enemies.</td>
+<td data-label="Use">Situational</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/GamerLens.png" alt="">Gamer Goggles</strong></td>
-<td>Below 50% HP: up to +100% Damage per copy, more the lower your HP.</td>
-<td>Situational</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/GamerLens.png" alt="">Gamer Goggles</strong></td>
+<td data-label="What the code does">Below 50% HP: up to +100% Damage per copy, more the lower your HP.</td>
+<td data-label="Use">Situational</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/Gasmask.png" alt="">Gas Mask</strong></td>
-<td>+0.5% Armor and +0.5% Overheal per poisoned enemy, up to +40% Armor and +25% Overheal per copy.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/Gasmask.png" alt="">Gas Mask</strong></td>
+<td data-label="What the code does">+0.5% Armor and +0.5% Overheal per poisoned enemy, up to +40% Armor and +25% Overheal per copy.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/GrandmasSecretTonic.png" alt="">Grandma's Secret Tonic</strong></td>
-<td>+2% crit. 50% × proc coefficient on crits: explosion for 50% of the hit within (3 + copies) × Size, max 8.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/GrandmasSecretTonic.png" alt="">Grandma's Secret Tonic</strong></td>
+<td data-label="What the code does">+2% crit. 50% × proc coefficient on crits: explosion for 50% of the hit within (3 + copies) × Size, max 8.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/Kevin.png" alt="">Kevin</strong></td>
-<td>25% per copy: when you hit, Kevin hits you. Can't kill you; his hits trigger your on-damage items.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/Kevin.png" alt="">Kevin</strong></td>
+<td data-label="What the code does">25% per copy: when you hit, Kevin hits you. Can't kill you; his hits trigger your on-damage items.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemMirror.png" alt="">Mirror</strong></td>
-<td>Reflects a hit with brief invulnerability, dealing (1 + 0.25n) × your Damage in a cone. Cooldown max(8 − n, 4) s.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemMirror.png" alt="">Mirror</strong></td>
+<td data-label="What the code does">Reflects a hit with brief invulnerability, dealing (1 + 0.25n) × your Damage in a cone. Cooldown max(8 − n, 4) s.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemQuinsMask.png" alt="">Quin's Mask</strong></td>
-<td>+20 Thorns per copy. Thorns damage has a 50% chance to explode for 50% within (5 + copies) × Size, max 10.</td>
-<td>Situational</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemQuinsMask.png" alt="">Quin's Mask</strong></td>
+<td data-label="What the code does">+20 Thorns per copy. Thorns damage has a 50% chance to explode for 50% within (5 + copies) × Size, max 10.</td>
+<td data-label="Use">Situational</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemScarf.png" alt="">Scarf</strong></td>
-<td>+50% Damage per copy while airborne.</td>
-<td>Situational</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemScarf.png" alt="">Scarf</strong></td>
+<td data-label="What the code does">+50% Damage per copy while airborne.</td>
+<td data-label="Use">Situational</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemShatteredWisdom.png" alt="">Shattered Knowledge</strong></td>
-<td>XP shards damage enemies they pass through.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemShatteredWisdom.png" alt="">Shattered Knowledge</strong></td>
+<td data-label="What the code does">XP shards damage enemies they pass through.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemGlovesBloody.png" alt="">Slurp Gloves (Blood)</strong></td>
-<td>Every 9 s on hit: blood blast for 3.15× damage within 10, adds Bloodmark, heals 7.5% of Max HP.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemGlovesBloody.png" alt="">Slurp Gloves (Blood)</strong></td>
+<td data-label="What the code does">Every 9 s on hit: blood blast for 3.15× damage within 10, adds Bloodmark, heals 7.5% of Max HP.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemSluttyCannon.png" alt="">Slutty Cannon</strong></td>
-<td>0.2n / (0.2n + 0.5) × proc coefficient (1 copy 29%): fires a rocket for (1 + 0.4n) × the hit's damage. Max 4 per tick.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemSluttyCannon.png" alt="">Slutty Cannon</strong></td>
+<td data-label="What the code does">0.2n / (0.2n + 0.5) × proc coefficient (1 copy 29%): fires a rocket for (1 + 0.4n) × the hit's damage. Max 4 per tick.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemSpikyShieldf.png" alt="">Spiky Shield</strong></td>
-<td>+10% Armor per copy (flat); Thorns = 200 × raw Armor per copy.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemSpikyShieldf.png" alt="">Spiky Shield</strong></td>
+<td data-label="What the code does">+10% Armor per copy (flat); Thorns = 200 × raw Armor per copy.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ToxicBarrel.png" alt="">Toxic Barrel</strong></td>
-<td>When you take damage: 5 poison stacks per copy (5 s) to enemies within (7 + n) × Size. 0.25 s cooldown.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ToxicBarrel.png" alt="">Toxic Barrel</strong></td>
+<td data-label="What the code does">When you take damage: 5 poison stacks per copy (5 s) to enemies within (7 + n) × Size. 0.25 s cooldown.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemRollerblades.png" alt="">Turbo Skates</strong></td>
-<td>Moving fast adds attack speed, up to +40% per copy.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemRollerblades.png" alt="">Turbo Skates</strong></td>
+<td data-label="What the code does">Moving fast adds attack speed, up to +40% per copy.</td>
+<td data-label="Use">Kill</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="rare-21">Rare (21)</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Item</th>
@@ -331,114 +347,114 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemBackpack.png" alt="">Backpack</strong></td>
-<td>+1 projectile per copy.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemBackpack.png" alt="">Backpack</strong></td>
+<td data-label="What the code does">+1 projectile per copy.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/Itembeacon.png" alt="">Beacon</strong></td>
-<td>+2 Charge Shrines on later stages per copy; charged shrines heal 2.5% per tick within 8 + 2n.</td>
-<td>Scale</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/Itembeacon.png" alt="">Beacon</strong></td>
+<td data-label="What the code does">+2 Charge Shrines on later stages per copy; charged shrines heal 2.5% per tick within 8 + 2n.</td>
+<td data-label="Use">Scale</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemBeer.png" alt="">Beer</strong></td>
-<td>+20% Damage and −5% Max HP per copy.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemBeer.png" alt="">Beer</strong></td>
+<td data-label="What the code does">+20% Damage and −5% Max HP per copy.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemBrassKnuckle.png" alt="">Brass Knuckles</strong></td>
-<td>+25% damage per copy to enemies within 8 + 2n.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemBrassKnuckle.png" alt="">Brass Knuckles</strong></td>
+<td data-label="What the code does">+25% damage per copy to enemies within 8 + 2n.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemCampfire.png" alt="">Campfire</strong></td>
-<td>Standing still 0.6 s lights a camp: +1,100 HP regen per minute per copy.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemCampfire.png" alt="">Campfire</strong></td>
+<td data-label="What the code does">Standing still 0.6 s lights a camp: +1,100 HP regen per minute per copy.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemSpeedyCloak.png" alt="">Coward's Cloak</strong></td>
-<td>+5% move speed per copy; +30% speed bursts when hit (2 stacks per copy).</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemSpeedyCloak.png" alt="">Coward's Cloak</strong></td>
+<td data-label="What the code does">+5% move speed per copy; +30% speed bursts when hit (2 stacks per copy).</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemCreditCardRed.png" alt="">Credit Card (Red)</strong></td>
-<td>+2.5% Damage per chest opened, per copy.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemCreditCardRed.png" alt="">Credit Card (Red)</strong></td>
+<td data-label="What the code does">+2.5% Damage per chest opened, per copy.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemDemonBlade.png" alt="">Demon Blade</strong></td>
-<td>+1% crit. 25% per copy on damaging: heal (needs lifesteal to be allowed).</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemDemonBlade.png" alt="">Demon Blade</strong></td>
+<td data-label="What the code does">+1% crit. 25% per copy on damaging: heal (needs lifesteal to be allowed).</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemDemonBlood.png" alt="">Demonic Blood</strong></td>
-<td>+0.5 Max HP per kill, up to 200 stacks per copy.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemDemonBlood.png" alt="">Demonic Blood</strong></td>
+<td data-label="What the code does">+0.5 Max HP per kill, up to 200 stacks per copy.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemEchoShard.png" alt="">Echo Shard</strong></td>
-<td>Kills can drop an extra XP shard (logic outside the item class).</td>
-<td>Scale</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemEchoShard.png" alt="">Echo Shard</strong></td>
+<td data-label="What the code does">Kills can drop an extra XP shard (logic outside the item class).</td>
+<td data-label="Use">Scale</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemElectricPlug.png" alt="">Electric Plug</strong></td>
-<td>When hit: shocks 6 + 4n enemies within 12 + 4 × Size (per copy) for 0.8× damage.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemElectricPlug.png" alt="">Electric Plug</strong></td>
+<td data-label="What the code does">When hit: shocks 6 + 4n enemies within 12 + 4 × Size (per copy) for 0.8× damage.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemFeathers.png" alt="">Feathers</strong></td>
-<td>+1 jump and +15% jump height per copy; jumping boosts speed by 2.2 per copy.</td>
-<td>Situational</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemFeathers.png" alt="">Feathers</strong></td>
+<td data-label="What the code does">+1 jump and +15% jump height per copy; jumping boosts speed by 2.2 per copy.</td>
+<td data-label="Use">Situational</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemGoldenShield.png" alt="">Golden Shield</strong></td>
-<td>Taking damage drops 6 gold per copy.</td>
-<td>Economy</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemGoldenShield.png" alt="">Golden Shield</strong></td>
+<td data-label="What the code does">Taking damage drops 6 gold per copy.</td>
+<td data-label="Use">Economy</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemGoldenSneakers.png" alt="">Golden Sneakers</strong></td>
-<td>Gold per metre moved: 0.1 + 0.05 per extra copy.</td>
-<td>Economy</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemGoldenSneakers.png" alt="">Golden Sneakers</strong></td>
+<td data-label="What the code does">Gold per metre moved: 0.1 + 0.05 per extra copy.</td>
+<td data-label="Use">Economy</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/IdleJuice.png" alt="">Idle Juice</strong></td>
-<td>Standing still adds +4% Damage each second, up to +100% per copy.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/IdleJuice.png" alt="">Idle Juice</strong></td>
+<td data-label="What the code does">Standing still adds +4% Damage each second, up to +100% per copy.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemLeechingCrystal.png" alt="">Leeching Crystal</strong></td>
-<td>+50 Max HP and −50% HP regen per copy.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemLeechingCrystal.png" alt="">Leeching Crystal</strong></td>
+<td data-label="What the code does">+50 Max HP and −50% HP regen per copy.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemGlovesPoison.png" alt="">Moldy Gloves (Poison)</strong></td>
-<td>Every 8.5 s on hit: poison cloud for 1.5 × (8 + level) within 15, 10 stacks per copy.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemGlovesPoison.png" alt="">Moldy Gloves (Poison)</strong></td>
+<td data-label="What the code does">Every 8.5 s on hit: poison cloud for 1.5 × (8 + level) within 15, 10 stacks per copy.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemPhantomShroud.png" alt="">Phantom Shroud</strong></td>
-<td>+5% Evasion per copy. After an evade, the next attack deals ×(2 + 0.5n) plus a speed burst; lasts 3 + 0.5n s.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemPhantomShroud.png" alt="">Phantom Shroud</strong></td>
+<td data-label="What the code does">+5% Evasion per copy. After an evade, the next attack deals ×(2 + 0.5n) plus a speed burst; lasts 3 + 0.5n s.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemPumpkin.png" alt="">Pumpkin</strong></td>
-<td>+8 pots on later stages and +18% pot rewards per copy.</td>
-<td>Economy</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemPumpkin.png" alt="">Pumpkin</strong></td>
+<td data-label="What the code does">+8 pots on later stages and +18% pot rewards per copy.</td>
+<td data-label="Use">Economy</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemGlovesLightning.png" alt="">Thunder Mitts</strong></td>
-<td>Every 10 s on hit: lightning for 3× damage within 8, stunning 3 s.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemGlovesLightning.png" alt="">Thunder Mitts</strong></td>
+<td data-label="What the code does">Every 10 s on hit: lightning for 3× damage within 8, stunning 3 s.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/Unstable Transfusion.png" alt="">Unstable Transfusion</strong></td>
-<td>35% per copy × proc coefficient to add a Bloodmark stack (each full 100% is a guaranteed stack).</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/Unstable Transfusion.png" alt="">Unstable Transfusion</strong></td>
+<td data-label="What the code does">35% per copy × proc coefficient to add a Bloodmark stack (each full 100% is a guaranteed stack).</td>
+<td data-label="Use">Kill</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="common-22">Common (22)</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Item</th>
@@ -448,114 +464,114 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemBattery.png" alt="">Battery</strong></td>
-<td>+8% attack speed per copy (flat).</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemBattery.png" alt="">Battery</strong></td>
+<td data-label="What the code does">+8% attack speed per copy (flat).</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemBorgor.png" alt="">Borgar</strong></td>
-<td>2% (+1% per copy) per kill to drop a Borgar healing 8% + 10 HP.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemBorgor.png" alt="">Borgar</strong></td>
+<td data-label="What the code does">2% (+1% per copy) per kill to drop a Borgar healing 8% + 10 HP.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemBossBuster.png" alt="">Boss Buster</strong></td>
-<td>+15% damage per copy to elites and bosses.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemBossBuster.png" alt="">Boss Buster</strong></td>
+<td data-label="What the code does">+15% damage per copy to elites and bosses.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemCactus.png" alt="">Cactus</strong></td>
-<td>When hit: fires 2 spikes per copy, each 5 per copy + Thorns.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemCactus.png" alt="">Cactus</strong></td>
+<td data-label="What the code does">When hit: fires 2 spikes per copy, each 5 per copy + Thorns.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/itemClover.png" alt="">Clover</strong></td>
-<td>+10% Luck per copy.</td>
-<td>Scale</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/itemClover.png" alt="">Clover</strong></td>
+<td data-label="What the code does">+10% Luck per copy.</td>
+<td data-label="Use">Scale</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemCursedDoll.png" alt="">Cursed Doll</strong></td>
-<td>Every second, each copy curses up to 2 enemies (5 new per check). Cursed non-bosses lose 30% of their MAX HP per second, so they die in 4 s whatever their HP. Against bosses it deals only 0.7 × (8 + level).</td>
-<td>Kill (swarm)</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemCursedDoll.png" alt="">Cursed Doll</strong></td>
+<td data-label="What the code does">Every second, each copy curses up to 2 enemies (5 new per check). Cursed non-bosses lose 30% of their MAX HP per second, so they die in 4 s whatever their HP. Against bosses it deals only 0.7 × (8 + level).</td>
+<td data-label="Use">Kill (swarm)</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemShadowJuice.png" alt="">Forbidden Juice</strong></td>
-<td>+10% crit chance per copy (flat).</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemShadowJuice.png" alt="">Forbidden Juice</strong></td>
+<td data-label="What the code does">+10% crit chance per copy (flat).</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemGhost.png" alt="">Ghost</strong></td>
-<td>Using an interactable summons 6 ghosts per copy for 30 s × Duration.</td>
-<td>Situational</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemGhost.png" alt="">Ghost</strong></td>
+<td data-label="What the code does">Using an interactable summons 6 ghosts per copy for 30 s × Duration.</td>
+<td data-label="Use">Situational</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemGoldenGlove.png" alt="">Golden Glove</strong></td>
-<td>15% per copy for extra gold from kills; each full 100% is guaranteed.</td>
-<td>Economy</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemGoldenGlove.png" alt="">Golden Glove</strong></td>
+<td data-label="What the code does">15% per copy for extra gold from kills; each full 100% is guaranteed.</td>
+<td data-label="Use">Economy</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemGymSauce.png" alt="">Gym Sauce</strong></td>
-<td>+10% Damage per copy (flat bracket).</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemGymSauce.png" alt="">Gym Sauce</strong></td>
+<td data-label="What the code does">+10% Damage per copy (flat bracket).</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemIceCrystal.png" alt="">Ice Crystal</strong></td>
-<td>0.075n / (0.075n + 0.75) × proc coefficient (1 copy 9%, 10 copies 50%): freeze for 2.5 + 0.1n s (max 6).</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemIceCrystal.png" alt="">Ice Crystal</strong></td>
+<td data-label="What the code does">0.075n / (0.075n + 0.75) × proc coefficient (1 copy 9%, 10 copies 50%): freeze for 2.5 + 0.1n s (max 6).</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemKey.png" alt="">Key</strong></td>
-<td>Free-chest chance 0.1n / (0.1n + 1): 1 key 9%, 3 keys 23%, 10 keys 50%.</td>
-<td>Economy</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemKey.png" alt="">Key</strong></td>
+<td data-label="What the code does">Free-chest chance 0.1n / (0.1n + 1): 1 key 9%, 3 keys 23%, 10 keys 50%.</td>
+<td data-label="Use">Economy</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemMedkit.png" alt="">Medkit</strong></td>
-<td>+45 HP regen per copy.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemMedkit.png" alt="">Medkit</strong></td>
+<td data-label="What the code does">+45 HP regen per copy.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemMoldyCheese.png" alt="">Moldy Cheese</strong></td>
-<td>40% per copy to add a poison stack (5 s); each full 100% is a guaranteed stack, only the leftover is scaled by proc coefficient.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemMoldyCheese.png" alt="">Moldy Cheese</strong></td>
+<td data-label="What the code does">40% per copy to add a poison stack (5 s); each full 100% is a guaranteed stack, only the leftover is scaled by proc coefficient.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemOats.png" alt="">Oats</strong></td>
-<td>+25 Max HP per copy.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemOats.png" alt="">Oats</strong></td>
+<td data-label="What the code does">+25 Max HP per copy.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemOldMask.png" alt="">Old Mask</strong></td>
-<td>+15% elite spawn chance per copy.</td>
-<td>Difficulty</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemOldMask.png" alt="">Old Mask</strong></td>
+<td data-label="What the code does">+15% elite spawn chance per copy.</td>
+<td data-label="Use">Difficulty</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemSkuleg.png" alt="">Skuleg</strong></td>
-<td>+7% Difficulty per copy (flat).</td>
-<td>Difficulty</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemSkuleg.png" alt="">Skuleg</strong></td>
+<td data-label="What the code does">+7% Difficulty per copy (flat).</td>
+<td data-label="Use">Difficulty</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemSlipperyRing.png" alt="">Slippery Ring</strong></td>
-<td>+15% raw Evasion per copy. Real evasion = E / (E + 1): 1 ring 13%, 3 rings 31%, 7 rings 51%.</td>
-<td>Survive</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemSlipperyRing.png" alt="">Slippery Ring</strong></td>
+<td data-label="What the code does">+15% raw Evasion per copy. Real evasion = E / (E + 1): 1 ring 13%, 3 rings 31%, 7 rings 51%.</td>
+<td data-label="Use">Survive</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemTacticalGoggles.png" alt="">Tactical Glasses</strong></td>
-<td>+20% damage per copy to enemies above 90% HP.</td>
-<td>Kill</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemTacticalGoggles.png" alt="">Tactical Glasses</strong></td>
+<td data-label="What the code does">+20% damage per copy to enemies above 90% HP.</td>
+<td data-label="Use">Kill</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemTimeBracelet.png" alt="">Time Bracelet</strong></td>
-<td>+8% XP gain per copy.</td>
-<td>Scale</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemTimeBracelet.png" alt="">Time Bracelet</strong></td>
+<td data-label="What the code does">+8% XP gain per copy.</td>
+<td data-label="Use">Scale</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemTurboSocks.png" alt="">Turbo Socks</strong></td>
-<td>+15% move speed per copy.</td>
-<td>Situational</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemTurboSocks.png" alt="">Turbo Socks</strong></td>
+<td data-label="What the code does">+15% move speed per copy.</td>
+<td data-label="Use">Situational</td>
 </tr>
 <tr>
-<td class="nm"><strong><img class="ic" src="img/ItemWrench.png" alt="">Wrench</strong></td>
-<td>Charge Shrines charge 4% faster and give 7.5% more per copy.</td>
-<td>Scale</td>
+<td class="nm" data-label="Item"><strong><img class="ic" src="img/ItemWrench.png" alt="">Wrench</strong></td>
+<td data-label="What the code does">Charge Shrines charge 4% faster and give 7.5% more per copy.</td>
+<td data-label="Use">Scale</td>
 </tr>
 </tbody>
 </table></div>

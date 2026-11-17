@@ -79,6 +79,22 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
 .top{display:none}}
+@media (max-width:640px){
+.tw{border:0;background:none;overflow:visible}
+table[data-m="cards"],table[data-m="cards"] tbody{display:block}
+table[data-m="cards"] thead{display:none}
+table[data-m="cards"] tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:6px 0}
+table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;border:0;padding:5px 14px;background:none!important;white-space:normal}
+table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
+table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
+table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+.tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+table[data-m="grid"] th:first-child{background:var(--code)}
+td.nm{white-space:normal}
+td code,li code,p code{overflow-wrap:anywhere}
+}
 @media print{nav.side,.top{display:none}main{padding:0}}
 </style></head><body><div class="wrap"><nav class="side"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <div class="links"><a href="./" class=""><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html" class=""><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="mechanics.html" class=""><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html" class=""><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="maps.html" class=""><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html" class=""><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html" class=""><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a><a href="economy.html" class="on"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="items.html" class=""><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html" class=""><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html" class=""><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html" class=""><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a><a href="quests.html" class=""><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html" class=""><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html" class=""><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a><a href="max-runs.html" class=""><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="faq.html" class=""><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
@@ -93,7 +109,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <p>Luck is used for <strong>chest items, level-up offers, Moai offers and stat-shrine offers.</strong> It is <strong>not</strong> used for Shady Guy or Microwave rarity: those are rolled at map load with Luck 0.</p>
 <h3 id="chest-item-rarity">Chest item rarity</h3>
 <p>Base weights: Common 70, Rare 15, Epic 6, Legendary 1.5 (<code>Rarity.GetItemRarity</code>). A rarity with every item toggled off is skipped completely.</p>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Luck</th>
@@ -105,59 +121,59 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>0%</td>
-<td>75.7%</td>
-<td>16.2%</td>
-<td>6.5%</td>
-<td>1.6%</td>
+<td data-label="Luck">0%</td>
+<td data-label="Common">75.7%</td>
+<td data-label="Rare">16.2%</td>
+<td data-label="Epic">6.5%</td>
+<td data-label="Legendary">1.6%</td>
 </tr>
 <tr>
-<td>50%</td>
-<td>68.5%</td>
-<td>18.8%</td>
-<td>9.6%</td>
-<td>3.1%</td>
+<td data-label="Luck">50%</td>
+<td data-label="Common">68.5%</td>
+<td data-label="Rare">18.8%</td>
+<td data-label="Epic">9.6%</td>
+<td data-label="Legendary">3.1%</td>
 </tr>
 <tr>
-<td>100%</td>
-<td>62.4%</td>
-<td>20.4%</td>
-<td>12.4%</td>
-<td>4.7%</td>
+<td data-label="Luck">100%</td>
+<td data-label="Common">62.4%</td>
+<td data-label="Rare">20.4%</td>
+<td data-label="Epic">12.4%</td>
+<td data-label="Legendary">4.7%</td>
 </tr>
 <tr>
-<td>200%</td>
-<td>52.5%</td>
-<td>22.0%</td>
-<td>17.1%</td>
-<td>8.4%</td>
+<td data-label="Luck">200%</td>
+<td data-label="Common">52.5%</td>
+<td data-label="Rare">22.0%</td>
+<td data-label="Epic">17.1%</td>
+<td data-label="Legendary">8.4%</td>
 </tr>
 <tr>
-<td>300%</td>
-<td>44.9%</td>
-<td>22.3%</td>
-<td>20.8%</td>
-<td>12.1%</td>
+<td data-label="Luck">300%</td>
+<td data-label="Common">44.9%</td>
+<td data-label="Rare">22.3%</td>
+<td data-label="Epic">20.8%</td>
+<td data-label="Legendary">12.1%</td>
 </tr>
 <tr>
-<td>500%</td>
-<td>33.8%</td>
-<td>21.5%</td>
-<td>25.6%</td>
-<td>19.0%</td>
+<td data-label="Luck">500%</td>
+<td data-label="Common">33.8%</td>
+<td data-label="Rare">21.5%</td>
+<td data-label="Epic">25.6%</td>
+<td data-label="Legendary">19.0%</td>
 </tr>
 <tr>
-<td>1000%</td>
-<td>19.2%</td>
-<td>17.7%</td>
-<td>30.4%</td>
-<td>32.7%</td>
+<td data-label="Luck">1000%</td>
+<td data-label="Common">19.2%</td>
+<td data-label="Rare">17.7%</td>
+<td data-label="Epic">30.4%</td>
+<td data-label="Legendary">32.7%</td>
 </tr>
 </tbody>
 </table></div>
 <h3 id="level-up-offer-rarity">Level-up offer rarity</h3>
 <p>Base weights: Common 1.5, Uncommon 0.3, Rare 0.15, Epic 0.04, Legendary 0.0085. The offer's value is multiplied by its rarity (Common ×1.0, Uncommon ×1.2, Rare ×1.4, Epic ×1.6, Legendary ×2.0).</p>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Luck</th>
@@ -170,65 +186,65 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>0%</td>
-<td>75.1%</td>
-<td>15.0%</td>
-<td>7.5%</td>
-<td>2.0%</td>
-<td>0.4%</td>
+<td data-label="Luck">0%</td>
+<td data-label="Common">75.1%</td>
+<td data-label="Uncommon">15.0%</td>
+<td data-label="Rare">7.5%</td>
+<td data-label="Epic">2.0%</td>
+<td data-label="Legendary">0.4%</td>
 </tr>
 <tr>
-<td>50%</td>
-<td>67.1%</td>
-<td>17.2%</td>
-<td>11.0%</td>
-<td>3.7%</td>
-<td>1.0%</td>
+<td data-label="Luck">50%</td>
+<td data-label="Common">67.1%</td>
+<td data-label="Uncommon">17.2%</td>
+<td data-label="Rare">11.0%</td>
+<td data-label="Epic">3.7%</td>
+<td data-label="Legendary">1.0%</td>
 </tr>
 <tr>
-<td>100%</td>
-<td>60.2%</td>
-<td>18.3%</td>
-<td>14.0%</td>
-<td>5.7%</td>
-<td>1.8%</td>
+<td data-label="Luck">100%</td>
+<td data-label="Common">60.2%</td>
+<td data-label="Uncommon">18.3%</td>
+<td data-label="Rare">14.0%</td>
+<td data-label="Epic">5.7%</td>
+<td data-label="Legendary">1.8%</td>
 </tr>
 <tr>
-<td>200%</td>
-<td>48.8%</td>
-<td>19.0%</td>
-<td>18.6%</td>
-<td>9.7%</td>
-<td>4.0%</td>
+<td data-label="Luck">200%</td>
+<td data-label="Common">48.8%</td>
+<td data-label="Uncommon">19.0%</td>
+<td data-label="Rare">18.6%</td>
+<td data-label="Epic">9.7%</td>
+<td data-label="Legendary">4.0%</td>
 </tr>
 <tr>
-<td>300%</td>
-<td>39.9%</td>
-<td>18.6%</td>
-<td>21.6%</td>
-<td>13.4%</td>
-<td>6.6%</td>
+<td data-label="Luck">300%</td>
+<td data-label="Common">39.9%</td>
+<td data-label="Uncommon">18.6%</td>
+<td data-label="Rare">21.6%</td>
+<td data-label="Epic">13.4%</td>
+<td data-label="Legendary">6.6%</td>
 </tr>
 <tr>
-<td>500%</td>
-<td>27.6%</td>
-<td>16.4%</td>
-<td>24.4%</td>
-<td>19.4%</td>
-<td>12.2%</td>
+<td data-label="Luck">500%</td>
+<td data-label="Common">27.6%</td>
+<td data-label="Uncommon">16.4%</td>
+<td data-label="Rare">24.4%</td>
+<td data-label="Epic">19.4%</td>
+<td data-label="Legendary">12.2%</td>
 </tr>
 <tr>
-<td>1000%</td>
-<td>12.9%</td>
-<td>11.1%</td>
-<td>23.8%</td>
-<td>27.3%</td>
-<td>24.9%</td>
+<td data-label="Luck">1000%</td>
+<td data-label="Common">12.9%</td>
+<td data-label="Uncommon">11.1%</td>
+<td data-label="Rare">23.8%</td>
+<td data-label="Epic">27.3%</td>
+<td data-label="Legendary">24.9%</td>
 </tr>
 </tbody>
 </table></div>
 <h3 id="where-luck-comes-from">Where Luck comes from</h3>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Source</th>
@@ -237,24 +253,24 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/LuckTome.png" alt="">Luck Tome</td>
-<td>+8% per level (Common), up to +16% at Legendary</td>
+<td class="nm" data-label="Source"><img class="ic" src="img/LuckTome.png" alt="">Luck Tome</td>
+<td data-label="Luck">+8% per level (Common), up to +16% at Legendary</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/itemClover.png" alt="">Clover</td>
-<td>+10% per copy</td>
+<td class="nm" data-label="Source"><img class="ic" src="img/itemClover.png" alt="">Clover</td>
+<td data-label="Luck">+10% per copy</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemCreditCardGreen.png" alt="">Credit Card (Green)</td>
-<td>+2% per chest opened, per copy</td>
+<td class="nm" data-label="Source"><img class="ic" src="img/ItemCreditCardGreen.png" alt="">Credit Card (Green)</td>
+<td data-label="Luck">+2% per chest opened, per copy</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Fox.png" alt="">Fox</td>
-<td>+15% to start, +1.5% per level</td>
+<td class="nm" data-label="Source"><img class="ic" src="img/Fox.png" alt="">Fox</td>
+<td data-label="Luck">+15% to start, +1.5% per level</td>
 </tr>
 <tr>
-<td><strong>Pots</strong></td>
-<td><strong>+0.5% each on stage 1, +0.75% on stage 2, +1% on stage 3; big pots ×1.5</strong></td>
+<td data-label="Source"><strong>Pots</strong></td>
+<td data-label="Luck"><strong>+0.5% each on stage 1, +0.75% on stage 2, +1% on stage 3; big pots ×1.5</strong></td>
 </tr>
 </tbody>
 </table></div>
@@ -272,7 +288,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </ol>
 </blockquote>
 <p>The count only resets on a new run. It never goes up with time or stage, so a chest left closed costs the same later.</p>
-<div class="tw"><table class="dense">
+<div class="tw"><table data-m="grid" class="dense">
 <thead>
 <tr>
 <th>Chests opened</th>
@@ -292,19 +308,19 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Next price</td>
-<td>30</td>
-<td>72</td>
-<td>159</td>
-<td>256</td>
-<td>427</td>
-<td>569</td>
-<td>952</td>
-<td>2,617</td>
-<td>5,301</td>
-<td>12,451</td>
-<td>24,243</td>
-<td>118,811</td>
+<td data-label="Chests opened">Next price</td>
+<td data-label="0">30</td>
+<td data-label="1">72</td>
+<td data-label="3">159</td>
+<td data-label="5">256</td>
+<td data-label="8">427</td>
+<td data-label="10">569</td>
+<td data-label="11">952</td>
+<td data-label="15">2,617</td>
+<td data-label="20">5,301</td>
+<td data-label="25">12,451</td>
+<td data-label="30">24,243</td>
+<td data-label="40">118,811</td>
 </tr>
 </tbody>
 </table></div>
@@ -330,7 +346,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <li>Shady Guy prices rise with the chests you've opened and with each stage, so shops are cheapest on stage 1 before you open chests.</li>
 </ul>
 <h2 id="shrines"><img class="ic" src="img/Challenges1.png" alt="">Shrines</h2>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Shrine</th>
@@ -339,46 +355,46 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/Zap.png" alt="">Charge Shrine</td>
-<td>Stand in the zone to charge it; rewards a random stat offer (Luck-weighted). Wrench speeds charging 4% and adds 7.5% per copy; Beacon adds 2 per copy on later stages.</td>
+<td class="nm" data-label="Shrine"><img class="ic" src="img/Zap.png" alt="">Charge Shrine</td>
+<td data-label="What it does">Stand in the zone to charge it; rewards a random stat offer (Luck-weighted). Wrench speeds charging 4% and adds 7.5% per copy; Beacon adds 2 per copy on later stages.</td>
 </tr>
 <tr>
-<td>Moai</td>
-<td>Offers items (Luck-weighted).</td>
+<td data-label="Shrine">Moai</td>
+<td data-label="What it does">Offers items (Luck-weighted).</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Gold.png" alt="">Greed Shrine</td>
-<td>Adds a permanent stat effect (Difficulty, +5% each by community count).</td>
+<td class="nm" data-label="Shrine"><img class="ic" src="img/Gold.png" alt="">Greed Shrine</td>
+<td data-label="What it does">Adds a permanent stat effect (Difficulty, +5% each by community count).</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Curse.png" alt="">Boss Curse (Cursed Shrine)</td>
-<td>+1 Boss Curse: one more miniboss per miniboss event, one more stage boss, bosses +16% HP each.</td>
+<td class="nm" data-label="Shrine"><img class="ic" src="img/Curse.png" alt="">Boss Curse (Cursed Shrine)</td>
+<td data-label="What it does">+1 Boss Curse: one more miniboss per miniboss event, one more stage boss, bosses +16% HP each.</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Clock.png" alt="">Magnet Shrine</td>
-<td>Pulls in all XP on the map.</td>
+<td class="nm" data-label="Shrine"><img class="ic" src="img/Clock.png" alt="">Magnet Shrine</td>
+<td data-label="What it does">Pulls in all XP on the map.</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge Shrine</td>
-<td>Spawns a challenge fight; rewards on completion. Challenge enemies have ×7 HP (×15 if also elite).</td>
+<td class="nm" data-label="Shrine"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge Shrine</td>
+<td data-label="What it does">Spawns a challenge fight; rewards on completion. Challenge enemies have ×7 HP (×15 if also elite).</td>
 </tr>
 <tr>
-<td>Balance Shrine ("Bald Heads", Graveyard)</td>
-<td>Offers stat trades: one stat doubled, another halved.</td>
+<td data-label="Shrine">Balance Shrine ("Bald Heads", Graveyard)</td>
+<td data-label="What it does">Offers stat trades: one stat doubled, another halved.</td>
 </tr>
 <tr>
-<td>Gravestone (Graveyard)</td>
-<td>Grants stat effects.</td>
+<td data-label="Shrine">Gravestone (Graveyard)</td>
+<td data-label="What it does">Grants stat effects.</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Coffin.png" alt="">Coffin (Graveyard)</td>
-<td>Starts the Grave Ghost boss fight.</td>
+<td class="nm" data-label="Shrine"><img class="ic" src="img/Coffin.png" alt="">Coffin (Graveyard)</td>
+<td data-label="What it does">Starts the Grave Ghost boss fight.</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="level-up-and-shrine-stat-values"><img class="ic" src="img/Stonks.png" alt="">Level-up and shrine stat values</h2>
 <p>When a level-up or shrine offers a stat, the Common value is (× the offer's rarity multiplier):</p>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Stat</th>
@@ -391,124 +407,124 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/DamageTome.png" alt="">Damage</td>
-<td>+12%</td>
-<td>%</td>
-<td>Max HP</td>
-<td>+15</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/DamageTome.png" alt="">Damage</td>
+<td data-label="Value">+12%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Max HP</td>
+<td data-label="Value">+15</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/CooldownTome.png" alt="">Attack speed</td>
-<td>+6%</td>
-<td>%</td>
-<td>HP regen</td>
-<td>+20</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/CooldownTome.png" alt="">Attack speed</td>
+<td data-label="Value">+6%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">HP regen</td>
+<td data-label="Value">+20</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/SizeTome.png" alt="">Size</td>
-<td>+8%</td>
-<td>%</td>
-<td>Shield</td>
-<td>+5</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/SizeTome.png" alt="">Size</td>
+<td data-label="Value">+8%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Shield</td>
+<td data-label="Value">+5</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/DurationTome.png" alt="">Duration</td>
-<td>+8%</td>
-<td>%</td>
-<td>Thorns</td>
-<td>+5</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/DurationTome.png" alt="">Duration</td>
+<td data-label="Value">+8%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Thorns</td>
+<td data-label="Value">+5</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ProjectileSpeedTOme.png" alt="">Projectile speed</td>
-<td>+10%</td>
-<td>%</td>
-<td>Projectiles</td>
-<td>+1</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/ProjectileSpeedTOme.png" alt="">Projectile speed</td>
+<td data-label="Value">+10%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Projectiles</td>
+<td data-label="Value">+1</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Crit Happens.png" alt="">Crit damage</td>
-<td>+10%</td>
-<td>%</td>
-<td>Projectile bounces</td>
-<td>+1</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/Crit Happens.png" alt="">Crit damage</td>
+<td data-label="Value">+10%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Projectile bounces</td>
+<td data-label="Value">+1</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Bullseye.png" alt="">Elite damage</td>
-<td>+10%</td>
-<td>%</td>
-<td>Extra jumps</td>
-<td>+1</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/Bullseye.png" alt="">Elite damage</td>
+<td data-label="Value">+10%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Extra jumps</td>
+<td data-label="Value">+1</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/KnockbackTome.png" alt="">Knockback</td>
-<td>+10%</td>
-<td>%</td>
-<td>Crit chance</td>
-<td>+5%</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/KnockbackTome.png" alt="">Knockback</td>
+<td data-label="Value">+10%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Crit chance</td>
+<td data-label="Value">+5%</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/SpeedTome.png" alt="">Move speed</td>
-<td>+8%</td>
-<td>%</td>
-<td>Luck</td>
-<td>+5%</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/SpeedTome.png" alt="">Move speed</td>
+<td data-label="Value">+8%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Luck</td>
+<td data-label="Value">+5%</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Float.png" alt="">Jump height</td>
-<td>+10%</td>
-<td>%</td>
-<td>Armor</td>
-<td>+5%</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/Float.png" alt="">Jump height</td>
+<td data-label="Value">+10%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Armor</td>
+<td data-label="Value">+5%</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/AttractionTome.png" alt="">Pickup range</td>
-<td>+20%</td>
-<td>%</td>
-<td>Evasion</td>
-<td>+5%</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/AttractionTome.png" alt="">Pickup range</td>
+<td data-label="Value">+20%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Evasion</td>
+<td data-label="Value">+5%</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/GoldenTome.png" alt="">Gold, XP, silver gain</td>
-<td>+7.5%</td>
-<td>%</td>
-<td>Lifesteal</td>
-<td>+6%</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/GoldenTome.png" alt="">Gold, XP, silver gain</td>
+<td data-label="Value">+7.5%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Lifesteal</td>
+<td data-label="Value">+6%</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Elite.png" alt="">Elite spawns</td>
-<td>+15%</td>
-<td>%</td>
-<td>Difficulty</td>
-<td>+8%</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/Elite.png" alt="">Elite spawns</td>
+<td data-label="Value">+15%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Difficulty</td>
+<td data-label="Value">+8%</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Stonks.png" alt="">Powerup boost</td>
-<td>+10%</td>
-<td>%</td>
-<td>Fall damage reduction</td>
-<td>+10%</td>
-<td>flat</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/Stonks.png" alt="">Powerup boost</td>
+<td data-label="Value">+10%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat">Fall damage reduction</td>
+<td data-label="Value">+10%</td>
+<td data-label="Bracket">flat</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Stonks.png" alt="">Powerup chance</td>
-<td>+5%</td>
-<td>%</td>
-<td></td>
-<td></td>
-<td></td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/Stonks.png" alt="">Powerup chance</td>
+<td data-label="Value">+5%</td>
+<td data-label="Bracket">%</td>
+<td data-label="Stat"></td>
+<td data-label="Value"></td>
+<td data-label="Bracket"></td>
 </tr>
 </tbody>
 </table></div><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 16, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>

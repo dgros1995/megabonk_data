@@ -79,6 +79,22 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
 .top{display:none}}
+@media (max-width:640px){
+.tw{border:0;background:none;overflow:visible}
+table[data-m="cards"],table[data-m="cards"] tbody{display:block}
+table[data-m="cards"] thead{display:none}
+table[data-m="cards"] tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:6px 0}
+table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;border:0;padding:5px 14px;background:none!important;white-space:normal}
+table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
+table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
+table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+.tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+table[data-m="grid"] th:first-child{background:var(--code)}
+td.nm{white-space:normal}
+td code,li code,p code{overflow-wrap:anywhere}
+}
 @media print{nav.side,.top{display:none}main{padding:0}}
 </style></head><body><div class="wrap"><nav class="side"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
 <div class="links"><a href="./" class=""><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html" class=""><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="mechanics.html" class="on"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html" class=""><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="maps.html" class=""><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html" class=""><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html" class=""><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a><a href="economy.html" class=""><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="items.html" class=""><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html" class=""><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html" class=""><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html" class=""><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a><a href="quests.html" class=""><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html" class=""><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html" class=""><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a><a href="max-runs.html" class=""><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="faq.html" class=""><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
@@ -87,7 +103,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <p>Every stat is held as three parts and combined the same way (<code>StatComponents.GetFinalValue</code>):</p>
 <p><strong>Final = (base + flat bonuses) × (1 + sum of % bonuses) × (product of × multipliers)</strong></p>
 <p>Which bonus goes in which part is set by its modify type in the code:</p>
-<div class="tw"><table>
+<div class="tw"><table data-m="cards">
 <thead>
 <tr>
 <th>Bracket</th>
@@ -97,25 +113,25 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Flat</td>
-<td><code>Flat</code></td>
-<td>Items (Gym Sauce, Beer, Forbidden Juice, Clover, Battery…), most tomes (Precision, Luck, Armor, Shield, Health, Cursed…), character starting stats</td>
+<td data-label="Bracket">Flat</td>
+<td data-label="Modify type"><code>Flat</code></td>
+<td data-label="Where it comes from">Items (Gym Sauce, Beer, Forbidden Juice, Clover, Battery…), most tomes (Precision, Luck, Armor, Shield, Health, Cursed…), character starting stats</td>
 </tr>
 <tr>
-<td>% (additive)</td>
-<td><code>Addition</code></td>
-<td>Level-up and shrine stat offers (Damage +12%, Size +8%…), Gamba rolls, some tomes (Cooldown, Size, Duration, XP…)</td>
+<td data-label="Bracket">% (additive)</td>
+<td data-label="Modify type"><code>Addition</code></td>
+<td data-label="Where it comes from">Level-up and shrine stat offers (Damage +12%, Size +8%…), Gamba rolls, some tomes (Cooldown, Size, Duration, XP…)</td>
 </tr>
 <tr>
-<td>× (multiplicative)</td>
-<td><code>Multiplication</code></td>
-<td>Damage Tome, Giant Fork's Megacrit, Phantom Shroud's post-evade hit</td>
+<td data-label="Bracket">× (multiplicative)</td>
+<td data-label="Modify type"><code>Multiplication</code></td>
+<td data-label="Where it comes from">Damage Tome, Giant Fork's Megacrit, Phantom Shroud's post-evade hit</td>
 </tr>
 </tbody>
 </table></div>
 <p>So for Damage, the base is 1.0 and items stack inside the flat part: 5 Gym Sauces make it 1.5. Level-up Damage offers then add to the % bracket, and the Damage Tome multiplies everything. <strong>Spreading Damage across all three brackets beats piling it into one.</strong></p>
 <h3 id="base-values-before-character-bonuses">Base values (before character bonuses)</h3>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Stat</th>
@@ -124,52 +140,52 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/HealthTome.png" alt="">Max HP</td>
-<td>100</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/HealthTome.png" alt="">Max HP</td>
+<td data-label="Base value">100</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/RegenerationTome.png" alt="">HP regen</td>
-<td>10</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/RegenerationTome.png" alt="">HP regen</td>
+<td data-label="Base value">10</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/PrecisionTome.png" alt="">Crit chance</td>
-<td>1%</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/PrecisionTome.png" alt="">Crit chance</td>
+<td data-label="Base value">1%</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Crit Happens.png" alt="">Crit damage</td>
-<td>×1.0</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/Crit Happens.png" alt="">Crit damage</td>
+<td data-label="Base value">×1.0</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/EvasionTome.png" alt="">Evasion</td>
-<td>1%</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/EvasionTome.png" alt="">Evasion</td>
+<td data-label="Base value">1%</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/AttractionTome.png" alt="">Pickup range</td>
-<td>5</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/AttractionTome.png" alt="">Pickup range</td>
+<td data-label="Base value">5</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Float.png" alt="">Jump height</td>
-<td>7</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/Float.png" alt="">Jump height</td>
+<td data-label="Base value">7</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/LuckTome.png" alt="">Luck, Difficulty, Armor, Shield, Lifesteal, Thorns, Overheal</td>
-<td>0</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/LuckTome.png" alt="">Luck, Difficulty, Armor, Shield, Lifesteal, Thorns, Overheal</td>
+<td data-label="Base value">0</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/DamageTome.png" alt="">Damage, attack speed, size, duration, projectile speed, knockback, move speed</td>
-<td>×1.0</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/DamageTome.png" alt="">Damage, attack speed, size, duration, projectile speed, knockback, move speed</td>
+<td data-label="Base value">×1.0</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/burn.png" alt="">Fire, ice, lightning, poison and elite damage</td>
-<td>×1.0</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/burn.png" alt="">Fire, ice, lightning, poison and elite damage</td>
+<td data-label="Base value">×1.0</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/GoldenTome.png" alt="">Gold, XP, chest and silver gain</td>
-<td>×1.0</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/GoldenTome.png" alt="">Gold, XP, chest and silver gain</td>
+<td data-label="Base value">×1.0</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/Curse.png" alt="">Enemy amount, size, speed, HP, damage and scaling</td>
-<td>×1.0</td>
+<td class="nm" data-label="Stat"><img class="ic" src="img/Curse.png" alt="">Enemy amount, size, speed, HP, damage and scaling</td>
+<td data-label="Base value">×1.0</td>
 </tr>
 </tbody>
 </table></div>
@@ -186,7 +202,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <li>You block <strong>67%</strong> of each hit. A 300-damage hit becomes about 100.</li>
 </ol>
 </blockquote>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Armor on the stat screen</th>
@@ -199,12 +215,12 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Damage blocked</td>
-<td>25%</td>
-<td>50%</td>
-<td>67%</td>
-<td>80%</td>
-<td>91%</td>
+<td data-label="Armor on the stat screen">Damage blocked</td>
+<td data-label="25%">25%</td>
+<td data-label="75%">50%</td>
+<td data-label="150%">67%</td>
+<td data-label="300%">80%</td>
+<td data-label="750%">91%</td>
 </tr>
 </tbody>
 </table></div>
@@ -219,7 +235,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <li>You dodge <strong>67%</strong> of hits, roughly two in every three.</li>
 </ol>
 </blockquote>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Evasion on the stat screen</th>
@@ -232,12 +248,12 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Chance to dodge</td>
-<td>33%</td>
-<td>50%</td>
-<td>67%</td>
-<td>75%</td>
-<td>91%</td>
+<td data-label="Evasion on the stat screen">Chance to dodge</td>
+<td data-label="50%">33%</td>
+<td data-label="100%">50%</td>
+<td data-label="200%">67%</td>
+<td data-label="300%">75%</td>
+<td data-label="1000%">91%</td>
 </tr>
 </tbody>
 </table></div>
@@ -265,7 +281,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </ul>
 <h3 id="crits-and-overcrits"><img class="ic" src="img/Crit Happens.png" alt="">Crits and overcrits</h3>
 <p>The game rolls how many crits a hit gets: one guaranteed crit for each full 100% of crit chance, plus one more with the leftover chance. 230% = 2 crits, with a 30% chance of 3.</p>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Crits on the hit</th>
@@ -280,14 +296,14 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Multiplier</td>
-<td>×1</td>
-<td>×2</td>
-<td>×4</td>
-<td>×6.25</td>
-<td>×9</td>
-<td>×12.25</td>
-<td>×16</td>
+<td data-label="Crits on the hit">Multiplier</td>
+<td data-label="0">×1</td>
+<td data-label="1">×2</td>
+<td data-label="2">×4</td>
+<td data-label="3">×6.25</td>
+<td data-label="4">×9</td>
+<td data-label="5">×12.25</td>
+<td data-label="6">×16</td>
 </tr>
 </tbody>
 </table></div>
@@ -301,7 +317,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <li>On average: 0.7 × 4 + 0.3 × 6.25 = <strong>×4.68</strong>, before Crit damage.</li>
 </ol>
 </blockquote>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Crit chance</th>
@@ -315,13 +331,13 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td>Average multiplier</td>
-<td>×2</td>
-<td>×3</td>
-<td>×4</td>
-<td>×5.1</td>
-<td>×6.25</td>
-<td>×9</td>
+<td data-label="Crit chance">Average multiplier</td>
+<td data-label="100%">×2</td>
+<td data-label="150%">×3</td>
+<td data-label="200%">×4</td>
+<td data-label="250%">×5.1</td>
+<td data-label="300%">×6.25</td>
+<td data-label="400%">×9</td>
 </tr>
 </tbody>
 </table></div>
@@ -331,7 +347,7 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 <p><strong>Example:</strong> you hold 5 Dragonfire (60%, from the table below) and hit with the Axe, whose proc coefficient is 0.7. Each Axe hit has 60% × 0.7 = <strong>42%</strong> to proc. The same 5 Dragonfire on a Sniper Rifle (1.5) would be 60% × 1.5 = 90%. Each weapon's proc coefficient is on the <a href="weapons.html">Weapons</a> page.</p>
 </blockquote>
 <p>Items whose chance slows down with more copies:</p>
-<div class="tw"><table>
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Item</th>
@@ -346,94 +362,94 @@ main{padding:22px 16px 64px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42p
 </thead>
 <tbody>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemDragonfire.png" alt="">Dragonfire (fire field, burn)</td>
-<td>0.15n / (0.15n + 0.5)</td>
-<td>23%</td>
-<td>37%</td>
-<td>47%</td>
-<td>60%</td>
-<td>75%</td>
-<td>86%</td>
+<td class="nm" data-label="Item"><img class="ic" src="img/ItemDragonfire.png" alt="">Dragonfire (fire field, burn)</td>
+<td data-label="Formula">0.15n / (0.15n + 0.5)</td>
+<td data-label="1">23%</td>
+<td data-label="2">37%</td>
+<td data-label="3">47%</td>
+<td data-label="5">60%</td>
+<td data-label="10">75%</td>
+<td data-label="20">86%</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemIceCube.png" alt="">Ice Cube (ice burst)</td>
-<td>0.2n / (0.2n + 0.5)</td>
-<td>29%</td>
-<td>44%</td>
-<td>55%</td>
-<td>67%</td>
-<td>80%</td>
-<td>89%</td>
+<td class="nm" data-label="Item"><img class="ic" src="img/ItemIceCube.png" alt="">Ice Cube (ice burst)</td>
+<td data-label="Formula">0.2n / (0.2n + 0.5)</td>
+<td data-label="1">29%</td>
+<td data-label="2">44%</td>
+<td data-label="3">55%</td>
+<td data-label="5">67%</td>
+<td data-label="10">80%</td>
+<td data-label="20">89%</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemIceCube.png" alt="">Ice Cube (freeze)</td>
-<td>0.4n / (0.4n + 0.6)</td>
-<td>40%</td>
-<td>57%</td>
-<td>67%</td>
-<td>77%</td>
-<td>87%</td>
-<td>93%</td>
+<td class="nm" data-label="Item"><img class="ic" src="img/ItemIceCube.png" alt="">Ice Cube (freeze)</td>
+<td data-label="Formula">0.4n / (0.4n + 0.6)</td>
+<td data-label="1">40%</td>
+<td data-label="2">57%</td>
+<td data-label="3">67%</td>
+<td data-label="5">77%</td>
+<td data-label="10">87%</td>
+<td data-label="20">93%</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemLightningOrb.png" alt="">Lightning Orb (strike, stun)</td>
-<td>0.9 × 0.25n / (0.25n + 0.6)</td>
-<td>26%</td>
-<td>41%</td>
-<td>50%</td>
-<td>61%</td>
-<td>73%</td>
-<td>80%</td>
+<td class="nm" data-label="Item"><img class="ic" src="img/ItemLightningOrb.png" alt="">Lightning Orb (strike, stun)</td>
+<td data-label="Formula">0.9 × 0.25n / (0.25n + 0.6)</td>
+<td data-label="1">26%</td>
+<td data-label="2">41%</td>
+<td data-label="3">50%</td>
+<td data-label="5">61%</td>
+<td data-label="10">73%</td>
+<td data-label="20">80%</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemSluttyCannon.png" alt="">Slutty Cannon</td>
-<td>0.2n / (0.2n + 0.5)</td>
-<td>29%</td>
-<td>44%</td>
-<td>55%</td>
-<td>67%</td>
-<td>80%</td>
-<td>89%</td>
+<td class="nm" data-label="Item"><img class="ic" src="img/ItemSluttyCannon.png" alt="">Slutty Cannon</td>
+<td data-label="Formula">0.2n / (0.2n + 0.5)</td>
+<td data-label="1">29%</td>
+<td data-label="2">44%</td>
+<td data-label="3">55%</td>
+<td data-label="5">67%</td>
+<td data-label="10">80%</td>
+<td data-label="20">89%</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemGlovesPower.png" alt=""><img class="ic" src="img/ItemEagleClaw.png" alt="">Power Gloves, Eagle Claw</td>
-<td>0.08n / (0.08n + 0.5)</td>
-<td>14%</td>
-<td>24%</td>
-<td>32%</td>
-<td>44%</td>
-<td>62%</td>
-<td>76%</td>
+<td class="nm" data-label="Item"><img class="ic" src="img/ItemGlovesPower.png" alt=""><img class="ic" src="img/ItemEagleClaw.png" alt="">Power Gloves, Eagle Claw</td>
+<td data-label="Formula">0.08n / (0.08n + 0.5)</td>
+<td data-label="1">14%</td>
+<td data-label="2">24%</td>
+<td data-label="3">32%</td>
+<td data-label="5">44%</td>
+<td data-label="10">62%</td>
+<td data-label="20">76%</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemIceCrystal.png" alt="">Ice Crystal</td>
-<td>0.075n / (0.075n + 0.75)</td>
-<td>9%</td>
-<td>17%</td>
-<td>23%</td>
-<td>33%</td>
-<td>50%</td>
-<td>67%</td>
+<td class="nm" data-label="Item"><img class="ic" src="img/ItemIceCrystal.png" alt="">Ice Crystal</td>
+<td data-label="Formula">0.075n / (0.075n + 0.75)</td>
+<td data-label="1">9%</td>
+<td data-label="2">17%</td>
+<td data-label="3">23%</td>
+<td data-label="5">33%</td>
+<td data-label="10">50%</td>
+<td data-label="20">67%</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemKey.png" alt="">Key (free chest)</td>
-<td>0.1n / (0.1n + 1)</td>
-<td>9%</td>
-<td>17%</td>
-<td>23%</td>
-<td>33%</td>
-<td>50%</td>
-<td>67%</td>
+<td class="nm" data-label="Item"><img class="ic" src="img/ItemKey.png" alt="">Key (free chest)</td>
+<td data-label="Formula">0.1n / (0.1n + 1)</td>
+<td data-label="1">9%</td>
+<td data-label="2">17%</td>
+<td data-label="3">23%</td>
+<td data-label="5">33%</td>
+<td data-label="10">50%</td>
+<td data-label="20">67%</td>
 </tr>
 <tr>
-<td class="nm"><img class="ic" src="img/ItemGlovesCursed.png" alt="">Cursed Gloves</td>
-<td>0.5 × 0.05n / (0.05n + 0.8)</td>
-<td>3%</td>
-<td>6%</td>
-<td>8%</td>
-<td>12%</td>
-<td>19%</td>
-<td>28%</td>
+<td class="nm" data-label="Item"><img class="ic" src="img/ItemGlovesCursed.png" alt="">Cursed Gloves</td>
+<td data-label="Formula">0.5 × 0.05n / (0.05n + 0.8)</td>
+<td data-label="1">3%</td>
+<td data-label="2">6%</td>
+<td data-label="3">8%</td>
+<td data-label="5">12%</td>
+<td data-label="10">19%</td>
+<td data-label="20">28%</td>
 </tr>
 </tbody>
 </table></div>
