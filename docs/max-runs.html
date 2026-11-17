@@ -26,7 +26,7 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid va
 @media (max-width:820px){.wrap{display:block}nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
 nav .links{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;font-size:14px}nav .sub{margin-bottom:10px}
 main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
-</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="on">Maxing a run</a></div></nav>
+</style></head><body><div class="wrap"><nav><p class="brand">Megabonk Data</p><p class="sub">Exact numbers and formulas, v1.0.69</p><div class="links"><a href="." class="">Overview</a><a href="mechanics.html" class="">Core math</a><a href="status.html" class="">Status effects</a><a href="maps.html" class="">Maps &amp; stages</a><a href="enemies.html" class="">Enemies</a><a href="economy.html" class="">Luck, chests &amp; shrines</a><a href="items.html" class="">Items</a><a href="weapons.html" class="">Weapons</a><a href="tomes.html" class="">Tomes</a><a href="characters.html" class="">Characters</a><a href="max-runs.html" class="on">Maxing a run</a><a href="faq.html" class="">FAQ &amp; map limits</a></div></nav>
 <main><h1 id="maxing-a-run">Maxing a run</h1>
 <p>A short plan built on the numbers in this wiki. The goal is the most kills, which in Megabonk means surviving long in final swarms at high difficulty.</p>
 <h2 id="1-before-the-run">1. Before the run</h2>
@@ -101,7 +101,7 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <p>The final swarm starts at the stage boss kill or the timer, whichever comes first, so <strong>killing the boss early starts the farm early</strong>. Inside it:</p>
 <ul>
 <li>Enemies refill toward 400 (first 2 minutes) then 300, at a rate that rises with <strong>Difficulty</strong>: the spawn multiplier is 1 + 0.7 × Difficulty + 0.4 × stage. More Difficulty = faster refill = more kills per minute.</li>
-<li>Enemy HP gains +3 at 1 minute, +15 at 2, +63 at 3, +1,023 at 5. <strong>Flat damage stops killing within a few minutes.</strong></li>
+<li>Enemy HP gains +3 at 1 minute, +15 at 2, +63 at 3, +1,023 at 5. A weak build's damage stops keeping up within a few minutes; a strong one (crit past 200%, Big Bonk, Lightning Orb) keeps the full kill rate up to the 12:00 Red Ghost switch, as the 361k run below did.</li>
 <li>Two things keep killing regardless of HP:</li>
 <li><strong>Bob's Light</strong> instantly kills every non-boss in its radius. Cooldown 45 − 3 per copy (5 s at 14 copies); radius 50 + 10 per copy (250 at 20 copies). With a full map of ghosts that's up to hundreds of kills per blast.</li>
 <li><strong>Cursed Doll</strong>: each copy keeps 2 enemies cursed, each losing 30% of max HP a second, so about 0.5 kills per second per Doll.</li>
@@ -122,4 +122,52 @@ main{padding:24px 16px 60px}h1{font-size:27px}h2{font-size:20px}}
 <li><strong>Or leave before 12:00.</strong> Every stage resets the final-swarm clock to 0, so a new stage's swarm starts back at plain Ghosts. On stages 1–3, taking the portal before 12:00 of the swarm and farming the next stage's early swarm avoids the wall entirely, at the cost of the stage HP jump (≈30× on stage 2).</li>
 </ol>
 <h2 id="6-moving-between-stages">6. Moving between stages</h2>
-<p>Enemy HP jumps about 15× between the end of stage 1 and the start of stage 2, and about 5× again into stage 3, on top of +10% per run minute. Leave a stage when your damage can take that jump: more Damage Tome levels, Pot and Wizard's Hat level caps, and crit chance past 100% (2 crits = ×4, 3 = ×6.25) are the multipliers that keep up.</p><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>
+<p>Enemy HP jumps about 15× between the end of stage 1 and the start of stage 2, and about 5× again into stage 3, on top of +10% per run minute. Leave a stage when your damage can take that jump: more Damage Tome levels, Pot and Wizard's Hat level caps, and crit chance past 100% (2 crits = ×4, 3 = ×6.25) are the multipliers that keep up.</p>
+<h2 id="7-what-a-361000-kill-run-showed">7. What a 361,000-kill run showed</h2>
+<p>A recorded Dicehead run on Forest Tier 3 (Nov 16, 2026): 361,487 kills in 64:22, level 1,497, died on the final-boss map. The recorder started at 23:16, so the first stage and a half are missing.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Final swarm</th>
+<th>Ghost phase</th>
+<th>Kills per minute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stage 3, swarm 0–1 min</td>
+<td>Ghost</td>
+<td>~11,700</td>
+</tr>
+<tr>
+<td>Stage 3, swarm 1–12 min</td>
+<td>Greater, then Purple</td>
+<td>11,300–11,500, steady</td>
+</tr>
+<tr>
+<td>Stage 3, swarm 12 min</td>
+<td><strong>Red</strong></td>
+<td><strong>4,800</strong> → left for the final map</td>
+</tr>
+<tr>
+<td>Final map, swarm 0–12 min</td>
+<td>Ghost → Greater → Purple</td>
+<td>11,100–14,500</td>
+</tr>
+<tr>
+<td>Final map, swarm 12 min +</td>
+<td><strong>Red</strong></td>
+<td>7,500 → 4,000 → 1,500, then death at 64:22</td>
+</tr>
+</tbody>
+</table></div>
+<p>What it confirms:</p>
+<ul>
+<li><strong>The ghost wall is real and exactly on the clock.</strong> Kills held at ~11,500 a minute through Ghost, Greater and Purple phases, then fell by more than half the moment Red Ghosts took over, on both maps.</li>
+<li><strong>Leaving before the wall works.</strong> The run left stage 3 right as Red Ghosts arrived and went on to farm another full 12 minutes on the final map.</li>
+<li><strong>~11,500 kills a minute looks like the ceiling</strong> at this build's 1,040% Difficulty: the map stayed near the 300-enemy swarm cap and kills matched the refill rate. Total kills are close to <em>minutes spent in pre-Red swarms × 11,500</em>.</li>
+<li><strong>Death was the Red Ghost hit, not damage.</strong> Shield was 68, Max HP 1,363, Armor 0.74 (50% reduction), Evasion 0.62 raw (38%). A Red Ghost at 12+ minutes hits for six figures, so one hit ends it. Survival past 12:00 needs a huge shield pool, Za Warudo copies, or not being there.</li>
+<li><strong>Big Bonk did 73% of all damage</strong> (5 copies: 2% + 1.5% per extra copy, at 20× + 10× per extra copy). Lightning Orb, Spicy Meatball, Dragonfire and Grandma's Tonic followed. Cursed Doll (18 copies) was 6th.</li>
+<li><strong>No Bob's Light.</strong> That's the item that keeps killing Red Ghosts (1 in 3) and everything around them.</li>
+</ul>
+<p><strong>The plan that follows:</strong> farm each stage's final swarm until about 11:30 of swarm time, then take the portal before the Red switch. On Tier 3 that's up to four 12-minute farms (three stages plus the final map), about 48 minutes of swarm. At ~11,500 a minute that's roughly 550,000 kills before any Red Ghost phase.</p><footer>Fan-made guide. Not affiliated with the developers of Megabonk. Numbers read from game v1.0.69; they can change with patches.</footer></main></div></body></html>
