@@ -353,6 +353,14 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <p>(Expected wait ≈ √(420 ÷ (kills per second × 0.0005 × Powerup Drop Chance)) seconds.)</p>
 </blockquote>
 <p>That's how multi-hour runs open thousands of chests, and why their Wizard's Hat counts reach the thousands.</p>
+<p><strong>More free chests, ranked by effect:</strong></p>
+<ol>
+<li><strong>Powerup Drop Chance</strong> multiplies every roll. Raise it with Charge Shrine offers (+5% per Common offer) and, on Graveyard, Bald Head doublings.</li>
+<li><strong>Kill rate.</strong> The wait shrinks with the square root of kills per second, so 4× the kills halves it.</li>
+<li><strong>Elites</strong> roll at double chance. More elites (Charge Shrine "Elite spawns" offers, Old Mask) help a little: if 10% of your kills are elites, the wait is about 5% shorter.</li>
+<li><strong>Other free chests:</strong> bosses, the first elite on stage 1, frog eggs, Challenge Shrines, and Roberto's Hoarder passive.</li>
+</ol>
+<p>Keys don't add chests. They give a chance for a chest you'd pay for to open free, and chests from kills are already free.</p>
 <h2 id="pots"><img class="ic" src="img/Gold.png" alt="">Pots</h2>
 <p>Pots drop gold, XP, HP or silver, plus the Luck above. Pumpkin adds 8 pots on later stages and +18% pot rewards per copy.</p>
 <h2 id="microwave"><img class="ic" src="img/ItemEnergyCore.png" alt="">Microwave</h2>
@@ -391,7 +399,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 <tr>
 <td class="nm" data-label="Shrine"><img class="ic" src="img/Gold.png" alt="">Greed Shrine</td>
-<td data-label="What it does">Adds a permanent stat effect (Difficulty, +5% each by community count).</td>
+<td data-label="What it does">Applies a permanent stat effect (Difficulty; +5% each by community count) and drops gold worth 10% of your next chest's price.</td>
 </tr>
 <tr>
 <td class="nm" data-label="Shrine"><img class="ic" src="img/Curse.png" alt="">Boss Curse (Cursed Shrine)</td>
@@ -407,11 +415,11 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 <tr>
 <td data-label="Shrine">Balance Shrine ("Bald Heads", Graveyard)</td>
-<td data-label="What it does">Offers stat trades: one stat doubled, another halved.</td>
+<td data-label="What it does">Offers stat trades: one stat ×2, another ×0.5. See below.</td>
 </tr>
 <tr>
 <td data-label="Shrine">Gravestone (Graveyard)</td>
-<td data-label="What it does">Grants stat effects.</td>
+<td data-label="What it does">Applies a stat effect and spawns an enemy.</td>
 </tr>
 <tr>
 <td class="nm" data-label="Shrine"><img class="ic" src="img/Coffin.png" alt="">Coffin (Graveyard)</td>
@@ -419,6 +427,85 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </tbody>
 </table></div>
+<h3 id="which-stats-each-source-can-roll">Which stats each source can roll</h3>
+<p>Stat offers are drawn from three fixed lists in the code (<code>EncounterUtility</code>):</p>
+<div class="tw"><table data-m="cards">
+<thead>
+<tr>
+<th>Stat</th>
+<th>Charge Shrines</th>
+<th>Bald Heads (×2 / ×0.5)</th>
+<th>Chaos Tome, Dicehead's Gamba</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Stat">Max HP, HP regen, Shield, Thorns, Armor, Evasion</td>
+<td data-label="Charge Shrines">✓</td>
+<td data-label="Bald Heads (×2 / ×0.5)">✓</td>
+<td data-label="Chaos Tome, Dicehead&#x27;s Gamba">✓</td>
+</tr>
+<tr>
+<td data-label="Stat">Size, Duration, Projectile speed, Damage, Attack speed</td>
+<td data-label="Charge Shrines">✓</td>
+<td data-label="Bald Heads (×2 / ×0.5)">✓</td>
+<td data-label="Chaos Tome, Dicehead&#x27;s Gamba">✓</td>
+</tr>
+<tr>
+<td data-label="Stat">Lifesteal, Crit chance, Crit damage, Elite damage, Knockback, Move speed</td>
+<td data-label="Charge Shrines">✓</td>
+<td data-label="Bald Heads (×2 / ×0.5)">✓</td>
+<td data-label="Chaos Tome, Dicehead&#x27;s Gamba">✓</td>
+</tr>
+<tr>
+<td data-label="Stat">Projectiles (Quantity)</td>
+<td data-label="Charge Shrines">✓</td>
+<td data-label="Bald Heads (×2 / ×0.5)">—</td>
+<td data-label="Chaos Tome, Dicehead&#x27;s Gamba">✓</td>
+</tr>
+<tr>
+<td data-label="Stat">Jump height, Pickup range</td>
+<td data-label="Charge Shrines">✓</td>
+<td data-label="Bald Heads (×2 / ×0.5)">✓</td>
+<td data-label="Chaos Tome, Dicehead&#x27;s Gamba">—</td>
+</tr>
+<tr>
+<td data-label="Stat">Luck, Gold gain, XP gain</td>
+<td data-label="Charge Shrines">✓</td>
+<td data-label="Bald Heads (×2 / ×0.5)">✓</td>
+<td data-label="Chaos Tome, Dicehead&#x27;s Gamba">—</td>
+</tr>
+<tr>
+<td data-label="Stat"><strong>Powerup Drop Chance</strong>, Powerup Multiplier</td>
+<td data-label="Charge Shrines">✓</td>
+<td data-label="Bald Heads (×2 / ×0.5)">✓</td>
+<td data-label="Chaos Tome, Dicehead&#x27;s Gamba">—</td>
+</tr>
+<tr>
+<td class="nm" data-label="Stat"><strong><img class="ic" src="img/Elite.png" alt="">Elite spawns</strong></td>
+<td data-label="Charge Shrines">✓</td>
+<td data-label="Bald Heads (×2 / ×0.5)">—</td>
+<td data-label="Chaos Tome, Dicehead&#x27;s Gamba">—</td>
+</tr>
+<tr>
+<td data-label="Stat">Difficulty, Extra jumps</td>
+<td data-label="Charge Shrines">✓</td>
+<td data-label="Bald Heads (×2 / ×0.5)">—</td>
+<td data-label="Chaos Tome, Dicehead&#x27;s Gamba">—</td>
+</tr>
+<tr>
+<td data-label="Stat">Fall damage reduction</td>
+<td data-label="Charge Shrines">—</td>
+<td data-label="Bald Heads (×2 / ×0.5)">✓</td>
+<td data-label="Chaos Tome, Dicehead&#x27;s Gamba">—</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Bald Heads (Balance Shrines)</strong> each offer trades built from two different stats on their list: one is <strong>multiplied by 2</strong>, the other by 0.5. These are multipliers, so they stack: four doublings of the same stat make it ×16.</p>
+<blockquote>
+<p><strong>Example:</strong> a run that doubles Powerup Drop Chance 3 times and never halves it has ×8. At 300 kills a second that cuts the wait for a free chest from about 53 seconds to about 19 (see <a href="#chests-from-kills">Chests from kills</a>).</p>
+</blockquote>
+<p>Things Bald Heads <strong>can't</strong> roll in the 1.0.69 code: Elite spawns, Projectiles, Difficulty and Extra jumps. Elite spawns come from Charge Shrines (+15% per Common offer) and Old Mask (+15% per copy).</p>
 <h2 id="level-up-and-shrine-stat-values"><img class="ic" src="img/Stonks.png" alt="">Level-up and shrine stat values</h2>
 <p>When a level-up or shrine offers a stat, the Common value is (× the offer's rarity multiplier):</p>
 <div class="tw"><table data-m="cards">
