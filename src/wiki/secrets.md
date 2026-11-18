@@ -66,4 +66,4 @@ Things in the 1.0.69 files that the game never offers:
 | **Weeb Headset** | Item code with a tiny charm chance, but no item entry, so it can't drop. |
 | **Test enemies** | "Test" and "Test2", one with 2,147,483,647 HP. |
 
-The "Dungeon" map in the files is the Graveyard's crypt, which is real and playable.
+The files also have a map called "Dungeon". That's the Graveyard's crypt, not unused content.
