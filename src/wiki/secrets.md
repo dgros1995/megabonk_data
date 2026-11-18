@@ -62,7 +62,7 @@ Things in the 1.0.69 files that the game never offers:
 | What | Details |
 |---|---|
 | **A "Hell" map** | Has its own stage data (desert trees, dark rocks, fire effects, columns and walls) and a Moai-only shrine list, but isn't in the game's list of playable maps. The enemy data even has a map flag for it, though no enemy uses it. |
-| **Three tomes** | Balance, Gambler and Hoarder exist but are switched off. Hoarder would spawn chests, Gambler would give shrine-style stat offers. |
+| **Three tomes** | Balance, Gambler and Hoarder exist but are switched off. Balance would give +2% to every stat (its description), but its stat data is empty. Hoarder would spawn chests, Gambler would give shrine-style stat offers. |
 | **Weeb Headset** | Item code with a tiny charm chance, but no item entry, so it can't drop. |
 | **Test enemies** | "Test" and "Test2", one with 2,147,483,647 HP. |
 
