@@ -191,4 +191,4 @@ What it confirms:
 
 **A safe plan for a build like this one:** farm each stage's final swarm until about 11:30 of swarm time, then take the portal before the Red switch. On Tier 3 that's up to four 12-minute farms (three stages plus the final map), about 48 minutes of swarm. At ~11,500 a minute that's roughly 550,000 kills before any Red Ghost phase.
 
-**To go further,** build toward the leaderboard core in section 0: Overpowered Lamp, Big Bonk, Spicy Meatball, Giant Fork, Lightning Orb, Beefy Ring, Wizard's Hat and Anvil. Use Katana, Shotgun or Dexecutioner, and Chaos, XP and Cursed tomes. The top runs built this way last hours, not minutes.
+**To go further,** build toward the leaderboard core in section 0: Overpowered Lamp, Big Bonk, Spicy Meatball, Giant Fork, Lightning Orb, Beefy Ring, Wizard's Hat, Pot (Stainless Steel) and Anvil. Use Katana, Shotgun or Dexecutioner, and Chaos, XP and Cursed tomes. The top runs built this way last hours, not minutes.
