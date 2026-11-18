@@ -52,20 +52,6 @@ From the game data (modifyType): **Flat** — Precision, Luck, Cursed, Armor, Ev
 
 > **Example:** at 100% Difficulty on stage 1, the spawn multiplier is 1 + 0.7 = 1.7, so **70% more enemies** than at 0%. They also have 110% more HP and hit twice as hard.
 
-**Why top runs take it anyway:** kills, not survival, are the score. Past a point your damage kills everything that spawns, so the limit on kills per minute is how fast enemies arrive. Difficulty raises that rate. A recorded 361,000-kill Dicehead run at 1,040% Difficulty held about 11,500 kills a minute, the same as the swarm's refill rate ([Maxing a run](max-runs.html#7-what-a-361000-kill-run-showed)).
-
-**Where Difficulty comes from:**
-
-| Source | Difficulty |
-|---|---|
-| Cursed Tome | +4% per level on Common (3.5% rounded), up to +7% on Legendary |
-| Greed Shrine | +5% each |
-| Gravestone (Graveyard) | +5% each |
-| Charge Shrine offer | +8% (Common) |
-| Sir Chadwell | +10% to start, +1% per level |
-
-The game data also holds three tomes that are switched off and can't be offered: Balance, Gambler and Hoarder.
-
 ## Which weapons each tome affects
 
 Every weapon reads its stats through the same functions (`WeaponUtility`), each one weapon value × your stat. Whether a tome does anything depends on whether the weapon has that value and uses it. Tomes not listed here (XP, Luck, Cursed, Health, Shield, Armor, Evasion, Regen, Bloody, Thorns, Attraction, Agility, Golden, Silver) don't change weapons directly; Thorns is the exception for Aegis, whose blocks add your Thorns to their damage.
