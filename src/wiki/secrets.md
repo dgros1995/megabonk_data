@@ -49,7 +49,7 @@ The game's own names for its bosses:
 | Ent phases 1–3 (Forest final boss) | Lil Bark, Chadbark, Bark Vader |
 | Pharaoh phases 1–3 (Desert final boss) | Lil' Anubis, Anubruh, Juge Anubis |
 | Ghost King (Graveyard final boss) | Big Bob |
-| Pig miniboss | Chunkham the Terrible |
+| Pig miniboss (Forest) | Chunkham the Terrible |
 | Golem miniboss | Stone Golem |
 | Desert scorpion miniboss | Scorpionussy |
 | Graveyard minibosses | Ghostham the Dead, Calcium's Dad |

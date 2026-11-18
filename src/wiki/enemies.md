@@ -55,8 +55,8 @@ Base values from the game's enemy database, before scaling. Credits are what the
 | Slime | Forest | 6 | 8 | 6.5 | 0.75 | | ✓ | ✓ | 0 | |
 | Bee | Forest | 10 | 15 | 6.5 | 1 | ✓ | ✓ | ✓ | 0 | |
 | Boomer Spider | Forest | 18 | 30 | 6.0 | 1.5 | | ✓ | ✓ | 0 | Explodes |
-| Golem (miniboss) | Forest | 250 | 40 | 6.0 | 40 | | ✓ | ✓ | 4 | Stone attacks |
-| Pig (miniboss) | Forest | 250 | 40 | 6.0 | 40 | | ✓ | ✓ | 3 | Slam, mud splash |
+| Stone Golem (miniboss) | Forest | 250 | 40 | 6.0 | 40 | | ✓ | ✓ | 4 | Stone attacks |
+| Chunkham the Terrible (miniboss; "Pig" in the game files) | Forest | 250 | 40 | 6.0 | 40 | | ✓ | ✓ | 3 | Slam, mud splash |
 | Mummy | Desert | 8 | 13 | 5.5 | 1 | | ✓ | ✓ | 0 | |
 | Mummy Tank | Desert | 45 | 30 | 5.0 | 2 | | ✓ | ✓ | 1 | |
 | Ancient Mummy | Desert | 70 | 40 | 5.0 | 2.5 | | ✓ | ✓ | 1 | |
@@ -148,8 +148,8 @@ The gap between attacks shrinks each phase: 6–8 s, then 3.5–5 s, then 2–3 
 | Bandit | Dash strike (within 15) | 10 s | ×0.8 |
 | Bush | Sniper shot (any range) | 12 s | ×0.8, 2.5 s recovery after |
 | Ghostham | Slam (within 14), mud splash, predictive mud splash | 5 s each | ×1.0 / ×0.7 / ×0.7 |
-| Golem (Forest) | Close stone attack (within 17), continuous stones | 8 s / 16 s | ×1.0 / ×0.75 |
-| Pig (Forest) | Slam (within 14), mud splash, predictive mud splash | 5 s each | ×1.0 / ×0.7 / ×0.7 |
+| Stone Golem (Forest) | Close stone attack (within 17), continuous stones | 8 s / 16 s | ×1.0 / ×0.75 |
+| Chunkham (Forest) | Slam (within 14), mud splash, predictive mud splash | 5 s each | ×1.0 / ×0.7 / ×0.7 |
 | Sand Golem (Desert) | Stone attack (within 17), continuous stones | 8 s / 16 s | ×1.0 / ×0.75 |
 | Scorpion (Desert) | Spike volley, predictive spikes, hitscan spikes | 16 s / 12 s / 12 s | ×0.8 / ×1.0 / ×0.8 |
 | Calcium's Dad (Graveyard) | Predictive bone pillars, pillar circles, targeted laser | 15 s / 15 s / 40 s | ×0.75 / ×0.75 / ×0.05 per hit |

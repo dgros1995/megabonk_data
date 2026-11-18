@@ -23,7 +23,7 @@
 
 Each stage runs a fixed script from the map data. Times count up from the start of the stage. A new enemy type joins the pool every 60 seconds.
 
-**Which miniboss you get:** every miniboss event draws from the map's miniboss list without repeats until the list is used up, then starts over (`SummonerController.EventMiniboss`). Forest: Golem and Pig. Desert: Sand Golem and Scorpion. Graveyard: Calcium's Dad and Ghostham. So on stage 1 the 3:00 and 8:00 minibosses are always the two different ones, in random order.
+**Which miniboss you get:** every miniboss event draws from the map's miniboss list without repeats until the list is used up, then starts over (`SummonerController.EventMiniboss`). Forest: Stone Golem and Chunkham the Terrible. Desert: Sand Golem and Scorpion. Graveyard: Calcium's Dad and Ghostham. So on stage 1 the 3:00 and 8:00 minibosses are always the two different ones, in random order.
 
 ### Forest
 
@@ -36,7 +36,7 @@ Each stage runs a fixed script from the map data. Times count up from the start 
 | 8:00 Miniboss, 30 s | 7:00 Miniboss, 45 s | 5:00 Miniboss, 45 s |
 | 10:00 Final swarm | 9:00 Final swarm | 8:00 Final swarm |
 
-Forest enemies: Goblin, Strong Goblin, Goblin Tank, Golem, Slime, Bee, Boomer Spider; minibosses Golem and Pig.
+Forest enemies: Goblin, Strong Goblin, Goblin Tank, Golem, Slime, Bee, Boomer Spider; minibosses Stone Golem and Chunkham the Terrible.
 
 ### Desert
 
@@ -121,7 +121,7 @@ The 12:00 switch is the "ghost wall" players hit around 12–13 minutes. See [Ma
 
 ## Bosses and Boss Curses
 
-- Using a **Boss Curse shrine** adds 1 to a counter on the stage's game manager (`GameManager.bossCurses`). Nothing in the code carries it over, and recorded runs matched a per-stage count (2 curses → 3 Pigs on stage 1; 5 curses → 6 Golems on stage 2).
+- Using a **Boss Curse shrine** adds 1 to a counter on the stage's game manager (`GameManager.bossCurses`). Nothing in the code carries it over, and recorded runs matched a per-stage count (2 curses → 3 Chunkhams on stage 1; 5 curses → 6 Stone Golems on stage 2).
 - **Every miniboss event spawns 1 + curses minibosses**, and **the stage boss spawns as 1 + curses bosses**.
 - **Every boss has its HP multiplied by 1 + 0.16 × curses.**
 - Boss HP also gets a stage multiplier: ×2.5 on stage 2 and ×5 on stage 3.

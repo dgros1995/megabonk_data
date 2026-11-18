@@ -190,7 +190,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </table></div>
 <h2 id="stage-timelines">Stage timelines</h2>
 <p>Each stage runs a fixed script from the map data. Times count up from the start of the stage. A new enemy type joins the pool every 60 seconds.</p>
-<p><strong>Which miniboss you get:</strong> every miniboss event draws from the map's miniboss list without repeats until the list is used up, then starts over (<code>SummonerController.EventMiniboss</code>). Forest: Golem and Pig. Desert: Sand Golem and Scorpion. Graveyard: Calcium's Dad and Ghostham. So on stage 1 the 3:00 and 8:00 minibosses are always the two different ones, in random order.</p>
+<p><strong>Which miniboss you get:</strong> every miniboss event draws from the map's miniboss list without repeats until the list is used up, then starts over (<code>SummonerController.EventMiniboss</code>). Forest: Stone Golem and Chunkham the Terrible. Desert: Sand Golem and Scorpion. Graveyard: Calcium's Dad and Ghostham. So on stage 1 the 3:00 and 8:00 minibosses are always the two different ones, in random order.</p>
 <h3 id="forest">Forest</h3><div class="map-banner"><img src="img/ForestIconBig.png" alt="Forest map" width="176" height="132"></div>
 <div class="tw"><table data-m="grid">
 <thead>
@@ -233,7 +233,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </tbody>
 </table></div>
-<p>Forest enemies: Goblin, Strong Goblin, Goblin Tank, Golem, Slime, Bee, Boomer Spider; minibosses Golem and Pig.</p>
+<p>Forest enemies: Goblin, Strong Goblin, Goblin Tank, Golem, Slime, Bee, Boomer Spider; minibosses Stone Golem and Chunkham the Terrible.</p>
 <h3 id="desert">Desert</h3><div class="map-banner"><img src="img/DesertIconBig.png" alt="Desert map" width="176" height="132"></div>
 <div class="tw"><table data-m="grid">
 <thead>
@@ -471,7 +471,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <p>The 12:00 switch is the "ghost wall" players hit around 12–13 minutes. See <a href="max-runs.html">Maxing a run</a>.</p>
 <h2 id="bosses-and-boss-curses"><img class="ic" src="img/Curse.png" alt="">Bosses and Boss Curses</h2>
 <ul>
-<li>Using a <strong>Boss Curse shrine</strong> adds 1 to a counter on the stage's game manager (<code>GameManager.bossCurses</code>). Nothing in the code carries it over, and recorded runs matched a per-stage count (2 curses → 3 Pigs on stage 1; 5 curses → 6 Golems on stage 2).</li>
+<li>Using a <strong>Boss Curse shrine</strong> adds 1 to a counter on the stage's game manager (<code>GameManager.bossCurses</code>). Nothing in the code carries it over, and recorded runs matched a per-stage count (2 curses → 3 Chunkhams on stage 1; 5 curses → 6 Stone Golems on stage 2).</li>
 <li><strong>Every miniboss event spawns 1 + curses minibosses</strong>, and <strong>the stage boss spawns as 1 + curses bosses</strong>.</li>
 <li><strong>Every boss has its HP multiplied by 1 + 0.16 × curses.</strong></li>
 <li>Boss HP also gets a stage multiplier: ×2.5 on stage 2 and ×5 on stage 3.</li>
