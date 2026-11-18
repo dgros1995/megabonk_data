@@ -151,7 +151,7 @@ Why the S tier wins, from the code:
 
 - **Overpowered Lamp** makes every hit run all your on-hit items one extra time per Lamp (max 2), so everything rolls 3 times per hit.
 - **Big Bonk, Spicy Meatball, Lightning Orb and Giant Fork** all multiply off the hit, so they scale with everything else.
-- **Wizard's Hat and Anvil** raise tome levels and weapon upgrades. That matters more the longer the run goes, and these runs go for hours.
+- **Wizard's Hat and Pot** raise the level caps of tomes and weapons, and **Anvil** adds an extra stat line to every weapon upgrade. That matters more the longer the run goes, and these runs go for hours.
 - **Za Warudo** blocks one fatal hit per copy (max 25 a run). Each copy is a second chance in the late swarms, and they are spent as you go.
 - **Key, Credit Card (Green) and Time Bracelet** mean more chests, more Luck and more levels, so more rolls at the core.
 

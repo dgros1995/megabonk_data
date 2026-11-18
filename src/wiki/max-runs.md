@@ -45,7 +45,7 @@ Top leaderboard runs stack the same core items over and over. The leaderboard li
 
 - **Overpowered Lamp** makes every hit run all your on-hit items once more per Lamp (max 2). That's 3 rolls of everything per hit.
 - **Big Bonk at 10 copies:** 2% + 1.5% × 9 = **15.5%** chance per hit (× proc coefficient) to deal **110×** the hit's damage (20× + 10× per extra copy). With 2 Lamps that's three tries per hit.
-- **Wizard's Hat and Anvil** raise tome levels and weapon upgrades, which matter more the longer the run goes.
+- **Wizard's Hat and Pot** raise the level caps of tomes and weapons, and **Anvil** adds an extra stat line to every weapon upgrade. All three matter more the longer the run goes.
 
 Getting there is a numbers game, and two things decide it:
 
