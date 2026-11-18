@@ -14,12 +14,16 @@ All debuffs tick **2 times per second** (`DebuffUtility.debuffTicksPerSecond = 2
 
 | Source | Stacks added | How long the poison lasts |
 |---|---|---|
-| Moldy Cheese | 40% chance per copy per hit (each full 100% is a guaranteed stack) | 5 s |
-| Snek | 4 per copy per hit | 5 s |
+| Moldy Cheese | 40% chance per copy per hit, × proc coefficient (see below) | 5 s |
+| Snek | 4 per copy per hit, always (no roll, so proc coefficient doesn't matter) | 5 s |
 | Toxic Barrel | 5 per copy to enemies near you, when you get hit | 5 s |
 | Moldy Gloves | 10 per copy to enemies within 15, once every 8.5 s | — |
 | Plague (Amog) | Spreads poison from dying enemies; +1% poison damage per level | — |
 | Poison Flask | Weapon: leaves poison zones | — |
+
+**Moldy Cheese past 100%.** Copies add up: 3 copies is a 120% chance, 6 copies is 240%. Every full 100% is a stack you always get, and only the leftover is rolled. The weapon's proc coefficient scales just that leftover roll, never the guaranteed stacks.
+
+> **Example:** 6 Moldy Cheese (240%) on the Axe (proc coefficient 0.7). Every hit gives 2 guaranteed stacks, plus 40% × 0.7 = **28%** for a 3rd. The Sniper Rifle (1.5) would make that leftover 60%.
 
 **The duration is how long the poison keeps ticking** (× your Duration stat). Each new application adds its stacks and restarts the clock if its duration is longer than what's left, so an enemy you keep hitting stays poisoned and its stacks keep growing. Stop hitting it and all its stacks wear off together when the timer runs out.
 

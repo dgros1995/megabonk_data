@@ -98,5 +98,3 @@ Four weapons wins the 500k range. Past 1M almost everyone runs two, and Shotgun 
 **How many stages does each tier have?** Tier 1: one, Tier 2: two, Tier 3: three, then the final-boss map. Graveyard is a single 16-minute stage.
 
 **Can Bob's Light or executes kill bosses?** No. Bob's Light skips bosses; executes deal 2% of a boss's max HP.
-
-**Does proc coefficient affect Moldy Cheese and Snek?** Only the leftover chance above each full 100%; the guaranteed stacks aren't scaled.

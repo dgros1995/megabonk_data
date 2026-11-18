@@ -121,7 +121,7 @@ The formula is (1 + crits ÷ 2)², except that one crit is ×2. That multiplier 
 
 ## Proc chances
 
-Every on-hit roll is **chance × the weapon's proc coefficient** (`ItemUtility.TryProc`). Where an item's chance can pass 100% (Moldy Cheese, Snek, Unstable Transfusion, Bloody Cleaver, Golden Glove), each full 100% is a guaranteed proc and only the leftover is rolled.
+Every on-hit roll is **chance × the weapon's proc coefficient** (`ItemUtility.TryProc`). Where an item's chance can pass 100% (Moldy Cheese, Snek's burst, Unstable Transfusion, Bloody Cleaver, Golden Glove), each full 100% is a guaranteed proc and only the leftover is rolled.
 
 > **Example:** you hold 5 Dragonfire (60%, from the table below) and hit with the Axe, whose proc coefficient is 0.7. Each Axe hit has 60% × 0.7 = **42%** to proc. The same 5 Dragonfire on a Sniper Rifle (1.5) would be 60% × 1.5 = 90%. Each weapon's proc coefficient is on the [Weapons](weapons.html) page.
 

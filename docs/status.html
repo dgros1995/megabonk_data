@@ -136,12 +136,12 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <tbody>
 <tr>
 <td class="nm" data-label="Source"><img class="ic" src="img/ItemMoldyCheese.png" alt="">Moldy Cheese</td>
-<td data-label="Stacks added">40% chance per copy per hit (each full 100% is a guaranteed stack)</td>
+<td data-label="Stacks added">40% chance per copy per hit, × proc coefficient (see below)</td>
 <td data-label="How long the poison lasts">5 s</td>
 </tr>
 <tr>
 <td class="nm" data-label="Source"><img class="ic" src="img/ItemSnek.png" alt="">Snek</td>
-<td data-label="Stacks added">4 per copy per hit</td>
+<td data-label="Stacks added">4 per copy per hit, always (no roll, so proc coefficient doesn't matter)</td>
 <td data-label="How long the poison lasts">5 s</td>
 </tr>
 <tr>
@@ -166,6 +166,10 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </tbody>
 </table></div>
+<p><strong>Moldy Cheese past 100%.</strong> Copies add up: 3 copies is a 120% chance, 6 copies is 240%. Every full 100% is a stack you always get, and only the leftover is rolled. The weapon's proc coefficient scales just that leftover roll, never the guaranteed stacks.</p>
+<blockquote>
+<p><strong>Example:</strong> 6 Moldy Cheese (240%) on the Axe (proc coefficient 0.7). Every hit gives 2 guaranteed stacks, plus 40% × 0.7 = <strong>28%</strong> for a 3rd. The Sniper Rifle (1.5) would make that leftover 60%.</p>
+</blockquote>
 <p><strong>The duration is how long the poison keeps ticking</strong> (× your Duration stat). Each new application adds its stacks and restarts the clock if its duration is longer than what's left, so an enemy you keep hitting stays poisoned and its stacks keep growing. Stop hitting it and all its stacks wear off together when the timer runs out.</p>
 <blockquote>
 <p><strong>Example:</strong> Snek ×2 adds 8 stacks per hit. Hit an enemy 3 times in a second and it has 24 stacks, and the 5 s clock restarts on each hit. If you stop, the 24 stacks keep ticking for 5 more seconds, then vanish.</p>

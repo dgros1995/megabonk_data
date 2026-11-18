@@ -118,5 +118,5 @@ Every item in v1.0.69 and what its code does. Values are per copy unless stated;
 - **Cursed Doll is the late-swarm engine.** It ignores enemy HP entirely (30% of max HP per second on non-bosses), so it keeps killing when the final swarm's HP bonus reaches thousands. Against bosses it's weak.
 - **Bob's Light is the other one.** It instantly kills every non-boss in its radius; stack copies to reach the 5 s cooldown (14 copies) and 250 radius (20 copies).
 - **Proc items fall off.** Dragonfire, Ice Cube, Lightning Orb and Power Gloves give much less per copy after the first few. Lightning Orb caps at 90%.
-- **Moldy Cheese and Snek don't fall off.** Their chances pass 100% into guaranteed extra stacks.
+- **Moldy Cheese and Snek don't fall off.** Moldy Cheese's chance passes 100% into guaranteed extra stacks, and Snek's 4 stacks per copy are always applied.
 - **Execute items stop working at 6:00 of the final swarm,** when Purple and then Red Ghosts (not executable) take over.
