@@ -1,4 +1,4 @@
-import markdown, re, os, html, shutil
+import markdown, re, os, html, shutil, json
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from icons import add_icons, copy_used, USED, img as icon_img, ART
 from site_defs import PAGES, STAGE_TABLE
@@ -103,7 +103,7 @@ ul,ol{padding-left:22px}li{margin:4px 0}
 blockquote{margin:14px 0 18px;padding:12px 18px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;max-width:76ch}blockquote p{margin:0 0 6px}blockquote ol,blockquote ul{margin:4px 0 0}
 .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin:0 0 8px;font-size:14.5px}
 .toc b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.toc ul{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:4px 16px}.toc li{margin:0}
+.toc ul{list-style:none;padding:0;margin:8px 0 2px;display:flex;flex-wrap:wrap;gap:4px 16px}.toc li{margin:0}
 .toc a{text-decoration:none}.toc a:hover{text-decoration:underline}
 .map-banner{display:flex;gap:16px;align-items:flex-start;margin:6px 0 4px}
 .map-banner img{width:176px;height:132px;border-radius:10px;flex:none;object-fit:cover;border:1px solid var(--line)}
@@ -129,26 +129,55 @@ blockquote{margin:14px 0 18px;padding:12px 18px;border-left:3px solid var(--acce
 footer{margin-top:64px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:6px 18px}
 footer a{color:var(--muted)}
 .top{position:fixed;right:18px;bottom:18px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted);text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.hbtns{display:none}.scrim{display:none}.dr{display:flex;flex-direction:column;flex:1}
+.srch{padding:14px 12px 2px}
+.sbox{display:flex;align-items:center;gap:8px;height:38px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--muted);cursor:text}
+.sbox:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.sbox input{flex:1;min-width:0;border:0;background:none;outline:0;color:var(--ink);font:inherit;font-size:14.5px;-webkit-appearance:none}
+.sbox input::-webkit-search-cancel-button{-webkit-appearance:none}
+.sbox kbd{font:inherit;font-size:11.5px;border:1px solid var(--line);border-radius:5px;padding:0 6px;line-height:18px}
+.sres{padding:8px 10px 24px}.sres ul{list-style:none;margin:0;padding:0}.sres li{margin:0}
+.sres a{display:block;padding:8px 10px;border-radius:9px;text-decoration:none;color:var(--ink);line-height:1.35}
+.sres a:hover,.sres a:focus{background:var(--code);outline:0}
+.sres .sp{display:block;font-size:11.5px;color:var(--muted);letter-spacing:.02em}.sres b{display:block;font-size:14.5px;font-weight:650}
+.sres .ss{display:block;font-size:12.5px;color:var(--muted);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.sres mark{background:var(--accent-soft);color:var(--accent-ink);border-radius:3px;padding:0 1px}.sx{color:var(--muted);font-size:14px;padding:6px 10px;margin:0}
+tr:target td{background:var(--accent-soft)!important}h2:target,h3:target{color:var(--accent-ink)}
+.toc summary{cursor:pointer;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;list-style:none;display:flex;align-items:center;gap:8px}
+.toc summary::-webkit-details-marker{display:none}.toc summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:-3px 0 0 auto;transition:transform .15s}
+.toc[open] summary::after{transform:rotate(-135deg);margin-top:3px}.toc summary span{text-transform:none;letter-spacing:0;font-weight:500;opacity:.8}
+.rail{display:none}
+@media (min-width:1280px){main{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:44px;max-width:1440px}
+.cnt{min-width:0}.cnt>.toc{display:none}
+.rail{display:block;position:sticky;top:32px;align-self:start;max-height:calc(100vh - 64px);overflow:auto;font-size:13.5px;padding-top:6px}
+.rail b{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.rail ul{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}.rail li{margin:0}
+.rail a{display:block;padding:5px 0 5px 12px;margin-left:-1px;border-left:2px solid transparent;color:var(--muted);text-decoration:none;line-height:1.35}
+.rail a:hover{color:var(--ink)}.rail a.on{color:var(--accent-ink);border-left-color:var(--accent);font-weight:600}}
 @media (max-width:860px){.wrap{display:block}
 nav.side{position:sticky;top:0;z-index:50;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);overflow:visible;background:var(--brand)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 10px 0 16px;height:56px;background:var(--brand)}
 .brand{padding:0;background:none;flex:none}.wm{font-size:22px}.brand span{display:none}
-.mbtn{display:flex;align-items:center;gap:9px;min-width:0;height:42px;padding:0 12px 0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:var(--brand-ink);font:inherit;font-size:14.5px;font-weight:650;cursor:pointer}
-.mbtn .cur{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:46vw;opacity:.85;font-weight:500}.mb-t{display:none}
+.hbtns{display:flex;gap:4px}
+.hb{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:10px;background:none;color:var(--brand-ink);cursor:pointer}
+.hb:active{background:rgba(255,255,255,.1)}.hb .si{width:21px;height:21px}
 .mb-i{display:inline-flex;flex-direction:column;justify-content:center;gap:4px;width:18px;height:18px;flex:none}.mb-i i{display:block;height:2px;border-radius:2px;background:currentColor;transition:transform .2s,opacity .2s}
 nav.open .mb-i i:nth-child(1){transform:translateY(6px) rotate(45deg)}nav.open .mb-i i:nth-child(2){opacity:0}nav.open .mb-i i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-.links{display:none;position:fixed;left:0;right:0;top:56px;bottom:0;overflow-y:auto;overscroll-behavior:contain;background:var(--bg);padding:6px 14px 40px;border-top:1px solid var(--line)}
-nav.open .links{display:block}html.navlock{overflow:hidden}
-.grp{margin-top:14px}.grp>b{padding:4px 4px 6px}
-.grp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.grp>b{grid-column:1/-1}
-.links a{padding:10px 10px;min-height:48px;font-size:14.5px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.links a img{width:24px;height:24px}
-.links a.on{border-color:var(--accent)}
-.side-foot{display:none}
+.mb-i{width:20px}
+.scrim{display:block;position:fixed;left:0;right:0;top:56px;bottom:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .2s}
+nav.open .scrim{opacity:1;pointer-events:auto}
+.dr{position:fixed;top:56px;right:0;bottom:0;width:min(340px,88vw);overflow-y:auto;overscroll-behavior:contain;background:var(--panel);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .22s ease;visibility:hidden}
+nav.open .dr{transform:none;visibility:visible}html.navlock{overflow:hidden}
+.srch{padding:14px 14px 4px}.sbox{height:44px}.sbox input{font-size:16px}.sbox kbd{display:none}
+.links{padding:4px 10px 16px}.grp{margin-top:12px}.grp>b{padding:4px 10px 4px}
+.links a{min-height:44px;font-size:15.5px}
+.side-foot{display:block;margin-top:auto}
 .pager{margin-top:40px}.pager a{padding:12px 14px;font-size:14.5px}
 main{padding:22px 16px 64px;overflow-wrap:break-word}html{scroll-padding-top:68px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42px;height:42px}
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
-.top{display:none;right:14px;bottom:14px;padding:9px 14px}.top.show{display:block}}
+.top{display:none;right:14px;bottom:14px;padding:9px 14px}.top.show{display:block}
+.toc{padding:0}.toc summary{padding:13px 16px;min-height:46px}.toc ul{display:block;padding:0 16px 12px;margin:0}.toc li{padding:6px 0;border-top:1px solid var(--line)}}
 @media (max-width:640px){
 .tw{border:0;background:none;overflow:visible}
 table[data-m="cards"],table[data-m="cards"] tbody{display:block}
@@ -158,6 +187,7 @@ table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;bor
 table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
 table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
 table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="cards"] tr:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
 .tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
@@ -207,6 +237,10 @@ def passive_icons(body):
     return re.sub(r'<strong>([A-Za-z ]+):</strong>', p, body)
 
 
+JS = '(function(){\nvar d=document,n=d.getElementById(\'nav\'),mb=n.querySelector(\'.mbtn\'),sb=n.querySelector(\'.sbtn\'),q=d.getElementById(\'q\'),R=d.getElementById(\'sres\'),L=d.getElementById(\'links\'),mq=matchMedia(\'(max-width:860px)\');\nfunction set(o){n.classList.toggle(\'open\',o);mb.setAttribute(\'aria-expanded\',o);d.documentElement.classList.toggle(\'navlock\',o&&mq.matches)}\nmb.addEventListener(\'click\',function(){set(!n.classList.contains(\'open\'))});\nsb.addEventListener(\'click\',function(){set(true);setTimeout(function(){q.focus()},60)});\nn.querySelector(\'.scrim\').addEventListener(\'click\',function(){set(false)});\nd.addEventListener(\'keydown\',function(e){\n if(e.key===\'Escape\'){if(q.value){q.value=\'\';run()}else set(false);if(d.activeElement===q&&!mq.matches)q.blur()}\n else if(e.key===\'/\'&&!/INPUT|TEXTAREA/.test(d.activeElement.tagName)){e.preventDefault();if(mq.matches)set(true);q.focus()}});\nn.addEventListener(\'click\',function(e){var a=e.target.closest(\'a\');if(a&&(L.contains(a)||R.contains(a)))set(false)});\nvar t=d.querySelector(\'.top\');function sc(){t.classList.toggle(\'show\',scrollY>600)}addEventListener(\'scroll\',sc,{passive:true});sc();\nvar IX=null,ld=false;\nfunction load(){if(ld)return;ld=true;fetch(\'search.json\').then(function(r){return r.json()}).then(function(j){IX=j;for(var i=0;i<j.length;i++){var e=j[i];e._n=e.h.toLowerCase();e._p=e.p.toLowerCase();e._t=e.t.toLowerCase()}run()}).catch(function(){ld=false})}\nfunction esc(s){return s.replace(/[&<>"]/g,function(c){return{\'&\':\'&amp;\',\'<\':\'&lt;\',\'>\':\'&gt;\',\'"\':\'&quot;\'}[c]})}\nfunction hl(s,ws){var o=esc(s);ws.forEach(function(w){if(w.length<2)return;o=o.replace(new RegExp(\'(\'+w.replace(/[.*+?^${}()|[\\]\\\\]/g,\'\\\\$&\')+\')\',\'ig\'),\'<mark>$1</mark>\')});return o}\nfunction snip(e,ws){var i=-1;for(var k=0;k<ws.length&&i<0;k++)i=e._t.indexOf(ws[k]);if(i<0)return e.t.slice(0,110)+(e.t.length>110?\'…\':\'\');var s=Math.max(0,i-45),x=e.t.slice(s,s+130);return (s>0?\'…\':\'\')+x+(s+130<e.t.length?\'…\':\'\')}\nfunction run(){\n var v=q.value.trim().toLowerCase();\n if(!v){R.hidden=true;L.hidden=false;R.innerHTML=\'\';return}\n L.hidden=true;R.hidden=false;\n if(!IX){load();R.innerHTML=\'<p class="sx">Loading…</p>\';return}\n var ws=v.split(/\\s+/),out=[];\n for(var i=0;i<IX.length;i++){var e=IX[i],s=0,ok=true;\n  for(var k=0;k<ws.length;k++){var w=ws[k],m=0;\n   if(e._n===v)m=60;else if(e._n.indexOf(w)===0)m=24;else if(e._n.indexOf(w)>=0)m=14;\n   if(e._p.indexOf(w)>=0)m+=6;if(!m&&e._t.indexOf(w)>=0)m=1+Math.min(3,e._t.split(w).length-1)*.5;\n   if(!m){ok=false;break}s+=m}\n  if(ok){if(e.k===\'r\')s+=2;out.push([s,e])}}\n out.sort(function(a,b){return b[0]-a[0]});out=out.slice(0,14);\n if(!out.length){R.innerHTML=\'<p class="sx">No results for “\'+esc(q.value.trim())+\'”.</p>\';return}\n R.innerHTML=\'<ul>\'+out.map(function(o){var e=o[1];return \'<li><a href="\'+e.u+\'"><span class="sp">\'+esc(e.p)+(e.s?\' › \'+esc(e.s):\'\')+\'</span><b>\'+hl(e.h,ws)+\'</b><span class="ss">\'+hl(snip(e,ws),ws)+\'</span></a></li>\'}).join(\'\')+\'</ul>\';\n}\nq.addEventListener(\'focus\',load);q.addEventListener(\'input\',run);\nq.addEventListener(\'keydown\',function(e){var as=R.querySelectorAll(\'a\');if(!as.length)return;if(e.key===\'Enter\'){e.preventDefault();as[0].click()}else if(e.key===\'ArrowDown\'){e.preventDefault();as[0].focus()}});\nR.addEventListener(\'keydown\',function(e){var as=[].slice.call(R.querySelectorAll(\'a\')),i=as.indexOf(d.activeElement);if(i<0)return;if(e.key===\'ArrowDown\'){e.preventDefault();(as[i+1]||as[i]).focus()}else if(e.key===\'ArrowUp\'){e.preventDefault();(i?as[i-1]:q).focus()}});\nvar rl=d.querySelector(\'.rail\');if(rl&&\'IntersectionObserver\' in window){var ra={};rl.querySelectorAll(\'a\').forEach(function(a){ra[a.getAttribute(\'href\').slice(1)]=a});var hs=[].slice.call(d.querySelectorAll(\'main h2[id]\')).filter(function(h){return ra[h.id]});\n function spy(){var cur=hs[0];for(var i=0;i<hs.length;i++){if(hs[i].getBoundingClientRect().top<120)cur=hs[i]}for(var k in ra)ra[k].classList.toggle(\'on\',cur&&k===cur.id)}addEventListener(\'scroll\',spy,{passive:true});spy()}\n})()\n'
+ICON_SEARCH = '<svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg>'
+
+
 def name_cells(body):
     return re.sub(r'(<tr>\s*)<td>(<strong>)?(<img class="(?:ic|mthumb)")', r'\1<td class="nm">\2\3', body)
 
@@ -216,7 +250,16 @@ def toc(body):
     if len(hs) < 4:
         return ''
     items = ''.join(f'<li><a href="#{i}">{re.sub("<[^>]+>", "", t)}</a></li>' for i, t in hs)
-    return f'<div class="toc"><b>On this page</b><ul>{items}</ul></div>'
+    return (f'<details class="toc" id="toc"><summary>On this page <span>{len(hs)} sections</span></summary><ul>{items}</ul></details>'
+            '<script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>')
+
+
+def rail(body):
+    hs = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', body)
+    if len(hs) < 4:
+        return ''
+    items = ''.join(f'<li><a href="#{i}">{re.sub("<[^>]+>", "", t)}</a></li>' for i, t in hs)
+    return f'<aside class="rail" aria-label="On this page"><b>On this page</b><ul>{items}</ul></aside>'
 
 
 def home(body):
@@ -240,11 +283,12 @@ def home(body):
     return hero + body
 
 
-GROUPS = [('Start', ['index', 'game', 'faq']),
-          ('How it works', ['mechanics', 'status', 'economy', 'maps', 'enemies', 'secrets']),
+GROUPS = [('Start', ['index', 'game']),
+          ('How it works', ['mechanics', 'status', 'economy', 'maps', 'enemies']),
           ('Gear', ['items', 'weapons', 'tomes', 'characters']),
-          ('Runs', ['tiers', 'max-runs']),
-          ('Unlocks', ['quests', 'challenges', 'cosmetics'])]
+          ('Runs', ['tiers', 'max-runs', 'secrets']),
+          ('Unlocks', ['quests', 'challenges', 'cosmetics']),
+          ('Reference', ['faq'])]
 TITLE = {s: t for s, t, _ in PAGES}
 ORDER = [s for _, ss in GROUPS for s in ss]
 
@@ -284,10 +328,11 @@ def page(slug, title, body, desc):
 <meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{SITE}og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <style>{CSS}</style></head><body><div class="wrap"><nav class="side" id="nav" aria-label="Site"><div class="bar"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v{VERSION}</span></a>
-<button class="mbtn" type="button" aria-expanded="false" aria-controls="links"><span class="cur">{esc(TITLE.get(slug, "Menu"))}</span><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span><span class="mb-t">Menu</span></button></div>
-<div class="links" id="links">{nav(slug)}</div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="{REPO}">Source on GitHub</a></div></nav>
-<main id="top">{body}<p class="suggest">Spotted a mistake or something missing? <a href="{edit_url(slug)}" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p>{pager(slug) if slug in ORDER else ''}<footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v{VERSION}; they can change with patches.</span><span>Updated {UPDATED}</span><a href="{REPO}">GitHub</a></footer></main></div>
-<a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){{var n=document.getElementById('nav'),b=n.querySelector('.mbtn');function set(o){{n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.documentElement.classList.toggle('navlock',o)}}b.addEventListener('click',function(){{set(!n.classList.contains('open'))}});document.addEventListener('keydown',function(e){{if(e.key==='Escape')set(false)}});n.querySelectorAll('.links a').forEach(function(a){{a.addEventListener('click',function(){{set(false)}})}});var t=document.querySelector('.top');function sc(){{t.classList.toggle('show',scrollY>600)}}addEventListener('scroll',sc,{{passive:true}});sc()}})()</script></body></html>'''
+<div class="hbtns"><button class="hb sbtn" type="button" aria-label="Search">{ICON_SEARCH}</button><button class="hb mbtn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span></button></div></div>
+<div class="scrim"></div><div class="dr" id="drawer"><div class="srch" role="search"><label class="sbox">{ICON_SEARCH}<input id="q" type="search" placeholder="Search the wiki" autocomplete="off" spellcheck="false" aria-label="Search the wiki"><kbd>/</kbd></label></div>
+<div class="sres" id="sres" hidden></div><div class="links" id="links">{nav(slug)}</div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="{REPO}">Source on GitHub</a></div></div></nav>
+<main id="top"><div class="cnt">{body}<p class="suggest">Spotted a mistake or something missing? <a href="{edit_url(slug)}" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p>{pager(slug) if slug in ORDER else ''}<footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v{VERSION}; they can change with patches.</span><span>Updated {UPDATED}</span><a href="{REPO}">GitHub</a></footer></div>{rail(body)}</main></div>
+<a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>{JS}</script></body></html>'''
 
 
 def edit_url(slug):
@@ -374,8 +419,61 @@ def mobile_tables(body):
     return re.sub(r'<table.*?</table>', one, body, flags=re.S)
 
 
+def slugify(s):
+    s = re.sub(r'<[^>]+>', '', s)
+    s = html.unescape(s).lower()
+    s = re.sub(r"['’]", '', s)
+    return re.sub(r'[^a-z0-9]+', '-', s).strip('-')
+
+
+def row_ids(body):
+    """Give each table row an id from its first cell, so search can link straight to it."""
+    seen = set(re.findall(r'id="([^"]+)"', body))
+    def one(m):
+        first = re.search(r'<td[^>]*>(.*?)</td>', m.group(0), re.S)
+        if not first:
+            return m.group(0)
+        name = re.sub(r'\s*\(.*?\)', '', re.sub(r'<[^>]+>', '', first.group(1))).strip()
+        sid = 'r-' + slugify(name)
+        if len(sid) < 4 or len(name) > 40 or sid in seen:
+            return m.group(0)
+        seen.add(sid)
+        return m.group(0).replace('<tr>', f'<tr id="{sid}">', 1)
+    return re.sub(r'<tbody>.*?</tbody>', lambda tb: re.sub(r'<tr>.*?</tr>', one, tb.group(0), flags=re.S), body, flags=re.S)
+
+
+def txt(h):
+    h = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', h, flags=re.S)
+    h = re.sub(r'</(td|th)>', ' · ', h)
+    h = re.sub(r'<[^>]+>', ' ', h)
+    h = re.sub(r'\s+', ' ', html.unescape(h))
+    return re.sub(r'(\s*·\s*)+', ' · ', h).strip(' ·')
+
+
+def index_page(slug, title, body):
+    """Search entries: the page, each h2/h3 section, and each named table row."""
+    url = href(slug).replace('./', '')
+    out = []
+    parts = re.split(r'(<h[23] id="[^"]+">.*?</h[23]>)', body, flags=re.S)
+    intro = txt(re.sub(r'<div class="pg-head">.*?</div>|<p class="meta">.*?</p>|<section class="hero">.*?</section>|<div class="chips">.*?</div>', ' ', parts[0], flags=re.S))
+    out.append({'k': 'p', 'p': title, 'h': title, 's': '', 'u': url or './', 't': intro[:400]})
+    h2 = ''
+    for i in range(1, len(parts), 2):
+        m = re.match(r'<h([23]) id="([^"]+)">(.*?)</h[23]>', parts[i], re.S)
+        lvl, hid, ht = m.group(1), m.group(2), txt(m.group(3))
+        if lvl == '2':
+            h2 = ht
+        sec = parts[i + 1]
+        out.append({'k': 's', 'p': title, 'h': ht, 's': '' if lvl == '2' else h2, 'u': f'{url}#{hid}', 't': txt(re.sub(r'<table.*?</table>', ' ', sec, flags=re.S))[:600]})
+        for rid, row in re.findall(r'<tr id="([^"]+)">(.*?)</tr>', sec, re.S):
+            cells = [txt(c) for c in re.findall(r'<td[^>]*>(.*?)</td>', row, re.S)]
+            out.append({'k': 'r', 'p': title, 'h': cells[0], 's': ht, 'u': f'{url}#{rid}', 't': ' · '.join(c for c in cells[1:] if c)[:300]})
+    return out
+
+
 def build():
     assets()
+    INDEX = []
     for slug, title, fn in PAGES:
         md = open(os.path.join(SRC, fn), encoding='utf-8').read()
         md = md.replace('Nov 16, 2026 · @David\n', '')
@@ -401,8 +499,11 @@ def build():
         body = name_cells(body)
         body = re.sub(r'<table>(\s*<thead>\s*<tr>(?:\s*<th[^>]*>(?:(?!</tr>).)*?</th>){9,}\s*</tr>)', r'<table class="dense">\1', body, flags=re.S)
         body = mobile_tables(body)
+        body = row_ids(body)
         body = title_block(slug, body)
+        INDEX.extend(index_page(slug, title, body.split('<details class="toc"')[0] + body.split('</details>', 1)[-1] if '<details class="toc"' in body else body))
         open(os.path.join(OUT, slug + '.html'), 'w', encoding='utf-8').write(page(slug, title, body, DESC[slug]))
+    json.dump(INDEX, open(os.path.join(OUT, 'search.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     extras()
     copy_used(OUT)
     open(os.path.join(OUT, '.nojekyll'), 'w').close()

@@ -45,7 +45,7 @@ ul,ol{padding-left:22px}li{margin:4px 0}
 blockquote{margin:14px 0 18px;padding:12px 18px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;max-width:76ch}blockquote p{margin:0 0 6px}blockquote ol,blockquote ul{margin:4px 0 0}
 .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin:0 0 8px;font-size:14.5px}
 .toc b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.toc ul{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:4px 16px}.toc li{margin:0}
+.toc ul{list-style:none;padding:0;margin:8px 0 2px;display:flex;flex-wrap:wrap;gap:4px 16px}.toc li{margin:0}
 .toc a{text-decoration:none}.toc a:hover{text-decoration:underline}
 .map-banner{display:flex;gap:16px;align-items:flex-start;margin:6px 0 4px}
 .map-banner img{width:176px;height:132px;border-radius:10px;flex:none;object-fit:cover;border:1px solid var(--line)}
@@ -71,26 +71,55 @@ blockquote{margin:14px 0 18px;padding:12px 18px;border-left:3px solid var(--acce
 footer{margin-top:64px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:6px 18px}
 footer a{color:var(--muted)}
 .top{position:fixed;right:18px;bottom:18px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted);text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.hbtns{display:none}.scrim{display:none}.dr{display:flex;flex-direction:column;flex:1}
+.srch{padding:14px 12px 2px}
+.sbox{display:flex;align-items:center;gap:8px;height:38px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--muted);cursor:text}
+.sbox:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.sbox input{flex:1;min-width:0;border:0;background:none;outline:0;color:var(--ink);font:inherit;font-size:14.5px;-webkit-appearance:none}
+.sbox input::-webkit-search-cancel-button{-webkit-appearance:none}
+.sbox kbd{font:inherit;font-size:11.5px;border:1px solid var(--line);border-radius:5px;padding:0 6px;line-height:18px}
+.sres{padding:8px 10px 24px}.sres ul{list-style:none;margin:0;padding:0}.sres li{margin:0}
+.sres a{display:block;padding:8px 10px;border-radius:9px;text-decoration:none;color:var(--ink);line-height:1.35}
+.sres a:hover,.sres a:focus{background:var(--code);outline:0}
+.sres .sp{display:block;font-size:11.5px;color:var(--muted);letter-spacing:.02em}.sres b{display:block;font-size:14.5px;font-weight:650}
+.sres .ss{display:block;font-size:12.5px;color:var(--muted);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.sres mark{background:var(--accent-soft);color:var(--accent-ink);border-radius:3px;padding:0 1px}.sx{color:var(--muted);font-size:14px;padding:6px 10px;margin:0}
+tr:target td{background:var(--accent-soft)!important}h2:target,h3:target{color:var(--accent-ink)}
+.toc summary{cursor:pointer;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;list-style:none;display:flex;align-items:center;gap:8px}
+.toc summary::-webkit-details-marker{display:none}.toc summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:-3px 0 0 auto;transition:transform .15s}
+.toc[open] summary::after{transform:rotate(-135deg);margin-top:3px}.toc summary span{text-transform:none;letter-spacing:0;font-weight:500;opacity:.8}
+.rail{display:none}
+@media (min-width:1280px){main{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:44px;max-width:1440px}
+.cnt{min-width:0}.cnt>.toc{display:none}
+.rail{display:block;position:sticky;top:32px;align-self:start;max-height:calc(100vh - 64px);overflow:auto;font-size:13.5px;padding-top:6px}
+.rail b{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.rail ul{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}.rail li{margin:0}
+.rail a{display:block;padding:5px 0 5px 12px;margin-left:-1px;border-left:2px solid transparent;color:var(--muted);text-decoration:none;line-height:1.35}
+.rail a:hover{color:var(--ink)}.rail a.on{color:var(--accent-ink);border-left-color:var(--accent);font-weight:600}}
 @media (max-width:860px){.wrap{display:block}
 nav.side{position:sticky;top:0;z-index:50;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);overflow:visible;background:var(--brand)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 10px 0 16px;height:56px;background:var(--brand)}
 .brand{padding:0;background:none;flex:none}.wm{font-size:22px}.brand span{display:none}
-.mbtn{display:flex;align-items:center;gap:9px;min-width:0;height:42px;padding:0 12px 0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:var(--brand-ink);font:inherit;font-size:14.5px;font-weight:650;cursor:pointer}
-.mbtn .cur{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:46vw;opacity:.85;font-weight:500}.mb-t{display:none}
+.hbtns{display:flex;gap:4px}
+.hb{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:10px;background:none;color:var(--brand-ink);cursor:pointer}
+.hb:active{background:rgba(255,255,255,.1)}.hb .si{width:21px;height:21px}
 .mb-i{display:inline-flex;flex-direction:column;justify-content:center;gap:4px;width:18px;height:18px;flex:none}.mb-i i{display:block;height:2px;border-radius:2px;background:currentColor;transition:transform .2s,opacity .2s}
 nav.open .mb-i i:nth-child(1){transform:translateY(6px) rotate(45deg)}nav.open .mb-i i:nth-child(2){opacity:0}nav.open .mb-i i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-.links{display:none;position:fixed;left:0;right:0;top:56px;bottom:0;overflow-y:auto;overscroll-behavior:contain;background:var(--bg);padding:6px 14px 40px;border-top:1px solid var(--line)}
-nav.open .links{display:block}html.navlock{overflow:hidden}
-.grp{margin-top:14px}.grp>b{padding:4px 4px 6px}
-.grp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.grp>b{grid-column:1/-1}
-.links a{padding:10px 10px;min-height:48px;font-size:14.5px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.links a img{width:24px;height:24px}
-.links a.on{border-color:var(--accent)}
-.side-foot{display:none}
+.mb-i{width:20px}
+.scrim{display:block;position:fixed;left:0;right:0;top:56px;bottom:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .2s}
+nav.open .scrim{opacity:1;pointer-events:auto}
+.dr{position:fixed;top:56px;right:0;bottom:0;width:min(340px,88vw);overflow-y:auto;overscroll-behavior:contain;background:var(--panel);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .22s ease;visibility:hidden}
+nav.open .dr{transform:none;visibility:visible}html.navlock{overflow:hidden}
+.srch{padding:14px 14px 4px}.sbox{height:44px}.sbox input{font-size:16px}.sbox kbd{display:none}
+.links{padding:4px 10px 16px}.grp{margin-top:12px}.grp>b{padding:4px 10px 4px}
+.links a{min-height:44px;font-size:15.5px}
+.side-foot{display:block;margin-top:auto}
 .pager{margin-top:40px}.pager a{padding:12px 14px;font-size:14.5px}
 main{padding:22px 16px 64px;overflow-wrap:break-word}html{scroll-padding-top:68px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42px;height:42px}
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
-.top{display:none;right:14px;bottom:14px;padding:9px 14px}.top.show{display:block}}
+.top{display:none;right:14px;bottom:14px;padding:9px 14px}.top.show{display:block}
+.toc{padding:0}.toc summary{padding:13px 16px;min-height:46px}.toc ul{display:block;padding:0 16px 12px;margin:0}.toc li{padding:6px 0;border-top:1px solid var(--line)}}
 @media (max-width:640px){
 .tw{border:0;background:none;overflow:visible}
 table[data-m="cards"],table[data-m="cards"] tbody{display:block}
@@ -100,6 +129,7 @@ table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;bor
 table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
 table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
 table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="cards"] tr:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
 .tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
@@ -109,9 +139,10 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 }
 @media print{nav.side,.top{display:none}main{padding:0}}
 </style></head><body><div class="wrap"><nav class="side" id="nav" aria-label="Site"><div class="bar"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
-<button class="mbtn" type="button" aria-expanded="false" aria-controls="links"><span class="cur">Quests &amp; unlocks</span><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span><span class="mb-t">Menu</span></button></div>
-<div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a></div><div class="grp"><b>Unlocks</b><a href="quests.html" class="on" aria-current="page"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
-<main id="top"><div class="pg-head"><img class="pg-ic" src="img/allQuests.png" alt="" width="52" height="52"><h1>Quests &amp; unlocks</h1></div><p class="meta">Game v1.0.69 · updated Nov 17, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Quests%20%26%20unlocks&page=Quests%20%26%20unlocks%20%28https%3A//bonk.wiki/quests.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><div class="toc"><b>On this page</b><ul><li><a href="#characters">Characters</a></li><li><a href="#maps">Maps</a></li><li><a href="#weapons">Weapons</a></li><li><a href="#tomes">Tomes</a></li><li><a href="#items">Items</a></li><li><a href="#shop-upgrades">Shop upgrades</a></li><li><a href="#other-quests">Other quests</a></li><li><a href="#quests-that-need-a-secret">Quests that need a secret</a></li></ul></div>
+<div class="hbtns"><button class="hb sbtn" type="button" aria-label="Search"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg></button><button class="hb mbtn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span></button></div></div>
+<div class="scrim"></div><div class="dr" id="drawer"><div class="srch" role="search"><label class="sbox"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg><input id="q" type="search" placeholder="Search the wiki" autocomplete="off" spellcheck="false" aria-label="Search the wiki"><kbd>/</kbd></label></div>
+<div class="sres" id="sres" hidden></div><div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Unlocks</b><a href="quests.html" class="on" aria-current="page"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div><div class="grp"><b>Reference</b><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></div></nav>
+<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/allQuests.png" alt="" width="52" height="52"><h1>Quests &amp; unlocks</h1></div><p class="meta">Game v1.0.69 · updated Nov 19, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Quests%20%26%20unlocks&page=Quests%20%26%20unlocks%20%28https%3A//bonk.wiki/quests.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><details class="toc" id="toc"><summary>On this page <span>8 sections</span></summary><ul><li><a href="#characters">Characters</a></li><li><a href="#maps">Maps</a></li><li><a href="#weapons">Weapons</a></li><li><a href="#tomes">Tomes</a></li><li><a href="#items">Items</a></li><li><a href="#shop-upgrades">Shop upgrades</a></li><li><a href="#other-quests">Other quests</a></li><li><a href="#quests-that-need-a-secret">Quests that need a secret</a></li></ul></details><script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>
 <p>Every quest in the game (117 here, plus the 22 hat quests and 112 skin quests on <a href="cosmetics.html">Hats &amp; skins</a>), read from the game's quest data and its English text. Each quest unlocks the thing in the first column once it's done.</p>
 <p><strong>These are the Steam achievements.</strong> The game unlocks the matching Steam achievement for every quest you finish (<code>SteamAchievementsManager.CheckAchievements</code>), and pulls Steam achievements back in as finished quests (<code>MyAchievements.SyncToSteamAchievements</code>). The 117 quests here plus the 22 hat quests make 139, the number Steam lists. Skin quests aren't Steam achievements.</p>
 <p><strong>Quest rewards:</strong> finishing a quest also pays Silver by its difficulty (<code>MyAchievement.GetSilverReward</code>): <strong>Easy 1, Medium 2, Hard 4, Cooked 8</strong>.</p>
@@ -126,97 +157,97 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="r-calcium">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
 <td data-label="Quest">Kill 1,000 skeletons</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-megachad">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
 <td data-label="Quest">Get the Damage Tome to level 7</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-ogre">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
 <td data-label="Quest">Kill 15,000 Goblins</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-amog">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Amog.png" alt="">Amog</td>
 <td data-label="Quest">Poison 50,000 enemies with Moldy Cheese</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-athena">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Athena.png" alt="">Athena</td>
 <td data-label="Quest">Get the Thorns Tome to level 9</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-bandit">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
 <td data-label="Quest">Find and defeat Bandit in the Desert</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-birdo">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
 <td data-label="Quest">Kill 100 enemies using Tornado weapon while carried by a tornado on Desert</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-bush">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Bush.png" alt="">Bush</td>
 <td data-label="Quest">Find and defeat Bush in the Forest</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-cl4nk">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
 <td data-label="Quest">Complete Forest Tier 1</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-monke">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Monke.png" alt="">Monke</td>
 <td data-label="Quest">Find and release Monke in the Forest</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-ninja">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
 <td data-label="Quest">Complete Desert Tier 1</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-noelle">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
 <td data-label="Quest">Use a Microwave to duplicate Ice Crystal 3 times in a row</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-robinette">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
 <td data-label="Quest">Complete Forest Tier 2</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-spaceman">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
 <td data-label="Quest">Complete 6 Challenges</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-tony-mczoom">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
 <td data-label="Quest">Complete 2 Challenges</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-vlad">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
 <td data-label="Quest">Complete Desert Tier 2</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-dicehead">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
 <td data-label="Quest">Complete 100 Quests</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-sir-chadwell">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
 <td data-label="Quest">Complete Forest Tier 3</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-roberto">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
 <td data-label="Quest">Kill Spooky Steve</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
@@ -233,12 +264,12 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="r-desert">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/DesertIconBig.png" alt="">Desert</td>
 <td data-label="Quest">Teleport to the 2nd stage on Forest Tier 2 as CL4NK</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-graveyard">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/GraveyardIconBig.png" alt="">Graveyard</td>
 <td data-label="Quest">As Calcium on Desert Tier 2, summon and defeat the undead boss.</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
@@ -255,117 +286,117 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="r-aegis">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Aegis.png" alt="">Aegis</td>
 <td data-label="Quest">Block 500 damage with Armor as Sir Oofie</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-aura">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Aura.png" alt="">Aura</td>
 <td data-label="Quest">Don't take any damage for 2 minutes</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-axe">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Axe.png" alt="">Axe</td>
 <td data-label="Quest">Kill 2,000 enemies using the Sword</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-bananarang">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Bananarang.png" alt="">Bananarang</td>
 <td data-label="Quest">Find the hidden Banana</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-revolver">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Revolver.png" alt="">Revolver</td>
 <td data-label="Quest">Kill 7,500 enemies</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-black-hole">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/BlackHole.png" alt="">Black Hole</td>
 <td data-label="Quest">Get Knockback Tome to level 10</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-blood-magic">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/BloodMagic.png" alt="">Blood Magic</td>
 <td data-label="Quest">Get the Bloody Tome to level 12</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-dexecutioner">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Dexecutioner.png" alt="">Dexecutioner</td>
 <td data-label="Quest">Kill 12,500 enemies using the Sword</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-dice">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Dice.png" alt="">Dice</td>
 <td data-label="Quest">Get Luck Tome to level 12</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-dragons-breath">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/DragonsBreath.png" alt="">Dragon's Breath</td>
 <td data-label="Quest">Kill 1,000 Wisp as Fox on Desert</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-frostwalker">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Frostwalker.png" alt="">Frostwalker</td>
 <td data-label="Quest">Freeze 1,000 enemies with the Ice Cube</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-katana">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Katana.png" alt="">Katana</td>
 <td data-label="Quest">5% chance to find upon breaking a Tumbleweed on Desert Stage 1</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-mines">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Mine.png" alt="">Mines</td>
 <td data-label="Quest">Kill 7,500 enemies with Slutty Rocket</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-poison-flask">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</td>
 <td data-label="Quest">Kill Scorpionussy Miniboss on Desert 3 times</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-shotgun">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Shotgun.png" alt="">Shotgun</td>
 <td data-label="Quest">5% chance to find upon breaking a Tumbleweed on Desert Stage 2</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-slutty-rocket">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/SluttyRocket.png" alt="">Slutty Rocket</td>
 <td data-label="Quest">Kill 15,000 enemies as CL4NK</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-sniper-rifle">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Sniper.png" alt="">Sniper Rifle</td>
 <td data-label="Quest">Get the Precision Tome to level 10</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-space-noodle">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Space Noodle.png" alt="">Space Noodle</td>
 <td data-label="Quest">Complete Desert Tier 2 as Tony McZoom</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-tornado">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Tornado.png" alt="">Tornado</td>
 <td data-label="Quest">Charge a Charge Shrine during a Sandstorm on Desert</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-wireless-dagger">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Bluetooth Knife.png" alt="">Wireless Dagger</td>
 <td data-label="Quest">Get the Lightning Staff to level 15</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-hero-sword">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/HeroSword.png" alt="">Hero Sword</td>
 <td data-label="Quest">Defeat a Stage Boss without picking up any items, powerups or using shrines.</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-corrupted-sword">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/CorruptedSword.png" alt="">Corrupted Sword</td>
 <td data-label="Quest">Get Cursed Tome to level 20 in under 10 minutes</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-scythe">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Scythe.png" alt="">Scythe</td>
 <td data-label="Quest">Kill Big Bob on Graveyard</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
@@ -382,52 +413,52 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="r-armor-tome">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ArmorTome.png" alt="">Armor Tome</td>
 <td data-label="Quest">Kill 5,000 enemies as Sir Oofie</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-attraction-tome">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/AttractionTome.png" alt="">Attraction Tome</td>
 <td data-label="Quest">Use Shrine of Succ 8 times.</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-bloody-tome">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/BloodTOme.png" alt="">Bloody Tome</td>
 <td data-label="Quest">Kill 12,500 enemies</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-duration-tome">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/DurationTome.png" alt="">Duration Tome</td>
 <td data-label="Quest">Upgrade Axe to level 10</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-quantity-tome">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/QuantityTome.png" alt="">Quantity Tome</td>
 <td data-label="Quest">Fire 5,000 projectiles</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-thorns-tome">
 <td data-label="Unlocks">Thorns Tome</td>
 <td data-label="Quest">Block 250 attacks with Aegis</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-luck-tome">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/LuckTome.png" alt="">Luck Tome</td>
 <td data-label="Quest">0.01% chance to drop when killing an enemy</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-cursed-tome">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/CursedTome.png" alt="">Cursed Tome</td>
 <td data-label="Quest">Beat the Stage Boss in under 5 minutes</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-xp-tome">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/XpTome.png" alt="">XP Tome</td>
 <td data-label="Quest">Break 20 pots in a single run</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-chaos-tome">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ChaosTome.png" alt="">Chaos Tome</td>
 <td data-label="Quest">Charge all Charge Shrine on a Tier 3 run across all 3 stages without leaving the charge zone</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
@@ -444,247 +475,247 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="r-battery">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemBattery.png" alt="">Battery</td>
 <td data-label="Quest">Upgrade Cooldown Tome to Level 5</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-boss-buster">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemBossBuster.png" alt="">Boss Buster</td>
 <td data-label="Quest">Defeat a Stage Boss in under 30 seconds</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-cactus">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemCactus.png" alt="">Cactus</td>
 <td data-label="Quest">Kill 100 cactus enemies with Thorns damage</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-cursed-doll">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemCursedDoll.png" alt="">Cursed Doll</td>
 <td data-label="Quest">Die 10 times</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-forbidden-juice">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemShadowJuice.png" alt="">Forbidden Juice</td>
 <td data-label="Quest">Crit 100 times</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-ghost">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemGhost.png" alt="">Ghost</td>
 <td data-label="Quest">Survive the Final Swarm for 60 seconds</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-ice-crystal">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemIceCrystal.png" alt="">Ice Crystal</td>
 <td data-label="Quest">Get 50 kills with Frostwalker</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-key">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemKey.png" alt="">Key</td>
 <td data-label="Quest">Purchase 25 chests</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-old-mask">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemOldMask.png" alt="">Old Mask</td>
 <td data-label="Quest">Find on Graveyard</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-skuleg">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemSkuleg.png" alt="">Skuleg</td>
 <td data-label="Quest">Obtain 40% Difficulty</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-tactical-glasses">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemTacticalGoggles.png" alt="">Tactical Glasses</td>
 <td data-label="Quest">Defeat a Miniboss in 25 seconds</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-turbo-socks">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemTurboSocks.png" alt="">Turbo Socks</td>
 <td data-label="Quest">Upgrade Agility Tome to Level 5</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-brass-knuckles">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemBrassKnuckle.png" alt="">Brass Knuckles</td>
 <td data-label="Quest">Kill 5,000 enemies with the Sword</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-demon-blade">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemDemonBlade.png" alt="">Demon Blade</td>
 <td data-label="Quest">Heal for 350 HP using Lifesteal</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-demonic-blood">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemDemonBlood.png" alt="">Demonic Blood</td>
 <td data-label="Quest">Increase Max HP with Blood Magic 400 times</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-echo-shard">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemEchoShard.png" alt="">Echo Shard</td>
 <td data-label="Quest">Upgrade XP Tome to Level 8</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-golden-sneakers">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemGoldenSneakers.png" alt="">Golden Sneakers</td>
 <td data-label="Quest">Break 150 pots</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-idle-juice">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/IdleJuice.png" alt="">Idle Juice</td>
 <td data-label="Quest">Kill 500 enemies while standing still</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-leeching-crystal">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemLeechingCrystal.png" alt="">Leeching Crystal</td>
 <td data-label="Quest">Upgrade Regen Tome to lvl 8</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-moldy-gloves">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemGlovesPoison.png" alt="">Moldy Gloves (Poison)</td>
 <td data-label="Quest">Use a Microwave to duplicate Moldy Cheese 3 times in a row</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-pumpkin">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemPumpkin.png" alt="">Pumpkin</td>
 <td data-label="Quest">As Roberto, break every pumpkin on Graveyard</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-bob">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemBobDead.png" alt="">Bob (Dead)</td>
 <td data-label="Quest">Survive the Final Swarm for 2 minutes</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-bobs-light">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemBobsLantern.png" alt="">Bob's Light (Lantern)</td>
 <td data-label="Quest">Kill Big Bob on Graveyard using the damage from a lamp as the killing blow.</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-cursed-gloves">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemGlovesCursed.png" alt="">Cursed Gloves</td>
 <td data-label="Quest">Get the Cursed Tome to level 10</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-demonic-soul">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemDemonSoul.png" alt="">Demonic Soul</td>
 <td data-label="Quest">Reach level 30 as Calcium</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-eagle-claw">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemEagleClaw.png" alt="">Eagle Claw</td>
 <td data-label="Quest">Kill 10,000 enemies as Birdo</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-gamer-goggles">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/GamerLens.png" alt="">Gamer Goggles</td>
 <td data-label="Quest">Defeat a Stage Boss with less than 10% HP left</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-gas-mask">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Gasmask.png" alt="">Gas Mask</td>
 <td data-label="Quest">Kill 5,000 enemies as Amog</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-grandmas-secret-tonic">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/GrandmasSecretTonic.png" alt="">Grandma's Secret Tonic</td>
 <td data-label="Quest">Kill 3,000 enemies with Sniper Rifle</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-kevin">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Kevin.png" alt="">Kevin</td>
 <td data-label="Quest">Obtain 3 Leeching Crystal in a run</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-quins-mask">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemQuinsMask.png" alt="">Quin's Mask</td>
 <td data-label="Quest">Defeat a Stage Boss as Athena, landing the killing blow with Aegis</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-shattered-knowledge">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemShatteredWisdom.png" alt="">Shattered Knowledge</td>
 <td data-label="Quest">Upgrade Attraction Tome to Level 8</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-slutty-cannon">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemSluttyCannon.png" alt="">Slutty Cannon</td>
 <td data-label="Quest">Kill 5,000 enemies with Slutty Rocket</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-toxic-barrel">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ToxicBarrel.png" alt="">Toxic Barrel</td>
 <td data-label="Quest">Kill 2,000 enemies using Poison damage</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-turbo-skates">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemRollerblades.png" alt="">Turbo Skates</td>
 <td data-label="Quest">Upgrade both Cooldown Tome and Agility Tome to Level 5 in a run</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-anvil">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemAnvil.png" alt="">Anvil</td>
 <td data-label="Quest">Complete 3 Challenges</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-bloody-cleaver">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Bloody Cleaver.png" alt="">Bloody Cleaver</td>
 <td data-label="Quest">Reach Level 50 as Vlad</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-chonkplate">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Chonkplate.png" alt="">Chonkplate</td>
 <td data-label="Quest">Get Max HP to 500</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-dragonfire">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemDragonfire.png" alt="">Dragonfire</td>
 <td data-label="Quest">Kill 4,000 enemies using fire damage</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-energy-core">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemEnergyCore.png" alt="">Energy Core</td>
 <td data-label="Quest">Defeat a Final Boss 2 times</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-holy-book">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemHolyBook.png" alt="">Holy Book</td>
 <td data-label="Quest">Kill a first Stage Boss without taking any damage that run</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-joes-dagger">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/JoesDagger.png" alt="">Joe's Dagger</td>
 <td data-label="Quest">Kill 10,000 enemies using the Dexecutioner</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-lightning-orb">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemLightningOrb.png" alt="">Lightning Orb</td>
 <td data-label="Quest">Kill 3,000 enemies using lightning damage</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-pot">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemPot.png" alt="">Pot (Stainless Steel)</td>
 <td data-label="Quest">Open every chest and pot in the first crypt on Graveyard.</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-snek">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemSnek.png" alt="">Snek</td>
 <td data-label="Quest">Find in the crypt on Graveyard</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-soul-harvester">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemSoulHarvester.png" alt="">Soul Harvester</td>
 <td data-label="Quest">Survive the Final Swarm for 6 minutes</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-speed-boi">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Speed boi.png" alt="">Speed Boi</td>
 <td data-label="Quest">Complete a stage with at least 2 Boss Curse activated</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-sucky-magnet">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemSuckyHoof.png" alt="">Sucky Magnet</td>
 <td data-label="Quest">Complete every single Charge Shrine on the map</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
 </tr>
-<tr>
+<tr id="r-wizards-hat">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ItemWizardsHat.png" alt="">Wizard's Hat</td>
 <td data-label="Quest">As Vlad, use Pot (stainless steel) to upgrade any weapon above the max level of 40</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
@@ -701,32 +732,32 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="r-banish">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Banish2.png" alt="">Banish</td>
 <td data-label="Quest">Complete 40 Quests</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-refresh">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Refresh2.png" alt="">Refresh</td>
 <td data-label="Quest">Complete 20 Quests</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-skip">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Skip2.png" alt="">Skip</td>
 <td data-label="Quest">Complete 30 Quests</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-tome-slot">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/tomes.png" alt="">Tome slot</td>
 <td data-label="Quest">Complete 35 Quests</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-weapon-slot">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/Weapons.png" alt="">Weapon slot</td>
 <td data-label="Quest">Complete 25 Quests</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
 </tr>
-<tr>
+<tr id="r-boombox">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/boombox.png" alt="">Boombox (pick your music)</td>
 <td data-label="Quest">Find and activate all the boomboxes on Forest</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
@@ -741,7 +772,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="Quest">Complete 45 Quests</td>
 <td data-label="Difficulty">Medium (2 silver)</td>
 </tr>
-<tr>
+<tr id="r-toggler">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/toggler.png" alt="">Toggler</td>
 <td data-label="Quest">Purchase 40 unlocks</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
@@ -758,7 +789,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="r-challenge-milestone">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge milestone</td>
 <td data-label="Quest">Complete 5 Challenges</td>
 <td data-label="Difficulty">Easy (1 silver)</td>
@@ -773,7 +804,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="Quest">Complete 20 Challenges</td>
 <td data-label="Difficulty">Hard (4 silver)</td>
 </tr>
-<tr>
+<tr id="r-achievement-only">
 <td class="nm" data-label="Unlocks"><img class="ic" src="img/allQuests.png" alt="">Achievement only</td>
 <td data-label="Quest">Avoid taking Fall Damage 10 times by hugging walls</td>
 <td data-label="Difficulty">Cooked (8 silver)</td>
@@ -786,5 +817,43 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tbody>
 </table></div>
 <h2 id="quests-that-need-a-secret"><img class="ic" src="img/ItemCryptKey.png" alt="">Quests that need a secret</h2>
-<p>Some quests point at hidden things on the maps: the banana, the boomboxes, the present, the frogs, the Monke cage, Bush, Bandit and Spooky Steve. See <a href="secrets.html">Map secrets &amp; special fights</a> for what each one is and what the code does.</p><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Quests%20%26%20unlocks&page=Quests%20%26%20unlocks%20%28https%3A//bonk.wiki/quests.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="max-runs.html"><span>← Previous</span>Maxing a run</a><a class="nx" href="challenges.html"><span>Next →</span>Challenges</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 17, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
-<a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){var n=document.getElementById('nav'),b=n.querySelector('.mbtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.documentElement.classList.toggle('navlock',o)}b.addEventListener('click',function(){set(!n.classList.contains('open'))});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});var t=document.querySelector('.top');function sc(){t.classList.toggle('show',scrollY>600)}addEventListener('scroll',sc,{passive:true});sc()})()</script></body></html>
+<p>Some quests point at hidden things on the maps: the banana, the boomboxes, the present, the frogs, the Monke cage, Bush, Bandit and Spooky Steve. See <a href="secrets.html">Map secrets &amp; special fights</a> for what each one is and what the code does.</p><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Quests%20%26%20unlocks&page=Quests%20%26%20unlocks%20%28https%3A//bonk.wiki/quests.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="secrets.html"><span>← Previous</span>Map secrets &amp; fights</a><a class="nx" href="challenges.html"><span>Next →</span>Challenges</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 19, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="#characters">Characters</a></li><li><a href="#maps">Maps</a></li><li><a href="#weapons">Weapons</a></li><li><a href="#tomes">Tomes</a></li><li><a href="#items">Items</a></li><li><a href="#shop-upgrades">Shop upgrades</a></li><li><a href="#other-quests">Other quests</a></li><li><a href="#quests-that-need-a-secret">Quests that need a secret</a></li></ul></aside></main></div>
+<a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){
+var d=document,n=d.getElementById('nav'),mb=n.querySelector('.mbtn'),sb=n.querySelector('.sbtn'),q=d.getElementById('q'),R=d.getElementById('sres'),L=d.getElementById('links'),mq=matchMedia('(max-width:860px)');
+function set(o){n.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);d.documentElement.classList.toggle('navlock',o&&mq.matches)}
+mb.addEventListener('click',function(){set(!n.classList.contains('open'))});
+sb.addEventListener('click',function(){set(true);setTimeout(function(){q.focus()},60)});
+n.querySelector('.scrim').addEventListener('click',function(){set(false)});
+d.addEventListener('keydown',function(e){
+ if(e.key==='Escape'){if(q.value){q.value='';run()}else set(false);if(d.activeElement===q&&!mq.matches)q.blur()}
+ else if(e.key==='/'&&!/INPUT|TEXTAREA/.test(d.activeElement.tagName)){e.preventDefault();if(mq.matches)set(true);q.focus()}});
+n.addEventListener('click',function(e){var a=e.target.closest('a');if(a&&(L.contains(a)||R.contains(a)))set(false)});
+var t=d.querySelector('.top');function sc(){t.classList.toggle('show',scrollY>600)}addEventListener('scroll',sc,{passive:true});sc();
+var IX=null,ld=false;
+function load(){if(ld)return;ld=true;fetch('search.json').then(function(r){return r.json()}).then(function(j){IX=j;for(var i=0;i<j.length;i++){var e=j[i];e._n=e.h.toLowerCase();e._p=e.p.toLowerCase();e._t=e.t.toLowerCase()}run()}).catch(function(){ld=false})}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function hl(s,ws){var o=esc(s);ws.forEach(function(w){if(w.length<2)return;o=o.replace(new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'),'<mark>$1</mark>')});return o}
+function snip(e,ws){var i=-1;for(var k=0;k<ws.length&&i<0;k++)i=e._t.indexOf(ws[k]);if(i<0)return e.t.slice(0,110)+(e.t.length>110?'…':'');var s=Math.max(0,i-45),x=e.t.slice(s,s+130);return (s>0?'…':'')+x+(s+130<e.t.length?'…':'')}
+function run(){
+ var v=q.value.trim().toLowerCase();
+ if(!v){R.hidden=true;L.hidden=false;R.innerHTML='';return}
+ L.hidden=true;R.hidden=false;
+ if(!IX){load();R.innerHTML='<p class="sx">Loading…</p>';return}
+ var ws=v.split(/\s+/),out=[];
+ for(var i=0;i<IX.length;i++){var e=IX[i],s=0,ok=true;
+  for(var k=0;k<ws.length;k++){var w=ws[k],m=0;
+   if(e._n===v)m=60;else if(e._n.indexOf(w)===0)m=24;else if(e._n.indexOf(w)>=0)m=14;
+   if(e._p.indexOf(w)>=0)m+=6;if(!m&&e._t.indexOf(w)>=0)m=1+Math.min(3,e._t.split(w).length-1)*.5;
+   if(!m){ok=false;break}s+=m}
+  if(ok){if(e.k==='r')s+=2;out.push([s,e])}}
+ out.sort(function(a,b){return b[0]-a[0]});out=out.slice(0,14);
+ if(!out.length){R.innerHTML='<p class="sx">No results for “'+esc(q.value.trim())+'”.</p>';return}
+ R.innerHTML='<ul>'+out.map(function(o){var e=o[1];return '<li><a href="'+e.u+'"><span class="sp">'+esc(e.p)+(e.s?' › '+esc(e.s):'')+'</span><b>'+hl(e.h,ws)+'</b><span class="ss">'+hl(snip(e,ws),ws)+'</span></a></li>'}).join('')+'</ul>';
+}
+q.addEventListener('focus',load);q.addEventListener('input',run);
+q.addEventListener('keydown',function(e){var as=R.querySelectorAll('a');if(!as.length)return;if(e.key==='Enter'){e.preventDefault();as[0].click()}else if(e.key==='ArrowDown'){e.preventDefault();as[0].focus()}});
+R.addEventListener('keydown',function(e){var as=[].slice.call(R.querySelectorAll('a')),i=as.indexOf(d.activeElement);if(i<0)return;if(e.key==='ArrowDown'){e.preventDefault();(as[i+1]||as[i]).focus()}else if(e.key==='ArrowUp'){e.preventDefault();(i?as[i-1]:q).focus()}});
+var rl=d.querySelector('.rail');if(rl&&'IntersectionObserver' in window){var ra={};rl.querySelectorAll('a').forEach(function(a){ra[a.getAttribute('href').slice(1)]=a});var hs=[].slice.call(d.querySelectorAll('main h2[id]')).filter(function(h){return ra[h.id]});
+ function spy(){var cur=hs[0];for(var i=0;i<hs.length;i++){if(hs[i].getBoundingClientRect().top<120)cur=hs[i]}for(var k in ra)ra[k].classList.toggle('on',cur&&k===cur.id)}addEventListener('scroll',spy,{passive:true});spy()}
+})()
+</script></body></html>

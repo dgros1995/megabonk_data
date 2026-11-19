@@ -45,7 +45,7 @@ ul,ol{padding-left:22px}li{margin:4px 0}
 blockquote{margin:14px 0 18px;padding:12px 18px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;max-width:76ch}blockquote p{margin:0 0 6px}blockquote ol,blockquote ul{margin:4px 0 0}
 .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin:0 0 8px;font-size:14.5px}
 .toc b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.toc ul{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:4px 16px}.toc li{margin:0}
+.toc ul{list-style:none;padding:0;margin:8px 0 2px;display:flex;flex-wrap:wrap;gap:4px 16px}.toc li{margin:0}
 .toc a{text-decoration:none}.toc a:hover{text-decoration:underline}
 .map-banner{display:flex;gap:16px;align-items:flex-start;margin:6px 0 4px}
 .map-banner img{width:176px;height:132px;border-radius:10px;flex:none;object-fit:cover;border:1px solid var(--line)}
@@ -71,26 +71,55 @@ blockquote{margin:14px 0 18px;padding:12px 18px;border-left:3px solid var(--acce
 footer{margin-top:64px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:6px 18px}
 footer a{color:var(--muted)}
 .top{position:fixed;right:18px;bottom:18px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted);text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.hbtns{display:none}.scrim{display:none}.dr{display:flex;flex-direction:column;flex:1}
+.srch{padding:14px 12px 2px}
+.sbox{display:flex;align-items:center;gap:8px;height:38px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--muted);cursor:text}
+.sbox:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.sbox input{flex:1;min-width:0;border:0;background:none;outline:0;color:var(--ink);font:inherit;font-size:14.5px;-webkit-appearance:none}
+.sbox input::-webkit-search-cancel-button{-webkit-appearance:none}
+.sbox kbd{font:inherit;font-size:11.5px;border:1px solid var(--line);border-radius:5px;padding:0 6px;line-height:18px}
+.sres{padding:8px 10px 24px}.sres ul{list-style:none;margin:0;padding:0}.sres li{margin:0}
+.sres a{display:block;padding:8px 10px;border-radius:9px;text-decoration:none;color:var(--ink);line-height:1.35}
+.sres a:hover,.sres a:focus{background:var(--code);outline:0}
+.sres .sp{display:block;font-size:11.5px;color:var(--muted);letter-spacing:.02em}.sres b{display:block;font-size:14.5px;font-weight:650}
+.sres .ss{display:block;font-size:12.5px;color:var(--muted);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.sres mark{background:var(--accent-soft);color:var(--accent-ink);border-radius:3px;padding:0 1px}.sx{color:var(--muted);font-size:14px;padding:6px 10px;margin:0}
+tr:target td{background:var(--accent-soft)!important}h2:target,h3:target{color:var(--accent-ink)}
+.toc summary{cursor:pointer;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;list-style:none;display:flex;align-items:center;gap:8px}
+.toc summary::-webkit-details-marker{display:none}.toc summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:-3px 0 0 auto;transition:transform .15s}
+.toc[open] summary::after{transform:rotate(-135deg);margin-top:3px}.toc summary span{text-transform:none;letter-spacing:0;font-weight:500;opacity:.8}
+.rail{display:none}
+@media (min-width:1280px){main{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:44px;max-width:1440px}
+.cnt{min-width:0}.cnt>.toc{display:none}
+.rail{display:block;position:sticky;top:32px;align-self:start;max-height:calc(100vh - 64px);overflow:auto;font-size:13.5px;padding-top:6px}
+.rail b{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.rail ul{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}.rail li{margin:0}
+.rail a{display:block;padding:5px 0 5px 12px;margin-left:-1px;border-left:2px solid transparent;color:var(--muted);text-decoration:none;line-height:1.35}
+.rail a:hover{color:var(--ink)}.rail a.on{color:var(--accent-ink);border-left-color:var(--accent);font-weight:600}}
 @media (max-width:860px){.wrap{display:block}
 nav.side{position:sticky;top:0;z-index:50;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);overflow:visible;background:var(--brand)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 10px 0 16px;height:56px;background:var(--brand)}
 .brand{padding:0;background:none;flex:none}.wm{font-size:22px}.brand span{display:none}
-.mbtn{display:flex;align-items:center;gap:9px;min-width:0;height:42px;padding:0 12px 0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:var(--brand-ink);font:inherit;font-size:14.5px;font-weight:650;cursor:pointer}
-.mbtn .cur{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:46vw;opacity:.85;font-weight:500}.mb-t{display:none}
+.hbtns{display:flex;gap:4px}
+.hb{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:10px;background:none;color:var(--brand-ink);cursor:pointer}
+.hb:active{background:rgba(255,255,255,.1)}.hb .si{width:21px;height:21px}
 .mb-i{display:inline-flex;flex-direction:column;justify-content:center;gap:4px;width:18px;height:18px;flex:none}.mb-i i{display:block;height:2px;border-radius:2px;background:currentColor;transition:transform .2s,opacity .2s}
 nav.open .mb-i i:nth-child(1){transform:translateY(6px) rotate(45deg)}nav.open .mb-i i:nth-child(2){opacity:0}nav.open .mb-i i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-.links{display:none;position:fixed;left:0;right:0;top:56px;bottom:0;overflow-y:auto;overscroll-behavior:contain;background:var(--bg);padding:6px 14px 40px;border-top:1px solid var(--line)}
-nav.open .links{display:block}html.navlock{overflow:hidden}
-.grp{margin-top:14px}.grp>b{padding:4px 4px 6px}
-.grp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.grp>b{grid-column:1/-1}
-.links a{padding:10px 10px;min-height:48px;font-size:14.5px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.links a img{width:24px;height:24px}
-.links a.on{border-color:var(--accent)}
-.side-foot{display:none}
+.mb-i{width:20px}
+.scrim{display:block;position:fixed;left:0;right:0;top:56px;bottom:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .2s}
+nav.open .scrim{opacity:1;pointer-events:auto}
+.dr{position:fixed;top:56px;right:0;bottom:0;width:min(340px,88vw);overflow-y:auto;overscroll-behavior:contain;background:var(--panel);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .22s ease;visibility:hidden}
+nav.open .dr{transform:none;visibility:visible}html.navlock{overflow:hidden}
+.srch{padding:14px 14px 4px}.sbox{height:44px}.sbox input{font-size:16px}.sbox kbd{display:none}
+.links{padding:4px 10px 16px}.grp{margin-top:12px}.grp>b{padding:4px 10px 4px}
+.links a{min-height:44px;font-size:15.5px}
+.side-foot{display:block;margin-top:auto}
 .pager{margin-top:40px}.pager a{padding:12px 14px;font-size:14.5px}
 main{padding:22px 16px 64px;overflow-wrap:break-word}html{scroll-padding-top:68px}h1{font-size:26px}h2{font-size:20px}.pg-ic{width:42px;height:42px}
 .hero{min-height:230px}.hero-in{padding:20px 18px}.hero h1{font-size:23px}
 .map-banner{flex-direction:column}.map-banner img{width:100%;height:auto;max-width:320px}
-.top{display:none;right:14px;bottom:14px;padding:9px 14px}.top.show{display:block}}
+.top{display:none;right:14px;bottom:14px;padding:9px 14px}.top.show{display:block}
+.toc{padding:0}.toc summary{padding:13px 16px;min-height:46px}.toc ul{display:block;padding:0 16px 12px;margin:0}.toc li{padding:6px 0;border-top:1px solid var(--line)}}
 @media (max-width:640px){
 .tw{border:0;background:none;overflow:visible}
 table[data-m="cards"],table[data-m="cards"] tbody{display:block}
@@ -100,6 +129,7 @@ table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;bor
 table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
 table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
 table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="cards"] tr:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
 .tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
@@ -109,9 +139,10 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 }
 @media print{nav.side,.top{display:none}main{padding:0}}
 </style></head><body><div class="wrap"><nav class="side" id="nav" aria-label="Site"><div class="bar"><a class="brand" href="./"><b class="wm">bonk<i>.wiki</i></b><span>Unofficial Megabonk data wiki · v1.0.69</span></a>
-<button class="mbtn" type="button" aria-expanded="false" aria-controls="links"><span class="cur">Maxing a run</span><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span><span class="mb-t">Menu</span></button></div>
-<div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html" class="on" aria-current="page"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></nav>
-<main id="top"><div class="pg-head"><img class="pg-ic" src="img/kill100k.png" alt="" width="52" height="52"><h1>Maxing a run</h1></div><p class="meta">Game v1.0.69 · updated Nov 17, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Maxing%20a%20run&page=Maxing%20a%20run%20%28https%3A//bonk.wiki/max-runs.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><div class="toc"><b>On this page</b><ul><li><a href="#0-what-500k-leaderboard-runs-do">0. What 500k+ leaderboard runs do</a></li><li><a href="#1-before-the-run">1. Before the run</a></li><li><a href="#2-stage-1-0001000-build-the-engine">2. Stage 1, 0:00–10:00: build the engine</a></li><li><a href="#2b-chest-volume-and-luck-how-big-runs-get-10-copies">2b. Chest volume and Luck: how big runs get 10+ copies</a></li><li><a href="#2c-five-ways-to-bend-the-system">2c. Five ways to bend the system</a></li><li><a href="#3-boss-curses-how-many">3. Boss Curses: how many</a></li><li><a href="#4-the-final-swarm-where-the-kills-are">4. The final swarm: where the kills are</a></li><li><a href="#5-the-ghost-wall-at-1213-minutes">5. The ghost wall at 12–13 minutes</a></li><li><a href="#5b-staying-alive-past-14-minutes">5b. Staying alive past 14 minutes</a></li><li><a href="#6-moving-between-stages">6. Moving between stages</a></li><li><a href="#7-what-a-361000-kill-run-showed">7. What a 361,000-kill run showed</a></li></ul></div>
+<div class="hbtns"><button class="hb sbtn" type="button" aria-label="Search"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg></button><button class="hb mbtn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span></button></div></div>
+<div class="scrim"></div><div class="dr" id="drawer"><div class="srch" role="search"><label class="sbox"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg><input id="q" type="search" placeholder="Search the wiki" autocomplete="off" spellcheck="false" aria-label="Search the wiki"><kbd>/</kbd></label></div>
+<div class="sres" id="sres" hidden></div><div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html" class="on" aria-current="page"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div><div class="grp"><b>Reference</b><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></div></nav>
+<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/kill100k.png" alt="" width="52" height="52"><h1>Maxing a run</h1></div><p class="meta">Game v1.0.69 · updated Nov 19, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Maxing%20a%20run&page=Maxing%20a%20run%20%28https%3A//bonk.wiki/max-runs.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><details class="toc" id="toc"><summary>On this page <span>11 sections</span></summary><ul><li><a href="#0-what-500k-leaderboard-runs-do">0. What 500k+ leaderboard runs do</a></li><li><a href="#1-before-the-run">1. Before the run</a></li><li><a href="#2-stage-1-0001000-build-the-engine">2. Stage 1, 0:00–10:00: build the engine</a></li><li><a href="#2b-chest-volume-and-luck-how-big-runs-get-10-copies">2b. Chest volume and Luck: how big runs get 10+ copies</a></li><li><a href="#2c-five-ways-to-bend-the-system">2c. Five ways to bend the system</a></li><li><a href="#3-boss-curses-how-many">3. Boss Curses: how many</a></li><li><a href="#4-the-final-swarm-where-the-kills-are">4. The final swarm: where the kills are</a></li><li><a href="#5-the-ghost-wall-at-1213-minutes">5. The ghost wall at 12–13 minutes</a></li><li><a href="#5b-staying-alive-past-14-minutes">5b. Staying alive past 14 minutes</a></li><li><a href="#6-moving-between-stages">6. Moving between stages</a></li><li><a href="#7-what-a-361000-kill-run-showed">7. What a 361,000-kill run showed</a></li></ul></details><script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>
 <p>A plan built on the numbers in this wiki and on what the leaderboard's top runs actually do. The goal is the most kills, which in Megabonk means surviving long in final swarms at high difficulty.</p>
 <h2 id="0-what-500k-leaderboard-runs-do">0. What 500k+ leaderboard runs do</h2>
 <p>From the 477 verified <strong>Forest</strong> runs with 500,000+ kills on <a href="https://megabonk.leaderboard.gg/">Leaderboard.gg</a> (synced by <a href="https://megabonk.org/leaderboard/">megabonk.org</a>, patch 1.0.65, Nov 16, 2026). Graveyard runs are covered separately at the end of this section, because its Bald Heads push stats far past what Forest allows. See the <a href="tiers.html">Tier lists</a> for the full breakdown.</p>
@@ -170,22 +201,22 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="Legendary chance per chest">1.6%</td>
 <td data-label="Chests per Legendary (average)">63</td>
 </tr>
-<tr>
+<tr id="r-100">
 <td data-label="Luck">100%</td>
 <td data-label="Legendary chance per chest">4.7%</td>
 <td data-label="Chests per Legendary (average)">21</td>
 </tr>
-<tr>
+<tr id="r-200">
 <td data-label="Luck">200%</td>
 <td data-label="Legendary chance per chest">8.4%</td>
 <td data-label="Chests per Legendary (average)">12</td>
 </tr>
-<tr>
+<tr id="r-300">
 <td data-label="Luck">300%</td>
 <td data-label="Legendary chance per chest">12.1%</td>
 <td data-label="Chests per Legendary (average)">8</td>
 </tr>
-<tr>
+<tr id="r-500">
 <td data-label="Luck">500%</td>
 <td data-label="Legendary chance per chest">19.0%</td>
 <td data-label="Chests per Legendary (average)">5</td>
@@ -213,7 +244,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="r-legendary-chests">
 <td data-label="Luck">Legendary chests</td>
 <td data-label="100%">4.7%</td>
 <td data-label="300%">12%</td>
@@ -351,17 +382,17 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="r-12-00">
 <td data-label="Swarm time">12:00 →</td>
 <td data-label="Rule (from the code)"><code>GetMaxSpeed</code>: enemy speed cap rises from 90 by +6 per minute (max 250)</td>
 <td data-label="What it means">Enemies can be sped up further by speed effects late on</td>
 </tr>
-<tr>
+<tr id="r-20-00-50-00">
 <td data-label="Swarm time">20:00 → 50:00</td>
 <td data-label="Rule (from the code)"><code>GetCapCC</code>: each enemy can be frozen or stunned at most <strong>15 times</strong>; from 20:00 that limit falls steadily to <strong>0 at 50:00</strong></td>
 <td data-label="What it means">Freeze and stun lock work fully until 20:00, fade out between 20 and 50 minutes, and stop working at 50:00</td>
 </tr>
-<tr>
+<tr id="r-60-00">
 <td data-label="Swarm time">60:00 →</td>
 <td data-label="Rule (from the code)"><code>GetEvasionAndArmorPenetration</code>: enemies start to ignore a small slice of your Armor and Evasion</td>
 <td data-label="What it means">Before 60:00, Evasion and Armor work at full strength</td>
@@ -397,27 +428,27 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="r-stage-3-swarm-0-1-min">
 <td data-label="Final swarm">Stage 3, swarm 0–1 min</td>
 <td data-label="Ghost phase">Ghost</td>
 <td data-label="Kills per minute">~11,700</td>
 </tr>
-<tr>
+<tr id="r-stage-3-swarm-1-12-min">
 <td data-label="Final swarm">Stage 3, swarm 1–12 min</td>
 <td data-label="Ghost phase">Greater, then Purple</td>
 <td data-label="Kills per minute">11,300–11,500, steady</td>
 </tr>
-<tr>
+<tr id="r-stage-3-swarm-12-min">
 <td data-label="Final swarm">Stage 3, swarm 12 min</td>
 <td data-label="Ghost phase"><strong>Red</strong></td>
 <td data-label="Kills per minute"><strong>4,800</strong> → left for the final map</td>
 </tr>
-<tr>
+<tr id="r-final-map-swarm-0-12-min">
 <td data-label="Final swarm">Final map, swarm 0–12 min</td>
 <td data-label="Ghost phase">Ghost → Greater → Purple</td>
 <td data-label="Kills per minute">11,100–14,500</td>
 </tr>
-<tr>
+<tr id="r-final-map-swarm-12-min">
 <td data-label="Final swarm">Final map, swarm 12 min +</td>
 <td data-label="Ghost phase"><strong>Red</strong></td>
 <td data-label="Kills per minute">7,500 → 4,000 → 1,500, then death at 64:22</td>
@@ -434,5 +465,43 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <li><strong>No Bob's Light.</strong> That's the item that keeps killing Red Ghosts (1 in 3) and everything around them.</li>
 </ul>
 <p><strong>A safe plan for a build like this one:</strong> farm each stage's final swarm until about 11:30 of swarm time, then take the portal before the Red switch. On Tier 3 that's up to four 12-minute farms (three stages plus the final map), about 48 minutes of swarm. At ~11,500 a minute that's roughly 550,000 kills before any Red Ghost phase.</p>
-<p><strong>To go further,</strong> build toward the leaderboard core in section 0: Overpowered Lamp, Big Bonk, Spicy Meatball, Giant Fork, Lightning Orb, Beefy Ring, Wizard's Hat, Pot (Stainless Steel) and Anvil. Use Katana, Shotgun or Dexecutioner, and Chaos, XP and Cursed tomes. The top runs built this way last hours, not minutes.</p><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Maxing%20a%20run&page=Maxing%20a%20run%20%28https%3A//bonk.wiki/max-runs.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="tiers.html"><span>← Previous</span>Tier lists</a><a class="nx" href="quests.html"><span>Next →</span>Quests &amp; unlocks</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 17, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></main></div>
-<a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){var n=document.getElementById('nav'),b=n.querySelector('.mbtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.documentElement.classList.toggle('navlock',o)}b.addEventListener('click',function(){set(!n.classList.contains('open'))});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});var t=document.querySelector('.top');function sc(){t.classList.toggle('show',scrollY>600)}addEventListener('scroll',sc,{passive:true});sc()})()</script></body></html>
+<p><strong>To go further,</strong> build toward the leaderboard core in section 0: Overpowered Lamp, Big Bonk, Spicy Meatball, Giant Fork, Lightning Orb, Beefy Ring, Wizard's Hat, Pot (Stainless Steel) and Anvil. Use Katana, Shotgun or Dexecutioner, and Chaos, XP and Cursed tomes. The top runs built this way last hours, not minutes.</p><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Maxing%20a%20run&page=Maxing%20a%20run%20%28https%3A//bonk.wiki/max-runs.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="tiers.html"><span>← Previous</span>Tier lists</a><a class="nx" href="secrets.html"><span>Next →</span>Map secrets &amp; fights</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 19, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="#0-what-500k-leaderboard-runs-do">0. What 500k+ leaderboard runs do</a></li><li><a href="#1-before-the-run">1. Before the run</a></li><li><a href="#2-stage-1-0001000-build-the-engine">2. Stage 1, 0:00–10:00: build the engine</a></li><li><a href="#2b-chest-volume-and-luck-how-big-runs-get-10-copies">2b. Chest volume and Luck: how big runs get 10+ copies</a></li><li><a href="#2c-five-ways-to-bend-the-system">2c. Five ways to bend the system</a></li><li><a href="#3-boss-curses-how-many">3. Boss Curses: how many</a></li><li><a href="#4-the-final-swarm-where-the-kills-are">4. The final swarm: where the kills are</a></li><li><a href="#5-the-ghost-wall-at-1213-minutes">5. The ghost wall at 12–13 minutes</a></li><li><a href="#5b-staying-alive-past-14-minutes">5b. Staying alive past 14 minutes</a></li><li><a href="#6-moving-between-stages">6. Moving between stages</a></li><li><a href="#7-what-a-361000-kill-run-showed">7. What a 361,000-kill run showed</a></li></ul></aside></main></div>
+<a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){
+var d=document,n=d.getElementById('nav'),mb=n.querySelector('.mbtn'),sb=n.querySelector('.sbtn'),q=d.getElementById('q'),R=d.getElementById('sres'),L=d.getElementById('links'),mq=matchMedia('(max-width:860px)');
+function set(o){n.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);d.documentElement.classList.toggle('navlock',o&&mq.matches)}
+mb.addEventListener('click',function(){set(!n.classList.contains('open'))});
+sb.addEventListener('click',function(){set(true);setTimeout(function(){q.focus()},60)});
+n.querySelector('.scrim').addEventListener('click',function(){set(false)});
+d.addEventListener('keydown',function(e){
+ if(e.key==='Escape'){if(q.value){q.value='';run()}else set(false);if(d.activeElement===q&&!mq.matches)q.blur()}
+ else if(e.key==='/'&&!/INPUT|TEXTAREA/.test(d.activeElement.tagName)){e.preventDefault();if(mq.matches)set(true);q.focus()}});
+n.addEventListener('click',function(e){var a=e.target.closest('a');if(a&&(L.contains(a)||R.contains(a)))set(false)});
+var t=d.querySelector('.top');function sc(){t.classList.toggle('show',scrollY>600)}addEventListener('scroll',sc,{passive:true});sc();
+var IX=null,ld=false;
+function load(){if(ld)return;ld=true;fetch('search.json').then(function(r){return r.json()}).then(function(j){IX=j;for(var i=0;i<j.length;i++){var e=j[i];e._n=e.h.toLowerCase();e._p=e.p.toLowerCase();e._t=e.t.toLowerCase()}run()}).catch(function(){ld=false})}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function hl(s,ws){var o=esc(s);ws.forEach(function(w){if(w.length<2)return;o=o.replace(new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'),'<mark>$1</mark>')});return o}
+function snip(e,ws){var i=-1;for(var k=0;k<ws.length&&i<0;k++)i=e._t.indexOf(ws[k]);if(i<0)return e.t.slice(0,110)+(e.t.length>110?'…':'');var s=Math.max(0,i-45),x=e.t.slice(s,s+130);return (s>0?'…':'')+x+(s+130<e.t.length?'…':'')}
+function run(){
+ var v=q.value.trim().toLowerCase();
+ if(!v){R.hidden=true;L.hidden=false;R.innerHTML='';return}
+ L.hidden=true;R.hidden=false;
+ if(!IX){load();R.innerHTML='<p class="sx">Loading…</p>';return}
+ var ws=v.split(/\s+/),out=[];
+ for(var i=0;i<IX.length;i++){var e=IX[i],s=0,ok=true;
+  for(var k=0;k<ws.length;k++){var w=ws[k],m=0;
+   if(e._n===v)m=60;else if(e._n.indexOf(w)===0)m=24;else if(e._n.indexOf(w)>=0)m=14;
+   if(e._p.indexOf(w)>=0)m+=6;if(!m&&e._t.indexOf(w)>=0)m=1+Math.min(3,e._t.split(w).length-1)*.5;
+   if(!m){ok=false;break}s+=m}
+  if(ok){if(e.k==='r')s+=2;out.push([s,e])}}
+ out.sort(function(a,b){return b[0]-a[0]});out=out.slice(0,14);
+ if(!out.length){R.innerHTML='<p class="sx">No results for “'+esc(q.value.trim())+'”.</p>';return}
+ R.innerHTML='<ul>'+out.map(function(o){var e=o[1];return '<li><a href="'+e.u+'"><span class="sp">'+esc(e.p)+(e.s?' › '+esc(e.s):'')+'</span><b>'+hl(e.h,ws)+'</b><span class="ss">'+hl(snip(e,ws),ws)+'</span></a></li>'}).join('')+'</ul>';
+}
+q.addEventListener('focus',load);q.addEventListener('input',run);
+q.addEventListener('keydown',function(e){var as=R.querySelectorAll('a');if(!as.length)return;if(e.key==='Enter'){e.preventDefault();as[0].click()}else if(e.key==='ArrowDown'){e.preventDefault();as[0].focus()}});
+R.addEventListener('keydown',function(e){var as=[].slice.call(R.querySelectorAll('a')),i=as.indexOf(d.activeElement);if(i<0)return;if(e.key==='ArrowDown'){e.preventDefault();(as[i+1]||as[i]).focus()}else if(e.key==='ArrowUp'){e.preventDefault();(i?as[i-1]:q).focus()}});
+var rl=d.querySelector('.rail');if(rl&&'IntersectionObserver' in window){var ra={};rl.querySelectorAll('a').forEach(function(a){ra[a.getAttribute('href').slice(1)]=a});var hs=[].slice.call(d.querySelectorAll('main h2[id]')).filter(function(h){return ra[h.id]});
+ function spy(){var cur=hs[0];for(var i=0;i<hs.length;i++){if(hs[i].getBoundingClientRect().top<120)cur=hs[i]}for(var k in ra)ra[k].classList.toggle('on',cur&&k===cur.id)}addEventListener('scroll',spy,{passive:true});spy()}
+})()
+</script></body></html>
