@@ -187,8 +187,10 @@ table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;bor
 table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
 table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
 table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="cards"] td[data-empty]{display:none}
 table[data-m="cards"] tr:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:normal;min-width:6.5em;max-width:40vw}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin:0;position:absolute;left:9px;top:8px}
+table[data-m="grid"] td:first-child:has(.ic){padding-left:35px}
 .tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
 table[data-m="grid"] th:first-child{background:var(--code)}
@@ -397,13 +399,20 @@ def mobile_tables(body):
     """Tag each table so phones can show wide ones as stacked cards (labels from the header) and keep numeric grids scrollable."""
     def one(m):
         tb = m.group(0)
-        heads = [re.sub('<[^>]+>', '', h).strip() for h in re.findall(r'<th[^>]*>(.*?)</th>', tb, re.S)]
+        heads = [html.unescape(re.sub('<[^>]+>', '', h)).strip() for h in re.findall(r'<th[^>]*>(.*?)</th>', tb, re.S)]
         n = len(heads)
         cells = [re.sub('<[^>]+>', '', c).strip() for c in re.findall(r'<td[^>]*>(.*?)</td>', tb, re.S)]
         numeric_heads = n > 2 and sum(bool(re.match(r'^[\d×%.,+−\- ]+$', h)) or h.endswith('%') for h in heads[1:]) >= (n - 1) * 0.6
-        checks = cells and sum(c.startswith(('✓', '✗')) for c in cells) > len(cells) * 0.5
-        avg = sum(len(c) for c in cells) / max(1, len(cells))
-        if (n <= 3 and avg < 28) or numeric_heads or checks:
+        rows = [[html.unescape(re.sub('<[^>]+>', '', c)).strip() for c in re.findall(r'<td[^>]*>(.*?)</td>', r, re.S)] for r in re.findall(r'<tr[^>]*>(.*?)</tr>', tb, re.S)]
+        rows = [r for r in rows if r]
+        rest = [c for r in rows for c in r[1:]]
+        checks = rest and sum(c in ('✓', '✗', '—', '') or c.startswith(('✓', '✗')) for c in rest) > len(rest) * 0.6
+        isnum = lambda c: bool(re.match(r'^[×x~≈+−\-]?[\d.,]+(%|×| ?[kKM])?( \w{1,8})?$|^—$', c))
+        numeric = n <= 6 and len(rows) > 0 and all(sum(isnum(r[j]) for r in rows if j < len(r)) >= len(rows) * 0.7 for j in range(1, n))
+        cavg = [sum(len(r[j]) for r in rows if j < len(r)) / max(1, len(rows)) for j in range(n)]
+        colmax = max(cavg, default=0)
+        restmax = max(cavg[1:], default=0)
+        if (n <= 3 and colmax < 45) or numeric_heads or ((checks or numeric) and restmax < 30):
             cls = 'grid'
         else:
             cls = 'cards'
@@ -412,8 +421,10 @@ def mobile_tables(body):
             def cell(cm):
                 lab = heads[i[0]] if i[0] < n else ''
                 i[0] += 1
-                return f'<td{cm.group(1)} data-label="{html.escape(lab, quote=True)}">'
-            return re.sub(r'<td([^>]*)>', cell, rm.group(0))
+                inner = cm.group(2) if cls == 'grid' else f'<span class="cv">{cm.group(2)}</span>'
+                empty = ' data-empty' if not re.sub('<[^>]+>', '', cm.group(2)).strip() and '<img' not in cm.group(2) else ''
+                return f'<td{cm.group(1)} data-label="{html.escape(lab, quote=True)}"{empty}>{inner}</td>'
+            return re.sub(r'<td([^>]*)>(.*?)</td>', cell, rm.group(0), flags=re.S)
         tb = re.sub(r'<tr>.*?</tr>', row, tb, flags=re.S)
         return tb.replace('<table', f'<table data-m="{cls}"', 1)
     return re.sub(r'<table.*?</table>', one, body, flags=re.S)

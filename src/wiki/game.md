@@ -53,13 +53,13 @@ Every run builds a new map from a random seed. The terrain and the placement of 
 | Per stage | Forest / Desert | Graveyard |
 |---|---|---|
 | Chests | 46 | 69 |
-| Shrine slots, each a random type (Shady Guy, Moai, Boss Curse, Magnet, Challenge; Bald Heads on Graveyard) | 14 | 28 |
+| Shrine slots | 14 | 28 |
 | Charge Shrines | 15 | 22 |
 | Greed Shrines | 8 | 12 |
 | Pots | 55 (+ 7 silver pots) | none; 105 pumpkins instead (+ 14 silver pots) |
 | Microwaves | 1–2 | 4, 6 or 8 |
 
-So two maps always have the same number of chests and shrine slots, but one might have six Shady Guys and no Moai while the next has the reverse. Some things are rolled when the map loads and never change: each Shady Guy's and Microwave's rarity, for example. That's why seed scanning (rerolling maps until a good one shows up) works. The full limits are on [FAQ & map limits](faq.html).
+Each shrine slot becomes a random type: Shady Guy, Moai, Boss Curse, Magnet or Challenge, plus Bald Heads on Graveyard. So two maps always have the same number of chests and shrine slots, but one might have six Shady Guys and no Moai while the next has the reverse. Some things are rolled when the map loads and never change: each Shady Guy's and Microwave's rarity, for example. That's why seed scanning (rerolling maps until a good one shows up) works. The full limits are on [FAQ & map limits](faq.html).
 
 **The three maps:**
 

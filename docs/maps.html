@@ -129,8 +129,10 @@ table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;bor
 table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
 table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
 table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="cards"] td[data-empty]{display:none}
 table[data-m="cards"] tr:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:normal;min-width:6.5em;max-width:40vw}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin:0;position:absolute;left:9px;top:8px}
+table[data-m="grid"] td:first-child:has(.ic){padding-left:35px}
 .tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
 table[data-m="grid"] th:first-child{background:var(--code)}
@@ -142,7 +144,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <div class="hbtns"><button class="hb sbtn" type="button" aria-label="Search"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg></button><button class="hb mbtn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span></button></div></div>
 <div class="scrim"></div><div class="dr" id="drawer"><div class="srch" role="search"><label class="sbox"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg><input id="q" type="search" placeholder="Search the wiki" autocomplete="off" spellcheck="false" aria-label="Search the wiki"><kbd>/</kbd></label></div>
 <div class="sres" id="sres" hidden></div><div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html" class="on" aria-current="page"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div><div class="grp"><b>Reference</b><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></div></nav>
-<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/Challenges1.png" alt="" width="52" height="52"><h1>Maps &amp; stages</h1></div><p class="meta">Game v1.0.69 · updated Nov 19, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Maps%20%26%20stages&page=Maps%20%26%20stages%20%28https%3A//bonk.wiki/maps.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><details class="toc" id="toc"><summary>On this page <span>6 sections</span></summary><ul><li><a href="#maps-and-tiers">Maps and tiers</a></li><li><a href="#stage-timelines">Stage timelines</a></li><li><a href="#timers">Timers</a></li><li><a href="#spawning">Spawning</a></li><li><a href="#the-final-swarm">The final swarm</a></li><li><a href="#bosses-and-boss-curses">Bosses and Boss Curses</a></li></ul></details><script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>
+<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/Challenges1.png" alt="" width="52" height="52"><h1>Maps &amp; stages</h1></div><p class="meta">Game v1.0.69 · updated Nov 25, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Maps%20%26%20stages&page=Maps%20%26%20stages%20%28https%3A//bonk.wiki/maps.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><details class="toc" id="toc"><summary>On this page <span>6 sections</span></summary><ul><li><a href="#maps-and-tiers">Maps and tiers</a></li><li><a href="#stage-timelines">Stage timelines</a></li><li><a href="#timers">Timers</a></li><li><a href="#spawning">Spawning</a></li><li><a href="#the-final-swarm">The final swarm</a></li><li><a href="#bosses-and-boss-curses">Bosses and Boss Curses</a></li></ul></details><script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>
 <h2 id="maps-and-tiers">Maps and tiers</h2>
 <div class="tw"><table data-m="cards">
 <thead>
@@ -158,31 +160,31 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-forest">
-<td class="nm" data-label="Map"><img class="mthumb" src="img/ForestIconBig.png" alt="" width="40" height="30">Forest</td>
-<td data-label="Stages">3</td>
-<td data-label="Stage timers">10:00, 9:00, 8:00</td>
-<td data-label="Chests">×1</td>
-<td data-label="Shrines">×1</td>
-<td data-label="Pots &amp;amp; other">×1</td>
-<td data-label="Final boss">Ent (three phases: 9,000 / 8,000 / 10,000 base HP)</td>
+<td class="nm" data-label="Map"><span class="cv"><img class="mthumb" src="img/ForestIconBig.png" alt="" width="40" height="30">Forest</span></td>
+<td data-label="Stages"><span class="cv">3</span></td>
+<td data-label="Stage timers"><span class="cv">10:00, 9:00, 8:00</span></td>
+<td data-label="Chests"><span class="cv">×1</span></td>
+<td data-label="Shrines"><span class="cv">×1</span></td>
+<td data-label="Pots &amp; other"><span class="cv">×1</span></td>
+<td data-label="Final boss"><span class="cv">Ent (three phases: 9,000 / 8,000 / 10,000 base HP)</span></td>
 </tr>
 <tr id="r-desert">
-<td class="nm" data-label="Map"><img class="mthumb" src="img/DesertIconBig.png" alt="" width="40" height="30">Desert</td>
-<td data-label="Stages">3</td>
-<td data-label="Stage timers">10:00, 9:00, 8:00</td>
-<td data-label="Chests">×1</td>
-<td data-label="Shrines">×1</td>
-<td data-label="Pots &amp;amp; other">×1</td>
-<td data-label="Final boss">Pharaoh (three phases, 8,000 base HP each)</td>
+<td class="nm" data-label="Map"><span class="cv"><img class="mthumb" src="img/DesertIconBig.png" alt="" width="40" height="30">Desert</span></td>
+<td data-label="Stages"><span class="cv">3</span></td>
+<td data-label="Stage timers"><span class="cv">10:00, 9:00, 8:00</span></td>
+<td data-label="Chests"><span class="cv">×1</span></td>
+<td data-label="Shrines"><span class="cv">×1</span></td>
+<td data-label="Pots &amp; other"><span class="cv">×1</span></td>
+<td data-label="Final boss"><span class="cv">Pharaoh (three phases, 8,000 base HP each)</span></td>
 </tr>
 <tr id="r-graveyard">
-<td class="nm" data-label="Map"><img class="mthumb" src="img/GraveyardIconBig.png" alt="" width="40" height="30">Graveyard</td>
-<td data-label="Stages">1</td>
-<td data-label="Stage timers">16:00</td>
-<td data-label="Chests">×1.5</td>
-<td data-label="Shrines">×2</td>
-<td data-label="Pots &amp;amp; other">×1.5 (pumpkins instead of pots)</td>
-<td data-label="Final boss">Ghost King (500,000 base HP)</td>
+<td class="nm" data-label="Map"><span class="cv"><img class="mthumb" src="img/GraveyardIconBig.png" alt="" width="40" height="30">Graveyard</span></td>
+<td data-label="Stages"><span class="cv">1</span></td>
+<td data-label="Stage timers"><span class="cv">16:00</span></td>
+<td data-label="Chests"><span class="cv">×1.5</span></td>
+<td data-label="Shrines"><span class="cv">×2</span></td>
+<td data-label="Pots &amp; other"><span class="cv">×1.5 (pumpkins instead of pots)</span></td>
+<td data-label="Final boss"><span class="cv">Ghost King (500,000 base HP)</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -368,7 +370,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <li>More of everything: 1.5× chests, 2× shrine slots, 1.5× Charge and Greed Shrines. Instead of pots it has 105 pumpkins, plus 4, 6 or 8 Microwaves (<a href="faq.html">map limits</a>).</li>
 </ul>
 <h2 id="timers"><img class="ic" src="img/ItemTimeBracelet.png" alt="">Timers</h2>
-<div class="tw"><table data-m="cards">
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Timer</th>
@@ -462,40 +464,40 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-0-00">
-<td data-label="Swarm time">0:00</td>
-<td data-label="Ghost">Ghost</td>
-<td data-label="Base HP">10</td>
-<td data-label="Base damage">10</td>
-<td data-label="Speed">6</td>
-<td data-label="Can be executed">Yes</td>
-<td data-label="Knockback resistance">0</td>
+<td data-label="Swarm time"><span class="cv">0:00</span></td>
+<td data-label="Ghost"><span class="cv">Ghost</span></td>
+<td data-label="Base HP"><span class="cv">10</span></td>
+<td data-label="Base damage"><span class="cv">10</span></td>
+<td data-label="Speed"><span class="cv">6</span></td>
+<td data-label="Can be executed"><span class="cv">Yes</span></td>
+<td data-label="Knockback resistance"><span class="cv">0</span></td>
 </tr>
 <tr id="r-1-00">
-<td data-label="Swarm time">1:00</td>
-<td data-label="Ghost">Greater Ghost</td>
-<td data-label="Base HP">20</td>
-<td data-label="Base damage">13</td>
-<td data-label="Speed">7</td>
-<td data-label="Can be executed">Yes</td>
-<td data-label="Knockback resistance">1</td>
+<td data-label="Swarm time"><span class="cv">1:00</span></td>
+<td data-label="Ghost"><span class="cv">Greater Ghost</span></td>
+<td data-label="Base HP"><span class="cv">20</span></td>
+<td data-label="Base damage"><span class="cv">13</span></td>
+<td data-label="Speed"><span class="cv">7</span></td>
+<td data-label="Can be executed"><span class="cv">Yes</span></td>
+<td data-label="Knockback resistance"><span class="cv">1</span></td>
 </tr>
 <tr id="r-6-00">
-<td data-label="Swarm time">6:00</td>
-<td data-label="Ghost">Purple Ghost</td>
-<td data-label="Base HP">40</td>
-<td data-label="Base damage">20</td>
-<td data-label="Speed">8</td>
-<td data-label="Can be executed">No</td>
-<td data-label="Knockback resistance">5</td>
+<td data-label="Swarm time"><span class="cv">6:00</span></td>
+<td data-label="Ghost"><span class="cv">Purple Ghost</span></td>
+<td data-label="Base HP"><span class="cv">40</span></td>
+<td data-label="Base damage"><span class="cv">20</span></td>
+<td data-label="Speed"><span class="cv">8</span></td>
+<td data-label="Can be executed"><span class="cv">No</span></td>
+<td data-label="Knockback resistance"><span class="cv">5</span></td>
 </tr>
 <tr id="r-12-00">
-<td data-label="Swarm time">12:00</td>
-<td data-label="Ghost">Red Ghost</td>
-<td data-label="Base HP">100</td>
-<td data-label="Base damage">30</td>
-<td data-label="Speed">10</td>
-<td data-label="Can be executed">No</td>
-<td data-label="Knockback resistance">50</td>
+<td data-label="Swarm time"><span class="cv">12:00</span></td>
+<td data-label="Ghost"><span class="cv">Red Ghost</span></td>
+<td data-label="Base HP"><span class="cv">100</span></td>
+<td data-label="Base damage"><span class="cv">30</span></td>
+<td data-label="Speed"><span class="cv">10</span></td>
+<td data-label="Can be executed"><span class="cv">No</span></td>
+<td data-label="Knockback resistance"><span class="cv">50</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -507,7 +509,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <li><strong>Every boss has its HP multiplied by 1 + 0.16 × curses.</strong></li>
 <li>Boss HP also gets a stage multiplier: ×2.5 on stage 2 and ×5 on stage 3.</li>
 <li>Bosses can't be killed by Bob's Light or executes; Cursed Doll only does 0.7 × (8 + level) to them.</li>
-</ul><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Maps%20%26%20stages&page=Maps%20%26%20stages%20%28https%3A//bonk.wiki/maps.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="economy.html"><span>← Previous</span>Luck, chests &amp; shrines</a><a class="nx" href="enemies.html"><span>Next →</span>Enemies</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 19, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="#maps-and-tiers">Maps and tiers</a></li><li><a href="#stage-timelines">Stage timelines</a></li><li><a href="#timers">Timers</a></li><li><a href="#spawning">Spawning</a></li><li><a href="#the-final-swarm">The final swarm</a></li><li><a href="#bosses-and-boss-curses">Bosses and Boss Curses</a></li></ul></aside></main></div>
+</ul><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Maps%20%26%20stages&page=Maps%20%26%20stages%20%28https%3A//bonk.wiki/maps.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="economy.html"><span>← Previous</span>Luck, chests &amp; shrines</a><a class="nx" href="enemies.html"><span>Next →</span>Enemies</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 25, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="#maps-and-tiers">Maps and tiers</a></li><li><a href="#stage-timelines">Stage timelines</a></li><li><a href="#timers">Timers</a></li><li><a href="#spawning">Spawning</a></li><li><a href="#the-final-swarm">The final swarm</a></li><li><a href="#bosses-and-boss-curses">Bosses and Boss Curses</a></li></ul></aside></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){
 var d=document,n=d.getElementById('nav'),mb=n.querySelector('.mbtn'),sb=n.querySelector('.sbtn'),q=d.getElementById('q'),R=d.getElementById('sres'),L=d.getElementById('links'),mq=matchMedia('(max-width:860px)');
 function set(o){n.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);d.documentElement.classList.toggle('navlock',o&&mq.matches)}

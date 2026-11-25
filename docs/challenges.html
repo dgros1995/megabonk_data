@@ -129,8 +129,10 @@ table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;bor
 table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
 table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
 table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="cards"] td[data-empty]{display:none}
 table[data-m="cards"] tr:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:normal;min-width:6.5em;max-width:40vw}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin:0;position:absolute;left:9px;top:8px}
+table[data-m="grid"] td:first-child:has(.ic){padding-left:35px}
 .tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
 table[data-m="grid"] th:first-child{background:var(--code)}
@@ -142,7 +144,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <div class="hbtns"><button class="hb sbtn" type="button" aria-label="Search"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg></button><button class="hb mbtn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span></button></div></div>
 <div class="scrim"></div><div class="dr" id="drawer"><div class="srch" role="search"><label class="sbox"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg><input id="q" type="search" placeholder="Search the wiki" autocomplete="off" spellcheck="false" aria-label="Search the wiki"><kbd>/</kbd></label></div>
 <div class="sres" id="sres" hidden></div><div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html" class="on" aria-current="page"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div><div class="grp"><b>Reference</b><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></div></nav>
-<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/ChallengeIcon.png" alt="" width="52" height="52"><h1>Challenges</h1></div><p class="meta">Game v1.0.69 · updated Nov 19, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Challenges&page=Challenges%20%28https%3A//bonk.wiki/challenges.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><details class="toc" id="toc"><summary>On this page <span>7 sections</span></summary><ul><li><a href="#forest-tier-1">Forest Tier 1</a></li><li><a href="#forest-tier-2">Forest Tier 2</a></li><li><a href="#forest-tier-3">Forest Tier 3</a></li><li><a href="#desert-tier-1">Desert Tier 1</a></li><li><a href="#desert-tier-2">Desert Tier 2</a></li><li><a href="#desert-tier-3">Desert Tier 3</a></li><li><a href="#graveyard">Graveyard</a></li></ul></details><script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>
+<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/ChallengeIcon.png" alt="" width="52" height="52"><h1>Challenges</h1></div><p class="meta">Game v1.0.69 · updated Nov 25, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Challenges&page=Challenges%20%28https%3A//bonk.wiki/challenges.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><details class="toc" id="toc"><summary>On this page <span>7 sections</span></summary><ul><li><a href="#forest-tier-1">Forest Tier 1</a></li><li><a href="#forest-tier-2">Forest Tier 2</a></li><li><a href="#forest-tier-3">Forest Tier 3</a></li><li><a href="#desert-tier-1">Desert Tier 1</a></li><li><a href="#desert-tier-2">Desert Tier 2</a></li><li><a href="#desert-tier-3">Desert Tier 3</a></li><li><a href="#graveyard">Graveyard</a></li></ul></details><script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>
 <p>Challenges are special runs with a rule change, picked from the Challenges menu per map and tier. All 55 are below, read from the game's challenge data (<code>ChallengeData</code>).</p>
 <ul>
 <li><strong>Reward:</strong> a challenge run earns more Silver. The run's silver multiplier is the tier's normal multiplier <strong>plus (challenge bonus − 1)</strong> (<code>RunConfig.GetSilverMultiplier</code>), so a ×1.5 challenge adds +0.5 and a ×2.0 adds +1.0.</li>
@@ -163,95 +165,95 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-smol-boi">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/SizeTome.png" alt="">Smol Boi</td>
-<td data-label="Rule">×0.8 damage, move speed and size</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/SizeTome.png" alt="">Smol Boi</span></td>
+<td data-label="Rule"><span class="cv">×0.8 damage, move speed and size</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-speedrunner">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</td>
-<td data-label="Rule">Win within 6:00</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</span></td>
+<td data-label="Rule"><span class="cv">Win within 6:00</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-turbo-mode">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/Stonks.png" alt="">Turbo Mode</td>
-<td data-label="Rule">Chests cost 96% less; enemies scale ×5 faster with time</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/Stonks.png" alt="">Turbo Mode</span></td>
+<td data-label="Rule"><span class="cv">Chests cost 96% less; enemies scale ×5 faster with time</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-weird-controls">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/rage.png" alt="">Weird Controls</td>
-<td data-label="Rule">Inverted controls</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/rage.png" alt="">Weird Controls</span></td>
+<td data-label="Rule"><span class="cv">Inverted controls</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-fragile">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/Heart.png" alt="">Fragile</td>
-<td data-label="Rule">Die on any damage or enemy touch</td>
-<td data-label="Silver bonus">×1.6</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/Heart.png" alt="">Fragile</span></td>
+<td data-label="Rule"><span class="cv">Die on any damage or enemy touch</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.6</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-afk-gaming">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/IdleJuice.png" alt="">AFK Gaming</td>
-<td data-label="Rule">Can't move or jump; win by reaching the final swarm</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">1 challenge done</td>
-<td data-label="Suggested by">Dex</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/IdleJuice.png" alt="">AFK Gaming</span></td>
+<td data-label="Rule"><span class="cv">Can't move or jump; win by reaching the final swarm</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done</span></td>
+<td data-label="Suggested by"><span class="cv">Dex</span></td>
 </tr>
 <tr id="r-blind">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/Bullseye.png" alt="">Blind</td>
-<td data-label="Rule">Thick fog</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">1 challenge done</td>
-<td data-label="Suggested by">papayafuriosa</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/Bullseye.png" alt="">Blind</span></td>
+<td data-label="Rule"><span class="cv">Thick fog</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done</span></td>
+<td data-label="Suggested by"><span class="cv">papayafuriosa</span></td>
 </tr>
 <tr id="r-sticks-and-stones">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/ItemKey.png" alt="">Sticks and stones</td>
-<td data-label="Rule">No items (chest amount ×0)</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">1 challenge done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/ItemKey.png" alt="">Sticks and stones</span></td>
+<td data-label="Rule"><span class="cv">No items (chest amount ×0)</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-oh-no">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh no</td>
-<td data-label="Rule">Enemies ×1.25 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">1 challenge done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh no</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.25 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</td>
-<td data-label="Rule">Win within 4:15</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">1 challenge done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</span></td>
+<td data-label="Rule"><span class="cv">Win within 4:15</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-oh-shit">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh shit</td>
-<td data-label="Rule">Enemies ×1.5 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.75</td>
-<td data-label="Needs">2 challenges done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh shit</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.5 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.75</span></td>
+<td data-label="Needs"><span class="cv">2 challenges done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-pacifist">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/nuke.png" alt="">Pacifist</td>
-<td data-label="Rule">No weapons</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">2 challenges done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/nuke.png" alt="">Pacifist</span></td>
+<td data-label="Rule"><span class="cv">No weapons</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">2 challenges done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-what-the-fuck">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">what the fuck</td>
-<td data-label="Rule">Enemies ×2 HP, damage and speed</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">3 challenges done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">what the fuck</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×2 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">3 challenges done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -268,46 +270,46 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</td>
-<td data-label="Rule">Win within 14:00</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</span></td>
+<td data-label="Rule"><span class="cv">Win within 14:00</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh no</td>
-<td data-label="Rule">Enemies ×1.25 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh no</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.25 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/Heart.png" alt="">Fragile</td>
-<td data-label="Rule">Die on any damage or enemy touch</td>
-<td data-label="Silver bonus">×1.6</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/Heart.png" alt="">Fragile</span></td>
+<td data-label="Rule"><span class="cv">Die on any damage or enemy touch</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.6</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh shit</td>
-<td data-label="Rule">Enemies ×1.5 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.75</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh shit</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.5 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.75</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</td>
-<td data-label="Rule">Win within 12:00</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</span></td>
+<td data-label="Rule"><span class="cv">Win within 12:00</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">what the fuck</td>
-<td data-label="Rule">Enemies ×2 HP, damage and speed</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">what the fuck</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×2 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -324,46 +326,46 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</td>
-<td data-label="Rule">Win within 30:00</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</span></td>
+<td data-label="Rule"><span class="cv">Win within 30:00</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh no</td>
-<td data-label="Rule">Enemies ×1.25 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh no</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.25 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/Heart.png" alt="">Fragile</td>
-<td data-label="Rule">Die on any damage or enemy touch</td>
-<td data-label="Silver bonus">×1.6</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/Heart.png" alt="">Fragile</span></td>
+<td data-label="Rule"><span class="cv">Die on any damage or enemy touch</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.6</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh shit</td>
-<td data-label="Rule">Enemies ×1.5 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.75</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh shit</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.5 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.75</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</td>
-<td data-label="Rule">Win within 26:00</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</span></td>
+<td data-label="Rule"><span class="cv">Win within 26:00</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">what the fuck</td>
-<td data-label="Rule">Enemies ×2 HP, damage and speed</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">what the fuck</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×2 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -380,67 +382,67 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-chonk-mode">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/Elite.png" alt="">Chonk Mode</td>
-<td data-label="Rule">Enemies ×2 size, ×2 HP, ×1.5 damage, ×0.85 speed</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">DelltheHyena</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/Elite.png" alt="">Chonk Mode</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×2 size, ×2 HP, ×1.5 damage, ×0.85 speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">DelltheHyena</span></td>
 </tr>
 <tr id="r-hyper">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/Haste.png" alt="">Hyper</td>
-<td data-label="Rule">×2 XP and gold; enemies scale ×4 faster with time</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">DelltheHyena</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/Haste.png" alt="">Hyper</span></td>
+<td data-label="Rule"><span class="cv">×2 XP and gold; enemies scale ×4 faster with time</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">DelltheHyena</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</td>
-<td data-label="Rule">Win within 6:00</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</span></td>
+<td data-label="Rule"><span class="cv">Win within 6:00</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-swarm">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/Curse.png" alt="">Swarm</td>
-<td data-label="Rule">×2 enemies, ×1.5 enemy speed, ×0.75 XP</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/Curse.png" alt="">Swarm</span></td>
+<td data-label="Rule"><span class="cv">×2 enemies, ×1.5 enemy speed, ×0.75 XP</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-the-floor-is-lava">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/burn.png" alt="">The Floor is Lava</td>
-<td data-label="Rule">Lava periodically covers most of the map</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">DelltheHyena</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/burn.png" alt="">The Floor is Lava</span></td>
+<td data-label="Rule"><span class="cv">Lava periodically covers most of the map</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">DelltheHyena</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh no</td>
-<td data-label="Rule">Enemies ×1.25 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">1 challenge done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh no</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.25 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh shit</td>
-<td data-label="Rule">Enemies ×1.5 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.75</td>
-<td data-label="Needs">1 challenge done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh shit</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.5 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.75</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</td>
-<td data-label="Rule">Win within 4:15</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">1 challenge done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</span></td>
+<td data-label="Rule"><span class="cv">Win within 4:15</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">what the fuck</td>
-<td data-label="Rule">Enemies ×2 HP, damage and speed</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">1 challenge done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">what the fuck</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×2 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -457,39 +459,39 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</td>
-<td data-label="Rule">Win within 14:00</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</span></td>
+<td data-label="Rule"><span class="cv">Win within 14:00</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh no</td>
-<td data-label="Rule">Enemies ×1.25 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh no</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.25 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh shit</td>
-<td data-label="Rule">Enemies ×1.5 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.75</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh shit</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.5 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.75</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</td>
-<td data-label="Rule">Win within 12:00</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</span></td>
+<td data-label="Rule"><span class="cv">Win within 12:00</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">what the fuck</td>
-<td data-label="Rule">Enemies ×2 HP, damage and speed</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">what the fuck</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×2 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -506,39 +508,39 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</td>
-<td data-label="Rule">Win within 30:00</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</span></td>
+<td data-label="Rule"><span class="cv">Win within 30:00</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh no</td>
-<td data-label="Rule">Enemies ×1.25 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh no</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.25 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh shit</td>
-<td data-label="Rule">Enemies ×1.5 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.75</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh shit</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.5 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.75</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</td>
-<td data-label="Rule">Win within 26:00</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</span></td>
+<td data-label="Rule"><span class="cv">Win within 26:00</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">what the fuck</td>
-<td data-label="Rule">Enemies ×2 HP, damage and speed</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">what the fuck</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×2 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -555,84 +557,84 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-crypt-escape">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/ItemCryptKey.png" alt="">Crypt Escape</td>
-<td data-label="Rule">Escape the first crypt in time</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/ItemCryptKey.png" alt="">Crypt Escape</span></td>
+<td data-label="Rule"><span class="cv">Escape the first crypt in time</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</td>
-<td data-label="Rule">Win within 14:00</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">—</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner</span></td>
+<td data-label="Rule"><span class="cv">Win within 14:00</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">—</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/ItemCryptKey.png" alt="">Crypt Escape+</td>
-<td data-label="Rule">Escape the first crypt in time</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">1 challenge done, “Crypt Escape”</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/ItemCryptKey.png" alt="">Crypt Escape+</span></td>
+<td data-label="Rule"><span class="cv">Escape the first crypt in time</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done, “Crypt Escape”</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh no</td>
-<td data-label="Rule">Enemies ×1.25 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">1 challenge done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh no</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.25 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-loot-goblin">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/Gold.png" alt="">Loot Goblin</td>
-<td data-label="Rule">Can't gain XP or level up</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">1 challenge done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/Gold.png" alt="">Loot Goblin</span></td>
+<td data-label="Rule"><span class="cv">Can't gain XP or level up</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr id="r-minimalist">
-<td class="nm" data-label="Challenge"><img class="ic" src="img/Weapons.png" alt="">Minimalist</td>
-<td data-label="Rule">1 weapon slot and 1 tome slot; No items (chest amount ×0)</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">1 challenge done</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/Weapons.png" alt="">Minimalist</span></td>
+<td data-label="Rule"><span class="cv">1 weapon slot and 1 tome slot; No items (chest amount ×0)</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</td>
-<td data-label="Rule">Win within 9:00</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">1 challenge done, “Speedrunner”</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/i_Clock.png" alt="">Speedrunner+</span></td>
+<td data-label="Rule"><span class="cv">Win within 9:00</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">1 challenge done, “Speedrunner”</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/ItemCryptKey.png" alt="">Crypt Escape++</td>
-<td data-label="Rule">Escape the first crypt in time</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">2 challenges done, “Crypt Escape+”</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/ItemCryptKey.png" alt="">Crypt Escape++</span></td>
+<td data-label="Rule"><span class="cv">Escape the first crypt in time</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">2 challenges done, “Crypt Escape+”</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">oh shit</td>
-<td data-label="Rule">Enemies ×1.5 HP, damage and speed</td>
-<td data-label="Silver bonus">×1.75</td>
-<td data-label="Needs">2 challenges done, “oh no”</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">oh shit</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×1.5 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.75</span></td>
+<td data-label="Needs"><span class="cv">2 challenges done, “oh no”</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/ItemCryptKey.png" alt="">Crypt Escape+++</td>
-<td data-label="Rule">Escape the first crypt in time</td>
-<td data-label="Silver bonus">×1.5</td>
-<td data-label="Needs">3 challenges done, “Crypt Escape++”</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/ItemCryptKey.png" alt="">Crypt Escape+++</span></td>
+<td data-label="Rule"><span class="cv">Escape the first crypt in time</span></td>
+<td data-label="Silver bonus"><span class="cv">×1.5</span></td>
+<td data-label="Needs"><span class="cv">3 challenges done, “Crypt Escape++”</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Challenge"><img class="ic" src="img/skull.png" alt="">what the fuck</td>
-<td data-label="Rule">Enemies ×2 HP, damage and speed</td>
-<td data-label="Silver bonus">×2</td>
-<td data-label="Needs">3 challenges done, “oh shit”</td>
-<td data-label="Suggested by">—</td>
+<td class="nm" data-label="Challenge"><span class="cv"><img class="ic" src="img/skull.png" alt="">what the fuck</span></td>
+<td data-label="Rule"><span class="cv">Enemies ×2 HP, damage and speed</span></td>
+<td data-label="Silver bonus"><span class="cv">×2</span></td>
+<td data-label="Needs"><span class="cv">3 challenges done, “oh shit”</span></td>
+<td data-label="Suggested by"><span class="cv">—</span></td>
 </tr>
 </tbody>
-</table></div><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Challenges&page=Challenges%20%28https%3A//bonk.wiki/challenges.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="quests.html"><span>← Previous</span>Quests &amp; unlocks</a><a class="nx" href="cosmetics.html"><span>Next →</span>Hats &amp; skins</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 19, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="#forest-tier-1">Forest Tier 1</a></li><li><a href="#forest-tier-2">Forest Tier 2</a></li><li><a href="#forest-tier-3">Forest Tier 3</a></li><li><a href="#desert-tier-1">Desert Tier 1</a></li><li><a href="#desert-tier-2">Desert Tier 2</a></li><li><a href="#desert-tier-3">Desert Tier 3</a></li><li><a href="#graveyard">Graveyard</a></li></ul></aside></main></div>
+</table></div><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Challenges&page=Challenges%20%28https%3A//bonk.wiki/challenges.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="quests.html"><span>← Previous</span>Quests &amp; unlocks</a><a class="nx" href="cosmetics.html"><span>Next →</span>Hats &amp; skins</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 25, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="#forest-tier-1">Forest Tier 1</a></li><li><a href="#forest-tier-2">Forest Tier 2</a></li><li><a href="#forest-tier-3">Forest Tier 3</a></li><li><a href="#desert-tier-1">Desert Tier 1</a></li><li><a href="#desert-tier-2">Desert Tier 2</a></li><li><a href="#desert-tier-3">Desert Tier 3</a></li><li><a href="#graveyard">Graveyard</a></li></ul></aside></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){
 var d=document,n=d.getElementById('nav'),mb=n.querySelector('.mbtn'),sb=n.querySelector('.sbtn'),q=d.getElementById('q'),R=d.getElementById('sres'),L=d.getElementById('links'),mq=matchMedia('(max-width:860px)');
 function set(o){n.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);d.documentElement.classList.toggle('navlock',o&&mq.matches)}

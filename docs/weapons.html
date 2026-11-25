@@ -129,8 +129,10 @@ table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;bor
 table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
 table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
 table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="cards"] td[data-empty]{display:none}
 table[data-m="cards"] tr:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:normal;min-width:6.5em;max-width:40vw}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin:0;position:absolute;left:9px;top:8px}
+table[data-m="grid"] td:first-child:has(.ic){padding-left:35px}
 .tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
 table[data-m="grid"] th:first-child{background:var(--code)}
@@ -142,7 +144,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <div class="hbtns"><button class="hb sbtn" type="button" aria-label="Search"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg></button><button class="hb mbtn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span></button></div></div>
 <div class="scrim"></div><div class="dr" id="drawer"><div class="srch" role="search"><label class="sbox"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg><input id="q" type="search" placeholder="Search the wiki" autocomplete="off" spellcheck="false" aria-label="Search the wiki"><kbd>/</kbd></label></div>
 <div class="sres" id="sres" hidden></div><div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html" class="on" aria-current="page"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div><div class="grp"><b>Reference</b><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></div></nav>
-<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/Weapons.png" alt="" width="52" height="52"><h1>Weapons</h1></div><p class="meta">Game v1.0.69 · updated Nov 19, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Weapons&page=Weapons%20%28https%3A//bonk.wiki/weapons.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><details class="toc" id="toc"><summary>On this page <span>5 sections</span></summary><ul><li><a href="#how-weapons-work">How weapons work</a></li><li><a href="#overview">Overview</a></li><li><a href="#which-weapons-roll-procs-fastest">Which weapons roll procs fastest</a></li><li><a href="#how-tomes-affect-weapons">How tomes affect weapons</a></li><li><a href="#every-weapon">Every weapon</a></li></ul></details><script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>
+<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/Weapons.png" alt="" width="52" height="52"><h1>Weapons</h1></div><p class="meta">Game v1.0.69 · updated Nov 25, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Weapons&page=Weapons%20%28https%3A//bonk.wiki/weapons.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><details class="toc" id="toc"><summary>On this page <span>5 sections</span></summary><ul><li><a href="#how-weapons-work">How weapons work</a></li><li><a href="#overview">Overview</a></li><li><a href="#which-weapons-roll-procs-fastest">Which weapons roll procs fastest</a></li><li><a href="#how-tomes-affect-weapons">How tomes affect weapons</a></li><li><a href="#every-weapon">Every weapon</a></li></ul></details><script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>
 <p>Every weapon's numbers from the game's weapon data, how fast each one attacks, and how each tome changes it. Unlock requirements are on <a href="quests.html">Quests &amp; unlocks</a>.</p>
 <h2 id="how-weapons-work">How weapons work</h2>
 <ul>
@@ -171,304 +173,304 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-aegis">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Aegis.png" alt="">Aegis</td>
-<td data-label="Base dmg">10</td>
-<td data-label="Projectiles">2</td>
-<td data-label="Cooldown">1.5 s</td>
-<td data-label="Attacks/s">contact</td>
-<td data-label="Proc coef.">1</td>
-<td data-label="Proc rolls/s">—</td>
-<td data-label="Hits">area: blocks, then shockwaves around you</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Aegis.png" alt="">Aegis</span></td>
+<td data-label="Base dmg"><span class="cv">10</span></td>
+<td data-label="Projectiles"><span class="cv">2</span></td>
+<td data-label="Cooldown"><span class="cv">1.5 s</span></td>
+<td data-label="Attacks/s"><span class="cv">contact</span></td>
+<td data-label="Proc coef."><span class="cv">1</span></td>
+<td data-label="Proc rolls/s"><span class="cv">—</span></td>
+<td data-label="Hits"><span class="cv">area: blocks, then shockwaves around you</span></td>
 </tr>
 <tr id="r-aura">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Aura.png" alt="">Aura</td>
-<td data-label="Base dmg">6</td>
-<td data-label="Projectiles">—</td>
-<td data-label="Cooldown">0.3 s</td>
-<td data-label="Attacks/s">3.33 ticks</td>
-<td data-label="Proc coef.">0.7</td>
-<td data-label="Proc rolls/s">2.33</td>
-<td data-label="Hits">area: every enemy in range, each tick</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Aura.png" alt="">Aura</span></td>
+<td data-label="Base dmg"><span class="cv">6</span></td>
+<td data-label="Projectiles"><span class="cv">—</span></td>
+<td data-label="Cooldown"><span class="cv">0.3 s</span></td>
+<td data-label="Attacks/s"><span class="cv">3.33 ticks</span></td>
+<td data-label="Proc coef."><span class="cv">0.7</span></td>
+<td data-label="Proc rolls/s"><span class="cv">2.33</span></td>
+<td data-label="Hits"><span class="cv">area: every enemy in range, each tick</span></td>
 </tr>
 <tr id="r-axe">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Axe.png" alt="">Axe</td>
-<td data-label="Base dmg">6</td>
-<td data-label="Projectiles">2</td>
-<td data-label="Cooldown">1.4 s</td>
-<td data-label="Attacks/s">1.43</td>
-<td data-label="Proc coef.">0.7</td>
-<td data-label="Proc rolls/s">1</td>
-<td data-label="Hits">area: spinning axes that linger</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Axe.png" alt="">Axe</span></td>
+<td data-label="Base dmg"><span class="cv">6</span></td>
+<td data-label="Projectiles"><span class="cv">2</span></td>
+<td data-label="Cooldown"><span class="cv">1.4 s</span></td>
+<td data-label="Attacks/s"><span class="cv">1.43</span></td>
+<td data-label="Proc coef."><span class="cv">0.7</span></td>
+<td data-label="Proc rolls/s"><span class="cv">1</span></td>
+<td data-label="Hits"><span class="cv">area: spinning axes that linger</span></td>
 </tr>
 <tr id="r-bananarang">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Bananarang.png" alt="">Bananarang</td>
-<td data-label="Base dmg">9</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.8 s</td>
-<td data-label="Attacks/s">0.59</td>
-<td data-label="Proc coef.">1</td>
-<td data-label="Proc rolls/s">0.59</td>
-<td data-label="Hits">pierce: passes through everything, out and back</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Bananarang.png" alt="">Bananarang</span></td>
+<td data-label="Base dmg"><span class="cv">9</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.8 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.59</span></td>
+<td data-label="Proc coef."><span class="cv">1</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.59</span></td>
+<td data-label="Hits"><span class="cv">pierce: passes through everything, out and back</span></td>
 </tr>
 <tr id="r-black-hole">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/BlackHole.png" alt="">Black Hole</td>
-<td data-label="Base dmg">4.5</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">1 s</td>
-<td data-label="Attacks/s">0.4</td>
-<td data-label="Proc coef.">0.7</td>
-<td data-label="Proc rolls/s">0.28</td>
-<td data-label="Hits">area: pulls and damages everything nearby</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/BlackHole.png" alt="">Black Hole</span></td>
+<td data-label="Base dmg"><span class="cv">4.5</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">1 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.4</span></td>
+<td data-label="Proc coef."><span class="cv">0.7</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.28</span></td>
+<td data-label="Hits"><span class="cv">area: pulls and damages everything nearby</span></td>
 </tr>
 <tr id="r-blood-magic">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/BloodMagic.png" alt="">Blood Magic</td>
-<td data-label="Base dmg">9</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">1.5 s</td>
-<td data-label="Attacks/s">0.66</td>
-<td data-label="Proc coef.">1</td>
-<td data-label="Proc rolls/s">0.66</td>
-<td data-label="Hits">pierce: passes through everything</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/BloodMagic.png" alt="">Blood Magic</span></td>
+<td data-label="Base dmg"><span class="cv">9</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">1.5 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.66</span></td>
+<td data-label="Proc coef."><span class="cv">1</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.66</span></td>
+<td data-label="Hits"><span class="cv">pierce: passes through everything</span></td>
 </tr>
 <tr id="r-bone">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Bone.png" alt="">Bone</td>
-<td data-label="Base dmg">11</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.4 s</td>
-<td data-label="Attacks/s">0.71</td>
-<td data-label="Proc coef.">1</td>
-<td data-label="Proc rolls/s">0.71</td>
-<td data-label="Hits">bounce: bounces once</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Bone.png" alt="">Bone</span></td>
+<td data-label="Base dmg"><span class="cv">11</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.4 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.71</span></td>
+<td data-label="Proc coef."><span class="cv">1</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.71</span></td>
+<td data-label="Hits"><span class="cv">bounce: bounces once</span></td>
 </tr>
 <tr id="r-bow">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Bow.png" alt="">Bow</td>
-<td data-label="Base dmg">9</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.92 s</td>
-<td data-label="Attacks/s">1.09</td>
-<td data-label="Proc coef.">1</td>
-<td data-label="Proc rolls/s">1.09</td>
-<td data-label="Hits">pierce: arrows pierce up to 99</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Bow.png" alt="">Bow</span></td>
+<td data-label="Base dmg"><span class="cv">9</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.92 s</span></td>
+<td data-label="Attacks/s"><span class="cv">1.09</span></td>
+<td data-label="Proc coef."><span class="cv">1</span></td>
+<td data-label="Proc rolls/s"><span class="cv">1.09</span></td>
+<td data-label="Hits"><span class="cv">pierce: arrows pierce up to 99</span></td>
 </tr>
 <tr id="r-chunkers">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Chunkers.png" alt="">Chunkers</td>
-<td data-label="Base dmg">12</td>
-<td data-label="Projectiles">3</td>
-<td data-label="Cooldown">1.5 s</td>
-<td data-label="Attacks/s">contact</td>
-<td data-label="Proc coef.">0.8</td>
-<td data-label="Proc rolls/s">—</td>
-<td data-label="Hits">contact: rocks hit what they touch while orbiting</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Chunkers.png" alt="">Chunkers</span></td>
+<td data-label="Base dmg"><span class="cv">12</span></td>
+<td data-label="Projectiles"><span class="cv">3</span></td>
+<td data-label="Cooldown"><span class="cv">1.5 s</span></td>
+<td data-label="Attacks/s"><span class="cv">contact</span></td>
+<td data-label="Proc coef."><span class="cv">0.8</span></td>
+<td data-label="Proc rolls/s"><span class="cv">—</span></td>
+<td data-label="Hits"><span class="cv">contact: rocks hit what they touch while orbiting</span></td>
 </tr>
 <tr id="r-corrupted-sword">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/CorruptedSword.png" alt="">Corrupted Sword</td>
-<td data-label="Base dmg">12</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.8 s</td>
-<td data-label="Attacks/s">0.62</td>
-<td data-label="Proc coef.">0.8</td>
-<td data-label="Proc rolls/s">0.5</td>
-<td data-label="Hits">area: front and back slashes</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/CorruptedSword.png" alt="">Corrupted Sword</span></td>
+<td data-label="Base dmg"><span class="cv">12</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.8 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.62</span></td>
+<td data-label="Proc coef."><span class="cv">0.8</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.5</span></td>
+<td data-label="Hits"><span class="cv">area: front and back slashes</span></td>
 </tr>
 <tr id="r-dexecutioner">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Dexecutioner.png" alt="">Dexecutioner</td>
-<td data-label="Base dmg">9</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.8 s</td>
-<td data-label="Attacks/s">0.62</td>
-<td data-label="Proc coef.">1</td>
-<td data-label="Proc rolls/s">0.62</td>
-<td data-label="Hits">area: piercing blade</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Dexecutioner.png" alt="">Dexecutioner</span></td>
+<td data-label="Base dmg"><span class="cv">9</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.8 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.62</span></td>
+<td data-label="Proc coef."><span class="cv">1</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.62</span></td>
+<td data-label="Hits"><span class="cv">area: piercing blade</span></td>
 </tr>
 <tr id="r-dice">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Dice.png" alt="">Dice</td>
-<td data-label="Base dmg">0 + roll of 1–6</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.5 s</td>
-<td data-label="Attacks/s">0.67</td>
-<td data-label="Proc coef.">1</td>
-<td data-label="Proc rolls/s">0.67</td>
-<td data-label="Hits">single: one target per die</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Dice.png" alt="">Dice</span></td>
+<td data-label="Base dmg"><span class="cv">0 + roll of 1–6</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.5 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.67</span></td>
+<td data-label="Proc coef."><span class="cv">1</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.67</span></td>
+<td data-label="Hits"><span class="cv">single: one target per die</span></td>
 </tr>
 <tr id="r-dragons-breath">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/DragonsBreath.png" alt="">Dragon's Breath</td>
-<td data-label="Base dmg">16</td>
-<td data-label="Projectiles">—</td>
-<td data-label="Cooldown">2 s</td>
-<td data-label="Attacks/s">contact</td>
-<td data-label="Proc coef.">0.7</td>
-<td data-label="Proc rolls/s">—</td>
-<td data-label="Hits">contact: flame cone hits everything in it while it lasts</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/DragonsBreath.png" alt="">Dragon's Breath</span></td>
+<td data-label="Base dmg"><span class="cv">16</span></td>
+<td data-label="Projectiles"><span class="cv">—</span></td>
+<td data-label="Cooldown"><span class="cv">2 s</span></td>
+<td data-label="Attacks/s"><span class="cv">contact</span></td>
+<td data-label="Proc coef."><span class="cv">0.7</span></td>
+<td data-label="Proc rolls/s"><span class="cv">—</span></td>
+<td data-label="Hits"><span class="cv">contact: flame cone hits everything in it while it lasts</span></td>
 </tr>
 <tr id="r-firestaff">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Firestaff.png" alt="">Firestaff</td>
-<td data-label="Base dmg">10</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.5 s</td>
-<td data-label="Attacks/s">0.67</td>
-<td data-label="Proc coef.">1</td>
-<td data-label="Proc rolls/s">0.67</td>
-<td data-label="Hits">area: fireballs explode</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Firestaff.png" alt="">Firestaff</span></td>
+<td data-label="Base dmg"><span class="cv">10</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.5 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.67</span></td>
+<td data-label="Proc coef."><span class="cv">1</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.67</span></td>
+<td data-label="Hits"><span class="cv">area: fireballs explode</span></td>
 </tr>
 <tr id="r-flamewalker">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Firewalker.png" alt="">Flamewalker</td>
-<td data-label="Base dmg">5</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0 s</td>
-<td data-label="Attacks/s">contact</td>
-<td data-label="Proc coef.">0.8</td>
-<td data-label="Proc rolls/s">—</td>
-<td data-label="Hits">area: fire patches hit what stands in them</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Firewalker.png" alt="">Flamewalker</span></td>
+<td data-label="Base dmg"><span class="cv">5</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0 s</span></td>
+<td data-label="Attacks/s"><span class="cv">contact</span></td>
+<td data-label="Proc coef."><span class="cv">0.8</span></td>
+<td data-label="Proc rolls/s"><span class="cv">—</span></td>
+<td data-label="Hits"><span class="cv">area: fire patches hit what stands in them</span></td>
 </tr>
 <tr id="r-frostwalker">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Frostwalker.png" alt="">Frostwalker</td>
-<td data-label="Base dmg">9</td>
-<td data-label="Projectiles">—</td>
-<td data-label="Cooldown">1.25 s</td>
-<td data-label="Attacks/s">0.8 ticks</td>
-<td data-label="Proc coef.">0.9</td>
-<td data-label="Proc rolls/s">0.72</td>
-<td data-label="Hits">area: every enemy in range, each pulse</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Frostwalker.png" alt="">Frostwalker</span></td>
+<td data-label="Base dmg"><span class="cv">9</span></td>
+<td data-label="Projectiles"><span class="cv">—</span></td>
+<td data-label="Cooldown"><span class="cv">1.25 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.8 ticks</span></td>
+<td data-label="Proc coef."><span class="cv">0.9</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.72</span></td>
+<td data-label="Hits"><span class="cv">area: every enemy in range, each pulse</span></td>
 </tr>
 <tr id="r-hero-sword">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/HeroSword.png" alt="">Hero Sword</td>
-<td data-label="Base dmg">11</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.75 s</td>
-<td data-label="Attacks/s">0.67</td>
-<td data-label="Proc coef.">0.8</td>
-<td data-label="Proc rolls/s">0.53</td>
-<td data-label="Hits">area: slash plus a flying slash</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/HeroSword.png" alt="">Hero Sword</span></td>
+<td data-label="Base dmg"><span class="cv">11</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.75 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.67</span></td>
+<td data-label="Proc coef."><span class="cv">0.8</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.53</span></td>
+<td data-label="Hits"><span class="cv">area: slash plus a flying slash</span></td>
 </tr>
 <tr id="r-katana">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Katana.png" alt="">Katana</td>
-<td data-label="Base dmg">11</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.4 s</td>
-<td data-label="Attacks/s">1.11</td>
-<td data-label="Proc coef.">0.95</td>
-<td data-label="Proc rolls/s">1.06</td>
-<td data-label="Hits">area: slash</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Katana.png" alt="">Katana</span></td>
+<td data-label="Base dmg"><span class="cv">11</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.4 s</span></td>
+<td data-label="Attacks/s"><span class="cv">1.11</span></td>
+<td data-label="Proc coef."><span class="cv">0.95</span></td>
+<td data-label="Proc rolls/s"><span class="cv">1.06</span></td>
+<td data-label="Hits"><span class="cv">area: slash</span></td>
 </tr>
 <tr id="r-lightning-staff">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/LightningStaff.png" alt="">Lightning Staff</td>
-<td data-label="Base dmg">7</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">1.1 s</td>
-<td data-label="Attacks/s">0.71</td>
-<td data-label="Proc coef.">1</td>
-<td data-label="Proc rolls/s">0.71</td>
-<td data-label="Hits">bounce: chains to more enemies with upgrades</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/LightningStaff.png" alt="">Lightning Staff</span></td>
+<td data-label="Base dmg"><span class="cv">7</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">1.1 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.71</span></td>
+<td data-label="Proc coef."><span class="cv">1</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.71</span></td>
+<td data-label="Hits"><span class="cv">bounce: chains to more enemies with upgrades</span></td>
 </tr>
 <tr id="r-mines">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Mine.png" alt="">Mines</td>
-<td data-label="Base dmg">10</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">1 s</td>
-<td data-label="Attacks/s">0.5</td>
-<td data-label="Proc coef.">0.8</td>
-<td data-label="Proc rolls/s">0.4</td>
-<td data-label="Hits">area: explode on enemies</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Mine.png" alt="">Mines</span></td>
+<td data-label="Base dmg"><span class="cv">10</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">1 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.5</span></td>
+<td data-label="Proc coef."><span class="cv">0.8</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.4</span></td>
+<td data-label="Hits"><span class="cv">area: explode on enemies</span></td>
 </tr>
 <tr id="r-poison-flask">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</td>
-<td data-label="Base dmg">1</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.8 s</td>
-<td data-label="Attacks/s">0.56</td>
-<td data-label="Proc coef.">0.9</td>
-<td data-label="Proc rolls/s">0.5</td>
-<td data-label="Hits">area: poison pools</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</span></td>
+<td data-label="Base dmg"><span class="cv">1</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.8 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.56</span></td>
+<td data-label="Proc coef."><span class="cv">0.9</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.5</span></td>
+<td data-label="Hits"><span class="cv">area: poison pools</span></td>
 </tr>
 <tr id="r-revolver">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Revolver.png" alt="">Revolver</td>
-<td data-label="Base dmg">5</td>
-<td data-label="Projectiles">6</td>
-<td data-label="Cooldown">1.4 s</td>
-<td data-label="Attacks/s">2.4</td>
-<td data-label="Proc coef.">0.9</td>
-<td data-label="Proc rolls/s">2.16</td>
-<td data-label="Hits">bounce: bullets ricochet</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Revolver.png" alt="">Revolver</span></td>
+<td data-label="Base dmg"><span class="cv">5</span></td>
+<td data-label="Projectiles"><span class="cv">6</span></td>
+<td data-label="Cooldown"><span class="cv">1.4 s</span></td>
+<td data-label="Attacks/s"><span class="cv">2.4</span></td>
+<td data-label="Proc coef."><span class="cv">0.9</span></td>
+<td data-label="Proc rolls/s"><span class="cv">2.16</span></td>
+<td data-label="Hits"><span class="cv">bounce: bullets ricochet</span></td>
 </tr>
 <tr id="r-scythe">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Scythe.png" alt="">Scythe</td>
-<td data-label="Base dmg">11</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.85 s</td>
-<td data-label="Attacks/s">0.43</td>
-<td data-label="Proc coef.">0.8</td>
-<td data-label="Proc rolls/s">0.34</td>
-<td data-label="Hits">area: 360° sweep</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Scythe.png" alt="">Scythe</span></td>
+<td data-label="Base dmg"><span class="cv">11</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.85 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.43</span></td>
+<td data-label="Proc coef."><span class="cv">0.8</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.34</span></td>
+<td data-label="Hits"><span class="cv">area: 360° sweep</span></td>
 </tr>
 <tr id="r-shotgun">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Shotgun.png" alt="">Shotgun</td>
-<td data-label="Base dmg">9</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">1 s</td>
-<td data-label="Attacks/s">0.5</td>
-<td data-label="Proc coef.">1</td>
-<td data-label="Proc rolls/s">0.5</td>
-<td data-label="Hits">area: spread blast in front</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Shotgun.png" alt="">Shotgun</span></td>
+<td data-label="Base dmg"><span class="cv">9</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">1 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.5</span></td>
+<td data-label="Proc coef."><span class="cv">1</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.5</span></td>
+<td data-label="Hits"><span class="cv">area: spread blast in front</span></td>
 </tr>
 <tr id="r-slutty-rocket">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/SluttyRocket.png" alt="">Slutty Rocket</td>
-<td data-label="Base dmg">11</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.3 s</td>
-<td data-label="Attacks/s">0.77</td>
-<td data-label="Proc coef.">1</td>
-<td data-label="Proc rolls/s">0.77</td>
-<td data-label="Hits">single: homing missiles</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/SluttyRocket.png" alt="">Slutty Rocket</span></td>
+<td data-label="Base dmg"><span class="cv">11</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.3 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.77</span></td>
+<td data-label="Proc coef."><span class="cv">1</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.77</span></td>
+<td data-label="Hits"><span class="cv">single: homing missiles</span></td>
 </tr>
 <tr id="r-sniper-rifle">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Sniper.png" alt="">Sniper Rifle</td>
-<td data-label="Base dmg">22</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">1 s</td>
-<td data-label="Attacks/s">0.5</td>
-<td data-label="Proc coef.">1.5</td>
-<td data-label="Proc rolls/s">0.75</td>
-<td data-label="Hits">pierce: long-range piercing shot</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Sniper.png" alt="">Sniper Rifle</span></td>
+<td data-label="Base dmg"><span class="cv">22</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">1 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.5</span></td>
+<td data-label="Proc coef."><span class="cv">1.5</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.75</span></td>
+<td data-label="Hits"><span class="cv">pierce: long-range piercing shot</span></td>
 </tr>
 <tr id="r-space-noodle">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Space Noodle.png" alt="">Space Noodle</td>
-<td data-label="Base dmg">10</td>
-<td data-label="Projectiles">—</td>
-<td data-label="Cooldown">1 s</td>
-<td data-label="Attacks/s">contact</td>
-<td data-label="Proc coef.">0.75</td>
-<td data-label="Proc rolls/s">—</td>
-<td data-label="Hits">contact: beam hits everything along it while linked</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Space Noodle.png" alt="">Space Noodle</span></td>
+<td data-label="Base dmg"><span class="cv">10</span></td>
+<td data-label="Projectiles"><span class="cv">—</span></td>
+<td data-label="Cooldown"><span class="cv">1 s</span></td>
+<td data-label="Attacks/s"><span class="cv">contact</span></td>
+<td data-label="Proc coef."><span class="cv">0.75</span></td>
+<td data-label="Proc rolls/s"><span class="cv">—</span></td>
+<td data-label="Hits"><span class="cv">contact: beam hits everything along it while linked</span></td>
 </tr>
 <tr id="r-sword">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Sword.png" alt="">Sword</td>
-<td data-label="Base dmg">11</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.75 s</td>
-<td data-label="Attacks/s">0.8</td>
-<td data-label="Proc coef.">0.8</td>
-<td data-label="Proc rolls/s">0.64</td>
-<td data-label="Hits">area: sweep through several</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Sword.png" alt="">Sword</span></td>
+<td data-label="Base dmg"><span class="cv">11</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.75 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.8</span></td>
+<td data-label="Proc coef."><span class="cv">0.8</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.64</span></td>
+<td data-label="Hits"><span class="cv">area: sweep through several</span></td>
 </tr>
 <tr id="r-tornado">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Tornado.png" alt="">Tornado</td>
-<td data-label="Base dmg">8</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.8 s</td>
-<td data-label="Attacks/s">0.56</td>
-<td data-label="Proc coef.">1</td>
-<td data-label="Proc rolls/s">0.56</td>
-<td data-label="Hits">pierce: passes through everything</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Tornado.png" alt="">Tornado</span></td>
+<td data-label="Base dmg"><span class="cv">8</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.8 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.56</span></td>
+<td data-label="Proc coef."><span class="cv">1</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.56</span></td>
+<td data-label="Hits"><span class="cv">pierce: passes through everything</span></td>
 </tr>
 <tr id="r-wireless-dagger">
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Bluetooth Knife.png" alt="">Wireless Dagger</td>
-<td data-label="Base dmg">9</td>
-<td data-label="Projectiles">1</td>
-<td data-label="Cooldown">0.5 s</td>
-<td data-label="Attacks/s">0.62</td>
-<td data-label="Proc coef.">0.9</td>
-<td data-label="Proc rolls/s">0.56</td>
-<td data-label="Hits">bounce: homing, bounces once</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Bluetooth Knife.png" alt="">Wireless Dagger</span></td>
+<td data-label="Base dmg"><span class="cv">9</span></td>
+<td data-label="Projectiles"><span class="cv">1</span></td>
+<td data-label="Cooldown"><span class="cv">0.5 s</span></td>
+<td data-label="Attacks/s"><span class="cv">0.62</span></td>
+<td data-label="Proc coef."><span class="cv">0.9</span></td>
+<td data-label="Proc rolls/s"><span class="cv">0.56</span></td>
+<td data-label="Hits"><span class="cv">bounce: homing, bounces once</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -487,179 +489,179 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Bow.png" alt="">Bow</td>
-<td data-label="At base">1.09</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">10.9</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">all projectiles fire at once; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Bow.png" alt="">Bow</span></td>
+<td data-label="At base"><span class="cv">1.09</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">10.9</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">all projectiles fire at once; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Katana.png" alt="">Katana</td>
-<td data-label="At base">1.06</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">10.6</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles are free up to 25 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Katana.png" alt="">Katana</span></td>
+<td data-label="At base"><span class="cv">1.06</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">10.6</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 25 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/SluttyRocket.png" alt="">Slutty Rocket</td>
-<td data-label="At base">0.77</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">7.69</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles are free up to 10 per burst</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/SluttyRocket.png" alt="">Slutty Rocket</span></td>
+<td data-label="At base"><span class="cv">0.77</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">7.69</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 10 per burst</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Revolver.png" alt="">Revolver</td>
-<td data-label="At base">2.16</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">7.2</td>
-<td data-label="Gain">×3.33</td>
-<td data-label="Notes">extra projectiles always free; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Revolver.png" alt="">Revolver</span></td>
+<td data-label="At base"><span class="cv">2.16</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">7.2</span></td>
+<td data-label="Gain"><span class="cv">×3.33</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles always free; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Bone.png" alt="">Bone</td>
-<td data-label="At base">0.71</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">7.14</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles are free up to 10 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Bone.png" alt="">Bone</span></td>
+<td data-label="At base"><span class="cv">0.71</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">7.14</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 10 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/LightningStaff.png" alt="">Lightning Staff</td>
-<td data-label="At base">0.71</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">7.14</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles are free up to 7 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/LightningStaff.png" alt="">Lightning Staff</span></td>
+<td data-label="At base"><span class="cv">0.71</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">7.14</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 7 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Firestaff.png" alt="">Firestaff</td>
-<td data-label="At base">0.67</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">6.67</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles are free up to 6 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Firestaff.png" alt="">Firestaff</span></td>
+<td data-label="At base"><span class="cv">0.67</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">6.67</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 6 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Dice.png" alt="">Dice</td>
-<td data-label="At base">0.67</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">6.67</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles are free up to 6 per burst</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Dice.png" alt="">Dice</span></td>
+<td data-label="At base"><span class="cv">0.67</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">6.67</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 6 per burst</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Sword.png" alt="">Sword</td>
-<td data-label="At base">0.64</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">6.4</td>
-<td data-label="Gain">×10</td>
-<td data-label="Notes">extra projectiles are free up to 5 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Sword.png" alt="">Sword</span></td>
+<td data-label="At base"><span class="cv">0.64</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">6.4</span></td>
+<td data-label="Gain"><span class="cv">×10</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 5 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Dexecutioner.png" alt="">Dexecutioner</td>
-<td data-label="At base">0.62</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">6.25</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles are free up to 20 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Dexecutioner.png" alt="">Dexecutioner</span></td>
+<td data-label="At base"><span class="cv">0.62</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">6.25</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 20 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Sniper.png" alt="">Sniper Rifle</td>
-<td data-label="At base">0.75</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">6</td>
-<td data-label="Gain">×8</td>
-<td data-label="Notes">extra projectiles are free up to 3 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Sniper.png" alt="">Sniper Rifle</span></td>
+<td data-label="At base"><span class="cv">0.75</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">6</span></td>
+<td data-label="Gain"><span class="cv">×8</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 3 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Axe.png" alt="">Axe</td>
-<td data-label="At base">1</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">6</td>
-<td data-label="Gain">×6</td>
-<td data-label="Notes">all projectiles fire at once; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Axe.png" alt="">Axe</span></td>
+<td data-label="At base"><span class="cv">1</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">6</span></td>
+<td data-label="Gain"><span class="cv">×6</span></td>
+<td data-label="Notes"><span class="cv">all projectiles fire at once; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/BloodMagic.png" alt="">Blood Magic</td>
-<td data-label="At base">0.66</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">5.88</td>
-<td data-label="Gain">×8.94</td>
-<td data-label="Notes">extra projectiles are free up to 1 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/BloodMagic.png" alt="">Blood Magic</span></td>
+<td data-label="At base"><span class="cv">0.66</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">5.88</span></td>
+<td data-label="Gain"><span class="cv">×8.94</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 1 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Bananarang.png" alt="">Bananarang</td>
-<td data-label="At base">0.59</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">5.88</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles are free up to 9 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Bananarang.png" alt="">Bananarang</span></td>
+<td data-label="At base"><span class="cv">0.59</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">5.88</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 9 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Bluetooth Knife.png" alt="">Wireless Dagger</td>
-<td data-label="At base">0.56</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">5.62</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles always free; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Bluetooth Knife.png" alt="">Wireless Dagger</span></td>
+<td data-label="At base"><span class="cv">0.56</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">5.62</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles always free; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Tornado.png" alt="">Tornado</td>
-<td data-label="At base">0.56</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">5.56</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles are free up to 10 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Tornado.png" alt="">Tornado</span></td>
+<td data-label="At base"><span class="cv">0.56</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">5.56</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 10 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/HeroSword.png" alt="">Hero Sword</td>
-<td data-label="At base">0.53</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">5.33</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles are free up to 5 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/HeroSword.png" alt="">Hero Sword</span></td>
+<td data-label="At base"><span class="cv">0.53</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">5.33</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 5 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</td>
-<td data-label="At base">0.5</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">5</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles are free up to 5 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Poison Flask.png" alt="">Poison Flask</span></td>
+<td data-label="At base"><span class="cv">0.5</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">5</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 5 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/CorruptedSword.png" alt="">Corrupted Sword</td>
-<td data-label="At base">0.5</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">5</td>
-<td data-label="Gain">×10.0</td>
-<td data-label="Notes">extra projectiles are free up to 5 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/CorruptedSword.png" alt="">Corrupted Sword</span></td>
+<td data-label="At base"><span class="cv">0.5</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">5</span></td>
+<td data-label="Gain"><span class="cv">×10.0</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 5 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Aura.png" alt="">Aura</td>
-<td data-label="At base">2.33</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">4.67</td>
-<td data-label="Gain">×2</td>
-<td data-label="Notes">no projectiles: only Attack Speed raises it; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Aura.png" alt="">Aura</span></td>
+<td data-label="At base"><span class="cv">2.33</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">4.67</span></td>
+<td data-label="Gain"><span class="cv">×2</span></td>
+<td data-label="Notes"><span class="cv">no projectiles: only Attack Speed raises it; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Shotgun.png" alt="">Shotgun</td>
-<td data-label="At base">0.5</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">4.44</td>
-<td data-label="Gain">×8.89</td>
-<td data-label="Notes">extra projectiles are free up to 4 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Shotgun.png" alt="">Shotgun</span></td>
+<td data-label="At base"><span class="cv">0.5</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">4.44</span></td>
+<td data-label="Gain"><span class="cv">×8.89</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 4 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Mine.png" alt="">Mines</td>
-<td data-label="At base">0.4</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">3.56</td>
-<td data-label="Gain">×8.89</td>
-<td data-label="Notes">extra projectiles are free up to 4 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Mine.png" alt="">Mines</span></td>
+<td data-label="At base"><span class="cv">0.4</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">3.56</span></td>
+<td data-label="Gain"><span class="cv">×8.89</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 4 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Scythe.png" alt="">Scythe</td>
-<td data-label="At base">0.34</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">3.4</td>
-<td data-label="Gain">×10</td>
-<td data-label="Notes">extra projectiles are free up to 15 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Scythe.png" alt="">Scythe</span></td>
+<td data-label="At base"><span class="cv">0.34</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">3.4</span></td>
+<td data-label="Gain"><span class="cv">×10</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 15 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/BlackHole.png" alt="">Black Hole</td>
-<td data-label="At base">0.28</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">2</td>
-<td data-label="Gain">×7.14</td>
-<td data-label="Notes">extra projectiles are free up to 3 per burst; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/BlackHole.png" alt="">Black Hole</span></td>
+<td data-label="At base"><span class="cv">0.28</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">2</span></td>
+<td data-label="Gain"><span class="cv">×7.14</span></td>
+<td data-label="Notes"><span class="cv">extra projectiles are free up to 3 per burst; multiplied by enemies hit</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Weapon"><img class="ic" src="img/Frostwalker.png" alt="">Frostwalker</td>
-<td data-label="At base">0.72</td>
-<td data-label="+4 projectiles, ×2 Attack Speed">1.44</td>
-<td data-label="Gain">×2</td>
-<td data-label="Notes">no projectiles: only Attack Speed raises it; multiplied by enemies hit</td>
+<td class="nm" data-label="Weapon"><span class="cv"><img class="ic" src="img/Frostwalker.png" alt="">Frostwalker</span></td>
+<td data-label="At base"><span class="cv">0.72</span></td>
+<td data-label="+4 projectiles, ×2 Attack Speed"><span class="cv">1.44</span></td>
+<td data-label="Gain"><span class="cv">×2</span></td>
+<td data-label="Notes"><span class="cv">no projectiles: only Attack Speed raises it; multiplied by enemies hit</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -1447,7 +1449,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <li>Size: bigger hit area, capped at ×3.5</li>
 </ul>
 </li>
-</ul><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Weapons&page=Weapons%20%28https%3A//bonk.wiki/weapons.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="items.html"><span>← Previous</span>Items</a><a class="nx" href="tomes.html"><span>Next →</span>Tomes</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 19, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="#how-weapons-work">How weapons work</a></li><li><a href="#overview">Overview</a></li><li><a href="#which-weapons-roll-procs-fastest">Which weapons roll procs fastest</a></li><li><a href="#how-tomes-affect-weapons">How tomes affect weapons</a></li><li><a href="#every-weapon">Every weapon</a></li></ul></aside></main></div>
+</ul><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Weapons&page=Weapons%20%28https%3A//bonk.wiki/weapons.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="items.html"><span>← Previous</span>Items</a><a class="nx" href="tomes.html"><span>Next →</span>Tomes</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 25, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="#how-weapons-work">How weapons work</a></li><li><a href="#overview">Overview</a></li><li><a href="#which-weapons-roll-procs-fastest">Which weapons roll procs fastest</a></li><li><a href="#how-tomes-affect-weapons">How tomes affect weapons</a></li><li><a href="#every-weapon">Every weapon</a></li></ul></aside></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){
 var d=document,n=d.getElementById('nav'),mb=n.querySelector('.mbtn'),sb=n.querySelector('.sbtn'),q=d.getElementById('q'),R=d.getElementById('sres'),L=d.getElementById('links'),mq=matchMedia('(max-width:860px)');
 function set(o){n.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);d.documentElement.classList.toggle('navlock',o&&mq.matches)}

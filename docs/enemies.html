@@ -129,8 +129,10 @@ table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;bor
 table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
 table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
 table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="cards"] td[data-empty]{display:none}
 table[data-m="cards"] tr:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:normal;min-width:6.5em;max-width:40vw}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin:0;position:absolute;left:9px;top:8px}
+table[data-m="grid"] td:first-child:has(.ic){padding-left:35px}
 .tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
 table[data-m="grid"] th:first-child{background:var(--code)}
@@ -142,7 +144,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <div class="hbtns"><button class="hb sbtn" type="button" aria-label="Search"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg></button><button class="hb mbtn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span></button></div></div>
 <div class="scrim"></div><div class="dr" id="drawer"><div class="srch" role="search"><label class="sbox"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg><input id="q" type="search" placeholder="Search the wiki" autocomplete="off" spellcheck="false" aria-label="Search the wiki"><kbd>/</kbd></label></div>
 <div class="sres" id="sres" hidden></div><div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html" class="on" aria-current="page"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div><div class="grp"><b>Reference</b><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></div></nav>
-<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/Curse.png" alt="" width="52" height="52"><h1>Enemies</h1></div><p class="meta">Game v1.0.69 · updated Nov 19, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Enemies&page=Enemies%20%28https%3A//bonk.wiki/enemies.html%29" target="_blank" rel="noopener">Suggest an edit</a></p>
+<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/Curse.png" alt="" width="52" height="52"><h1>Enemies</h1></div><p class="meta">Game v1.0.69 · updated Nov 25, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Enemies&page=Enemies%20%28https%3A//bonk.wiki/enemies.html%29" target="_blank" rel="noopener">Suggest an edit</a></p>
 <h2 id="how-enemy-stats-scale"><img class="ic" src="img/Stonks.png" alt="">How enemy stats scale</h2>
 <p><strong>Enemy HP</strong> (<code>EnemyStats.GetHp</code>):</p>
 <p>base HP × tier multiplier × (1 + time + final swarm + stage + 1.1 × Difficulty) × type × your Enemy HP multiplier</p>
@@ -155,28 +157,28 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-tier">
-<td data-label="Part">Tier</td>
-<td data-label="Value">×0.80 (T1), ×0.95 (T2), ×1.05 (T3 and Graveyard)</td>
+<td data-label="Part"><span class="cv">Tier</span></td>
+<td data-label="Value"><span class="cv">×0.80 (T1), ×0.95 (T2), ×1.05 (T3 and Graveyard)</span></td>
 </tr>
 <tr id="r-time">
-<td data-label="Part">Time</td>
-<td data-label="Value">+0.10 per minute of the run × Enemy scaling multiplier</td>
+<td data-label="Part"><span class="cv">Time</span></td>
+<td data-label="Value"><span class="cv">+0.10 per minute of the run × Enemy scaling multiplier</span></td>
 </tr>
 <tr id="r-final-swarm">
-<td data-label="Part">Final swarm</td>
-<td data-label="Value">+(4^(swarm minutes) − 1)</td>
+<td data-label="Part"><span class="cv">Final swarm</span></td>
+<td data-label="Value"><span class="cv">+(4^(swarm minutes) − 1)</span></td>
 </tr>
 <tr id="r-stage">
-<td data-label="Part">Stage</td>
-<td data-label="Value">Stage 1: +0. Stage 2: +27 × (1 + 0.45 × Difficulty). Stage 3: +145 × (1 + 0.45 × Difficulty)</td>
+<td data-label="Part"><span class="cv">Stage</span></td>
+<td data-label="Value"><span class="cv">Stage 1: +0. Stage 2: +27 × (1 + 0.45 × Difficulty). Stage 3: +145 × (1 + 0.45 × Difficulty)</span></td>
 </tr>
 <tr id="r-type">
-<td data-label="Part">Type</td>
-<td data-label="Value">Elite ×10, challenge ×7, elite challenge ×15; bosses ×2.5 on stage 2, ×5 on stage 3, and ×(1 + 0.16 × Boss Curses)</td>
+<td data-label="Part"><span class="cv">Type</span></td>
+<td data-label="Value"><span class="cv">Elite ×10, challenge ×7, elite challenge ×15; bosses ×2.5 on stage 2, ×5 on stage 3, and ×(1 + 0.16 × Boss Curses)</span></td>
 </tr>
 <tr id="r-swarm-spawns">
-<td data-label="Part">Swarm spawns</td>
-<td data-label="Value">×1.3 more</td>
+<td data-label="Part"><span class="cv">Swarm spawns</span></td>
+<td data-label="Value"><span class="cv">×1.3 more</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -194,7 +196,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </blockquote>
 <p>The stage part for damage is +2 on stage 2 and +4 on stage 3.</p>
 <p>Worked example, Tier 3, Difficulty 0.5, an ordinary enemy:</p>
-<div class="tw"><table data-m="cards">
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Moment</th>
@@ -241,524 +243,524 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-goblin">
-<td data-label="Enemy">Goblin</td>
-<td data-label="Map">Forest</td>
-<td data-label="HP">7</td>
-<td data-label="Damage">15</td>
-<td data-label="Speed">5.0</td>
-<td data-label="Credits">1</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Goblin</span></td>
+<td data-label="Map"><span class="cv">Forest</span></td>
+<td data-label="HP"><span class="cv">7</span></td>
+<td data-label="Damage"><span class="cv">15</span></td>
+<td data-label="Speed"><span class="cv">5.0</span></td>
+<td data-label="Credits"><span class="cv">1</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-strong-goblin">
-<td data-label="Enemy">Strong Goblin</td>
-<td data-label="Map">Forest</td>
-<td data-label="HP">15</td>
-<td data-label="Damage">25</td>
-<td data-label="Speed">5.5</td>
-<td data-label="Credits">1.25</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Strong Goblin</span></td>
+<td data-label="Map"><span class="cv">Forest</span></td>
+<td data-label="HP"><span class="cv">15</span></td>
+<td data-label="Damage"><span class="cv">25</span></td>
+<td data-label="Speed"><span class="cv">5.5</span></td>
+<td data-label="Credits"><span class="cv">1.25</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-goblin-tank">
-<td data-label="Enemy">Goblin Tank</td>
-<td data-label="Map">Forest</td>
-<td data-label="HP">40</td>
-<td data-label="Damage">30</td>
-<td data-label="Speed">5.0</td>
-<td data-label="Credits">2</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">1</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Goblin Tank</span></td>
+<td data-label="Map"><span class="cv">Forest</span></td>
+<td data-label="HP"><span class="cv">40</span></td>
+<td data-label="Damage"><span class="cv">30</span></td>
+<td data-label="Speed"><span class="cv">5.0</span></td>
+<td data-label="Credits"><span class="cv">2</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">1</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-golem">
-<td data-label="Enemy">Golem</td>
-<td data-label="Map">Forest</td>
-<td data-label="HP">20</td>
-<td data-label="Damage">20</td>
-<td data-label="Speed">5.0</td>
-<td data-label="Credits">1.5</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">1</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Golem</span></td>
+<td data-label="Map"><span class="cv">Forest</span></td>
+<td data-label="HP"><span class="cv">20</span></td>
+<td data-label="Damage"><span class="cv">20</span></td>
+<td data-label="Speed"><span class="cv">5.0</span></td>
+<td data-label="Credits"><span class="cv">1.5</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">1</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-slime">
-<td data-label="Enemy">Slime</td>
-<td data-label="Map">Forest</td>
-<td data-label="HP">6</td>
-<td data-label="Damage">8</td>
-<td data-label="Speed">6.5</td>
-<td data-label="Credits">0.75</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Slime</span></td>
+<td data-label="Map"><span class="cv">Forest</span></td>
+<td data-label="HP"><span class="cv">6</span></td>
+<td data-label="Damage"><span class="cv">8</span></td>
+<td data-label="Speed"><span class="cv">6.5</span></td>
+<td data-label="Credits"><span class="cv">0.75</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-bee">
-<td data-label="Enemy">Bee</td>
-<td data-label="Map">Forest</td>
-<td data-label="HP">10</td>
-<td data-label="Damage">15</td>
-<td data-label="Speed">6.5</td>
-<td data-label="Credits">1</td>
-<td data-label="Flying">✓</td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Bee</span></td>
+<td data-label="Map"><span class="cv">Forest</span></td>
+<td data-label="HP"><span class="cv">10</span></td>
+<td data-label="Damage"><span class="cv">15</span></td>
+<td data-label="Speed"><span class="cv">6.5</span></td>
+<td data-label="Credits"><span class="cv">1</span></td>
+<td data-label="Flying"><span class="cv">✓</span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-boomer-spider">
-<td data-label="Enemy">Boomer Spider</td>
-<td data-label="Map">Forest</td>
-<td data-label="HP">18</td>
-<td data-label="Damage">30</td>
-<td data-label="Speed">6.0</td>
-<td data-label="Credits">1.5</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks">Explodes</td>
+<td data-label="Enemy"><span class="cv">Boomer Spider</span></td>
+<td data-label="Map"><span class="cv">Forest</span></td>
+<td data-label="HP"><span class="cv">18</span></td>
+<td data-label="Damage"><span class="cv">30</span></td>
+<td data-label="Speed"><span class="cv">6.0</span></td>
+<td data-label="Credits"><span class="cv">1.5</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks"><span class="cv">Explodes</span></td>
 </tr>
 <tr id="r-stone-golem">
-<td data-label="Enemy">Stone Golem (miniboss)</td>
-<td data-label="Map">Forest</td>
-<td data-label="HP">250</td>
-<td data-label="Damage">40</td>
-<td data-label="Speed">6.0</td>
-<td data-label="Credits">40</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">4</td>
-<td data-label="Special attacks">Stone attacks</td>
+<td data-label="Enemy"><span class="cv">Stone Golem (miniboss)</span></td>
+<td data-label="Map"><span class="cv">Forest</span></td>
+<td data-label="HP"><span class="cv">250</span></td>
+<td data-label="Damage"><span class="cv">40</span></td>
+<td data-label="Speed"><span class="cv">6.0</span></td>
+<td data-label="Credits"><span class="cv">40</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">4</span></td>
+<td data-label="Special attacks"><span class="cv">Stone attacks</span></td>
 </tr>
 <tr id="r-chunkham-the-terrible">
-<td data-label="Enemy">Chunkham the Terrible (miniboss; "Pig" in the game files)</td>
-<td data-label="Map">Forest</td>
-<td data-label="HP">250</td>
-<td data-label="Damage">40</td>
-<td data-label="Speed">6.0</td>
-<td data-label="Credits">40</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">3</td>
-<td data-label="Special attacks">Slam, mud splash</td>
+<td data-label="Enemy"><span class="cv">Chunkham the Terrible (miniboss; "Pig" in the game files)</span></td>
+<td data-label="Map"><span class="cv">Forest</span></td>
+<td data-label="HP"><span class="cv">250</span></td>
+<td data-label="Damage"><span class="cv">40</span></td>
+<td data-label="Speed"><span class="cv">6.0</span></td>
+<td data-label="Credits"><span class="cv">40</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">3</span></td>
+<td data-label="Special attacks"><span class="cv">Slam, mud splash</span></td>
 </tr>
 <tr id="r-mummy">
-<td data-label="Enemy">Mummy</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">8</td>
-<td data-label="Damage">13</td>
-<td data-label="Speed">5.5</td>
-<td data-label="Credits">1</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Mummy</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">8</span></td>
+<td data-label="Damage"><span class="cv">13</span></td>
+<td data-label="Speed"><span class="cv">5.5</span></td>
+<td data-label="Credits"><span class="cv">1</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-mummy-tank">
-<td data-label="Enemy">Mummy Tank</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">45</td>
-<td data-label="Damage">30</td>
-<td data-label="Speed">5.0</td>
-<td data-label="Credits">2</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">1</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Mummy Tank</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">45</span></td>
+<td data-label="Damage"><span class="cv">30</span></td>
+<td data-label="Speed"><span class="cv">5.0</span></td>
+<td data-label="Credits"><span class="cv">2</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">1</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-ancient-mummy">
-<td data-label="Enemy">Ancient Mummy</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">70</td>
-<td data-label="Damage">40</td>
-<td data-label="Speed">5.0</td>
-<td data-label="Credits">2.5</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">1</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Ancient Mummy</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">70</span></td>
+<td data-label="Damage"><span class="cv">40</span></td>
+<td data-label="Speed"><span class="cv">5.0</span></td>
+<td data-label="Credits"><span class="cv">2.5</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">1</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-scorpion">
-<td data-label="Enemy">Scorpion</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">16</td>
-<td data-label="Damage">20</td>
-<td data-label="Speed">7.0</td>
-<td data-label="Credits">1.2</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Scorpion</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">16</span></td>
+<td data-label="Damage"><span class="cv">20</span></td>
+<td data-label="Speed"><span class="cv">7.0</span></td>
+<td data-label="Credits"><span class="cv">1.2</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-medium-scorpion">
-<td data-label="Enemy">Medium Scorpion</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">30</td>
-<td data-label="Damage">30</td>
-<td data-label="Speed">6.5</td>
-<td data-label="Credits">1.1</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Medium Scorpion</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">30</span></td>
+<td data-label="Damage"><span class="cv">30</span></td>
+<td data-label="Speed"><span class="cv">6.5</span></td>
+<td data-label="Credits"><span class="cv">1.1</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-dusty-skeleton">
-<td data-label="Enemy">Dusty Skeleton</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">16</td>
-<td data-label="Damage">22</td>
-<td data-label="Speed">6.5</td>
-<td data-label="Credits">2</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Dusty Skeleton</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">16</span></td>
+<td data-label="Damage"><span class="cv">22</span></td>
+<td data-label="Speed"><span class="cv">6.5</span></td>
+<td data-label="Credits"><span class="cv">2</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-armored-dusty-skeleton">
-<td data-label="Enemy">Armored Dusty Skeleton</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">25</td>
-<td data-label="Damage">16</td>
-<td data-label="Speed">4.5</td>
-<td data-label="Credits">3</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Armored Dusty Skeleton</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">25</span></td>
+<td data-label="Damage"><span class="cv">16</span></td>
+<td data-label="Speed"><span class="cv">4.5</span></td>
+<td data-label="Credits"><span class="cv">3</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-tumblebone">
-<td data-label="Enemy">Tumblebone</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">7</td>
-<td data-label="Damage">9</td>
-<td data-label="Speed">11.0</td>
-<td data-label="Credits">1</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Tumblebone</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">7</span></td>
+<td data-label="Damage"><span class="cv">9</span></td>
+<td data-label="Speed"><span class="cv">11.0</span></td>
+<td data-label="Credits"><span class="cv">1</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-wisp">
-<td data-label="Enemy">Wisp</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">8</td>
-<td data-label="Damage">13</td>
-<td data-label="Speed">7.5</td>
-<td data-label="Credits">1</td>
-<td data-label="Flying">✓</td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Wisp</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">8</span></td>
+<td data-label="Damage"><span class="cv">13</span></td>
+<td data-label="Speed"><span class="cv">7.5</span></td>
+<td data-label="Credits"><span class="cv">1</span></td>
+<td data-label="Flying"><span class="cv">✓</span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-cactus-shooter">
-<td data-label="Enemy">Cactus Shooter</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">15</td>
-<td data-label="Damage">30</td>
-<td data-label="Speed">5.0</td>
-<td data-label="Credits">1</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks">Projectile</td>
+<td data-label="Enemy"><span class="cv">Cactus Shooter</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">15</span></td>
+<td data-label="Damage"><span class="cv">30</span></td>
+<td data-label="Speed"><span class="cv">5.0</span></td>
+<td data-label="Credits"><span class="cv">1</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks"><span class="cv">Projectile</span></td>
 </tr>
 <tr id="r-sand-golem">
-<td data-label="Enemy">Sand Golem (miniboss)</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">250</td>
-<td data-label="Damage">40</td>
-<td data-label="Speed">6.0</td>
-<td data-label="Credits">40</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">4</td>
-<td data-label="Special attacks">Stone attacks</td>
+<td data-label="Enemy"><span class="cv">Sand Golem (miniboss)</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">250</span></td>
+<td data-label="Damage"><span class="cv">40</span></td>
+<td data-label="Speed"><span class="cv">6.0</span></td>
+<td data-label="Credits"><span class="cv">40</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">4</span></td>
+<td data-label="Special attacks"><span class="cv">Stone attacks</span></td>
 </tr>
 <tr>
-<td data-label="Enemy">Scorpion (miniboss)</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">250</td>
-<td data-label="Damage">35</td>
-<td data-label="Speed">7.0</td>
-<td data-label="Credits">40</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">3.5</td>
-<td data-label="Special attacks">Spikes</td>
+<td data-label="Enemy"><span class="cv">Scorpion (miniboss)</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">250</span></td>
+<td data-label="Damage"><span class="cv">35</span></td>
+<td data-label="Speed"><span class="cv">7.0</span></td>
+<td data-label="Credits"><span class="cv">40</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">3.5</span></td>
+<td data-label="Special attacks"><span class="cv">Spikes</span></td>
 </tr>
 <tr id="r-ghost">
-<td data-label="Enemy">Ghost</td>
-<td data-label="Map">Graveyard</td>
-<td data-label="HP">10</td>
-<td data-label="Damage">10</td>
-<td data-label="Speed">6.0</td>
-<td data-label="Credits">1</td>
-<td data-label="Flying">✓</td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Ghost</span></td>
+<td data-label="Map"><span class="cv">Graveyard</span></td>
+<td data-label="HP"><span class="cv">10</span></td>
+<td data-label="Damage"><span class="cv">10</span></td>
+<td data-label="Speed"><span class="cv">6.0</span></td>
+<td data-label="Credits"><span class="cv">1</span></td>
+<td data-label="Flying"><span class="cv">✓</span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-greater-ghost">
-<td data-label="Enemy">Greater Ghost</td>
-<td data-label="Map">Graveyard</td>
-<td data-label="HP">20</td>
-<td data-label="Damage">13</td>
-<td data-label="Speed">7.0</td>
-<td data-label="Credits">1.5</td>
-<td data-label="Flying">✓</td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">1</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Greater Ghost</span></td>
+<td data-label="Map"><span class="cv">Graveyard</span></td>
+<td data-label="HP"><span class="cv">20</span></td>
+<td data-label="Damage"><span class="cv">13</span></td>
+<td data-label="Speed"><span class="cv">7.0</span></td>
+<td data-label="Credits"><span class="cv">1.5</span></td>
+<td data-label="Flying"><span class="cv">✓</span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">1</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-purple-ghost">
-<td data-label="Enemy">Purple Ghost</td>
-<td data-label="Map">Graveyard</td>
-<td data-label="HP">40</td>
-<td data-label="Damage">20</td>
-<td data-label="Speed">8.0</td>
-<td data-label="Credits">1.5</td>
-<td data-label="Flying">✓</td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✗</td>
-<td data-label="Knockback res.">5</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Purple Ghost</span></td>
+<td data-label="Map"><span class="cv">Graveyard</span></td>
+<td data-label="HP"><span class="cv">40</span></td>
+<td data-label="Damage"><span class="cv">20</span></td>
+<td data-label="Speed"><span class="cv">8.0</span></td>
+<td data-label="Credits"><span class="cv">1.5</span></td>
+<td data-label="Flying"><span class="cv">✓</span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✗</span></td>
+<td data-label="Knockback res."><span class="cv">5</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-red-ghost">
-<td data-label="Enemy">Red Ghost</td>
-<td data-label="Map">Graveyard</td>
-<td data-label="HP">100</td>
-<td data-label="Damage">30</td>
-<td data-label="Speed">10.0</td>
-<td data-label="Credits">1.5</td>
-<td data-label="Flying">✓</td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✗</td>
-<td data-label="Knockback res.">50</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Red Ghost</span></td>
+<td data-label="Map"><span class="cv">Graveyard</span></td>
+<td data-label="HP"><span class="cv">100</span></td>
+<td data-label="Damage"><span class="cv">30</span></td>
+<td data-label="Speed"><span class="cv">10.0</span></td>
+<td data-label="Credits"><span class="cv">1.5</span></td>
+<td data-label="Flying"><span class="cv">✓</span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✗</span></td>
+<td data-label="Knockback res."><span class="cv">50</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-head">
-<td data-label="Enemy">Head</td>
-<td data-label="Map">Graveyard</td>
-<td data-label="HP">12</td>
-<td data-label="Damage">8</td>
-<td data-label="Speed">7.0</td>
-<td data-label="Credits">1</td>
-<td data-label="Flying">✓</td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Head</span></td>
+<td data-label="Map"><span class="cv">Graveyard</span></td>
+<td data-label="HP"><span class="cv">12</span></td>
+<td data-label="Damage"><span class="cv">8</span></td>
+<td data-label="Speed"><span class="cv">7.0</span></td>
+<td data-label="Credits"><span class="cv">1</span></td>
+<td data-label="Flying"><span class="cv">✓</span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-zombie">
-<td data-label="Enemy">Zombie</td>
-<td data-label="Map">Graveyard</td>
-<td data-label="HP">12</td>
-<td data-label="Damage">20</td>
-<td data-label="Speed">6.5</td>
-<td data-label="Credits">1</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Zombie</span></td>
+<td data-label="Map"><span class="cv">Graveyard</span></td>
+<td data-label="HP"><span class="cv">12</span></td>
+<td data-label="Damage"><span class="cv">20</span></td>
+<td data-label="Speed"><span class="cv">6.5</span></td>
+<td data-label="Credits"><span class="cv">1</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-ghostham">
-<td data-label="Enemy">Ghostham (miniboss)</td>
-<td data-label="Map">Graveyard</td>
-<td data-label="HP">320</td>
-<td data-label="Damage">45</td>
-<td data-label="Speed">6.5</td>
-<td data-label="Credits">40</td>
-<td data-label="Flying">✓</td>
-<td data-label="Elite?">✗</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">3</td>
-<td data-label="Special attacks">Slam, mud splash</td>
+<td data-label="Enemy"><span class="cv">Ghostham (miniboss)</span></td>
+<td data-label="Map"><span class="cv">Graveyard</span></td>
+<td data-label="HP"><span class="cv">320</span></td>
+<td data-label="Damage"><span class="cv">45</span></td>
+<td data-label="Speed"><span class="cv">6.5</span></td>
+<td data-label="Credits"><span class="cv">40</span></td>
+<td data-label="Flying"><span class="cv">✓</span></td>
+<td data-label="Elite?"><span class="cv">✗</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">3</span></td>
+<td data-label="Special attacks"><span class="cv">Slam, mud splash</span></td>
 </tr>
 <tr id="r-calcium-dad">
-<td data-label="Enemy">Calcium Dad (miniboss)</td>
-<td data-label="Map">Graveyard</td>
-<td data-label="HP">320</td>
-<td data-label="Damage">40</td>
-<td data-label="Speed">8.0</td>
-<td data-label="Credits">40</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">4</td>
-<td data-label="Special attacks">Bone pillars, laser</td>
+<td data-label="Enemy"><span class="cv">Calcium Dad (miniboss)</span></td>
+<td data-label="Map"><span class="cv">Graveyard</span></td>
+<td data-label="HP"><span class="cv">320</span></td>
+<td data-label="Damage"><span class="cv">40</span></td>
+<td data-label="Speed"><span class="cv">8.0</span></td>
+<td data-label="Credits"><span class="cv">40</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">4</span></td>
+<td data-label="Special attacks"><span class="cv">Bone pillars, laser</span></td>
 </tr>
 <tr id="r-grave-ghosts-1-4">
-<td data-label="Enemy">Grave Ghosts 1–4 (coffin fight)</td>
-<td data-label="Map">Graveyard</td>
-<td data-label="HP">1,100 / 2,250 / 5,500 / 9,000</td>
-<td data-label="Damage">20–35</td>
-<td data-label="Speed">7.0</td>
-<td data-label="Credits">1</td>
-<td data-label="Flying">✓</td>
-<td data-label="Elite?">✗</td>
-<td data-label="Executable">✗</td>
-<td data-label="Knockback res.">1–4</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Grave Ghosts 1–4 (coffin fight)</span></td>
+<td data-label="Map"><span class="cv">Graveyard</span></td>
+<td data-label="HP"><span class="cv">1,100 / 2,250 / 5,500 / 9,000</span></td>
+<td data-label="Damage"><span class="cv">20–35</span></td>
+<td data-label="Speed"><span class="cv">7.0</span></td>
+<td data-label="Credits"><span class="cv">1</span></td>
+<td data-label="Flying"><span class="cv">✓</span></td>
+<td data-label="Elite?"><span class="cv">✗</span></td>
+<td data-label="Executable"><span class="cv">✗</span></td>
+<td data-label="Knockback res."><span class="cv">1–4</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-skeleton">
-<td data-label="Enemy">Skeleton</td>
-<td data-label="Map">Forest, Graveyard</td>
-<td data-label="HP">20</td>
-<td data-label="Damage">20</td>
-<td data-label="Speed">5.5</td>
-<td data-label="Credits">1</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Skeleton</span></td>
+<td data-label="Map"><span class="cv">Forest, Graveyard</span></td>
+<td data-label="HP"><span class="cv">20</span></td>
+<td data-label="Damage"><span class="cv">20</span></td>
+<td data-label="Speed"><span class="cv">5.5</span></td>
+<td data-label="Credits"><span class="cv">1</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-armored-skeleton">
-<td data-label="Enemy">Armored Skeleton</td>
-<td data-label="Map">Forest, Graveyard</td>
-<td data-label="HP">30</td>
-<td data-label="Damage">25</td>
-<td data-label="Speed">4.0</td>
-<td data-label="Credits">1.5</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Armored Skeleton</span></td>
+<td data-label="Map"><span class="cv">Forest, Graveyard</span></td>
+<td data-label="HP"><span class="cv">30</span></td>
+<td data-label="Damage"><span class="cv">25</span></td>
+<td data-label="Speed"><span class="cv">4.0</span></td>
+<td data-label="Credits"><span class="cv">1.5</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-ghoul">
-<td data-label="Enemy">Ghoul</td>
-<td data-label="Map">Forest, Graveyard</td>
-<td data-label="HP">9</td>
-<td data-label="Damage">12</td>
-<td data-label="Speed">9.0</td>
-<td data-label="Credits">1</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✓</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Ghoul</span></td>
+<td data-label="Map"><span class="cv">Forest, Graveyard</span></td>
+<td data-label="HP"><span class="cv">9</span></td>
+<td data-label="Damage"><span class="cv">12</span></td>
+<td data-label="Speed"><span class="cv">9.0</span></td>
+<td data-label="Credits"><span class="cv">1</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✓</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-golden-xp-skeleton">
-<td data-label="Enemy">Golden / XP Skeleton</td>
-<td data-label="Map">Special</td>
-<td data-label="HP">50</td>
-<td data-label="Damage">25</td>
-<td data-label="Speed">6.0</td>
-<td data-label="Credits">10</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✗</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">0</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Golden / XP Skeleton</span></td>
+<td data-label="Map"><span class="cv">Special</span></td>
+<td data-label="HP"><span class="cv">50</span></td>
+<td data-label="Damage"><span class="cv">25</span></td>
+<td data-label="Speed"><span class="cv">6.0</span></td>
+<td data-label="Credits"><span class="cv">10</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✗</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">0</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-ent">
-<td data-label="Enemy">Ent (final boss, 3 phases)</td>
-<td data-label="Map">Forest</td>
-<td data-label="HP">9,000 / 8,000 / 10,000</td>
-<td data-label="Damage">40 / 40 / 22</td>
-<td data-label="Speed">7 / 7 / 3</td>
-<td data-label="Credits">40</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✗</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">2 / 2 / 999</td>
-<td data-label="Special attacks">Root attacks</td>
+<td data-label="Enemy"><span class="cv">Ent (final boss, 3 phases)</span></td>
+<td data-label="Map"><span class="cv">Forest</span></td>
+<td data-label="HP"><span class="cv">9,000 / 8,000 / 10,000</span></td>
+<td data-label="Damage"><span class="cv">40 / 40 / 22</span></td>
+<td data-label="Speed"><span class="cv">7 / 7 / 3</span></td>
+<td data-label="Credits"><span class="cv">40</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✗</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">2 / 2 / 999</span></td>
+<td data-label="Special attacks"><span class="cv">Root attacks</span></td>
 </tr>
 <tr id="r-pharaoh">
-<td data-label="Enemy">Pharaoh (final boss, 3 phases)</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">8,000 each</td>
-<td data-label="Damage">40</td>
-<td data-label="Speed">7 / 7 / 3</td>
-<td data-label="Credits">40</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✗</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">2 / 2 / 999</td>
-<td data-label="Special attacks">Lasers, pillars</td>
+<td data-label="Enemy"><span class="cv">Pharaoh (final boss, 3 phases)</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">8,000 each</span></td>
+<td data-label="Damage"><span class="cv">40</span></td>
+<td data-label="Speed"><span class="cv">7 / 7 / 3</span></td>
+<td data-label="Credits"><span class="cv">40</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✗</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">2 / 2 / 999</span></td>
+<td data-label="Special attacks"><span class="cv">Lasers, pillars</span></td>
 </tr>
 <tr id="r-ghost-king">
-<td data-label="Enemy">Ghost King (final boss)</td>
-<td data-label="Map">Graveyard</td>
-<td data-label="HP">500,000</td>
-<td data-label="Damage">40</td>
-<td data-label="Speed">10.0</td>
-<td data-label="Credits">40</td>
-<td data-label="Flying">✓</td>
-<td data-label="Elite?">✗</td>
-<td data-label="Executable">✗</td>
-<td data-label="Knockback res.">999</td>
-<td data-label="Special attacks">Darkness, roots, spikes</td>
+<td data-label="Enemy"><span class="cv">Ghost King (final boss)</span></td>
+<td data-label="Map"><span class="cv">Graveyard</span></td>
+<td data-label="HP"><span class="cv">500,000</span></td>
+<td data-label="Damage"><span class="cv">40</span></td>
+<td data-label="Speed"><span class="cv">10.0</span></td>
+<td data-label="Credits"><span class="cv">40</span></td>
+<td data-label="Flying"><span class="cv">✓</span></td>
+<td data-label="Elite?"><span class="cv">✗</span></td>
+<td data-label="Executable"><span class="cv">✗</span></td>
+<td data-label="Knockback res."><span class="cv">999</span></td>
+<td data-label="Special attacks"><span class="cv">Darkness, roots, spikes</span></td>
 </tr>
 <tr id="r-bandit">
-<td data-label="Enemy">Bandit (character fight)</td>
-<td data-label="Map">Desert</td>
-<td data-label="HP">11,000</td>
-<td data-label="Damage">50</td>
-<td data-label="Speed">10.0</td>
-<td data-label="Credits">40</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✗</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">4</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Bandit (character fight)</span></td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="HP"><span class="cv">11,000</span></td>
+<td data-label="Damage"><span class="cv">50</span></td>
+<td data-label="Speed"><span class="cv">10.0</span></td>
+<td data-label="Credits"><span class="cv">40</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✗</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">4</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-bush">
-<td data-label="Enemy">Bush (character fight)</td>
-<td data-label="Map">Forest</td>
-<td data-label="HP">10,000</td>
-<td data-label="Damage">45</td>
-<td data-label="Speed">8.5</td>
-<td data-label="Credits">40</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✗</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">2</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Bush (character fight)</span></td>
+<td data-label="Map"><span class="cv">Forest</span></td>
+<td data-label="HP"><span class="cv">10,000</span></td>
+<td data-label="Damage"><span class="cv">45</span></td>
+<td data-label="Speed"><span class="cv">8.5</span></td>
+<td data-label="Credits"><span class="cv">40</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✗</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">2</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 <tr id="r-frogs">
-<td data-label="Enemy">Frogs (egg event)</td>
-<td data-label="Map">Any</td>
-<td data-label="HP">1,000</td>
-<td data-label="Damage">1</td>
-<td data-label="Speed">9–10</td>
-<td data-label="Credits">99</td>
-<td data-label="Flying"></td>
-<td data-label="Elite?">✗</td>
-<td data-label="Executable">✓</td>
-<td data-label="Knockback res.">1</td>
-<td data-label="Special attacks"></td>
+<td data-label="Enemy"><span class="cv">Frogs (egg event)</span></td>
+<td data-label="Map"><span class="cv">Any</span></td>
+<td data-label="HP"><span class="cv">1,000</span></td>
+<td data-label="Damage"><span class="cv">1</span></td>
+<td data-label="Speed"><span class="cv">9–10</span></td>
+<td data-label="Credits"><span class="cv">99</span></td>
+<td data-label="Flying" data-empty><span class="cv"></span></td>
+<td data-label="Elite?"><span class="cv">✗</span></td>
+<td data-label="Executable"><span class="cv">✓</span></td>
+<td data-label="Knockback res."><span class="cv">1</span></td>
+<td data-label="Special attacks" data-empty><span class="cv"></span></td>
 </tr>
 </tbody>
 </table></div>
@@ -780,31 +782,31 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-forest">
-<td data-label="Map">Forest</td>
-<td data-label="From the start">Strong Goblin, Slime, Bee, Boomer Spider, Skeleton, Ghoul</td>
-<td data-label="After 1:30">Golem, Armored Skeleton</td>
-<td data-label="After 3:00">Goblin Tank</td>
-<td data-label="After 6:00">—</td>
-<td data-label="After 7:00">—</td>
-<td data-label="After 12:00">—</td>
+<td data-label="Map"><span class="cv">Forest</span></td>
+<td data-label="From the start"><span class="cv">Strong Goblin, Slime, Bee, Boomer Spider, Skeleton, Ghoul</span></td>
+<td data-label="After 1:30"><span class="cv">Golem, Armored Skeleton</span></td>
+<td data-label="After 3:00"><span class="cv">Goblin Tank</span></td>
+<td data-label="After 6:00"><span class="cv">—</span></td>
+<td data-label="After 7:00"><span class="cv">—</span></td>
+<td data-label="After 12:00"><span class="cv">—</span></td>
 </tr>
 <tr id="r-desert">
-<td data-label="Map">Desert</td>
-<td data-label="From the start">Scorpion, Dusty Skeleton, Tumblebone, Wisp, Cactus Shooter</td>
-<td data-label="After 1:30">Armored Dusty Skeleton</td>
-<td data-label="After 3:00">Mummy Tank, Medium Scorpion</td>
-<td data-label="After 6:00">Ancient Mummy</td>
-<td data-label="After 7:00">—</td>
-<td data-label="After 12:00">—</td>
+<td data-label="Map"><span class="cv">Desert</span></td>
+<td data-label="From the start"><span class="cv">Scorpion, Dusty Skeleton, Tumblebone, Wisp, Cactus Shooter</span></td>
+<td data-label="After 1:30"><span class="cv">Armored Dusty Skeleton</span></td>
+<td data-label="After 3:00"><span class="cv">Mummy Tank, Medium Scorpion</span></td>
+<td data-label="After 6:00"><span class="cv">Ancient Mummy</span></td>
+<td data-label="After 7:00"><span class="cv">—</span></td>
+<td data-label="After 12:00"><span class="cv">—</span></td>
 </tr>
 <tr id="r-graveyard">
-<td data-label="Map">Graveyard</td>
-<td data-label="From the start">Head, Zombie, Skeleton, Ghoul</td>
-<td data-label="After 1:30">Armored Skeleton</td>
-<td data-label="After 3:00">Greater Ghost</td>
-<td data-label="After 6:00">—</td>
-<td data-label="After 7:00">Purple Ghost</td>
-<td data-label="After 12:00">Red Ghost</td>
+<td data-label="Map"><span class="cv">Graveyard</span></td>
+<td data-label="From the start"><span class="cv">Head, Zombie, Skeleton, Ghoul</span></td>
+<td data-label="After 1:30"><span class="cv">Armored Skeleton</span></td>
+<td data-label="After 3:00"><span class="cv">Greater Ghost</span></td>
+<td data-label="After 6:00"><span class="cv">—</span></td>
+<td data-label="After 7:00"><span class="cv">Purple Ghost</span></td>
+<td data-label="After 12:00"><span class="cv">Red Ghost</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -823,40 +825,40 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-continuous-roots">
-<td data-label="Attack">Continuous roots (chase you along the ground)</td>
-<td data-label="Phase 1">15 s, ×1.0</td>
-<td data-label="Phase 2">13 s, ×1.0</td>
-<td data-label="Phase 3">13 s, ×0.85</td>
+<td data-label="Attack"><span class="cv">Continuous roots (chase you along the ground)</span></td>
+<td data-label="Phase 1"><span class="cv">15 s, ×1.0</span></td>
+<td data-label="Phase 2"><span class="cv">13 s, ×1.0</span></td>
+<td data-label="Phase 3"><span class="cv">13 s, ×0.85</span></td>
 </tr>
 <tr id="r-three-lines-of-roots">
-<td data-label="Attack">Three lines of roots</td>
-<td data-label="Phase 1">8 s, ×1.0</td>
-<td data-label="Phase 2">off</td>
-<td data-label="Phase 3">8 s, ×0.85</td>
+<td data-label="Attack"><span class="cv">Three lines of roots</span></td>
+<td data-label="Phase 1"><span class="cv">8 s, ×1.0</span></td>
+<td data-label="Phase 2"><span class="cv">off</span></td>
+<td data-label="Phase 3"><span class="cv">8 s, ×0.85</span></td>
 </tr>
 <tr id="r-single-line-of-roots">
-<td data-label="Attack">Single line of roots</td>
-<td data-label="Phase 1">12 s, ×1.0</td>
-<td data-label="Phase 2">12 s, ×1.0</td>
-<td data-label="Phase 3">12 s, ×0.85</td>
+<td data-label="Attack"><span class="cv">Single line of roots</span></td>
+<td data-label="Phase 1"><span class="cv">12 s, ×1.0</span></td>
+<td data-label="Phase 2"><span class="cv">12 s, ×1.0</span></td>
+<td data-label="Phase 3"><span class="cv">12 s, ×0.85</span></td>
 </tr>
 <tr id="r-predictive-root">
-<td data-label="Attack">Predictive root (aims where you're going)</td>
-<td data-label="Phase 1">12 s, ×1.0</td>
-<td data-label="Phase 2">12 s, ×1.0</td>
-<td data-label="Phase 3">12 s, ×0.85</td>
+<td data-label="Attack"><span class="cv">Predictive root (aims where you're going)</span></td>
+<td data-label="Phase 1"><span class="cv">12 s, ×1.0</span></td>
+<td data-label="Phase 2"><span class="cv">12 s, ×1.0</span></td>
+<td data-label="Phase 3"><span class="cv">12 s, ×0.85</span></td>
 </tr>
 <tr id="r-close-burst">
-<td data-label="Attack">Close burst (only within 15 of the boss)</td>
-<td data-label="Phase 1">10 s, ×1.0</td>
-<td data-label="Phase 2">10 s, ×1.0</td>
-<td data-label="Phase 3">10 s, ×0.85</td>
+<td data-label="Attack"><span class="cv">Close burst (only within 15 of the boss)</span></td>
+<td data-label="Phase 1"><span class="cv">10 s, ×1.0</span></td>
+<td data-label="Phase 2"><span class="cv">10 s, ×1.0</span></td>
+<td data-label="Phase 3"><span class="cv">10 s, ×0.85</span></td>
 </tr>
 <tr id="r-gap-between-attacks">
-<td data-label="Attack">Gap between attacks</td>
-<td data-label="Phase 1">3 s</td>
-<td data-label="Phase 2">2.5 s</td>
-<td data-label="Phase 3">2.25 s</td>
+<td data-label="Attack"><span class="cv">Gap between attacks</span></td>
+<td data-label="Phase 1"><span class="cv">3 s</span></td>
+<td data-label="Phase 2"><span class="cv">2.5 s</span></td>
+<td data-label="Phase 3"><span class="cv">2.25 s</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -873,28 +875,28 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-disco-lasers">
-<td data-label="Attack">Disco lasers</td>
-<td data-label="Cooldown">25 s</td>
-<td data-label="Damage">×0.15 per hit</td>
-<td data-label="Notes">Lasts 14–15 s</td>
+<td data-label="Attack"><span class="cv">Disco lasers</span></td>
+<td data-label="Cooldown"><span class="cv">25 s</span></td>
+<td data-label="Damage"><span class="cv">×0.15 per hit</span></td>
+<td data-label="Notes"><span class="cv">Lasts 14–15 s</span></td>
 </tr>
 <tr id="r-targeted-laser">
-<td data-label="Attack">Targeted laser</td>
-<td data-label="Cooldown">40 s / 30 s / 45 s by phase</td>
-<td data-label="Damage">×0.05 per hit</td>
-<td data-label="Notes">Lasts 8 s, then 5 s of recovery</td>
+<td data-label="Attack"><span class="cv">Targeted laser</span></td>
+<td data-label="Cooldown"><span class="cv">40 s / 30 s / 45 s by phase</span></td>
+<td data-label="Damage"><span class="cv">×0.05 per hit</span></td>
+<td data-label="Notes"><span class="cv">Lasts 8 s, then 5 s of recovery</span></td>
 </tr>
 <tr id="r-predictive-pillars">
-<td data-label="Attack">Predictive pillars</td>
-<td data-label="Cooldown">15 s</td>
-<td data-label="Damage">×0.75</td>
-<td data-label="Notes">Several pillars aimed ahead of you</td>
+<td data-label="Attack"><span class="cv">Predictive pillars</span></td>
+<td data-label="Cooldown"><span class="cv">15 s</span></td>
+<td data-label="Damage"><span class="cv">×0.75</span></td>
+<td data-label="Notes"><span class="cv">Several pillars aimed ahead of you</span></td>
 </tr>
 <tr id="r-pillar-circles">
-<td data-label="Attack">Pillar circles</td>
-<td data-label="Cooldown">15 s</td>
-<td data-label="Damage">×0.75</td>
-<td data-label="Notes">Rings of pillars</td>
+<td data-label="Attack"><span class="cv">Pillar circles</span></td>
+<td data-label="Cooldown"><span class="cv">15 s</span></td>
+<td data-label="Damage"><span class="cv">×0.75</span></td>
+<td data-label="Notes"><span class="cv">Rings of pillars</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -911,22 +913,22 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-darkness">
-<td data-label="Attack">Darkness</td>
-<td data-label="Cooldown">30–50 s</td>
-<td data-label="Damage">×1.0</td>
-<td data-label="Notes">First one 15 s into the fight; 6.5 s wind-up</td>
+<td data-label="Attack"><span class="cv">Darkness</span></td>
+<td data-label="Cooldown"><span class="cv">30–50 s</span></td>
+<td data-label="Damage"><span class="cv">×1.0</span></td>
+<td data-label="Notes"><span class="cv">First one 15 s into the fight; 6.5 s wind-up</span></td>
 </tr>
 <tr id="r-ghost-roots">
-<td data-label="Attack">Ghost roots</td>
-<td data-label="Cooldown">15–30 s</td>
-<td data-label="Damage">×0.85</td>
-<td data-label="Notes">Chases you along the ground</td>
+<td data-label="Attack"><span class="cv">Ghost roots</span></td>
+<td data-label="Cooldown"><span class="cv">15–30 s</span></td>
+<td data-label="Damage"><span class="cv">×0.85</span></td>
+<td data-label="Notes"><span class="cv">Chases you along the ground</span></td>
 </tr>
 <tr id="r-ghost-spikes">
-<td data-label="Attack">Ghost spikes</td>
-<td data-label="Cooldown">15–30 s</td>
-<td data-label="Damage">×0.8</td>
-<td data-label="Notes">Several at once, 1.5 s wind-up</td>
+<td data-label="Attack"><span class="cv">Ghost spikes</span></td>
+<td data-label="Cooldown"><span class="cv">15–30 s</span></td>
+<td data-label="Damage"><span class="cv">×0.8</span></td>
+<td data-label="Notes"><span class="cv">Several at once, 1.5 s wind-up</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -942,55 +944,55 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr>
-<td data-label="Boss">Bandit</td>
-<td data-label="Attack">Dash strike (within 15)</td>
-<td data-label="Cooldown">10 s</td>
-<td data-label="Damage">×0.8</td>
+<td data-label="Boss"><span class="cv">Bandit</span></td>
+<td data-label="Attack"><span class="cv">Dash strike (within 15)</span></td>
+<td data-label="Cooldown"><span class="cv">10 s</span></td>
+<td data-label="Damage"><span class="cv">×0.8</span></td>
 </tr>
 <tr>
-<td data-label="Boss">Bush</td>
-<td data-label="Attack">Sniper shot (any range)</td>
-<td data-label="Cooldown">12 s</td>
-<td data-label="Damage">×0.8, 2.5 s recovery after</td>
+<td data-label="Boss"><span class="cv">Bush</span></td>
+<td data-label="Attack"><span class="cv">Sniper shot (any range)</span></td>
+<td data-label="Cooldown"><span class="cv">12 s</span></td>
+<td data-label="Damage"><span class="cv">×0.8, 2.5 s recovery after</span></td>
 </tr>
 <tr>
-<td data-label="Boss">Ghostham</td>
-<td data-label="Attack">Slam (within 14), mud splash, predictive mud splash</td>
-<td data-label="Cooldown">5 s each</td>
-<td data-label="Damage">×1.0 / ×0.7 / ×0.7</td>
+<td data-label="Boss"><span class="cv">Ghostham</span></td>
+<td data-label="Attack"><span class="cv">Slam (within 14), mud splash, predictive mud splash</span></td>
+<td data-label="Cooldown"><span class="cv">5 s each</span></td>
+<td data-label="Damage"><span class="cv">×1.0 / ×0.7 / ×0.7</span></td>
 </tr>
 <tr>
-<td data-label="Boss">Stone Golem (Forest)</td>
-<td data-label="Attack">Close stone attack (within 17), continuous stones</td>
-<td data-label="Cooldown">8 s / 16 s</td>
-<td data-label="Damage">×1.0 / ×0.75</td>
+<td data-label="Boss"><span class="cv">Stone Golem (Forest)</span></td>
+<td data-label="Attack"><span class="cv">Close stone attack (within 17), continuous stones</span></td>
+<td data-label="Cooldown"><span class="cv">8 s / 16 s</span></td>
+<td data-label="Damage"><span class="cv">×1.0 / ×0.75</span></td>
 </tr>
 <tr id="r-chunkham">
-<td data-label="Boss">Chunkham (Forest)</td>
-<td data-label="Attack">Slam (within 14), mud splash, predictive mud splash</td>
-<td data-label="Cooldown">5 s each</td>
-<td data-label="Damage">×1.0 / ×0.7 / ×0.7</td>
+<td data-label="Boss"><span class="cv">Chunkham (Forest)</span></td>
+<td data-label="Attack"><span class="cv">Slam (within 14), mud splash, predictive mud splash</span></td>
+<td data-label="Cooldown"><span class="cv">5 s each</span></td>
+<td data-label="Damage"><span class="cv">×1.0 / ×0.7 / ×0.7</span></td>
 </tr>
 <tr>
-<td data-label="Boss">Sand Golem (Desert)</td>
-<td data-label="Attack">Stone attack (within 17), continuous stones</td>
-<td data-label="Cooldown">8 s / 16 s</td>
-<td data-label="Damage">×1.0 / ×0.75</td>
+<td data-label="Boss"><span class="cv">Sand Golem (Desert)</span></td>
+<td data-label="Attack"><span class="cv">Stone attack (within 17), continuous stones</span></td>
+<td data-label="Cooldown"><span class="cv">8 s / 16 s</span></td>
+<td data-label="Damage"><span class="cv">×1.0 / ×0.75</span></td>
 </tr>
 <tr>
-<td data-label="Boss">Scorpion (Desert)</td>
-<td data-label="Attack">Spike volley, predictive spikes, hitscan spikes</td>
-<td data-label="Cooldown">16 s / 12 s / 12 s</td>
-<td data-label="Damage">×0.8 / ×1.0 / ×0.8</td>
+<td data-label="Boss"><span class="cv">Scorpion (Desert)</span></td>
+<td data-label="Attack"><span class="cv">Spike volley, predictive spikes, hitscan spikes</span></td>
+<td data-label="Cooldown"><span class="cv">16 s / 12 s / 12 s</span></td>
+<td data-label="Damage"><span class="cv">×0.8 / ×1.0 / ×0.8</span></td>
 </tr>
 <tr id="r-calciums-dad">
-<td data-label="Boss">Calcium's Dad (Graveyard)</td>
-<td data-label="Attack">Predictive bone pillars, pillar circles, targeted laser</td>
-<td data-label="Cooldown">15 s / 15 s / 40 s</td>
-<td data-label="Damage">×0.75 / ×0.75 / ×0.05 per hit</td>
+<td data-label="Boss"><span class="cv">Calcium's Dad (Graveyard)</span></td>
+<td data-label="Attack"><span class="cv">Predictive bone pillars, pillar circles, targeted laser</span></td>
+<td data-label="Cooldown"><span class="cv">15 s / 15 s / 40 s</span></td>
+<td data-label="Damage"><span class="cv">×0.75 / ×0.75 / ×0.05 per hit</span></td>
 </tr>
 </tbody>
-</table></div><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Enemies&page=Enemies%20%28https%3A//bonk.wiki/enemies.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="maps.html"><span>← Previous</span>Maps &amp; stages</a><a class="nx" href="items.html"><span>Next →</span>Items</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 19, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div></main></div>
+</table></div><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Enemies&page=Enemies%20%28https%3A//bonk.wiki/enemies.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="maps.html"><span>← Previous</span>Maps &amp; stages</a><a class="nx" href="items.html"><span>Next →</span>Items</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 25, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){
 var d=document,n=d.getElementById('nav'),mb=n.querySelector('.mbtn'),sb=n.querySelector('.sbtn'),q=d.getElementById('q'),R=d.getElementById('sres'),L=d.getElementById('links'),mq=matchMedia('(max-width:860px)');
 function set(o){n.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);d.documentElement.classList.toggle('navlock',o&&mq.matches)}

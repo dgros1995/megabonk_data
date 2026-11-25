@@ -129,8 +129,10 @@ table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;bor
 table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
 table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
 table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="cards"] td[data-empty]{display:none}
 table[data-m="cards"] tr:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:normal;min-width:6.5em;max-width:40vw}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin:0;position:absolute;left:9px;top:8px}
+table[data-m="grid"] td:first-child:has(.ic){padding-left:35px}
 .tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
 table[data-m="grid"] th:first-child{background:var(--code)}
@@ -142,7 +144,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <div class="hbtns"><button class="hb sbtn" type="button" aria-label="Search"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg></button><button class="hb mbtn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span></button></div></div>
 <div class="scrim"></div><div class="dr" id="drawer"><div class="srch" role="search"><label class="sbox"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg><input id="q" type="search" placeholder="Search the wiki" autocomplete="off" spellcheck="false" aria-label="Search the wiki"><kbd>/</kbd></label></div>
 <div class="sres" id="sres" hidden></div><div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html" class="on" aria-current="page"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div><div class="grp"><b>Reference</b><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></div></nav>
-<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/Gold.png" alt="" width="52" height="52"><h1>Luck, chests &amp; shrines</h1></div><p class="meta">Game v1.0.69 · updated Nov 19, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Luck%2C%20chests%20%26%20shrines&page=Luck%2C%20chests%20%26%20shrines%20%28https%3A//bonk.wiki/economy.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><details class="toc" id="toc"><summary>On this page <span>10 sections</span></summary><ul><li><a href="#how-luck-works">How Luck works</a></li><li><a href="#chests">Chests</a></li><li><a href="#powerups">Powerups</a></li><li><a href="#pots">Pots</a></li><li><a href="#microwave">Microwave</a></li><li><a href="#shady-guy">Shady Guy</a></li><li><a href="#shrines">Shrines</a></li><li><a href="#banish-refresh-and-skip">Banish, Refresh and Skip</a></li><li><a href="#silver-shop">Silver shop</a></li><li><a href="#stat-offer-values">Stat offer values</a></li></ul></details><script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>
+<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/Gold.png" alt="" width="52" height="52"><h1>Luck, chests &amp; shrines</h1></div><p class="meta">Game v1.0.69 · updated Nov 25, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Luck%2C%20chests%20%26%20shrines&page=Luck%2C%20chests%20%26%20shrines%20%28https%3A//bonk.wiki/economy.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><details class="toc" id="toc"><summary>On this page <span>10 sections</span></summary><ul><li><a href="#how-luck-works">How Luck works</a></li><li><a href="#chests">Chests</a></li><li><a href="#powerups">Powerups</a></li><li><a href="#pots">Pots</a></li><li><a href="#microwave">Microwave</a></li><li><a href="#shady-guy">Shady Guy</a></li><li><a href="#shrines">Shrines</a></li><li><a href="#banish-refresh-and-skip">Banish, Refresh and Skip</a></li><li><a href="#silver-shop">Silver shop</a></li><li><a href="#stat-offer-values">Stat offer values</a></li></ul></details><script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>
 <h2 id="how-luck-works"><img class="ic" src="img/LuckTome.png" alt="">How Luck works</h2>
 <p>Every rarity roll that uses Luck goes through the same function (<code>Rarity.CalculateRarityWeights</code>):</p>
 <p><strong>weight of a rarity × 1.5^(−steps below the top rarity × 1.5 × ln(1 + Luck))</strong>, then normalised.</p>
@@ -153,7 +155,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <p>Luck is used for <strong>chest items, level-up offers, Moai offers and stat-shrine offers.</strong> It is <strong>not</strong> used for Shady Guy or Microwave rarity: those are rolled at map load with Luck 0.</p>
 <h3 id="chest-item-rarity">Chest item rarity</h3>
 <p>Base weights: Common 70, Rare 15, Epic 6, Legendary 1.5 (<code>Rarity.GetItemRarity</code>). A rarity with every item toggled off is skipped completely.</p>
-<div class="tw"><table data-m="cards">
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Luck</th>
@@ -217,7 +219,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </table></div>
 <h3 id="level-up-offer-rarity">Level-up offer rarity</h3>
 <p>Base weights: Common 1.5, Uncommon 0.3, Rare 0.15, Epic 0.04, Legendary 0.0085. The offer's value is multiplied by its rarity (Common ×1.0, Uncommon ×1.2, Rare ×1.4, Epic ×1.6, Legendary ×2.0).</p>
-<div class="tw"><table data-m="cards">
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Luck</th>
@@ -297,24 +299,24 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-luck-tome">
-<td class="nm" data-label="Source"><img class="ic" src="img/LuckTome.png" alt="">Luck Tome</td>
-<td data-label="Luck">+8% per level (Common), up to +16% at Legendary</td>
+<td class="nm" data-label="Source"><span class="cv"><img class="ic" src="img/LuckTome.png" alt="">Luck Tome</span></td>
+<td data-label="Luck"><span class="cv">+8% per level (Common), up to +16% at Legendary</span></td>
 </tr>
 <tr id="r-clover">
-<td class="nm" data-label="Source"><img class="ic" src="img/itemClover.png" alt="">Clover</td>
-<td data-label="Luck">+10% per copy</td>
+<td class="nm" data-label="Source"><span class="cv"><img class="ic" src="img/itemClover.png" alt="">Clover</span></td>
+<td data-label="Luck"><span class="cv">+10% per copy</span></td>
 </tr>
 <tr id="r-credit-card">
-<td class="nm" data-label="Source"><img class="ic" src="img/ItemCreditCardGreen.png" alt="">Credit Card (Green)</td>
-<td data-label="Luck">+2% per chest opened, per copy</td>
+<td class="nm" data-label="Source"><span class="cv"><img class="ic" src="img/ItemCreditCardGreen.png" alt="">Credit Card (Green)</span></td>
+<td data-label="Luck"><span class="cv">+2% per chest opened, per copy</span></td>
 </tr>
 <tr id="r-fox">
-<td class="nm" data-label="Source"><img class="ic" src="img/Fox.png" alt="">Fox</td>
-<td data-label="Luck">+15% to start, +1.5% per level</td>
+<td class="nm" data-label="Source"><span class="cv"><img class="ic" src="img/Fox.png" alt="">Fox</span></td>
+<td data-label="Luck"><span class="cv">+15% to start, +1.5% per level</span></td>
 </tr>
 <tr id="r-pots">
-<td data-label="Source"><strong>Pots</strong></td>
-<td data-label="Luck"><strong>+0.5% each on stage 1, +0.75% on stage 2, +1% on stage 3; big pots ×1.5</strong> (Forest and Desert only; Graveyard has pumpkins instead)</td>
+<td data-label="Source"><span class="cv"><strong>Pots</strong></span></td>
+<td data-label="Luck"><span class="cv"><strong>+0.5% each on stage 1, +0.75% on stage 2, +1% on stage 3; big pots ×1.5</strong> (Forest and Desert only; Graveyard has pumpkins instead)</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -468,46 +470,46 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-charge-shrine">
-<td class="nm" data-label="Shrine"><img class="ic" src="img/Zap.png" alt="">Charge Shrine</td>
-<td data-label="What it does">Stand in the zone to charge it; rewards a choice of <strong>3 stat offers</strong> (Luck-weighted rarity) from the Charge Shrine list below (<code>EncounterData.GetOffers</code>). Wrench speeds charging 4% and adds 7.5% per copy; Beacon adds 2 per copy on later stages.</td>
+<td class="nm" data-label="Shrine"><span class="cv"><img class="ic" src="img/Zap.png" alt="">Charge Shrine</span></td>
+<td data-label="What it does"><span class="cv">Stand in the zone to charge it; rewards a choice of <strong>3 stat offers</strong> (Luck-weighted rarity) from the Charge Shrine list below (<code>EncounterData.GetOffers</code>). Wrench speeds charging 4% and adds 7.5% per copy; Beacon adds 2 per copy on later stages.</span></td>
 </tr>
 <tr id="r-moai">
-<td data-label="Shrine">Moai</td>
-<td data-label="What it does">Offers items (Luck-weighted).</td>
+<td data-label="Shrine"><span class="cv">Moai</span></td>
+<td data-label="What it does"><span class="cv">Offers items (Luck-weighted).</span></td>
 </tr>
 <tr id="r-greed-shrine">
-<td class="nm" data-label="Shrine"><img class="ic" src="img/Gold.png" alt="">Greed Shrine</td>
-<td data-label="What it does"><strong>+5% Difficulty</strong>, permanently, and drops gold worth 10% of your next chest's price.</td>
+<td class="nm" data-label="Shrine"><span class="cv"><img class="ic" src="img/Gold.png" alt="">Greed Shrine</span></td>
+<td data-label="What it does"><span class="cv"><strong>+5% Difficulty</strong>, permanently, and drops gold worth 10% of your next chest's price.</span></td>
 </tr>
 <tr id="r-boss-curse">
-<td class="nm" data-label="Shrine"><img class="ic" src="img/Curse.png" alt="">Boss Curse (Cursed Shrine)</td>
-<td data-label="What it does">+1 Boss Curse: one more miniboss per miniboss event, one more stage boss, bosses +16% HP each. Only spawns once you've played more than 2 runs.</td>
+<td class="nm" data-label="Shrine"><span class="cv"><img class="ic" src="img/Curse.png" alt="">Boss Curse (Cursed Shrine)</span></td>
+<td data-label="What it does"><span class="cv">+1 Boss Curse: one more miniboss per miniboss event, one more stage boss, bosses +16% HP each. Only spawns once you've played more than 2 runs.</span></td>
 </tr>
 <tr id="r-magnet-shrine">
-<td class="nm" data-label="Shrine"><img class="ic" src="img/Clock.png" alt="">Magnet Shrine</td>
-<td data-label="What it does">Pulls in all XP on the map.</td>
+<td class="nm" data-label="Shrine"><span class="cv"><img class="ic" src="img/Clock.png" alt="">Magnet Shrine</span></td>
+<td data-label="What it does"><span class="cv">Pulls in all XP on the map.</span></td>
 </tr>
 <tr id="r-challenge-shrine">
-<td class="nm" data-label="Shrine"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge Shrine</td>
-<td data-label="What it does">Spawns a challenge fight; rewards on completion. Challenge enemies have ×7 HP (×15 if also elite).</td>
+<td class="nm" data-label="Shrine"><span class="cv"><img class="ic" src="img/ChallengeIcon.png" alt="">Challenge Shrine</span></td>
+<td data-label="What it does"><span class="cv">Spawns a challenge fight; rewards on completion. Challenge enemies have ×7 HP (×15 if also elite).</span></td>
 </tr>
 <tr id="r-balance-shrine">
-<td data-label="Shrine">Balance Shrine ("Bald Heads", Graveyard)</td>
-<td data-label="What it does">Offers stat trades: one stat ×2, another ×0.5. See below.</td>
+<td data-label="Shrine"><span class="cv">Balance Shrine ("Bald Heads", Graveyard)</span></td>
+<td data-label="What it does"><span class="cv">Offers stat trades: one stat ×2, another ×0.5. See below.</span></td>
 </tr>
 <tr id="r-gravestone">
-<td data-label="Shrine">Gravestone (Graveyard)</td>
-<td data-label="What it does"><strong>+10% XP gain and +5% Difficulty</strong>, permanently. Can also spawn an enemy.</td>
+<td data-label="Shrine"><span class="cv">Gravestone (Graveyard)</span></td>
+<td data-label="What it does"><span class="cv"><strong>+10% XP gain and +5% Difficulty</strong>, permanently. Can also spawn an enemy.</span></td>
 </tr>
 <tr id="r-coffin">
-<td class="nm" data-label="Shrine"><img class="ic" src="img/Coffin.png" alt="">Coffin (Graveyard)</td>
-<td data-label="What it does">Starts the Grave Ghost boss fight.</td>
+<td class="nm" data-label="Shrine"><span class="cv"><img class="ic" src="img/Coffin.png" alt="">Coffin (Graveyard)</span></td>
+<td data-label="What it does"><span class="cv">Starts the Grave Ghost boss fight.</span></td>
 </tr>
 </tbody>
 </table></div>
 <h3 id="which-stats-each-source-can-roll">Which stats each source can roll</h3>
 <p>Stat offers are drawn from three fixed lists in the code (<code>EncounterUtility</code>):</p>
-<div class="tw"><table data-m="cards">
+<div class="tw"><table data-m="grid">
 <thead>
 <tr>
 <th>Stat</th>
@@ -606,60 +608,60 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-weapon-slots">
-<td data-label="Upgrade">Weapon slots</td>
-<td data-label="Levels">2 (2 → 4 slots)</td>
-<td data-label="Prices per level">25, 125</td>
-<td data-label="Total">150</td>
-<td data-label="Unlocked by">25 quests</td>
+<td data-label="Upgrade"><span class="cv">Weapon slots</span></td>
+<td data-label="Levels"><span class="cv">2 (2 → 4 slots)</span></td>
+<td data-label="Prices per level"><span class="cv">25, 125</span></td>
+<td data-label="Total"><span class="cv">150</span></td>
+<td data-label="Unlocked by"><span class="cv">25 quests</span></td>
 </tr>
 <tr id="r-tome-slots">
-<td data-label="Upgrade">Tome slots</td>
-<td data-label="Levels">2 (2 → 4 slots)</td>
-<td data-label="Prices per level">35, 135</td>
-<td data-label="Total">170</td>
-<td data-label="Unlocked by">35 quests</td>
+<td data-label="Upgrade"><span class="cv">Tome slots</span></td>
+<td data-label="Levels"><span class="cv">2 (2 → 4 slots)</span></td>
+<td data-label="Prices per level"><span class="cv">35, 135</span></td>
+<td data-label="Total"><span class="cv">170</span></td>
+<td data-label="Unlocked by"><span class="cv">35 quests</span></td>
 </tr>
 <tr id="r-refresh">
-<td data-label="Upgrade">Refresh</td>
-<td data-label="Levels">6</td>
-<td data-label="Prices per level">8, 15, 24, 33, 43, 55</td>
-<td data-label="Total">178</td>
-<td data-label="Unlocked by">20 quests</td>
+<td data-label="Upgrade"><span class="cv">Refresh</span></td>
+<td data-label="Levels"><span class="cv">6</span></td>
+<td data-label="Prices per level"><span class="cv">8, 15, 24, 33, 43, 55</span></td>
+<td data-label="Total"><span class="cv">178</span></td>
+<td data-label="Unlocked by"><span class="cv">20 quests</span></td>
 </tr>
 <tr id="r-skip">
-<td data-label="Upgrade">Skip</td>
-<td data-label="Levels">6</td>
-<td data-label="Prices per level">8, 15, 24, 33, 43, 55</td>
-<td data-label="Total">178</td>
-<td data-label="Unlocked by">30 quests</td>
+<td data-label="Upgrade"><span class="cv">Skip</span></td>
+<td data-label="Levels"><span class="cv">6</span></td>
+<td data-label="Prices per level"><span class="cv">8, 15, 24, 33, 43, 55</span></td>
+<td data-label="Total"><span class="cv">178</span></td>
+<td data-label="Unlocked by"><span class="cv">30 quests</span></td>
 </tr>
 <tr id="r-banish">
-<td data-label="Upgrade">Banish</td>
-<td data-label="Levels">6</td>
-<td data-label="Prices per level">8, 15, 24, 33, 43, 55</td>
-<td data-label="Total">178</td>
-<td data-label="Unlocked by">40 quests</td>
+<td data-label="Upgrade"><span class="cv">Banish</span></td>
+<td data-label="Levels"><span class="cv">6</span></td>
+<td data-label="Prices per level"><span class="cv">8, 15, 24, 33, 43, 55</span></td>
+<td data-label="Total"><span class="cv">178</span></td>
+<td data-label="Unlocked by"><span class="cv">40 quests</span></td>
 </tr>
 <tr id="r-silver-gain">
-<td data-label="Upgrade">Silver gain</td>
-<td data-label="Levels">20 (+2.5% each)</td>
-<td data-label="Prices per level">5, 11, 18, 25 … 368, 442</td>
-<td data-label="Total">2,666</td>
-<td data-label="Unlocked by">Default</td>
+<td data-label="Upgrade"><span class="cv">Silver gain</span></td>
+<td data-label="Levels"><span class="cv">20 (+2.5% each)</span></td>
+<td data-label="Prices per level"><span class="cv">5, 11, 18, 25 … 368, 442</span></td>
+<td data-label="Total"><span class="cv">2,666</span></td>
+<td data-label="Unlocked by"><span class="cv">Default</span></td>
 </tr>
 <tr id="r-toggler">
-<td class="nm" data-label="Upgrade"><img class="ic" src="img/toggler.png" alt="">Toggler</td>
-<td data-label="Levels">1</td>
-<td data-label="Prices per level">50</td>
-<td data-label="Total">50</td>
-<td data-label="Unlocked by">40 unlocks purchased</td>
+<td class="nm" data-label="Upgrade"><span class="cv"><img class="ic" src="img/toggler.png" alt="">Toggler</span></td>
+<td data-label="Levels"><span class="cv">1</span></td>
+<td data-label="Prices per level"><span class="cv">50</span></td>
+<td data-label="Total"><span class="cv">50</span></td>
+<td data-label="Unlocked by"><span class="cv">40 unlocks purchased</span></td>
 </tr>
 <tr id="r-boombox">
-<td class="nm" data-label="Upgrade"><img class="ic" src="img/boombox.png" alt="">Boombox</td>
-<td data-label="Levels">1</td>
-<td data-label="Prices per level">5</td>
-<td data-label="Total">5</td>
-<td data-label="Unlocked by">Activate the Forest boomboxes</td>
+<td class="nm" data-label="Upgrade"><span class="cv"><img class="ic" src="img/boombox.png" alt="">Boombox</span></td>
+<td data-label="Levels"><span class="cv">1</span></td>
+<td data-label="Prices per level"><span class="cv">5</span></td>
+<td data-label="Total"><span class="cv">5</span></td>
+<td data-label="Unlocked by"><span class="cv">Activate the Forest boomboxes</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -825,7 +827,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="How it adds">added directly</td>
 </tr>
 </tbody>
-</table></div><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Luck%2C%20chests%20%26%20shrines&page=Luck%2C%20chests%20%26%20shrines%20%28https%3A//bonk.wiki/economy.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="status.html"><span>← Previous</span>Status effects</a><a class="nx" href="maps.html"><span>Next →</span>Maps &amp; stages</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 19, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="#how-luck-works">How Luck works</a></li><li><a href="#chests">Chests</a></li><li><a href="#powerups">Powerups</a></li><li><a href="#pots">Pots</a></li><li><a href="#microwave">Microwave</a></li><li><a href="#shady-guy">Shady Guy</a></li><li><a href="#shrines">Shrines</a></li><li><a href="#banish-refresh-and-skip">Banish, Refresh and Skip</a></li><li><a href="#silver-shop">Silver shop</a></li><li><a href="#stat-offer-values">Stat offer values</a></li></ul></aside></main></div>
+</table></div><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Luck%2C%20chests%20%26%20shrines&page=Luck%2C%20chests%20%26%20shrines%20%28https%3A//bonk.wiki/economy.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="status.html"><span>← Previous</span>Status effects</a><a class="nx" href="maps.html"><span>Next →</span>Maps &amp; stages</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 25, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="#how-luck-works">How Luck works</a></li><li><a href="#chests">Chests</a></li><li><a href="#powerups">Powerups</a></li><li><a href="#pots">Pots</a></li><li><a href="#microwave">Microwave</a></li><li><a href="#shady-guy">Shady Guy</a></li><li><a href="#shrines">Shrines</a></li><li><a href="#banish-refresh-and-skip">Banish, Refresh and Skip</a></li><li><a href="#silver-shop">Silver shop</a></li><li><a href="#stat-offer-values">Stat offer values</a></li></ul></aside></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){
 var d=document,n=d.getElementById('nav'),mb=n.querySelector('.mbtn'),sb=n.querySelector('.sbtn'),q=d.getElementById('q'),R=d.getElementById('sres'),L=d.getElementById('links'),mq=matchMedia('(max-width:860px)');
 function set(o){n.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);d.documentElement.classList.toggle('navlock',o&&mq.matches)}

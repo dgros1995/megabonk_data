@@ -129,8 +129,10 @@ table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;bor
 table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
 table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
 table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="cards"] td[data-empty]{display:none}
 table[data-m="cards"] tr:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:normal;min-width:6.5em;max-width:40vw}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin:0;position:absolute;left:9px;top:8px}
+table[data-m="grid"] td:first-child:has(.ic){padding-left:35px}
 .tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
 table[data-m="grid"] th:first-child{background:var(--code)}
@@ -142,7 +144,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <div class="hbtns"><button class="hb sbtn" type="button" aria-label="Search"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg></button><button class="hb mbtn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span></button></div></div>
 <div class="scrim"></div><div class="dr" id="drawer"><div class="srch" role="search"><label class="sbox"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg><input id="q" type="search" placeholder="Search the wiki" autocomplete="off" spellcheck="false" aria-label="Search the wiki"><kbd>/</kbd></label></div>
 <div class="sres" id="sres" hidden></div><div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html" class="on" aria-current="page"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div><div class="grp"><b>Reference</b><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></div></nav>
-<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/HatCrown.png" alt="" width="52" height="52"><h1>Tier lists</h1></div><p class="meta">Game v1.0.69 · updated Nov 19, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Tier%20lists&page=Tier%20lists%20%28https%3A//bonk.wiki/tiers.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><details class="toc" id="toc"><summary>On this page <span>4 sections</span></summary><ul><li><a href="#characters-forest">Characters (Forest)</a></li><li><a href="#items-forest">Items (Forest)</a></li><li><a href="#weapons-and-tomes-forest">Weapons and tomes (Forest)</a></li><li><a href="#graveyard-runs">Graveyard runs</a></li></ul></details><script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>
+<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/HatCrown.png" alt="" width="52" height="52"><h1>Tier lists</h1></div><p class="meta">Game v1.0.69 · updated Nov 25, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Tier%20lists&page=Tier%20lists%20%28https%3A//bonk.wiki/tiers.html%29" target="_blank" rel="noopener">Suggest an edit</a></p><details class="toc" id="toc"><summary>On this page <span>4 sections</span></summary><ul><li><a href="#characters-forest">Characters (Forest)</a></li><li><a href="#items-forest">Items (Forest)</a></li><li><a href="#weapons-and-tomes-forest">Weapons and tomes (Forest)</a></li><li><a href="#graveyard-runs">Graveyard runs</a></li></ul></details><script>if(!matchMedia("(max-width:860px)").matches)document.getElementById("toc").open=true</script>
 <p>Ranked for one goal: <strong>topping the kill leaderboard</strong>, with runs of 500,000+ kills. The rankings come from what the best runs actually use, from the verified runs on <a href="https://megabonk.leaderboard.gg/">Leaderboard.gg</a> (synced by <a href="https://megabonk.org/leaderboard/">megabonk.org</a>), patch 1.0.65, snapshot of Nov 16, 2026. The game code on the other pages explains <em>why</em>.</p>
 <p><strong>Forest and Graveyard are ranked separately.</strong> Graveyard's Bald Heads (Balance Shrines) double a stat each time, and a Graveyard map has up to 28 shrine slots, so Graveyard runs reach numbers Forest can't. The main lists use the <strong>477 Forest runs at 500k+</strong>. Graveyard has <a href="#graveyard-runs">its own section</a>.</p>
 <ul>
@@ -163,151 +165,151 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-dicehead">
-<td class="nm" data-label="Character"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</td>
-<td data-label="Tier"><strong>S</strong></td>
-<td data-label="Runs at 500k+">151</td>
-<td data-label="Runs at 1M+">25</td>
-<td data-label="Best run">1,327,059</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Dicehead.png" alt="">Dicehead</span></td>
+<td data-label="Tier"><span class="cv"><strong>S</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">151</span></td>
+<td data-label="Runs at 1M+"><span class="cv">25</span></td>
+<td data-label="Best run"><span class="cv">1,327,059</span></td>
 </tr>
 <tr id="r-fox">
-<td class="nm" data-label="Character"><img class="ic" src="img/Fox.png" alt="">Fox</td>
-<td data-label="Tier"><strong>S</strong></td>
-<td data-label="Runs at 500k+">155</td>
-<td data-label="Runs at 1M+">3</td>
-<td data-label="Best run">1,054,293</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Fox.png" alt="">Fox</span></td>
+<td data-label="Tier"><span class="cv"><strong>S</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">155</span></td>
+<td data-label="Runs at 1M+"><span class="cv">3</span></td>
+<td data-label="Best run"><span class="cv">1,054,293</span></td>
 </tr>
 <tr id="r-athena">
-<td class="nm" data-label="Character"><img class="ic" src="img/Athena.png" alt="">Athena</td>
-<td data-label="Tier"><strong>A</strong></td>
-<td data-label="Runs at 500k+">5</td>
-<td data-label="Runs at 1M+">2</td>
-<td data-label="Best run">2,011,436</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Athena.png" alt="">Athena</span></td>
+<td data-label="Tier"><span class="cv"><strong>A</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">5</span></td>
+<td data-label="Runs at 1M+"><span class="cv">2</span></td>
+<td data-label="Best run"><span class="cv">2,011,436</span></td>
 </tr>
 <tr id="r-megachad">
-<td class="nm" data-label="Character"><img class="ic" src="img/Megachad.png" alt="">Megachad</td>
-<td data-label="Tier"><strong>B</strong></td>
-<td data-label="Runs at 500k+">9</td>
-<td data-label="Runs at 1M+">1</td>
-<td data-label="Best run">1,002,389</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Megachad.png" alt="">Megachad</span></td>
+<td data-label="Tier"><span class="cv"><strong>B</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">9</span></td>
+<td data-label="Runs at 1M+"><span class="cv">1</span></td>
+<td data-label="Best run"><span class="cv">1,002,389</span></td>
 </tr>
 <tr id="r-roberto">
-<td class="nm" data-label="Character"><img class="ic" src="img/Roberto.png" alt="">Roberto</td>
-<td data-label="Tier"><strong>B</strong></td>
-<td data-label="Runs at 500k+">15</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">964,828</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Roberto.png" alt="">Roberto</span></td>
+<td data-label="Tier"><span class="cv"><strong>B</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">15</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">964,828</span></td>
 </tr>
 <tr id="r-tony-mczoom">
-<td class="nm" data-label="Character"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</td>
-<td data-label="Tier"><strong>B</strong></td>
-<td data-label="Runs at 500k+">15</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">933,873</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Hoverguy.png" alt="">Tony McZoom</span></td>
+<td data-label="Tier"><span class="cv"><strong>B</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">15</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">933,873</span></td>
 </tr>
 <tr id="r-sir-chadwell">
-<td class="nm" data-label="Character"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</td>
-<td data-label="Tier"><strong>B</strong></td>
-<td data-label="Runs at 500k+">11</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">929,343</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/CorruptedKnight.png" alt="">Sir Chadwell</span></td>
+<td data-label="Tier"><span class="cv"><strong>B</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">11</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">929,343</span></td>
 </tr>
 <tr id="r-spaceman">
-<td class="nm" data-label="Character"><img class="ic" src="img/Astronat.png" alt="">Spaceman</td>
-<td data-label="Tier"><strong>C</strong></td>
-<td data-label="Runs at 500k+">8</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">886,139</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Astronat.png" alt="">Spaceman</span></td>
+<td data-label="Tier"><span class="cv"><strong>C</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">8</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">886,139</span></td>
 </tr>
 <tr id="r-noelle">
-<td class="nm" data-label="Character"><img class="ic" src="img/Noelle.png" alt="">Noelle</td>
-<td data-label="Tier"><strong>C</strong></td>
-<td data-label="Runs at 500k+">4</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">844,601</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Noelle.png" alt="">Noelle</span></td>
+<td data-label="Tier"><span class="cv"><strong>C</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">4</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">844,601</span></td>
 </tr>
 <tr id="r-bush">
-<td class="nm" data-label="Character"><img class="ic" src="img/Bush.png" alt="">Bush</td>
-<td data-label="Tier"><strong>C</strong></td>
-<td data-label="Runs at 500k+">10</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">842,949</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Bush.png" alt="">Bush</span></td>
+<td data-label="Tier"><span class="cv"><strong>C</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">10</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">842,949</span></td>
 </tr>
 <tr id="r-calcium">
-<td class="nm" data-label="Character"><img class="ic" src="img/Calcium.png" alt="">Calcium</td>
-<td data-label="Tier"><strong>C</strong></td>
-<td data-label="Runs at 500k+">11</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">833,202</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Calcium.png" alt="">Calcium</span></td>
+<td data-label="Tier"><span class="cv"><strong>C</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">11</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">833,202</span></td>
 </tr>
 <tr id="r-cl4nk">
-<td class="nm" data-label="Character"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</td>
-<td data-label="Tier"><strong>C</strong></td>
-<td data-label="Runs at 500k+">14</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">829,552</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/RobotCowboy.png" alt="">CL4NK</span></td>
+<td data-label="Tier"><span class="cv"><strong>C</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">14</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">829,552</span></td>
 </tr>
 <tr id="r-ogre">
-<td class="nm" data-label="Character"><img class="ic" src="img/Ogre.png" alt="">Ogre</td>
-<td data-label="Tier"><strong>C</strong></td>
-<td data-label="Runs at 500k+">7</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">824,297</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Ogre.png" alt="">Ogre</span></td>
+<td data-label="Tier"><span class="cv"><strong>C</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">7</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">824,297</span></td>
 </tr>
 <tr id="r-amog">
-<td class="nm" data-label="Character"><img class="ic" src="img/Amog.png" alt="">Amog</td>
-<td data-label="Tier"><strong>C</strong></td>
-<td data-label="Runs at 500k+">9</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">819,538</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Amog.png" alt="">Amog</span></td>
+<td data-label="Tier"><span class="cv"><strong>C</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">9</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">819,538</span></td>
 </tr>
 <tr id="r-robinette">
-<td class="nm" data-label="Character"><img class="ic" src="img/Robinette.png" alt="">Robinette</td>
-<td data-label="Tier"><strong>C</strong></td>
-<td data-label="Runs at 500k+">14</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">808,231</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Robinette.png" alt="">Robinette</span></td>
+<td data-label="Tier"><span class="cv"><strong>C</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">14</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">808,231</span></td>
 </tr>
 <tr id="r-bandit">
-<td class="nm" data-label="Character"><img class="ic" src="img/Bandit.png" alt="">Bandit</td>
-<td data-label="Tier"><strong>C</strong></td>
-<td data-label="Runs at 500k+">8</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">804,146</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Bandit.png" alt="">Bandit</span></td>
+<td data-label="Tier"><span class="cv"><strong>C</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">8</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">804,146</span></td>
 </tr>
 <tr id="r-monke">
-<td class="nm" data-label="Character"><img class="ic" src="img/Monke.png" alt="">Monke</td>
-<td data-label="Tier"><strong>D</strong></td>
-<td data-label="Runs at 500k+">10</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">784,506</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Monke.png" alt="">Monke</span></td>
+<td data-label="Tier"><span class="cv"><strong>D</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">10</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">784,506</span></td>
 </tr>
 <tr id="r-birdo">
-<td class="nm" data-label="Character"><img class="ic" src="img/Birdo.png" alt="">Birdo</td>
-<td data-label="Tier"><strong>D</strong></td>
-<td data-label="Runs at 500k+">2</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">778,624</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Birdo.png" alt="">Birdo</span></td>
+<td data-label="Tier"><span class="cv"><strong>D</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">2</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">778,624</span></td>
 </tr>
 <tr id="r-ninja">
-<td class="nm" data-label="Character"><img class="ic" src="img/Ninja.png" alt="">Ninja</td>
-<td data-label="Tier"><strong>D</strong></td>
-<td data-label="Runs at 500k+">6</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">778,251</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Ninja.png" alt="">Ninja</span></td>
+<td data-label="Tier"><span class="cv"><strong>D</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">6</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">778,251</span></td>
 </tr>
 <tr id="r-sir-oofie">
-<td class="nm" data-label="Character"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</td>
-<td data-label="Tier"><strong>D</strong></td>
-<td data-label="Runs at 500k+">5</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">759,745</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/Knight.png" alt="">Sir Oofie</span></td>
+<td data-label="Tier"><span class="cv"><strong>D</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">5</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">759,745</span></td>
 </tr>
 <tr id="r-vlad">
-<td class="nm" data-label="Character"><img class="ic" src="img/BloodMage.png" alt="">Vlad</td>
-<td data-label="Tier"><strong>D</strong></td>
-<td data-label="Runs at 500k+">8</td>
-<td data-label="Runs at 1M+">0</td>
-<td data-label="Best run">748,050</td>
+<td class="nm" data-label="Character"><span class="cv"><img class="ic" src="img/BloodMage.png" alt="">Vlad</span></td>
+<td data-label="Tier"><span class="cv"><strong>D</strong></span></td>
+<td data-label="Runs at 500k+"><span class="cv">8</span></td>
+<td data-label="Runs at 1M+"><span class="cv">0</span></td>
+<td data-label="Best run"><span class="cv">748,050</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -875,7 +877,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <li><strong>Items far less common than on Forest:</strong> Pot (Stainless Steel) is in only 15% (91% on Forest), Lightning Orb 35% (98%), Big Bonk 50% (99%), Key and Time Bracelet 70% (97%).</li>
 <li><strong>More common than on Forest:</strong> Bob's Light 80% (24%), Scarf 80% (30%), Grandma's Secret Tonic 80% (30%), Ice Cube 95% (83%), Joe's Dagger 90% (62%).</li>
 </ul>
-<p>Graveyard is 20 runs, so treat these as a picture of the record runs rather than a ranking.</p><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Tier%20lists&page=Tier%20lists%20%28https%3A//bonk.wiki/tiers.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="characters.html"><span>← Previous</span>Characters</a><a class="nx" href="max-runs.html"><span>Next →</span>Maxing a run</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 19, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="#characters-forest">Characters (Forest)</a></li><li><a href="#items-forest">Items (Forest)</a></li><li><a href="#weapons-and-tomes-forest">Weapons and tomes (Forest)</a></li><li><a href="#graveyard-runs">Graveyard runs</a></li></ul></aside></main></div>
+<p>Graveyard is 20 runs, so treat these as a picture of the record runs rather than a ranking.</p><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Tier%20lists&page=Tier%20lists%20%28https%3A//bonk.wiki/tiers.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="characters.html"><span>← Previous</span>Characters</a><a class="nx" href="max-runs.html"><span>Next →</span>Maxing a run</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 25, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="#characters-forest">Characters (Forest)</a></li><li><a href="#items-forest">Items (Forest)</a></li><li><a href="#weapons-and-tomes-forest">Weapons and tomes (Forest)</a></li><li><a href="#graveyard-runs">Graveyard runs</a></li></ul></aside></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){
 var d=document,n=d.getElementById('nav'),mb=n.querySelector('.mbtn'),sb=n.querySelector('.sbtn'),q=d.getElementById('q'),R=d.getElementById('sres'),L=d.getElementById('links'),mq=matchMedia('(max-width:860px)');
 function set(o){n.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);d.documentElement.classList.toggle('navlock',o&&mq.matches)}

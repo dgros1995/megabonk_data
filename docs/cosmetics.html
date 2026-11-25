@@ -129,8 +129,10 @@ table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;bor
 table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
 table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
 table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="cards"] td[data-empty]{display:none}
 table[data-m="cards"] tr:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:normal;min-width:6.5em;max-width:40vw}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin:0;position:absolute;left:9px;top:8px}
+table[data-m="grid"] td:first-child:has(.ic){padding-left:35px}
 .tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
 table[data-m="grid"] th:first-child{background:var(--code)}
@@ -142,7 +144,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <div class="hbtns"><button class="hb sbtn" type="button" aria-label="Search"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg></button><button class="hb mbtn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span class="mb-i" aria-hidden="true"><i></i><i></i><i></i></span></button></div></div>
 <div class="scrim"></div><div class="dr" id="drawer"><div class="srch" role="search"><label class="sbox"><svg class="si" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg><input id="q" type="search" placeholder="Search the wiki" autocomplete="off" spellcheck="false" aria-label="Search the wiki"><kbd>/</kbd></label></div>
 <div class="sres" id="sres" hidden></div><div class="links" id="links"><div class="grp"><b>Start</b><a href="./"><img src="img/Gamba.png" alt="" width="22" height="22">Overview</a><a href="game.html"><img src="img/Tomes2.png" alt="" width="22" height="22">How the game works</a></div><div class="grp"><b>How it works</b><a href="mechanics.html"><img src="img/Stonks.png" alt="" width="22" height="22">Core math</a><a href="status.html"><img src="img/poison.png" alt="" width="22" height="22">Status effects</a><a href="economy.html"><img src="img/Gold.png" alt="" width="22" height="22">Luck, chests &amp; shrines</a><a href="maps.html"><img src="img/Challenges1.png" alt="" width="22" height="22">Maps &amp; stages</a><a href="enemies.html"><img src="img/Curse.png" alt="" width="22" height="22">Enemies</a></div><div class="grp"><b>Gear</b><a href="items.html"><img src="img/ItemBobsLantern.png" alt="" width="22" height="22">Items</a><a href="weapons.html"><img src="img/Weapons.png" alt="" width="22" height="22">Weapons</a><a href="tomes.html"><img src="img/tomes.png" alt="" width="22" height="22">Tomes</a><a href="characters.html"><img src="img/Dicehead.png" alt="" width="22" height="22">Characters</a></div><div class="grp"><b>Runs</b><a href="tiers.html"><img src="img/HatCrown.png" alt="" width="22" height="22">Tier lists</a><a href="max-runs.html"><img src="img/kill100k.png" alt="" width="22" height="22">Maxing a run</a><a href="secrets.html"><img src="img/ItemCryptKey.png" alt="" width="22" height="22">Map secrets &amp; fights</a></div><div class="grp"><b>Unlocks</b><a href="quests.html"><img src="img/allQuests.png" alt="" width="22" height="22">Quests &amp; unlocks</a><a href="challenges.html"><img src="img/ChallengeIcon.png" alt="" width="22" height="22">Challenges</a><a href="cosmetics.html" class="on" aria-current="page"><img src="img/HatTopHat.png" alt="" width="22" height="22">Hats &amp; skins</a></div><div class="grp"><b>Reference</b><a href="faq.html"><img src="img/Bullseye.png" alt="" width="22" height="22">FAQ &amp; map limits</a></div></div><div class="side-foot">Fan-made. Numbers from the game's code.<br><a href="https://github.com/dgros1995/megabonk_data">Source on GitHub</a></div></div></nav>
-<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/HatTopHat.png" alt="" width="52" height="52"><h1>Hats &amp; skins</h1></div><p class="meta">Game v1.0.69 · updated Nov 19, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Hats%20%26%20skins&page=Hats%20%26%20skins%20%28https%3A//bonk.wiki/cosmetics.html%29" target="_blank" rel="noopener">Suggest an edit</a></p>
+<main id="top"><div class="cnt"><div class="pg-head"><img class="pg-ic" src="img/HatTopHat.png" alt="" width="52" height="52"><h1>Hats &amp; skins</h1></div><p class="meta">Game v1.0.69 · updated Nov 25, 2026 · <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Hats%20%26%20skins&page=Hats%20%26%20skins%20%28https%3A//bonk.wiki/cosmetics.html%29" target="_blank" rel="noopener">Suggest an edit</a></p>
 <p>Every hat and skin and how to unlock it, read from the game's hat and skin data. Hats and skins are cosmetic only: none of them change stats.</p>
 <h2 id="hats"><img class="ic" src="img/HatTopHat.png" alt="">Hats</h2>
 <div class="tw"><table data-m="cards">
@@ -156,136 +158,136 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-blue-frog">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatFrogBlue.png" alt="">Blue frog</td>
-<td data-label="How to unlock">Find the frogs on Forest Stage 2</td>
-<td data-label="Difficulty">Easy</td>
-<td data-label="In-game text">You earned his trust and friendship (he's fucking dead)</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatFrogBlue.png" alt="">Blue frog</span></td>
+<td data-label="How to unlock"><span class="cv">Find the frogs on Forest Stage 2</span></td>
+<td data-label="Difficulty"><span class="cv">Easy</span></td>
+<td data-label="In-game text"><span class="cv">You earned his trust and friendship (he's fucking dead)</span></td>
 </tr>
 <tr id="r-green-frog">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatFrogGreen.png" alt="">Green frog</td>
-<td data-label="How to unlock">Find the frogs on Forest Stage 1</td>
-<td data-label="Difficulty">Easy</td>
-<td data-label="In-game text">You earned his trust and friendship (he's fucking dead)</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatFrogGreen.png" alt="">Green frog</span></td>
+<td data-label="How to unlock"><span class="cv">Find the frogs on Forest Stage 1</span></td>
+<td data-label="Difficulty"><span class="cv">Easy</span></td>
+<td data-label="In-game text"><span class="cv">You earned his trust and friendship (he's fucking dead)</span></td>
 </tr>
 <tr id="r-red-frog">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatFrogRed.png" alt="">Red frog</td>
-<td data-label="How to unlock">Find the frogs on Forest Stage 3</td>
-<td data-label="Difficulty">Easy</td>
-<td data-label="In-game text">You earned his trust and friendship (he's fucking dead)</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatFrogRed.png" alt="">Red frog</span></td>
+<td data-label="How to unlock"><span class="cv">Find the frogs on Forest Stage 3</span></td>
+<td data-label="Difficulty"><span class="cv">Easy</span></td>
+<td data-label="In-game text"><span class="cv">You earned his trust and friendship (he's fucking dead)</span></td>
 </tr>
 <tr id="r-santa-hat">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatSanta.png" alt="">Santa hat</td>
-<td data-label="How to unlock">Open the present hidden on Forest</td>
-<td data-label="Difficulty">Easy</td>
-<td data-label="In-game text">Ho ho ho! It does nothing but it looks pretty cool</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatSanta.png" alt="">Santa hat</span></td>
+<td data-label="How to unlock"><span class="cv">Open the present hidden on Forest</span></td>
+<td data-label="Difficulty"><span class="cv">Easy</span></td>
+<td data-label="In-game text"><span class="cv">Ho ho ho! It does nothing but it looks pretty cool</span></td>
 </tr>
 <tr id="r-shady-hat">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatShadyBlack.png" alt="">Shady hat (black)</td>
-<td data-label="How to unlock">Buy 100 items from a Common Shady Guy</td>
-<td data-label="Difficulty">Easy</td>
-<td data-label="In-game text">Proof that you’re a regular</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatShadyBlack.png" alt="">Shady hat (black)</span></td>
+<td data-label="How to unlock"><span class="cv">Buy 100 items from a Common Shady Guy</span></td>
+<td data-label="Difficulty"><span class="cv">Easy</span></td>
+<td data-label="In-game text"><span class="cv">Proof that you’re a regular</span></td>
 </tr>
 <tr id="r-clown">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatClown.png" alt="">Clown</td>
-<td data-label="How to unlock">As Athena, kill 500 enemies using Quin's Mask</td>
-<td data-label="Difficulty">Medium</td>
-<td data-label="In-game text">Suits you perfectly</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatClown.png" alt="">Clown</span></td>
+<td data-label="How to unlock"><span class="cv">As Athena, kill 500 enemies using Quin's Mask</span></td>
+<td data-label="Difficulty"><span class="cv">Medium</span></td>
+<td data-label="In-game text"><span class="cv">Suits you perfectly</span></td>
 </tr>
 <tr id="r-pilot-helm">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatPilot.png" alt="">Pilot helm</td>
-<td data-label="How to unlock">As Birdo, kill 1,000 enemies using Mines while flying in the air</td>
-<td data-label="Difficulty">Medium</td>
-<td data-label="In-game text">This helm makes you extremely aerodynamic probably</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatPilot.png" alt="">Pilot helm</span></td>
+<td data-label="How to unlock"><span class="cv">As Birdo, kill 1,000 enemies using Mines while flying in the air</span></td>
+<td data-label="Difficulty"><span class="cv">Medium</span></td>
+<td data-label="In-game text"><span class="cv">This helm makes you extremely aerodynamic probably</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatShadyBlue.png" alt="">Shady hat (blue)</td>
-<td data-label="How to unlock">Buy 80 items from a Rare Shady Guy</td>
-<td data-label="Difficulty">Medium</td>
-<td data-label="In-game text">Proof that you’re a regular</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatShadyBlue.png" alt="">Shady hat (blue)</span></td>
+<td data-label="How to unlock"><span class="cv">Buy 80 items from a Rare Shady Guy</span></td>
+<td data-label="Difficulty"><span class="cv">Medium</span></td>
+<td data-label="In-game text"><span class="cv">Proof that you’re a regular</span></td>
 </tr>
 <tr id="r-cheesy-hat">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatCheese.png" alt="">Cheesy hat</td>
-<td data-label="How to unlock">As Amog, defeat a Tier 3 final boss with 8 Moldy Cheese and 1 Snek in your inventory</td>
-<td data-label="Difficulty">Hard</td>
-<td data-label="In-game text">Moldy Cheese my beloved</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatCheese.png" alt="">Cheesy hat</span></td>
+<td data-label="How to unlock"><span class="cv">As Amog, defeat a Tier 3 final boss with 8 Moldy Cheese and 1 Snek in your inventory</span></td>
+<td data-label="Difficulty"><span class="cv">Hard</span></td>
+<td data-label="In-game text"><span class="cv">Moldy Cheese my beloved</span></td>
 </tr>
 <tr id="r-head-pot">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatPot.png" alt="">Head pot (Stainless steel)</td>
-<td data-label="How to unlock">As Roberto, obtain 4x Pot (stainless steel) in a single run</td>
-<td data-label="Difficulty">Hard</td>
-<td data-label="In-game text">This will keep your head safe (it's stainless steel)</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatPot.png" alt="">Head pot (Stainless steel)</span></td>
+<td data-label="How to unlock"><span class="cv">As Roberto, obtain 4x Pot (stainless steel) in a single run</span></td>
+<td data-label="Difficulty"><span class="cv">Hard</span></td>
+<td data-label="In-game text"><span class="cv">This will keep your head safe (it's stainless steel)</span></td>
 </tr>
 <tr id="r-headset">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatHeadset.png" alt="">Headset</td>
-<td data-label="How to unlock">As Ninja, complete Desert Stage 1 with at least 2 Boss Curse shrines activated</td>
-<td data-label="Difficulty">Hard</td>
-<td data-label="In-game text">meow</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatHeadset.png" alt="">Headset</span></td>
+<td data-label="How to unlock"><span class="cv">As Ninja, complete Desert Stage 1 with at least 2 Boss Curse shrines activated</span></td>
+<td data-label="Difficulty"><span class="cv">Hard</span></td>
+<td data-label="In-game text"><span class="cv">meow</span></td>
 </tr>
 <tr id="r-iron-helm">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatMedieval.png" alt="">Iron helm</td>
-<td data-label="How to unlock">As Sir Oofie, defeat the Forest 3 final boss using Sword, Hero Sword, Corrupted Sword and Scythe</td>
-<td data-label="Difficulty">Hard</td>
-<td data-label="In-game text">Very uncomfortable and rusty (it's not stainless steel)</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatMedieval.png" alt="">Iron helm</span></td>
+<td data-label="How to unlock"><span class="cv">As Sir Oofie, defeat the Forest 3 final boss using Sword, Hero Sword, Corrupted Sword and Scythe</span></td>
+<td data-label="Difficulty"><span class="cv">Hard</span></td>
+<td data-label="In-game text"><span class="cv">Very uncomfortable and rusty (it's not stainless steel)</span></td>
 </tr>
 <tr id="r-kevin-hat">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatKevin.png" alt="">Kevin hat</td>
-<td data-label="How to unlock">Get punched by Kevin 100,000 times</td>
-<td data-label="Difficulty">Hard</td>
-<td data-label="In-game text">Kevin still hates you</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatKevin.png" alt="">Kevin hat</span></td>
+<td data-label="How to unlock"><span class="cv">Get punched by Kevin 100,000 times</span></td>
+<td data-label="Difficulty"><span class="cv">Hard</span></td>
+<td data-label="In-game text"><span class="cv">Kevin still hates you</span></td>
 </tr>
 <tr id="r-magic-hat">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatWizard.png" alt="">Magic Hat</td>
-<td data-label="How to unlock">As Fox, get Firestaff, Lightning Staff and Blood Magic to Level 40</td>
-<td data-label="Difficulty">Hard</td>
-<td data-label="In-game text">This makes you feel smarter (you're not)</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatWizard.png" alt="">Magic Hat</span></td>
+<td data-label="How to unlock"><span class="cv">As Fox, get Firestaff, Lightning Staff and Blood Magic to Level 40</span></td>
+<td data-label="Difficulty"><span class="cv">Hard</span></td>
+<td data-label="In-game text"><span class="cv">This makes you feel smarter (you're not)</span></td>
 </tr>
 <tr id="r-microwave">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatMicrowave.png" alt="">Microwave</td>
-<td data-label="How to unlock">Blow up 50 Microwaves</td>
-<td data-label="Difficulty">Hard</td>
-<td data-label="In-game text">Do not put your head inside</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatMicrowave.png" alt="">Microwave</span></td>
+<td data-label="How to unlock"><span class="cv">Blow up 50 Microwaves</span></td>
+<td data-label="Difficulty"><span class="cv">Hard</span></td>
+<td data-label="In-game text"><span class="cv">Do not put your head inside</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatShadyPink.png" alt="">Shady hat (pink)</td>
-<td data-label="How to unlock">Buy 60 items from an Epic Shady Guy</td>
-<td data-label="Difficulty">Hard</td>
-<td data-label="In-game text">Proof that you’re a regular</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatShadyPink.png" alt="">Shady hat (pink)</span></td>
+<td data-label="How to unlock"><span class="cv">Buy 60 items from an Epic Shady Guy</span></td>
+<td data-label="Difficulty"><span class="cv">Hard</span></td>
+<td data-label="In-game text"><span class="cv">Proof that you’re a regular</span></td>
 </tr>
 <tr id="r-sheriffs-hat">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatSheriff.png" alt="">Sheriff's hat</td>
-<td data-label="How to unlock">As CL4NK, kill any boss or miniboss in under 1 second</td>
-<td data-label="Difficulty">Hard</td>
-<td data-label="In-game text">Best worn at high noon</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatSheriff.png" alt="">Sheriff's hat</span></td>
+<td data-label="How to unlock"><span class="cv">As CL4NK, kill any boss or miniboss in under 1 second</span></td>
+<td data-label="Difficulty"><span class="cv">Hard</span></td>
+<td data-label="In-game text"><span class="cv">Best worn at high noon</span></td>
 </tr>
 <tr id="r-sunglasses">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatGlasses.png" alt="">Sunglasses</td>
-<td data-label="How to unlock">As Calcium finish the final boss fight on Graveyard in under 60 seconds</td>
-<td data-label="Difficulty">Hard</td>
-<td data-label="In-game text">Very stylish. Great for avoiding eye contact.</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatGlasses.png" alt="">Sunglasses</span></td>
+<td data-label="How to unlock"><span class="cv">As Calcium finish the final boss fight on Graveyard in under 60 seconds</span></td>
+<td data-label="Difficulty"><span class="cv">Hard</span></td>
+<td data-label="In-game text"><span class="cv">Very stylish. Great for avoiding eye contact.</span></td>
 </tr>
 <tr id="r-top-hat">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatTopHat.png" alt="">Top hat</td>
-<td data-label="How to unlock">Get 100,000 kills on Forest in a single run</td>
-<td data-label="Difficulty">Hard</td>
-<td data-label="In-game text">A tall black hat</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatTopHat.png" alt="">Top hat</span></td>
+<td data-label="How to unlock"><span class="cv">Get 100,000 kills on Forest in a single run</span></td>
+<td data-label="Difficulty"><span class="cv">Hard</span></td>
+<td data-label="In-game text"><span class="cv">A tall black hat</span></td>
 </tr>
 <tr id="r-crown">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatCrown.png" alt="">Crown</td>
-<td data-label="How to unlock">Get a gold star on every character (Rank 100)</td>
-<td data-label="Difficulty">Cooked</td>
-<td data-label="In-game text">The inside is engraved: "touch grass please"</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatCrown.png" alt="">Crown</span></td>
+<td data-label="How to unlock"><span class="cv">Get a gold star on every character (Rank 100)</span></td>
+<td data-label="Difficulty"><span class="cv">Cooked</span></td>
+<td data-label="In-game text"><span class="cv">The inside is engraved: "touch grass please"</span></td>
 </tr>
 <tr id="r-looong-top-hat">
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatTophatLong.png" alt="">Looong top hat</td>
-<td data-label="How to unlock">Get 300,000 kills on Forest in a single run</td>
-<td data-label="Difficulty">Cooked</td>
-<td data-label="In-game text">Isn't this hat way too long..?</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatTophatLong.png" alt="">Looong top hat</span></td>
+<td data-label="How to unlock"><span class="cv">Get 300,000 kills on Forest in a single run</span></td>
+<td data-label="Difficulty"><span class="cv">Cooked</span></td>
+<td data-label="In-game text"><span class="cv">Isn't this hat way too long..?</span></td>
 </tr>
 <tr>
-<td class="nm" data-label="Hat"><img class="ic" src="img/HatShadyGold.png" alt="">Shady hat (gold)</td>
-<td data-label="How to unlock">Buy 50 items from a Legendary Shady Guy</td>
-<td data-label="Difficulty">Cooked</td>
-<td data-label="In-game text">Proof that you’re a regular</td>
+<td class="nm" data-label="Hat"><span class="cv"><img class="ic" src="img/HatShadyGold.png" alt="">Shady hat (gold)</span></td>
+<td data-label="How to unlock"><span class="cv">Buy 50 items from a Legendary Shady Guy</span></td>
+<td data-label="Difficulty"><span class="cv">Cooked</span></td>
+<td data-label="In-game text"><span class="cv">Proof that you’re a regular</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -868,7 +870,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <td data-label="How to unlock">Get Vlad to Rank 100</td>
 </tr>
 </tbody>
-</table></div><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Hats%20%26%20skins&page=Hats%20%26%20skins%20%28https%3A//bonk.wiki/cosmetics.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="challenges.html"><span>← Previous</span>Challenges</a><a class="nx" href="faq.html"><span>Next →</span>FAQ &amp; map limits</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 19, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div></main></div>
+</table></div><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Hats%20%26%20skins&page=Hats%20%26%20skins%20%28https%3A//bonk.wiki/cosmetics.html%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><a class="pv" href="challenges.html"><span>← Previous</span>Challenges</a><a class="nx" href="faq.html"><span>Next →</span>FAQ &amp; map limits</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 25, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){
 var d=document,n=d.getElementById('nav'),mb=n.querySelector('.mbtn'),sb=n.querySelector('.sbtn'),q=d.getElementById('q'),R=d.getElementById('sres'),L=d.getElementById('links'),mq=matchMedia('(max-width:860px)');
 function set(o){n.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);d.documentElement.classList.toggle('navlock',o&&mq.matches)}

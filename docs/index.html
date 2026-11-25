@@ -129,8 +129,10 @@ table[data-m="cards"] td{display:grid;grid-template-columns:38% 1fr;gap:10px;bor
 table[data-m="cards"] td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
 table[data-m="cards"] td:first-child{display:block;font-weight:650;font-size:15.5px;border-bottom:1px solid var(--line);padding:6px 14px 9px;margin-bottom:4px}
 table[data-m="cards"] td:first-child::before{display:none}
+table[data-m="cards"] td[data-empty]{display:none}
 table[data-m="cards"] tr:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:nowrap}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin-right:5px}
+table[data-m="grid"]{font-size:13px}table[data-m="grid"] th,table[data-m="grid"] td{padding:8px 9px}table[data-m="grid"] th{white-space:normal}table[data-m="grid"] td:first-child{white-space:normal;min-width:6.5em;max-width:40vw}table[data-m="grid"] td:first-child .ic{width:20px;height:20px;margin:0;position:absolute;left:9px;top:8px}
+table[data-m="grid"] td:first-child:has(.ic){padding-left:35px}
 .tw:has(table[data-m="grid"]){overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table[data-m="grid"] th:first-child,table[data-m="grid"] td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
 table[data-m="grid"] th:first-child{background:var(--code)}
@@ -158,72 +160,72 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 </thead>
 <tbody>
 <tr id="r-how-the-game-works">
-<td data-label="Page"><a href="game.html">How the game works</a></td>
-<td data-label="What it covers">What a run is, the goal, the core loop, how maps are generated and what sets Megabonk apart</td>
+<td data-label="Page"><span class="cv"><a href="game.html">How the game works</a></span></td>
+<td data-label="What it covers"><span class="cv">What a run is, the goal, the core loop, how maps are generated and what sets Megabonk apart</span></td>
 </tr>
 <tr id="r-core-math">
-<td data-label="Page"><a href="mechanics.html">Core math</a></td>
-<td data-label="What it covers">How every stat is calculated, the three damage brackets, crits and overcrits, proc chances, armor, evasion, XP per level</td>
+<td data-label="Page"><span class="cv"><a href="mechanics.html">Core math</a></span></td>
+<td data-label="What it covers"><span class="cv">How every stat is calculated, the three damage brackets, crits and overcrits, proc chances, armor, evasion, XP per level</span></td>
 </tr>
 <tr id="r-status-effects">
-<td data-label="Page"><a href="status.html">Status effects</a></td>
-<td data-label="What it covers">Poison, burn, freeze, stun, Bloodmark, charm, execute</td>
+<td data-label="Page"><span class="cv"><a href="status.html">Status effects</a></span></td>
+<td data-label="What it covers"><span class="cv">Poison, burn, freeze, stun, Bloodmark, charm, execute</span></td>
 </tr>
 <tr id="r-maps-stages">
-<td data-label="Page"><a href="maps.html">Maps &amp; stages</a></td>
-<td data-label="What it covers">Forest, Desert and Graveyard; tiers; every stage's timeline; spawn rates; the final swarm and its ghosts; bosses and Boss Curses</td>
+<td data-label="Page"><span class="cv"><a href="maps.html">Maps &amp; stages</a></span></td>
+<td data-label="What it covers"><span class="cv">Forest, Desert and Graveyard; tiers; every stage's timeline; spawn rates; the final swarm and its ghosts; bosses and Boss Curses</span></td>
 </tr>
 <tr id="r-enemies">
-<td data-label="Page"><a href="enemies.html">Enemies</a></td>
-<td data-label="What it covers">Every enemy's base stats, and the HP and damage formulas that scale them</td>
+<td data-label="Page"><span class="cv"><a href="enemies.html">Enemies</a></span></td>
+<td data-label="What it covers"><span class="cv">Every enemy's base stats, and the HP and damage formulas that scale them</span></td>
 </tr>
 <tr id="r-map-secrets-fights">
-<td data-label="Page"><a href="secrets.html">Map secrets &amp; fights</a></td>
-<td data-label="What it covers">Frog eggs, Bush, Bandit, Spooky Steve, Big Bob, coffins, the crypt and every hidden object</td>
+<td data-label="Page"><span class="cv"><a href="secrets.html">Map secrets &amp; fights</a></span></td>
+<td data-label="What it covers"><span class="cv">Frog eggs, Bush, Bandit, Spooky Steve, Big Bob, coffins, the crypt and every hidden object</span></td>
 </tr>
 <tr id="r-luck-chests-shrines">
-<td data-label="Page"><a href="economy.html">Luck, chests &amp; shrines</a></td>
-<td data-label="What it covers">Luck odds, chest prices, free chests from kills, powerups, pots, Microwaves, Shady Guys, every shrine, Banish/Refresh/Skip and the Silver shop</td>
+<td data-label="Page"><span class="cv"><a href="economy.html">Luck, chests &amp; shrines</a></span></td>
+<td data-label="What it covers"><span class="cv">Luck odds, chest prices, free chests from kills, powerups, pots, Microwaves, Shady Guys, every shrine, Banish/Refresh/Skip and the Silver shop</span></td>
 </tr>
 <tr id="r-items">
-<td data-label="Page"><a href="items.html">Items</a></td>
-<td data-label="What it covers">Every item with what its code does</td>
+<td data-label="Page"><span class="cv"><a href="items.html">Items</a></span></td>
+<td data-label="What it covers"><span class="cv">Every item with what its code does</span></td>
 </tr>
 <tr id="r-weapons">
-<td data-label="Page"><a href="weapons.html">Weapons</a></td>
-<td data-label="What it covers">Base stats, attacks per second, proc rates, and how every tome changes every weapon</td>
+<td data-label="Page"><span class="cv"><a href="weapons.html">Weapons</a></span></td>
+<td data-label="What it covers"><span class="cv">Base stats, attacks per second, proc rates, and how every tome changes every weapon</span></td>
 </tr>
 <tr id="r-tomes">
-<td data-label="Page"><a href="tomes.html">Tomes</a></td>
-<td data-label="What it covers">Every tome, rarity multipliers, the per-level values, and which weapons each tome affects</td>
+<td data-label="Page"><span class="cv"><a href="tomes.html">Tomes</a></span></td>
+<td data-label="What it covers"><span class="cv">Every tome, rarity multipliers, the per-level values, and which weapons each tome affects</span></td>
 </tr>
 <tr id="r-characters">
-<td data-label="Page"><a href="characters.html">Characters</a></td>
-<td data-label="What it covers">Starting stats, per-level passives, how Dicehead's Gamba really scales</td>
+<td data-label="Page"><span class="cv"><a href="characters.html">Characters</a></span></td>
+<td data-label="What it covers"><span class="cv">Starting stats, per-level passives, how Dicehead's Gamba really scales</span></td>
 </tr>
 <tr id="r-faq-map-limits">
-<td data-label="Page"><a href="faq.html">FAQ &amp; map limits</a></td>
-<td data-label="What it covers">How many shrines, Bald Heads and chests a map can have; what Luck does and doesn't affect</td>
+<td data-label="Page"><span class="cv"><a href="faq.html">FAQ &amp; map limits</a></span></td>
+<td data-label="What it covers"><span class="cv">How many shrines, Bald Heads and chests a map can have; what Luck does and doesn't affect</span></td>
 </tr>
 <tr id="r-quests-unlocks">
-<td data-label="Page"><a href="quests.html">Quests &amp; unlocks</a></td>
-<td data-label="What it covers">Every quest, what it unlocks and the Silver it pays</td>
+<td data-label="Page"><span class="cv"><a href="quests.html">Quests &amp; unlocks</a></span></td>
+<td data-label="What it covers"><span class="cv">Every quest, what it unlocks and the Silver it pays</span></td>
 </tr>
 <tr id="r-challenges">
-<td data-label="Page"><a href="challenges.html">Challenges</a></td>
-<td data-label="What it covers">All 55 challenges with exact rules, Silver bonus and requirements</td>
+<td data-label="Page"><span class="cv"><a href="challenges.html">Challenges</a></span></td>
+<td data-label="What it covers"><span class="cv">All 55 challenges with exact rules, Silver bonus and requirements</span></td>
 </tr>
 <tr id="r-hats-skins">
-<td data-label="Page"><a href="cosmetics.html">Hats &amp; skins</a></td>
-<td data-label="What it covers">All 22 hats and 112 skins and how to get them</td>
+<td data-label="Page"><span class="cv"><a href="cosmetics.html">Hats &amp; skins</a></span></td>
+<td data-label="What it covers"><span class="cv">All 22 hats and 112 skins and how to get them</span></td>
 </tr>
 <tr id="r-tier-lists">
-<td data-label="Page"><a href="tiers.html">Tier lists</a></td>
-<td data-label="What it covers">Items and characters ranked by what 500k+ leaderboard runs actually use</td>
+<td data-label="Page"><span class="cv"><a href="tiers.html">Tier lists</a></span></td>
+<td data-label="What it covers"><span class="cv">Items and characters ranked by what 500k+ leaderboard runs actually use</span></td>
 </tr>
 <tr id="r-maxing-a-run">
-<td data-label="Page"><a href="max-runs.html">Maxing a run</a></td>
-<td data-label="What it covers">A short strategy built on the data: luck and chests, Boss Curses, the final swarm and the 12–13 minute ghost wall</td>
+<td data-label="Page"><span class="cv"><a href="max-runs.html">Maxing a run</a></span></td>
+<td data-label="What it covers"><span class="cv">A short strategy built on the data: luck and chests, Boss Curses, the final swarm and the 12–13 minute ghost wall</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -247,7 +249,7 @@ td code,li code,p code,h2 code,h3 code,h4 code{overflow-wrap:anywhere}
 <li><strong>Base damage</strong> is a separate player number, 8 + your level, used by many items and status effects instead of your weapon's damage.</li>
 <li><strong>Luck 1.0 = 100%.</strong> The game stores percentages as fractions.</li>
 <li>Where something was only partly traced in the code, the page says so.</li>
-</ul><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Overview&page=Overview%20%28https%3A//bonk.wiki/%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><span></span><a class="nx" href="game.html"><span>Next →</span>How the game works</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 19, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div></main></div>
+</ul><p class="suggest">Spotted a mistake or something missing? <a href="https://github.com/dgros1995/megabonk_data/issues/new?template=suggest-edit.yml&title=%5BEdit%5D%20Overview&page=Overview%20%28https%3A//bonk.wiki/%29" target="_blank" rel="noopener">Suggest an edit</a> (opens a GitHub issue).</p><nav class="pager" aria-label="Previous and next page"><span></span><a class="nx" href="game.html"><span>Next →</span>How the game works</a></nav><footer><span>Fan-made guide, not affiliated with the developers of Megabonk. Game art © its developers.</span><span>Numbers read from game v1.0.69; they can change with patches.</span><span>Updated Nov 25, 2026</span><a href="https://github.com/dgros1995/megabonk_data">GitHub</a></footer></div></main></div>
 <a class="top" href="#top" aria-label="Back to top">↑ Top</a><script>(function(){
 var d=document,n=d.getElementById('nav'),mb=n.querySelector('.mbtn'),sb=n.querySelector('.sbtn'),q=d.getElementById('q'),R=d.getElementById('sres'),L=d.getElementById('links'),mq=matchMedia('(max-width:860px)');
 function set(o){n.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);d.documentElement.classList.toggle('navlock',o&&mq.matches)}
